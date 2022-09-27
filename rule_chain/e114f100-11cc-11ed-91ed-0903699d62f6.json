@@ -1,0 +1,123 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "createdTime" : 1659380716560,
+    "debugMode" : false,
+    "externalId" : null,
+    "firstRuleNodeId" : null,
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "e114f100-11cc-11ed-91ed-0903699d62f6"
+    },
+    "name" : "Fotovoltaico_simulator",
+    "root" : false,
+    "tenantId" : null,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 1,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : null,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 52,
+        "layoutY" : 278
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 5,
+        "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar a_voltage = 220 + Math.random() * (240 - 220);\nvar a_import_energy ;\nvar a_export_energy;\nvar max_current_produced;\nvar max_power_requested;\n//var metatata = { data: 40 };\n\n// Imposto una produzione ridotta per la sera ed a zero per la notte\n// Imposto il consumo ridotto per la notte, con un minimo per il frigorifero e lucette varie\nswitch(hour) {\n  case 17:\n    max_current_produced = 14;\n    max_power_requested = 2500;\n    break;\n  case 18:\n    max_current_produced = 10;\n    max_power_requested = 2500;\n    break;\n  case 19:\n    max_current_produced = 6;\n    max_power_requested = 2000;    \n    break;  \n  case 20:\n    max_current_produced = 0;\n    max_power_requested = 1500;    \n    break;  \n  case 21:\n    max_current_produced = 0;\n    max_power_requested = 1000;    \n    break;    \n  case 22:\n    max_current_produced = 0;\n    max_power_requested = 800;    \n    break;    \n  case 23:\n    max_current_produced = 0;\n    max_power_requested = 250;    \n    break;    \n  case 0:\n    max_current_produced = 0;\n    max_power_requested = 250;    \n    break;    \n  case 1:\n    max_current_produced = 0;\n    max_power_requested = 250;    \n    break;    \n  case 2:\n    max_current_produced = 0;\n    max_power_requested = 250;\n    break;    \n  case 3:\n    max_current_produced = 0;\n    max_power_requested = 250;    \n    break;    \n  case 4:\n    max_current_produced = 0;\n    max_power_requested = 250;    \n    break;    \n  case 5:\n    max_current_produced = 0;\n    max_power_requested = 250;    \n    break;    \n  case 6:\n    max_current_produced = 0;\n    max_power_requested = 400;    \n    break;    \n  case 7:\n    max_current_produced = 4;\n    max_power_requested = 600;    \n    break;    \n  default:\n    max_current_produced = 14;\n    max_power_requested = 2500;\n}\n\n// Calcolo la produzione di energia con Corrente x Tensione\nvar a_current = 0 + Math.random() * (max_current_produced - 0); \nvar a_power_requested = 250 + Math.random() * (max_power_requested - 250);    \nvar a_power_produced = a_voltage * a_current;\n\nif (a_power_produced >= a_power_requested) \n{\n    a_import_energy = 0;\n    a_export_energy = a_power_produced - a_power_requested;\n} \nelse \n{\n// Metto la quantità di energia acquistata come numero negativo, per avere un grafico più utile da leggere    \n    a_import_energy = (a_power_requested - a_power_produced) * -1;\n    a_export_energy = 0;\n}\n\nvar msg = { \n//ora: hour,    \na_voltage: a_voltage, \na_current: a_current,\na_power_produced: a_power_produced,\na_power_requested: a_power_requested,\na_import_energy: a_import_energy,\na_export_energy: a_export_energy\n};\nreturn { msg: msg, metadata: { data:40 }, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
+        "originatorId" : "8b611770-11cc-11ed-91ed-0903699d62f6",
+        "originatorType" : "DEVICE"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ab386b50-11ce-11ed-91ed-0903699d62f6"
+      },
+      "name" : "Fotovoltaico",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 860,
+        "layoutY" : 279
+      },
+      "configuration" : {
+        "ruleChainId" : "7c8360c0-01d5-11ed-8014-35af6f7ed6b6"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "fe3e4670-11cf-11ed-91ed-0903699d62f6"
+      },
+      "name" : "FV_simulator",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 495,
+        "layoutY" : 420
+      },
+      "configuration" : {
+        "inputValueKey" : "a_import_energy",
+        "outputValueKey" : "total_imported",
+        "mathFunction" : "SUM",
+        "aggIntervalType" : "CUSTOM",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "MINUTES",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 5,
+        "periodTimeUnit" : "MINUTES",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "2aee1820-1ec9-11ed-b17d-8760b8868f4f"
+      },
+      "name" : "Total Imported",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

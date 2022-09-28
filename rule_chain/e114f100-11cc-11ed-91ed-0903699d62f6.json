@@ -28,8 +28,16 @@
       "toIndex" : 2,
       "type" : "Success"
     }, {
+      "fromIndex" : 0,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
       "fromIndex" : 2,
       "toIndex" : 1,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 3,
       "type" : "Success"
     } ],
     "firstNodeIndex" : null,
@@ -114,6 +122,64 @@
       "name" : "Total Imported",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "Ciao Ciao",
+        "layoutX" : 955,
+        "layoutY" : 142
+      },
+      "configuration" : {
+        "useSystemSmtpSettings" : true,
+        "smtpProtocol" : "smtp",
+        "smtpHost" : "localhost",
+        "smtpPort" : 25,
+        "timeout" : 10000,
+        "enableTls" : false,
+        "tlsVersion" : "TLSv1.2",
+        "enableProxy" : false,
+        "proxyHost" : null,
+        "proxyPort" : null,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "username" : null,
+        "password" : null
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "10bdc2e0-3f3d-11ed-accb-016e0c746b7f"
+      },
+      "name" : "Mailer",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.mail.TbSendEmailNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 596,
+        "layoutY" : 136
+      },
+      "configuration" : {
+        "fromTemplate" : "aa8@aangstrom.it",
+        "toTemplate" : "armando.papola@aangstrom.it",
+        "ccTemplate" : null,
+        "bccTemplate" : null,
+        "subjectTemplate" : "Fotovoltaico scrive dati",
+        "mailBodyType" : "false",
+        "isHtmlTemplate" : null,
+        "bodyTemplate" : "Ciao, \nil fotovoltaico simulator scrive dati.\n\nCiao"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "10bdc2e1-3f3d-11ed-accb-016e0c746b7f"
+      },
+      "name" : "Saluti",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.mail.TbMsgToEmailNode"
     } ],
     "ruleChainConnections" : null
   },

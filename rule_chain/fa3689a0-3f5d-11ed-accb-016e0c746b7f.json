@@ -56,7 +56,7 @@
         "layoutY" : 285
       },
       "configuration" : {
-        "jsScript" : "return {msg: msg.params, metadata: metadata, msgType: msgType};"
+        "jsScript" : "var tempWidget = msg.params;\nvar msg = { \n            tempWidget: tempWidget\n    \n};\n\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n"
       },
       "createdTime" : 0,
       "debugMode" : true,

@@ -10,7 +10,7 @@
     "externalId" : null,
     "firstRuleNodeId" : {
       "entityType" : "RULE_NODE",
-      "id" : "01a279c0-3f67-11ed-accb-016e0c746b7f"
+      "id" : "65b41600-3f83-11ed-accb-016e0c746b7f"
     },
     "id" : {
       "entityType" : "RULE_CHAIN",
@@ -22,29 +22,52 @@
     "type" : "CORE"
   },
   "metaData" : {
-    "connections" : null,
-    "firstNodeIndex" : 0,
+    "connections" : [ {
+      "fromIndex" : 1,
+      "toIndex" : 0,
+      "type" : "RPC Request to Device"
+    } ],
+    "firstNodeIndex" : 1,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 311,
-        "layoutY" : 154
+        "layoutX" : 525,
+        "layoutY" : 268
       },
       "configuration" : {
-        "serviceIdMetaDataAttribute" : "serviceId",
-        "sessionIdMetaDataAttribute" : "sessionId",
-        "requestIdMetaDataAttribute" : "requestId"
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : true
       },
       "createdTime" : 0,
       "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "01a279c0-3f67-11ed-accb-016e0c746b7f"
+        "id" : "65b3eef0-3f83-11ed-accb-016e0c746b7f"
       },
-      "name" : "Send Reply To RPC",
+      "name" : "Save to another device",
       "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.rpc.TbSendRPCReplyNode"
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 262,
+        "layoutY" : 266
+      },
+      "configuration" : {
+        "version" : 0
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "65b41600-3f83-11ed-accb-016e0c746b7f"
+      },
+      "name" : "switch",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
     } ],
     "ruleChainConnections" : null
   },

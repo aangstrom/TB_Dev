@@ -8,7 +8,10 @@
     "createdTime" : 1664390838074,
     "debugMode" : true,
     "externalId" : null,
-    "firstRuleNodeId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "498a7c20-3f66-11ed-accb-016e0c746b7f"
+    },
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "fa3689a0-3f5d-11ed-accb-016e0c746b7f"
@@ -19,9 +22,75 @@
     "type" : "CORE"
   },
   "metaData" : {
-    "connections" : null,
-    "firstNodeIndex" : null,
-    "nodes" : [ ],
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 2,
+      "type" : "RPC Request to Device"
+    } ],
+    "firstNodeIndex" : 0,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 284,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "persistAlarmRulesState" : true,
+        "fetchAlarmRulesStateOnStart" : true
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "498a7c20-3f66-11ed-accb-016e0c746b7f"
+      },
+      "name" : "Device Profile Node",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.profile.TbDeviceProfileNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 577,
+        "layoutY" : 154
+      },
+      "configuration" : {
+        "version" : 0
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "498aa330-3f66-11ed-accb-016e0c746b7f"
+      },
+      "name" : "Message Type Switch",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 933,
+        "layoutY" : 256
+      },
+      "configuration" : {
+        "timeoutInSeconds" : 60
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "498aca40-3f66-11ed-accb-016e0c746b7f"
+      },
+      "name" : "RPC call",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.rpc.TbSendRPCRequestNode"
+    } ],
     "ruleChainConnections" : null
   },
   "attributes" : {

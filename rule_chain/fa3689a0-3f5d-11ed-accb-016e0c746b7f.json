@@ -10,7 +10,7 @@
     "externalId" : null,
     "firstRuleNodeId" : {
       "entityType" : "RULE_NODE",
-      "id" : "65b41600-3f83-11ed-accb-016e0c746b7f"
+      "id" : "965e7120-3f87-11ed-accb-016e0c746b7f"
     },
     "id" : {
       "entityType" : "RULE_CHAIN",
@@ -25,7 +25,7 @@
     "connections" : [ {
       "fromIndex" : 1,
       "toIndex" : 0,
-      "type" : "RPC Request to Device"
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 1,
     "nodes" : [ {
@@ -52,22 +52,22 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 333,
-        "layoutY" : 270
+        "layoutX" : 320,
+        "layoutY" : 285
       },
       "configuration" : {
-        "version" : 0
+        "jsScript" : "return {msg: msg.params, metadata: metadata, msgType: msgType};"
       },
       "createdTime" : 0,
       "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "65b41600-3f83-11ed-accb-016e0c746b7f"
+        "id" : "965e7120-3f87-11ed-accb-016e0c746b7f"
       },
-      "name" : "switch",
+      "name" : "test",
       "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

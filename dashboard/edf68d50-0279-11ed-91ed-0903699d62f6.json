@@ -1834,7 +1834,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if (value!=null){\n    return \"Soglia impostata: \"+value+\"%\";\n}\nelse{\n    return \"Soglia NON impostata\";\n}"
+                "postFuncBody" : "if (value>=0 || value<=0){\n    return \"Soglia impostata: \"+value+\"%\";\n}else{\n    return \"Soglia NON impostata\";\n}"
               }, {
                 "name" : "soundAlarmFlag",
                 "type" : "attribute",

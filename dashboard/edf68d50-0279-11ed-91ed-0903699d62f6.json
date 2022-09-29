@@ -1810,7 +1810,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if (value!=null){\n    return \"Soglia impostata: \"+value+\"°C\";\n}\nelse{\n    return \"Soglia NON impostata\";\n}"
+                "postFuncBody" : "return value ? \"Soglia impostata: \"+value+\"°C\" : \"Soglia NON impostata\";"
               }, {
                 "name" : "humidityAlarmFlag",
                 "type" : "attribute",
@@ -1834,7 +1834,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if (value>=0 || value<=0){\n    return \"Soglia impostata: \"+value+\"%\";\n}else{\n    return \"Soglia NON impostata\";\n}"
+                "postFuncBody" : "return value ? \"Soglia impostata: \"+value+\"%\" : \"Soglia NON impostata\";"
               }, {
                 "name" : "soundAlarmFlag",
                 "type" : "attribute",

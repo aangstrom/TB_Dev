@@ -1810,7 +1810,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if (value!=null){\n    return \"Soglia impostata: \"+value+\"°C\";\n}"
+                "postFuncBody" : "if (value!=null){\n    return \"Soglia impostata: \"+value+\"°C\";\n}\nelse{\n    return \"Soglia NON impostata\";\n}"
               }, {
                 "name" : "humidityAlarmFlag",
                 "type" : "attribute",
@@ -1834,7 +1834,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if (value!=null){\n    return \"Soglia impostata: \"+value+\"%\";\n}"
+                "postFuncBody" : "if (value!=null){\n    return \"Soglia impostata: \"+value+\"%\";\n}\nelse{\n    return \"Soglia NON impostata\";\n}"
               }, {
                 "name" : "soundAlarmFlag",
                 "type" : "attribute",
@@ -1858,7 +1858,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if (value!=null){\n    return \"Soglia impostata: \"+value+\"db\";\n}"
+                "postFuncBody" : "if (value!=null){\n    return \"Soglia impostata: \"+value+\"db\";\n}\nelse{\n    return \"Soglia NON impostata\";\n}"
               } ]
             } ],
             "timewindow" : {
@@ -1872,7 +1872,7 @@
             "padding" : "0px",
             "settings" : {
               "cardHtml" : "<div class='card'>\n    <h3>Allarmi</h3>\n    <h2>${temperatureAlarmFlag}</h2>\n    <h2>${temperatureAlarmThreshold}</h2>\n    <h2>${humidityAlarmFlag}</h2>\n    <h2>${humidutyAlarmThreshold}</h2>\n    <h2>${soundAlarmFlag}</h2>\n    <h2>${soundAlarmThreshold}</h2>\n</div>",
-              "cardCss" : ".card {\n    width: 100%;\n    height: 100%;\n    color: black;\n    display: flex;\n    align-items: center;\n    text-align: center;\n    flex-direction: column;\n    justify-content: space-around;\n}\nh3 {\n    font-size: 26px;\n    font-weight: bold;\n}\nh2 {\n    font-size: 15px;\n    line-height: 20px;\n}"
+              "cardCss" : ".card {\n    width: 100%;\n    height: 100%;\n    color: black;\n    display: flex;\n    text-align: center;\n    flex-direction: column;\n    justify-content: space-around;\n}\nh3 {\n    font-size: 30px;\n    font-weight: bold;\n}\nh2 {\n    font-size: 15px;\n    line-height: 20px;\n}"
             },
             "title" : "New HTML Value Card",
             "dropShadow" : true,

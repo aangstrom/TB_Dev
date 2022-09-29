@@ -112,6 +112,65 @@
       "name" : "Get RPC",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 853,
+        "layoutY" : 376
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "https://aa8.aangstrom.it/api/v1/McaJwkxXHXSwaWN0RmMw/rpc/${id}",
+        "requestMethod" : "POST",
+        "useSimpleClientHttpFactory" : false,
+        "ignoreRequestBody" : false,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : {
+          "Content-Type" : "application/json"
+        },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : false,
+        "maxQueueSize" : 0,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "16c07be0-3f8f-11ed-accb-016e0c746b7f"
+      },
+      "name" : "Reply RPC",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 729,
+        "layoutY" : 520
+      },
+      "configuration" : {
+        "jsScript" : "var id = msg.id;\nvar msg = { \n            id: id\n    \n};\n\nreturn { msg: msg, metadata: {}, msgType: \" \" };\n"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "16c07be1-3f8f-11ed-accb-016e0c746b7f"
+      },
+      "name" : "Get id",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

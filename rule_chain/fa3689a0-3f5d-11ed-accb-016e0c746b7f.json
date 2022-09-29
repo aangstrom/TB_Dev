@@ -167,7 +167,7 @@
         "layoutY" : 480
       },
       "configuration" : {
-        "jsScript" : "var id = msg.id;\nvar msg = { \n            id: id\n    \n};\n\nreturn { msg: msg, metadata: {}, msgType: \" \" };\n"
+        "jsScript" : "var id = msg.id;\nvar msg = { \n            id: id\n    \n};\n\nvar met = {\n    \"id\": id\n}\n\nreturn { msg: msg, metadata: met,  msgType: \" \" };\n"
       },
       "createdTime" : 0,
       "debugMode" : true,

@@ -648,8 +648,7 @@
               },
               "shadowSize" : 4,
               "smoothLines" : true,
-              "comparisonEnabled" : true,
-              "timeForComparison" : "previousInterval",
+              "comparisonEnabled" : false,
               "xaxisSecond" : {
                 "axisPosition" : "top",
                 "title" : "Temperatura_ieri",
@@ -684,7 +683,17 @@
               "showTotal" : false
             },
             "actions" : {
-              "headerButton" : [ ]
+              "headerButton" : [ {
+                "name" : "Test",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "widgetContext.WidgetComparisonSettings.comparisonEnabled=1;",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "ad7a9457-2649-ecfe-45da-a7deeaa1f9af"
+              } ]
             },
             "pageSize" : 1024,
             "margin" : ""
@@ -4121,12 +4130,16 @@
         "hideAggregation" : false,
         "hideAggInterval" : false,
         "hideTimezone" : false,
-        "selectedTab" : 0,
-        "realtime" : {
-          "realtimeType" : 0,
+        "selectedTab" : 1,
+        "history" : {
+          "historyType" : 0,
           "timewindowMs" : 604800000,
-          "quickInterval" : "CURRENT_DAY",
-          "interval" : 1800000
+          "interval" : 1800000,
+          "fixedTimewindow" : {
+            "startTimeMs" : 1664694711999,
+            "endTimeMs" : 1664781111999
+          },
+          "quickInterval" : "CURRENT_DAY"
         },
         "aggregation" : {
           "type" : "AVG",

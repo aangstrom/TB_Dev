@@ -3294,13 +3294,14 @@
               "enableStickyHeader" : true,
               "enableStickyAction" : false,
               "reserveSpaceForHiddenAction" : "true",
-              "displayDetails" : true,
-              "allowAcknowledgment" : true,
-              "allowClear" : true,
+              "displayDetails" : false,
+              "allowAcknowledgment" : false,
+              "allowClear" : false,
               "displayPagination" : true,
               "defaultPageSize" : 20,
               "defaultSortOrder" : "-Orario",
-              "useRowStyleFunction" : false
+              "useRowStyleFunction" : true,
+              "rowStyleFunction" : "if (alarm.severity==\"critico\") {\n    \"background-color\"=\"red\"\n}"
             },
             "title" : "Allarmi",
             "dropShadow" : true,
@@ -3344,10 +3345,10 @@
                 "label" : "Gravità",
                 "color" : "#ffc107",
                 "settings" : {
+                  "columnWidth" : "0px",
                   "useCellStyleFunction" : false,
                   "useCellContentFunction" : false,
-                  "columnWidth" : "0px",
-                  "defaultColumnVisibility" : "visible",
+                  "defaultColumnVisibility" : "hidden",
                   "columnSelectionToDisplay" : "enabled",
                   "columnExportOption" : "onlyVisible"
                 },

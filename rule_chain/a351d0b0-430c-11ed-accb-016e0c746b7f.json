@@ -80,7 +80,7 @@
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 5,
-        "jsScript" : "var temperature = 18 + Math.random() * (32 - 18);\ntemperature = Math.round( temperature * 100 ) / 100;\nvar humidity = 10 + Math.random() * (90 - 10);\nhumidity = Math.round( humidity * 100 ) / 100;\nvar sound = 10 + Math.random() * (90 - 10);\nsound = Math.round( sound * 100 ) / 100;\nvar msg = { \n            temperature: temperature,\n            humidity: humidity\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
+        "jsScript" : "var temperature = 18 + Math.random() * (32 - 18);\ntemperature = Math.round( temperature * 100 ) / 100;\nvar humidity = 10 + Math.random() * (90 - 10);\nhumidity = Math.round( humidity * 100 ) / 100;\nvar soundAvg = 10 + Math.random() * (90 - 10);\nsoundAvg = Math.round( soundAvg * 100 ) / 100;\nvar soundPeak = 30 + Math.random() * (90 - 10);\nsoundPeak = Math.round( soundPeak * 100 ) / 100;\nvar light = 10 + Math.random() * (500 - 20);\nlight = Math.round( light * 100 ) / 100;\nvar dev_latitude = 44.9030223\nvar dev_longitude = 11.6193007\nvar msg = { \n            temperature: temperature,\n            humidity: humidity,\n            soundAvg: soundAvg,\n            soundPeak: soundPeak,\n            light: light,\n            dev_latitude: dev_latitude,\n            dev_longitude: dev_longitude\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
         "originatorId" : "edae6010-430c-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },

@@ -2027,7 +2027,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if (value==true){\n    return \"Temperatura: attivata\";\n}else{\n    return \"Temperatura: disattivata\";\n}"
+                "postFuncBody" : "if (value=true){\n    return \"Temperatura: attivata\";\n}else{\n    return \"Temperatura: disattivata\";\n}"
               }, {
                 "name" : "temperatureAlarmThreshold",
                 "type" : "attribute",
@@ -2051,7 +2051,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if (value==true){\n    return \"Soglia umidità attivata\";\n}else{\n    return \"Soglia umidità disattivata\";\n}"
+                "postFuncBody" : "if (value=true){\n    return \"Soglia umidità attivata\";\n}else{\n    return \"Soglia umidità disattivata\";\n}"
               }, {
                 "name" : "humidityAlarmThreshold",
                 "type" : "attribute",
@@ -2063,7 +2063,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if (value!=null){\n    return \"Soglia impostata: \"+value+\"%\";\n}"
+                "postFuncBody" : "if (value>0){\n    return \"Soglia impostata: \"+value+\"%\";\n}\nelse {return value;}"
               }, {
                 "name" : "soundAlarmFlag",
                 "type" : "attribute",
@@ -2075,7 +2075,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if (value==true){\n    return \"Soglia suono attivata\";\n}else{\n    return \"Soglia suono disattivata\";\n}"
+                "postFuncBody" : "if (value=true){\n    return \"Soglia suono attivata\";\n}else{\n    return \"Soglia suono disattivata\";\n}"
               }, {
                 "name" : "soundAlarmThreshold",
                 "type" : "attribute",

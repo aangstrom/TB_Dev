@@ -19,9 +19,55 @@
     "type" : "CORE"
   },
   "metaData" : {
-    "connections" : null,
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "Success"
+    } ],
     "firstNodeIndex" : null,
-    "nodes" : [ ],
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 227,
+        "layoutY" : 273
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 5,
+        "jsScript" : "var temperature = 18 + Math.random() * (32 - 18);\ntemperature = Math.round( temperature * 100 ) / 100;\nvar humidity = 10 + Math.random() * (90 - 10);\nhumidity = Math.round( humidity * 100 ) / 100;\nvar sound = 10 + Math.random() * (90 - 10);\nsound = Math.round( sound * 100 ) / 100;\nvar msg = { \n            temperature: temperature,\n            humidity: humidity\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
+        "originatorId" : null,
+        "originatorType" : null
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a35a0e10-430c-11ed-accb-016e0c746b7f"
+      },
+      "name" : "Generator",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 746,
+        "layoutY" : 274
+      },
+      "configuration" : {
+        "ruleChainId" : "7c8360c0-01d5-11ed-8014-35af6f7ed6b6"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a35a3520-430c-11ed-accb-016e0c746b7f"
+      },
+      "name" : "Root Rule Chain",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    } ],
     "ruleChainConnections" : null
   },
   "attributes" : {

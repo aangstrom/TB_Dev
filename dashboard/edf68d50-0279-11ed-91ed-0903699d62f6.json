@@ -1784,7 +1784,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "return value ? \"Soglia impostata: \"+value+\"db\" : \"Soglia NON impostata\";"
+                "postFuncBody" : "return value ? \"Soglia impostata: \"+value+\"°C\" : \"Soglia NON impostata\";"
               }, {
                 "name" : "humidityAlarmFlag",
                 "type" : "attribute",
@@ -1808,7 +1808,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "return value ? \"Soglia impostata: \"+value+\"db\" : \"Soglia NON impostata\";"
+                "postFuncBody" : "return value ? \"Soglia impostata: \"+value+\"°C\" : \"Soglia NON impostata\";"
               }, {
                 "name" : "soundAlarmFlag",
                 "type" : "attribute",
@@ -1820,7 +1820,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if (value==\"true\"){\n    return \"Soglia suono attivata\";\n}else{\n    return \"Soglia suono disattivata\";\n}"
+                "postFuncBody" : "if (value===true){\n    return \"Soglia suono attivata\";\n}else{\n    return \"Soglia suono disattivata\";\n}"
               }, {
                 "name" : "soundAlarmThreshold",
                 "type" : "attribute",
@@ -1832,7 +1832,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "return value ? \"Soglia impostata: \"+value+\"db\" : \"Soglia NON impostata\";"
+                "postFuncBody" : "if (value!=null){\n    return \"Soglia impostata: \"+value+\"db\";\n}\nelse{\n    return \"Soglia NON impostata\";\n}"
               } ]
             } ],
             "timewindow" : {
@@ -1845,7 +1845,7 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "cardHtml" : "<div class='card'>\n    <h3>Allarmi</h3>\n    <h2>${temperatureAlarmFlag}</h2>\n    <h2>${temperatureAlarmThreshold}</h2>\n    <h2>${humidityAlarmFlag}</h2>\n    <h2>${humidityAlarmThreshold}</h2>\n    <h2>${soundAlarmFlag}</h2>\n    <h2>${soundAlarmThreshold}</h2>\n</div>",
+              "cardHtml" : "<div class='card'>\n    <h3>Allarmi</h3>\n    <h2>${temperatureAlarmFlag}</h2>\n    <h2>${temperatureAlarmThreshold}</h2>\n    <h2>${humidityAlarmFlag}</h2>\n    <h2>${humidutyAlarmThreshold}</h2>\n    <h2>${soundAlarmFlag}</h2>\n    <h2>${soundAlarmThreshold}</h2>\n</div>",
               "cardCss" : ".card {\n    width: 100%;\n    height: 100%;\n    color: black;\n    display: flex;\n    text-align: center;\n    flex-direction: column;\n    justify-content: space-around;\n}\nh3 {\n    font-size: 30px;\n    font-weight: bold;\n}\nh2 {\n    font-size: 15px;\n    line-height: 20px;\n}"
             },
             "title" : "New HTML Value Card",
@@ -3294,7 +3294,7 @@
                   "sizeX" : 22,
                   "sizeY" : 11,
                   "row" : 0,
-                  "col" : 2
+                  "col" : 3
                 }
               },
               "gridSettings" : {
@@ -3622,14 +3622,14 @@
         "hideTimezone" : false,
         "selectedTab" : 1,
         "history" : {
-          "historyType" : 0,
-          "timewindowMs" : 604800000,
-          "interval" : 1800000,
+          "historyType" : 1,
+          "timewindowMs" : 2592000000,
+          "interval" : 18000000,
           "fixedTimewindow" : {
-            "startTimeMs" : 1664694711999,
-            "endTimeMs" : 1664781111999
+            "startTimeMs" : 1656663840000,
+            "endTimeMs" : 1664785468065
           },
-          "quickInterval" : "CURRENT_DAY"
+          "quickInterval" : "CURRENT_YEAR_SO_FAR"
         },
         "aggregation" : {
           "type" : "AVG",

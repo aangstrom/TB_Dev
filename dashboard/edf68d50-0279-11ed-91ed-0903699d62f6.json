@@ -1772,7 +1772,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "return value===true ? \"Temperatura: attivata\" : \"Temperatura: disattivata\";\n"
+                "postFuncBody" : "if(value=true){\n    return \"Temperatura: attivata\";\n}else{\n    return \"Temperatura: disattivata\";\n}"
               }, {
                 "name" : "temperatureAlarmThreshold",
                 "type" : "attribute",
@@ -1796,7 +1796,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "return value===true ? \"Temperatura: attivata\" : \"Temperatura: disattivata\";\n"
+                "postFuncBody" : "if(value=true){\n    return \"Temperatura: attivata\";\n}else{\n    return \"Temperatura: disattivata\";\n}"
               }, {
                 "name" : "humidityAlarmThreshold",
                 "type" : "attribute",

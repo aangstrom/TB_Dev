@@ -1784,7 +1784,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "return value ? \"Soglia impostata: \"+value+\"°C\" : \"Soglia NON impostata\";"
+                "postFuncBody" : "if (value!=='undefined'){\n    return \"Soglia impostata: \"+value+\"db\";\n}\nelse{\n    return \"Soglia NON impostata\";\n}"
               }, {
                 "name" : "humidityAlarmFlag",
                 "type" : "attribute",
@@ -1808,7 +1808,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "return value ? \"Soglia impostata: \"+value+\"°C\" : \"Soglia NON impostata\";"
+                "postFuncBody" : "if (value!=='undefined'){\n    return \"Soglia impostata: \"+value+\"db\";\n}\nelse{\n    return \"Soglia NON impostata\";\n}"
               }, {
                 "name" : "soundAlarmFlag",
                 "type" : "attribute",
@@ -1820,7 +1820,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if (value===true){\n    return \"Soglia suono attivata\";\n}else{\n    return \"Soglia suono disattivata\";\n}"
+                "postFuncBody" : "if (value==\"true\"){\n    return \"Soglia suono attivata\";\n}else{\n    return \"Soglia suono disattivata\";\n}"
               }, {
                 "name" : "soundAlarmThreshold",
                 "type" : "attribute",
@@ -1832,7 +1832,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if (value!=null){\n    return \"Soglia impostata: \"+value+\"db\";\n}\nelse{\n    return \"Soglia NON impostata\";\n}"
+                "postFuncBody" : "if (value!=='undefined'){\n    return \"Soglia impostata: \"+value+\"db\";\n}\nelse{\n    return \"Soglia NON impostata\";\n}"
               } ]
             } ],
             "timewindow" : {

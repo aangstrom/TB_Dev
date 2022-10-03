@@ -3290,7 +3290,7 @@
               "defaultPageSize" : 20,
               "defaultSortOrder" : "-Orario",
               "useRowStyleFunction" : true,
-              "rowStyleFunction" : "if (alarm.severity==\"critico\") {\n    \"background-color\"=\"red\"\n}"
+              "rowStyleFunction" : "var severity = alarm.severity;\r\nvar color = '#fff';\r\nswitch (severity) {\r\n  case 'CRITICAL':\r\n    color = 'red';\r\n    break;\r\n  case 'MAJOR':\r\n    color = 'orange';\r\n    break;\r\n  case 'MINOR':\r\n    color = '#ffca3d';\r\n    break;\r\n  case 'WARNING':\r\n    color = '#abab00';\r\n    break;\r\n  case 'INDETERMINATE':\r\n    color = 'green';\r\n    break;\r\n}\r\nreturn {\r\n  backgroundColor: color\r\n};\r\n"
             },
             "title" : "Prescrizioni",
             "dropShadow" : true,
@@ -3327,25 +3327,6 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "severity",
-                "type" : "alarm",
-                "label" : "Gravità",
-                "color" : "#ffc107",
-                "settings" : {
-                  "columnWidth" : "0px",
-                  "useCellStyleFunction" : false,
-                  "useCellContentFunction" : false,
-                  "defaultColumnVisibility" : "hidden",
-                  "columnSelectionToDisplay" : "enabled",
-                  "columnExportOption" : "onlyVisible"
-                },
-                "_hash" : 0.09927019860088193,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
                 "name" : "details.data",
                 "type" : "alarm",
                 "label" : "Prescrizioni",
@@ -3372,7 +3353,7 @@
             "displayTimewindow" : true,
             "actions" : { },
             "alarmStatusList" : [ "ACTIVE" ],
-            "alarmSeverityList" : [ ],
+            "alarmSeverityList" : [ "CRITICAL", "MAJOR", "MINOR", "WARNING", "INDETERMINATE" ],
             "alarmTypeList" : [ ],
             "searchPropagatedAlarms" : false,
             "datasources" : [ ],

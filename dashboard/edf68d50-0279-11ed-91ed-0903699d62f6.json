@@ -4031,7 +4031,7 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "1fed969b-d310-c079-bbc0-4bddae325b77",
+              "entityAliasId" : "8656bdce-ff9c-61ca-e8e6-23ce2576a60f",
               "filterId" : null,
               "dataKeys" : [ ]
             } ],
@@ -4081,8 +4081,8 @@
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
                 "type" : "updateDashboardState",
-                "targetDashboardStateId" : "home",
-                "setEntityId" : false,
+                "targetDashboardStateId" : "trend",
+                "setEntityId" : true,
                 "stateEntityParamName" : null,
                 "openRightLayout" : false,
                 "openInSeparateDialog" : false,
@@ -4195,6 +4195,291 @@
           "row" : 0,
           "col" : 0,
           "id" : "00cfa507-71c4-c982-4b7d-c5d9074b27d8"
+        },
+        "0deec91a-7df2-d070-65c2-ab3889af82c2" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "simple_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "8656bdce-ff9c-61ca-e8e6-23ce2576a60f",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "active",
+                "type" : "timeseries",
+                "label" : "Stato",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.6848189664055548,
+                "units" : "",
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value=='true') {\n    return '<div class=\"card\" style=\"background-color:#73bf69;\">Acceso</div>';\n}else{\n    return '<div class=\"card\" style=\"background-color:red;\">Spento</div>';\n}"
+              } ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#dcda06",
+            "color" : "rgba(255, 255, 255, 0.87)",
+            "padding" : "16px",
+            "settings" : {
+              "labelPosition" : "top"
+            },
+            "title" : "New Simple card",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "units" : "°C",
+            "decimals" : 0,
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "widgetStyle" : {
+              "border-radius" : "25px"
+            },
+            "actions" : { },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "margin" : "",
+            "pageSize" : 1024
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "0deec91a-7df2-d070-65c2-ab3889af82c2"
+        },
+        "3c8407b0-8181-171b-b975-4bf5db859b24" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "1fed969b-d310-c079-bbc0-4bddae325b77",
+              "filterId" : null,
+              "dataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgba(0,0,0,0.6)",
+            "color" : "#18ff00",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <i id=\"home\" class=\"fa fa-home\"><h1>Home</h1></i>\n        </div>\n        <div class='column'>\n            <i id=\"alarm\" class=\"fa fa-bell\"><h1>Alarms</h1></i>\n        </div>\n    </div>\n</div>",
+              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n}\n\n.card .content {\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   height: 100%;\n}\n\n.card .content .column {\n   display: flex;\n   flex-direction: row;\n   justify-content: space-around;\n   \n}\n\n.card h1 {\n    text-transform: uppercase;\n    font-size: 20px;\n    font-weight: bold;\n    margin: 0;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n\n.fa{\n    font-size: 30px;\n    text-align: center;\n    padding-bottom: 0px;\n    display: flex;\n    flex-direction: row;\n}\n.fa:hover{\n    opacity: 0.5;\n    cursor: pointer;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : {
+              "border" : "0px",
+              "border-radius" : "0px 0px 25px 25px"
+            },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "alarm",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "updateDashboardState",
+                "targetDashboardStateId" : "alarm",
+                "setEntityId" : false,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "df00be63-74e0-b85d-31b7-b54cd3dd7dbf"
+              }, {
+                "name" : "home",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "updateDashboardState",
+                "targetDashboardStateId" : "home",
+                "setEntityId" : false,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "dc8c6d90-77da-0704-0a96-7fa5a4d77a07"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "margin" : "0px"
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "3c8407b0-8181-171b-b975-4bf5db859b24"
+        },
+        "74d198ab-12ea-1a50-8ae3-2a17e684109c" : {
+          "isSystemType" : true,
+          "bundleAlias" : "alarm_widgets",
+          "typeAlias" : "alarms_table",
+          "type" : "alarm",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 10.5,
+          "sizeY" : 6.5,
+          "config" : {
+            "timewindow" : {
+              "hideInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 1,
+              "history" : {
+                "historyType" : 0,
+                "timewindowMs" : 2592000000,
+                "interval" : 1000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1664708808872,
+                  "endTimeMs" : 1664795208872
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#ffffff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "4px",
+            "settings" : {
+              "alarmsTitle" : "Prescrizioni",
+              "enableSelection" : true,
+              "enableSearch" : false,
+              "enableSelectColumnDisplay" : false,
+              "enableFilter" : true,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : false,
+              "reserveSpaceForHiddenAction" : "true",
+              "displayDetails" : false,
+              "allowAcknowledgment" : false,
+              "allowClear" : false,
+              "displayPagination" : true,
+              "defaultPageSize" : 20,
+              "defaultSortOrder" : "-createdTime",
+              "useRowStyleFunction" : true,
+              "rowStyleFunction" : "var severity = alarm.severity;\r\nvar color = '#fff';\r\nswitch (severity) {\r\n  case 'CRITICAL':\r\n    color = 'red';\r\n    break;\r\n  case 'MAJOR':\r\n    color = 'orange';\r\n    break;\r\n  case 'MINOR':\r\n    color = '#ffca3d';\r\n    break;\r\n  case 'WARNING':\r\n    color = '#abab00';\r\n    break;\r\n  case 'INDETERMINATE':\r\n    color = 'green';\r\n    break;\r\n}\r\nreturn {\r\n  backgroundColor: color\r\n};\r\n"
+            },
+            "title" : "Prescrizioni",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "alarmSource" : {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "62fac1ba-42a3-6dc7-c445-e42adcce1233",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "createdTime",
+                "type" : "alarm",
+                "label" : "Orario di prescrizione",
+                "color" : "#f44336",
+                "settings" : {
+                  "columnWidth" : "5px",
+                  "useCellStyleFunction" : false,
+                  "useCellContentFunction" : false,
+                  "defaultColumnVisibility" : "visible",
+                  "columnSelectionToDisplay" : "enabled",
+                  "columnExportOption" : "onlyVisible"
+                },
+                "_hash" : 0.4023677890855113,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "details.data",
+                "type" : "alarm",
+                "label" : "Prescrizioni",
+                "color" : "#9c27b0",
+                "settings" : {
+                  "columnWidth" : "0px",
+                  "useCellStyleFunction" : false,
+                  "useCellContentFunction" : false,
+                  "defaultColumnVisibility" : "visible",
+                  "columnSelectionToDisplay" : "enabled",
+                  "columnExportOption" : "onlyVisible"
+                },
+                "_hash" : 0.11484345247480676,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ]
+            },
+            "alarmSearchStatus" : "ANY",
+            "alarmsPollingInterval" : 5,
+            "showTitleIcon" : false,
+            "titleIcon" : "more_horiz",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "widgetStyle" : {
+              "border-radius" : "25px"
+            },
+            "displayTimewindow" : true,
+            "actions" : { },
+            "alarmStatusList" : [ "ACTIVE", "CLEARED", "ACK", "UNACK" ],
+            "alarmSeverityList" : [ "CRITICAL", "MAJOR", "MINOR", "WARNING", "INDETERMINATE" ],
+            "alarmTypeList" : [ ],
+            "searchPropagatedAlarms" : false,
+            "datasources" : [ ],
+            "enableDataExport" : true,
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "pageSize" : 1024
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "74d198ab-12ea-1a50-8ae3-2a17e684109c"
         }
       },
       "states" : {
@@ -4309,7 +4594,7 @@
                   "col" : 0
                 },
                 "53980fd7-c594-b235-2e03-ba85ccae1aed" : {
-                  "sizeX" : 10,
+                  "sizeX" : 9,
                   "sizeY" : 11,
                   "row" : 0,
                   "col" : 15
@@ -4318,7 +4603,7 @@
               "gridSettings" : {
                 "backgroundColor" : "#eeeeee",
                 "columns" : 24,
-                "margin" : 20,
+                "margin" : 10,
                 "backgroundSizeMode" : "100%",
                 "autoFillHeight" : true,
                 "backgroundImageUrl" : null,
@@ -4359,10 +4644,10 @@
                   "col" : 35
                 },
                 "0393a65a-02cd-d91e-aba6-f1bc2fc969a2" : {
-                  "sizeX" : 12,
+                  "sizeX" : 6,
                   "sizeY" : 5,
                   "row" : 8,
-                  "col" : 7
+                  "col" : 13
                 },
                 "4f8f67f2-c334-c801-7ea3-e77788a6a72d" : {
                   "sizeX" : 6,
@@ -4411,12 +4696,18 @@
                   "sizeY" : 2,
                   "row" : 2,
                   "col" : 0
+                },
+                "0deec91a-7df2-d070-65c2-ab3889af82c2" : {
+                  "sizeX" : 6,
+                  "sizeY" : 4,
+                  "row" : 8,
+                  "col" : 7
                 }
               },
               "gridSettings" : {
                 "backgroundColor" : "#eeeeee",
                 "columns" : 51,
-                "margin" : 25,
+                "margin" : 10,
                 "backgroundSizeMode" : "100%",
                 "autoFillHeight" : true,
                 "backgroundImageUrl" : null,
@@ -4486,7 +4777,7 @@
               "gridSettings" : {
                 "backgroundColor" : "#eeeeee",
                 "columns" : 48,
-                "margin" : 20,
+                "margin" : 10,
                 "backgroundSizeMode" : "100%",
                 "autoFillHeight" : true,
                 "backgroundImageUrl" : null,
@@ -4550,7 +4841,7 @@
               "gridSettings" : {
                 "backgroundColor" : "#eeeeee",
                 "columns" : 24,
-                "margin" : 20,
+                "margin" : 10,
                 "backgroundSizeMode" : "100%",
                 "autoFillHeight" : true,
                 "backgroundImageUrl" : null,
@@ -4602,6 +4893,34 @@
                   "sizeX" : 24,
                   "sizeY" : 11,
                   "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        },
+        "prescrizioni_globale" : {
+          "name" : "Prescrizioni Globale",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "3c8407b0-8181-171b-b975-4bf5db859b24" : {
+                  "sizeX" : 24,
+                  "sizeY" : 1,
+                  "row" : 0,
+                  "col" : 0
+                },
+                "74d198ab-12ea-1a50-8ae3-2a17e684109c" : {
+                  "sizeX" : 24,
+                  "sizeY" : 11,
+                  "row" : 1,
                   "col" : 0
                 }
               },

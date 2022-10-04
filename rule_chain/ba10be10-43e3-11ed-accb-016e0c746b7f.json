@@ -82,13 +82,21 @@
       "fromIndex" : 12,
       "toIndex" : 9,
       "type" : "Success"
+    }, {
+      "fromIndex" : 13,
+      "toIndex" : 9,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 13,
+      "toIndex" : 9,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 999,
-        "layoutY" : 271
+        "layoutX" : 1323,
+        "layoutY" : 260
       },
       "configuration" : {
         "defaultTTL" : 0
@@ -105,8 +113,8 @@
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 1000,
-        "layoutY" : 167
+        "layoutX" : 1324,
+        "layoutY" : 156
       },
       "configuration" : {
         "scope" : "CLIENT_SCOPE",
@@ -125,8 +133,8 @@
     }, {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 566,
-        "layoutY" : 302
+        "layoutX" : 890,
+        "layoutY" : 291
       },
       "configuration" : {
         "version" : 0
@@ -143,8 +151,8 @@
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 1000,
-        "layoutY" : 381
+        "layoutX" : 1324,
+        "layoutY" : 370
       },
       "configuration" : {
         "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
@@ -161,8 +169,8 @@
       "type" : "org.thingsboard.rule.engine.action.TbLogNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 1000,
-        "layoutY" : 494
+        "layoutX" : 1324,
+        "layoutY" : 483
       },
       "configuration" : {
         "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
@@ -180,8 +188,8 @@
     }, {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 1012,
-        "layoutY" : 666
+        "layoutX" : 1336,
+        "layoutY" : 655
       },
       "configuration" : {
         "timeoutInSeconds" : 60
@@ -198,8 +206,8 @@
       "type" : "org.thingsboard.rule.engine.rpc.TbSendRPCRequestNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 255,
-        "layoutY" : 301
+        "layoutX" : 579,
+        "layoutY" : 290
       },
       "configuration" : {
         "originatorTypes" : [ "ENTITY_GROUP" ]
@@ -216,8 +224,8 @@
       "type" : "org.thingsboard.rule.engine.filter.TbOriginatorTypeFilterNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 319,
-        "layoutY" : 109
+        "layoutX" : 643,
+        "layoutY" : 98
       },
       "configuration" : {
         "messageTypes" : [ "POST_ATTRIBUTES_REQUEST", "RPC_CALL_FROM_SERVER_TO_DEVICE" ]
@@ -234,8 +242,8 @@
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeFilterNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 627,
-        "layoutY" : 108
+        "layoutX" : 951,
+        "layoutY" : 97
       },
       "configuration" : {
         "entityGroupId" : null,
@@ -254,8 +262,8 @@
     }, {
       "additionalInfo" : {
         "description" : "Process incoming messages from devices with the alarm rules defined in the device profile. Dispatch all incoming messages with \"Success\" relation type.",
-        "layoutX" : 89,
-        "layoutY" : 401
+        "layoutX" : 327,
+        "layoutY" : 340
       },
       "configuration" : {
         "persistAlarmRulesState" : false,
@@ -274,8 +282,8 @@
     }, {
       "additionalInfo" : {
         "description" : "Forwards message to the \"Generate Report\" rule chain",
-        "layoutX" : 1014,
-        "layoutY" : 749
+        "layoutX" : 1338,
+        "layoutY" : 738
       },
       "configuration" : {
         "ruleChainId" : "7c655170-01d5-11ed-8014-35af6f7ed6b6"
@@ -293,8 +301,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1010,
-        "layoutY" : 585
+        "layoutX" : 1334,
+        "layoutY" : 574
       },
       "configuration" : {
         "ruleChainId" : "fa3689a0-3f5d-11ed-accb-016e0c746b7f"
@@ -312,8 +320,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 0,
-        "layoutY" : 555
+        "layoutX" : 23,
+        "layoutY" : 276
       },
       "configuration" : {
         "msgCount" : 0,
@@ -330,6 +338,29 @@
         "id" : "ba192280-43e3-11ed-accb-016e0c746b7f"
       },
       "name" : "Generator",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 7,
+        "layoutY" : 427
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 30,
+        "jsScript" : "var temperature = 18 + Math.random() * (32 - 18);\ntemperature = Math.round( temperature * 100 ) / 100;\nvar humidity = 10 + Math.random() * (90 - 10);\nhumidity = Math.round( humidity * 100 ) / 100;\nvar soundAvg = 10 + Math.random() * (90 - 10);\nsoundAvg = Math.round( soundAvg * 100 ) / 100;\nvar soundPeak = 30 + Math.random() * (90 - 10);\nsoundPeak = Math.round( soundPeak * 100 ) / 100;\nvar light = 10 + Math.random() * (500 - 20);\nlight = Math.round( light * 100 ) / 100;\nvar user_latitude = 44.9034748;\nvar user_longitude = 11.6190913;\nvar vdd = 3994;\nvar msg = { \n            temperature: temperature,\n            humidity: humidity,\n            soundAvg: soundAvg,\n            soundPeak: soundPeak,\n            light: light,\n            user_latitude: user_latitude,\n            user_longitude: user_longitude,\n            vdd: vdd,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
+        "originatorId" : "edae6010-430c-11ed-accb-016e0c746b7f",
+        "originatorType" : "DEVICE"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ebbef170-43e3-11ed-accb-016e0c746b7f"
+      },
+      "name" : "Generator 2",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     } ],

@@ -513,9 +513,7 @@
                   "showSeparateAxis" : false,
                   "axisPosition" : "left",
                   "comparisonSettings" : {
-                    "showValuesForComparison" : true,
-                    "comparisonValuesLabel" : "",
-                    "color" : ""
+                    "showValuesForComparison" : false
                   },
                   "thresholds" : [ {
                     "thresholdValueSource" : "entityAttribute",
@@ -548,9 +546,7 @@
                   "showSeparateAxis" : false,
                   "axisPosition" : "left",
                   "comparisonSettings" : {
-                    "showValuesForComparison" : true,
-                    "comparisonValuesLabel" : "",
-                    "color" : ""
+                    "showValuesForComparison" : false
                   },
                   "thresholds" : [ {
                     "thresholdValueSource" : "entityAttribute",
@@ -3701,7 +3697,7 @@
               "allowClear" : false,
               "displayPagination" : true,
               "defaultPageSize" : 20,
-              "defaultSortOrder" : "-Orario",
+              "defaultSortOrder" : "-createdTime",
               "useRowStyleFunction" : true,
               "rowStyleFunction" : "var severity = alarm.severity;\r\nvar color = '#fff';\r\nswitch (severity) {\r\n  case 'CRITICAL':\r\n    color = 'red';\r\n    break;\r\n  case 'MAJOR':\r\n    color = 'orange';\r\n    break;\r\n  case 'MINOR':\r\n    color = '#ffca3d';\r\n    break;\r\n  case 'WARNING':\r\n    color = '#abab00';\r\n    break;\r\n  case 'INDETERMINATE':\r\n    color = 'green';\r\n    break;\r\n}\r\nreturn {\r\n  backgroundColor: color\r\n};\r\n"
             },
@@ -4290,11 +4286,11 @@
         "selectedTab" : 1,
         "history" : {
           "historyType" : 0,
-          "timewindowMs" : 604800000,
-          "interval" : 1800000,
+          "timewindowMs" : 259200000,
+          "interval" : 600000,
           "fixedTimewindow" : {
-            "startTimeMs" : 1664786279069,
-            "endTimeMs" : 1664872679069
+            "startTimeMs" : 1656663840000,
+            "endTimeMs" : 1664785468065
           },
           "quickInterval" : "CURRENT_DAY"
         },

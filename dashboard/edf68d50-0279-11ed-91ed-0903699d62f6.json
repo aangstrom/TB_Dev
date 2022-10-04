@@ -533,7 +533,19 @@
                     "thresholdValueSource" : "entityAttribute",
                     "thresholdEntityAlias" : "Entità_dashboard",
                     "thresholdAttribute" : "temperatureAlarmThreshold",
-                    "lineWidth" : 4,
+                    "lineWidth" : 3,
+                    "color" : "#ff0000"
+                  }, {
+                    "thresholdValueSource" : "entityAttribute",
+                    "thresholdEntityAlias" : "Entità_dashboard",
+                    "thresholdAttribute" : "temperatureAlarmThresholdMedium",
+                    "lineWidth" : 2,
+                    "color" : "#ff0000"
+                  }, {
+                    "thresholdValueSource" : "entityAttribute",
+                    "thresholdEntityAlias" : "Entità_dashboard",
+                    "thresholdAttribute" : "temperatureAlarmThresholdLow",
+                    "lineWidth" : 1,
                     "color" : "#ff0000"
                   } ]
                 },
@@ -568,7 +580,19 @@
                     "thresholdValueSource" : "entityAttribute",
                     "thresholdEntityAlias" : "Entità_dashboard",
                     "thresholdAttribute" : "HumidityAlarmThreshold",
-                    "lineWidth" : 4,
+                    "lineWidth" : 3,
+                    "color" : "#2a00ff"
+                  }, {
+                    "thresholdValueSource" : "entityAttribute",
+                    "thresholdEntityAlias" : "Entità_dashboard",
+                    "thresholdAttribute" : "humidityAlarmThresholdMedium",
+                    "lineWidth" : 2,
+                    "color" : "#2a00ff"
+                  }, {
+                    "thresholdValueSource" : "entityAttribute",
+                    "thresholdEntityAlias" : "Entità_dashboard",
+                    "thresholdAttribute" : "humidityAlarmThresholdLow",
+                    "lineWidth" : 1,
                     "color" : "#2a00ff"
                   } ]
                 },
@@ -623,10 +647,11 @@
               },
               "shadowSize" : 4,
               "smoothLines" : true,
-              "comparisonEnabled" : false,
+              "comparisonEnabled" : true,
+              "timeForComparison" : "previousInterval",
               "xaxisSecond" : {
                 "axisPosition" : "top",
-                "title" : "Temperatura_ieri",
+                "title" : "Periodo precedente",
                 "showLabels" : true
               },
               "customLegendEnabled" : false
@@ -855,7 +880,19 @@
                     "thresholdValueSource" : "entityAttribute",
                     "thresholdEntityAlias" : "Entità_dashboard",
                     "thresholdAttribute" : "lightAlarmThreshold",
-                    "lineWidth" : 4,
+                    "lineWidth" : 3,
+                    "color" : "#ffa500"
+                  }, {
+                    "thresholdValueSource" : "entityAttribute",
+                    "thresholdEntityAlias" : "Entità_dashboard",
+                    "thresholdAttribute" : "lightAlarmThresholdMedium",
+                    "lineWidth" : 2,
+                    "color" : "#ffa500"
+                  }, {
+                    "thresholdValueSource" : "entityAttribute",
+                    "thresholdEntityAlias" : "Entità_dashboard",
+                    "thresholdAttribute" : "lightAlarmThresholdLow",
+                    "lineWidth" : 1,
                     "color" : "#ffa500"
                   } ]
                 },
@@ -910,10 +947,11 @@
               },
               "shadowSize" : 4,
               "smoothLines" : true,
-              "comparisonEnabled" : false,
+              "comparisonEnabled" : true,
+              "timeForComparison" : "previousInterval",
               "xaxisSecond" : {
                 "axisPosition" : "top",
-                "title" : "Luminosità di ieri",
+                "title" : "Periodo precedente",
                 "showLabels" : true
               },
               "customLegendEnabled" : false
@@ -989,25 +1027,22 @@
                 "label" : "Suono",
                 "color" : "#53f321",
                 "settings" : {
-                  "excludeFromStacking" : false,
                   "hideDataByDefault" : false,
                   "disableDataHiding" : false,
                   "removeFromLegend" : false,
+                  "excludeFromStacking" : false,
                   "showLines" : true,
+                  "lineWidth" : 1,
                   "fillLines" : false,
                   "showPoints" : false,
-                  "showPointShape" : "circle",
-                  "pointShapeFormatter" : "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
-                  "showPointsLineWidth" : 5,
-                  "showPointsRadius" : 3,
                   "showSeparateAxis" : false,
                   "axisPosition" : "left",
-                  "thresholds" : [ {
-                    "thresholdValueSource" : "predefinedValue"
-                  } ],
                   "comparisonSettings" : {
-                    "showValuesForComparison" : true
-                  }
+                    "showValuesForComparison" : true,
+                    "comparisonValuesLabel" : "",
+                    "color" : ""
+                  },
+                  "thresholds" : [ ]
                 },
                 "_hash" : 0.9832161460889672,
                 "units" : "dB",
@@ -1040,8 +1075,20 @@
                     "thresholdValueSource" : "entityAttribute",
                     "thresholdEntityAlias" : "Entità_dashboard",
                     "thresholdAttribute" : "soundAlarmThreshold",
-                    "lineWidth" : 4,
-                    "color" : "#038700"
+                    "lineWidth" : 3,
+                    "color" : "#4caf50"
+                  }, {
+                    "thresholdValueSource" : "entityAttribute",
+                    "thresholdEntityAlias" : "Entità_dashboard",
+                    "thresholdAttribute" : "soundAlarmThresholdMedium",
+                    "lineWidth" : 2,
+                    "color" : "#4caf50"
+                  }, {
+                    "thresholdValueSource" : "entityAttribute",
+                    "thresholdEntityAlias" : "Entità_dashboard",
+                    "thresholdAttribute" : "soundAlarmThresholdLow",
+                    "lineWidth" : 1,
+                    "color" : "#4caf50"
                   } ]
                 },
                 "_hash" : 0.27412442439041285,
@@ -1095,10 +1142,11 @@
               },
               "shadowSize" : 4,
               "smoothLines" : true,
-              "comparisonEnabled" : false,
+              "comparisonEnabled" : true,
+              "timeForComparison" : "previousInterval",
               "xaxisSecond" : {
                 "axisPosition" : "top",
-                "title" : "Livello sonoro di ieri",
+                "title" : "Precedente intervallo",
                 "showLabels" : true
               },
               "customLegendEnabled" : false

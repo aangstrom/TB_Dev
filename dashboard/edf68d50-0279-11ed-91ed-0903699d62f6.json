@@ -31,20 +31,19 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "4px",
             "settings" : {
+              "entitiesTitle" : "Sensori",
               "enableSearch" : true,
-              "displayPagination" : true,
-              "displayEntityName" : true,
-              "displayEntityType" : false,
               "enableSelectColumnDisplay" : false,
               "enableStickyHeader" : true,
               "enableStickyAction" : true,
               "reserveSpaceForHiddenAction" : "true",
+              "displayEntityName" : false,
               "displayEntityLabel" : false,
-              "useRowStyleFunction" : false,
-              "entitiesTitle" : "Sensori",
-              "entityNameColumnTitle" : "Nome",
-              "defaultSortOrder" : "Active",
-              "defaultPageSize" : 20
+              "displayEntityType" : false,
+              "displayPagination" : true,
+              "defaultPageSize" : 20,
+              "defaultSortOrder" : "name",
+              "useRowStyleFunction" : false
             },
             "title" : "New Entities table",
             "dropShadow" : true,
@@ -62,6 +61,25 @@
               "entityAliasId" : "62fac1ba-42a3-6dc7-c445-e42adcce1233",
               "filterId" : null,
               "dataKeys" : [ {
+                "name" : "name",
+                "type" : "attribute",
+                "label" : "Nome",
+                "color" : "#3f51b5",
+                "settings" : {
+                  "columnWidth" : "70px",
+                  "useCellStyleFunction" : false,
+                  "useCellContentFunction" : false,
+                  "defaultColumnVisibility" : "visible",
+                  "columnSelectionToDisplay" : "enabled",
+                  "columnExportOption" : "onlyVisible"
+                },
+                "_hash" : 0.3100603834169571,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
                 "name" : "active",
                 "type" : "attribute",
                 "label" : "Stato",
@@ -339,6 +357,13 @@
                 "funcBody" : null,
                 "usePostProcessing" : true,
                 "postFuncBody" : "return value || \"\";"
+              }, {
+                "name" : "name",
+                "type" : "attribute",
+                "label" : "name",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.9140183993755868
               } ]
             } ],
             "timewindow" : {
@@ -382,12 +407,12 @@
               "draggableMarker" : false,
               "showLabel" : true,
               "useLabelFunction" : false,
-              "label" : "${entityName}",
+              "label" : "${name}",
               "showTooltip" : true,
               "showTooltipAction" : "hover",
               "autocloseTooltip" : true,
               "useTooltipFunction" : false,
-              "tooltipPattern" : "<b>${entityName}</b><br/><br/><b>Temperatura:</b> ${Temperatura:1} °C<br/><b>Umidità:</b> ${Umidità:0} %<br/><br/>",
+              "tooltipPattern" : "<b>${name}</b><br/><br/><b>Temperatura:</b> ${Temperatura:1} °C<br/><b>Umidità:</b> ${Umidità:0} %<br/><br/>",
               "tooltipOffsetX" : 0,
               "tooltipOffsetY" : -1,
               "color" : "#fe7569",
@@ -1591,6 +1616,13 @@
                 "funcBody" : null,
                 "usePostProcessing" : true,
                 "postFuncBody" : "return value || \"\";"
+              }, {
+                "name" : "name",
+                "type" : "attribute",
+                "label" : "name",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.18522888254653713
               } ]
             } ],
             "timewindow" : {
@@ -1634,7 +1666,7 @@
               "draggableMarker" : false,
               "showLabel" : true,
               "useLabelFunction" : true,
-              "labelFunction" : "var color;\nif(dsData[dsIndex].active !== \"true\"){\n    color = 'rgb(255, 0, 0)';\n} else {\n    color = 'rgb(39, 134, 34)';\n}\nreturn '<span style=\"border: solid ' + color + '; border-radius: 10px; color: ' + color + '; background-color: #fff; padding: 3px 5px; font-size: 14px\">' + \n           '${entityLabel}' + \n        '</span>'",
+              "labelFunction" : "var color;\nif(dsData[dsIndex].active !== \"true\"){\n    color = 'rgb(255, 0, 0)';\n} else {\n    color = 'rgb(39, 134, 34)';\n}\nreturn '<span style=\"border: solid ' + color + '; border-radius: 10px; color: ' + color + '; background-color: #fff; padding: 3px 5px; font-size: 14px\">' + \n           '${name}' + \n        '</span>'",
               "showTooltip" : false,
               "color" : "#fe7569",
               "useColorFunction" : false,
@@ -2402,21 +2434,12 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "originator",
-                "type" : "alarm",
+                "name" : "name",
+                "type" : "attribute",
                 "label" : "Sensore",
-                "color" : "#4caf50",
-                "settings" : {
-                  "useCellStyleFunction" : false,
-                  "cellStyleFunction" : "",
-                  "useCellContentFunction" : false,
-                  "cellContentFunction" : "",
-                  "columnWidth" : "0px",
-                  "defaultColumnVisibility" : "visible",
-                  "columnSelectionToDisplay" : "enabled",
-                  "columnExportOption" : "onlyVisible"
-                },
-                "_hash" : 0.2780007688856758,
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.34487527506896587,
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
@@ -2644,21 +2667,12 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "originator",
-                "type" : "alarm",
+                "name" : "name",
+                "type" : "attribute",
                 "label" : "Sensore",
-                "color" : "#4caf50",
-                "settings" : {
-                  "useCellStyleFunction" : false,
-                  "cellStyleFunction" : "",
-                  "useCellContentFunction" : false,
-                  "cellContentFunction" : "",
-                  "columnWidth" : "0px",
-                  "defaultColumnVisibility" : "visible",
-                  "columnSelectionToDisplay" : "enabled",
-                  "columnExportOption" : "onlyVisible"
-                },
-                "_hash" : 0.2780007688856758,
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.08985016225932263,
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,

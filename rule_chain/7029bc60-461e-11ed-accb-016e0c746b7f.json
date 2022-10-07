@@ -21,19 +21,15 @@
   "metaData" : {
     "connections" : [ {
       "fromIndex" : 0,
-      "toIndex" : 1,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 0,
-      "toIndex" : 1,
+      "toIndex" : 3,
       "type" : "Success"
     }, {
       "fromIndex" : 2,
       "toIndex" : 0,
-      "type" : "Failure"
+      "type" : "Success"
     }, {
-      "fromIndex" : 2,
-      "toIndex" : 0,
+      "fromIndex" : 3,
+      "toIndex" : 1,
       "type" : "Success"
     } ],
     "firstNodeIndex" : null,
@@ -121,6 +117,25 @@
       "name" : "5",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 475,
+        "layoutY" : 292
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {\n          \"outsideTemp\": metadata.status,\n          \"outsideMaxTemp\": metadata.statusCode,\n          \"outsideMinTemp\": metadata.statusReason,\n      };\n      \nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f5533710-4621-11ed-accb-016e0c746b7f"
+      },
+      "name" : "ttt",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

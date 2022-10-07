@@ -27,11 +27,15 @@
       "type" : "Success"
     }, {
       "fromIndex" : 4,
-      "toIndex" : 1,
+      "toIndex" : 7,
       "type" : "Success"
     }, {
       "fromIndex" : 5,
       "toIndex" : 0,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 2,
       "type" : "Success"
     } ],
     "firstNodeIndex" : null,
@@ -176,6 +180,44 @@
       "name" : "LogLog",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.action.TbLogNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 233,
+        "layoutY" : 608
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&units=standard&APPID=26fa7c2aeaf67dcf570e4a35551d0532",
+        "requestMethod" : "GET",
+        "useSimpleClientHttpFactory" : false,
+        "ignoreRequestBody" : false,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : { },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : false,
+        "maxQueueSize" : 0,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c1d233f0-462b-11ed-accb-016e0c746b7f"
+      },
+      "name" : "MyRestApi",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
     } ],
     "ruleChainConnections" : null
   },

@@ -17,9 +17,121 @@
     "type" : "CORE"
   },
   "metaData" : {
-    "connections" : null,
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 0,
+      "type" : "Success"
+    } ],
     "firstNodeIndex" : null,
-    "nodes" : [ ],
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 437,
+        "layoutY" : 244
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "http://87.4.175.44/cgi-bin/TemperCorrection.cgi?action=getCurrentHotColdSpot&channel=2",
+        "requestMethod" : "GET",
+        "useSimpleClientHttpFactory" : false,
+        "ignoreRequestBody" : null,
+        "enableProxy" : null,
+        "useSystemProxyProperties" : null,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : null,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : null,
+        "maxParallelRequestsCount" : null,
+        "headers" : { },
+        "useRedisQueueForMsgPersistence" : null,
+        "trimQueue" : null,
+        "maxQueueSize" : null,
+        "credentials" : {
+          "type" : "basic",
+          "username" : "admin",
+          "password" : "telecamere99!"
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e86b13b0-4621-11ed-accb-016e0c746b7f"
+      },
+      "name" : "GetCameraTemp",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 665,
+        "layoutY" : 395
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {\n    \"outsideTemp\": msg.main.temp,\n    \"outsideMaxTemp\": msg.main.temp_max,\n    \"outsideMinTemp\": msg.main.temp_min,\n    \"outsideHumidity\": msg.main.humidity,\n};\n\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e86b3ac0-4621-11ed-accb-016e0c746b7f"
+      },
+      "name" : "Fetch Data",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 48,
+        "layoutY" : 215
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 5,
+        "jsScript" : "return { msg: {}, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };",
+        "originatorId" : "0fc19fc0-0d91-11ed-91ed-0903699d62f6",
+        "originatorType" : "DEVICE"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e86b3ac1-4621-11ed-accb-016e0c746b7f"
+      },
+      "name" : "Generate requests",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 915,
+        "layoutY" : 573
+      },
+      "configuration" : {
+        "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e86b61d0-4621-11ed-accb-016e0c746b7f"
+      },
+      "name" : "ReadCameraLog",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.action.TbLogNode"
+    } ],
     "ruleChainConnections" : null
   },
   "attributes" : {

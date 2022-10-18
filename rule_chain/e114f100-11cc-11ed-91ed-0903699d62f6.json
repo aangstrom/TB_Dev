@@ -35,10 +35,6 @@
       "fromIndex" : 4,
       "toIndex" : 3,
       "type" : "Success"
-    }, {
-      "fromIndex" : 5,
-      "toIndex" : 6,
-      "type" : "Success"
     } ],
     "firstNodeIndex" : null,
     "nodes" : [ {
@@ -180,65 +176,6 @@
       "name" : "Saluti",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.mail.TbMsgToEmailNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 319,
-        "layoutY" : 204
-      },
-      "configuration" : {
-        "restEndpointUrlPattern" : "http://46.101.210.55:8081/getsnap.php?ch=2",
-        "requestMethod" : "GET",
-        "useSimpleClientHttpFactory" : false,
-        "ignoreRequestBody" : false,
-        "enableProxy" : false,
-        "useSystemProxyProperties" : false,
-        "proxyScheme" : null,
-        "proxyHost" : null,
-        "proxyPort" : 0,
-        "proxyUser" : null,
-        "proxyPassword" : null,
-        "readTimeoutMs" : 0,
-        "maxParallelRequestsCount" : 0,
-        "headers" : {
-          "Content-Type" : "image/jpeg"
-        },
-        "useRedisQueueForMsgPersistence" : false,
-        "trimQueue" : false,
-        "maxQueueSize" : 0,
-        "credentials" : {
-          "type" : "anonymous"
-        }
-      },
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "cead6540-4f0e-11ed-a34f-8b7904b4f300"
-      },
-      "name" : "API",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 617,
-        "layoutY" : 210
-      },
-      "configuration" : {
-        "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
-      },
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "ceba3680-4f0e-11ed-a34f-8b7904b4f300"
-      },
-      "name" : "ApiLog",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.action.TbLogNode"
     } ],
     "ruleChainConnections" : null
   },

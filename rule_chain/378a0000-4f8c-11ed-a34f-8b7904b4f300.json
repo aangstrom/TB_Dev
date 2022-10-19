@@ -21,14 +21,14 @@
   "metaData" : {
     "connections" : [ {
       "fromIndex" : 0,
-      "toIndex" : 2,
+      "toIndex" : 1,
       "type" : "Failure"
     }, {
       "fromIndex" : 0,
-      "toIndex" : 2,
+      "toIndex" : 1,
       "type" : "Success"
     }, {
-      "fromIndex" : 1,
+      "fromIndex" : 2,
       "toIndex" : 0,
       "type" : "Success"
     } ],
@@ -36,8 +36,8 @@
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 271,
-        "layoutY" : 513
+        "layoutX" : 305,
+        "layoutY" : 270
       },
       "configuration" : {
         "restEndpointUrlPattern" : "https://aa8.aangstrom.it:8443/getspot.php",
@@ -76,29 +76,6 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 47,
-        "layoutY" : 329
-      },
-      "configuration" : {
-        "msgCount" : 0,
-        "periodInSeconds" : 10,
-        "jsScript" : "return { msg: \"null\", metadata: \"null\", msgType: \"POST_TELEMETRY_REQUEST\" };",
-        "originatorId" : null,
-        "originatorType" : null
-      },
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "11e81980-4f8d-11ed-a34f-8b7904b4f300"
-      },
-      "name" : "Test",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
         "layoutX" : 596,
         "layoutY" : 341
       },
@@ -115,6 +92,29 @@
       "name" : "Test trasf",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 40,
+        "layoutY" : 222
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 10,
+        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "originatorId" : null,
+        "originatorType" : null
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "cf683410-4fae-11ed-a34f-8b7904b4f300"
+      },
+      "name" : "Tempo",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     } ],
     "ruleChainConnections" : null
   },

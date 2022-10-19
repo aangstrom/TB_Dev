@@ -40,8 +40,8 @@
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 257,
-        "layoutY" : 415
+        "layoutX" : 271,
+        "layoutY" : 513
       },
       "configuration" : {
         "restEndpointUrlPattern" : "https://aa8.aangstrom.it:8443/getspot.php",
@@ -103,8 +103,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 547,
-        "layoutY" : 448
+        "layoutX" : 596,
+        "layoutY" : 341
       },
       "configuration" : {
         "jsScript" : "var risultato = msg.result;\nvar json = risultato.replaceAll('\\r\\n', ',');\nvar json2 = json.replaceAll('TempInfo.', '');\nvar json3 = json2.replaceAll('=', ':');\n\nvar text= json2.split(\",\");\nvar T = JSON.stringify(json3);\nvar json4 = \"{\" + json2 + \"}\";\nreturn{msg: T};"

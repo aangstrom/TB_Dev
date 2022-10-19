@@ -35,6 +35,14 @@
       "fromIndex" : 1,
       "toIndex" : 0,
       "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 3,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 3,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : null,
     "nodes" : [ {
@@ -107,7 +115,7 @@
         "layoutY" : 448
       },
       "configuration" : {
-        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+        "jsScript" : "var risultato = msg.result;\nvar json = risultato.replaceAll('\\r\\n', ',');\nvar json2 = json.replaceAll('TempInfo.', '');\nvar json3 = json2.replaceAll('=', ':');\n\nvar text= json2.split(\",\");\nvar T = JSON.stringify(json3);\nvar json4 = \"{\" + json2 + \"}\";\nreturn{msg: T};"
       },
       "createdTime" : 0,
       "debugMode" : true,
@@ -117,6 +125,25 @@
         "id" : "56da5420-4f8f-11ed-a34f-8b7904b4f300"
       },
       "name" : "Test trasf",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 844,
+        "layoutY" : 435
+      },
+      "configuration" : {
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "fa4f4e60-4f9b-11ed-a34f-8b7904b4f300"
+      },
+      "name" : "TEst\\",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],

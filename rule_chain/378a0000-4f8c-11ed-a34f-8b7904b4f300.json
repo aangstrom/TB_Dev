@@ -28,6 +28,10 @@
       "toIndex" : 1,
       "type" : "Success"
     }, {
+      "fromIndex" : 1,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
       "fromIndex" : 2,
       "toIndex" : 0,
       "type" : "Success"
@@ -102,8 +106,8 @@
         "msgCount" : 0,
         "periodInSeconds" : 10,
         "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "originatorId" : null,
-        "originatorType" : null
+        "originatorId" : "057a0fb0-4faf-11ed-a34f-8b7904b4f300",
+        "originatorType" : "DEVICE"
       },
       "createdTime" : 0,
       "debugMode" : false,
@@ -115,6 +119,25 @@
       "name" : "Tempo",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 888,
+        "layoutY" : 341
+      },
+      "configuration" : {
+        "ruleChainId" : "7c8360c0-01d5-11ed-8014-35af6f7ed6b6"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "45054dc0-4faf-11ed-a34f-8b7904b4f300"
+      },
+      "name" : "Root rule chain",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
     } ],
     "ruleChainConnections" : null
   },

@@ -111,7 +111,7 @@
         "layoutY" : 341
       },
       "configuration" : {
-        "jsScript" : "var risultato = msg.result;\nvar risultato2= \"TemperAver:2.725347,TemperMax:2.725347,TemperMid:0.000000,TemperMin:2.725347,TemperStd:0.000000\";\nvar json = risultato.replaceAll('\\r\\n', ',');\nvar json2 = json.replaceAll('TempInfo.', '');\nvar json3 = json2.replaceAll('=', ':');\n\nvar text= json2.split(\",\");\nvar t1= JSON.stringify(risultato2);\nvar t = JSON.stringify(json3);\nvar json4 = \"{\" + json2 + \"}\";\nreturn{msg: t};"
+        "jsScript" : "var risultato = msg.result;\nvar json = risultato.replaceAll('\\r\\n', ',');\nvar json2 = json.replaceAll('TempInfo.', '');\nvar json3 = json2.replaceAll('=', ':');\n\nvar text= json2.split(\",\");\nvar t = JSON.stringify(json3);\nvar text= json3.split(\",\");\n\nvar msg= [\n    json3.split(\",\")[0].split(\":\"),\n    json3.split(\",\")[1].split(\":\"),\n    json3.split(\",\")[2].split(\":\"),\n    json3.split(\",\")[3].split(\":\"),\n    json3.split(\",\")[3].split(\":\")\n]\nreturn{msg: msg};"
       },
       "createdTime" : 0,
       "debugMode" : true,

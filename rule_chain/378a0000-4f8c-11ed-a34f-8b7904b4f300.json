@@ -35,6 +35,10 @@
       "fromIndex" : 1,
       "toIndex" : 0,
       "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 3,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : null,
     "nodes" : [ {
@@ -107,7 +111,7 @@
         "layoutY" : 341
       },
       "configuration" : {
-        "jsScript" : "var risultato = msg.result;\nvar json = risultato.replaceAll('\\r\\n', ',');\nvar json2 = json.replaceAll('TempInfo.', '');\nvar json3 = json2.replaceAll('=', ':');\n\nvar text= json2.split(\",\");\nvar T = JSON.stringify(json3);\nvar json4 = \"{\" + json2 + \"}\";\nreturn{msg: T};"
+        "jsScript" : "var risultato = msg.result;\nvar risultato2= \"TemperAver:2.725347,TemperMax:2.725347,TemperMid:0.000000,TemperMin:2.725347,TemperStd:0.000000\";\nvar json = risultato.replaceAll('\\r\\n', ',');\nvar json2 = json.replaceAll('TempInfo.', '');\nvar json3 = json2.replaceAll('=', ':');\n\nvar text= json2.split(\",\");\nvar t1= JSON.stringify(risultato2);\nvar t = JSON.stringify(json3);\nvar json4 = \"{\" + json2 + \"}\";\nreturn{msg: t};"
       },
       "createdTime" : 0,
       "debugMode" : true,
@@ -117,6 +121,25 @@
         "id" : "56da5420-4f8f-11ed-a34f-8b7904b4f300"
       },
       "name" : "Test trasf",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 909,
+        "layoutY" : 346
+      },
+      "configuration" : {
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f064eec0-4fa8-11ed-a34f-8b7904b4f300"
+      },
+      "name" : "te",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],

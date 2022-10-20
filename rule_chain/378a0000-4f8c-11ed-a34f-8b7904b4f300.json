@@ -72,7 +72,7 @@
         }
       },
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -91,7 +91,7 @@
         "jsScript" : "var string = msg.result.replaceAll('\\r\\n', ',').replaceAll('TempInfo.', '').replaceAll('=', ':');\nvar json = { \n            TemperAver: string.split(\",\")[0].split(\":\")[1],\n            TemperMax: string.split(\",\")[1].split(\":\")[1],\n            TemperMid: string.split(\",\")[2].split(\":\")[1],\n            TemperMin: string.split(\",\")[3].split(\":\")[1],\n            TemperStd: string.split(\",\")[4].split(\":\")[1],\n            TempereratureUnit: string.split(\",\")[5].split(\":\")[1],\n            Type: string.split(\",\")[6].split(\":\")[1],\n};\n\nreturn{msg: json};"
       },
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -163,7 +163,7 @@
         "readTimeoutMs" : 0,
         "maxParallelRequestsCount" : 0,
         "headers" : {
-          "Content-Type" : "image/jpeg"
+          "Content-Type" : "image/pjpeg"
         },
         "useRedisQueueForMsgPersistence" : false,
         "trimQueue" : false,
@@ -173,7 +173,7 @@
         }
       },
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",

@@ -88,10 +88,10 @@
         "layoutY" : 341
       },
       "configuration" : {
-        "jsScript" : "var string = msg.result.replaceAll('\\r\\n', ',').replaceAll('TempInfo.', '').replaceAll('=', ':');\nvar json = { \n            TemperAver: string.split(\",\")[0].split(\":\")[1],\n            TemperMax: string.split(\",\")[1].split(\":\")[1],\n            TemperMid: string.split(\",\")[2].split(\":\")[1],\n            TemperMin: string.split(\",\")[3].split(\":\")[1],\n            TemperStd: string.split(\",\")[4].split(\":\")[1],\n            TempereratureUnit: string.split(\",\")[5].split(\":\")[1],\n            Type: string.split(\",\")[6].split(\":\")[1],\n};\n\nreturn{msg: json};"
+        "jsScript" : "var string = msg.result.replaceAll('\\r\\n', ',').replaceAll('TempInfo.', '').replaceAll('=', ':');\nvar json = { \n            TemperAver: string.split(\",\")[0].split(\":\")[1],\n            TemperMax: string.split(\",\")[1].split(\":\")[1],\n            TemperMid: string.split(\",\")[2].split(\":\")[1],\n            TemperMin: string.split(\",\")[3].split(\":\")[1],\n            TemperStd: string.split(\",\")[4].split(\":\")[1],\n            TempereratureUnit: string.split(\",\")[5].split(\":\")[1],\n            Type: string.split(\",\")[6].split(\":\")[1],\n};\n\nreturn{msg: json, msgType: \"POST_TELEMETRY_REQUEST\"};"
       },
       "createdTime" : 0,
-      "debugMode" : false,
+      "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",

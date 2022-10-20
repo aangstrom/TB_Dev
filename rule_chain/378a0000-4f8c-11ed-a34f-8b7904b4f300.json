@@ -193,7 +193,7 @@
         "layoutY" : 437
       },
       "configuration" : {
-        "jsScript" : "var t= msg;\nvar json = { \n    image: t,\n    data: metadata\n};\nreturn {msg: json, metadata: metadata, msgType: msgType};"
+        "jsScript" : "var t= decodeToJson(msg);\nvar json = { \n    image: t,\n    data: metadata\n};\nfunction decodeToString(payload) {\n    return String.fromCharCode.apply(String, payload);\n}\nfunction decodeToJson(payload) {\n    var str = decodeToString(payload);\n    var data = JSON.parse(str);\n    return data;\n}\nreturn {msg: t, metadata: metadata, msgType: msgType};"
       },
       "createdTime" : 0,
       "debugMode" : true,

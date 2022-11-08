@@ -1,0 +1,67 @@
+{
+  "entityType" : "INTEGRATION",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "allowCreateDevicesOrAssets" : true,
+    "configuration" : {
+      "clientConfiguration" : {
+        "host" : "eu1.cloud.thethings.network",
+        "customHost" : false,
+        "port" : 8883,
+        "ssl" : true,
+        "maxBytesInMessage" : 32368,
+        "connectTimeoutSec" : 10,
+        "credentials" : {
+          "type" : "basic",
+          "username" : "aawg-myfirstapp@ttn",
+          "password" : "NNSXS.P6222OXJ6GISMEICRMXLUVYC5D7OWB7CO2WMRSY.B2A46UOOMEQPPKAYFZHUY2PMIQZMXMQTMTXR3DWXHUAE6RW34UAA"
+        },
+        "apiVersion" : true
+      },
+      "topicFilters" : [ {
+        "filter" : "v3/+/devices/+/up",
+        "qos" : 0
+      } ],
+      "downlinkTopicPattern" : "v3/aawg-myfirstapp@ttn/devices/${devId}/down/push",
+      "metadata" : { }
+    },
+    "createdTime" : 1657632312059,
+    "debugMode" : true,
+    "defaultConverterId" : {
+      "entityType" : "CONVERTER",
+      "id" : "ce892b10-126b-11ed-91ed-0903699d62f6"
+    },
+    "downlinkConverterId" : null,
+    "edgeTemplate" : false,
+    "enabled" : true,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "INTEGRATION",
+      "id" : "0eca2cb0-01e6-11ed-91ed-0903699d62f6"
+    },
+    "name" : "ttn CE",
+    "remote" : false,
+    "routingKey" : "537e584f-09ed-f0cf-8af0-3df195ec9a81",
+    "secret" : "kaastopuhb7fodpx35js",
+    "tenantId" : null,
+    "type" : "TTN"
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "0eca2cb0-01e6-11ed-91ed-0903699d62f6"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "10112ba0-01e6-11ed-91ed-0903699d62f6"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

@@ -23,6 +23,10 @@
       "fromIndex" : 0,
       "toIndex" : 1,
       "type" : "Success"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 4,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : null,
     "nodes" : [ {
@@ -125,9 +129,40 @@
       "name" : "hhhh",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.mail.TbSendEmailNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 748,
+        "layoutY" : 406
+      },
+      "configuration" : {
+        "topicPattern" : "/aangstrom/environment/temphum",
+        "host" : "aa8.aangstrom.it",
+        "port" : 1885,
+        "connectTimeoutSec" : 10,
+        "clientId" : null,
+        "cleanSession" : true,
+        "ssl" : false,
+        "credentials" : {
+          "type" : "basic",
+          "username" : "aangstrom",
+          "password" : "Sexten69!"
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b21bfd40-65b8-11ed-9133-91f5585bc6c3"
+      },
+      "name" : "aa8-mqtt",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.mqtt.TbMqttNode"
     } ],
     "ruleChainConnections" : null
   },
+  "relations" : [ ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
   }

@@ -187,16 +187,16 @@
           "col" : 0,
           "id" : "e5761c09-e06c-e870-7577-3f0c41266ecc"
         },
-        "96a6853a-02d4-8a1d-5842-29a3c87c288e" : {
+        "e5e766f5-cdb5-81fe-07dc-9a6d771ba9b4" : {
           "isSystemType" : true,
           "bundleAlias" : "control_widgets",
-          "typeAlias" : "knob_control",
+          "typeAlias" : "rpcbutton",
           "type" : "rpc",
           "title" : "New widget",
           "image" : null,
           "description" : null,
-          "sizeX" : 5,
-          "sizeY" : 4.5,
+          "sizeX" : 4,
+          "sizeY" : 2,
           "config" : {
             "targetDeviceAliases" : [ ],
             "showTitle" : false,
@@ -204,15 +204,19 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "requestTimeout" : 500,
-              "maxValue" : 100,
-              "initialValue" : 50,
-              "minValue" : 0,
-              "title" : "Knob control",
-              "getValueMethod" : "getValue",
-              "setValueMethod" : "setValue"
+              "buttonText" : "Send RPC",
+              "oneWayElseTwoWay" : true,
+              "methodName" : "setValue",
+              "methodParams" : "{\r\n  \"IdScavoNuovo\": 10021,\r\n  \"FrqCampione\": 15,\r\n  \"DescrScavo\": \"Scavo RCM1200 Occhiobello\",\r\n  \"UbicaziScavo\": \"Occhiobello\",\r\n  \"materialeScavo\": \"Terra\"\r\n}",
+              "requestTimeout" : 5000,
+              "showError" : false,
+              "requestPersistent" : false,
+              "styleButton" : {
+                "isRaised" : true,
+                "isPrimary" : false
+              }
             },
-            "title" : "New Knob Control",
+            "title" : "New RPC Button",
             "dropShadow" : true,
             "enableFullscreen" : false,
             "widgetStyle" : { },
@@ -223,13 +227,12 @@
             "useDashboardTimewindow" : true,
             "showLegend" : false,
             "actions" : { },
-            "decimals" : 2,
             "datasources" : [ ],
             "targetDeviceAliasIds" : [ "c2e9ef1c-1e2e-bc0c-17ed-3eb8814d3f93" ]
           },
           "row" : 0,
           "col" : 0,
-          "id" : "96a6853a-02d4-8a1d-5842-29a3c87c288e"
+          "id" : "e5e766f5-cdb5-81fe-07dc-9a6d771ba9b4"
         }
       },
       "states" : {
@@ -257,9 +260,9 @@
                   "row" : 0,
                   "col" : 7
                 },
-                "96a6853a-02d4-8a1d-5842-29a3c87c288e" : {
-                  "sizeX" : 5,
-                  "sizeY" : 4,
+                "e5e766f5-cdb5-81fe-07dc-9a6d771ba9b4" : {
+                  "sizeX" : 4,
+                  "sizeY" : 2,
                   "row" : 9,
                   "col" : 0
                 }

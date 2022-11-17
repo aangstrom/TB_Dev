@@ -1,0 +1,27 @@
+{
+  "entityType" : "CONVERTER",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : {
+      "decoder" : "/** Decoder **/\r\n\r\n// decode payload to string\r\nvar payloadStr = decodeToString(payload);\r\nvar data = JSON.parse(payloadStr);\r\nvar topicPattern = 'palmieri/'+metadata['deviceName']+'/(.+)';\r\n\r\nvar deviceName =  metadata.topic.match(topicPattern)[1];\r\n// decode payload to JSON\r\nvar deviceType = 'sensor';\r\n\r\n// Result object with device attributes/telemetry data\r\nvar result = {\r\n   deviceName: deviceName,\r\n   deviceType: deviceType,\r\n   attributes: {\r\n       integrationName: metadata['integrationName'],\r\n   },\r\n   telemetry: {\r\n       temperature: data.value,\r\n   }\r\n};\r\n\r\n/** Helper functions **/\r\n\r\nfunction decodeToString(payload) {\r\n   return String.fromCharCode.apply(String, payload);\r\n}\r\n\r\nfunction decodeToJson(payload) {\r\n   // convert payload to string.\r\n   var str = decodeToString(payload);\r\n\r\n   // parse string to JSON\r\n   var data = JSON.parse(str);\r\n   return data;\r\n}\r\n\r\nreturn result;",
+      "encoder" : null
+    },
+    "createdTime" : 1666868211582,
+    "debugMode" : false,
+    "edgeTemplate" : false,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CONVERTER",
+      "id" : "0fe469e0-55e6-11ed-9133-91f5585bc6c3"
+    },
+    "name" : "MQTT Uplink Converter",
+    "tenantId" : null,
+    "type" : "UPLINK"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

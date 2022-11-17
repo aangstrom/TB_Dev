@@ -9,7 +9,7 @@
       "encoder" : "/** Encoder **/\nvar value = msg;\nvar data = {value: value};\nvar deviceName = metadata.deviceName;\n\n// Result object with encoded downlink payload\nvar result = {\n\n    // downlink data content type: JSON, TEXT or BINARY (base64 format)\n    contentType: \"JSON\",\n\n    // downlink data\n    data: JSON.stringify(value),\n\n    // Optional metadata object presented in key/value format\n    metadata: {\n        topic: 'Palmieri/'+deviceName+'/DataReceve'\n    }\n\n};\n\nreturn result;"
     },
     "createdTime" : 1666868261346,
-    "debugMode" : false,
+    "debugMode" : true,
     "edgeTemplate" : false,
     "externalId" : null,
     "id" : {

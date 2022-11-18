@@ -6,7 +6,7 @@
     },
     "configuration" : {
       "decoder" : null,
-      "encoder" : "/** Encoder **/\nvar value = msg.params;\nvar data = {value: value};\n\nvar deviceName = metadata['deviceName'];\n\n\n// Result object with encoded downlink payload\nvar result = {\n\n    // downlink data content type: JSON, TEXT or BINARY (base64 format)\n    contentType: \"JSON\",\n\n    // downlink data\n    data: value,\n\n    // Optional metadata object presented in key/value format\n    metadata: {\n        topic: 'Palmieri/'+deviceName+'/DataReceve'\n    }\n\n};\n\nreturn result;"
+      "encoder" : "/** Encoder **/\nvar value = msg.params;\nvar data = {value: value};\n\nvar deviceName = metadata['deviceName'];\n\n\n// Result object with encoded downlink payload\nvar result = {\n\n    // downlink data content type: JSON, TEXT or BINARY (base64 format)\n    contentType: \"JSON\",\n\n    // downlink data\n    data: {\n  \"IdScavoNuovo\": 10011,\n  \"FrqCampione\": 5,\n  \"DescrScavo\": \"Scavo RCM1200 Bressanone\",\n  \"UbicaziScavo\": \"Bressanone\",\n  \"materialeScavo\": \"Speack\"\n},\n\n    // Optional metadata object presented in key/value format\n    metadata: {\n        topic: 'Palmieri/'+deviceName+'/DataReceve'\n    }\n\n};\n\nreturn result;"
     },
     "createdTime" : 1666868261346,
     "debugMode" : true,

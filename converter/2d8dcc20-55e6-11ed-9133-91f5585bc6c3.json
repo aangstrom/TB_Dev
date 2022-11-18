@@ -6,12 +6,15 @@
     },
     "configuration" : {
       "decoder" : null,
-      "encoder" : "/** Encoder **/\nvar value = JSON.parse(msg.params);\nvar data = {value: value};\n\n\n// Result object with encoded downlink payload\nvar result = {\n\n    // downlink data content type: JSON, TEXT or BINARY (base64 format)\n    contentType: \"JSON\",\n\n    // downlink data\n    data: value,\n\n    // Optional metadata object presented in key/value format\n    metadata: {\n        topic: 'Palmieri/'+metadata.deviceName+'/DataReceve'\n    }\n\n};\n\nreturn result;"
+      "encoder" : "/** Encoder **/\nvar value = JSON.parse(msg.params);\nvar data = {value: value};\n\nvar deviceName = metadata['deviceName'];\n\n\n// Result object with encoded downlink payload\nvar result = {\n\n    // downlink data content type: JSON, TEXT or BINARY (base64 format)\n    contentType: \"JSON\",\n\n    // downlink data\n    data: value,\n\n    // Optional metadata object presented in key/value format\n    metadata: {\n        topic: 'Palmieri/'+deviceName+'/DataReceve'\n    }\n\n};\n\nreturn result;"
     },
     "createdTime" : 1666868261346,
     "debugMode" : true,
     "edgeTemplate" : false,
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "CONVERTER",
+      "id" : "2d8dcc20-55e6-11ed-9133-91f5585bc6c3"
+    },
     "id" : {
       "entityType" : "CONVERTER",
       "id" : "2d8dcc20-55e6-11ed-9133-91f5585bc6c3"

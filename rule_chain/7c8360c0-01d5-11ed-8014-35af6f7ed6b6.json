@@ -54,7 +54,7 @@
       "type" : "RPC Request to Device"
     }, {
       "fromIndex" : 2,
-      "toIndex" : 14,
+      "toIndex" : 15,
       "type" : "RPC Request to Device"
     }, {
       "fromIndex" : 6,
@@ -79,6 +79,10 @@
     }, {
       "fromIndex" : 9,
       "toIndex" : 6,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 15,
+      "toIndex" : 14,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
@@ -375,6 +379,25 @@
       "name" : "Pato",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.mqtt.TbMqttNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 325,
+        "layoutY" : 538
+      },
+      "configuration" : {
+        "jsScript" : "return {msg: msg.params, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "bf5dc980-6751-11ed-9133-91f5585bc6c3"
+      },
+      "name" : "Pato",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

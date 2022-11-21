@@ -270,140 +270,6 @@
           "col" : 0,
           "id" : "ac9b757d-4a8e-59c4-c82f-616fafae5050"
         },
-        "0de896f2-f202-0fdf-e360-13649560fb01" : {
-          "isSystemType" : true,
-          "bundleAlias" : "cards",
-          "typeAlias" : "html_value_card",
-          "type" : "latest",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
-          "sizeX" : 7.5,
-          "sizeY" : 3,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "c2e9ef1c-1e2e-bc0c-17ed-3eb8814d3f93",
-              "filterId" : null,
-              "dataKeys" : [ ]
-            } ],
-            "timewindow" : {
-              "realtime" : {
-                "timewindowMs" : 60000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "cardHtml" : "<div class='card'>\n    <div class='content'>\n        <div id=\"commessa\" class='column'>\n            <i class=\"fa fa-list-alt\" aria-hidden=\"true\"></i>\n            <h1>Varia Commessa</h1>\n        </div>\n    </div>\n</div>",
-              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   border: 2px solid #ccc;\n   box-sizing: border-box;\n}\n\n.card .content {\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content .column {\n   display: flex;\n   flex-direction: column;\n   text-align: center;\n   align-items: center;\n   margin-top: 20px;\n   justify-content: space-around;\n}\n\n.card h1 {\n    color: #999;\n    font-size: 20px;\n    font-weight: bold;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n\n.fa{\n    font-size: 60px;\n}"
-            },
-            "title" : "New HTML Value Card",
-            "dropShadow" : false,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "useDashboardTimewindow" : true,
-            "showLegend" : false,
-            "actions" : {
-              "headerButton" : [ ],
-              "elementClick" : [ {
-                "name" : "commessa",
-                "icon" : "more_horiz",
-                "useShowWidgetActionFunction" : null,
-                "showWidgetActionFunction" : "return true;",
-                "type" : "customPretty",
-                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\r\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\r\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\r\n        <h2>Inserisci nuovo scavo</h2>\r\n        <span fxFlex></span>\r\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\r\n            <mat-icon class=\"material-icons\">close</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\"></mat-progress-bar>\r\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\r\n    <div mat-dialog-content fxLayout=\"column\">\r\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\r\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Inserisci nuovo scavo</span><br>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Nuovo codice scavo</mat-label>\r\n                <input type=\"number\" matInput placeholder=\"Es. 12\" formControlName=\"IdScavoNuovo\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Descrizione nuovo scavo</mat-label>\r\n                <input matInput placeholder=\"Es. Scavo RCM1200 Bressanone\" formControlName=\"DescrScavo\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Luogo Scavo</mat-label>\r\n                <input matInput  placeholder=\"Es. Bressanone\" formControlName=\"UbicaziScavo\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Materiale dello scavo</mat-label>\r\n                <mat-select id=\"materialeScavo\" formControlName=\"materialeScavo\" required>\r\n                    <mat-option value=\"terra\">Terra</mat-option>\r\n                    <mat-option value=\"argilla\">Argilla</mat-option>\r\n                    <mat-option value=\"roccia\">Roccia</mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n        </div>\r\n    </div>\r\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n        <button mat-button color=\"primary\"\r\n                type=\"button\"\r\n                [disabled]=\"(isLoading$ | async)\"\r\n                (click)=\"cancel()\" cdkFocusInitial>\r\n            Cancella\r\n        </button>\r\n        <button mat-button mat-raised-button color=\"primary\"\r\n                type=\"submit\"\r\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\r\n            Invia\r\n        </button>\r\n    </div>\r\n</form>\r\n",
-                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
-                "customFunction" : "console.log($event,entityId,entityName,additionalParams,widgetContext)\n\nlet $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\nlet assetService = $injector.get(widgetContext.servicesMap.get('assetService'));\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\nlet attributeService = $injector.get(widgetContext.servicesMap.get('attributeService'));\nlet entityRelationService = $injector.get(widgetContext.servicesMap.get('entityRelationService'));\n\n    openAddEntityDialog();\n\nfunction openAddEntityDialog() {\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\n}\n\n//Get value materialeScavo\nvar select = document.getElementById(\"materialeScavo\");\nvar options = [\"terra\", \"argilla\", \"roccia\", \"sabbia\"];\nfor(var i=0; i<options.length; i++) {\n    var opt = options[i];\n    var el = document.createElement(\"mat-option\");\n    el.text = opt;\n    el.value = opt;\n    select.add(el);\n}\n\n\n\n\nfunction AddEntityDialogController(instance) {\n    let vm = instance;\n    vm.addEntityFormGroup = vm.fb.group({\n     IdScavoNuovo: [null, [vm.validators.required]],\n     DescrScavo: [null, [vm.validators.required]],\n     materialeScavo:[null, [vm.validators.required]],\n     UbicaziScavo:[null, [vm.validators.required]]\n    });\n\n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    vm.save = function() {\n        var formData=vm.addEntityFormGroup.value;\n        console.log(\"formData: \",formData);\n        vm.addEntityFormGroup.markAsPristine();\n        var date=Date.now();\n        var telData={\"ts\":date, \"values\":{\"IdScavo\":formData.IdScavoNuovo, \"IdScavoNuovo\":formData.IdScavoNuovo, \"DescrScavo\":formData.DescrScavo, \"UbicaziScavo\":formData.UbicaziScavo, \"materialeScavo\":formData.materialeScavo}};\n        var rpc={\"method\":\"setValue\",\"params\":{\"IdScavoNuovo\":formData.IdScavoNuovo,\"FrqCampione\":5, \"DescrScavo\":formData.DescrScavo, \"UbicaziScavo\":formData.UbicaziScavo, \"materialeScavo\":formData.materialeScavo}};\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\n        {\n            vm.dialogRef.close(null);\n        },function(error){\n            console.log(error)\n        })\n        widgetContext.http.post('/api/rpc/oneway/'+entityId.id, rpc).subscribe(data =>\n        {\n            vm.dialogRef.close(null);\n        },function(error){\n            console.log(error)\n        })\n    };\n\n}\n",
-                "customResources" : [ ],
-                "openInSeparateDialog" : false,
-                "openInPopover" : false,
-                "id" : "c2a6c388-ffac-bee8-bc9a-98a26c1a4f93"
-              } ]
-            },
-            "enableDataExport" : false,
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : ""
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "0de896f2-f202-0fdf-e360-13649560fb01"
-        },
-        "0d006560-b9cf-5542-df17-963f3bc58044" : {
-          "isSystemType" : true,
-          "bundleAlias" : "cards",
-          "typeAlias" : "html_value_card",
-          "type" : "latest",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
-          "sizeX" : 7.5,
-          "sizeY" : 3,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "c2e9ef1c-1e2e-bc0c-17ed-3eb8814d3f93",
-              "filterId" : null,
-              "dataKeys" : [ ]
-            } ],
-            "timewindow" : {
-              "realtime" : {
-                "timewindowMs" : 60000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "cardHtml" : "<div class='card'>\n    <div id=\"materiale\" class='content'>\n        <div class='column'>\n            <i class=\"fa fa-gavel\" aria-hidden=\"true\"></i>\n            <h1>Varia Materiale</h1>\n        </div>\n    </div>\n</div>",
-              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   border: 2px solid #ccc;\n   box-sizing: border-box;\n}\n\n.card .content {\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content .column {\n   display: flex;\n   flex-direction: column;\n   text-align: center;\n   align-items: center;\n   margin-top: 20px;\n   justify-content: space-around;\n}\n\n.card h1 {\n    color: #999;\n    font-size: 20px;\n    font-weight: bold;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n\n.fa{\n    font-size: 60px;\n}"
-            },
-            "title" : "New HTML Value Card",
-            "dropShadow" : false,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "useDashboardTimewindow" : true,
-            "showLegend" : false,
-            "actions" : {
-              "headerButton" : [ ],
-              "elementClick" : [ {
-                "name" : "materiale",
-                "icon" : "more_horiz",
-                "useShowWidgetActionFunction" : null,
-                "showWidgetActionFunction" : "return true;",
-                "type" : "customPretty",
-                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\r\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\r\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\r\n        <h2>Inserisci nuovo scavo</h2>\r\n        <span fxFlex></span>\r\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\r\n            <mat-icon class=\"material-icons\">close</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\"></mat-progress-bar>\r\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\r\n    <div mat-dialog-content fxLayout=\"column\">\r\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\r\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Inserisci nuovo scavo</span><br>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Nuovo codice scavo</mat-label>\r\n                <input type=\"number\" matInput placeholder=\"Es. 12\" formControlName=\"IdScavoNuovo\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Descrizione nuovo scavo</mat-label>\r\n                <input matInput placeholder=\"Es. Scavo RCM1200 Bressanone\" formControlName=\"DescrScavo\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Luogo Scavo</mat-label>\r\n                <input matInput  placeholder=\"Es. Bressanone\" formControlName=\"UbicaziScavo\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Materiale dello scavo</mat-label>\r\n                <mat-select id=\"materialeScavo\" formControlName=\"materialeScavo\" required>\r\n                    <mat-option value=\"terra\">Terra</mat-option>\r\n                    <mat-option value=\"argilla\">Argilla</mat-option>\r\n                    <mat-option value=\"roccia\">Roccia</mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n        </div>\r\n    </div>\r\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n        <button mat-button color=\"primary\"\r\n                type=\"button\"\r\n                [disabled]=\"(isLoading$ | async)\"\r\n                (click)=\"cancel()\" cdkFocusInitial>\r\n            Cancella\r\n        </button>\r\n        <button mat-button mat-raised-button color=\"primary\"\r\n                type=\"submit\"\r\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\r\n            Invia\r\n        </button>\r\n    </div>\r\n</form>\r\n",
-                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
-                "customFunction" : "console.log($event,entityId,entityName,additionalParams,widgetContext)\n\nlet $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\nlet assetService = $injector.get(widgetContext.servicesMap.get('assetService'));\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\nlet attributeService = $injector.get(widgetContext.servicesMap.get('attributeService'));\nlet entityRelationService = $injector.get(widgetContext.servicesMap.get('entityRelationService'));\n\n    openAddEntityDialog();\n\n\nconsole.log(attributeService.getEntityAttributes(FrqCampione));\n\n\nfunction openAddEntityDialog() {\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\n}\n\n//Get value materialeScavo\nvar select = document.getElementById(\"materialeScavo\");\nvar options = [\"terra\", \"argilla\", \"roccia\", \"sabbia\"];\nfor(var i=0; i<options.length; i++) {\n    var opt = options[i];\n    var el = document.createElement(\"mat-option\");\n    el.text = opt;\n    el.value = opt;\n    select.add(el);\n}\n\n\n\n\nfunction AddEntityDialogController(instance) {\n    let vm = instance;\n    vm.addEntityFormGroup = vm.fb.group({\n     IdScavoNuovo: [null, [vm.validators.required]],\n     DescrScavo: [null, [vm.validators.required]],\n     materialeScavo:[null, [vm.validators.required]],\n     UbicaziScavo:[null, [vm.validators.required]]\n    });\n\n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    vm.save = function() {\n        var formData=vm.addEntityFormGroup.value;\n        console.log(\"formData: \",formData);\n        vm.addEntityFormGroup.markAsPristine();\n        var date=Date.now();\n        var telData={\"ts\":date, \"values\":{\"IdScavo\":formData.IdScavoNuovo, \"IdScavoNuovo\":formData.IdScavoNuovo, \"DescrScavo\":formData.DescrScavo, \"UbicaziScavo\":formData.UbicaziScavo, \"materialeScavo\":formData.materialeScavo}};\n        var rpc={\"method\":\"setValue\",\"params\":{\"IdScavoNuovo\":formData.IdScavoNuovo,\"FrqCampione\":5, \"DescrScavo\":formData.DescrScavo, \"UbicaziScavo\":formData.UbicaziScavo, \"materialeScavo\":formData.materialeScavo}};\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\n        {\n            vm.dialogRef.close(null);\n        },function(error){\n            console.log(error)\n        })\n        widgetContext.http.post('/api/rpc/oneway/'+entityId.id, rpc).subscribe(data =>\n        {\n            vm.dialogRef.close(null);\n        },function(error){\n            console.log(error)\n        })\n    };\n\n}\n",
-                "customResources" : [ ],
-                "openInSeparateDialog" : false,
-                "openInPopover" : false,
-                "id" : "c2a6c388-ffac-bee8-bc9a-98a26c1a4f93"
-              } ]
-            },
-            "enableDataExport" : false,
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : ""
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "0d006560-b9cf-5542-df17-963f3bc58044"
-        },
         "1f93b66b-e16b-fb23-3f6b-ce63abd5363e" : {
           "isSystemType" : true,
           "bundleAlias" : "cards",
@@ -1128,18 +994,6 @@
           "layouts" : {
             "main" : {
               "widgets" : {
-                "0de896f2-f202-0fdf-e360-13649560fb01" : {
-                  "sizeX" : 3,
-                  "sizeY" : 2,
-                  "row" : 6,
-                  "col" : 0
-                },
-                "0d006560-b9cf-5542-df17-963f3bc58044" : {
-                  "sizeX" : 3,
-                  "sizeY" : 2,
-                  "row" : 6,
-                  "col" : 3
-                },
                 "1f93b66b-e16b-fb23-3f6b-ce63abd5363e" : {
                   "sizeX" : 6,
                   "sizeY" : 4,
@@ -1153,7 +1007,7 @@
                   "col" : 6
                 },
                 "afa3f1d8-6135-be3d-d17b-5a7140152402" : {
-                  "sizeX" : 8,
+                  "sizeX" : 9,
                   "sizeY" : 2,
                   "row" : 0,
                   "col" : 0

@@ -120,7 +120,9 @@
             },
             "useDashboardTimewindow" : false,
             "showLegend" : false,
-            "widgetStyle" : { },
+            "widgetStyle" : {
+              "border-radius" : "25px"
+            },
             "actions" : { },
             "showTitleIcon" : false,
             "iconColor" : "rgba(0, 0, 0, 0.87)",
@@ -761,12 +763,14 @@
             "padding" : "0px",
             "settings" : {
               "cardHtml" : "<div class='card'>\n    <div id=\"home\" class='content'>\n        <div id=\"home\" class=\"column\">\n            <i class=\"fa fa-home\" aria-hidden=\"true\"></i>\n            <h1>Dettagli</h1>\n        </div>\n        <div id=\"commessa\" class=\"column\">\n            <i class=\"fa fa-list-alt\" aria-hidden=\"true\"></i>\n            <h1>Varia Commessa</h1>\n        </div>\n        <div id=\"commessa\" class=\"column\">\n            <i class=\"fa fa-gavel\" aria-hidden=\"true\"></i>\n            <h1>Varia Materiale</h1>\n        </div>\n        <div id=\"dettagli\" class=\"column\">\n            <i class=\"fa fa-line-chart\" aria-hidden=\"true\"></i>\n            <h1>Dettagli(dev)</h1>\n        </div>\n    </div>\n</div>",
-              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   border: 2px solid #ccc;\n   box-sizing: border-box;\n}\n\n.card .content {\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.column {\n   width: 200px;\n   display: flex;\n   flex-direction: column;\n   text-align: center;\n   align-items: center;\n   margin-top: 20px;\n   justify-content: center;\n   transform: scale(0.9);\n}\n.column:hover {\n    color: red;\n    transform: scale(1);\n}\n\nh1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 20px;\n    font-weight: bold;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n\n.fa{\n    font-size: 60px;\n}"
+              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content {\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.column {\n   width: 200px;\n   display: flex;\n   flex-direction: column;\n   text-align: center;\n   align-items: center;\n   margin-top: 20px;\n   justify-content: center;\n   transform: scale(0.9);\n}\n.column:hover {\n    color: red;\n    transform: scale(1);\n}\n\nh1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 20px;\n    font-weight: bold;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n\n.fa{\n    font-size: 60px;\n}"
             },
             "title" : "New HTML Value Card",
-            "dropShadow" : false,
+            "dropShadow" : true,
             "enableFullscreen" : false,
-            "widgetStyle" : { },
+            "widgetStyle" : {
+              "border-radius" : "25px"
+            },
             "titleStyle" : {
               "fontSize" : "16px",
               "fontWeight" : 400
@@ -851,18 +855,15 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "4px",
             "settings" : {
-              "entitiesTitle" : "",
               "enableSearch" : true,
               "enableSelectColumnDisplay" : true,
               "enableStickyHeader" : true,
               "enableStickyAction" : true,
               "reserveSpaceForHiddenAction" : "true",
               "displayEntityName" : true,
-              "entityNameColumnTitle" : "",
               "displayEntityLabel" : false,
-              "displayEntityType" : true,
-              "displayPagination" : true,
-              "defaultPageSize" : 10,
+              "displayEntityType" : false,
+              "displayPagination" : false,
               "defaultSortOrder" : "entityName",
               "useRowStyleFunction" : false
             },
@@ -910,7 +911,16 @@
                 "openInPopover" : false,
                 "id" : "7f9a976a-65e5-ef7f-5e60-694a804ec22a"
               } ]
-            }
+            },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetStyle" : {
+              "border-radius" : "25px"
+            },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
           },
           "row" : 0,
           "col" : 0,

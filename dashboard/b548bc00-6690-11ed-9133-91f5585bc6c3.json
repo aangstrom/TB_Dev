@@ -961,7 +961,79 @@
               "name" : null,
               "entityAliasId" : "c2e9ef1c-1e2e-bc0c-17ed-3eb8814d3f93",
               "filterId" : null,
-              "dataKeys" : [ ]
+              "dataKeys" : [ {
+                "name" : "allarme_off",
+                "type" : "timeseries",
+                "label" : "allarme_off",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.37965618641855525,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==\"true\"){\n    return '<div style=\"color:green;font-size:15px;\">&#11044</div>';\n}\nelse{\n    return '<div style=\"color:red;font-size:15px;\">&#11044</div>';\n}"
+              }, {
+                "name" : "preallarme_off",
+                "type" : "timeseries",
+                "label" : "preallarme_off",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.06497388290868766,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==\"true\"){\n    return '<div style=\"color:green;font-size:15px;\">&#11044</div>';\n}\nelse{\n    return '<div style=\"color:red;font-size:15px;\">&#11044</div>';\n}"
+              }, {
+                "name" : "ins_tubo",
+                "type" : "timeseries",
+                "label" : "ins_tubo",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.46084177530936077,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==\"true\"){\n    return '<div style=\"color:green;font-size:15px;\">&#11044</div>';\n}\nelse{\n    return '<div style=\"color:red;font-size:15px;\">&#11044</div>';\n}"
+              }, {
+                "name" : "fine_scavo",
+                "type" : "timeseries",
+                "label" : "fine_scavo",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.05171780679444793,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==\"true\"){\n    return '<div style=\"color:green;font-size:15px;\">&#11044</div>';\n}\nelse{\n    return '<div style=\"color:red;font-size:15px;\">&#11044</div>';\n}"
+              }, {
+                "name" : "spinta_avanti",
+                "type" : "timeseries",
+                "label" : "spinta_avanti",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.5727028745900595,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "value = \"Avanti\";\nreturn value;"
+              }, {
+                "name" : "spinta_indietro",
+                "type" : "timeseries",
+                "label" : "spinta_indietro",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.4557100436811732,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "value = \"Indietro\";\nreturn value;"
+              } ]
             } ],
             "timewindow" : {
               "realtime" : {
@@ -973,8 +1045,8 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "cardHtml" : "<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <h1>Value title</h1>\n            <div class=\"row\">\n                <li>Value description text</li>\n                <li>Value description text</li>\n                <li>Value description text</li>\n                <li>Value description text</li>\n            </div>\n        </div>\n    </div>\n</div>",
-              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   border: 2px solid #ccc;\n   box-sizing: border-box;\n}\n\n.card .content {\n   padding: 20px;\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.row {\n    display: flex;\n    flex-direction: row;\n    list-style-type: none;\n}\nli{\n    margin-right: 5px;\n}\n\n.card .content .column {\n   display: flex;\n   flex-direction: column;    \n   justify-content: space-around;\n   height: 100%;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 20px;\n    font-weight: bold;\n    margin: 0;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n"
+              "cardHtml" : "<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <h1>Value title</h1>\n            <div class=\"row\">\n                <li>Allarme: ${allarme_off}</li>\n                <li>Preallarme: ${preallarme_off}</li>\n                <li>In inserimento tubo: ${ins_tubo}</li>\n                <li>Fine scavo: ${fine_scavo}</li>\n                <li>Direzione spinta: ${avanti}${indietro}</li>\n                <li>Fresa in rotazione ${fresa}</li>\n            </div>\n        </div>\n    </div>\n</div>",
+              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   border: 2px solid #ccc;\n   box-sizing: border-box;\n}\n\n.card .content {\n   padding: 20px;\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.row {\n    display: flex;\n    flex-direction: row;\n    list-style-type: none;\n}\nli{\n    display: flex;\n    margin-right: 5px;\n}\n\n.card .content .column {\n   display: flex;\n   flex-direction: column;    \n   justify-content: space-around;\n   height: 100%;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 20px;\n    font-weight: bold;\n    margin: 0;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n"
             },
             "title" : "New HTML Value Card",
             "dropShadow" : false,

@@ -1140,6 +1140,655 @@
           "row" : 0,
           "col" : 0,
           "id" : "c0a31673-b6f9-3d1f-67ed-1bc2f134b2b3"
+        },
+        "c282fb31-28f1-65e2-0798-0a10434fb129" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "901afce7-b57e-38e5-8ecf-163eae309300",
+              "filterId" : null,
+              "dataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div class='card'>\n    <div id=\"home\" class='content'>\n        <div id=\"home\" class=\"column\">\n            <i class=\"fa fa-home\" aria-hidden=\"true\"></i>\n            <h1>Home</h1>\n        </div>\n    </div>\n</div>",
+              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   border: 2px solid #ccc;\n   box-sizing: border-box;\n}\n\n.card .content {\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.column {\n   width: 200px;\n   display: flex;\n   flex-direction: column;\n   text-align: center;\n   align-items: center;\n   margin-top: 20px;\n   justify-content: center;\n   transform: scale(0.9);\n}\n.column:hover {\n    color: red;\n    transform: scale(1);\n}\n\nh1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 20px;\n    font-weight: bold;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n\n.fa{\n    font-size: 60px;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "headerButton" : [ ],
+              "elementClick" : [ {
+                "name" : "commessa",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\r\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\r\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\r\n        <h2>Inserisci nuovo scavo</h2>\r\n        <span fxFlex></span>\r\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\r\n            <mat-icon class=\"material-icons\">close</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\"></mat-progress-bar>\r\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\r\n    <div mat-dialog-content fxLayout=\"column\">\r\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\r\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Inserisci nuovo scavo</span><br>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Nuovo codice scavo</mat-label>\r\n                <input type=\"number\" matInput placeholder=\"Es. 12\" formControlName=\"IdScavoNuovo\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Descrizione nuovo scavo</mat-label>\r\n                <input matInput placeholder=\"Es. Scavo RCM1200 Bressanone\" formControlName=\"DescrScavo\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Luogo Scavo</mat-label>\r\n                <input matInput  placeholder=\"Es. Bressanone\" formControlName=\"UbicaziScavo\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Materiale dello scavo</mat-label>\r\n                <mat-select id=\"materialeScavo\" formControlName=\"materialeScavo\" required>\r\n                    <mat-option value=\"terra\">Terra</mat-option>\r\n                    <mat-option value=\"argilla\">Argilla</mat-option>\r\n                    <mat-option value=\"roccia\">Roccia</mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n        </div>\r\n    </div>\r\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n        <button mat-button color=\"primary\"\r\n                type=\"button\"\r\n                [disabled]=\"(isLoading$ | async)\"\r\n                (click)=\"cancel()\" cdkFocusInitial>\r\n            Cancella\r\n        </button>\r\n        <button mat-button mat-raised-button color=\"primary\"\r\n                type=\"submit\"\r\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\r\n            Invia\r\n        </button>\r\n    </div>\r\n</form>\r\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "console.log($event,entityId,entityName,additionalParams,widgetContext)\n\nlet $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\nlet assetService = $injector.get(widgetContext.servicesMap.get('assetService'));\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\nlet attributeService = $injector.get(widgetContext.servicesMap.get('attributeService'));\nlet entityRelationService = $injector.get(widgetContext.servicesMap.get('entityRelationService'));\n\n    openAddEntityDialog();\n\n\nconsole.log(attributeService.getEntityAttributes(FrqCampione));\n\n\nfunction openAddEntityDialog() {\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\n}\n\n//Get value materialeScavo\nvar select = document.getElementById(\"materialeScavo\");\nvar options = [\"terra\", \"argilla\", \"roccia\", \"sabbia\"];\nfor(var i=0; i<options.length; i++) {\n    var opt = options[i];\n    var el = document.createElement(\"mat-option\");\n    el.text = opt;\n    el.value = opt;\n    select.add(el);\n}\n\n\n\n\nfunction AddEntityDialogController(instance) {\n    let vm = instance;\n    vm.addEntityFormGroup = vm.fb.group({\n     IdScavoNuovo: [null, [vm.validators.required]],\n     DescrScavo: [null, [vm.validators.required]],\n     materialeScavo:[null, [vm.validators.required]],\n     UbicaziScavo:[null, [vm.validators.required]]\n    });\n\n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    vm.save = function() {\n        var formData=vm.addEntityFormGroup.value;\n        console.log(\"formData: \",formData);\n        vm.addEntityFormGroup.markAsPristine();\n        var date=Date.now();\n        var telData={\"ts\":date, \"values\":{\"IdScavo\":formData.IdScavoNuovo, \"IdScavoNuovo\":formData.IdScavoNuovo, \"DescrScavo\":formData.DescrScavo, \"UbicaziScavo\":formData.UbicaziScavo, \"materialeScavo\":formData.materialeScavo}};\n        var rpc={\"method\":\"setValue\",\"params\":{\"IdScavoNuovo\":formData.IdScavoNuovo,\"FrqCampione\":5, \"DescrScavo\":formData.DescrScavo, \"UbicaziScavo\":formData.UbicaziScavo, \"materialeScavo\":formData.materialeScavo}};\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\n        {\n            vm.dialogRef.close(null);\n        },function(error){\n            console.log(error)\n        })\n        widgetContext.http.post('/api/rpc/oneway/'+entityId.id, rpc).subscribe(data =>\n        {\n            vm.dialogRef.close(null);\n        },function(error){\n            console.log(error)\n        })\n    };\n\n}\n",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "c2a6c388-ffac-bee8-bc9a-98a26c1a4f93"
+              }, {
+                "name" : "home",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "updateDashboardState",
+                "targetDashboardStateId" : "home",
+                "setEntityId" : false,
+                "stateEntityParamName" : "",
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "fa4e27de-56fc-36c6-5f46-0d799a932cd5"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "c282fb31-28f1-65e2-0798-0a10434fb129"
+        },
+        "c64e3ae3-94ed-aaeb-e3a2-958e67672103" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "basic_timeseries",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "901afce7-b57e-38e5-8ecf-163eae309300",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "DescrScavo",
+                "type" : "timeseries",
+                "label" : "DescrScavo",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.7361615319967194
+              } ],
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "shadowSize" : 4,
+              "fontColor" : "#545454",
+              "fontSize" : 10,
+              "xaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "grid" : {
+                "color" : "#545454",
+                "tickColor" : "#DDDDDD",
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1
+              },
+              "legend" : {
+                "show" : true,
+                "position" : "nw",
+                "backgroundColor" : "#f0f0f0",
+                "backgroundOpacity" : 0.85,
+                "labelBoxBorderColor" : "rgba(1, 1, 1, 0.45)"
+              },
+              "decimals" : 1,
+              "stack" : false,
+              "tooltipIndividual" : false
+            },
+            "title" : "Produttività",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showLegend" : true,
+            "legendConfig" : {
+              "direction" : "column",
+              "position" : "bottom",
+              "sortDataKeys" : false,
+              "showMin" : false,
+              "showMax" : false,
+              "showAvg" : true,
+              "showTotal" : false,
+              "showLatest" : false
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "c64e3ae3-94ed-aaeb-e3a2-958e67672103"
+        },
+        "083f468a-6764-28d1-c82c-0a2fc1d728b0" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "901afce7-b57e-38e5-8ecf-163eae309300",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "DescrScavo",
+                "type" : "timeseries",
+                "label" : "DescrScavo",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.9204619059423291
+              }, {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Name",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.7615309822661729
+              }, {
+                "name" : "IdScavo",
+                "type" : "timeseries",
+                "label" : "IdScavo",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.7651862998973138,
+                "units" : null,
+                "decimals" : 0,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "UbicaziScavo",
+                "type" : "timeseries",
+                "label" : "UbicaziScavo",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.8252999362854097
+              } ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <h1>${Name}</h1><br>\n            <div><i class=\"fa fa-hashtag\" aria-hidden=\"true\"></i> <b>Matricola</b>: value_matricola.</div>\n            <div><i class=\"fa fa-info\" aria-hidden=\"true\"></i> <b>Commessa</b>: ${IdScavo}</div>\n            <div><i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i> <b>Località scavo</b>: ${UbicaziScavo}.</div>\n            <div><i class=\"fa fa-bars\" aria-hidden=\"true\"></i> <b>Descrizione scavo</b>: ${DescrScavo}.</div>\n            <br><br>\n            <div id=\"guasto\" class=\"button\"><i class=\"fa fa-bars\" aria-hidden=\"true\"></i> <b>Segnala Guasto</b></div>\n        </div>\n    </div>\n</div>",
+              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   border: 2px solid #ccc;\n   box-sizing: border-box;\n}\n\n.card .content {\n   padding: 10px;\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   box-sizing: border-box;\n}\n\n.card .content .column {\n   display: flex;\n   font-size: 18px;\n   flex-direction: column;    \n   justify-content: space-around;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 22px;\n    font-weight: bold;\n    margin: 0;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n\n.fa{\n    font-size: 20px;\n}\n\n.button{\n    background-color: red;\n    text-align: center;\n    color: yellow;\n    padding: 15px;\n    margin: 0 15px;\n    border-radius: 999px;\n    \n}\n.button:hover{\n    transform: scale(1.1);\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "guasto",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\n        <h2>Segnala Guasto/Fermo</h2>\n        <span fxFlex></span>\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\n            <mat-icon class=\"material-icons\">close</mat-icon>\n        </button>\n    </mat-toolbar>\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\n    </mat-progress-bar>\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\n    <div mat-dialog-content fxLayout=\"column\">\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Segnala guasto</span><br>\n            <section fxLayout=\"row\" fxLayoutAlign=\"center\" fxLayoutGap=\"10px\" fxLayout.xs=\"column\" fxLayoutGap.xs=\"0\">\n                <mat-form-field appearance=\"fill\" style=\"width: 300px\">\n                  <mat-label>Data</mat-label>\n                  <mat-datetimepicker-toggle [for]=\"DatePicker\" matPrefix></mat-datetimepicker-toggle>\n                  <mat-datetimepicker #DatePicker type=\"date\" openOnFocus=\"true\"></mat-datetimepicker>\n                  <input matInput [disabled]=\"disabled\"  [matDatetimepicker]=\"DatePicker\" formControlName=\"eventDate\" required>\n                  <mat-hint>GG/MM/AAAA</mat-hint>\n                </mat-form-field>\n                <mat-form-field appearance=\"fill\"  style=\"width: 300px\">\n                  <mat-label>Ora</mat-label>\n                  <mat-datetimepicker-toggle [for]=\"TimePicker\" matPrefix></mat-datetimepicker-toggle>\n                  <mat-datetimepicker #TimePicker type=\"time\" openOnFocus=\"true\"></mat-datetimepicker>\n                  <input matInput [disabled]=\"disabled\" [matDatetimepicker]=\"TimePicker\" formControlName=\"eventTime\" required><mat-hint>H/Min</mat-hint>\n                </mat-form-field>\n            </section>\n            <mat-form-field appearance=\"fill\">\n              <mat-label>Risolto?</mat-label>\n              <mat-select formControlName=\"risoluzione\" required>\n                <mat-option value=\"si\">Si</mat-option>\n                <mat-option value=\"no\">No</mat-option>\n              </mat-select>\n            </mat-form-field>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Ore Fermo Macchina</mat-label>\n                <input matInput  placeholder=\"Es. 1\" formControlName=\"ore_fermo\" required>\n                <span matSuffix>Minuto/i</span>\n            </mat-form-field>\n            <mat-form-field appearance=\"fill\">\n              <mat-label>Note</mat-label>\n              <textarea matInput formControlName=\"note\"></textarea>\n            </mat-form-field>\n        </div>\n    </div>\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\n        <button mat-button color=\"primary\"\n                type=\"button\"\n                [disabled]=\"(isLoading$ | async)\"\n                (click)=\"cancel()\" cdkFocusInitial>\n            Cancella\n        </button>\n        <button mat-button mat-raised-button color=\"primary\"\n                type=\"submit\"\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\n            Invia\n        </button>\n    </div>\n</form>",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "console.log($event,entityId,entityName,additionalParams,widgetContext)\n\nlet $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\nlet assetService = $injector.get(widgetContext.servicesMap.get('assetService'));\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\nlet attributeService = $injector.get(widgetContext.servicesMap.get('attributeService'));\nlet entityRelationService = $injector.get(widgetContext.servicesMap.get('entityRelationService'));\n\n    openAddEntityDialog();\n\nfunction openAddEntityDialog() {\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\n}\n\nfunction AddEntityDialogController(instance) {\n    let vm = instance;\n    vm.addEntityFormGroup = vm.fb.group({\n     risoluzione: [null, [vm.validators.required]],\n     ore_fermo: [null, [vm.validators.required]],\n     note: [\"\"],\n     eventDate:[null, [vm.validators.required]],\n     eventTime:[null, [vm.validators.required]]\n    });\n\n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    vm.save = function() {\n        var formData=vm.addEntityFormGroup.value\n        formData.eventDate.setHours(formData.eventTime.getHours())\n        formData.eventDate.setMinutes(formData.eventTime.getMinutes())\n        console.log(\"formData: \",formData);\n        vm.addEntityFormGroup.markAsPristine();\n        var telData={\"ts\":formData.eventDate.valueOf(), \"values\":{\"risoluzione\":formData.risoluzione, \"ore_fermo\":formData.ore_fermo, \"note\":formData.note, \"guasto\":\"spintore\"}}\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\n        {\n        // console.log(\"data: \",data)\n            // widgetContext.updateAliases();\n            vm.dialogRef.close(null);\n        },function(error){\n            console.log(error)\n        })\n    };\n}",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "09293152-7baa-25a6-5f8b-b7be6415e263"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "083f468a-6764-28d1-c82c-0a2fc1d728b0"
+        },
+        "a0579c66-e5a6-0463-a347-b769703dcf7b" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "timeseries_table",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 6.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "901afce7-b57e-38e5-8ecf-163eae309300",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "IdScavo",
+                "type" : "timeseries",
+                "label" : "IdScavo",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.06315088788966716
+              } ],
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "hideInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 1,
+              "history" : {
+                "historyType" : 0,
+                "timewindowMs" : 2592000000,
+                "interval" : 1000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1668945095323,
+                  "endTimeMs" : 1669031495323
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "showTimestamp" : true,
+              "displayPagination" : true,
+              "defaultPageSize" : 10
+            },
+            "title" : "New Timeseries table",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "displayTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "a0579c66-e5a6-0463-a347-b769703dcf7b"
+        },
+        "101119e1-6a7c-ef51-986c-c162840778c1" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "basic_timeseries",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "901afce7-b57e-38e5-8ecf-163eae309300",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "lunghScavo",
+                "type" : "timeseries",
+                "label" : "Lunghezza Scavo",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.9249971338687268,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "shadowSize" : 4,
+              "fontColor" : "#545454",
+              "fontSize" : 10,
+              "xaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "grid" : {
+                "color" : "#545454",
+                "tickColor" : "#DDDDDD",
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1
+              },
+              "legend" : {
+                "show" : true,
+                "position" : "nw",
+                "backgroundColor" : "#f0f0f0",
+                "backgroundOpacity" : 0.85,
+                "labelBoxBorderColor" : "rgba(1, 1, 1, 0.45)"
+              },
+              "decimals" : 1,
+              "stack" : false,
+              "tooltipIndividual" : false
+            },
+            "title" : "Lunghezza scavo",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showLegend" : true,
+            "legendConfig" : {
+              "direction" : "column",
+              "position" : "bottom",
+              "sortDataKeys" : false,
+              "showMin" : false,
+              "showMax" : false,
+              "showAvg" : true,
+              "showTotal" : false,
+              "showLatest" : false
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "101119e1-6a7c-ef51-986c-c162840778c1"
+        },
+        "75d56bea-96ca-b479-64bc-9a59f51efa0a" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "basic_timeseries",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "901afce7-b57e-38e5-8ecf-163eae309300",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "materialeScavo",
+                "type" : "timeseries",
+                "label" : "Materiale Scavato",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.9211140721677684,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "shadowSize" : 4,
+              "fontColor" : "#545454",
+              "fontSize" : 10,
+              "xaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "grid" : {
+                "color" : "#545454",
+                "tickColor" : "#DDDDDD",
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1
+              },
+              "legend" : {
+                "show" : true,
+                "position" : "nw",
+                "backgroundColor" : "#f0f0f0",
+                "backgroundOpacity" : 0.85,
+                "labelBoxBorderColor" : "rgba(1, 1, 1, 0.45)"
+              },
+              "decimals" : 1,
+              "stack" : false,
+              "tooltipIndividual" : false
+            },
+            "title" : "New Timeseries Line Chart",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "75d56bea-96ca-b479-64bc-9a59f51efa0a"
+        },
+        "9b4bb474-94b8-ae05-3c5f-a79f19703f93" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "basic_timeseries",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "901afce7-b57e-38e5-8ecf-163eae309300",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "spinta_avanti",
+                "type" : "timeseries",
+                "label" : "Spinta Avanti",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.34180121931184426,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "spinta_indietro",
+                "type" : "timeseries",
+                "label" : "Spinta Indietro",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.3136840971432875,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "shadowSize" : 4,
+              "fontColor" : "#545454",
+              "fontSize" : 10,
+              "xaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "grid" : {
+                "color" : "#545454",
+                "tickColor" : "#DDDDDD",
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1
+              },
+              "legend" : {
+                "show" : true,
+                "position" : "nw",
+                "backgroundColor" : "#f0f0f0",
+                "backgroundOpacity" : 0.85,
+                "labelBoxBorderColor" : "rgba(1, 1, 1, 0.45)"
+              },
+              "decimals" : 1,
+              "stack" : false,
+              "tooltipIndividual" : false
+            },
+            "title" : "Spinte",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showLegend" : true,
+            "legendConfig" : {
+              "direction" : "column",
+              "position" : "bottom",
+              "sortDataKeys" : false,
+              "showMin" : false,
+              "showMax" : false,
+              "showAvg" : true,
+              "showTotal" : false,
+              "showLatest" : false
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "9b4bb474-94b8-ae05-3c5f-a79f19703f93"
         }
       },
       "states" : {
@@ -1245,6 +1894,64 @@
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
                 "mobileRowHeight" : 70
+              }
+            }
+          }
+        },
+        "commessa" : {
+          "name" : "Commessa",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "c282fb31-28f1-65e2-0798-0a10434fb129" : {
+                  "sizeX" : 6,
+                  "sizeY" : 2,
+                  "row" : 0,
+                  "col" : 0
+                },
+                "c64e3ae3-94ed-aaeb-e3a2-958e67672103" : {
+                  "sizeX" : 9,
+                  "sizeY" : 5,
+                  "row" : 0,
+                  "col" : 6
+                },
+                "083f468a-6764-28d1-c82c-0a2fc1d728b0" : {
+                  "sizeX" : 6,
+                  "sizeY" : 4,
+                  "row" : 2,
+                  "col" : 0
+                },
+                "a0579c66-e5a6-0463-a347-b769703dcf7b" : {
+                  "sizeX" : 6,
+                  "sizeY" : 6,
+                  "row" : 6,
+                  "col" : 0
+                },
+                "101119e1-6a7c-ef51-986c-c162840778c1" : {
+                  "sizeX" : 9,
+                  "sizeY" : 5,
+                  "row" : 0,
+                  "col" : 15
+                },
+                "75d56bea-96ca-b479-64bc-9a59f51efa0a" : {
+                  "sizeX" : 9,
+                  "sizeY" : 5,
+                  "row" : 5,
+                  "col" : 6
+                },
+                "9b4bb474-94b8-ae05-3c5f-a79f19703f93" : {
+                  "sizeX" : 9,
+                  "sizeY" : 5,
+                  "row" : 5,
+                  "col" : 15
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "backgroundSizeMode" : "100%"
               }
             }
           }

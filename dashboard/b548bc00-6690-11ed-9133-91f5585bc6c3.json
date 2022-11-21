@@ -689,7 +689,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "value = \"Avanti\";\nreturn value;"
+                "postFuncBody" : "if(value==\"true\"){\n    return '<div>Avanti</div>';\n}\nelse{\n    return '';\n}"
               }, {
                 "name" : "spinta_indietro",
                 "type" : "timeseries",
@@ -701,7 +701,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "value = \"Indietro\";\nreturn value;"
+                "postFuncBody" : "if(value==\"true\"){\n    value = '<div>Indietro</div>';\n}\nelse{\n    return '';\n}"
               }, {
                 "name" : "rotazione_Attiva",
                 "type" : "timeseries",

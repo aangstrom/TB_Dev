@@ -420,7 +420,35 @@
               "name" : null,
               "entityAliasId" : "c2e9ef1c-1e2e-bc0c-17ed-3eb8814d3f93",
               "filterId" : null,
-              "dataKeys" : [ ]
+              "dataKeys" : [ {
+                "name" : "DescrScavo",
+                "type" : "timeseries",
+                "label" : "DescrScavo",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.9204619059423291
+              }, {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Name",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.7615309822661729
+              }, {
+                "name" : "IdScavo",
+                "type" : "timeseries",
+                "label" : "IdScavo",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.7651862998973138
+              }, {
+                "name" : "UbicaziScavo",
+                "type" : "timeseries",
+                "label" : "UbicaziScavo",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.8252999362854097
+              } ]
             } ],
             "timewindow" : {
               "realtime" : {
@@ -553,157 +581,6 @@
           "row" : 0,
           "col" : 0,
           "id" : "e9167324-91fe-65a7-a75e-e5dbc4e127f1"
-        },
-        "e4951af0-f511-fa85-6154-ca40b42fc3d6" : {
-          "isSystemType" : true,
-          "bundleAlias" : "charts",
-          "typeAlias" : "state_chart",
-          "type" : "timeseries",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
-          "sizeX" : 8,
-          "sizeY" : 5,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "c2e9ef1c-1e2e-bc0c-17ed-3eb8814d3f93",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "materialeScavo",
-                "type" : "timeseries",
-                "label" : "materialeScavo",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.05303538929167617
-              } ],
-              "latestDataKeys" : [ ]
-            } ],
-            "timewindow" : {
-              "realtime" : {
-                "timewindowMs" : 60000
-              }
-            },
-            "showTitle" : true,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "8px",
-            "settings" : {
-              "shadowSize" : 4,
-              "fontColor" : "#545454",
-              "fontSize" : 10,
-              "xaxis" : {
-                "showLabels" : true,
-                "color" : "#545454"
-              },
-              "yaxis" : {
-                "showLabels" : true,
-                "color" : "#545454",
-                "ticksFormatter" : "if (value > 0 && value <= 1) {\n    return 'On';\n} else if (value === 0) {\n    return 'Off';\n} else {\n    return '';\n}"
-              },
-              "grid" : {
-                "color" : "#545454",
-                "tickColor" : "#DDDDDD",
-                "verticalLines" : true,
-                "horizontalLines" : true,
-                "outlineWidth" : 1
-              },
-              "stack" : false,
-              "tooltipIndividual" : false,
-              "tooltipValueFormatter" : "if (value > 0 && value <= 1) {\n    return 'On';\n} else if (value === 0) {\n    return 'Off';\n} else {\n    return '';\n}",
-              "smoothLines" : false
-            },
-            "title" : "New State Chart",
-            "dropShadow" : true,
-            "enableFullscreen" : true,
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "widgetStyle" : { },
-            "useDashboardTimewindow" : true,
-            "showLegend" : true,
-            "actions" : { },
-            "legendConfig" : {
-              "direction" : "column",
-              ",position" : "bottom",
-              "showMin" : false,
-              "showMax" : false,
-              "showAvg" : false,
-              "showTotal" : false
-            }
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "e4951af0-f511-fa85-6154-ca40b42fc3d6"
-        },
-        "a6e03ad5-604c-4d62-ef95-95b6fe730667" : {
-          "isSystemType" : true,
-          "bundleAlias" : "charts",
-          "typeAlias" : "pie",
-          "type" : "latest",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
-          "sizeX" : 8,
-          "sizeY" : 5,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "c2e9ef1c-1e2e-bc0c-17ed-3eb8814d3f93",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "materialeScavo",
-                "type" : "timeseries",
-                "label" : "materialeScavo",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.4697139881550556
-              } ]
-            } ],
-            "timewindow" : {
-              "realtime" : {
-                "timewindowMs" : 60000
-              }
-            },
-            "showTitle" : true,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "8px",
-            "settings" : {
-              "radius" : 1,
-              "fontColor" : "#545454",
-              "fontSize" : 10,
-              "decimals" : 1,
-              "legend" : {
-                "show" : true,
-                "position" : "nw",
-                "labelBoxBorderColor" : "#CCCCCC",
-                "backgroundColor" : "#F0F0F0",
-                "backgroundOpacity" : 0.85
-              },
-              "innerRadius" : 0,
-              "showLabels" : true,
-              "showPercentages" : true,
-              "stroke" : {
-                "width" : 5
-              },
-              "tilt" : 1,
-              "animatedPie" : false
-            },
-            "title" : "New Pie - Flot",
-            "dropShadow" : true,
-            "enableFullscreen" : true,
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            }
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "a6e03ad5-604c-4d62-ef95-95b6fe730667"
         },
         "b6807b3d-609c-2e4a-fe28-5a9db5b1dea3" : {
           "isSystemType" : true,
@@ -864,6 +741,180 @@
           "row" : 0,
           "col" : 0,
           "id" : "afa3f1d8-6135-be3d-d17b-5a7140152402"
+        },
+        "e34cbf3a-9d81-7e9b-13a5-da9e721f66ef" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "basic_timeseries",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "c2e9ef1c-1e2e-bc0c-17ed-3eb8814d3f93",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "lunghScavo",
+                "type" : "timeseries",
+                "label" : "lunghScavo",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.9249971338687268
+              } ],
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "shadowSize" : 4,
+              "fontColor" : "#545454",
+              "fontSize" : 10,
+              "xaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "grid" : {
+                "color" : "#545454",
+                "tickColor" : "#DDDDDD",
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1
+              },
+              "legend" : {
+                "show" : true,
+                "position" : "nw",
+                "backgroundColor" : "#f0f0f0",
+                "backgroundOpacity" : 0.85,
+                "labelBoxBorderColor" : "rgba(1, 1, 1, 0.45)"
+              },
+              "decimals" : 1,
+              "stack" : false,
+              "tooltipIndividual" : false
+            },
+            "title" : "Lunghezza scavo",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showLegend" : true,
+            "legendConfig" : {
+              "direction" : "column",
+              "position" : "bottom",
+              "sortDataKeys" : false,
+              "showMin" : false,
+              "showMax" : false,
+              "showAvg" : true,
+              "showTotal" : false,
+              "showLatest" : false
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "e34cbf3a-9d81-7e9b-13a5-da9e721f66ef"
+        },
+        "c1444c53-e57f-d2ba-07e8-dc24ed2cea06" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "basic_timeseries",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "c2e9ef1c-1e2e-bc0c-17ed-3eb8814d3f93",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "materialeScavo",
+                "type" : "timeseries",
+                "label" : "materialeScavo",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.9211140721677684
+              } ],
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "shadowSize" : 4,
+              "fontColor" : "#545454",
+              "fontSize" : 10,
+              "xaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "grid" : {
+                "color" : "#545454",
+                "tickColor" : "#DDDDDD",
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1
+              },
+              "legend" : {
+                "show" : true,
+                "position" : "nw",
+                "backgroundColor" : "#f0f0f0",
+                "backgroundOpacity" : 0.85,
+                "labelBoxBorderColor" : "rgba(1, 1, 1, 0.45)"
+              },
+              "decimals" : 1,
+              "stack" : false,
+              "tooltipIndividual" : false
+            },
+            "title" : "New Timeseries Line Chart",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "c1444c53-e57f-d2ba-07e8-dc24ed2cea06"
         }
       },
       "states" : {
@@ -926,34 +977,34 @@
                   "col" : 4
                 },
                 "1f93b66b-e16b-fb23-3f6b-ce63abd5363e" : {
-                  "sizeX" : 7,
-                  "sizeY" : 3,
+                  "sizeX" : 8,
+                  "sizeY" : 4,
                   "row" : 3,
                   "col" : 0
                 },
                 "e9167324-91fe-65a7-a75e-e5dbc4e127f1" : {
                   "sizeX" : 8,
                   "sizeY" : 5,
-                  "row" : 6,
-                  "col" : 0
-                },
-                "e4951af0-f511-fa85-6154-ca40b42fc3d6" : {
-                  "sizeX" : 8,
-                  "sizeY" : 5,
-                  "row" : 0,
-                  "col" : 9
-                },
-                "a6e03ad5-604c-4d62-ef95-95b6fe730667" : {
-                  "sizeX" : 8,
-                  "sizeY" : 5,
                   "row" : 5,
-                  "col" : 8
+                  "col" : 16
                 },
                 "afa3f1d8-6135-be3d-d17b-5a7140152402" : {
                   "sizeX" : 4,
                   "sizeY" : 3,
                   "row" : 0,
                   "col" : 18
+                },
+                "e34cbf3a-9d81-7e9b-13a5-da9e721f66ef" : {
+                  "sizeX" : 8,
+                  "sizeY" : 5,
+                  "row" : 5,
+                  "col" : 8
+                },
+                "c1444c53-e57f-d2ba-07e8-dc24ed2cea06" : {
+                  "sizeX" : 8,
+                  "sizeY" : 5,
+                  "row" : 0,
+                  "col" : 8
                 }
               },
               "gridSettings" : {

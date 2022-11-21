@@ -824,6 +824,81 @@
           "row" : 0,
           "col" : 0,
           "id" : "7b37d413-7b2b-2505-b8bd-a041a8959189"
+        },
+        "3e136c83-f21a-cedf-896f-a5731bcae7f7" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "entities_table",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 6.5,
+          "config" : {
+            "timewindow" : {
+              "realtime" : {
+                "interval" : 1000,
+                "timewindowMs" : 86400000
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "4px",
+            "settings" : {
+              "entitiesTitle" : "",
+              "enableSearch" : true,
+              "enableSelectColumnDisplay" : true,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "reserveSpaceForHiddenAction" : "true",
+              "displayEntityName" : true,
+              "entityNameColumnTitle" : "",
+              "displayEntityLabel" : false,
+              "displayEntityType" : true,
+              "displayPagination" : true,
+              "defaultPageSize" : 10,
+              "defaultSortOrder" : "entityName",
+              "useRowStyleFunction" : false
+            },
+            "title" : "New Entities table",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "c2e9ef1c-1e2e-bc0c-17ed-3eb8814d3f93",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "allarme_off",
+                "type" : "timeseries",
+                "label" : "Allarme",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.39017536280082177,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "return value;"
+              } ]
+            } ]
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "3e136c83-f21a-cedf-896f-a5731bcae7f7"
         }
       },
       "states" : {
@@ -834,15 +909,21 @@
             "main" : {
               "widgets" : {
                 "dadff960-7711-a4f4-6890-aae161741faf" : {
-                  "sizeX" : 24,
+                  "sizeX" : 12,
                   "sizeY" : 8,
                   "row" : 2,
-                  "col" : 0
+                  "col" : 12
                 },
                 "7b37d413-7b2b-2505-b8bd-a041a8959189" : {
                   "sizeX" : 24,
                   "sizeY" : 2,
                   "row" : 0,
+                  "col" : 0
+                },
+                "3e136c83-f21a-cedf-896f-a5731bcae7f7" : {
+                  "sizeX" : 12,
+                  "sizeY" : 8,
+                  "row" : 2,
                   "col" : 0
                 }
               },

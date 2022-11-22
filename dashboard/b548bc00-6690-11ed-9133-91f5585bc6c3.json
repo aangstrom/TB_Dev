@@ -32,7 +32,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if(value>=1){\n    return value;\n}\nelse{\n    return 0;   \n}"
+                "postFuncBody" : "if(value>=1){\n    return value;\n}\nelse if(value !== 'undefined'){\n    return 0;   \n}\nelse{\n    return 0;\n}"
               }, {
                 "name" : "DescrScavo",
                 "type" : "timeseries",
@@ -68,6 +68,20 @@
                 "color" : "#3f51b5",
                 "settings" : { },
                 "_hash" : 0.44152887360517457
+              } ],
+              "latestDataKeys" : [ ]
+            }, {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "c2e9ef1c-1e2e-bc0c-17ed-3eb8814d3f93",
+              "filterId" : "1385852f-f7a9-9f8b-9c57-4c82dd407063",
+              "dataKeys" : [ {
+                "name" : "IdScavoNuovo",
+                "type" : "timeseries",
+                "label" : "IdScavoNuovo 2",
+                "color" : "#8bc34a",
+                "settings" : { },
+                "_hash" : 0.7610011784434383
               } ],
               "latestDataKeys" : [ ]
             } ],

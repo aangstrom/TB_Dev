@@ -27,10 +27,6 @@
       "fromIndex" : 1,
       "toIndex" : 2,
       "type" : "Success"
-    }, {
-      "fromIndex" : 1,
-      "toIndex" : 3,
-      "type" : "Success"
     } ],
     "firstNodeIndex" : null,
     "nodes" : [ {
@@ -115,25 +111,6 @@
       "name" : "Script",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 715,
-        "layoutY" : 481
-      },
-      "configuration" : {
-        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);"
-      },
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "06ce69c0-6b06-11ed-9133-91f5585bc6c3"
-      },
-      "name" : "test",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     } ],
     "ruleChainConnections" : null
   },

@@ -37,7 +37,7 @@
       },
       "configuration" : {
         "msgCount" : 0,
-        "periodInSeconds" : 30,
+        "periodInSeconds" : 60,
         "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "originatorId" : "efb11430-01ed-11ed-91ed-0903699d62f6",
         "originatorType" : "CUSTOMER"
@@ -99,7 +99,7 @@
         "layoutY" : 333
       },
       "configuration" : {
-        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+        "jsScript" : "var test= msg.user;\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "createdTime" : 0,
       "debugMode" : true,

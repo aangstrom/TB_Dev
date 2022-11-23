@@ -27,6 +27,10 @@
       "fromIndex" : 1,
       "toIndex" : 2,
       "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 3,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : null,
     "nodes" : [ {
@@ -39,8 +43,8 @@
         "msgCount" : 0,
         "periodInSeconds" : 60,
         "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "originatorId" : "efb11430-01ed-11ed-91ed-0903699d62f6",
-        "originatorType" : "CUSTOMER"
+        "originatorId" : "c269b990-6b39-11ed-9133-91f5585bc6c3",
+        "originatorType" : "DEVICE"
       },
       "createdTime" : 0,
       "debugMode" : false,
@@ -111,6 +115,27 @@
       "name" : "Script",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1037,
+        "layoutY" : 245
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e18e4a20-6b39-11ed-9133-91f5585bc6c3"
+      },
+      "name" : "Save",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
     } ],
     "ruleChainConnections" : null
   },

@@ -27,6 +27,10 @@
       "fromIndex" : 3,
       "toIndex" : 4,
       "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 2,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : null,
     "nodes" : [ {
@@ -143,7 +147,7 @@
         "layoutY" : 496
       },
       "configuration" : {
-        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+        "jsScript" : "var te=JSON.parse(metadata.DescrScavo);\nvar t=JSON.stringify(te);\nreturn {msg: t, metadata: metadata, msgType: msgType};"
       },
       "createdTime" : 0,
       "debugMode" : true,

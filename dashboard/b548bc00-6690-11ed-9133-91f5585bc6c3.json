@@ -1971,10 +1971,13 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "4px",
             "settings" : {
-              "displayCreatedTime" : true,
-              "displayCustomer" : true,
               "title" : "Reports",
-              "displayType" : false,
+              "displayCreatedTime" : true,
+              "displayType" : true,
+              "displayCustomer" : true,
+              "displayPagination" : true,
+              "defaultPageSize" : 10,
+              "defaultSortOrder" : "name",
               "forceDefaultType" : "report"
             },
             "title" : "New Reports",
@@ -1995,6 +1998,56 @@
           "row" : 0,
           "col" : 0,
           "id" : "e570a874-11d3-bbdd-6d2f-d7704e302d18"
+        },
+        "ed72a73c-b54d-9a49-cb33-e8bcedef0af6" : {
+          "isSystemType" : true,
+          "bundleAlias" : "files",
+          "typeAlias" : "files",
+          "type" : "static",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 4.5,
+          "config" : {
+            "timewindow" : {
+              "realtime" : {
+                "interval" : 1000,
+                "timewindowMs" : 86400000
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "4px",
+            "settings" : {
+              "displayCreatedTime" : true,
+              "displayCustomer" : true,
+              "title" : "Files",
+              "displayType" : true
+            },
+            "title" : "New Files",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "datasources" : [ ],
+            "enableDataExport" : true,
+            "widgetStyle" : { },
+            "actions" : { }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "ed72a73c-b54d-9a49-cb33-e8bcedef0af6"
         }
       },
       "states" : {
@@ -2095,6 +2148,12 @@
                   "sizeY" : 7,
                   "row" : 11,
                   "col" : 0
+                },
+                "ed72a73c-b54d-9a49-cb33-e8bcedef0af6" : {
+                  "sizeX" : 7,
+                  "sizeY" : 7,
+                  "row" : 11,
+                  "col" : 7
                 }
               },
               "gridSettings" : {

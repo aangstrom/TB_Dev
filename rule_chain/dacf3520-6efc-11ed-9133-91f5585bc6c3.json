@@ -27,6 +27,10 @@
       "fromIndex" : 1,
       "toIndex" : 0,
       "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 4,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : null,
     "nodes" : [ {
@@ -146,6 +150,36 @@
       "name" : "Create CSV",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.report.TbGenerateReportNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 240,
+        "layoutY" : 585
+      },
+      "configuration" : {
+        "latestTsKeyNames" : [ "idScavo", "DescrScavo", "UbicazScavo" ],
+        "aggregation" : "NONE",
+        "fetchMode" : "FIRST",
+        "orderBy" : "ASC",
+        "limit" : 1000,
+        "useMetadataIntervalPatterns" : false,
+        "startInterval" : 30,
+        "startIntervalTimeUnit" : "DAYS",
+        "endInterval" : 1,
+        "endIntervalTimeUnit" : "MINUTES",
+        "startIntervalPattern" : "",
+        "endIntervalPattern" : ""
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c70fb820-6f01-11ed-9133-91f5585bc6c3"
+      },
+      "name" : "test",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetTelemetryNode"
     } ],
     "ruleChainConnections" : null
   },

@@ -19,13 +19,17 @@
     "type" : "CORE"
   },
   "metaData" : {
-    "connections" : null,
+    "connections" : [ {
+      "fromIndex" : 1,
+      "toIndex" : 0,
+      "type" : "Success"
+    } ],
     "firstNodeIndex" : null,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 227,
-        "layoutY" : 220
+        "layoutX" : 331,
+        "layoutY" : 185
       },
       "configuration" : {
         "restEndpointUrlPattern" : "http://localhost/api/plugins/telemetry/$[entityType]/$[entityId]/values/timeseries/?keys=DescrScavo,UbicaziScavo,idScavo&startTs=1667288646000&endTs=1669621446000&interval=60000&limit=100&agg=NONE",
@@ -61,6 +65,29 @@
       "name" : "Get Data",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 185,
+        "layoutY" : 282
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 15,
+        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "originatorId" : "441539d0-6697-11ed-9133-91f5585bc6c3",
+        "originatorType" : "DEVICE"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "5843f2b0-6efe-11ed-9133-91f5585bc6c3"
+      },
+      "name" : "test",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     } ],
     "ruleChainConnections" : null
   },

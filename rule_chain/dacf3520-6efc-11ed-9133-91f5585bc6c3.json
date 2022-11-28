@@ -25,10 +25,6 @@
       "type" : "Success"
     }, {
       "fromIndex" : 1,
-      "toIndex" : 4,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 4,
       "toIndex" : 0,
       "type" : "Success"
     } ],
@@ -40,7 +36,7 @@
         "layoutY" : 324
       },
       "configuration" : {
-        "restEndpointUrlPattern" : "http://localhost/api/plugins/telemetry/DEVICE/${originatorId}/values/timeseries/?keys=DescrScavo,UbicaziScavo,idScavo&startTs=1667288646000&endTs=1669621446000&interval=60000&limit=100&agg=NONE",
+        "restEndpointUrlPattern" : "http://localhost/api/plugins/telemetry/DEVICE/441539d0-6697-11ed-9133-91f5585bc6c3/values/timeseries/?keys=DescrScavo,UbicaziScavo,idScavo&startTs=1667288646000&endTs=1669621446000&interval=60000&limit=100&agg=NONE",
         "requestMethod" : "GET",
         "useSimpleClientHttpFactory" : false,
         "ignoreRequestBody" : false,
@@ -150,25 +146,6 @@
       "name" : "Create CSV",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.report.TbGenerateReportNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 239,
-        "layoutY" : 538
-      },
-      "configuration" : {
-        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
-      },
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "f29457b0-6efe-11ed-9133-91f5585bc6c3"
-      },
-      "name" : "add deviceid",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

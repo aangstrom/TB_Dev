@@ -20,6 +20,10 @@
   },
   "metaData" : {
     "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
       "fromIndex" : 1,
       "toIndex" : 0,
       "type" : "Success"
@@ -28,8 +32,8 @@
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 331,
-        "layoutY" : 185
+        "layoutX" : 408,
+        "layoutY" : 289
       },
       "configuration" : {
         "restEndpointUrlPattern" : "http://localhost/api/plugins/telemetry/$[entityType]/$[entityId]/values/timeseries/?keys=DescrScavo,UbicaziScavo,idScavo&startTs=1667288646000&endTs=1669621446000&interval=60000&limit=100&agg=NONE",
@@ -68,8 +72,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 185,
-        "layoutY" : 282
+        "layoutX" : 40,
+        "layoutY" : 297
       },
       "configuration" : {
         "msgCount" : 0,
@@ -88,6 +92,60 @@
       "name" : "test",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 948,
+        "layoutY" : 442
+      },
+      "configuration" : {
+        "useSystemSmtpSettings" : true,
+        "smtpHost" : "localhost",
+        "smtpPort" : 25,
+        "username" : null,
+        "password" : null,
+        "smtpProtocol" : "smtp",
+        "timeout" : 10000,
+        "enableTls" : false,
+        "tlsVersion" : "TLSv1.2",
+        "enableProxy" : false,
+        "proxyHost" : null,
+        "proxyPort" : null,
+        "proxyUser" : null,
+        "proxyPassword" : null
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "94c3c580-6efe-11ed-9133-91f5585bc6c3"
+      },
+      "name" : "Send to Pato email",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.mail.TbSendEmailNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 656,
+        "layoutY" : 296
+      },
+      "configuration" : {
+        "useSystemReportsServer" : true,
+        "reportsServerEndpointUrl" : null,
+        "useReportConfigFromMessage" : true,
+        "reportConfig" : null
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "94c3c581-6efe-11ed-9133-91f5585bc6c3"
+      },
+      "name" : "Create CSV",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.report.TbGenerateReportNode"
     } ],
     "ruleChainConnections" : null
   },

@@ -32,6 +32,10 @@
       "toIndex" : 5,
       "type" : "Success"
     }, {
+      "fromIndex" : 0,
+      "toIndex" : 7,
+      "type" : "Success"
+    }, {
       "fromIndex" : 2,
       "toIndex" : 1,
       "type" : "Success"
@@ -42,6 +46,10 @@
     }, {
       "fromIndex" : 4,
       "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 8,
       "type" : "Success"
     } ],
     "firstNodeIndex" : null,
@@ -187,8 +195,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 778,
-        "layoutY" : 610
+        "layoutX" : 703,
+        "layoutY" : 603
       },
       "configuration" : {
         "topicPattern" : "aangstrom/simulator/env/fotovoltaico",
@@ -244,6 +252,65 @@
       "name" : "aa8",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.mqtt.TbMqttNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 405,
+        "layoutY" : 664
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {\n  \"@context\": \"https://schema.org/extensions\",\n  \"@type\": \"MessageCard\",\n  \"themeColor\": \"0072C6\",\n  \"title\": \"HomeAssistant is now connected to Teams\",\n  \"text\": \"Actionable Messages possible as well\"\n};\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "28b35e50-7a66-11ed-9133-91f5585bc6c3"
+      },
+      "name" : "CreateTeamsPostMessage",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 759,
+        "layoutY" : 748
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "https://aangstromit.webhook.office.com/webhookb2/147ac03e-8ab3-4bf6-bc09-11e64848ecf8@ec6dca47-22be-44de-bd47-855410a1d829/IncomingWebhook/0aacba550d044532b43e2d53196d8289/da155956-fdd8-4364-b647-abfbd17ff1ee",
+        "requestMethod" : "POST",
+        "useSimpleClientHttpFactory" : false,
+        "ignoreRequestBody" : false,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : {
+          "Content-Type" : "application/json"
+        },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : false,
+        "maxQueueSize" : 0,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "28b38560-7a66-11ed-9133-91f5585bc6c3"
+      },
+      "name" : "PushtoTeams",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
     } ],
     "ruleChainConnections" : null
   },

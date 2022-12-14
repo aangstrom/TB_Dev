@@ -118,11 +118,8 @@
                 "icon" : "more_horiz",
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
-                "type" : "updateDashboardState",
-                "targetDashboardStateId" : "commessa",
-                "setEntityId" : true,
-                "stateEntityParamName" : "CurrentUser.Pato_Commessa",
-                "openRightLayout" : false,
+                "type" : "custom",
+                "customFunction" : "\r\nconsole.log($event);\r\n        var attrData={\"Selected_IdScavo\":$event};\r\n\r\nwidgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/attributes/CUSTOMER_USER', attrData).subscribe(data =>\r\n        {\r\n            console.log(\"Success\");\r\n        },function(error){\r\n            console.log(error)\r\n        })\r\n/*\r\nfunction AddEntityDialogController(instance) {\r\n    let vm = instance;\r\n    vm.addEntityFormGroup = vm.fb.group({\r\n     frequenza_nuova:[null, [vm.validators.required]],\r\n    });\r\n\r\n    vm.cancel = function() {\r\n        vm.dialogRef.close(null);\r\n    };\r\n    vm.save = function() {\r\n        var formData=vm.addEntityFormGroup.value;\r\n        vm.addEntityFormGroup.markAsPristine();\r\n        var date=Date.now();\r\n        var attrData={\"FrqCampione\":formData.frequenza_nuova};\r\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/attributes/SHARED_SCOPE', attrData).subscribe(data =>\r\n        {\r\n            vm.dialogRef.close(null);\r\n        },function(error){\r\n            console.log(error)\r\n        })\r\n    };\r\n\r\n}\r\n*/",
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
                 "id" : "54342711-9303-80b0-49ba-b3283d13bfb6"

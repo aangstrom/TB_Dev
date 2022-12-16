@@ -1131,15 +1131,15 @@
               "dataKeys" : [ {
                 "name" : "lunghScavo",
                 "type" : "timeseries",
-                "label" : "Produttività",
+                "label" : "Produttività mm/m",
                 "color" : "#4caf50",
                 "settings" : { },
                 "_hash" : 0.497116578676132,
-                "units" : "%",
+                "units" : "mm/m",
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "var mm=value-prevValue;\nvar t=((time-timePrev)/1000)/60;\nif(t>1000 || t<0){t=undefined;}\nreturn mm;"
+                "postFuncBody" : "var mm=(value*1000)-(prevOrigValue*1000);\nif(mm>1000 || mm<0){mm=undefined;}\nvar t=((time-timePrev)/1000)/60;\nif(t>1000 || t<0){t=undefined;}\nreturn mm/t;"
               } ],
               "latestDataKeys" : [ ]
             } ],
@@ -1182,7 +1182,7 @@
               "stack" : false,
               "tooltipIndividual" : false
             },
-            "title" : "Produttività",
+            "title" : "Produttività mm/minuto",
             "dropShadow" : true,
             "enableFullscreen" : true,
             "titleStyle" : {
@@ -2259,7 +2259,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "return value;"
+                "postFuncBody" : "return prevOrigValue;"
               } ],
               "latestDataKeys" : [ ]
             } ],

@@ -1139,7 +1139,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "var mm=(value*1000)-(prevOrigValue*1000);\nif(mm>1000 || mm<0){mm=undefined;}\nconst date = new Date(time * 1000);\nconst prevdate = new Date(timePrev * 1000);\nconst minutes = date.getMinutes();\nconst prevminutes = prevdate.getMinutes();\nconst seconds = date.getSeconds();\nconst prevseconds = prevdate.getSeconds();\nvar tempo=(minutes/60)+seconds;\nvar prevtempo=(prevminutes/60)+prevseconds;\nvar t=tempo-prevtempo;\nreturn t;"
+                "postFuncBody" : "var mm=(value*1000)-(prevOrigValue*1000);\nif(mm>1000 || mm<0){mm=undefined;}\nvar tempo=time-timePrev;\nconst date = new Date(tempo * 1000);\nconst minutes = date.getMinutes();\nconst seconds = date.getSeconds();\nvar t=seconds+(minutes/60);\nreturn t;"
               } ],
               "latestDataKeys" : [ ]
             } ],

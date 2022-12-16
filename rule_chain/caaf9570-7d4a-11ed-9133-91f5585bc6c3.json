@@ -24,10 +24,6 @@
   "metaData" : {
     "connections" : [ {
       "fromIndex" : 2,
-      "toIndex" : 0,
-      "type" : "Post telemetry"
-    }, {
-      "fromIndex" : 2,
       "toIndex" : 1,
       "type" : "Post attributes"
     }, {
@@ -43,15 +39,23 @@
       "toIndex" : 5,
       "type" : "RPC Request to Device"
     }, {
+      "fromIndex" : 2,
+      "toIndex" : 7,
+      "type" : "Post telemetry"
+    }, {
       "fromIndex" : 6,
       "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 0,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 6,
     "nodes" : [ {
       "additionalInfo" : {
-        "layoutX" : 822,
-        "layoutY" : 294
+        "layoutX" : 1194,
+        "layoutY" : 300
       },
       "configuration" : {
         "defaultTTL" : 0
@@ -179,22 +183,22 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 581,
-        "layoutY" : 522
+        "layoutX" : 834,
+        "layoutY" : 300
       },
       "configuration" : {
-        "jsScript" : "return msg.lunghScavo = 0;"
+        "jsScript" : "if(msg.lunghScavo>=1){\n    if(msg.FrqCampione == undefined){\n        msg.lunghScavo=undefined;\n    }\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "5ef64350-7d4b-11ed-9133-91f5585bc6c3"
+        "id" : "035f8240-7d50-11ed-9133-91f5585bc6c3"
       },
-      "name" : "lughScavo",
+      "name" : "LunghScavo",
       "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

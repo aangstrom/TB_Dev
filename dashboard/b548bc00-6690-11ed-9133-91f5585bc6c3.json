@@ -1146,7 +1146,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "var mm=(value*1000)-(prevOrigValue*1000);\nif(mm>1000 || mm<0){mm=undefined;}\nvar t=((time-timePrev)/1000)/60;\nif(t>1000 || t<0){t=undefined;}\nif(mm/t>1000 || mm/t<0){\n    return mm/t;\n}else{\n    return 0;\n}"
+                "postFuncBody" : "var mm=(value*1000)-(prevOrigValue*1000);\nif(mm>1000 || mm<0){mm=undefined;}\nvar t=((time-timePrev)/1000)/60;\nif(t>1000 || t<0){t=undefined;}\nvar f=mm/t\nif(f>1000 || f<0){\n    return null;\n}\nreturn f;"
               } ],
               "latestDataKeys" : [ ]
             } ],

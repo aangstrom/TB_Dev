@@ -398,7 +398,7 @@
                 "color" : "#2196f3",
                 "settings" : { },
                 "_hash" : 0.9249971338687268,
-                "units" : null,
+                "units" : "m",
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : false,
@@ -1139,7 +1139,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "var differenza=(value*1500)-(prevOrigValue*1500);\nif(differenza>100){\n    differenza=null;\n}\nreturn differenza;"
+                "postFuncBody" : "var mm=(value*1000)-(prevOrigValue*1000);\nif(mm>1000 || mm<0){mm=undefined;}\nconst date = new Date(time * 1000);\nconst prevdate = new Date(timePrev * 1000);\nconst minutes = date.getMinutes();\nconst prevminutes = prevdate.getMinutes();\nconst seconds = date.getSeconds();\nconst prevseconds = prevdate.getSeconds();\nvar tempo=(minutes/60)+seconds;\nvar prevtempo=(prevminutes/60)+prevseconds;\nvar t=tempo-prevtempo;\nreturn t;"
               } ],
               "latestDataKeys" : [ ]
             } ],

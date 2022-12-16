@@ -1139,7 +1139,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "var mm=(value*1000)-(prevOrigValue*1000);\nif(mm>1000 || mm<0){mm=undefined;}\nvar tempo=(time/1000)-(timePrev/1000);\nreturn tempo;"
+                "postFuncBody" : "var mm=value-prevValue;\nvar t=((time-timePrev)/1000)/60;\nif(t>1000 || t<0){t=undefined;}\nreturn mm;"
               } ],
               "latestDataKeys" : [ ]
             } ],

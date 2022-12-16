@@ -1139,7 +1139,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "var differenza=value-prevOrigValue;\nif(differenza>100){\n    differenza=0;\n}\nreturn differenza;"
+                "postFuncBody" : "var differenza=(value*15)-(prevOrigValue*15);\nif(differenza>100){\n    differenza=null;\n}\nreturn differenza;"
               } ],
               "latestDataKeys" : [ ]
             } ],

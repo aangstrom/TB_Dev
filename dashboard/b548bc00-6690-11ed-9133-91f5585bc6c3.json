@@ -2232,10 +2232,10 @@
           "col" : 0,
           "id" : "fb73293f-6f36-297b-3f69-bbb2c5bf4a26"
         },
-        "a250525a-fd16-5e34-7f90-a221edca6246" : {
+        "e65bb4d2-35a1-3656-a967-6b082373c352" : {
           "isSystemType" : true,
           "bundleAlias" : "charts",
-          "typeAlias" : "basic_timeseries",
+          "typeAlias" : "state_chart",
           "type" : "timeseries",
           "title" : "New widget",
           "image" : null,
@@ -2254,7 +2254,7 @@
                 "label" : "ins_tubo",
                 "color" : "#2196f3",
                 "settings" : { },
-                "_hash" : 0.9418277584850563
+                "_hash" : 0.13529534229059337
               } ],
               "latestDataKeys" : [ ]
             } ],
@@ -2277,7 +2277,8 @@
               },
               "yaxis" : {
                 "showLabels" : true,
-                "color" : "#545454"
+                "color" : "#545454",
+                "ticksFormatter" : "if (value > 0 && value <= 1) {\n    return 'On';\n} else if (value === 0) {\n    return 'Off';\n} else {\n    return '';\n}"
               },
               "grid" : {
                 "color" : "#545454",
@@ -2286,29 +2287,34 @@
                 "horizontalLines" : true,
                 "outlineWidth" : 1
               },
-              "legend" : {
-                "show" : true,
-                "position" : "nw",
-                "backgroundColor" : "#f0f0f0",
-                "backgroundOpacity" : 0.85,
-                "labelBoxBorderColor" : "rgba(1, 1, 1, 0.45)"
-              },
-              "decimals" : 1,
               "stack" : false,
-              "tooltipIndividual" : false
+              "tooltipIndividual" : false,
+              "tooltipValueFormatter" : "if (value > 0 && value <= 1) {\n    return 'On';\n} else if (value === 0) {\n    return 'Off';\n} else {\n    return '';\n}",
+              "smoothLines" : false
             },
-            "title" : "New Timeseries Line Chart",
+            "title" : "New State Chart",
             "dropShadow" : true,
             "enableFullscreen" : true,
             "titleStyle" : {
               "fontSize" : "16px",
               "fontWeight" : 400
             },
-            "useDashboardTimewindow" : true
+            "widgetStyle" : { },
+            "useDashboardTimewindow" : true,
+            "showLegend" : true,
+            "actions" : { },
+            "legendConfig" : {
+              "direction" : "column",
+              ",position" : "bottom",
+              "showMin" : false,
+              "showMax" : false,
+              "showAvg" : false,
+              "showTotal" : false
+            }
           },
           "row" : 0,
           "col" : 0,
-          "id" : "a250525a-fd16-5e34-7f90-a221edca6246"
+          "id" : "e65bb4d2-35a1-3656-a967-6b082373c352"
         }
       },
       "states" : {
@@ -2366,7 +2372,7 @@
                   "row" : 2,
                   "col" : 8
                 },
-                "a250525a-fd16-5e34-7f90-a221edca6246" : {
+                "e65bb4d2-35a1-3656-a967-6b082373c352" : {
                   "sizeX" : 8,
                   "sizeY" : 5,
                   "row" : 12,

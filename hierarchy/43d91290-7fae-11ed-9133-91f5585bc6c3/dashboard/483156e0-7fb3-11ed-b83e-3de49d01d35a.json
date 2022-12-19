@@ -1,0 +1,2662 @@
+{
+  "entityType" : "DASHBOARD",
+  "entity" : {
+    "assignedCustomers" : null,
+    "configuration" : {
+      "description" : "",
+      "widgets" : {
+        "dadff960-7711-a4f4-6890-aae161741faf" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "timeseries_table",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 6.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "c2e9ef1c-1e2e-bc0c-17ed-3eb8814d3f93",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "IdScavoNuovo",
+                "type" : "timeseries",
+                "label" : "IdScavo",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.7675562586210429,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "return value;"
+              }, {
+                "name" : "DescrScavo",
+                "type" : "timeseries",
+                "label" : "Commessa",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.0686160105346838,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "UbicaziScavo",
+                "type" : "timeseries",
+                "label" : "Località",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.7154241589640451,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "latestDataKeys" : null
+            } ],
+            "timewindow" : {
+              "hideInterval" : false,
+              "hideAggregation" : true,
+              "hideAggInterval" : true,
+              "hideTimezone" : false,
+              "selectedTab" : 1,
+              "history" : {
+                "historyType" : 0,
+                "timewindowMs" : 31536000000,
+                "interval" : 63072000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1669016515618,
+                  "endTimeMs" : 1669102915618
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "MIN",
+                "limit" : 300
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "enableSearch" : true,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "reserveSpaceForHiddenAction" : "true",
+              "showTimestamp" : true,
+              "showMilliseconds" : false,
+              "displayPagination" : true,
+              "useEntityLabel" : false,
+              "defaultPageSize" : 20,
+              "hideEmptyLines" : true,
+              "disableStickyHeader" : false,
+              "useRowStyleFunction" : false
+            },
+            "title" : "Commesse",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "widgetStyle" : {
+              "border-radius" : "25px"
+            },
+            "actions" : {
+              "rowClick" : [ {
+                "name" : "test",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "var id=widgetContext.currentUser.userId;\r\nvar clicked=additionalParams[1];\r\nvar attrData={\"Pato_selected_IdScavo\":clicked};\r\nwidgetContext.http.post('/api/plugins/telemetry/USER/'+id+'/attributes/SERVER_SCOPE', attrData).subscribe(data =>\r\n        {\r\n            console.log(\"Success\");\r\n        },function(error){\r\n            console.log(error)\r\n        })\r\n        \r\nopenDashboardState(\"commessa\");\r\nfunction openDashboardState(stateId) {\r\n    var params = {\r\n        entityId: entityId,\r\n        entityName: entityName\r\n    };\r\n    console.log(params);\r\n    widgetContext.stateController.openState(stateId,false);\r\n}\r\n/*\r\nfunction AddEntityDialogController(instance) {\r\n    let vm = instance;\r\n    vm.addEntityFormGroup = vm.fb.group({\r\n     frequenza_nuova:[null, [vm.validators.required]],\r\n    });\r\n\r\n    vm.cancel = function() {\r\n        vm.dialogRef.close(null);\r\n    };\r\n    vm.save = function() {\r\n        var formData=vm.addEntityFormGroup.value;\r\n        vm.addEntityFormGroup.markAsPristine();\r\n        var date=Date.now();\r\n        var attrData={\"FrqCampione\":formData.frequenza_nuova};\r\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/attributes/SHARED_SCOPE', attrData).subscribe(data =>\r\n        {\r\n            vm.dialogRef.close(null);\r\n        },function(error){\r\n            console.log(error)\r\n        })\r\n    };\r\n\r\n}\r\n*/",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "54342711-9303-80b0-49ba-b3283d13bfb6"
+              } ],
+              "actionCellButton" : [ {
+                "name" : "Export to Sharepoint",
+                "icon" : "arrow_forward",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "var idScavo,UbicaziScavo,DescrScavo,datas;\nwidgetContext.http.get('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/values/timeseries/?keys=DescrScavo,UbicaziScavo,idScavo&startTs=1667288646000&endTs=1669621446000&interval=60000&limit=100&agg=NONE').subscribe(data =>\n        {\n            datas=data;\n            idScavo=data.idScavo;\n            DescrScavo=data.DescrScavo;\n        },function(error){\n            console.log(error)\n        })\n\n",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "e57b097b-5b98-80f6-5b4a-bdafe730670c"
+              } ]
+            },
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "displayTimewindow" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "Caricamento in corso ..."
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "dadff960-7711-a4f4-6890-aae161741faf"
+        },
+        "1f93b66b-e16b-fb23-3f6b-ce63abd5363e" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "901afce7-b57e-38e5-8ecf-163eae309300",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "DescrScavo",
+                "type" : "timeseries",
+                "label" : "DescrScavo",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.9204619059423291
+              }, {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Name",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.7615309822661729
+              }, {
+                "name" : "IdScavo",
+                "type" : "timeseries",
+                "label" : "IdScavo",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.7651862998973138,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : false,
+                "postFuncBody" : null
+              }, {
+                "name" : "UbicaziScavo",
+                "type" : "timeseries",
+                "label" : "UbicaziScavo",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.8252999362854097
+              }, {
+                "name" : "FrqCampione",
+                "type" : "attribute",
+                "label" : "FrqCampione",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.5517382774454826,
+                "units" : "s",
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : false,
+                "postFuncBody" : null
+              }, {
+                "name" : "materialeScavo",
+                "type" : "timeseries",
+                "label" : "materialeScavo",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.24411283405983997
+              } ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <h1>${Name}</h1><br>\n            <div><i class=\"fa fa-hashtag\" aria-hidden=\"true\"></i> <b>Matricola</b>: value_matricola.</div>\n            <div><i class=\"fa fa-info\" aria-hidden=\"true\"></i> <b>Commessa</b>: ${IdScavo}</div>\n            <div><i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i> <b>Località scavo</b>: ${UbicaziScavo}.</div>\n             <div><i class=\"fa fa-leaf\" aria-hidden=\"true\"></i> <b>Materiale scavo</b>: ${materialeScavo}.</div>\n            <div><i class=\"fa fa-bars\" aria-hidden=\"true\"></i> <b>Descrizione scavo</b>: ${DescrScavo}.</div>\n            <div><i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i> <b>Frequenza dati</b>: Ogni ${FrqCampione} millimetri.</div>\n            <br><br>\n            <div id=\"guasto\" class=\"button\"><i class=\"fa fa-bars\" aria-hidden=\"true\"></i> <b>Segnala Guasto</b></div>\n        </div>\n    </div>\n</div>",
+              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content {\n   padding: 10px;\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   box-sizing: border-box;\n}\n\n.card .content .column {\n   display: flex;\n   font-size: 18px;\n   flex-direction: column;    \n   justify-content: space-around;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 22px;\n    font-weight: bold;\n    margin: 0;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n\n.fa{\n    font-size: 20px;\n}\n\n.button{\n    background-color: red;\n    text-align: center;\n    color: yellow;\n    padding: 15px;\n    margin: 0 15px;\n    border-radius: 999px;\n    \n}\n.button:hover{\n    transform: scale(1.1);\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : {
+              "border-radius" : "25px"
+            },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "guasto",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\n        <h2>Segnala Guasto/Fermo</h2>\n        <span fxFlex></span>\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\n            <mat-icon class=\"material-icons\">close</mat-icon>\n        </button>\n    </mat-toolbar>\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\n    </mat-progress-bar>\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\n    <div mat-dialog-content fxLayout=\"column\">\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Segnala guasto</span><br>\n            <section fxLayout=\"row\" fxLayoutAlign=\"center\" fxLayoutGap=\"10px\" fxLayout.xs=\"column\" fxLayoutGap.xs=\"0\">\n                <mat-form-field appearance=\"fill\" style=\"width: 300px\">\n                  <mat-label>Data</mat-label>\n                  <mat-datetimepicker-toggle [for]=\"DatePicker\" matPrefix></mat-datetimepicker-toggle>\n                  <mat-datetimepicker #DatePicker type=\"date\" openOnFocus=\"true\"></mat-datetimepicker>\n                  <input matInput [disabled]=\"disabled\"  [matDatetimepicker]=\"DatePicker\" formControlName=\"eventDate\" required>\n                  <mat-hint>GG/MM/AAAA</mat-hint>\n                </mat-form-field>\n                <mat-form-field appearance=\"fill\"  style=\"width: 300px\">\n                  <mat-label>Ora</mat-label>\n                  <mat-datetimepicker-toggle [for]=\"TimePicker\" matPrefix></mat-datetimepicker-toggle>\n                  <mat-datetimepicker #TimePicker type=\"time\" openOnFocus=\"true\"></mat-datetimepicker>\n                  <input matInput [disabled]=\"disabled\" [matDatetimepicker]=\"TimePicker\" formControlName=\"eventTime\" required><mat-hint>H/Min</mat-hint>\n                </mat-form-field>\n            </section>\n            <mat-form-field appearance=\"fill\">\n              <mat-label>Risolto?</mat-label>\n              <mat-select formControlName=\"risoluzione\" required>\n                <mat-option value=\"si\">Si</mat-option>\n                <mat-option value=\"no\">No</mat-option>\n              </mat-select>\n            </mat-form-field>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Ore Fermo Macchina</mat-label>\n                <input matInput  placeholder=\"Es. 1\" formControlName=\"ore_fermo\" required>\n                <span matSuffix>Minuto/i</span>\n            </mat-form-field>\n            <mat-form-field appearance=\"fill\">\n              <mat-label>Note</mat-label>\n              <textarea matInput formControlName=\"note\"></textarea>\n            </mat-form-field>\n        </div>\n    </div>\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\n        <button mat-button color=\"primary\"\n                type=\"button\"\n                [disabled]=\"(isLoading$ | async)\"\n                (click)=\"cancel()\" cdkFocusInitial>\n            Cancella\n        </button>\n        <button mat-button mat-raised-button color=\"primary\"\n                type=\"submit\"\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\n            Invia\n        </button>\n    </div>\n</form>",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "console.log($event,entityId,entityName,additionalParams,widgetContext)\n\nlet $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\nlet assetService = $injector.get(widgetContext.servicesMap.get('assetService'));\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\nlet attributeService = $injector.get(widgetContext.servicesMap.get('attributeService'));\nlet entityRelationService = $injector.get(widgetContext.servicesMap.get('entityRelationService'));\n\n    openAddEntityDialog();\n\nfunction openAddEntityDialog() {\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\n}\n\nfunction AddEntityDialogController(instance) {\n    let vm = instance;\n    vm.addEntityFormGroup = vm.fb.group({\n     risoluzione: [null, [vm.validators.required]],\n     ore_fermo: [null, [vm.validators.required]],\n     note: [\"\"],\n     eventDate:[null, [vm.validators.required]],\n     eventTime:[null, [vm.validators.required]]\n    });\n\n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    vm.save = function() {\n        var formData=vm.addEntityFormGroup.value\n        formData.eventDate.setHours(formData.eventTime.getHours())\n        formData.eventDate.setMinutes(formData.eventTime.getMinutes())\n        console.log(\"formData: \",formData);\n        vm.addEntityFormGroup.markAsPristine();\n        var telData={\"ts\":formData.eventDate.valueOf(), \"values\":{\"guasto_risoluzione\":formData.risoluzione, \"guasto_ore_fermo\":formData.ore_fermo, \"guasto_note\":formData.note}}\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\n        {\n        // console.log(\"data: \",data)\n            // widgetContext.updateAliases();\n            vm.dialogRef.close(null);\n        },function(error){\n            console.log(error)\n        })\n    };\n}",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "09293152-7baa-25a6-5f8b-b7be6415e263"
+              } ],
+              "headerButton" : [ {
+                "name" : "Impostazioni Dispositivo",
+                "icon" : "settings",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\r\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\r\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\r\n        <h2>Impostazioni del dispositivo</h2>\r\n        <span fxFlex></span>\r\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\r\n            <mat-icon class=\"material-icons\">close</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\"></mat-progress-bar>\r\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\r\n    <div mat-dialog-content fxLayout=\"column\">\r\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\r\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Impostazioni del dispositivo</span><br>\r\n            <div>Frequenza dati (si applica alla prossima variazione della commessa/materiale)</div>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Nuova frequenza dati</mat-label>\r\n                <input matInput type=\"number\" placeholder=\"Es: 15\" formControlName=\"frequenza_nuova\" required>\r\n            </mat-form-field>\r\n        </div>\r\n    </div>\r\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n        <button mat-button color=\"primary\" type=\"button\"\r\n                [disabled]=\"(isLoading$ | async)\"\r\n                (click)=\"cancel()\" cdkFocusInitial>\r\n            Cancella\r\n        </button>\r\n        <button mat-button mat-raised-button color=\"primary\" type=\"submit\"\r\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\r\n            Invia\r\n        </button>\r\n    </div>\r\n</form>\r\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\r\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\r\nlet assetService = $injector.get(widgetContext.servicesMap.get('assetService'));\r\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\r\nlet attributeService = $injector.get(widgetContext.servicesMap.get('attributeService'));\r\nlet entityRelationService = $injector.get(widgetContext.servicesMap.get('entityRelationService'));\r\n\r\nvar frequenza_attuale;\r\nwidgetContext.http.get('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/values/attributes/?keys=FrqCampione').subscribe(data =>\r\n        {\r\n            frequenza_attuale=data[0].value;\r\n        },function(error){\r\n            console.log(error)\r\n        })\r\n\r\nopenAddEntityDialog();\r\n\r\nfunction openAddEntityDialog() {\r\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\r\n}\r\n\r\nfunction AddEntityDialogController(instance) {\r\n    let vm = instance;\r\n    vm.addEntityFormGroup = vm.fb.group({\r\n     frequenza_nuova:[null, [vm.validators.required]],\r\n    });\r\n\r\n    vm.cancel = function() {\r\n        vm.dialogRef.close(null);\r\n    };\r\n    vm.save = function() {\r\n        var formData=vm.addEntityFormGroup.value;\r\n        vm.addEntityFormGroup.markAsPristine();\r\n        var date=Date.now();\r\n        var attrData={\"FrqCampione\":formData.frequenza_nuova};\r\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/attributes/SHARED_SCOPE', attrData).subscribe(data =>\r\n        {\r\n            vm.dialogRef.close(null);\r\n        },function(error){\r\n            console.log(error)\r\n        })\r\n    };\r\n\r\n}\r\n",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "dd7705c4-da4c-2fa7-1d37-9b531474c725"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "1f93b66b-e16b-fb23-3f6b-ce63abd5363e"
+        },
+        "afa3f1d8-6135-be3d-d17b-5a7140152402" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "901afce7-b57e-38e5-8ecf-163eae309300",
+              "filterId" : null,
+              "dataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div class='card'>\n    <div id=\"home\" class='content'>\n        <div id=\"home\" class=\"column\">\n            <i class=\"fa fa-home\" aria-hidden=\"true\"></i>\n            <h1>Home</h1>\n        </div>\n        <div id=\"commessa\" class=\"column\">\n            <i class=\"fa fa-list-alt\" aria-hidden=\"true\"></i>\n            <h1>Varia Commessa</h1>\n        </div>\n        <div id=\"materiale\" class=\"column\">\n            <i class=\"fa fa-gavel\" aria-hidden=\"true\"></i>\n            <h1>Varia Materiale</h1>\n        </div>\n    </div>\n</div>",
+              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content {\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.column {\n   width: 200px;\n   display: flex;\n   flex-direction: column;\n   text-align: center;\n   align-items: center;\n   margin-top: 20px;\n   justify-content: center;\n   transform: scale(0.9);\n}\n.column:hover {\n    color: red;\n    transform: scale(1);\n}\n\nh1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 20px;\n    font-weight: bold;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n\n.fa{\n    font-size: 60px;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : {
+              "border-radius" : "25px"
+            },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "headerButton" : [ ],
+              "elementClick" : [ {
+                "name" : "commessa",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\r\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\r\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\r\n        <h2>Inserisci nuovo scavo</h2>\r\n        <span fxFlex></span>\r\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\r\n            <mat-icon class=\"material-icons\">close</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\"></mat-progress-bar>\r\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\r\n    <div mat-dialog-content fxLayout=\"column\">\r\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\r\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Inserisci nuovo scavo</span><br>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Nuovo codice scavo</mat-label>\r\n                <input type=\"number\" matInput placeholder=\"Es. 12\" formControlName=\"IdScavoNuovo\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Descrizione nuovo scavo</mat-label>\r\n                <input matInput placeholder=\"Es. Scavo RCM1200 Bressanone\" formControlName=\"DescrScavo\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Luogo Scavo</mat-label>\r\n                <input matInput  placeholder=\"Es. Bressanone\" formControlName=\"UbicaziScavo\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Materiale dello scavo</mat-label>\r\n                <mat-select id=\"materialeScavo\" formControlName=\"materialeScavo\" required>\r\n                    <mat-option value=\"terra\">Terra</mat-option>\r\n                    <mat-option value=\"argilla\">Argilla</mat-option>\r\n                    <mat-option value=\"roccia\">Roccia</mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n        </div>\r\n    </div>\r\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n        <button mat-button color=\"primary\"\r\n                type=\"button\"\r\n                [disabled]=\"(isLoading$ | async)\"\r\n                (click)=\"cancel()\" cdkFocusInitial>\r\n            Cancella\r\n        </button>\r\n        <button mat-button mat-raised-button color=\"primary\"\r\n                type=\"submit\"\r\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\r\n            Invia\r\n        </button>\r\n    </div>\r\n</form>\r\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\r\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\r\nlet assetService = $injector.get(widgetContext.servicesMap.get('assetService'));\r\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\r\nlet attributeService = $injector.get(widgetContext.servicesMap.get('attributeService'));\r\nlet entityRelationService = $injector.get(widgetContext.servicesMap.get('entityRelationService'));\r\n\r\nvar FrqCampione;\r\nwidgetContext.http.get('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/values/attributes/?keys=FrqCampione').subscribe(data =>\r\n        {\r\n            FrqCampione=data[0].value;\r\n        },function(error){\r\n            console.log(error)\r\n        })\r\n\r\nopenAddEntityDialog();\r\n\r\n\r\nfunction openAddEntityDialog() {\r\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\r\n}\r\n\r\n//Get value materialeScavo\r\nvar select = document.getElementById(\"materialeScavo\");\r\nvar options = [\"terra\", \"argilla\", \"roccia\", \"sabbia\"];\r\nfor(var i=0; i<options.length; i++) {\r\n    var opt = options[i];\r\n    var el = document.createElement(\"mat-option\");\r\n    el.text = opt;\r\n    el.value = opt;\r\n    select.add(el);\r\n}\r\n\r\n\r\nvar resetLunghezza=0;\r\n\r\nfunction AddEntityDialogController(instance) {\r\n    let vm = instance;\r\n    vm.addEntityFormGroup = vm.fb.group({\r\n     IdScavoNuovo: [null, [vm.validators.required]],\r\n     DescrScavo: [null, [vm.validators.required]],\r\n     materialeScavo:[null, [vm.validators.required]],\r\n     UbicaziScavo:[null, [vm.validators.required]]\r\n    });\r\n\r\n    vm.cancel = function() {\r\n        vm.dialogRef.close(null);\r\n    };\r\n    vm.save = function() {\r\n        var formData=vm.addEntityFormGroup.value;\r\n        vm.addEntityFormGroup.markAsPristine();\r\n        var date=Date.now();\r\n        var telData={\"ts\":date, \"values\":{\"idScavo\":formData.IdScavoNuovo, \"IdScavoNuovo\":formData.IdScavoNuovo,\"lunghScavo\":resetLunghezza, \"DescrScavo\":formData.DescrScavo, \"UbicaziScavo\":formData.UbicaziScavo, \"materialeScavo\":formData.materialeScavo}};\r\n        var rpc={\"method\":\"setValue\",\"params\":{\"IdScavoNuovo\":formData.IdScavoNuovo,\"FrqCampione\":FrqCampione, \"DescrScavo\":formData.DescrScavo, \"UbicaziScavo\":formData.UbicaziScavo, \"materialeScavo\":formData.materialeScavo}};\r\n        console.log(rpc);\r\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\r\n        {\r\n            vm.dialogRef.close(null);\r\n        },function(error){\r\n            console.log(error)\r\n        })\r\n        widgetContext.http.post('/api/rpc/oneway/'+entityId.id, rpc).subscribe(data =>\r\n        {\r\n            vm.dialogRef.close(null);\r\n        },function(error){\r\n            console.log(error)\r\n        })\r\n    };\r\n\r\n}\r\n",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "c2a6c388-ffac-bee8-bc9a-98a26c1a4f93"
+              }, {
+                "name" : "home",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "updateDashboardState",
+                "targetDashboardStateId" : "home",
+                "setEntityId" : false,
+                "stateEntityParamName" : "",
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "fa4e27de-56fc-36c6-5f46-0d799a932cd5"
+              }, {
+                "name" : "materiale",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\r\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\r\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\r\n        <h2>Inserisci nuovo scavo</h2>\r\n        <span fxFlex></span>\r\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\r\n            <mat-icon class=\"material-icons\">close</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\"></mat-progress-bar>\r\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\r\n    <div mat-dialog-content fxLayout=\"column\">\r\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\r\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Inserisci nuovo Materiale</span><br>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Materiale dello scavo</mat-label>\r\n                <mat-select id=\"materialeScavo\" formControlName=\"materialeScavo\" required>\r\n                    <mat-option value=\"terra\">Terra</mat-option>\r\n                    <mat-option value=\"argilla\">Argilla</mat-option>\r\n                    <mat-option value=\"roccia\">Roccia</mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n        </div>\r\n    </div>\r\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n        <button mat-button color=\"primary\"\r\n                type=\"button\"\r\n                [disabled]=\"(isLoading$ | async)\"\r\n                (click)=\"cancel()\" cdkFocusInitial>\r\n            Cancella\r\n        </button>\r\n        <button mat-button mat-raised-button color=\"primary\"\r\n                type=\"submit\"\r\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\r\n            Invia\r\n        </button>\r\n    </div>\r\n</form>\r\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\r\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\r\nlet assetService = $injector.get(widgetContext.servicesMap.get('assetService'));\r\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\r\nlet attributeService = $injector.get(widgetContext.servicesMap.get('attributeService'));\r\nlet entityRelationService = $injector.get(widgetContext.servicesMap.get('entityRelationService'));\r\n\r\nvar idScavo, UbicaziScavo, DescrScavo, FrqCampione;\r\nwidgetContext.http.get('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/values/attributes/?keys=FrqCampione').subscribe(data =>\r\n        {\r\n            FrqCampione=data[0].value;\r\n        },function(error){\r\n            console.log(error)\r\n        })\r\nwidgetContext.http.get('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/values/timeseries/?keys=DescrScavo,UbicaziScavo,idScavo').subscribe(data =>\r\n        {\r\n            idScavo=parseInt(data.idScavo[0].value);\r\n            UbicaziScavo=data.UbicaziScavo[0].value;\r\n            DescrScavo=data.DescrScavo[0].value;\r\n        },function(error){\r\n            console.log(error)\r\n        })\r\n\r\nopenAddEntityDialog();\r\n\r\nfunction openAddEntityDialog() {\r\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\r\n}\r\n\r\nfunction AddEntityDialogController(instance) {\r\n    let vm = instance;\r\n    vm.addEntityFormGroup = vm.fb.group({\r\n     materialeScavo:[null, [vm.validators.required]],\r\n    });\r\n\r\n    vm.cancel = function() {\r\n        vm.dialogRef.close(null);\r\n    };\r\n    vm.save = function() {\r\n        var formData=vm.addEntityFormGroup.value;\r\n        vm.addEntityFormGroup.markAsPristine();\r\n        var date=Date.now();\r\n        var telData={\"ts\":date, \"values\":{\"idScavo\":idScavo, \"IdScavoNuovo\":idScavo, \"DescrScavo\":DescrScavo, \"UbicaziScavo\":UbicaziScavo, \"materialeScavo\":formData.materialeScavo}};\r\n        var rpc={\"method\":\"setValue\",\"params\":{\"IdScavoNuovo\":idScavo,\"FrqCampione\":FrqCampione, \"DescrScavo\":DescrScavo, \"UbicaziScavo\":UbicaziScavo, \"materialeScavo\":formData.materialeScavo}};\r\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\r\n        {\r\n            vm.dialogRef.close(null);\r\n        },function(error){\r\n            console.log(error)\r\n        })\r\n        widgetContext.http.post('/api/rpc/oneway/'+entityId.id, rpc).subscribe(data =>\r\n        {\r\n            vm.dialogRef.close(null);\r\n        },function(error){\r\n            console.log(error)\r\n        })\r\n    };\r\n\r\n}\r\n",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "3633fbc2-04ed-42ee-0589-3ea055075069"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "afa3f1d8-6135-be3d-d17b-5a7140152402"
+        },
+        "e34cbf3a-9d81-7e9b-13a5-da9e721f66ef" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "basic_timeseries",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "901afce7-b57e-38e5-8ecf-163eae309300",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "lunghScavo",
+                "type" : "timeseries",
+                "label" : "Lunghezza Scavo",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.9249971338687268,
+                "units" : "m",
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : false,
+                "postFuncBody" : null
+              } ],
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "shadowSize" : 4,
+              "fontColor" : "#545454",
+              "fontSize" : 10,
+              "xaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "grid" : {
+                "color" : "#545454",
+                "tickColor" : "#DDDDDD",
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1
+              },
+              "legend" : {
+                "show" : true,
+                "position" : "nw",
+                "backgroundColor" : "#f0f0f0",
+                "backgroundOpacity" : 0.85,
+                "labelBoxBorderColor" : "rgba(1, 1, 1, 0.45)"
+              },
+              "decimals" : 1,
+              "stack" : false,
+              "tooltipIndividual" : false
+            },
+            "title" : "Lunghezza scavo",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetStyle" : {
+              "border-radius" : "25px"
+            },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showLegend" : true,
+            "legendConfig" : {
+              "direction" : "column",
+              "position" : "bottom",
+              "sortDataKeys" : false,
+              "showMin" : false,
+              "showMax" : true,
+              "showAvg" : false,
+              "showTotal" : false,
+              "showLatest" : false
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "e34cbf3a-9d81-7e9b-13a5-da9e721f66ef"
+        },
+        "c1444c53-e57f-d2ba-07e8-dc24ed2cea06" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "basic_timeseries",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "901afce7-b57e-38e5-8ecf-163eae309300",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "materialeScavo",
+                "type" : "timeseries",
+                "label" : "Materiale Scavato",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.9211140721677684,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "shadowSize" : 4,
+              "fontColor" : "#545454",
+              "fontSize" : 10,
+              "xaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "grid" : {
+                "color" : "#545454",
+                "tickColor" : "#DDDDDD",
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1
+              },
+              "legend" : {
+                "show" : true,
+                "position" : "nw",
+                "backgroundColor" : "#f0f0f0",
+                "backgroundOpacity" : 0.85,
+                "labelBoxBorderColor" : "rgba(1, 1, 1, 0.45)"
+              },
+              "decimals" : 1,
+              "stack" : false,
+              "tooltipIndividual" : false
+            },
+            "title" : "Storico Materiale",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetStyle" : {
+              "border-radius" : "25px"
+            },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showLegend" : false,
+            "legendConfig" : {
+              "direction" : "column",
+              "position" : "bottom",
+              "sortDataKeys" : false,
+              "showMin" : false,
+              "showMax" : false,
+              "showAvg" : true,
+              "showTotal" : false,
+              "showLatest" : false
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "c1444c53-e57f-d2ba-07e8-dc24ed2cea06"
+        },
+        "b275095a-5113-56e4-d891-f259e5bb43d3" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "901afce7-b57e-38e5-8ecf-163eae309300",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "allarme_off",
+                "type" : "timeseries",
+                "label" : "allarme_off",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.37965618641855525,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==\"true\"){\n    return '<div style=\"color:green;font-size:15px;\">&#11044</div>';\n}\nelse{\n    return '<div style=\"color:red;font-size:15px;\">&#11044</div>';\n}"
+              }, {
+                "name" : "preallarme_off",
+                "type" : "timeseries",
+                "label" : "preallarme_off",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.06497388290868766,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==\"true\"){\n    return '<div style=\"color:green;font-size:15px;\">&#11044</div>';\n}\nelse{\n    return '<div style=\"color:red;font-size:15px;\">&#11044</div>';\n}"
+              }, {
+                "name" : "rotazione_Attiva",
+                "type" : "timeseries",
+                "label" : "rotazione_Attiva",
+                "color" : "#8bc34a",
+                "settings" : { },
+                "_hash" : 0.8444228201660198,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==\"true\"){\n    return '<div style=\"color:green;font-size:15px;\">&#11044</div>';\n}\nelse{\n    return '<div style=\"color:red;font-size:15px;\">&#11044</div>';\n}"
+              }, {
+                "name" : "ins_tubo",
+                "type" : "timeseries",
+                "label" : "ins_tubo",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.46084177530936077,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==\"true\"){\n    return '<div style=\"color:green;font-size:15px;\">&#11044</div>';\n}\nelse{\n    return '<div style=\"color:red;font-size:15px;\">&#11044</div>';\n}"
+              }, {
+                "name" : "fine_scavo",
+                "type" : "timeseries",
+                "label" : "fine_scavo",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.05171780679444793,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==\"true\"){\n    return '<div style=\"color:green;font-size:15px;\">&#11044</div>';\n}\nelse{\n    return '<div style=\"color:red;font-size:15px;\">&#11044</div>';\n}"
+              }, {
+                "name" : "spinta_avanti",
+                "type" : "timeseries",
+                "label" : "avanti",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.5727028745900595,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==\"true\"){\n    return '<div style=\"color:green;\">Avanti</div>';\n}\nelse{\n    return '';\n}"
+              }, {
+                "name" : "spinta_indietro",
+                "type" : "timeseries",
+                "label" : "indietro",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.4557100436811732,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==\"true\"){\n    return '<div style=\"color:orange;\">Indietro</div>';\n}\nelse{\n    return '';\n}"
+              } ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <h1>Stati Macchina</h1>\n            <div class=\"row\">\n                <li>Allarme:&nbsp;${allarme_off}</li>\n                <li>Preallarme:&nbsp;${preallarme_off}</li>\n                <li>In inserimento tubo:&nbsp;${ins_tubo}</li>\n                <li>Fine scavo:&nbsp;${fine_scavo}</li>\n                <li>Direzione spinta:&nbsp;${avanti}${indietro}</li>\n                <li>Fresa in rotazione:&nbsp;${rotazione_Attiva}</li>\n            </div>\n        </div>\n    </div>\n</div>",
+              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content {\n   padding: 22px;\n   display: flex;\n   flex-direction: row;\n   height: 100%;\n   align-items: center;\n   justify-content: space-around;\n   box-sizing: border-box;\n}\n\n.row {\n    display: flex;\n    font-size: 18px;\n    flex-direction: row;\n    flex-wrap: wrap;\n    list-style-type: none;\n}\nli{\n    display: flex;\n    margin-right: 10px;\n}\n\n.card .content .column {\n   display: flex;\n   flex-direction: column;    \n   justify-content: space-around;\n   height: 100%;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 20px;\n    font-weight: bold;\n    margin: 0;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : {
+              "border-radius" : "25px"
+            },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "headerButton" : [ ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "b275095a-5113-56e4-d891-f259e5bb43d3"
+        },
+        "7b37d413-7b2b-2505-b8bd-a041a8959189" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "c2e9ef1c-1e2e-bc0c-17ed-3eb8814d3f93",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "DescrScavo",
+                "type" : "timeseries",
+                "label" : "DescrScavo",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.8646216317345834
+              }, {
+                "name" : "IdScavo",
+                "type" : "timeseries",
+                "label" : "IdScavo",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.47543113932469705
+              }, {
+                "name" : "UbicaziScavo",
+                "type" : "timeseries",
+                "label" : "UbicaziScavo",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.2721823311001301
+              } ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div class='card'>\n    <div id=\"home\" class='content'>\n        <div id=\"home\" class=\"column selected\">\n            <i class=\"fa fa-home\" aria-hidden=\"true\"></i>\n            <h1>Home</h1>\n        </div>\n        <div id=\"commessa\" class=\"column\">\n            <i class=\"fa fa-list-alt\" aria-hidden=\"true\"></i>\n            <h1>Varia Commessa</h1>\n        </div>\n        <div id=\"guasti\" class=\"column\">\n            <i class=\"fa fa-wrench\" aria-hidden=\"true\"></i>\n            <h1>Guasti</h1>\n        </div>\n    </div>\n</div>",
+              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content {\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.column {\n   width: 200px;\n   display: flex;\n   flex-direction: column;\n   text-align: center;\n   align-items: center;\n   margin-top: 20px;\n   justify-content: center;\n   transform: scale(0.9);\n}\n.column:hover {\n    color: red;\n    transform: scale(1);\n}\n.selected{\n    color: red;\n    transform: scale(1);\n}\n\nh1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 20px;\n    font-weight: bold;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n\n.fa{\n    font-size: 60px;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : {
+              "border-radius" : "25px"
+            },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "headerButton" : [ ],
+              "elementClick" : [ {
+                "name" : "commessa",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\r\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\r\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\r\n        <h2>Inserisci nuovo scavo</h2>\r\n        <span fxFlex></span>\r\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\r\n            <mat-icon class=\"material-icons\">close</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\"></mat-progress-bar>\r\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\r\n    <div mat-dialog-content fxLayout=\"column\">\r\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\r\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Inserisci nuovo scavo</span><br>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Nuovo codice scavo</mat-label>\r\n                <input type=\"number\" matInput placeholder=\"Es. 12\" formControlName=\"IdScavoNuovo\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Descrizione nuovo scavo</mat-label>\r\n                <input matInput placeholder=\"Es. Scavo RCM1200 Bressanone\" formControlName=\"DescrScavo\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Luogo Scavo</mat-label>\r\n                <input matInput  placeholder=\"Es. Bressanone\" formControlName=\"UbicaziScavo\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Materiale dello scavo</mat-label>\r\n                <mat-select id=\"materialeScavo\" formControlName=\"materialeScavo\" required>\r\n                    <mat-option value=\"terra\">Terra</mat-option>\r\n                    <mat-option value=\"argilla\">Argilla</mat-option>\r\n                    <mat-option value=\"roccia\">Roccia</mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n        </div>\r\n    </div>\r\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n        <button mat-button color=\"primary\"\r\n                type=\"button\"\r\n                [disabled]=\"(isLoading$ | async)\"\r\n                (click)=\"cancel()\" cdkFocusInitial>\r\n            Cancella\r\n        </button>\r\n        <button mat-button mat-raised-button color=\"primary\"\r\n                type=\"submit\"\r\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\r\n            Invia\r\n        </button>\r\n    </div>\r\n</form>\r\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\r\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\r\nlet assetService = $injector.get(widgetContext.servicesMap.get('assetService'));\r\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\r\nlet attributeService = $injector.get(widgetContext.servicesMap.get('attributeService'));\r\nlet entityRelationService = $injector.get(widgetContext.servicesMap.get('entityRelationService'));\r\n\r\nvar FrqCampione;\r\nwidgetContext.http.get('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/values/attributes/?keys=FrqCampione').subscribe(data =>\r\n        {\r\n            FrqCampione=data[0].value;\r\n        },function(error){\r\n            console.log(error)\r\n        })\r\n\r\nopenAddEntityDialog();\r\n\r\n\r\nfunction openAddEntityDialog() {\r\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\r\n}\r\n\r\n//Get value materialeScavo\r\nvar select = document.getElementById(\"materialeScavo\");\r\nvar options = [\"terra\", \"argilla\", \"roccia\", \"sabbia\"];\r\nfor(var i=0; i<options.length; i++) {\r\n    var opt = options[i];\r\n    var el = document.createElement(\"mat-option\");\r\n    el.text = opt;\r\n    el.value = opt;\r\n    select.add(el);\r\n}\r\n\r\n\r\n\r\n\r\nfunction AddEntityDialogController(instance) {\r\n    let vm = instance;\r\n    vm.addEntityFormGroup = vm.fb.group({\r\n     IdScavoNuovo: [null, [vm.validators.required]],\r\n     DescrScavo: [null, [vm.validators.required]],\r\n     materialeScavo:[null, [vm.validators.required]],\r\n     UbicaziScavo:[null, [vm.validators.required]]\r\n    });\r\n\r\n    vm.cancel = function() {\r\n        vm.dialogRef.close(null);\r\n    };\r\n    vm.save = function() {\r\n        var formData=vm.addEntityFormGroup.value;\r\n        vm.addEntityFormGroup.markAsPristine();\r\n        var date=Date.now();\r\n        var telData={\"ts\":date, \"values\":{\"idScavo\":formData.IdScavoNuovo, \"IdScavoNuovo\":formData.IdScavoNuovo, \"DescrScavo\":formData.DescrScavo, \"UbicaziScavo\":formData.UbicaziScavo, \"materialeScavo\":formData.materialeScavo}};\r\n        var rpc={\"method\":\"setValue\",\"params\":{\"IdScavoNuovo\":formData.IdScavoNuovo,\"FrqCampione\":FrqCampione, \"DescrScavo\":formData.DescrScavo, \"UbicaziScavo\":formData.UbicaziScavo, \"materialeScavo\":formData.materialeScavo}};\r\n        console.log(rpc);\r\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\r\n        {\r\n            vm.dialogRef.close(null);\r\n        },function(error){\r\n            console.log(error)\r\n        })\r\n        widgetContext.http.post('/api/rpc/oneway/'+entityId.id, rpc).subscribe(data =>\r\n        {\r\n            vm.dialogRef.close(null);\r\n        },function(error){\r\n            console.log(error)\r\n        })\r\n    };\r\n\r\n}\r\n",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "c2a6c388-ffac-bee8-bc9a-98a26c1a4f93"
+              }, {
+                "name" : "home",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "updateDashboardState",
+                "targetDashboardStateId" : "home",
+                "setEntityId" : false,
+                "stateEntityParamName" : "",
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "fa4e27de-56fc-36c6-5f46-0d799a932cd5"
+              }, {
+                "name" : "guasti",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "updateDashboardState",
+                "targetDashboardStateId" : "guasti",
+                "setEntityId" : false,
+                "stateEntityParamName" : "",
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "24bc8a60-1bfd-aaca-1c4e-fdc9c7f8c131"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "7b37d413-7b2b-2505-b8bd-a041a8959189"
+        },
+        "3e136c83-f21a-cedf-896f-a5731bcae7f7" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "entities_table",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 6.5,
+          "config" : {
+            "timewindow" : {
+              "realtime" : {
+                "interval" : 1000,
+                "timewindowMs" : 86400000
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "4px",
+            "settings" : {
+              "entitiesTitle" : "Device",
+              "enableSearch" : false,
+              "enableSelectColumnDisplay" : false,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "reserveSpaceForHiddenAction" : "true",
+              "displayEntityName" : true,
+              "displayEntityLabel" : false,
+              "displayEntityType" : false,
+              "displayPagination" : false,
+              "defaultSortOrder" : "entityName",
+              "useRowStyleFunction" : false
+            },
+            "title" : "New Entities table",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "c2e9ef1c-1e2e-bc0c-17ed-3eb8814d3f93",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "DescrScavo",
+                "type" : "timeseries",
+                "label" : "Commessa",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.855057088364368,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "UbicaziScavo",
+                "type" : "timeseries",
+                "label" : "Località",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.011707431276296587,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "rotazione_Attiva",
+                "type" : "timeseries",
+                "label" : "In Rotazione",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.5450177221033208,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==\"true\"){\n    return '<div style=\"color:green;font-size:15px;\">&#11044</div>';\n}\nelse{\n    return '<div style=\"color:red;font-size:15px;\">&#11044</div>';\n}"
+              }, {
+                "name" : "allarme_off",
+                "type" : "timeseries",
+                "label" : "Allarme",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.39017536280082177,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==\"true\"){\n    return '<div style=\"color:green;font-size:15px;\">&#11044</div>';\n}\nelse{\n    return '<div style=\"color:red;font-size:15px;\">&#11044</div>';\n}"
+              }, {
+                "name" : "preallarme_off",
+                "type" : "timeseries",
+                "label" : "Preallarme",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.020868590451140756,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==\"true\"){\n    return '<div style=\"color:green;font-size:15px;\">&#11044</div>';\n}\nelse{\n    return '<div style=\"color:red;font-size:15px;\">&#11044</div>';\n}"
+              } ]
+            } ],
+            "actions" : {
+              "rowClick" : [ {
+                "name" : "Device",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "updateDashboardState",
+                "targetDashboardStateId" : "detail",
+                "setEntityId" : true,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "7f9a976a-65e5-ef7f-5e60-694a804ec22a"
+              } ],
+              "actionCellButton" : [ {
+                "name" : "Dettagli",
+                "icon" : "show_chart",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "updateDashboardState",
+                "targetDashboardStateId" : "detail",
+                "setEntityId" : true,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "bbcc91d0-cce2-e8df-f6b2-603c25ef9549"
+              } ]
+            },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetStyle" : {
+              "border-radius" : "25px"
+            },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "3e136c83-f21a-cedf-896f-a5731bcae7f7"
+        },
+        "f2e7dccd-0da6-d8d6-56f3-8d5be783b9fe" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "timeseries_table",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 6.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "901afce7-b57e-38e5-8ecf-163eae309300",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "IdScavo",
+                "type" : "timeseries",
+                "label" : "IdScavo",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.9246839307532992
+              }, {
+                "name" : "guasto_ore_fermo",
+                "type" : "timeseries",
+                "label" : "Minuti fermo",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.8514368037080207,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "guasto_risoluzione",
+                "type" : "timeseries",
+                "label" : "Risolto?",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.9932179660725753,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "guasto_note",
+                "type" : "timeseries",
+                "label" : "Note",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.0419661556604467,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "hideInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 1,
+              "history" : {
+                "historyType" : 0,
+                "timewindowMs" : 2592000000,
+                "interval" : 1000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1668945095323,
+                  "endTimeMs" : 1669031495323
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "enableSearch" : true,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "reserveSpaceForHiddenAction" : "false",
+              "showTimestamp" : true,
+              "showMilliseconds" : false,
+              "displayPagination" : false,
+              "useEntityLabel" : false,
+              "hideEmptyLines" : true,
+              "disableStickyHeader" : false,
+              "useRowStyleFunction" : false
+            },
+            "title" : "Fermi ultimi 30gg",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "widgetStyle" : {
+              "border-radius" : "25px"
+            },
+            "actions" : { },
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "displayTimewindow" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "f2e7dccd-0da6-d8d6-56f3-8d5be783b9fe"
+        },
+        "c0a31673-b6f9-3d1f-67ed-1bc2f134b2b3" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "basic_timeseries",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "901afce7-b57e-38e5-8ecf-163eae309300",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "lunghScavo",
+                "type" : "timeseries",
+                "label" : "Produttività mm/m",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.497116578676132,
+                "units" : "mm/m",
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "var mm=(value*1000)-(prevOrigValue*1000);\nif(mm>1000 || mm<0){mm=undefined;}\nvar t=((time-timePrev)/1000)/60;\nif(t>1000 || t<0){t=undefined;}\nvar f=mm/t\nif(f>1000 || f<0){\n    return null;\n}\nreturn f;"
+              } ],
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "shadowSize" : 4,
+              "fontColor" : "#545454",
+              "fontSize" : 10,
+              "xaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "grid" : {
+                "color" : "#545454",
+                "tickColor" : "#DDDDDD",
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1
+              },
+              "legend" : {
+                "show" : true,
+                "position" : "nw",
+                "backgroundColor" : "#f0f0f0",
+                "backgroundOpacity" : 0.85,
+                "labelBoxBorderColor" : "rgba(1, 1, 1, 0.45)"
+              },
+              "decimals" : 1,
+              "stack" : false,
+              "tooltipIndividual" : false
+            },
+            "title" : "Produttività mm/minuto",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetStyle" : {
+              "border-radius" : "25px"
+            },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showLegend" : false,
+            "legendConfig" : {
+              "direction" : "column",
+              "position" : "bottom",
+              "sortDataKeys" : false,
+              "showMin" : false,
+              "showMax" : false,
+              "showAvg" : true,
+              "showTotal" : false,
+              "showLatest" : false
+            },
+            "displayTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "c0a31673-b6f9-3d1f-67ed-1bc2f134b2b3"
+        },
+        "c282fb31-28f1-65e2-0798-0a10434fb129" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "c2e9ef1c-1e2e-bc0c-17ed-3eb8814d3f93",
+              "filterId" : null,
+              "dataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div class='card'>\n    <div id=\"home\" class='content'>\n        <div id=\"home\" class=\"column\">\n            <i class=\"fa fa-home\" aria-hidden=\"true\"></i>\n            <h1>Home</h1>\n        </div>\n    </div>\n</div>",
+              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   border: 2px solid #ccc;\n   box-sizing: border-box;\n}\n\n.card .content {\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.column {\n   width: 200px;\n   display: flex;\n   flex-direction: column;\n   text-align: center;\n   align-items: center;\n   margin-top: 20px;\n   justify-content: center;\n   transform: scale(0.9);\n}\n.column:hover {\n    color: red;\n    transform: scale(1);\n}\n\nh1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 20px;\n    font-weight: bold;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n\n.fa{\n    font-size: 60px;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "headerButton" : [ ],
+              "elementClick" : [ {
+                "name" : "commessa",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\r\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\r\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\r\n        <h2>Inserisci nuovo scavo</h2>\r\n        <span fxFlex></span>\r\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\r\n            <mat-icon class=\"material-icons\">close</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\"></mat-progress-bar>\r\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\r\n    <div mat-dialog-content fxLayout=\"column\">\r\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\r\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Inserisci nuovo scavo</span><br>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Nuovo codice scavo</mat-label>\r\n                <input type=\"number\" matInput placeholder=\"Es. 12\" formControlName=\"IdScavoNuovo\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Descrizione nuovo scavo</mat-label>\r\n                <input matInput placeholder=\"Es. Scavo RCM1200 Bressanone\" formControlName=\"DescrScavo\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Luogo Scavo</mat-label>\r\n                <input matInput  placeholder=\"Es. Bressanone\" formControlName=\"UbicaziScavo\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Materiale dello scavo</mat-label>\r\n                <mat-select id=\"materialeScavo\" formControlName=\"materialeScavo\" required>\r\n                    <mat-option value=\"terra\">Terra</mat-option>\r\n                    <mat-option value=\"argilla\">Argilla</mat-option>\r\n                    <mat-option value=\"roccia\">Roccia</mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n        </div>\r\n    </div>\r\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n        <button mat-button color=\"primary\"\r\n                type=\"button\"\r\n                [disabled]=\"(isLoading$ | async)\"\r\n                (click)=\"cancel()\" cdkFocusInitial>\r\n            Cancella\r\n        </button>\r\n        <button mat-button mat-raised-button color=\"primary\"\r\n                type=\"submit\"\r\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\r\n            Invia\r\n        </button>\r\n    </div>\r\n</form>\r\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "console.log($event,entityId,entityName,additionalParams,widgetContext)\n\nlet $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\nlet assetService = $injector.get(widgetContext.servicesMap.get('assetService'));\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\nlet attributeService = $injector.get(widgetContext.servicesMap.get('attributeService'));\nlet entityRelationService = $injector.get(widgetContext.servicesMap.get('entityRelationService'));\n\n    openAddEntityDialog();\n\n\nconsole.log(attributeService.getEntityAttributes(FrqCampione));\n\n\nfunction openAddEntityDialog() {\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\n}\n\n//Get value materialeScavo\nvar select = document.getElementById(\"materialeScavo\");\nvar options = [\"terra\", \"argilla\", \"roccia\", \"sabbia\"];\nfor(var i=0; i<options.length; i++) {\n    var opt = options[i];\n    var el = document.createElement(\"mat-option\");\n    el.text = opt;\n    el.value = opt;\n    select.add(el);\n}\n\n\n\n\nfunction AddEntityDialogController(instance) {\n    let vm = instance;\n    vm.addEntityFormGroup = vm.fb.group({\n     IdScavoNuovo: [null, [vm.validators.required]],\n     DescrScavo: [null, [vm.validators.required]],\n     materialeScavo:[null, [vm.validators.required]],\n     UbicaziScavo:[null, [vm.validators.required]]\n    });\n\n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    vm.save = function() {\n        var formData=vm.addEntityFormGroup.value;\n        console.log(\"formData: \",formData);\n        vm.addEntityFormGroup.markAsPristine();\n        var date=Date.now();\n        var telData={\"ts\":date, \"values\":{\"IdScavo\":formData.IdScavoNuovo, \"IdScavoNuovo\":formData.IdScavoNuovo, \"DescrScavo\":formData.DescrScavo, \"UbicaziScavo\":formData.UbicaziScavo, \"materialeScavo\":formData.materialeScavo}};\n        var rpc={\"method\":\"setValue\",\"params\":{\"IdScavoNuovo\":formData.IdScavoNuovo,\"FrqCampione\":5, \"DescrScavo\":formData.DescrScavo, \"UbicaziScavo\":formData.UbicaziScavo, \"materialeScavo\":formData.materialeScavo}};\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\n        {\n            vm.dialogRef.close(null);\n        },function(error){\n            console.log(error)\n        })\n        widgetContext.http.post('/api/rpc/oneway/'+entityId.id, rpc).subscribe(data =>\n        {\n            vm.dialogRef.close(null);\n        },function(error){\n            console.log(error)\n        })\n    };\n\n}\n",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "c2a6c388-ffac-bee8-bc9a-98a26c1a4f93"
+              }, {
+                "name" : "home",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "updateDashboardState",
+                "targetDashboardStateId" : "home",
+                "setEntityId" : false,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "fa4e27de-56fc-36c6-5f46-0d799a932cd5"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "c282fb31-28f1-65e2-0798-0a10434fb129"
+        },
+        "c64e3ae3-94ed-aaeb-e3a2-958e67672103" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "basic_timeseries",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "c2e9ef1c-1e2e-bc0c-17ed-3eb8814d3f93",
+              "filterId" : "1b98834d-c53b-24e4-0a15-0da35368d3bd",
+              "dataKeys" : [ {
+                "name" : "DescrScavo",
+                "type" : "timeseries",
+                "label" : "DescrScavo",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.7361615319967194
+              } ],
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "shadowSize" : 4,
+              "fontColor" : "#545454",
+              "fontSize" : 10,
+              "xaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "grid" : {
+                "color" : "#545454",
+                "tickColor" : "#DDDDDD",
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1
+              },
+              "legend" : {
+                "show" : true,
+                "position" : "nw",
+                "backgroundColor" : "#f0f0f0",
+                "backgroundOpacity" : 0.85,
+                "labelBoxBorderColor" : "rgba(1, 1, 1, 0.45)"
+              },
+              "decimals" : 1,
+              "stack" : false,
+              "tooltipIndividual" : false
+            },
+            "title" : "Produttività",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showLegend" : true,
+            "legendConfig" : {
+              "direction" : "column",
+              "position" : "bottom",
+              "sortDataKeys" : false,
+              "showMin" : false,
+              "showMax" : false,
+              "showAvg" : true,
+              "showTotal" : false,
+              "showLatest" : false
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "c64e3ae3-94ed-aaeb-e3a2-958e67672103"
+        },
+        "083f468a-6764-28d1-c82c-0a2fc1d728b0" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "c2e9ef1c-1e2e-bc0c-17ed-3eb8814d3f93",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "DescrScavo",
+                "type" : "timeseries",
+                "label" : "DescrScavo",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.9204619059423291
+              }, {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Name",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.7615309822661729
+              }, {
+                "name" : "IdScavo",
+                "type" : "timeseries",
+                "label" : "IdScavo",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.7651862998973138,
+                "units" : null,
+                "decimals" : 0,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "UbicaziScavo",
+                "type" : "timeseries",
+                "label" : "UbicaziScavo",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.8252999362854097
+              } ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <h1>${Name}</h1>\n            <div><i class=\"fa fa-hashtag\" aria-hidden=\"true\"></i> <b>Matricola</b>: value_matricola.</div>\n            <div><i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i> <b>Località scavo</b>: ${UbicaziScavo}.</div>\n            <div><i class=\"fa fa-bars\" aria-hidden=\"true\"></i> <b>Descrizione scavo</b>: ${DescrScavo}.</div>\n        </div>\n    </div>\n</div>",
+              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   border: 2px solid #ccc;\n   box-sizing: border-box;\n}\n\n.card .content {\n   padding: 10px;\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   box-sizing: border-box;\n}\n\n.card .content .column {\n   display: flex;\n   font-size: 18px;\n   flex-direction: column;    \n   justify-content: space-around;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 22px;\n    font-weight: bold;\n    margin: 0;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n\n.fa{\n    font-size: 20px;\n}\n\n.button{\n    background-color: red;\n    text-align: center;\n    color: yellow;\n    padding: 15px;\n    margin: 0 15px;\n    border-radius: 999px;\n    \n}\n.button:hover{\n    transform: scale(1.1);\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "guasto",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\n        <h2>Segnala Guasto/Fermo</h2>\n        <span fxFlex></span>\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\n            <mat-icon class=\"material-icons\">close</mat-icon>\n        </button>\n    </mat-toolbar>\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\n    </mat-progress-bar>\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\n    <div mat-dialog-content fxLayout=\"column\">\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Segnala guasto</span><br>\n            <section fxLayout=\"row\" fxLayoutAlign=\"center\" fxLayoutGap=\"10px\" fxLayout.xs=\"column\" fxLayoutGap.xs=\"0\">\n                <mat-form-field appearance=\"fill\" style=\"width: 300px\">\n                  <mat-label>Data</mat-label>\n                  <mat-datetimepicker-toggle [for]=\"DatePicker\" matPrefix></mat-datetimepicker-toggle>\n                  <mat-datetimepicker #DatePicker type=\"date\" openOnFocus=\"true\"></mat-datetimepicker>\n                  <input matInput [disabled]=\"disabled\"  [matDatetimepicker]=\"DatePicker\" formControlName=\"eventDate\" required>\n                  <mat-hint>GG/MM/AAAA</mat-hint>\n                </mat-form-field>\n                <mat-form-field appearance=\"fill\"  style=\"width: 300px\">\n                  <mat-label>Ora</mat-label>\n                  <mat-datetimepicker-toggle [for]=\"TimePicker\" matPrefix></mat-datetimepicker-toggle>\n                  <mat-datetimepicker #TimePicker type=\"time\" openOnFocus=\"true\"></mat-datetimepicker>\n                  <input matInput [disabled]=\"disabled\" [matDatetimepicker]=\"TimePicker\" formControlName=\"eventTime\" required><mat-hint>H/Min</mat-hint>\n                </mat-form-field>\n            </section>\n            <mat-form-field appearance=\"fill\">\n              <mat-label>Risolto?</mat-label>\n              <mat-select formControlName=\"risoluzione\" required>\n                <mat-option value=\"si\">Si</mat-option>\n                <mat-option value=\"no\">No</mat-option>\n              </mat-select>\n            </mat-form-field>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Ore Fermo Macchina</mat-label>\n                <input matInput  placeholder=\"Es. 1\" formControlName=\"ore_fermo\" required>\n                <span matSuffix>Minuto/i</span>\n            </mat-form-field>\n            <mat-form-field appearance=\"fill\">\n              <mat-label>Note</mat-label>\n              <textarea matInput formControlName=\"note\"></textarea>\n            </mat-form-field>\n        </div>\n    </div>\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\n        <button mat-button color=\"primary\"\n                type=\"button\"\n                [disabled]=\"(isLoading$ | async)\"\n                (click)=\"cancel()\" cdkFocusInitial>\n            Cancella\n        </button>\n        <button mat-button mat-raised-button color=\"primary\"\n                type=\"submit\"\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\n            Invia\n        </button>\n    </div>\n</form>",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "console.log($event,entityId,entityName,additionalParams,widgetContext)\n\nlet $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\nlet assetService = $injector.get(widgetContext.servicesMap.get('assetService'));\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\nlet attributeService = $injector.get(widgetContext.servicesMap.get('attributeService'));\nlet entityRelationService = $injector.get(widgetContext.servicesMap.get('entityRelationService'));\n\n    openAddEntityDialog();\n\nfunction openAddEntityDialog() {\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\n}\n\nfunction AddEntityDialogController(instance) {\n    let vm = instance;\n    vm.addEntityFormGroup = vm.fb.group({\n     risoluzione: [null, [vm.validators.required]],\n     ore_fermo: [null, [vm.validators.required]],\n     note: [\"\"],\n     eventDate:[null, [vm.validators.required]],\n     eventTime:[null, [vm.validators.required]]\n    });\n\n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    vm.save = function() {\n        var formData=vm.addEntityFormGroup.value\n        formData.eventDate.setHours(formData.eventTime.getHours())\n        formData.eventDate.setMinutes(formData.eventTime.getMinutes())\n        console.log(\"formData: \",formData);\n        vm.addEntityFormGroup.markAsPristine();\n        var telData={\"ts\":formData.eventDate.valueOf(), \"values\":{\"risoluzione\":formData.risoluzione, \"ore_fermo\":formData.ore_fermo, \"note\":formData.note, \"guasto\":\"spintore\"}}\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\n        {\n        // console.log(\"data: \",data)\n            // widgetContext.updateAliases();\n            vm.dialogRef.close(null);\n        },function(error){\n            console.log(error)\n        })\n    };\n}",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "09293152-7baa-25a6-5f8b-b7be6415e263"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "083f468a-6764-28d1-c82c-0a2fc1d728b0"
+        },
+        "a0579c66-e5a6-0463-a347-b769703dcf7b" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "timeseries_table",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 6.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "c2e9ef1c-1e2e-bc0c-17ed-3eb8814d3f93",
+              "filterId" : "1b98834d-c53b-24e4-0a15-0da35368d3bd",
+              "dataKeys" : [ {
+                "name" : "IdScavo",
+                "type" : "timeseries",
+                "label" : "IdScavo",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.06315088788966716
+              } ],
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "hideInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 1,
+              "history" : {
+                "historyType" : 0,
+                "timewindowMs" : 2592000000,
+                "interval" : 1000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1668945095323,
+                  "endTimeMs" : 1669031495323
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "showTimestamp" : true,
+              "displayPagination" : true,
+              "defaultPageSize" : 10
+            },
+            "title" : "New Timeseries table",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "displayTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "a0579c66-e5a6-0463-a347-b769703dcf7b"
+        },
+        "101119e1-6a7c-ef51-986c-c162840778c1" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "basic_timeseries",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "c2e9ef1c-1e2e-bc0c-17ed-3eb8814d3f93",
+              "filterId" : "1b98834d-c53b-24e4-0a15-0da35368d3bd",
+              "dataKeys" : [ {
+                "name" : "lunghScavo",
+                "type" : "timeseries",
+                "label" : "Lunghezza Scavo",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.9249971338687268,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "shadowSize" : 4,
+              "fontColor" : "#545454",
+              "fontSize" : 10,
+              "xaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "grid" : {
+                "color" : "#545454",
+                "tickColor" : "#DDDDDD",
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1
+              },
+              "legend" : {
+                "show" : true,
+                "position" : "nw",
+                "backgroundColor" : "#f0f0f0",
+                "backgroundOpacity" : 0.85,
+                "labelBoxBorderColor" : "rgba(1, 1, 1, 0.45)"
+              },
+              "decimals" : 1,
+              "stack" : false,
+              "tooltipIndividual" : false
+            },
+            "title" : "Lunghezza scavo",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showLegend" : true,
+            "legendConfig" : {
+              "direction" : "column",
+              "position" : "bottom",
+              "sortDataKeys" : false,
+              "showMin" : false,
+              "showMax" : false,
+              "showAvg" : true,
+              "showTotal" : false,
+              "showLatest" : false
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "101119e1-6a7c-ef51-986c-c162840778c1"
+        },
+        "75d56bea-96ca-b479-64bc-9a59f51efa0a" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "basic_timeseries",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "c2e9ef1c-1e2e-bc0c-17ed-3eb8814d3f93",
+              "filterId" : "1b98834d-c53b-24e4-0a15-0da35368d3bd",
+              "dataKeys" : [ {
+                "name" : "materialeScavo",
+                "type" : "timeseries",
+                "label" : "Materiale Scavato",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.9211140721677684,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "shadowSize" : 4,
+              "fontColor" : "#545454",
+              "fontSize" : 10,
+              "xaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "grid" : {
+                "color" : "#545454",
+                "tickColor" : "#DDDDDD",
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1
+              },
+              "legend" : {
+                "show" : true,
+                "position" : "nw",
+                "backgroundColor" : "#f0f0f0",
+                "backgroundOpacity" : 0.85,
+                "labelBoxBorderColor" : "rgba(1, 1, 1, 0.45)"
+              },
+              "decimals" : 1,
+              "stack" : false,
+              "tooltipIndividual" : false
+            },
+            "title" : "New Timeseries Line Chart",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "75d56bea-96ca-b479-64bc-9a59f51efa0a"
+        },
+        "9b4bb474-94b8-ae05-3c5f-a79f19703f93" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "basic_timeseries",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "c2e9ef1c-1e2e-bc0c-17ed-3eb8814d3f93",
+              "filterId" : "1b98834d-c53b-24e4-0a15-0da35368d3bd",
+              "dataKeys" : [ {
+                "name" : "spinta_avanti",
+                "type" : "timeseries",
+                "label" : "Spinta Avanti",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.34180121931184426,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "spinta_indietro",
+                "type" : "timeseries",
+                "label" : "Spinta Indietro",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.3136840971432875,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "shadowSize" : 4,
+              "fontColor" : "#545454",
+              "fontSize" : 10,
+              "xaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "grid" : {
+                "color" : "#545454",
+                "tickColor" : "#DDDDDD",
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1
+              },
+              "legend" : {
+                "show" : true,
+                "position" : "nw",
+                "backgroundColor" : "#f0f0f0",
+                "backgroundOpacity" : 0.85,
+                "labelBoxBorderColor" : "rgba(1, 1, 1, 0.45)"
+              },
+              "decimals" : 1,
+              "stack" : false,
+              "tooltipIndividual" : false
+            },
+            "title" : "Spinte",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showLegend" : true,
+            "legendConfig" : {
+              "direction" : "column",
+              "position" : "bottom",
+              "sortDataKeys" : false,
+              "showMin" : false,
+              "showMax" : false,
+              "showAvg" : true,
+              "showTotal" : false,
+              "showLatest" : false
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "9b4bb474-94b8-ae05-3c5f-a79f19703f93"
+        },
+        "7f06af04-7881-a753-d04f-d94544c5a383" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "timeseries_table",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 6.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "c2e9ef1c-1e2e-bc0c-17ed-3eb8814d3f93",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "IdScavo",
+                "type" : "timeseries",
+                "label" : "IdScavo",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.9246839307532992
+              }, {
+                "name" : "guasto_ore_fermo",
+                "type" : "timeseries",
+                "label" : "Minuti fermo",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.8514368037080207,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "guasto_risoluzione",
+                "type" : "timeseries",
+                "label" : "Risolto?",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.9932179660725753,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "guasto_note",
+                "type" : "timeseries",
+                "label" : "Note",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.0419661556604467,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "hideInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 1,
+              "history" : {
+                "historyType" : 0,
+                "timewindowMs" : 31536000000,
+                "interval" : 1000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1671104272880,
+                  "endTimeMs" : 1671190672880
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "enableSearch" : true,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "reserveSpaceForHiddenAction" : "false",
+              "showTimestamp" : true,
+              "showMilliseconds" : false,
+              "displayPagination" : true,
+              "useEntityLabel" : false,
+              "defaultPageSize" : 10,
+              "hideEmptyLines" : true,
+              "disableStickyHeader" : false,
+              "useRowStyleFunction" : false
+            },
+            "title" : "Guasti/Manutenzioni",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "widgetStyle" : {
+              "border-radius" : "25px"
+            },
+            "actions" : { },
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "displayTimewindow" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "7f06af04-7881-a753-d04f-d94544c5a383"
+        },
+        "fb73293f-6f36-297b-3f69-bbb2c5bf4a26" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "c2e9ef1c-1e2e-bc0c-17ed-3eb8814d3f93",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "DescrScavo",
+                "type" : "timeseries",
+                "label" : "DescrScavo",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.8646216317345834
+              }, {
+                "name" : "IdScavo",
+                "type" : "timeseries",
+                "label" : "IdScavo",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.47543113932469705
+              }, {
+                "name" : "UbicaziScavo",
+                "type" : "timeseries",
+                "label" : "UbicaziScavo",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.2721823311001301
+              } ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div class='card'>\n    <div id=\"home\" class='content'>\n        <div id=\"home\" class=\"column\">\n            <i class=\"fa fa-home\" aria-hidden=\"true\"></i>\n            <h1>Home</h1>\n        </div>\n        <div id=\"commessa\" class=\"column\">\n            <i class=\"fa fa-list-alt\" aria-hidden=\"true\"></i>\n            <h1>Varia Commessa</h1>\n        </div>\n        <div id=\"guasti\" class=\"column selected\">\n            <i class=\"fa fa-wrench\" aria-hidden=\"true\"></i>\n            <h1>Guasti</h1>\n        </div>\n    </div>\n</div>",
+              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content {\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.column {\n   width: 200px;\n   display: flex;\n   flex-direction: column;\n   text-align: center;\n   align-items: center;\n   margin-top: 20px;\n   justify-content: center;\n   transform: scale(0.9);\n}\n.column:hover {\n    color: red;\n    transform: scale(1);\n}\n.selected{\n    color: red;\n    transform: scale(1);\n}\n\nh1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 20px;\n    font-weight: bold;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n\n.fa{\n    font-size: 60px;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : {
+              "border-radius" : "25px"
+            },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "headerButton" : [ ],
+              "elementClick" : [ {
+                "name" : "commessa",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\r\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\r\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\r\n        <h2>Inserisci nuovo scavo</h2>\r\n        <span fxFlex></span>\r\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\r\n            <mat-icon class=\"material-icons\">close</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\"></mat-progress-bar>\r\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\r\n    <div mat-dialog-content fxLayout=\"column\">\r\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\r\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Inserisci nuovo scavo</span><br>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Nuovo codice scavo</mat-label>\r\n                <input type=\"number\" matInput placeholder=\"Es. 12\" formControlName=\"IdScavoNuovo\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Descrizione nuovo scavo</mat-label>\r\n                <input matInput placeholder=\"Es. Scavo RCM1200 Bressanone\" formControlName=\"DescrScavo\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Luogo Scavo</mat-label>\r\n                <input matInput  placeholder=\"Es. Bressanone\" formControlName=\"UbicaziScavo\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Materiale dello scavo</mat-label>\r\n                <mat-select id=\"materialeScavo\" formControlName=\"materialeScavo\" required>\r\n                    <mat-option value=\"terra\">Terra</mat-option>\r\n                    <mat-option value=\"argilla\">Argilla</mat-option>\r\n                    <mat-option value=\"roccia\">Roccia</mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n        </div>\r\n    </div>\r\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n        <button mat-button color=\"primary\"\r\n                type=\"button\"\r\n                [disabled]=\"(isLoading$ | async)\"\r\n                (click)=\"cancel()\" cdkFocusInitial>\r\n            Cancella\r\n        </button>\r\n        <button mat-button mat-raised-button color=\"primary\"\r\n                type=\"submit\"\r\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\r\n            Invia\r\n        </button>\r\n    </div>\r\n</form>\r\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\r\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\r\nlet assetService = $injector.get(widgetContext.servicesMap.get('assetService'));\r\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\r\nlet attributeService = $injector.get(widgetContext.servicesMap.get('attributeService'));\r\nlet entityRelationService = $injector.get(widgetContext.servicesMap.get('entityRelationService'));\r\n\r\nvar FrqCampione;\r\nwidgetContext.http.get('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/values/attributes/?keys=FrqCampione').subscribe(data =>\r\n        {\r\n            FrqCampione=data[0].value;\r\n        },function(error){\r\n            console.log(error)\r\n        })\r\n\r\nopenAddEntityDialog();\r\n\r\n\r\nfunction openAddEntityDialog() {\r\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\r\n}\r\n\r\n//Get value materialeScavo\r\nvar select = document.getElementById(\"materialeScavo\");\r\nvar options = [\"terra\", \"argilla\", \"roccia\", \"sabbia\"];\r\nfor(var i=0; i<options.length; i++) {\r\n    var opt = options[i];\r\n    var el = document.createElement(\"mat-option\");\r\n    el.text = opt;\r\n    el.value = opt;\r\n    select.add(el);\r\n}\r\n\r\n\r\n\r\n\r\nfunction AddEntityDialogController(instance) {\r\n    let vm = instance;\r\n    vm.addEntityFormGroup = vm.fb.group({\r\n     IdScavoNuovo: [null, [vm.validators.required]],\r\n     DescrScavo: [null, [vm.validators.required]],\r\n     materialeScavo:[null, [vm.validators.required]],\r\n     UbicaziScavo:[null, [vm.validators.required]]\r\n    });\r\n\r\n    vm.cancel = function() {\r\n        vm.dialogRef.close(null);\r\n    };\r\n    vm.save = function() {\r\n        var formData=vm.addEntityFormGroup.value;\r\n        vm.addEntityFormGroup.markAsPristine();\r\n        var date=Date.now();\r\n        var telData={\"ts\":date, \"values\":{\"idScavo\":formData.IdScavoNuovo, \"IdScavoNuovo\":formData.IdScavoNuovo, \"DescrScavo\":formData.DescrScavo, \"UbicaziScavo\":formData.UbicaziScavo, \"materialeScavo\":formData.materialeScavo}};\r\n        var rpc={\"method\":\"setValue\",\"params\":{\"IdScavoNuovo\":formData.IdScavoNuovo,\"FrqCampione\":FrqCampione, \"DescrScavo\":formData.DescrScavo, \"UbicaziScavo\":formData.UbicaziScavo, \"materialeScavo\":formData.materialeScavo}};\r\n        console.log(rpc);\r\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\r\n        {\r\n            vm.dialogRef.close(null);\r\n        },function(error){\r\n            console.log(error)\r\n        })\r\n        widgetContext.http.post('/api/rpc/oneway/'+entityId.id, rpc).subscribe(data =>\r\n        {\r\n            vm.dialogRef.close(null);\r\n        },function(error){\r\n            console.log(error)\r\n        })\r\n    };\r\n\r\n}\r\n",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "c2a6c388-ffac-bee8-bc9a-98a26c1a4f93"
+              }, {
+                "name" : "home",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "updateDashboardState",
+                "targetDashboardStateId" : "home",
+                "setEntityId" : false,
+                "stateEntityParamName" : "",
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "fa4e27de-56fc-36c6-5f46-0d799a932cd5"
+              }, {
+                "name" : "guasti",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "updateDashboardState",
+                "targetDashboardStateId" : "guasti",
+                "setEntityId" : false,
+                "stateEntityParamName" : "",
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "24bc8a60-1bfd-aaca-1c4e-fdc9c7f8c131"
+              }, {
+                "name" : "materiale",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\r\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\r\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\r\n        <h2>Inserisci nuovo scavo</h2>\r\n        <span fxFlex></span>\r\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\r\n            <mat-icon class=\"material-icons\">close</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\"></mat-progress-bar>\r\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\r\n    <div mat-dialog-content fxLayout=\"column\">\r\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\r\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Inserisci nuovo Materiale</span><br>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Materiale dello scavo</mat-label>\r\n                <mat-select id=\"materialeScavo\" formControlName=\"materialeScavo\" required>\r\n                    <mat-option value=\"terra\">Terra</mat-option>\r\n                    <mat-option value=\"argilla\">Argilla</mat-option>\r\n                    <mat-option value=\"roccia\">Roccia</mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n        </div>\r\n    </div>\r\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n        <button mat-button color=\"primary\"\r\n                type=\"button\"\r\n                [disabled]=\"(isLoading$ | async)\"\r\n                (click)=\"cancel()\" cdkFocusInitial>\r\n            Cancella\r\n        </button>\r\n        <button mat-button mat-raised-button color=\"primary\"\r\n                type=\"submit\"\r\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\r\n            Invia\r\n        </button>\r\n    </div>\r\n</form>\r\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\nlet assetService = $injector.get(widgetContext.servicesMap.get('assetService'));\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\nlet attributeService = $injector.get(widgetContext.servicesMap.get('attributeService'));\nlet entityRelationService = $injector.get(widgetContext.servicesMap.get('entityRelationService'));\n\nvar idScavo, UbicaziScavo, DescrScavo, FrqCampione;\nwidgetContext.http.get('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/values/attributes/?keys=FrqCampione').subscribe(data =>\n        {\n            FrqCampione=data[0].value;\n        },function(error){\n            console.log(error)\n        })\nwidgetContext.http.get('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/values/timeseries/?keys=DescrScavo,UbicaziScavo,idScavo').subscribe(data =>\n        {\n            idScavo=parseInt(data.idScavo[0].value);\n            UbicaziScavo=data.UbicaziScavo[0].value;\n            DescrScavo=data.DescrScavo[0].value;\n        },function(error){\n            console.log(error)\n        })\n\nopenAddEntityDialog();\n\nfunction openAddEntityDialog() {\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\n}\n\nfunction AddEntityDialogController(instance) {\n    let vm = instance;\n    vm.addEntityFormGroup = vm.fb.group({\n     materialeScavo:[null, [vm.validators.required]],\n    });\n\n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    vm.save = function() {\n        var formData=vm.addEntityFormGroup.value;\n        vm.addEntityFormGroup.markAsPristine();\n        var date=Date.now();\n        var telData={\"ts\":date, \"values\":{\"idScavo\":idScavo, \"IdScavoNuovo\":idScavo, \"DescrScavo\":DescrScavo, \"UbicaziScavo\":UbicaziScavo, \"materialeScavo\":formData.materialeScavo}};\n        var rpc={\"method\":\"setValue\",\"params\":{\"IdScavoNuovo\":idScavo,\"FrqCampione\":FrqCampione, \"DescrScavo\":DescrScavo, \"UbicaziScavo\":UbicaziScavo, \"materialeScavo\":formData.materialeScavo}};\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\n        {\n            vm.dialogRef.close(null);\n        },function(error){\n            console.log(error)\n        })\n        widgetContext.http.post('/api/rpc/oneway/'+entityId.id, rpc).subscribe(data =>\n        {\n            vm.dialogRef.close(null);\n        },function(error){\n            console.log(error)\n        })\n    };\n\n}\n",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "4164aa5c-f62b-df9f-5fcb-2ee962791b30"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "fb73293f-6f36-297b-3f69-bbb2c5bf4a26"
+        },
+        "62690fe8-d98d-ec3e-e4c4-d31ce63d52de" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "state_chart",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "901afce7-b57e-38e5-8ecf-163eae309300",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "spinta_avanti",
+                "type" : "timeseries",
+                "label" : "Spinta Avanti",
+                "color" : "#2196f3",
+                "settings" : {
+                  "hideDataByDefault" : false,
+                  "disableDataHiding" : false,
+                  "removeFromLegend" : false,
+                  "excludeFromStacking" : false,
+                  "showLines" : true,
+                  "lineWidth" : 1,
+                  "fillLines" : true,
+                  "showPoints" : false,
+                  "showSeparateAxis" : false,
+                  "axisPosition" : "left",
+                  "comparisonSettings" : {
+                    "showValuesForComparison" : true,
+                    "comparisonValuesLabel" : "",
+                    "color" : ""
+                  },
+                  "thresholds" : [ ]
+                },
+                "_hash" : 0.7116025869800178,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "spinta_indietro",
+                "type" : "timeseries",
+                "label" : "Spinta Indietro",
+                "color" : "#4caf50",
+                "settings" : {
+                  "hideDataByDefault" : false,
+                  "disableDataHiding" : false,
+                  "removeFromLegend" : false,
+                  "excludeFromStacking" : false,
+                  "showLines" : true,
+                  "lineWidth" : 1,
+                  "fillLines" : true,
+                  "showPoints" : false,
+                  "showSeparateAxis" : false,
+                  "axisPosition" : "left",
+                  "comparisonSettings" : {
+                    "showValuesForComparison" : true,
+                    "comparisonValuesLabel" : "",
+                    "color" : ""
+                  },
+                  "thresholds" : [ ]
+                },
+                "_hash" : 0.753304921788502,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "shadowSize" : 4,
+              "fontColor" : "#545454",
+              "fontSize" : 10,
+              "xaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "showLabels" : true,
+                "color" : "#545454",
+                "ticksFormatter" : "if (value > 0 && value <= 1) {\n    return 'On';\n} else if (value === 0) {\n    return 'Off';\n} else {\n    return '';\n}"
+              },
+              "grid" : {
+                "color" : "#545454",
+                "tickColor" : "#DDDDDD",
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1
+              },
+              "stack" : false,
+              "tooltipIndividual" : false,
+              "tooltipValueFormatter" : "if (value > 0 && value <= 1) {\n    return 'On';\n} else if (value === 0) {\n    return 'Off';\n} else {\n    return '';\n}",
+              "smoothLines" : false
+            },
+            "title" : "Storico spinte Avanti/Indietro",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "widgetStyle" : {
+              "border-radius" : "25px"
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : true,
+            "actions" : { },
+            "legendConfig" : {
+              "direction" : "column",
+              ",position" : "bottom",
+              "showMin" : false,
+              "showMax" : false,
+              "showAvg" : false,
+              "showTotal" : false
+            },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "62690fe8-d98d-ec3e-e4c4-d31ce63d52de"
+        }
+      },
+      "states" : {
+        "detail" : {
+          "name" : "Dettaglio Device",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "1f93b66b-e16b-fb23-3f6b-ce63abd5363e" : {
+                  "sizeX" : 8,
+                  "sizeY" : 5,
+                  "row" : 2,
+                  "col" : 0
+                },
+                "afa3f1d8-6135-be3d-d17b-5a7140152402" : {
+                  "sizeX" : 8,
+                  "sizeY" : 2,
+                  "row" : 0,
+                  "col" : 0
+                },
+                "e34cbf3a-9d81-7e9b-13a5-da9e721f66ef" : {
+                  "sizeX" : 8,
+                  "sizeY" : 5,
+                  "row" : 2,
+                  "col" : 16
+                },
+                "c1444c53-e57f-d2ba-07e8-dc24ed2cea06" : {
+                  "sizeX" : 8,
+                  "sizeY" : 5,
+                  "row" : 7,
+                  "col" : 8
+                },
+                "b275095a-5113-56e4-d891-f259e5bb43d3" : {
+                  "sizeX" : 16,
+                  "sizeY" : 2,
+                  "row" : 0,
+                  "col" : 8
+                },
+                "f2e7dccd-0da6-d8d6-56f3-8d5be783b9fe" : {
+                  "sizeX" : 8,
+                  "sizeY" : 5,
+                  "row" : 7,
+                  "col" : 0
+                },
+                "c0a31673-b6f9-3d1f-67ed-1bc2f134b2b3" : {
+                  "sizeX" : 8,
+                  "sizeY" : 5,
+                  "row" : 2,
+                  "col" : 8
+                },
+                "62690fe8-d98d-ec3e-e4c4-d31ce63d52de" : {
+                  "sizeX" : 8,
+                  "sizeY" : 5,
+                  "row" : 7,
+                  "col" : 16
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : true,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70
+              }
+            }
+          }
+        },
+        "home" : {
+          "name" : "Home",
+          "root" : true,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "dadff960-7711-a4f4-6890-aae161741faf" : {
+                  "sizeX" : 12,
+                  "sizeY" : 9,
+                  "row" : 2,
+                  "col" : 12
+                },
+                "7b37d413-7b2b-2505-b8bd-a041a8959189" : {
+                  "sizeX" : 24,
+                  "sizeY" : 2,
+                  "row" : 0,
+                  "col" : 0
+                },
+                "3e136c83-f21a-cedf-896f-a5731bcae7f7" : {
+                  "sizeX" : 12,
+                  "sizeY" : 9,
+                  "row" : 2,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : true,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70
+              }
+            }
+          }
+        },
+        "commessa" : {
+          "name" : "Commessa",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "c282fb31-28f1-65e2-0798-0a10434fb129" : {
+                  "sizeX" : 6,
+                  "sizeY" : 2,
+                  "row" : 0,
+                  "col" : 0
+                },
+                "c64e3ae3-94ed-aaeb-e3a2-958e67672103" : {
+                  "sizeX" : 9,
+                  "sizeY" : 5,
+                  "row" : 0,
+                  "col" : 6
+                },
+                "083f468a-6764-28d1-c82c-0a2fc1d728b0" : {
+                  "sizeX" : 6,
+                  "sizeY" : 2,
+                  "row" : 2,
+                  "col" : 0
+                },
+                "a0579c66-e5a6-0463-a347-b769703dcf7b" : {
+                  "sizeX" : 6,
+                  "sizeY" : 7,
+                  "row" : 4,
+                  "col" : 0
+                },
+                "101119e1-6a7c-ef51-986c-c162840778c1" : {
+                  "sizeX" : 9,
+                  "sizeY" : 5,
+                  "row" : 0,
+                  "col" : 15
+                },
+                "75d56bea-96ca-b479-64bc-9a59f51efa0a" : {
+                  "sizeX" : 9,
+                  "sizeY" : 5,
+                  "row" : 5,
+                  "col" : 6
+                },
+                "9b4bb474-94b8-ae05-3c5f-a79f19703f93" : {
+                  "sizeX" : 9,
+                  "sizeY" : 5,
+                  "row" : 5,
+                  "col" : 15
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        },
+        "guasti" : {
+          "name" : "Guasti",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "7f06af04-7881-a753-d04f-d94544c5a383" : {
+                  "sizeX" : 24,
+                  "sizeY" : 9,
+                  "row" : 2,
+                  "col" : 0
+                },
+                "fb73293f-6f36-297b-3f69-bbb2c5bf4a26" : {
+                  "sizeX" : 24,
+                  "sizeY" : 2,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : true,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70
+              }
+            }
+          }
+        }
+      },
+      "entityAliases" : {
+        "c2e9ef1c-1e2e-bc0c-17ed-3eb8814d3f93" : {
+          "id" : "c2e9ef1c-1e2e-bc0c-17ed-3eb8814d3f93",
+          "alias" : "Pato Test",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "441539d0-6697-11ed-9133-91f5585bc6c3"
+            }
+          }
+        },
+        "901afce7-b57e-38e5-8ecf-163eae309300" : {
+          "id" : "901afce7-b57e-38e5-8ecf-163eae309300",
+          "alias" : "Selected Device",
+          "filter" : {
+            "type" : "stateEntity",
+            "resolveMultiple" : false,
+            "stateEntityParamName" : null,
+            "defaultStateEntity" : null
+          }
+        },
+        "2e01f9ab-5e67-74f6-50d3-3e30b064eb81" : {
+          "id" : "2e01f9ab-5e67-74f6-50d3-3e30b064eb81",
+          "alias" : "CurrentUser",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "CURRENT_USER",
+              "id" : "13814000-1dd2-11b2-8080-808080808080"
+            }
+          }
+        }
+      },
+      "filters" : {
+        "1385852f-f7a9-9f8b-9c57-4c82dd407063" : {
+          "id" : "1385852f-f7a9-9f8b-9c57-4c82dd407063",
+          "filter" : "SoloNuovaCommessa",
+          "keyFilters" : [ {
+            "key" : {
+              "type" : "TIME_SERIES",
+              "key" : "IdScavoNuovo"
+            },
+            "valueType" : "NUMERIC",
+            "predicates" : [ {
+              "keyFilterPredicate" : {
+                "operation" : "GREATER",
+                "value" : {
+                  "defaultValue" : 0,
+                  "dynamicValue" : null
+                },
+                "type" : "NUMERIC"
+              },
+              "userInfo" : {
+                "editable" : true,
+                "label" : "",
+                "autogeneratedLabel" : true,
+                "order" : 0
+              }
+            } ]
+          }, {
+            "key" : {
+              "type" : "TIME_SERIES",
+              "key" : "idScavo"
+            },
+            "valueType" : "NUMERIC",
+            "predicates" : [ {
+              "keyFilterPredicate" : {
+                "operation" : "GREATER",
+                "value" : {
+                  "defaultValue" : 0
+                },
+                "type" : "NUMERIC"
+              },
+              "userInfo" : {
+                "editable" : true,
+                "label" : "",
+                "autogeneratedLabel" : true,
+                "order" : 0
+              }
+            } ]
+          } ],
+          "editable" : true
+        },
+        "1b98834d-c53b-24e4-0a15-0da35368d3bd" : {
+          "id" : "1b98834d-c53b-24e4-0a15-0da35368d3bd",
+          "filter" : "Commessa",
+          "keyFilters" : [ {
+            "key" : {
+              "type" : "TIME_SERIES",
+              "key" : "IdScavo"
+            },
+            "valueType" : "NUMERIC",
+            "predicates" : [ {
+              "keyFilterPredicate" : {
+                "operation" : "EQUAL",
+                "value" : {
+                  "defaultValue" : 0,
+                  "dynamicValue" : {
+                    "sourceType" : "CURRENT_USER",
+                    "sourceAttribute" : "Pato_selected_IdScavo",
+                    "inherit" : false
+                  }
+                },
+                "type" : "NUMERIC"
+              },
+              "userInfo" : {
+                "editable" : true,
+                "label" : "",
+                "autogeneratedLabel" : true,
+                "order" : 0
+              }
+            } ]
+          } ],
+          "editable" : true
+        }
+      },
+      "timewindow" : {
+        "hideInterval" : false,
+        "hideAggregation" : false,
+        "hideAggInterval" : false,
+        "hideTimezone" : false,
+        "selectedTab" : 1,
+        "history" : {
+          "historyType" : 0,
+          "timewindowMs" : 604800000,
+          "interval" : 5185000,
+          "fixedTimewindow" : {
+            "startTimeMs" : 1671349865729,
+            "endTimeMs" : 1671436265729
+          },
+          "quickInterval" : "CURRENT_DAY"
+        },
+        "aggregation" : {
+          "type" : "NONE",
+          "limit" : 50000
+        }
+      },
+      "settings" : {
+        "stateControllerId" : "entity",
+        "showTitle" : false,
+        "showDashboardsSelect" : true,
+        "showEntitiesSelect" : true,
+        "showDashboardTimewindow" : true,
+        "showDashboardExport" : true,
+        "toolbarAlwaysOpen" : true
+      }
+    },
+    "createdTime" : 1671464350542,
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "43d91290-7fae-11ed-9133-91f5585bc6c3"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "DASHBOARD",
+      "id" : "483156e0-7fb3-11ed-b83e-3de49d01d35a"
+    },
+    "image" : null,
+    "mobileHide" : false,
+    "mobileOrder" : null,
+    "name" : "Trivelle",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "43d91290-7fae-11ed-9133-91f5585bc6c3"
+    },
+    "tenantId" : null,
+    "title" : "Trivelle"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

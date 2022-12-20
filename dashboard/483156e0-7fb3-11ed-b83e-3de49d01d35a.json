@@ -1235,7 +1235,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "var mm=(value*1000)-(prevOrigValue*1000);\n//if(mm>1000 || mm<0){mm=undefined;}\nvar t=((time-timePrev)/1000)/60;\n//if(t>1000 || t<0){t=undefined;}\nvar f=mm/t\nif(f>1000 || f<0){\n    return undefined;\n}\nreturn f;",
+                "postFuncBody" : "var mm=(value*1000)-(prevOrigValue*1000);\n//if(mm>1000 || mm<0){mm=undefined;}\nvar t=((time-timePrev)/1000)/60;\n//if(t>1000 || t<0){t=undefined;}\nvar f=mm/t\nif(f>1000 || f<0){\n    return 0;\n}\nreturn f;",
                 "aggregationType" : null
               } ],
               "latestDataKeys" : [ ]

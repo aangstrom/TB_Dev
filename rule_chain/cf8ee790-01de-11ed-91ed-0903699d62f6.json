@@ -108,14 +108,26 @@
       "type" : "Success"
     }, {
       "fromIndex" : 13,
-      "toIndex" : 0,
+      "toIndex" : 14,
       "type" : "Failure"
     }, {
       "fromIndex" : 13,
-      "toIndex" : 0,
+      "toIndex" : 14,
       "type" : "Other"
     }, {
       "fromIndex" : 13,
+      "toIndex" : 14,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 14,
+      "toIndex" : 0,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 14,
+      "toIndex" : 0,
+      "type" : "Other"
+    }, {
+      "fromIndex" : 14,
       "toIndex" : 0,
       "type" : "Success"
     } ],
@@ -142,8 +154,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 974,
-        "layoutY" : 527
+        "layoutX" : 958,
+        "layoutY" : 490
       },
       "configuration" : {
         "inputValueKey" : "Ore_Totale_Impianto",
@@ -317,8 +329,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1070,
-        "layoutY" : 607
+        "layoutX" : 1025,
+        "layoutY" : 564
       },
       "configuration" : {
         "inputValueKey" : "Conteggio_inversioni_Rotore_2",
@@ -342,8 +354,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 864,
-        "layoutY" : 436
+        "layoutX" : 858,
+        "layoutY" : 416
       },
       "configuration" : {
         "inputValueKey" : "Conteggio_inversioni_Rotore_2",
@@ -392,8 +404,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1221,
-        "layoutY" : 715
+        "layoutX" : 1099,
+        "layoutY" : 639
       },
       "configuration" : {
         "inputValueKey" : "I6000_Rotor01CurrentRe",
@@ -411,7 +423,32 @@
         "entityType" : "RULE_NODE",
         "id" : "dbd60e60-8132-11ed-a0f1-b51a14fb887c"
       },
-      "name" : "Delta ore Totali OMAR",
+      "name" : "Delta ms totali R3 Montalto",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.metadata.CalculateDeltaNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1177,
+        "layoutY" : 712
+      },
+      "configuration" : {
+        "inputValueKey" : "I1M03currentMillRe",
+        "outputValueKey" : "delta_corrente_calcolo_ore",
+        "useCache" : true,
+        "addPeriodBetweenMsgs" : true,
+        "periodValueKey" : "Ore_ITR",
+        "round" : 2,
+        "tellFailureIfDeltaIsNegative" : true
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "34fd2040-8134-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Delta ms totali Mulino Fossò",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.metadata.CalculateDeltaNode"
     } ],

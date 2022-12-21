@@ -363,6 +363,47 @@
       "name" : "Generator 2",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 237,
+        "layoutY" : 695
+      },
+      "configuration" : {
+        "persistAlarmRulesState" : false,
+        "fetchAlarmRulesStateOnStart" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "3e5dd650-814f-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Test",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.profile.TbDeviceProfileNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 707,
+        "layoutY" : 526
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "var relations = [];\n\nswitch (msg.type) {\n    case 'Low Temperature Customer Alarm':\n        if (metadata.lowTempEmailEnabled === 'true'){\n            relations.push('Low Temperature Email');\n        }\n        if (metadata.lowTempSmsEnabled === 'true'){\n            relations.push('Low Temperature SMS');\n        }\n        break;\n    case 'Daily Consumption Threshold Exceeded Customer Alarm':\n        if (metadata.dailyConsumptionEmailEnabled === 'true'){\n            relations.push('Daily Consumption Email');\n        }\n        if (metadata.dailyConsumptionSmsEnabled === 'true'){\n            relations.push('Daily Consumption SMS');\n        }\n        break; \n    case 'Weekly Consumption Threshold Exceeded Customer Alarm':\n        if (metadata.weeklyConsumptionEmailEnabled === 'true'){\n            relations.push('Weekly Consumption Email');\n        }\n        if (metadata.weeklyConsumptionSmsEnabled === 'true'){\n            relations.push('Weekly Consumption SMS');\n        }\n        break;\n    default:\n        relations.push('Other');\n}\n\nreturn relations;"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "3e5ee7c0-814f-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Email/Teams",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     } ],
     "ruleChainConnections" : null
   },

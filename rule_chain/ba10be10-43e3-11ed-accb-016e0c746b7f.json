@@ -90,6 +90,42 @@
       "fromIndex" : 13,
       "toIndex" : 9,
       "type" : "Success"
+    }, {
+      "fromIndex" : 14,
+      "toIndex" : 19,
+      "type" : "Send Email"
+    }, {
+      "fromIndex" : 14,
+      "toIndex" : 20,
+      "type" : "Send Teams"
+    }, {
+      "fromIndex" : 15,
+      "toIndex" : 16,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 15,
+      "toIndex" : 16,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 16,
+      "toIndex" : 18,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 16,
+      "toIndex" : 18,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 17,
+      "toIndex" : 15,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 18,
+      "toIndex" : 14,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 18,
+      "toIndex" : 14,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -366,33 +402,13 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 237,
-        "layoutY" : 695
-      },
-      "configuration" : {
-        "persistAlarmRulesState" : false,
-        "fetchAlarmRulesStateOnStart" : false
-      },
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "3e5dd650-814f-11ed-a0f1-b51a14fb887c"
-      },
-      "name" : "Test",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.profile.TbDeviceProfileNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 707,
-        "layoutY" : 526
+        "layoutX" : 348,
+        "layoutY" : 769
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "var relations = [];\n\nswitch (msg.type) {\n    case 'Low Temperature Customer Alarm':\n        if (metadata.lowTempEmailEnabled === 'true'){\n            relations.push('Low Temperature Email');\n        }\n        if (metadata.lowTempSmsEnabled === 'true'){\n            relations.push('Low Temperature SMS');\n        }\n        break;\n    case 'Daily Consumption Threshold Exceeded Customer Alarm':\n        if (metadata.dailyConsumptionEmailEnabled === 'true'){\n            relations.push('Daily Consumption Email');\n        }\n        if (metadata.dailyConsumptionSmsEnabled === 'true'){\n            relations.push('Daily Consumption SMS');\n        }\n        break; \n    case 'Weekly Consumption Threshold Exceeded Customer Alarm':\n        if (metadata.weeklyConsumptionEmailEnabled === 'true'){\n            relations.push('Weekly Consumption Email');\n        }\n        if (metadata.weeklyConsumptionSmsEnabled === 'true'){\n            relations.push('Weekly Consumption SMS');\n        }\n        break;\n    default:\n        relations.push('Other');\n}\n\nreturn relations;"
+        "tbelScript" : "var relations = [];\n\nswitch (msg.type) {\n    case 'Teams':\n        if (metadata.TeamsEnabled === 'true'){\n            relations.push('Send Teams');\n        }\n        break;\n    case 'Teams and Email':\n        if (metadata.TeamsEnabled === 'true'){\n            relations.push('Send Teams');\n        }\n        if (metadata.EmailEnabled === 'true'){\n            relations.push('Send Email');\n        }\n        break; \n    case 'Email':\n        if (metadata.TeamsEnabled === 'true'){\n            relations.push('Send Email');\n        }\n        break;\n    default:\n        relations.push('Other');\n}\n\nreturn relations;"
       },
       "createdTime" : 0,
       "debugMode" : false,
@@ -404,6 +420,174 @@
       "name" : "Email/Teams",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 344,
+        "layoutY" : 517
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchToData" : false,
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "TeamsEnabled" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "537dc980-8151-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Teams?",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 344,
+        "layoutY" : 603
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchToData" : false,
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "EmailEnabled" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "537e17a0-8151-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Email?",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 45,
+        "layoutY" : 517
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 1,
+        "scriptLang" : "TBEL",
+        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "originatorId" : "2a11fcf0-6c0d-11ed-9133-91f5585bc6c3",
+        "originatorType" : "DEVICE"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "537e65c0-8151-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Test",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 348,
+        "layoutY" : 684
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var newMsg = \n{\n   \"type\":\"message\",\n   \"attachments\":[\n      {\n         \"contentType\":\"application/vnd.microsoft.card.adaptive\",\n         \"contentUrl\":null,\n         \"content\":\n{\n    \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n    \"type\": \"AdaptiveCard\",\n    \"version\": \"1.4\",\n    \"speak\": \"<s>The forecast for Seattle ${formatEpoch(dt, 'MMMM d')} is mostly clear with a High of ${formatNumber((main.temp_max - 273) * 9 / 5 + 32, 0)} degrees and Low of ${formatNumber((main.temp_min - 273) * 9 / 5 + 32, 0)} degrees</s>\",\n    \"body\": [\n        {\n            \"type\": \"TextBlock\",\n            \"text\": \"Voltage, WA\",\n            \"size\": \"Large\",\n            \"isSubtle\": true,\n            \"wrap\": true\n        },\n        {\n            \"type\": \"ColumnSet\",\n            \"columns\": [\n                {\n                    \"type\": \"Column\",\n                    \"width\": \"auto\",\n                    \"items\": [\n                        {\n                            \"type\": \"Image\",\n                            \"url\": \"https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Square.png\",\n                            \"size\": \"Small\",\n                            \"altText\": \"Mostly cloudy weather\"\n                        }\n                    ]\n                },\n                {\n                    \"type\": \"Column\",\n                    \"width\": \"auto\",\n                    \"items\": [\n                        {\n                            \"type\": \"TextBlock\",\n                            \"text\": \" - \" + msg.a_voltage,\n                            \"size\": \"ExtraLarge\",\n                            \"spacing\": \"None\",\n                            \"wrap\": true\n                        }\n                    ]\n                },\n                {\n                    \"type\": \"Column\",\n                    \"width\": \"stretch\",\n                    \"items\": [\n                        {\n                            \"type\": \"TextBlock\",\n                            \"text\": \"°F\",\n                            \"weight\": \"Bolder\",\n                            \"spacing\": \"Small\",\n                            \"wrap\": true\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n}\n\n          \n      }\n   ]\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "537e8cd0-8151-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Messaggio",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 650,
+        "layoutY" : 731
+      },
+      "configuration" : {
+        "useSystemSmtpSettings" : true,
+        "smtpHost" : "localhost",
+        "smtpPort" : 25,
+        "username" : null,
+        "password" : null,
+        "smtpProtocol" : "smtp",
+        "timeout" : 10000,
+        "enableTls" : false,
+        "tlsVersion" : "TLSv1.2",
+        "enableProxy" : false,
+        "proxyHost" : null,
+        "proxyPort" : null,
+        "proxyUser" : null,
+        "proxyPassword" : null
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "537edaf0-8151-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Send Email",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.mail.TbSendEmailNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 649,
+        "layoutY" : 802
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "https://aangstromit.webhook.office.com/webhookb2/147ac03e-8ab3-4bf6-bc09-11e64848ecf8@ec6dca47-22be-44de-bd47-855410a1d829/IncomingWebhook/0aacba550d044532b43e2d53196d8289/da155956-fdd8-4364-b647-abfbd17ff1ee",
+        "requestMethod" : "POST",
+        "useSimpleClientHttpFactory" : false,
+        "ignoreRequestBody" : false,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : {
+          "Content-Type" : "application/json"
+        },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : false,
+        "maxQueueSize" : 0,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "537f2910-8151-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Send Teams",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
     } ],
     "ruleChainConnections" : null
   },

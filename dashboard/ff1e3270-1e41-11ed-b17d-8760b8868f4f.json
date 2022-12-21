@@ -3415,101 +3415,6 @@
           "col" : 0,
           "id" : "b17738f8-e533-a8dc-cf8f-e4a092adec9e"
         },
-        "78e4bcfd-ffd8-6545-8c6b-9d6ccd55398e" : {
-          "isSystemType" : true,
-          "bundleAlias" : "cards",
-          "typeAlias" : "html_value_card",
-          "type" : "latest",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
-          "sizeX" : 7.5,
-          "sizeY" : 3,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "866ef2eb-4cb8-818b-5647-3e215200d180",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "address",
-                "type" : "attribute",
-                "label" : "address",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.7319649073377186
-              }, {
-                "name" : "matricola",
-                "type" : "attribute",
-                "label" : "matricola",
-                "color" : "#4caf50",
-                "settings" : { },
-                "_hash" : 0.9405140969943739
-              } ]
-            } ],
-            "timewindow" : {
-              "displayValue" : "",
-              "selectedTab" : 0,
-              "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1671543668556,
-                  "endTimeMs" : 1671630068556
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "limit" : 25000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "cardHtml" : "<div class='card' id=\"deviceContactInfoCard\">\n    <div class='content'>\n        <h3 id=\"home\" style=\"margin-right:15px\"><i class=\"fa fa-arrow-left\" style=\"font-size: 50px\"></i><br>Home</h3>\n        <div class='column'>\n            <h2>${entityName}</h2>\n            <h3 class=\"display: flex\"><i class=\"fa fa-map-marker\"></i>Indirizzo: </h3>\n            <div class='value' id=\"contactAddress\">${address}</div>\n            <div class=\"display: flex;\"><h3><i class=\"fa fa-hashtag\"></i>Matricola: </h3>${matricola}</div>\n        </div>\n    </div>\n</div>",
-              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content {\n   padding: 10px;\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content .column {\n   display: flex;\n   flex-direction: column;    \n   height: 100%;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    color: #777;\n    font-size: 18px;\n    font-weight: bold;\n    margin: 0;\n    padding-bottom: 6px;\n    line-height: 20px;\n}\n\n.card h2 {\n    color: #333;\n    font-size: 25px;\n    font-weight: bold;\n    margin: 0;\n    padding-bottom: 9px;\n    line-height: 20px;\n}\n\n.card h3 {\n    color: #666;\n    font-size: 14px;\n    font-weight: bold;\n    margin: 0;\n    padding-bottom: 6px;\n    padding-top: 14px;\n    line-height: 20px;\n}\n\n.card .value {\n    font-size: 14px;\n    font-weight: 300;\n    text-align: left;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n\n.card .fa {\n    font-size: 20px;\n    padding-right: 10px;\n}\n"
-            },
-            "title" : "New HTML Value Card",
-            "dropShadow" : false,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "useDashboardTimewindow" : true,
-            "showLegend" : false,
-            "actions" : {
-              "elementClick" : [ {
-                "name" : "home",
-                "icon" : "more_horiz",
-                "useShowWidgetActionFunction" : null,
-                "showWidgetActionFunction" : "return true;",
-                "type" : "custom",
-                "customFunction" : "var stateIndex = widgetContext.stateController\n        .getStateIndex();\nwhile (stateIndex > 0) {\n    stateIndex -= 1;\n    backToPrevState(stateIndex);\n}\n\nopenDashboardState('default');\n\nfunction backToPrevState(stateIndex) {\n    widgetContext.stateController.navigatePrevState(\n        stateIndex);\n}\n\nfunction openDashboardState(statedId) {\n    var currentState = widgetContext.stateController\n        .getStateId();\n    if (currentState !== statedId) {\n        var params = {};\n        widgetContext.stateController.updateState(statedId,\n            params, false);\n    }\n}",
-                "openInSeparateDialog" : false,
-                "openInPopover" : false,
-                "id" : "9342864c-5529-ed6b-5c66-b36fcbaa6792"
-              } ]
-            },
-            "enableDataExport" : false,
-            "widgetCss" : "",
-            "noDataDisplayMessage" : ""
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "78e4bcfd-ffd8-6545-8c6b-9d6ccd55398e"
-        },
         "79f2b527-da14-5061-1cca-d19e222bdb61" : {
           "isSystemType" : true,
           "bundleAlias" : "cards",
@@ -9262,6 +9167,159 @@
           "row" : 0,
           "col" : 0,
           "id" : "bb605a83-097d-4633-52af-e5f9cd138bcd"
+        },
+        "1a34273f-97ce-557c-458e-eb6562b18b5d" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "866ef2eb-4cb8-818b-5647-3e215200d180",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "active",
+                "type" : "attribute",
+                "label" : "accensione",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.889728954217154,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "Allarmi_presenti",
+                "type" : "timeseries",
+                "label" : "allarme",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.7843508062098803,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "macRunLoadingBo",
+                "type" : "timeseries",
+                "label" : "stato",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.8766966341034967,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "Allarmi_presenti",
+                "type" : "timeseries",
+                "label" : "allarmi",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.00394019812873081,
+                "aggregationType" : "NONE",
+                "units" : "",
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "I6000_Rotor01CurrentRe",
+                "type" : "timeseries",
+                "label" : "I6000_Rotor01CurrentRe",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.005415856350152737
+              }, {
+                "name" : "I6000_Rotor02CurrentRe",
+                "type" : "timeseries",
+                "label" : "I6000_Rotor02CurrentRe",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.2158254444775749
+              }, {
+                "name" : "I6000_Rotor03CurrentRe",
+                "type" : "timeseries",
+                "label" : "I6000_Rotor03CurrentRe",
+                "color" : "#8bc34a",
+                "settings" : { },
+                "_hash" : 0.29217868900487787
+              }, {
+                "name" : "I6000_Rotor04CurrentRe",
+                "type" : "timeseries",
+                "label" : "I6000_Rotor04CurrentRe",
+                "color" : "#3f51b5",
+                "settings" : { },
+                "_hash" : 0.9296495394989042
+              }, {
+                "name" : "I5M01motorCurrentRe",
+                "type" : "timeseries",
+                "label" : "I5M01motorCurrentRe",
+                "color" : "#e91e63",
+                "settings" : { },
+                "_hash" : 0.9543999821806242
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1671545391514,
+                  "endTimeMs" : 1671631791514
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<script>\n    var somma=parseFloat(${I6000_Rotor01CurrentRe}+${I6000_Rotor02CurrentRe}+${I6000_Rotor03CurrentRe}+${I6000_Rotor04CurrentRe}+${I5M01motorCurrentRe}).toFixed( 2 );\n    if (somma < 0) {somma = 0;} else {somma = Math.abs(somma);}\n    document.getElementById('valore').innerHTML='<h1>'+somma+'</h1>';\n</script>\n<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <h1>Stati Macchina</h1>\n            <div class=\"row\">\n                <li>Stato accensione:&nbsp;${accensione}</li>\n                <li>Stato:&nbsp;${stato}</li>\n                <li>Corrente attuale:&nbsp;<div id=\"valore\"></div></li>\n                <li>Allarme:&nbsp;${allarme}</li>\n            </div>\n        </div>\n    </div>\n</div>",
+              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content {\n   padding: 22px;\n   display: flex;\n   flex-direction: row;\n   height: 100%;\n   align-items: center;\n   justify-content: space-around;\n   box-sizing: border-box;\n}\n\n.row {\n    display: flex;\n    font-size: 18px;\n    flex-direction: row;\n    flex-wrap: wrap;\n    list-style-type: none;\n}\nli{\n    display: flex;\n    margin-right: 10px;\n}\n\n.card .content .column {\n   display: flex;\n   flex-direction: column;    \n   justify-content: space-around;\n   height: 100%;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 20px;\n    font-weight: bold;\n    margin: 0;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "1a34273f-97ce-557c-458e-eb6562b18b5d"
         }
       },
       "states" : {
@@ -9365,12 +9423,6 @@
           "layouts" : {
             "main" : {
               "widgets" : {
-                "78e4bcfd-ffd8-6545-8c6b-9d6ccd55398e" : {
-                  "sizeX" : 6,
-                  "sizeY" : 2,
-                  "row" : 18,
-                  "col" : 6
-                },
                 "79f2b527-da14-5061-1cca-d19e222bdb61" : {
                   "sizeX" : 5,
                   "sizeY" : 2,
@@ -9448,6 +9500,12 @@
                   "sizeY" : 2,
                   "row" : 0,
                   "col" : 0
+                },
+                "1a34273f-97ce-557c-458e-eb6562b18b5d" : {
+                  "sizeX" : 18,
+                  "sizeY" : 2,
+                  "row" : 18,
+                  "col" : 6
                 }
               },
               "gridSettings" : {

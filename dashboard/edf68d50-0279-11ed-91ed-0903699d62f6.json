@@ -4904,6 +4904,19 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
+                "name" : "address",
+                "type" : "attribute",
+                "label" : "Indirizzo",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.6778348036018642,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
                 "name" : "name",
                 "type" : "attribute",
                 "label" : "Cambia nome al dispositivo",
@@ -4996,13 +5009,16 @@
             "settings" : {
               "widgetTitle" : "Impostazioni dispositivo",
               "showResultMessage" : true,
-              "showActionButtons" : false,
+              "showActionButtons" : true,
+              "updateAllValues" : false,
+              "saveButtonLabel" : "Salva",
+              "resetButtonLabel" : "Cancella ultima modifica",
               "showGroupTitle" : true,
               "groupTitle" : "${entityName}",
               "fieldsAlignment" : "column",
               "fieldsInRow" : 2
             },
-            "title" : "Impostazioni dispositivo $name",
+            "title" : "Impostazioni dispositivi",
             "dropShadow" : false,
             "enableFullscreen" : false,
             "enableDataExport" : false,
@@ -5517,8 +5533,8 @@
             "main" : {
               "widgets" : {
                 "13a318f4-c9a6-e1eb-01ad-6cac7405f1e0" : {
-                  "sizeX" : 5,
-                  "sizeY" : 12,
+                  "sizeX" : 24,
+                  "sizeY" : 11,
                   "row" : 0,
                   "col" : 0
                 }
@@ -5527,7 +5543,11 @@
                 "backgroundColor" : "#eeeeee",
                 "columns" : 24,
                 "margin" : 10,
-                "backgroundSizeMode" : "100%"
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : true,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70
               }
             }
           }

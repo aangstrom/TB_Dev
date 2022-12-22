@@ -76,7 +76,7 @@
       "type" : "Success"
     }, {
       "fromIndex" : 9,
-      "toIndex" : 15,
+      "toIndex" : 22,
       "type" : "Alarm Created"
     }, {
       "fromIndex" : 12,
@@ -137,6 +137,22 @@
     }, {
       "fromIndex" : 21,
       "toIndex" : 14,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 22,
+      "toIndex" : 23,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 22,
+      "toIndex" : 23,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 23,
+      "toIndex" : 15,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 23,
+      "toIndex" : 15,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
@@ -414,8 +430,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 353,
-        "layoutY" : 841
+        "layoutX" : 349,
+        "layoutY" : 902
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -435,8 +451,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 344,
-        "layoutY" : 517
+        "layoutX" : 340,
+        "layoutY" : 578
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -448,7 +464,7 @@
         "getLatestValueWithTs" : true
       },
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -460,8 +476,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 344,
-        "layoutY" : 603
+        "layoutX" : 340,
+        "layoutY" : 664
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -473,7 +489,7 @@
         "getLatestValueWithTs" : false
       },
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -485,8 +501,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1018,
-        "layoutY" : 758
+        "layoutX" : 1024,
+        "layoutY" : 862
       },
       "configuration" : {
         "useSystemSmtpSettings" : true,
@@ -517,8 +533,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 726,
-        "layoutY" : 840
+        "layoutX" : 732,
+        "layoutY" : 944
       },
       "configuration" : {
         "restEndpointUrlPattern" : "https://aangstromit.webhook.office.com/webhookb2/147ac03e-8ab3-4bf6-bc09-11e64848ecf8@ec6dca47-22be-44de-bd47-855410a1d829/IncomingWebhook/d6aac372ce2f423aa0f6865e38abf48d/865a6878-ff53-421e-afed-706209cd9891",
@@ -557,8 +573,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 725,
-        "layoutY" : 757
+        "layoutX" : 731,
+        "layoutY" : 861
       },
       "configuration" : {
         "fromTemplate" : "alert@aangstrom.it",
@@ -583,8 +599,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 348,
-        "layoutY" : 680
+        "layoutX" : 344,
+        "layoutY" : 741
       },
       "configuration" : {
         "scriptLang" : "JS",
@@ -592,7 +608,7 @@
         "tbelScript" : "return {msg: msg, metadata: metadata, msgType: \"POST_TELEMETRY_REQUEST\"};"
       },
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -604,8 +620,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 354,
-        "layoutY" : 760
+        "layoutX" : 350,
+        "layoutY" : 821
       },
       "configuration" : {
         "scriptLang" : "JS",
@@ -622,6 +638,56 @@
       "name" : "Create Card",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 344,
+        "layoutY" : 426
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchToData" : false,
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "TeamsUrl" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c9b57310-81e1-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Get TeamsUrl",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 340,
+        "layoutY" : 502
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchToData" : false,
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "Email" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c9b60f50-81e1-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Get email",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
     } ],
     "ruleChainConnections" : null
   },

@@ -76,7 +76,7 @@
       "type" : "Success"
     }, {
       "fromIndex" : 9,
-      "toIndex" : 21,
+      "toIndex" : 24,
       "type" : "Alarm Created"
     }, {
       "fromIndex" : 12,
@@ -149,6 +149,14 @@
     }, {
       "fromIndex" : 23,
       "toIndex" : 18,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 24,
+      "toIndex" : 21,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 24,
+      "toIndex" : 21,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
@@ -426,8 +434,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 351,
-        "layoutY" : 808
+        "layoutX" : 352,
+        "layoutY" : 882
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -447,8 +455,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 351,
-        "layoutY" : 578
+        "layoutX" : 352,
+        "layoutY" : 652
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -472,8 +480,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 350,
-        "layoutY" : 656
+        "layoutX" : 351,
+        "layoutY" : 730
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -533,7 +541,7 @@
         "layoutY" : 874
       },
       "configuration" : {
-        "restEndpointUrlPattern" : "https://aangstromit.webhook.office.com/webhookb2/147ac03e-8ab3-4bf6-bc09-11e64848ecf8@ec6dca47-22be-44de-bd47-855410a1d829/IncomingWebhook/d6aac372ce2f423aa0f6865e38abf48d/865a6878-ff53-421e-afed-706209cd9891",
+        "restEndpointUrlPattern" : "${TeamsUrl}",
         "requestMethod" : "POST",
         "useSimpleClientHttpFactory" : false,
         "ignoreRequestBody" : false,
@@ -574,10 +582,10 @@
       },
       "configuration" : {
         "fromTemplate" : "alert@aangstrom.it",
-        "toTemplate" : "federico.furlatti@aangstrom.it",
+        "toTemplate" : "${Email}",
         "ccTemplate" : null,
         "bccTemplate" : null,
-        "subjectTemplate" : "Device ${deviceType} temperature high",
+        "subjectTemplate" : "Nuovo alert ${deviceType}",
         "mailBodyType" : "true",
         "isHtmlTemplate" : null,
         "bodyTemplate" : "$[msg]"
@@ -595,8 +603,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 351,
-        "layoutY" : 731
+        "layoutX" : 352,
+        "layoutY" : 805
       },
       "configuration" : {
         "scriptLang" : "JS",
@@ -616,8 +624,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 350,
-        "layoutY" : 424
+        "layoutX" : 351,
+        "layoutY" : 498
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -641,8 +649,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 350,
-        "layoutY" : 502
+        "layoutX" : 351,
+        "layoutY" : 576
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -684,6 +692,31 @@
       "name" : "Create Card",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 351,
+        "layoutY" : 420
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchToData" : false,
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "name" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e0d26ec0-81e3-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Get Name",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
     } ],
     "ruleChainConnections" : null
   },

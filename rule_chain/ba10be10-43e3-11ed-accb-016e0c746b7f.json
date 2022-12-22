@@ -76,7 +76,7 @@
       "type" : "Success"
     }, {
       "fromIndex" : 9,
-      "toIndex" : 22,
+      "toIndex" : 21,
       "type" : "Alarm Created"
     }, {
       "fromIndex" : 12,
@@ -96,12 +96,12 @@
       "type" : "Success"
     }, {
       "fromIndex" : 14,
-      "toIndex" : 18,
-      "type" : "Send Teams"
-    }, {
-      "fromIndex" : 14,
       "toIndex" : 19,
       "type" : "Send Email"
+    }, {
+      "fromIndex" : 14,
+      "toIndex" : 23,
+      "type" : "Send Teams"
     }, {
       "fromIndex" : 15,
       "toIndex" : 16,
@@ -124,35 +124,31 @@
       "type" : "Success"
     }, {
       "fromIndex" : 20,
-      "toIndex" : 21,
+      "toIndex" : 14,
       "type" : "Failure"
     }, {
       "fromIndex" : 20,
-      "toIndex" : 21,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 21,
-      "toIndex" : 14,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 21,
       "toIndex" : 14,
       "type" : "Success"
     }, {
+      "fromIndex" : 21,
+      "toIndex" : 22,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 21,
+      "toIndex" : 22,
+      "type" : "Success"
+    }, {
       "fromIndex" : 22,
-      "toIndex" : 23,
+      "toIndex" : 15,
       "type" : "Failure"
     }, {
       "fromIndex" : 22,
-      "toIndex" : 23,
+      "toIndex" : 15,
       "type" : "Success"
     }, {
       "fromIndex" : 23,
-      "toIndex" : 15,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 23,
-      "toIndex" : 15,
+      "toIndex" : 18,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
@@ -430,8 +426,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 350,
-        "layoutY" : 880
+        "layoutX" : 351,
+        "layoutY" : 808
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -533,8 +529,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 728,
-        "layoutY" : 878
+        "layoutX" : 1025,
+        "layoutY" : 874
       },
       "configuration" : {
         "restEndpointUrlPattern" : "https://aangstromit.webhook.office.com/webhookb2/147ac03e-8ab3-4bf6-bc09-11e64848ecf8@ec6dca47-22be-44de-bd47-855410a1d829/IncomingWebhook/d6aac372ce2f423aa0f6865e38abf48d/865a6878-ff53-421e-afed-706209cd9891",
@@ -620,27 +616,6 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 351,
-        "layoutY" : 804
-      },
-      "configuration" : {
-        "scriptLang" : "JS",
-        "jsScript" : "var newMsg = \n{\n   \"type\":\"message\",\n   \"attachments\":[\n      {\n         \"contentType\":\"application/vnd.microsoft.card.adaptive\",\n         \"contentUrl\":null,\n         \"content\":\n{\n    \"type\": \"AdaptiveCard\",\n    \"body\": [\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Large\",\n            \"weight\": \"Bolder\",\n            \"text\": \"! Nuovo Allarme !\",\n            \"horizontalAlignment\": \"Center\",\n            \"color\": \"Attention\"\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Medium\",\n            \"weight\": \"Bolder\",\n            \"text\": msg.type,\n            \"horizontalAlignment\": \"Center\",\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"text\": msg.details.data,\n            \"wrap\": true\n        }\n    ],\n    \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n    \"version\": \"1.4\"\n}\n\n          \n      }\n   ]\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var newMsg = \n{\n   \"type\":\"message\",\n   \"attachments\":[\n      {\n         \"contentType\":\"application/vnd.microsoft.card.adaptive\",\n         \"contentUrl\":null,\n         \"content\":\n{\n    \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n    \"type\": \"AdaptiveCard\",\n    \"version\": \"1.4\",\n    \"speak\": \"<s>The forecast for Seattle ${formatEpoch(dt, 'MMMM d')} is mostly clear with a High of ${formatNumber((main.temp_max - 273) * 9 / 5 + 32, 0)} degrees and Low of ${formatNumber((main.temp_min - 273) * 9 / 5 + 32, 0)} degrees</s>\",\n    \"body\": [\n        {\n            \"type\": \"TextBlock\",\n            \"text\": \"Voltage, WA\",\n            \"size\": \"Large\",\n            \"isSubtle\": true,\n            \"wrap\": true\n        },\n        {\n            \"type\": \"ColumnSet\",\n            \"columns\": [\n                {\n                    \"type\": \"Column\",\n                    \"width\": \"auto\",\n                    \"items\": [\n                        {\n                            \"type\": \"Image\",\n                            \"url\": \"https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Square.png\",\n                            \"size\": \"Small\",\n                            \"altText\": \"Mostly cloudy weather\"\n                        }\n                    ]\n                },\n                {\n                    \"type\": \"Column\",\n                    \"width\": \"auto\",\n                    \"items\": [\n                        {\n                            \"type\": \"TextBlock\",\n                            \"text\": \" - \" + msg.a_voltage,\n                            \"size\": \"ExtraLarge\",\n                            \"spacing\": \"None\",\n                            \"wrap\": true\n                        }\n                    ]\n                },\n                {\n                    \"type\": \"Column\",\n                    \"width\": \"stretch\",\n                    \"items\": [\n                        {\n                            \"type\": \"TextBlock\",\n                            \"text\": \"°F\",\n                            \"weight\": \"Bolder\",\n                            \"spacing\": \"Small\",\n                            \"wrap\": true\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n}\n\n          \n      }\n   ]\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
-      },
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "cd84eb40-81d9-11ed-a0f1-b51a14fb887c"
-      },
-      "name" : "Create Card",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
         "layoutX" : 350,
         "layoutY" : 424
       },
@@ -688,6 +663,27 @@
       "name" : "Get email",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 726,
+        "layoutY" : 877
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var newMsg = \n{\n   \"type\":\"message\",\n   \"attachments\":[\n      {\n         \"contentType\":\"application/vnd.microsoft.card.adaptive\",\n         \"contentUrl\":null,\n         \"content\":\n{\n    \"type\": \"AdaptiveCard\",\n    \"body\": [\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Large\",\n            \"weight\": \"Bolder\",\n            \"text\": \"! Nuovo Allarme !\",\n            \"horizontalAlignment\": \"Center\",\n            \"color\": \"Attention\"\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Medium\",\n            \"weight\": \"Bolder\",\n            \"text\": msg.type,\n            \"horizontalAlignment\": \"Center\",\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"text\": msg.details.data,\n            \"wrap\": true\n        }\n    ],\n    \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n    \"version\": \"1.4\"\n}\n\n          \n      }\n   ]\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var newMsg = \n{\n   \"type\":\"message\",\n   \"attachments\":[\n      {\n         \"contentType\":\"application/vnd.microsoft.card.adaptive\",\n         \"contentUrl\":null,\n         \"content\":\n{\n    \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n    \"type\": \"AdaptiveCard\",\n    \"version\": \"1.4\",\n    \"speak\": \"<s>The forecast for Seattle ${formatEpoch(dt, 'MMMM d')} is mostly clear with a High of ${formatNumber((main.temp_max - 273) * 9 / 5 + 32, 0)} degrees and Low of ${formatNumber((main.temp_min - 273) * 9 / 5 + 32, 0)} degrees</s>\",\n    \"body\": [\n        {\n            \"type\": \"TextBlock\",\n            \"text\": \"Voltage, WA\",\n            \"size\": \"Large\",\n            \"isSubtle\": true,\n            \"wrap\": true\n        },\n        {\n            \"type\": \"ColumnSet\",\n            \"columns\": [\n                {\n                    \"type\": \"Column\",\n                    \"width\": \"auto\",\n                    \"items\": [\n                        {\n                            \"type\": \"Image\",\n                            \"url\": \"https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Square.png\",\n                            \"size\": \"Small\",\n                            \"altText\": \"Mostly cloudy weather\"\n                        }\n                    ]\n                },\n                {\n                    \"type\": \"Column\",\n                    \"width\": \"auto\",\n                    \"items\": [\n                        {\n                            \"type\": \"TextBlock\",\n                            \"text\": \" - \" + msg.a_voltage,\n                            \"size\": \"ExtraLarge\",\n                            \"spacing\": \"None\",\n                            \"wrap\": true\n                        }\n                    ]\n                },\n                {\n                    \"type\": \"Column\",\n                    \"width\": \"stretch\",\n                    \"items\": [\n                        {\n                            \"type\": \"TextBlock\",\n                            \"text\": \"°F\",\n                            \"weight\": \"Bolder\",\n                            \"spacing\": \"Small\",\n                            \"wrap\": true\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n}\n\n          \n      }\n   ]\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "39b6e440-81e3-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Create Card",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

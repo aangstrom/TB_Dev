@@ -75,6 +75,10 @@
       "toIndex" : 6,
       "type" : "Success"
     }, {
+      "fromIndex" : 9,
+      "toIndex" : 15,
+      "type" : "Alarm Created"
+    }, {
       "fromIndex" : 12,
       "toIndex" : 9,
       "type" : "Failure"
@@ -92,11 +96,11 @@
       "type" : "Success"
     }, {
       "fromIndex" : 14,
-      "toIndex" : 19,
+      "toIndex" : 18,
       "type" : "Send Email"
     }, {
       "fromIndex" : 14,
-      "toIndex" : 20,
+      "toIndex" : 19,
       "type" : "Send Teams"
     }, {
       "fromIndex" : 15,
@@ -108,22 +112,18 @@
       "type" : "Success"
     }, {
       "fromIndex" : 16,
-      "toIndex" : 18,
+      "toIndex" : 17,
       "type" : "Failure"
     }, {
       "fromIndex" : 16,
-      "toIndex" : 18,
+      "toIndex" : 17,
       "type" : "Success"
     }, {
       "fromIndex" : 17,
-      "toIndex" : 15,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 18,
       "toIndex" : 14,
       "type" : "Failure"
     }, {
-      "fromIndex" : 18,
+      "fromIndex" : 17,
       "toIndex" : 14,
       "type" : "Success"
     } ],
@@ -436,7 +436,7 @@
         "getLatestValueWithTs" : false
       },
       "createdTime" : 0,
-      "debugMode" : false,
+      "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -470,31 +470,6 @@
       "name" : "Email?",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 45,
-        "layoutY" : 517
-      },
-      "configuration" : {
-        "msgCount" : 0,
-        "periodInSeconds" : 1,
-        "scriptLang" : "TBEL",
-        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "originatorId" : "2a11fcf0-6c0d-11ed-9133-91f5585bc6c3",
-        "originatorType" : "DEVICE"
-      },
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "537e65c0-8151-11ed-a0f1-b51a14fb887c"
-      },
-      "name" : "Test",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
         "description" : "",

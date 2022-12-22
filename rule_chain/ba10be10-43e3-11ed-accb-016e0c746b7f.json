@@ -130,6 +130,14 @@
       "fromIndex" : 16,
       "toIndex" : 20,
       "type" : "Success"
+    }, {
+      "fromIndex" : 16,
+      "toIndex" : 21,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 16,
+      "toIndex" : 21,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -593,6 +601,27 @@
       "name" : "Crea mail",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.mail.TbMsgToEmailNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 118,
+        "layoutY" : 679
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: \"POST_TELEMETRY_REQUEST\"};"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "649defd0-81d6-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Test",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

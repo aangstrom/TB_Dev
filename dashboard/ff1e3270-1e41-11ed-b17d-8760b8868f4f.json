@@ -7821,7 +7821,7 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "f060b3ae-3208-2e84-4e77-8d4b4a495c5f",
+              "entityAliasId" : "866ef2eb-4cb8-818b-5647-3e215200d180",
               "filterId" : null,
               "dataKeys" : [ {
                 "name" : "active",
@@ -7837,7 +7837,7 @@
                 "usePostProcessing" : true,
                 "postFuncBody" : "if(value==\"true\"){\n    return '<div style=\"color:green;font-size:20px;\">&#11044</div>';\n}\nelse{\n    return '<div style=\"color:red;font-size:20px;\">&#11044</div>';\n}"
               }, {
-                "name" : "Allarmi_presenti",
+                "name" : "anyFaultPresentBo",
                 "type" : "timeseries",
                 "label" : "allarme",
                 "color" : "#2196f3",
@@ -7849,26 +7849,6 @@
                 "funcBody" : null,
                 "usePostProcessing" : true,
                 "postFuncBody" : "if(value==\"True\"){\n    return '<div style=\"color:red;font-size:20px;\">&#11044</div>';\n}\nelse{\n    return '<div style=\"color:green;font-size:20px;\">&#11044</div>';\n}"
-              }, {
-                "name" : "I1M03currentMillRe",
-                "type" : "timeseries",
-                "label" : "I1M03currentMillRe",
-                "color" : "#607d8b",
-                "settings" : { },
-                "_hash" : 0.005415856350152737,
-                "aggregationType" : "NONE",
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "active",
-                "type" : "attribute",
-                "label" : "active",
-                "color" : "#e91e63",
-                "settings" : { },
-                "_hash" : 0.8096121728190535
               }, {
                 "name" : "macRunLoadingBo",
                 "type" : "timeseries",
@@ -7882,6 +7862,41 @@
                 "funcBody" : null,
                 "usePostProcessing" : true,
                 "postFuncBody" : "if(value==\"False\"){\n    return '<div style=\"color:green;font-size:20px;\">Run</div>';\n}\nelse{\n    return '<div style=\"color:orange;font-size:20px;\">Loading</div>';\n}"
+              }, {
+                "name" : "I6000_Rotor01CurrentRe",
+                "type" : "timeseries",
+                "label" : "I6000_Rotor01CurrentRe",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.19964541287645265
+              }, {
+                "name" : "I6000_Rotor02CurrentRe",
+                "type" : "timeseries",
+                "label" : "I6000_Rotor02CurrentRe",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.12457990321869317
+              }, {
+                "name" : "I6000_Rotor03CurrentRe",
+                "type" : "timeseries",
+                "label" : "I6000_Rotor03CurrentRe",
+                "color" : "#8bc34a",
+                "settings" : { },
+                "_hash" : 0.25167875577167376
+              }, {
+                "name" : "I6000_Rotor04CurrentRe",
+                "type" : "timeseries",
+                "label" : "I6000_Rotor04CurrentRe",
+                "color" : "#3f51b5",
+                "settings" : { },
+                "_hash" : 0.25150896604595196
+              }, {
+                "name" : "I5M01motorCurrentRe",
+                "type" : "timeseries",
+                "label" : "I5M01motorCurrentRe",
+                "color" : "#e91e63",
+                "settings" : { },
+                "_hash" : 0.976710078316124
               } ]
             } ],
             "timewindow" : {
@@ -7913,7 +7928,7 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "cardHtml" : "<script>\n    var somma=parseFloat(${Corrente_Nastro_Carico_Mulino}+${Corrente_Nastro_Dosatore}+${Corrente_Nastro_Scarico}+${Corrente_Piano_Alimentazione}).toFixed( 2 );\n    document.getElementById('valore').innerHTML=somma;\n</script>\n<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <h1>Stati Macchina</h1>\n            <div class=\"row\">\n                <li>Stato accensione:&nbsp;${accensione}</li>\n                <li>Stato:&nbsp;${stato}</li>\n                <li>Corrente attuale:&nbsp;${I1M03currentMillRe}</li>\n                <li>Allarme:&nbsp;${allarme}</li>\n            </div>\n        </div>\n    </div>\n</div>",
+              "cardHtml" : "<script>\n    var somma=parseFloat(${I6000_Rotor01CurrentRe}+${I6000_Rotor02CurrentRe}+${I6000_Rotor03CurrentRe}+${I6000_Rotor04CurrentRe}+${I5M01motorCurrentRe}).toFixed( 2 );\n    document.getElementById('valore').innerHTML=somma;\n</script>\n<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <h1>Stati Macchina</h1>\n            <div class=\"row\">\n                <li>Stato accensione:&nbsp;${accensione}</li>\n                <li>Stato:&nbsp;${stato}</li>\n                <li>Corrente attuale:&nbsp;<div id=\"valore\"></div></li>\n                <li>Allarme:&nbsp;${allarme}</li>\n            </div>\n        </div>\n    </div>\n</div>",
               "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content {\n   padding: 22px;\n   display: flex;\n   flex-direction: row;\n   height: 100%;\n   align-items: center;\n   justify-content: space-around;\n   box-sizing: border-box;\n}\n\n.row {\n    display: flex;\n    font-size: 18px;\n    flex-direction: row;\n    flex-wrap: wrap;\n    list-style-type: none;\n}\nli{\n    display: flex;\n    padding-right: 20px;\n    padding-left: 20px;\n    font-size: 20px;\n}\n\n.card .content .column {\n   display: flex;\n   flex-direction: column;    \n   justify-content: space-around;\n   height: 100%;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 22px;\n    font-weight: bold;\n    margin: 0;\n    padding-bottom: 10px;\n    line-height: 32px;\n    text-align: center;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}"
             },
             "title" : "New HTML Value Card",

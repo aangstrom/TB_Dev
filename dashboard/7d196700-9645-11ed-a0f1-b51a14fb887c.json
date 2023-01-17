@@ -1479,13 +1479,24 @@
                 "label" : "Umidità",
                 "color" : "#1e88e5",
                 "settings" : {
+                  "hideDataByDefault" : false,
+                  "disableDataHiding" : false,
+                  "removeFromLegend" : false,
+                  "excludeFromStacking" : false,
                   "showLines" : true,
+                  "lineWidth" : 1,
                   "fillLines" : false,
                   "showPoints" : false,
                   "showSeparateAxis" : true,
+                  "axisTitle" : "Umidità, %",
                   "axisPosition" : "right",
-                  "axisTitle" : "Humidity, %",
-                  "axisTickDecimals" : 1
+                  "axisTickDecimals" : 1,
+                  "comparisonSettings" : {
+                    "showValuesForComparison" : true,
+                    "comparisonValuesLabel" : "",
+                    "color" : ""
+                  },
+                  "thresholds" : [ ]
                 },
                 "_hash" : 0.3113393006398675,
                 "units" : "%",
@@ -1516,29 +1527,45 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "8px",
             "settings" : {
-              "shadowSize" : 4,
-              "fontColor" : "#545454",
+              "stack" : false,
               "fontSize" : 10,
+              "fontColor" : "#545454",
+              "showTooltip" : true,
+              "tooltipIndividual" : false,
+              "tooltipCumulative" : false,
+              "hideZeros" : false,
+              "grid" : {
+                "verticalLines" : false,
+                "horizontalLines" : true,
+                "outlineWidth" : 0,
+                "color" : "#545454",
+                "backgroundColor" : null,
+                "tickColor" : "#DDDDDD"
+              },
               "xaxis" : {
+                "title" : null,
                 "showLabels" : true,
                 "color" : "#545454"
               },
               "yaxis" : {
+                "min" : null,
+                "max" : null,
+                "title" : "Temperature, °C",
                 "showLabels" : true,
                 "color" : "#545454",
-                "title" : "Temperature, °C",
-                "tickDecimals" : 1
+                "tickSize" : null,
+                "tickDecimals" : 1,
+                "ticksFormatter" : ""
               },
-              "grid" : {
-                "color" : "#545454",
-                "tickColor" : "#DDDDDD",
-                "verticalLines" : false,
-                "horizontalLines" : true,
-                "outlineWidth" : 0
+              "shadowSize" : 4,
+              "smoothLines" : true,
+              "comparisonEnabled" : false,
+              "xaxisSecond" : {
+                "axisPosition" : "top",
+                "title" : null,
+                "showLabels" : true
               },
-              "stack" : false,
-              "tooltipIndividual" : false,
-              "smoothLines" : true
+              "customLegendEnabled" : false
             },
             "title" : "Temperature e Umidità",
             "dropShadow" : false,

@@ -1464,7 +1464,7 @@
               "dataKeys" : [ {
                 "name" : "temperature",
                 "type" : "timeseries",
-                "label" : "Temperatura",
+                "label" : "Temperatura ${Name}",
                 "color" : "#ff5722",
                 "settings" : {
                   "hideDataByDefault" : false,
@@ -1492,7 +1492,7 @@
               }, {
                 "name" : "humidity",
                 "type" : "timeseries",
-                "label" : "Umidità",
+                "label" : "Umidità ${Name}",
                 "color" : "#1e88e5",
                 "settings" : {
                   "hideDataByDefault" : false,
@@ -1520,7 +1520,14 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               } ],
-              "latestDataKeys" : null
+              "latestDataKeys" : [ {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Name",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.8811241427788012
+              } ]
             } ],
             "timewindow" : {
               "hideInterval" : false,
@@ -1629,12 +1636,12 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "a0faf37a-3c5d-e721-f445-de7914947895",
+              "entityAliasId" : "99f5a3cc-272c-c2c4-a37a-da7015f5271d",
               "filterId" : null,
               "dataKeys" : [ {
                 "name" : "co2",
                 "type" : "timeseries",
-                "label" : "CO2",
+                "label" : "CO2 ${Name}",
                 "color" : "#9f4295",
                 "settings" : {
                   "showLines" : true,
@@ -1646,11 +1653,15 @@
                 },
                 "_hash" : 0.7387395503161205,
                 "units" : "ppm",
-                "decimals" : 0
+                "decimals" : 0,
+                "aggregationType" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               }, {
                 "name" : "tvoc",
                 "type" : "timeseries",
-                "label" : "TVOC",
+                "label" : "TVOC ${Name}",
                 "color" : "#3d9d9a",
                 "settings" : {
                   "showLines" : true,
@@ -1663,9 +1674,20 @@
                 },
                 "_hash" : 0.3113393006398675,
                 "units" : "ppm",
-                "decimals" : 3
+                "decimals" : 3,
+                "aggregationType" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ],
-              "latestDataKeys" : null
+              "latestDataKeys" : [ {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Name",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.8643822557550314
+              } ]
             } ],
             "timewindow" : {
               "hideInterval" : false,
@@ -1757,12 +1779,12 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "a0faf37a-3c5d-e721-f445-de7914947895",
+              "entityAliasId" : "99f5a3cc-272c-c2c4-a37a-da7015f5271d",
               "filterId" : null,
               "dataKeys" : [ {
                 "name" : "motion",
                 "type" : "timeseries",
-                "label" : "Occupazione",
+                "label" : "Occupazione ${Name}",
                 "color" : "#00897b",
                 "settings" : {
                   "showLines" : true,
@@ -1779,7 +1801,14 @@
                 "decimals" : null,
                 "funcBody" : null
               } ],
-              "latestDataKeys" : null
+              "latestDataKeys" : [ {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Name",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.925080186263264
+              } ]
             } ],
             "timewindow" : {
               "realtime" : {
@@ -4409,7 +4438,7 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "a0faf37a-3c5d-e721-f445-de7914947895",
+              "entityAliasId" : "99f5a3cc-272c-c2c4-a37a-da7015f5271d",
               "filterId" : null,
               "dataKeys" : [ {
                 "name" : "address",

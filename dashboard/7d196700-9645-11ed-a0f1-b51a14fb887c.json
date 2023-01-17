@@ -294,8 +294,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1673865078380,
-                  "endTimeMs" : 1673951478380
+                  "startTimeMs" : 1673865566818,
+                  "endTimeMs" : 1673951966818
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -402,17 +402,21 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "4px",
             "settings" : {
+              "alarmsTitle" : "Allarmi: ${entityName}",
               "enableSelection" : true,
               "enableSearch" : true,
+              "enableSelectColumnDisplay" : true,
+              "enableFilter" : true,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "reserveSpaceForHiddenAction" : "true",
               "displayDetails" : false,
               "allowAcknowledgment" : true,
               "allowClear" : true,
               "displayPagination" : true,
               "defaultPageSize" : 10,
               "defaultSortOrder" : "-createdTime",
-              "alarmsTitle" : "${entityName}: Alarms",
-              "enableSelectColumnDisplay" : true,
-              "enableFilter" : true
+              "useRowStyleFunction" : false
             },
             "title" : "New Alarms table",
             "dropShadow" : false,
@@ -737,8 +741,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1673865078380,
-                  "endTimeMs" : 1673951478380
+                  "startTimeMs" : 1673865566818,
+                  "endTimeMs" : 1673951966818
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -852,8 +856,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1673865078380,
-                  "endTimeMs" : 1673951478380
+                  "startTimeMs" : 1673865566818,
+                  "endTimeMs" : 1673951966818
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -965,8 +969,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1673865078380,
-                  "endTimeMs" : 1673951478380
+                  "startTimeMs" : 1673865566818,
+                  "endTimeMs" : 1673951966818
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1400,8 +1404,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1673865078380,
-                  "endTimeMs" : 1673951478380
+                  "startTimeMs" : 1673865566818,
+                  "endTimeMs" : 1673951966818
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1447,10 +1451,13 @@
           "config" : {
             "datasources" : [ {
               "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "a0faf37a-3c5d-e721-f445-de7914947895",
+              "filterId" : null,
               "dataKeys" : [ {
                 "name" : "temperature",
                 "type" : "timeseries",
-                "label" : "Temperature",
+                "label" : "Temperatura",
                 "color" : "#ff5722",
                 "settings" : {
                   "showLines" : true,
@@ -1461,11 +1468,15 @@
                 },
                 "_hash" : 0.7387395503161205,
                 "units" : "°C",
-                "decimals" : 1
+                "decimals" : 1,
+                "aggregationType" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               }, {
                 "name" : "humidity",
                 "type" : "timeseries",
-                "label" : "Humidity",
+                "label" : "Umidità",
                 "color" : "#1e88e5",
                 "settings" : {
                   "showLines" : true,
@@ -1478,9 +1489,13 @@
                 },
                 "_hash" : 0.3113393006398675,
                 "units" : "%",
-                "decimals" : 1
+                "decimals" : 1,
+                "aggregationType" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ],
-              "entityAliasId" : "a0faf37a-3c5d-e721-f445-de7914947895"
+              "latestDataKeys" : null
             } ],
             "timewindow" : {
               "hideInterval" : false,
@@ -1525,7 +1540,7 @@
               "tooltipIndividual" : false,
               "smoothLines" : true
             },
-            "title" : "Temperature and Humidity",
+            "title" : "Temperature e Umidità",
             "dropShadow" : false,
             "enableFullscreen" : true,
             "titleStyle" : {
@@ -1542,7 +1557,7 @@
             },
             "units" : "°C",
             "decimals" : 1,
-            "useDashboardTimewindow" : false,
+            "useDashboardTimewindow" : true,
             "showLegend" : true,
             "legendConfig" : {
               "position" : "bottom",
@@ -1551,7 +1566,13 @@
               "showAvg" : true,
               "showTotal" : false
             },
-            "actions" : { }
+            "actions" : { },
+            "displayTimewindow" : true,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
           },
           "id" : "c369c3e7-8243-8f00-0a95-8b5b9cc79543"
         },
@@ -1566,6 +1587,9 @@
           "config" : {
             "datasources" : [ {
               "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "a0faf37a-3c5d-e721-f445-de7914947895",
+              "filterId" : null,
               "dataKeys" : [ {
                 "name" : "co2",
                 "type" : "timeseries",
@@ -1600,7 +1624,7 @@
                 "units" : "ppm",
                 "decimals" : 3
               } ],
-              "entityAliasId" : "a0faf37a-3c5d-e721-f445-de7914947895"
+              "latestDataKeys" : null
             } ],
             "timewindow" : {
               "hideInterval" : false,
@@ -1645,7 +1669,7 @@
               "tooltipIndividual" : false,
               "smoothLines" : true
             },
-            "title" : "Air Quality",
+            "title" : "Qualità dell'aria",
             "dropShadow" : false,
             "enableFullscreen" : true,
             "titleStyle" : {
@@ -1662,7 +1686,7 @@
             },
             "units" : "°C",
             "decimals" : 1,
-            "useDashboardTimewindow" : false,
+            "useDashboardTimewindow" : true,
             "showLegend" : true,
             "legendConfig" : {
               "position" : "bottom",
@@ -1671,7 +1695,12 @@
               "showAvg" : true,
               "showTotal" : false
             },
-            "actions" : { }
+            "actions" : { },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
           },
           "id" : "fd83d356-1e9b-4515-660e-a182680b9cca"
         },
@@ -1686,10 +1715,13 @@
           "config" : {
             "datasources" : [ {
               "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "a0faf37a-3c5d-e721-f445-de7914947895",
+              "filterId" : null,
               "dataKeys" : [ {
-                "name" : "occupancy",
+                "name" : "motion",
                 "type" : "timeseries",
-                "label" : "Occupancy",
+                "label" : "Occupazione",
                 "color" : "#00897b",
                 "settings" : {
                   "showLines" : true,
@@ -1699,9 +1731,14 @@
                   "axisPosition" : "left"
                 },
                 "_hash" : 0.7302854944455417,
-                "postFuncBody" : "return value === 'true' ? 1 : 0;"
+                "postFuncBody" : "return value === 'true' ? 1 : 0;",
+                "usePostProcessing" : true,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null
               } ],
-              "entityAliasId" : "a0faf37a-3c5d-e721-f445-de7914947895"
+              "latestDataKeys" : null
             } ],
             "timewindow" : {
               "realtime" : {
@@ -1718,34 +1755,48 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "8px",
             "settings" : {
-              "shadowSize" : 4,
-              "fontColor" : "#545454",
+              "stack" : false,
               "fontSize" : 10,
+              "fontColor" : "#545454",
+              "showTooltip" : true,
+              "tooltipIndividual" : false,
+              "tooltipCumulative" : false,
+              "hideZeros" : false,
+              "tooltipValueFormatter" : "if (value > 0 && value <= 1) {\n    return 'Occupied';\n} else if (value === 0) {\n    return 'Free';\n} else {\n    return '';\n}",
+              "grid" : {
+                "verticalLines" : false,
+                "horizontalLines" : true,
+                "outlineWidth" : 0,
+                "color" : "#545454",
+                "backgroundColor" : null,
+                "tickColor" : "#DDDDDD"
+              },
               "xaxis" : {
+                "title" : null,
                 "showLabels" : true,
                 "color" : "#545454"
               },
               "yaxis" : {
+                "min" : null,
+                "max" : 1.2,
+                "title" : "Storico Occupazione",
                 "showLabels" : true,
                 "color" : "#545454",
-                "ticksFormatter" : "if (value > 0 && value <= 1) {\n    return 'Occupied';\n} else if (value === 0) {\n    return 'Free';\n} else {\n    return '';\n}",
-                "title" : "Occupancy status",
                 "tickSize" : 1,
-                "max" : 1.2
+                "tickDecimals" : 0,
+                "ticksFormatter" : "if (value > 0 && value <= 1) {\n    return 'Occupied';\n} else if (value === 0) {\n    return 'Free';\n} else {\n    return '';\n}"
               },
-              "grid" : {
-                "color" : "#545454",
-                "tickColor" : "#DDDDDD",
-                "verticalLines" : false,
-                "horizontalLines" : true,
-                "outlineWidth" : 0
+              "shadowSize" : 4,
+              "smoothLines" : false,
+              "comparisonEnabled" : false,
+              "xaxisSecond" : {
+                "axisPosition" : "top",
+                "title" : null,
+                "showLabels" : true
               },
-              "stack" : false,
-              "tooltipIndividual" : false,
-              "tooltipValueFormatter" : "if (value > 0 && value <= 1) {\n    return 'Occupied';\n} else if (value === 0) {\n    return 'Free';\n} else {\n    return '';\n}",
-              "smoothLines" : false
+              "customLegendEnabled" : false
             },
-            "title" : "Occupancy History",
+            "title" : "Storico Occupazione",
             "dropShadow" : false,
             "enableFullscreen" : true,
             "titleStyle" : {
@@ -1771,7 +1822,13 @@
             },
             "enableDataExport" : true,
             "alarmSearchStatus" : "ACTIVE",
-            "alarmsPollingInterval" : 5
+            "alarmsPollingInterval" : 5,
+            "displayTimewindow" : true,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
           },
           "id" : "e3bba377-13d4-9cec-6a83-55c5f7223863"
         },
@@ -1786,15 +1843,23 @@
           "config" : {
             "datasources" : [ {
               "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "a0faf37a-3c5d-e721-f445-de7914947895",
+              "filterId" : null,
               "dataKeys" : [ {
                 "name" : "temperature",
                 "type" : "timeseries",
-                "label" : "temperature",
+                "label" : "temperatura",
                 "color" : "#f44336",
                 "settings" : { },
-                "_hash" : 0.8343620367331097
-              } ],
-              "entityAliasId" : "a0faf37a-3c5d-e721-f445-de7914947895"
+                "_hash" : 0.8343620367331097,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ]
             } ],
             "timewindow" : {
               "displayValue" : "",
@@ -1810,8 +1875,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1673865078380,
-                  "endTimeMs" : 1673951478380
+                  "startTimeMs" : 1673865566818,
+                  "endTimeMs" : 1673951966818
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1825,49 +1890,45 @@
             "color" : "rgba(1, 1, 1, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "maxValue" : 40,
               "minValue" : 10,
+              "maxValue" : 40,
+              "gaugeType" : "donut",
               "donutStartAngle" : 90,
-              "showValue" : true,
-              "showMinMax" : true,
               "gaugeWidthScale" : 0.5,
+              "neonGlowBrightness" : 0,
+              "dashThickness" : 0,
+              "roundedLineCap" : true,
+              "gaugeColor" : "rgba(0, 0, 0, 0)",
+              "useFixedLevelColor" : false,
               "levelColors" : [ "#9575cd", "#f44336" ],
+              "showTitle" : true,
+              "title" : "Temperatura",
               "titleFont" : {
                 "family" : "Roboto",
                 "size" : 12,
                 "style" : "normal",
                 "weight" : "500"
               },
-              "labelFont" : {
-                "family" : "Roboto",
-                "size" : 8,
-                "style" : "normal",
-                "weight" : "500"
-              },
+              "showUnitTitle" : false,
+              "showTimestamp" : false,
+              "showValue" : true,
               "valueFont" : {
                 "family" : "Roboto",
                 "style" : "normal",
                 "weight" : "500",
                 "size" : 14
               },
+              "showMinMax" : true,
               "minMaxFont" : {
                 "family" : "Segment7Standard",
                 "size" : 12,
                 "style" : "normal",
                 "weight" : "500"
               },
-              "neonGlowBrightness" : 0,
-              "dashThickness" : 0,
-              "gaugeType" : "donut",
+              "showTicks" : false,
               "animation" : true,
               "animationDuration" : 500,
-              "animationRule" : "linear",
-              "timestampFormat" : "yyyy-MM-dd HH:mm:ss",
-              "showTitle" : true,
-              "title" : "Temperature",
-              "unitTitle" : "Temperature",
-              "roundedLineCap" : true,
-              "gaugeColor" : "rgba(0, 0, 0, 0)"
+              "animationRule" : "linear"
             },
             "title" : "New Simple neon gauge - justGage",
             "dropShadow" : false,
@@ -1900,15 +1961,23 @@
           "config" : {
             "datasources" : [ {
               "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "a0faf37a-3c5d-e721-f445-de7914947895",
+              "filterId" : null,
               "dataKeys" : [ {
                 "name" : "humidity",
                 "type" : "timeseries",
-                "label" : "humidity",
+                "label" : "umidità",
                 "color" : "#1e88e5",
                 "settings" : { },
-                "_hash" : 0.8343620367331097
-              } ],
-              "entityAliasId" : "a0faf37a-3c5d-e721-f445-de7914947895"
+                "_hash" : 0.8343620367331097,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ]
             } ],
             "timewindow" : {
               "displayValue" : "",
@@ -1924,8 +1993,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1673865078380,
-                  "endTimeMs" : 1673951478380
+                  "startTimeMs" : 1673865566818,
+                  "endTimeMs" : 1673951966818
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1939,49 +2008,45 @@
             "color" : "rgba(1, 1, 1, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "maxValue" : 100,
               "minValue" : 0,
+              "maxValue" : 100,
+              "gaugeType" : "donut",
               "donutStartAngle" : 90,
-              "showValue" : true,
-              "showMinMax" : true,
               "gaugeWidthScale" : 0.5,
-              "levelColors" : [ "#e3f2fd", "#1565c0" ],
+              "neonGlowBrightness" : 0,
+              "dashThickness" : 0,
+              "roundedLineCap" : true,
+              "gaugeColor" : "rgba(0, 0, 0, 0)",
+              "useFixedLevelColor" : false,
+              "showTitle" : true,
+              "title" : "Umidità",
               "titleFont" : {
                 "family" : "Roboto",
                 "size" : 12,
                 "style" : "normal",
                 "weight" : "500"
               },
-              "labelFont" : {
-                "family" : "Roboto",
-                "size" : 8,
-                "style" : "normal",
-                "weight" : "500"
-              },
+              "showUnitTitle" : false,
+              "showTimestamp" : false,
+              "showValue" : true,
               "valueFont" : {
                 "family" : "Roboto",
                 "style" : "normal",
                 "weight" : "500",
                 "size" : 14
               },
+              "showMinMax" : true,
               "minMaxFont" : {
                 "family" : "Segment7Standard",
                 "size" : 12,
                 "style" : "normal",
                 "weight" : "500"
               },
-              "neonGlowBrightness" : 0,
-              "dashThickness" : 0,
-              "gaugeType" : "donut",
+              "showTicks" : false,
               "animation" : true,
               "animationDuration" : 500,
               "animationRule" : "linear",
-              "timestampFormat" : "yyyy-MM-dd HH:mm:ss",
-              "showTitle" : true,
-              "title" : "Humidity",
-              "unitTitle" : "Humidity",
-              "roundedLineCap" : true,
-              "gaugeColor" : "rgba(0, 0, 0, 0)"
+              "levelColors" : [ "#e3f2fd", "#1565c0" ]
             },
             "title" : "New Simple neon gauge - justGage",
             "dropShadow" : false,
@@ -2038,8 +2103,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1673865078380,
-                  "endTimeMs" : 1673951478380
+                  "startTimeMs" : 1673865566818,
+                  "endTimeMs" : 1673951966818
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -2152,8 +2217,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1673865078380,
-                  "endTimeMs" : 1673951478380
+                  "startTimeMs" : 1673865566818,
+                  "endTimeMs" : 1673951966818
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -2266,8 +2331,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1673865078380,
-                  "endTimeMs" : 1673951478380
+                  "startTimeMs" : 1673865566818,
+                  "endTimeMs" : 1673951966818
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -2765,8 +2830,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1673865078380,
-                  "endTimeMs" : 1673951478380
+                  "startTimeMs" : 1673865566818,
+                  "endTimeMs" : 1673951966818
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -2841,8 +2906,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1673865078380,
-                  "endTimeMs" : 1673951478380
+                  "startTimeMs" : 1673865566818,
+                  "endTimeMs" : 1673951966818
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -2891,7 +2956,7 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "4dd49440-57ee-0435-5dbd-f72fe063a687",
+              "entityAliasId" : "a0faf37a-3c5d-e721-f445-de7914947895",
               "filterId" : null,
               "dataKeys" : [ {
                 "name" : "address",
@@ -2935,8 +3000,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1673865078380,
-                  "endTimeMs" : 1673951478380
+                  "startTimeMs" : 1673865566818,
+                  "endTimeMs" : 1673951966818
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -2998,8 +3063,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1673865078380,
-                  "endTimeMs" : 1673951478380
+                  "startTimeMs" : 1673865566818,
+                  "endTimeMs" : 1673951966818
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3189,8 +3254,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1673865078380,
-                  "endTimeMs" : 1673951478380
+                  "startTimeMs" : 1673865566818,
+                  "endTimeMs" : 1673951966818
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3356,8 +3421,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1673865078380,
-                  "endTimeMs" : 1673951478380
+                  "startTimeMs" : 1673865566818,
+                  "endTimeMs" : 1673951966818
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3615,8 +3680,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1673865078380,
-                  "endTimeMs" : 1673951478380
+                  "startTimeMs" : 1673865566818,
+                  "endTimeMs" : 1673951966818
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3915,8 +3980,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1673865078380,
-                  "endTimeMs" : 1673951478380
+                  "startTimeMs" : 1673865566818,
+                  "endTimeMs" : 1673951966818
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -4082,8 +4147,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1673865078380,
-                  "endTimeMs" : 1673951478380
+                  "startTimeMs" : 1673865566818,
+                  "endTimeMs" : 1673951966818
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -4198,8 +4263,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1673865019009,
-                  "endTimeMs" : 1673951419009
+                  "startTimeMs" : 1673865566818,
+                  "endTimeMs" : 1673951966818
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -4288,6 +4353,131 @@
           "row" : 0,
           "col" : 0,
           "id" : "517dbe13-d5b0-7931-67c4-d60388fed94c"
+        },
+        "91bc9ee5-435c-00b9-aba5-5c6975667a2c" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "a0faf37a-3c5d-e721-f445-de7914947895",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "address",
+                "type" : "attribute",
+                "label" : "address",
+                "color" : "#3f51b5",
+                "settings" : { },
+                "_hash" : 0.09441911040362849
+              }, {
+                "name" : "vdd",
+                "type" : "timeseries",
+                "label" : "vdd",
+                "color" : "#ffeb3b",
+                "settings" : { },
+                "_hash" : 0.31959846649500445,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "return (value/5000)*100+\"%\";"
+              }, {
+                "name" : "active",
+                "type" : "attribute",
+                "label" : "active",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.3989541600593167,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value=='true') {\n    return '<div style=\"color:green;\">Acceso</div>';\n}else{\n    return '<div style=\"color:red;\">Spento</div>';\n}"
+              }, {
+                "name" : "name",
+                "type" : "attribute",
+                "label" : "name",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.4563207656161563
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1673859705157,
+                  "endTimeMs" : 1673946105157
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div class='card'>\n    <div class=\"header\">\n        <span>Dettagli sensore</span>\n    </div>\n    <div class='content'>\n        <div class=\"row\">\n            <span class='description'><i class=\"fa fa-address-card\"></i>&nbsp;Nome:</span>\n            <span class='value'>${name}</span> \n        </div>\n        <div class=\"divider\"></div>\n        <div class=\"row\">\n            <span class='description'><i class=\"fa fa-map-marker\"></i>&nbsp;Indirizzo:</span>\n            <span class='value'>${address}</span> \n        </div>\n        <div class=\"divider\"></div>\n        <div class=\"row\">\n            <span class='description'><i class=\"fa fa-power-off\"></i>&nbsp;Stato:</span>\n            <span class='value'>${active}</span> \n        </div>\n        <div class=\"divider\"></div>\n        <div class=\"row\">\n            <span class='description'><i class=\"fa fa-battery-half\"></i>&nbsp;Batteria:</span>\n            <span class='value'>${vdd}</span> \n        </div>\n    </div>\n</div>\n\n<div class='card'>\n    <h2>${temperatureAlarmFlag}</h2>\n    <h2>${temperatureAlarmThreshold}</h2>\n    <h2>${humidityAlarmFlag}</h2>\n    <h2>${humidutyAlarmThreshold}</h2>\n    <h2>${soundAlarmFlag}</h2>\n    <h2>${soundAlarmThreshold}</h2>\n</div>",
+              "cardCss" : ".card {\n    width: 100%;\n    height: 100%;\n    border-top: 1px solid #E0E0E0;\n    box-sizing: border-box;\n    display: flex;\n    flex-direction: column;\n}\n\n.card .header {\n  font-size: 1.2em;\n  font-weight: 600;\n  padding: 15px 10px 10px 10px;\n  border-bottom: 1px solid #E0E0E0\n}\n\n.card .content {\n   padding: 5px 12px 10px 12px;\n   display: flex;\n   flex-direction: column;\n   /*align-items: stretch;*/\n   justify-content: flex-start;\n   height: 100%;\n   overflow-y: auto;\n   box-sizing: border-box;\n}\n\n.card .row {\n    display: flex;\n    align-items: flex-end;\n    justify-content: space-between;\n    padding: 8px 2px 8px 0;\n}\n\n.card .divider {\n    border: 1px solid #F2F2F2;\n    margin: 2px -2px;\n    padding: 0px;\n}\n\n.card .value {\n    font-size: 1em;\n    line-height: 1;\n    color: #333333;\n    text-align: right;\n}\n\n.card .description {\n    font-size: 0.75em;\n    font-weight: normal;\n    line-height: 1;\n    text-transform: uppercase;\n    color: #333333;\n    display: flex;\n}\n\n@media (min-width: 960px) and (max-width: 1200px) {\n    .card .header {\n        font-size: 1.5em;\n    }\n    .card .value {\n        font-size: 0.8em;\n    }\n    .card .description {\n        font-size: 1em;\n    }\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ ],
+              "headerButton" : [ {
+                "name" : "Modifica dettagli",
+                "icon" : "edit",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #editEntityForm=\"ngForm\" [formGroup]=\"editEntityFormGroup\"\r\n      (ngSubmit)=\"save()\" class=\"edit-entity-form\">\r\n    <mat-toolbar color=\"primary\">\r\n        <h2>Modifica Dettagli sensore</h2>\r\n        <span fxFlex></span>\r\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\r\n            <mat-icon class=\"material-icons\">close</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\r\n    </mat-progress-bar>\r\n    <div style=\"height: 4px;\" *ngIf=\"!(isLoading$ | async)\"></div>\r\n    <div mat-dialog-content fxLayout=\"column\">\r\n        <div formGroupName=\"attributes\" fxLayout=\"column\">\r\n            <mat-form-field fxFlex class=\"mat-block\">\r\n                <mat-label>Nome sensore</mat-label>\r\n                <input type=\"text\" matInput formControlName=\"name\" required>\r\n                <mat-error *ngIf=\"editEntityFormGroup.get('attributes').get('name').hasError('required')\">\r\n                    è richiesto impostare il nome del sensore.\r\n                </mat-error>\r\n            </mat-form-field>\r\n\r\n            <mat-form-field fxFlex class=\"mat-block\">\r\n                <mat-label>Indirizzo</mat-label>\r\n                <input type=\"text\" matInput formControlName=\"address\" required>\r\n                <mat-error *ngIf=\"editEntityFormGroup.get('attributes').get('address').hasError('required')\">\r\n                    è richiesto impostare l'indirizzo del sensore.\r\n                </mat-error>\r\n            </mat-form-field>\r\n        </div>\r\n    </div>\r\n    <div mat-dialog-actions fxLayoutAlign=\"end center\">\r\n        <button mat-button color=\"primary\"\r\n                type=\"button\"\r\n                [disabled]=\"(isLoading$ | async)\"\r\n                (click)=\"cancel()\" cdkFocusInitial>\r\n            Cancella\r\n        </button>\r\n        <button mat-raised-button color=\"primary\"\r\n                type=\"submit\"\r\n                [disabled]=\"(isLoading$ | async) || editEntityForm.invalid || !editEntityForm.dirty\">\r\n            Salva\r\n        </button>\r\n    </div>\r\n</form>",
+                "customCss" : ".edit-entity-form{\r\n    width: 500px;\r\n}",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\r\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\r\nlet attributeService = $injector.get(widgetContext.servicesMap.get('attributeService'));\r\n\r\nopenEditEntityDialog();\r\n\r\nfunction openEditEntityDialog() {\r\n    customDialog.customDialog(htmlTemplate, EditEntityDialogController).subscribe();\r\n}\r\n\r\nfunction EditEntityDialogController(instance) {\r\n    let vm = instance;\r\n    \r\n    vm.entityId = entityId;\r\n    vm.entityName = entityName;\r\n    vm.attributes = {};\r\n    \r\n    vm.editEntityFormGroup = vm.fb.group({\r\n        entityName: [''],\r\n        attributes: vm.fb.group({\r\n            name: [{value: null, disabled: true}],\r\n            address: [{value: null, disabled: true}]\r\n        })\r\n    });\r\n    vm.editEntityFormGroup.get('attributes').get('name').enable();\r\n    vm.editEntityFormGroup.get('attributes').get('address').enable();\r\n    \r\n    getEntityInfo();\r\n    \r\n    \r\n    vm.save = function() {\r\n        vm.editEntityFormGroup.markAsPristine();\r\n        saveAttributes(entityId).subscribe(\r\n            function () {\r\n                vm.dialogRef.close(null);\r\n            }\r\n        );\r\n    };\r\n    \r\n    vm.cancel = function() {\r\n        vm.dialogRef.close(null);\r\n    };\r\n    \r\n    function getEntityAttributes(attributes) {\r\n        for (var i = 0; i < attributes.length; i++) {\r\n            vm.attributes[attributes[i].key] = attributes[i].value;\r\n        }\r\n    }\r\n    \r\n    function getEntityInfo() {\r\n        attributeService.getEntityAttributes(entityId, 'SERVER_SCOPE').subscribe(\r\n            function (attributes) {\r\n                getEntityAttributes(attributes);\r\n                vm.editEntityFormGroup.patchValue({\r\n                    entityName: vm.entityName,\r\n                    attributes: vm.attributes\r\n                });\r\n                // if(vm.attributes.temperatureAlarmFlag) {\r\n                //     vm.editEntityFormGroup.get('attributes').get('temperatureAlarmThreshold').enable();\r\n                // }\r\n                // if(vm.attributes.humidityAlarmFlag) {\r\n                //     vm.editEntityFormGroup.get('attributes').get('humidityAlarmThreshold').enable();\r\n                // }\r\n            }\r\n        );\r\n    }\r\n    \r\n    function saveAttributes(entityId) {\r\n        let attributes = vm.editEntityFormGroup.get('attributes').value;\r\n        let attributesArray = [];\r\n        for (let key in attributes) {\r\n            if (attributes[key] !== vm.attributes[key]) {\r\n                attributesArray.push({key: key, value: attributes[key]});\r\n            }\r\n        }\r\n        if (attributesArray.length > 0) {\r\n            return attributeService.saveEntityAttributes(entityId, \"SERVER_SCOPE\", attributesArray);\r\n        } else {\r\n            return widgetContext.rxjs.of([]);\r\n        }\r\n    }\r\n}",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "fd29573a-cae4-78d2-e85d-f770824863f4"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "margin" : "",
+            "pageSize" : 1024
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "91bc9ee5-435c-00b9-aba5-5c6975667a2c"
         }
       },
       "states" : {
@@ -4700,7 +4890,7 @@
                   "row" : 6,
                   "col" : 42
                 },
-                "76429f16-a535-6643-3f22-8ab61808be46" : {
+                "91bc9ee5-435c-00b9-aba5-5c6975667a2c" : {
                   "sizeX" : 7,
                   "sizeY" : 12,
                   "row" : 12,
@@ -4910,6 +5100,19 @@
             "fetchLastLevelOnly" : false,
             "relationType" : "Contains",
             "deviceTypes" : [ "AA Sensor" ]
+          }
+        },
+        "da4322e6-c7c1-d527-bb02-50549d2595f2" : {
+          "id" : "da4322e6-c7c1-d527-bb02-50549d2595f2",
+          "alias" : "Entità_dashboard",
+          "filter" : {
+            "type" : "stateEntity",
+            "resolveMultiple" : false,
+            "stateEntityParamName" : null,
+            "defaultStateEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "10112ba0-01e6-11ed-91ed-0903699d62f6"
+            }
           }
         }
       },

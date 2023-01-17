@@ -3289,37 +3289,6 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "active",
-                "type" : "attribute",
-                "label" : "active",
-                "color" : "#f44336",
-                "settings" : { },
-                "_hash" : 0.6936332727217343
-              }, {
-                "name" : "temperature",
-                "type" : "timeseries",
-                "label" : "Temperatura",
-                "color" : "#ffc107",
-                "settings" : { },
-                "_hash" : 0.5543786182273573,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "return value || \"\";"
-              }, {
-                "name" : "humidity",
-                "type" : "timeseries",
-                "label" : "Umidità",
-                "color" : "#607d8b",
-                "settings" : { },
-                "_hash" : 0.4475434357357466,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "return value || \"\";"
-              }, {
                 "name" : "name",
                 "type" : "attribute",
                 "label" : "name",
@@ -6037,14 +6006,20 @@
           "id" : "58f1d49c-e992-20d5-69b1-b8cfbf57523d",
           "alias" : "Tutte le sedi",
           "filter" : {
-            "type" : "entityGroup",
+            "type" : "assetSearchQuery",
             "resolveMultiple" : true,
-            "groupStateEntity" : false,
+            "rootStateEntity" : true,
             "stateEntityParamName" : null,
-            "defaultStateGroupType" : "ASSET",
-            "defaultStateEntityGroup" : "7c317030-01d5-11ed-8014-35af6f7ed6b6",
-            "groupType" : "ASSET",
-            "entityGroup" : "7c317030-01d5-11ed-8014-35af6f7ed6b6"
+            "defaultStateEntity" : {
+              "entityType" : "CURRENT_TENANT",
+              "id" : "13814000-1dd2-11b2-8080-808080808080"
+            },
+            "rootEntity" : null,
+            "direction" : "FROM",
+            "maxLevel" : 1,
+            "fetchLastLevelOnly" : false,
+            "relationType" : "Own",
+            "assetTypes" : [ "Asset" ]
           }
         }
       },

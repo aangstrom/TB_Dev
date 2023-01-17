@@ -4241,7 +4241,7 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "15b2a121-359b-0471-f217-428c57351494",
+              "entityAliasId" : "99f5a3cc-272c-c2c4-a37a-da7015f5271d",
               "filterId" : null,
               "dataKeys" : [ ]
             } ],
@@ -4896,14 +4896,20 @@
           "id" : "99f5a3cc-272c-c2c4-a37a-da7015f5271d",
           "alias" : "Sensori",
           "filter" : {
-            "type" : "entityGroup",
+            "type" : "deviceSearchQuery",
             "resolveMultiple" : true,
-            "groupStateEntity" : true,
+            "rootStateEntity" : true,
             "stateEntityParamName" : null,
-            "defaultStateGroupType" : "DEVICE",
-            "defaultStateEntityGroup" : "c22fcf70-4319-11ed-accb-016e0c746b7f",
-            "groupType" : null,
-            "entityGroup" : null
+            "defaultStateEntity" : {
+              "entityType" : "CURRENT_USER_OWNER",
+              "id" : "13814000-1dd2-11b2-8080-808080808080"
+            },
+            "rootEntity" : null,
+            "direction" : "FROM",
+            "maxLevel" : 1,
+            "fetchLastLevelOnly" : false,
+            "relationType" : "Contains",
+            "deviceTypes" : [ "AA Sensor" ]
           }
         }
       },

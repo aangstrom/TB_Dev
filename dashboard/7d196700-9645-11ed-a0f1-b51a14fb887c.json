@@ -5414,11 +5414,26 @@
               "filterId" : null,
               "dataKeys" : [ {
                 "name" : "name",
-                "type" : "attribute",
-                "label" : "name",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.2039028506046059
+                "type" : "entityField",
+                "label" : "Nome",
+                "color" : "#ffc107",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "string",
+                  "required" : false,
+                  "isEditable" : "readonly",
+                  "useCustomIcon" : false,
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.4762472066173178,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               }, {
                 "name" : "address",
                 "type" : "attribute",
@@ -5438,8 +5453,23 @@
                 "type" : "timeseries",
                 "label" : "vdd",
                 "color" : "#ffc107",
-                "settings" : { },
-                "_hash" : 0.7586760925080354
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "string",
+                  "required" : false,
+                  "isEditable" : "readonly",
+                  "useCustomIcon" : false,
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.7586760925080354,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "return (value/5000)*100+\"%\";"
               } ]
             } ],
             "timewindow" : {
@@ -5471,10 +5501,12 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "8px",
             "settings" : {
-              "groupTitle" : "${entityName}",
-              "showActionButtons" : true,
+              "showResultMessage" : false,
+              "showActionButtons" : false,
+              "showGroupTitle" : false,
               "fieldsAlignment" : "row",
-              "fieldsInRow" : 2
+              "fieldsInRow" : 2,
+              "groupTitle" : "${entityName}"
             },
             "title" : "New Update Multiple Attributes",
             "dropShadow" : true,

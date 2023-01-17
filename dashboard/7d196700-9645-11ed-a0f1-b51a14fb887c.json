@@ -402,7 +402,7 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "4px",
             "settings" : {
-              "alarmsTitle" : "Allarmi: ${entityName}",
+              "alarmsTitle" : "Allarmi",
               "enableSelection" : true,
               "enableSearch" : true,
               "enableSelectColumnDisplay" : true,
@@ -432,9 +432,16 @@
             "alarmSource" : {
               "type" : "entity",
               "name" : "alarms",
-              "entityAliasId" : "a0faf37a-3c5d-e721-f445-de7914947895",
+              "entityAliasId" : "99f5a3cc-272c-c2c4-a37a-da7015f5271d",
               "filterId" : null,
               "dataKeys" : [ {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Name",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.9811039227767078
+              }, {
                 "name" : "createdTime",
                 "type" : "alarm",
                 "label" : "Created time",
@@ -1460,18 +1467,27 @@
                 "label" : "Temperatura",
                 "color" : "#ff5722",
                 "settings" : {
+                  "hideDataByDefault" : false,
+                  "disableDataHiding" : false,
+                  "removeFromLegend" : false,
+                  "excludeFromStacking" : false,
                   "showLines" : true,
+                  "lineWidth" : 1,
                   "fillLines" : false,
                   "showPoints" : false,
                   "showSeparateAxis" : false,
-                  "axisPosition" : "left"
+                  "axisPosition" : "left",
+                  "comparisonSettings" : {
+                    "showValuesForComparison" : false
+                  },
+                  "thresholds" : [ ]
                 },
                 "_hash" : 0.7387395503161205,
                 "units" : "°C",
                 "decimals" : 1,
                 "aggregationType" : null,
                 "funcBody" : null,
-                "usePostProcessing" : null,
+                "usePostProcessing" : false,
                 "postFuncBody" : null
               }, {
                 "name" : "humidity",
@@ -1487,14 +1503,12 @@
                   "lineWidth" : 1,
                   "fillLines" : false,
                   "showPoints" : false,
-                  "showSeparateAxis" : true,
+                  "showSeparateAxis" : false,
                   "axisTitle" : "Umidità, %",
                   "axisPosition" : "right",
                   "axisTickDecimals" : 1,
                   "comparisonSettings" : {
-                    "showValuesForComparison" : true,
-                    "comparisonValuesLabel" : "",
-                    "color" : ""
+                    "showValuesForComparison" : false
                   },
                   "thresholds" : [ ]
                 },
@@ -1550,7 +1564,7 @@
               "yaxis" : {
                 "min" : null,
                 "max" : null,
-                "title" : "Temperature, °C",
+                "title" : "Temperatura, °C",
                 "showLabels" : true,
                 "color" : "#545454",
                 "tickSize" : null,
@@ -1871,7 +1885,7 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "a0faf37a-3c5d-e721-f445-de7914947895",
+              "entityAliasId" : "99f5a3cc-272c-c2c4-a37a-da7015f5271d",
               "filterId" : null,
               "dataKeys" : [ {
                 "name" : "temperature",

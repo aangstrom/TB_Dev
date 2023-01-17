@@ -5257,7 +5257,7 @@
               "draggableMarker" : true,
               "showLabel" : true,
               "useLabelFunction" : false,
-              "label" : "${entityName}",
+              "label" : "${name}",
               "showTooltip" : false,
               "color" : "#fe7569",
               "useColorFunction" : false,
@@ -5332,12 +5332,6 @@
                 "type" : "custom",
                 "customFunction" : "var entityDatasource = widgetContext.map.map.datasources.filter(\n    function(entity) {\n        return entity.entityId === entityId.id;\n    });\n\nwidgetContext.map.setMarkerLocation(entityDatasource[0], null, null).subscribe(() => widgetContext.updateAliases());",
                 "id" : "54c293c4-9ca6-e34f-dc6a-0271944c1c66"
-              }, {
-                "name" : "delete_polygon",
-                "icon" : "more_horiz",
-                "type" : "custom",
-                "customFunction" : "var entityDatasource = widgetContext.map.map.datasources.filter(\n    function(entity) {\n        return entity.entityId === entityId.id\n    });\n\nwidgetContext.map.savePolygonLocation(entityDatasource[0], null).subscribe(() => widgetContext.updateAliases());",
-                "id" : "6beb7bed-dfd8-388d-b60c-82988ab52f06"
               } ]
             },
             "showTitleIcon" : false,

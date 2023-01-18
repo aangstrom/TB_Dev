@@ -331,10 +331,10 @@
         "msgCount" : 0,
         "periodInSeconds" : 60,
         "scriptLang" : "JS",
-        "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar open;\nswitch(hour) {\n  case 8:\n    open = Math.random() < 0.1;\n    break;\n  case 9:\n    open = Math.random() < 0.1;\n    break;\n  case 10:\n    open = Math.random() < 0.1;\n    break;\n  case 11:\n    open = Math.random() < 0.1;\n    break;\n  case 12:\n    open = Math.random() < 0.1;\n    break;\n  case 13:\n    open = Math.random() < 0.1;\n    break;\n  case 14:\n    open = Math.random() < 0.1;\n    break;\n  case 15:\n    open = Math.random() < 0.1;\n    break;\n  case 16:\n    open = Math.random() < 0.1;\n    break;\n  case 17:\n    open = Math.random() < 0.1;\n    break;\n  case 18:\n    open = Math.random() < 0.1;\n    break;\n  default:\n    open=false;\n}\nvar msg = { open: open };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar weight;\nswitch(hour) {\n  case 8:\n    weight = (Math.random() * (10 - 1) + 1).toFixed(2);\n    break;\n  case 9:\n    weight = (Math.random() * (15 - 1) + 1).toFixed(2);\n    break;\n  case 10:\n    weight = (Math.random() * (30 - 1) + 1).toFixed(2);\n    break;\n  case 11:\n    weight = (Math.random() * (50 - 1) + 1).toFixed(2);\n    break;\n  case 12:\n    weight = (Math.random() * (50 - 1) + 1).toFixed(2);\n    break;\n  case 13:\n    weight = (Math.random() * (40 - 1) + 1).toFixed(2);\n    break;\n  case 14:\n    weight = (Math.random() * (30 - 1) + 1).toFixed(2);\n    break;\n  case 15:\n    weight = (Math.random() * (35 - 1) + 1).toFixed(2);\n    break;\n  case 16:\n    weight = (Math.random() * (50 - 1) + 1).toFixed(2);\n    break;\n  case 17:\n    weight = (Math.random() * (50 - 1) + 1).toFixed(2);\n    break;\n  case 18:\n    weight = (Math.random() * (45 - 1) + 1).toFixed(2);\n    break;\n  default:\n    weight=null;\n}\nvar msg = { weight: weight};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "originatorId" : null,
-        "originatorType" : null
+        "originatorId" : "09b510c0-32a4-11ed-accb-016e0c746b7f",
+        "originatorType" : "DEVICE"
       },
       "createdTime" : 0,
       "debugMode" : true,

@@ -102,6 +102,10 @@
       "fromIndex" : 14,
       "toIndex" : 9,
       "type" : "Success"
+    }, {
+      "fromIndex" : 15,
+      "toIndex" : 9,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -432,8 +436,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 68,
-        "layoutY" : 769
+        "layoutX" : 34,
+        "layoutY" : 698
       },
       "configuration" : {
         "msgCount" : 0,
@@ -441,7 +445,7 @@
         "scriptLang" : "JS",
         "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar open;\nswitch(hour) {\n  case 8:\n    open = Math.random() < 0.1;\n    break;\n  case 9:\n    open = Math.random() < 0.1;\n    break;\n  case 10:\n    open = Math.random() < 0.4;\n    break;\n  case 11:\n    open = Math.random() < 0.4;\n    break;\n  case 12:\n    open = Math.random() < 0.4;\n    break;\n  case 13:\n    open = Math.random() < 0.1;\n    break;\n  case 14:\n    open = Math.random() < 0.1;\n    break;\n  case 15:\n    open = Math.random() < 0.1;\n    break;\n  case 16:\n    open = Math.random() < 0.4;\n    break;\n  case 17:\n    open = Math.random() < 0.4;\n    break;\n  case 18:\n    open = Math.random() < 0.4;\n    break;\n  default:\n    open=false;\n}\nvar msg = { open: open };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "originatorId" : "09bb5250-32a4-11ed-accb-016e0c746b7f",
+        "originatorId" : "0985ea70-32a4-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
       "createdTime" : 0,
@@ -451,7 +455,57 @@
         "entityType" : "RULE_NODE",
         "id" : "a3e29b50-9748-11ed-a0f1-b51a14fb887c"
       },
-      "name" : "Generatore Door Sensor 3456",
+      "name" : "Generatore Door Sensor 1",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 277,
+        "layoutY" : 695
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 30,
+        "scriptLang" : "JS",
+        "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar open;\nswitch(hour) {\n  case 8:\n    open = Math.random() < 0.1;\n    break;\n  case 9:\n    open = Math.random() < 0.1;\n    break;\n  case 10:\n    open = Math.random() < 0.4;\n    break;\n  case 11:\n    open = Math.random() < 0.4;\n    break;\n  case 12:\n    open = Math.random() < 0.4;\n    break;\n  case 13:\n    open = Math.random() < 0.1;\n    break;\n  case 14:\n    open = Math.random() < 0.1;\n    break;\n  case 15:\n    open = Math.random() < 0.1;\n    break;\n  case 16:\n    open = Math.random() < 0.4;\n    break;\n  case 17:\n    open = Math.random() < 0.4;\n    break;\n  case 18:\n    open = Math.random() < 0.4;\n    break;\n  default:\n    open=false;\n}\nvar msg = { open: open };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "originatorId" : "0985ea70-32a4-11ed-accb-016e0c746b7f",
+        "originatorType" : "DEVICE"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "fa1011b0-9748-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Generatore Door Sensor 1",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 40,
+        "layoutY" : 774
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 30,
+        "scriptLang" : "JS",
+        "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar open;\nswitch(hour) {\n  case 8:\n    open = Math.random() < 0.3;\n    break;\n  case 9:\n    open = Math.random() < 0.5;\n    break;\n  case 10:\n    open = Math.random() < 0.7;\n    break;\n  case 11:\n    open = Math.random() < 0.8;\n    break;\n  case 12:\n    open = Math.random() < 0.7;\n    break;\n  case 13:\n    open = Math.random() < 0.5;\n    break;\n  case 14:\n    open = Math.random() < 0.4;\n    break;\n  case 15:\n    open = Math.random() < 0.6;\n    break;\n  case 16:\n    open = Math.random() < 0.8;\n    break;\n  case 17:\n    open = Math.random() < 0.8;\n    break;\n  case 18:\n    open = Math.random() < 0.8;\n    break;\n  default:\n    open=false;\n}\nvar msg = { open: open };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "originatorId" : "098c5310-32a4-11ed-accb-016e0c746b7f",
+        "originatorType" : "DEVICE"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "fa10d500-9748-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Generatore Door Sensor 3",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     } ],

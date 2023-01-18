@@ -5283,7 +5283,7 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "da4322e6-c7c1-d527-bb02-50549d2595f2",
+              "entityAliasId" : "99f5a3cc-272c-c2c4-a37a-da7015f5271d",
               "filterId" : null,
               "dataKeys" : [ {
                 "name" : "name",
@@ -5436,7 +5436,7 @@
             "showTitle" : true,
             "backgroundColor" : "#fff",
             "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "8px",
+            "padding" : "2px",
             "settings" : {
               "widgetTitle" : "Impostazioni dispositivo",
               "showResultMessage" : true,
@@ -5471,7 +5471,7 @@
             "widgetCss" : "",
             "pageSize" : 1024,
             "noDataDisplayMessage" : "",
-            "margin" : "10px"
+            "margin" : "0px"
           },
           "id" : "48967ca9-cafb-c77e-b20f-a1dd1860e67d"
         },
@@ -5487,9 +5487,31 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "da4322e6-c7c1-d527-bb02-50549d2595f2",
+              "entityAliasId" : "99f5a3cc-272c-c2c4-a37a-da7015f5271d",
               "filterId" : null,
               "dataKeys" : [ {
+                "name" : "name",
+                "type" : "attribute",
+                "label" : "Nome sensore",
+                "color" : "#e91e63",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "string",
+                  "required" : false,
+                  "isEditable" : "disabled",
+                  "useCustomIcon" : false,
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.19353574854107936,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
                 "name" : "temperatureAlarmFlag",
                 "type" : "attribute",
                 "label" : "Abilita soglie Temperatura",
@@ -5684,7 +5706,7 @@
             "showTitle" : true,
             "backgroundColor" : "#fff",
             "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "8px",
+            "padding" : "2px",
             "settings" : {
               "widgetTitle" : "Soglie Allarmi",
               "showResultMessage" : true,
@@ -5695,13 +5717,11 @@
               "fieldsInRow" : 2
             },
             "title" : "Soglie allarmi",
-            "dropShadow" : false,
+            "dropShadow" : true,
             "enableFullscreen" : false,
             "enableDataExport" : false,
             "widgetStyle" : {
-              "margin-top" : "10px",
-              "margin-bottom" : "10px",
-              "border-radius" : "25px 0px 0px 25px"
+              "border-radius" : "25px"
             },
             "titleStyle" : {
               "fontSize" : "18px",
@@ -5720,260 +5740,10 @@
             "displayTimewindow" : true,
             "widgetCss" : "",
             "pageSize" : 1024,
-            "noDataDisplayMessage" : ""
+            "noDataDisplayMessage" : "",
+            "margin" : "0px"
           },
           "id" : "970a5da4-90a4-7687-6f28-c8e89ac1c067"
-        },
-        "d8808d5c-10d6-2714-9f43-1a85197e817b" : {
-          "isSystemType" : true,
-          "bundleAlias" : "input_widgets",
-          "typeAlias" : "update_multiple_attributes",
-          "type" : "latest",
-          "title" : "New widget",
-          "sizeX" : 11,
-          "sizeY" : 16,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "da4322e6-c7c1-d527-bb02-50549d2595f2",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "soundAlarmFlag",
-                "type" : "attribute",
-                "label" : "Abilita soglia rumore alto",
-                "color" : "#ff9800",
-                "settings" : {
-                  "dataKeyHidden" : false,
-                  "dataKeyType" : "server",
-                  "dataKeyValueType" : "booleanSwitch",
-                  "required" : false,
-                  "isEditable" : "editable",
-                  "disabledOnDataKey" : "soundAlarmThreshold",
-                  "slideToggleLabelPosition" : "after",
-                  "useCustomIcon" : false,
-                  "useGetValueFunction" : false,
-                  "useSetValueFunction" : false
-                },
-                "_hash" : 0.4610193874772639,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "soundAlarmThreshold",
-                "type" : "attribute",
-                "label" : "Soglia 1, db (Gravità: Critica)",
-                "color" : "#e91e63",
-                "settings" : { },
-                "_hash" : 0.47683003201245033,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "soundAlarmThresholdMedium",
-                "type" : "attribute",
-                "label" : "Soglia 2, % (Gravità: Media)",
-                "color" : "#ffeb3b",
-                "settings" : {
-                  "dataKeyHidden" : false,
-                  "dataKeyType" : "server",
-                  "dataKeyValueType" : "string",
-                  "required" : false,
-                  "isEditable" : "editable",
-                  "disabledOnDataKey" : "soundAlarmThreshold",
-                  "useCustomIcon" : false,
-                  "useGetValueFunction" : false,
-                  "useSetValueFunction" : false
-                },
-                "_hash" : 0.7373397927595524,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "soundAlarmThresholdLow",
-                "type" : "attribute",
-                "label" : "Soglia 3, % (Gravità: Bassa)",
-                "color" : "#03a9f4",
-                "settings" : {
-                  "dataKeyHidden" : false,
-                  "dataKeyType" : "server",
-                  "dataKeyValueType" : "string",
-                  "required" : false,
-                  "isEditable" : "editable",
-                  "disabledOnDataKey" : "soundAlarmThreshold",
-                  "useCustomIcon" : false,
-                  "useGetValueFunction" : false,
-                  "useSetValueFunction" : false
-                },
-                "_hash" : 0.1514268964825618,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "lightAlarmFlag",
-                "type" : "attribute",
-                "label" : "Abilita soglie bassa luce",
-                "color" : "#673ab7",
-                "settings" : {
-                  "dataKeyHidden" : false,
-                  "dataKeyType" : "server",
-                  "dataKeyValueType" : "booleanSwitch",
-                  "required" : false,
-                  "isEditable" : "editable",
-                  "disabledOnDataKey" : "lightAlarmThreshold",
-                  "slideToggleLabelPosition" : "after",
-                  "useCustomIcon" : false,
-                  "useGetValueFunction" : false,
-                  "useSetValueFunction" : false
-                },
-                "_hash" : 0.030217034382213015,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "lightAlarmThreshold",
-                "type" : "attribute",
-                "label" : "Soglia 1, lux (Gravità: Critica)",
-                "color" : "#cddc39",
-                "settings" : { },
-                "_hash" : 0.7908775271795456,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "lightAlarmThresholdMedium",
-                "type" : "attribute",
-                "label" : "Soglia 2, % (Gravità: Media)",
-                "color" : "#009688",
-                "settings" : {
-                  "dataKeyHidden" : false,
-                  "dataKeyType" : "server",
-                  "dataKeyValueType" : "string",
-                  "required" : false,
-                  "isEditable" : "editable",
-                  "disabledOnDataKey" : "lightAlarmThreshold",
-                  "useCustomIcon" : false,
-                  "useGetValueFunction" : false,
-                  "useSetValueFunction" : false
-                },
-                "_hash" : 0.9094788008828956,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "lightAlarmThresholdLow",
-                "type" : "attribute",
-                "label" : "Soglia 3, lux (Gravità: Bassa)",
-                "color" : "#795548",
-                "settings" : {
-                  "dataKeyHidden" : false,
-                  "dataKeyType" : "server",
-                  "dataKeyValueType" : "string",
-                  "required" : false,
-                  "isEditable" : "editable",
-                  "disabledOnDataKey" : "lightAlarmThreshold",
-                  "useCustomIcon" : false,
-                  "useGetValueFunction" : false,
-                  "useSetValueFunction" : false
-                },
-                "_hash" : 0.4221052297697172,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              } ]
-            } ],
-            "timewindow" : {
-              "displayValue" : "",
-              "selectedTab" : 0,
-              "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1673941246286,
-                  "endTimeMs" : 1674027646286
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "limit" : 25000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "8px",
-            "settings" : {
-              "widgetTitle" : "Soglie Allarmi",
-              "showResultMessage" : true,
-              "showActionButtons" : false,
-              "showGroupTitle" : false,
-              "fieldsAlignment" : "column",
-              "groupTitle" : "${entityName}",
-              "fieldsInRow" : 2
-            },
-            "title" : "Soglie allarmi",
-            "dropShadow" : false,
-            "enableFullscreen" : false,
-            "enableDataExport" : false,
-            "widgetStyle" : {
-              "margin-top" : "10px",
-              "margin-bottom" : "10px",
-              "border-radius" : "0px 25px 25px 0px",
-              "border" : "0px",
-              "padding-top" : "45px"
-            },
-            "titleStyle" : {
-              "fontSize" : "18px",
-              "fontWeight" : 600,
-              "padding" : "5px 10px 5px 5px",
-              "textTransform" : "capitalize"
-            },
-            "useDashboardTimewindow" : true,
-            "showLegend" : false,
-            "actions" : { },
-            "showTitleIcon" : false,
-            "titleIcon" : null,
-            "iconColor" : "rgba(0, 0, 0, 0.87)",
-            "iconSize" : "24px",
-            "titleTooltip" : "",
-            "displayTimewindow" : true,
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : ""
-          },
-          "id" : "d8808d5c-10d6-2714-9f43-1a85197e817b"
         }
       },
       "states" : {
@@ -6488,28 +6258,26 @@
               "widgets" : {
                 "48967ca9-cafb-c77e-b20f-a1dd1860e67d" : {
                   "sizeX" : 12,
-                  "sizeY" : 5,
+                  "sizeY" : 10,
                   "row" : 0,
                   "col" : 0
                 },
                 "970a5da4-90a4-7687-6f28-c8e89ac1c067" : {
-                  "sizeX" : 6,
+                  "sizeX" : 12,
                   "sizeY" : 10,
                   "row" : 0,
                   "col" : 12
-                },
-                "d8808d5c-10d6-2714-9f43-1a85197e817b" : {
-                  "sizeX" : 6,
-                  "sizeY" : 10,
-                  "row" : 0,
-                  "col" : 18
                 }
               },
               "gridSettings" : {
                 "backgroundColor" : "#eeeeee",
                 "columns" : 24,
                 "margin" : 10,
-                "backgroundSizeMode" : "100%"
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : true,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70
               }
             }
           }

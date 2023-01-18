@@ -51,14 +51,6 @@
       "toIndex" : 11,
       "type" : "RPC Request to Device"
     }, {
-      "fromIndex" : 2,
-      "toIndex" : 12,
-      "type" : "RPC Request to Device"
-    }, {
-      "fromIndex" : 2,
-      "toIndex" : 13,
-      "type" : "RPC Request to Device"
-    }, {
       "fromIndex" : 6,
       "toIndex" : 2,
       "type" : "False"
@@ -87,8 +79,8 @@
     "nodes" : [ {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 999,
-        "layoutY" : 271
+        "layoutX" : 1201,
+        "layoutY" : 253
       },
       "configuration" : {
         "defaultTTL" : 0
@@ -105,8 +97,8 @@
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 1000,
-        "layoutY" : 167
+        "layoutX" : 1202,
+        "layoutY" : 149
       },
       "configuration" : {
         "scope" : "CLIENT_SCOPE",
@@ -125,8 +117,8 @@
     }, {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 566,
-        "layoutY" : 302
+        "layoutX" : 768,
+        "layoutY" : 284
       },
       "configuration" : {
         "version" : 0
@@ -143,8 +135,8 @@
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 1000,
-        "layoutY" : 381
+        "layoutX" : 1202,
+        "layoutY" : 363
       },
       "configuration" : {
         "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
@@ -161,8 +153,8 @@
       "type" : "org.thingsboard.rule.engine.action.TbLogNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 1000,
-        "layoutY" : 494
+        "layoutX" : 1202,
+        "layoutY" : 476
       },
       "configuration" : {
         "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
@@ -180,8 +172,8 @@
     }, {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 1012,
-        "layoutY" : 666
+        "layoutX" : 1214,
+        "layoutY" : 648
       },
       "configuration" : {
         "timeoutInSeconds" : 60
@@ -198,8 +190,8 @@
       "type" : "org.thingsboard.rule.engine.rpc.TbSendRPCRequestNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 255,
-        "layoutY" : 301
+        "layoutX" : 457,
+        "layoutY" : 283
       },
       "configuration" : {
         "originatorTypes" : [ "ENTITY_GROUP" ]
@@ -216,8 +208,8 @@
       "type" : "org.thingsboard.rule.engine.filter.TbOriginatorTypeFilterNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 319,
-        "layoutY" : 109
+        "layoutX" : 521,
+        "layoutY" : 91
       },
       "configuration" : {
         "messageTypes" : [ "POST_ATTRIBUTES_REQUEST", "RPC_CALL_FROM_SERVER_TO_DEVICE" ]
@@ -234,8 +226,8 @@
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeFilterNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 627,
-        "layoutY" : 108
+        "layoutX" : 829,
+        "layoutY" : 90
       },
       "configuration" : {
         "entityGroupId" : null,
@@ -254,8 +246,8 @@
     }, {
       "additionalInfo" : {
         "description" : "Process incoming messages from devices with the alarm rules defined in the device profile. Dispatch all incoming messages with \"Success\" relation type.",
-        "layoutX" : 89,
-        "layoutY" : 401
+        "layoutX" : 290,
+        "layoutY" : 159
       },
       "configuration" : {
         "persistAlarmRulesState" : false,
@@ -274,8 +266,8 @@
     }, {
       "additionalInfo" : {
         "description" : "Forwards message to the \"Generate Report\" rule chain",
-        "layoutX" : 1014,
-        "layoutY" : 749
+        "layoutX" : 1216,
+        "layoutY" : 731
       },
       "configuration" : {
         "ruleChainId" : "7c655170-01d5-11ed-8014-35af6f7ed6b6"
@@ -293,8 +285,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1010,
-        "layoutY" : 585
+        "layoutX" : 1212,
+        "layoutY" : 567
       },
       "configuration" : {
         "ruleChainId" : "fa3689a0-3f5d-11ed-accb-016e0c746b7f"
@@ -309,44 +301,6 @@
       "name" : "Process RPC Reply",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 890,
-        "layoutY" : 814
-      },
-      "configuration" : {
-        "integrationId" : "f874bdb0-560c-11ed-9133-91f5585bc6c3"
-      },
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "c227c430-974f-11ed-a0f1-b51a14fb887c"
-      },
-      "name" : "MQTT integration downlink",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.integration.TbIntegrationDownlinkNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 467,
-        "layoutY" : 725
-      },
-      "configuration" : {
-        "integrationId" : "516d3c00-6655-11ed-9133-91f5585bc6c3"
-      },
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "c2281250-974f-11ed-a0f1-b51a14fb887c"
-      },
-      "name" : "Pato MQTT",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.integration.TbIntegrationDownlinkNode"
     } ],
     "ruleChainConnections" : null
   },

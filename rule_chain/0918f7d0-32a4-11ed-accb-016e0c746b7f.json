@@ -122,6 +122,14 @@
       "fromIndex" : 19,
       "toIndex" : 9,
       "type" : "Success"
+    }, {
+      "fromIndex" : 20,
+      "toIndex" : 9,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 21,
+      "toIndex" : 9,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -403,7 +411,7 @@
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 38,
-        "layoutY" : 389
+        "layoutY" : 693
       },
       "configuration" : {
         "msgCount" : 0,
@@ -572,6 +580,56 @@
         "id" : "9a45dcf0-9749-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Chiller 3",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 38,
+        "layoutY" : 780
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 300,
+        "scriptLang" : "JS",
+        "jsScript" : "var temp=-7;\nvar temperature = (temp + Math.random() * (-0.5 - 0) + 0).toFixed(2);\nvar msg = { temperature: temperature };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "originatorId" : "09b02ec0-32a4-11ed-accb-016e0c746b7f",
+        "originatorType" : "DEVICE"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0ef8bdb0-974a-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Freezer 43545",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 38,
+        "layoutY" : 737
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 300,
+        "scriptLang" : "JS",
+        "jsScript" : "var temp=-19.2;\nvar temperature = (temp + Math.random() * (-0.5 - 0) + 0).toFixed(2);\nvar msg = { temperature: temperature };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "originatorId" : "09608820-32a4-11ed-accb-016e0c746b7f",
+        "originatorType" : "DEVICE"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0ef90bd0-974a-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Freezer 1",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     } ],

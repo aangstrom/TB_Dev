@@ -107,6 +107,10 @@
       "toIndex" : 9,
       "type" : "Success"
     }, {
+      "fromIndex" : 16,
+      "toIndex" : 9,
+      "type" : "Success"
+    }, {
       "fromIndex" : 17,
       "toIndex" : 9,
       "type" : "Success"
@@ -315,8 +319,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 38,
-        "layoutY" : 256
+        "layoutX" : 37,
+        "layoutY" : 257
       },
       "configuration" : {
         "msgCount" : 0,
@@ -334,14 +338,14 @@
         "entityType" : "RULE_NODE",
         "id" : "950258a0-9720-11ed-a0f1-b51a14fb887c"
       },
-      "name" : "Generatore Door Sensor 3456",
+      "name" : "Door Sensor 3456",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 40,
-        "layoutY" : 468
+        "layoutX" : 37,
+        "layoutY" : 387
       },
       "configuration" : {
         "msgCount" : 0,
@@ -359,14 +363,14 @@
         "entityType" : "RULE_NODE",
         "id" : "9502cdd0-9720-11ed-a0f1-b51a14fb887c"
       },
-      "name" : "Generatore Smart Shelf 89546",
+      "name" : "Smart Shelf 89546",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 39,
-        "layoutY" : 328
+        "layoutX" : 37,
+        "layoutY" : 301
       },
       "configuration" : {
         "msgCount" : 0,
@@ -384,14 +388,14 @@
         "entityType" : "RULE_NODE",
         "id" : "9502f4e0-9720-11ed-a0f1-b51a14fb887c"
       },
-      "name" : "Generatore Chiller 378876",
+      "name" : "Chiller 378876",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 39,
-        "layoutY" : 399
+        "layoutX" : 37,
+        "layoutY" : 344
       },
       "configuration" : {
         "msgCount" : 0,
@@ -409,14 +413,14 @@
         "entityType" : "RULE_NODE",
         "id" : "95034300-9720-11ed-a0f1-b51a14fb887c"
       },
-      "name" : "Generatore Freezer 67478",
+      "name" : "Freezer 67478",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 34,
-        "layoutY" : 634
+        "layoutX" : 36,
+        "layoutY" : 474
       },
       "configuration" : {
         "msgCount" : 0,
@@ -434,14 +438,14 @@
         "entityType" : "RULE_NODE",
         "id" : "a3e24d30-9748-11ed-a0f1-b51a14fb887c"
       },
-      "name" : "Generatore Door Sensor 4534",
+      "name" : "Door Sensor 4534",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 34,
-        "layoutY" : 698
+        "layoutX" : 36,
+        "layoutY" : 518
       },
       "configuration" : {
         "msgCount" : 0,
@@ -459,22 +463,22 @@
         "entityType" : "RULE_NODE",
         "id" : "a3e29b50-9748-11ed-a0f1-b51a14fb887c"
       },
-      "name" : "Generatore Door Sensor 1",
+      "name" : "Door Sensor 1",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 277,
-        "layoutY" : 695
+        "layoutX" : 36,
+        "layoutY" : 431
       },
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 30,
         "scriptLang" : "JS",
-        "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar open;\nswitch(hour) {\n  case 8:\n    open = Math.random() < 0.1;\n    break;\n  case 9:\n    open = Math.random() < 0.1;\n    break;\n  case 10:\n    open = Math.random() < 0.4;\n    break;\n  case 11:\n    open = Math.random() < 0.4;\n    break;\n  case 12:\n    open = Math.random() < 0.4;\n    break;\n  case 13:\n    open = Math.random() < 0.1;\n    break;\n  case 14:\n    open = Math.random() < 0.1;\n    break;\n  case 15:\n    open = Math.random() < 0.1;\n    break;\n  case 16:\n    open = Math.random() < 0.4;\n    break;\n  case 17:\n    open = Math.random() < 0.4;\n    break;\n  case 18:\n    open = Math.random() < 0.4;\n    break;\n  default:\n    open=false;\n}\nvar msg = { open: open };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar open;\nswitch(hour) {\n  case 8:\n    open = Math.random() < 0.1;\n    break;\n  case 9:\n    open = Math.random() < 0.1;\n    break;\n  case 10:\n    open = Math.random() < 0.1;\n    break;\n  case 11:\n    open = Math.random() < 0.2;\n    break;\n  case 12:\n    open = Math.random() < 0.5;\n    break;\n  case 13:\n    open = Math.random() < 0.5;\n    break;\n  case 14:\n    open = Math.random() < 0.3;\n    break;\n  case 15:\n    open = Math.random() < 0.1;\n    break;\n  case 16:\n    open = Math.random() < 0.1;\n    break;\n  case 17:\n    open = Math.random() < 0.1;\n    break;\n  case 18:\n    open = Math.random() < 0.5;\n    break;\n  default:\n    open=false;\n}\nvar msg = { open: open };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "originatorId" : "0985ea70-32a4-11ed-accb-016e0c746b7f",
+        "originatorId" : "098a7e50-32a4-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
       "createdTime" : 0,
@@ -484,14 +488,14 @@
         "entityType" : "RULE_NODE",
         "id" : "fa1011b0-9748-11ed-a0f1-b51a14fb887c"
       },
-      "name" : "Generatore Door Sensor 1",
+      "name" : "Door Sensor 2",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 40,
-        "layoutY" : 774
+        "layoutX" : 36,
+        "layoutY" : 560
       },
       "configuration" : {
         "msgCount" : 0,
@@ -509,7 +513,57 @@
         "entityType" : "RULE_NODE",
         "id" : "fa10d500-9748-11ed-a0f1-b51a14fb887c"
       },
-      "name" : "Generatore Door Sensor 3",
+      "name" : "Door Sensor 3",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 85,
+        "layoutY" : 709
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 300,
+        "scriptLang" : "JS",
+        "jsScript" : "var temp=11;\nvar temperature = (temp + Math.random() * (0.5 - 0) + 0).toFixed(2);\nvar msg = { temperature: temperature };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "originatorId" : "09ad96b0-32a4-11ed-accb-016e0c746b7f",
+        "originatorType" : "DEVICE"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9a4567c0-9749-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Chiller 65644",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 248,
+        "layoutY" : 781
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 300,
+        "scriptLang" : "JS",
+        "jsScript" : "var temp=16.2;\nvar temperature = (temp + Math.random() * (0.5 - 0) + 0).toFixed(2);\nvar msg = { temperature: temperature };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "originatorId" : "09b733a0-32a4-11ed-accb-016e0c746b7f",
+        "originatorType" : "DEVICE"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9a45dcf0-9749-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Generatore Chiller 378876",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     } ],

@@ -1,0 +1,398 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "createdTime" : 1662991562701,
+    "debugMode" : false,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "091b68d1-32a4-11ed-accb-016e0c746b7f"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "0918f7d0-32a4-11ed-accb-016e0c746b7f"
+    },
+    "name" : "Supermarket Devices",
+    "root" : false,
+    "tenantId" : null,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "True"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 0,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 0,
+      "type" : "Entity Created"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 2,
+      "type" : "Alarm Cleared"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 3,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 4,
+      "type" : "Post attributes"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 6,
+      "type" : "RPC Request from Device"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 7,
+      "type" : "Other"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 8,
+      "type" : "RPC Request to Device"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 2,
+      "type" : "Alarm Cleared"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 2,
+      "type" : "Alarm Created"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 2,
+      "type" : "Alarm Severity Updated"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 5,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 10,
+      "toIndex" : 9,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 9,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 681,
+        "layoutY" : 371
+      },
+      "configuration" : {
+        "originatorTypes" : [ "DEVICE", "ASSET" ]
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "091acc90-32a4-11ed-accb-016e0c746b7f"
+      },
+      "name" : "isDeviceOrAsset",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.filter.TbOriginatorTypeFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 900,
+        "layoutY" : 244
+      },
+      "configuration" : {
+        "jsScript" : "var criticalAlarmsCount = msg.criticalAlarmsCount;\nvar majorAlarmsCount = msg.majorAlarmsCount;\n\nvar state = 'normal';\n\nif (criticalAlarmsCount && Number(criticalAlarmsCount) > 0) {\n    state = 'critical';\n} else if (majorAlarmsCount && Number(majorAlarmsCount) > 0) {\n    state = 'major';\n}\n\nreturn {\n    msg: {\n        state: state\n    },\n    metadata: {\n        scope: 'SERVER_SCOPE'\n    },\n    msgType: 'POST_ATTRIBUTES_REQUEST'\n};"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "091af3a0-32a4-11ed-accb-016e0c746b7f"
+      },
+      "name" : "Update state attributes",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 601,
+        "layoutY" : 168
+      },
+      "configuration" : {
+        "alarmsCountMappings" : [ {
+          "target" : "criticalAlarmsCount",
+          "typesList" : [ "High Temperature Alarm", "Low Temperature Alarm", "Door left open", "Door was broken", "Low Battery", "Low Liquid Level", "Motion Detected", "Prolonged occupation", "Bin is full", "Low on items", "Fire Alarm" ],
+          "severityList" : [ "CRITICAL" ],
+          "statusList" : [ "ACTIVE_UNACK", "ACTIVE_ACK" ]
+        }, {
+          "target" : "majorAlarmsCount",
+          "typesList" : [ "High Temperature Alarm", "Low Temperature Alarm", "Door left open", "Door was broken", "Low Battery", "Low Liquid Level", "Motion Detected", "Prolonged occupation", "Bin is full", "Low on items", "Fire Alarm" ],
+          "severityList" : [ "MAJOR" ],
+          "statusList" : [ "ACTIVE_UNACK", "ACTIVE_ACK" ]
+        } ],
+        "countAlarmsForPropagationEntities" : true,
+        "propagationEntityTypes" : null,
+        "queueName" : "Main",
+        "outMsgType" : "POST_TELEMETRY_REQUEST"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "091af3a1-32a4-11ed-accb-016e0c746b7f"
+      },
+      "name" : "Alarms Count",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.analytics.latest.alarm.TbAlarmsCountNodeV2"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1408,
+        "layoutY" : 450
+      },
+      "configuration" : {
+        "defaultTTL" : 0
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "091b1ab0-32a4-11ed-accb-016e0c746b7f"
+      },
+      "name" : "Save Timeseries",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1109,
+        "layoutY" : 374
+      },
+      "configuration" : {
+        "scope" : "CLIENT_SCOPE"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "091b1ab1-32a4-11ed-accb-016e0c746b7f"
+      },
+      "name" : "Save Client Attributes",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 382,
+        "layoutY" : 580
+      },
+      "configuration" : {
+        "version" : 0
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "091b41c0-32a4-11ed-accb-016e0c746b7f"
+      },
+      "name" : "Message Type Switch",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1403,
+        "layoutY" : 539
+      },
+      "configuration" : {
+        "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "091b41c1-32a4-11ed-accb-016e0c746b7f"
+      },
+      "name" : "Log RPC from Device",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.action.TbLogNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1403,
+        "layoutY" : 625
+      },
+      "configuration" : {
+        "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "091b41c2-32a4-11ed-accb-016e0c746b7f"
+      },
+      "name" : "Log Other",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.action.TbLogNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1410,
+        "layoutY" : 743
+      },
+      "configuration" : {
+        "timeoutInSeconds" : 60
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "091b68d0-32a4-11ed-accb-016e0c746b7f"
+      },
+      "name" : "RPC Call Request",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.rpc.TbSendRPCRequestNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 282,
+        "layoutY" : 316
+      },
+      "configuration" : {
+        "persistAlarmRulesState" : false,
+        "fetchAlarmRulesStateOnStart" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "091b68d1-32a4-11ed-accb-016e0c746b7f"
+      },
+      "name" : "Device Profile Node",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.profile.TbDeviceProfileNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 38,
+        "layoutY" : 256
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 60,
+        "scriptLang" : "JS",
+        "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar open;\nswitch(hour) {\n  case 8:\n    open = Math.random() < 0.1;\n    break;\n  case 9:\n    open = Math.random() < 0.1;\n    break;\n  case 10:\n    open = Math.random() < 0.1;\n    break;\n  case 11:\n    open = Math.random() < 0.1;\n    break;\n  case 12:\n    open = Math.random() < 0.1;\n    break;\n  case 13:\n    open = Math.random() < 0.1;\n    break;\n  case 14:\n    open = Math.random() < 0.1;\n    break;\n  case 15:\n    open = Math.random() < 0.1;\n    break;\n  case 16:\n    open = Math.random() < 0.1;\n    break;\n  case 17:\n    open = Math.random() < 0.1;\n    break;\n  case 18:\n    open = Math.random() < 0.1;\n    break;\n  default:\n    open=false;\n}\nvar msg = { open: open };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "originatorId" : "09bb5250-32a4-11ed-accb-016e0c746b7f",
+        "originatorType" : "DEVICE"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "950258a0-9720-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Generatore Door Sensor 3456",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 40,
+        "layoutY" : 338
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 60,
+        "scriptLang" : "JS",
+        "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar open;\nswitch(hour) {\n  case 8:\n    open = Math.random() < 0.1;\n    break;\n  case 9:\n    open = Math.random() < 0.1;\n    break;\n  case 10:\n    open = Math.random() < 0.1;\n    break;\n  case 11:\n    open = Math.random() < 0.1;\n    break;\n  case 12:\n    open = Math.random() < 0.1;\n    break;\n  case 13:\n    open = Math.random() < 0.1;\n    break;\n  case 14:\n    open = Math.random() < 0.1;\n    break;\n  case 15:\n    open = Math.random() < 0.1;\n    break;\n  case 16:\n    open = Math.random() < 0.1;\n    break;\n  case 17:\n    open = Math.random() < 0.1;\n    break;\n  case 18:\n    open = Math.random() < 0.1;\n    break;\n  default:\n    open=false;\n}\nvar msg = { open: open };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "originatorId" : "09bb5250-32a4-11ed-accb-016e0c746b7f",
+        "originatorType" : "DEVICE"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9502cdd0-9720-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Generatore Door Sensor 3456",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 40,
+        "layoutY" : 422
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 60,
+        "scriptLang" : "JS",
+        "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar open;\nswitch(hour) {\n  case 8:\n    open = Math.random() < 0.1;\n    break;\n  case 9:\n    open = Math.random() < 0.1;\n    break;\n  case 10:\n    open = Math.random() < 0.1;\n    break;\n  case 11:\n    open = Math.random() < 0.1;\n    break;\n  case 12:\n    open = Math.random() < 0.1;\n    break;\n  case 13:\n    open = Math.random() < 0.1;\n    break;\n  case 14:\n    open = Math.random() < 0.1;\n    break;\n  case 15:\n    open = Math.random() < 0.1;\n    break;\n  case 16:\n    open = Math.random() < 0.1;\n    break;\n  case 17:\n    open = Math.random() < 0.1;\n    break;\n  case 18:\n    open = Math.random() < 0.1;\n    break;\n  default:\n    open=false;\n}\nvar msg = { open: open };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "originatorId" : "09bb5250-32a4-11ed-accb-016e0c746b7f",
+        "originatorType" : "DEVICE"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9502f4e0-9720-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Generatore Door Sensor 3456",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 41,
+        "layoutY" : 509
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 60,
+        "scriptLang" : "JS",
+        "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar temperature;\nswitch(hour) {\n  case 8:\n    temperature = Math.random() < 0.1;\n    break;\n  case 9:\n    temperature = Math.random() < 0.1;\n    break;\n  case 10:\n    temperature = Math.random() < 0.1;\n    break;\n  case 11:\n    temperature = Math.random() < 0.1;\n    break;\n  case 12:\n    temperature = Math.random() < 0.1;\n    break;\n  case 13:\n    temperature = Math.random() < 0.1;\n    break;\n  case 14:\n    temperature = Math.random() < 0.1;\n    break;\n  case 15:\n    temperature = Math.random() < 0.1;\n    break;\n  case 16:\n    temperature = Math.random() < 0.1;\n    break;\n  case 17:\n    temperature = Math.random() < 0.1;\n    break;\n  case 18:\n    temperature = Math.random() < 0.1;\n    break;\n  default:\n    temperature=false;\n}\nvar msg = { temperature: temperature };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "originatorId" : "09b97d90-32a4-11ed-accb-016e0c746b7f",
+        "originatorType" : "DEVICE"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "95034300-9720-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Generatore Freezer 67478",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

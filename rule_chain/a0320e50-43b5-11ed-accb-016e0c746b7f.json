@@ -118,6 +118,10 @@
       "fromIndex" : 17,
       "toIndex" : 5,
       "type" : "Success"
+    }, {
+      "fromIndex" : 18,
+      "toIndex" : 5,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 5,
     "nodes" : [ {
@@ -637,10 +641,10 @@
       },
       "configuration" : {
         "msgCount" : 0,
-        "periodInSeconds" : 60,
+        "periodInSeconds" : 300,
         "scriptLang" : "TBEL",
         "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var pulseCounter;\n/*if (prevMsg != null && prevMsg.pulseCounter != null) {\n  pulseCounter = prevMsg.pulseCounter + Math.random() * (0.5 - 0) + 0;\n}*/\npulseCounter = 19177.65 + Math.random() * (0.5 - 0) + 0;\nvar msg = { \n            pulseCounter: pulseCounter,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
+        "tbelScript" : "var pulseCounter;\nif (prevMsg != null && prevMsg.pulseCounter != null) {\n  pulseCounter = prevMsg.pulseCounter + Math.random() * (0.5 - 0) + 0;\n}\nvar msg = { \n            pulseCounter: pulseCounter,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
         "originatorId" : "a05fd510-43b5-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },

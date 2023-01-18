@@ -5316,9 +5316,9 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "address",
+                "name" : "location",
                 "type" : "attribute",
-                "label" : "Indirizzo",
+                "label" : "Dove si trova il dispositivo?",
                 "color" : "#9c27b0",
                 "settings" : { },
                 "_hash" : 0.6778348036018642,
@@ -5405,19 +5405,6 @@
                 "color" : "#f44336",
                 "settings" : { },
                 "_hash" : 0.7392693192033974,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "messaggio",
-                "type" : "attribute",
-                "label" : "Messaggio di Test",
-                "color" : "#8bc34a",
-                "settings" : { },
-                "_hash" : 0.3712731817333199,
                 "aggregationType" : null,
                 "units" : null,
                 "decimals" : null,
@@ -5694,6 +5681,88 @@
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
+              }, {
+                "name" : "co2AlarmFlag",
+                "type" : "attribute",
+                "label" : "Abilita soglie CO2",
+                "color" : "#ffeb3b",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "string",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "disabledOnDataKey" : "co2AlarmThreshold",
+                  "useCustomIcon" : false,
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.4940386003371151,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "co2AlarmThreshold",
+                "type" : "attribute",
+                "label" : "Soglia 1, % (Gravità: Critica)",
+                "color" : "#03a9f4",
+                "settings" : { },
+                "_hash" : 0.5525217380090091,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "co2AlarmThresholdMedium",
+                "type" : "attribute",
+                "label" : "Soglia 2, % (Gravità: Media)",
+                "color" : "#ff9800",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "string",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "disabledOnDataKey" : "co2AlarmThreshold",
+                  "useCustomIcon" : false,
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.1352977902710748,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "co2AlarmThresholdLow",
+                "type" : "attribute",
+                "label" : "Soglia 3, % (Gravità: Bassa)",
+                "color" : "#673ab7",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "string",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "disabledOnDataKey" : "co2AlarmThreshold",
+                  "useCustomIcon" : false,
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.11205720670895913,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ]
             } ],
             "timewindow" : {
@@ -5729,9 +5798,9 @@
               "showResultMessage" : true,
               "showActionButtons" : false,
               "showGroupTitle" : false,
-              "fieldsAlignment" : "column",
-              "groupTitle" : "${entityName}",
-              "fieldsInRow" : 2
+              "fieldsAlignment" : "row",
+              "fieldsInRow" : 2,
+              "groupTitle" : "${entityName}"
             },
             "title" : "Soglie allarmi",
             "dropShadow" : true,

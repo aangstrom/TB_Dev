@@ -582,7 +582,7 @@
         "periodInSeconds" : 10,
         "scriptLang" : "TBEL",
         "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var pulseCounter;\nif (prevMsg != null && prevMsg.pulseCounter != null) {\n  pulseCounter = prevMsg.pulseCounter + Math.random() * (0.5 - 0) + 0;\n} /*else{\n    pulseCounter = 19177.65 + Math.random() * (0.5 - 0) + 0;\n}*/\n\nvar msg = { \n            pulseCounter: pulseCounter,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
+        "tbelScript" : "var pulseCounter;\nif (prevMsg != null && prevMsg.pulseCounter != null) {\n  pulseCounter = prevMsg.pulseCounter + Math.random() * (0.5 - 0) + 0;\n} else{\n    pulseCounter = 19177.65 + Math.random() * (0.5 - 0) + 0;\n}\n\nvar msg = { \n            pulseCounter: pulseCounter,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
         "originatorId" : "a05a08b0-43b5-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
@@ -632,7 +632,7 @@
         "periodInSeconds" : 60,
         "scriptLang" : "TBEL",
         "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "/*var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };*/\n\n\nvar pulseCounter = 19177.65 + Math.random() * (0 - 1);\npulseCounter = Math.round( pulseCounter * 100 ) / 100;\nvar msg = { \n            pulseCounter: pulseCounter,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
+        "tbelScript" : "var pulseCounter;\nif (prevMsg != null && prevMsg.pulseCounter != null) {\n  pulseCounter = prevMsg.pulseCounter + Math.random() * (0.5 - 0) + 0;\n} else{\n    pulseCounter = 19177.65 + Math.random() * (0.5 - 0) + 0;\n}\n\nvar msg = { \n            pulseCounter: pulseCounter,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
         "originatorId" : "a05fd510-43b5-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },

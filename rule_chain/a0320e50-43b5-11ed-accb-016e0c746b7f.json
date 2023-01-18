@@ -593,7 +593,7 @@
         "msgCount" : 0,
         "periodInSeconds" : 300,
         "scriptLang" : "JS",
-        "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar pulseCounter;\nswitch(hour) {\n  case 0:\n    pulseCounter = null;\n    break;    \n  case 1:\n    pulseCounter = null;\n    break;    \n  case 2:\n    pulseCounter = null;\n    break;    \n  case 3:\n    pulseCounter = null;\n    break;    \n  case 4:\n    pulseCounter = null;\n    break;    \n  case 5:\n    pulseCounter = null;\n    break;    \n  case 6:\n    pulseCounter = null;\n    break;    \n  case 7:\n    pulseCounter = null;\n    break;    \n  case 17:\n    pulseCounter = prevMsg.pulseCounter + Math.random() * (0.4 - 0) + 0;\n    break;\n  case 18:\n    pulseCounter = prevMsg.pulseCounter + Math.random() * (0.5 - 0) + 0;\n    break;\n  case 19:\n    pulseCounter = prevMsg.pulseCounter + Math.random() * (0.45 - 0) + 0;\n    break;  \n  case 20:\n    pulseCounter = prevMsg.pulseCounter + Math.random() * (0.3 - 0) + 0;\n    break;  \n  case 21:\n    pulseCounter = null;\n    break;    \n  case 22:\n    pulseCounter = null;\n    break;    \n  case 23:\n    pulseCounter = null;\n    break;    \n  default:\n    pulseCounter = null;\n}\nvar msg = { \n            pulseCounter: pulseCounter,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
+        "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar pulseCounter;\nswitch(hour) {\n  case 17:\n    pulseCounter = prevMsg.pulseCounter + Math.random() * (0.4 - 0) + 0;\n    break;\n  case 18:\n    pulseCounter = prevMsg.pulseCounter + Math.random() * (0.5 - 0) + 0;\n    break;\n  case 19:\n    pulseCounter = prevMsg.pulseCounter + Math.random() * (0.45 - 0) + 0;\n    break;  \n  case 20:\n    pulseCounter = prevMsg.pulseCounter + Math.random() * (0.3 - 0) + 0;\n    break;  \n  default:\n    pulseCounter = null;\n}\nvar msg = { \n            pulseCounter: pulseCounter,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
         "tbelScript" : "var pulseCounter;\nif (prevMsg != null && prevMsg.pulseCounter != null) {\n  pulseCounter = prevMsg.pulseCounter + Math.random() * (0.5 - 0) + 0;\n}\nvar msg = { \n            pulseCounter: pulseCounter,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
         "originatorId" : "a05a08b0-43b5-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
@@ -617,8 +617,8 @@
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 300,
-        "scriptLang" : "TBEL",
-        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "scriptLang" : "JS",
+        "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar pulseCounter;\nswitch(hour) {\n  case 15:\n    pulseCounter = prevMsg.pulseCounter + Math.random() * (0.4 - 0) + 0;\n    break;\n  case 16:\n    pulseCounter = prevMsg.pulseCounter + Math.random() * (0.5 - 0) + 0;\n    break;\n  case 17:\n    pulseCounter = prevMsg.pulseCounter + Math.random() * (0.45 - 0) + 0;\n    break;  \n  case 18:\n    pulseCounter = prevMsg.pulseCounter + Math.random() * (0.3 - 0) + 0;\n    break;  \n  default:\n    pulseCounter = null;\n}\nvar msg = { \n            pulseCounter: pulseCounter,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
         "tbelScript" : "var pulseCounter;\nif (prevMsg != null && prevMsg.pulseCounter != null) {\n  pulseCounter = prevMsg.pulseCounter + Math.random() * (0.5 - 0) + 0;\n}\nvar msg = { \n            pulseCounter: pulseCounter,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
         "originatorId" : "a05db230-43b5-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
@@ -642,8 +642,8 @@
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 300,
-        "scriptLang" : "TBEL",
-        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "scriptLang" : "JS",
+        "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar pulseCounter;\nswitch(hour) {\n  case 8:\n    pulseCounter = prevMsg.pulseCounter + Math.random() * (0.4 - 0) + 0;\n    break;\n  case 9:\n    pulseCounter = prevMsg.pulseCounter + Math.random() * (0.45 - 0) + 0;\n    break;  \n  case 10:\n    pulseCounter = prevMsg.pulseCounter + Math.random() * (0.3 - 0) + 0;\n    break;  \n  default:\n    pulseCounter = null;\n}\nvar msg = { \n            pulseCounter: pulseCounter,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
         "tbelScript" : "var pulseCounter;\nif (prevMsg != null && prevMsg.pulseCounter != null) {\n  pulseCounter = prevMsg.pulseCounter + Math.random() * (0.5 - 0) + 0;\n}\nvar msg = { \n            pulseCounter: pulseCounter,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
         "originatorId" : "a05fd510-43b5-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"

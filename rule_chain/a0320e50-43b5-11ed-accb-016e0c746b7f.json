@@ -71,6 +71,10 @@
       "toIndex" : 13,
       "type" : "Success"
     }, {
+      "fromIndex" : 5,
+      "toIndex" : 19,
+      "type" : "Success"
+    }, {
       "fromIndex" : 6,
       "toIndex" : 4,
       "type" : "Success"
@@ -121,6 +125,10 @@
     }, {
       "fromIndex" : 18,
       "toIndex" : 5,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 19,
+      "toIndex" : 0,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 5,
@@ -658,6 +666,27 @@
       "name" : "Generator WM0000125",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 436,
+        "layoutY" : 25
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var active;\nif (msg.pulseCounter !== null){\n    active = true;\n}\nelse{\n    active = false;\n}\nvar msg={\n    active: active,\n}\nvar msgType=\"POST_ATTRIBUTE_REQUEST\";\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "dfaac570-971d-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Set Active status",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

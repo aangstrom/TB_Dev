@@ -348,7 +348,7 @@
         "msgCount" : 0,
         "periodInSeconds" : 60,
         "scriptLang" : "JS",
-        "jsScript" : "var temperature = prevMsg.temperature + Math.random() * (0.2 - 0) + 0;\nvar msg = { temperature: temperature };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "jsScript" : "var temp=16.2;\nvar temperature = temp + Math.random() * (0.5 - 0) + 0;\nvar msg = { temperature: temperature };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "originatorId" : "09b733a0-32a4-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
@@ -373,7 +373,7 @@
         "msgCount" : 0,
         "periodInSeconds" : 300,
         "scriptLang" : "JS",
-        "jsScript" : "var temp=16.2;\nvar temperature = temp + Math.random() * (-0.5 - 0) + 0;\nvar msg = { temperature: temperature };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "jsScript" : "var temp=-6.3;\nvar temperature = temp + Math.random() * (-0.5 - 0) + 0;\nvar msg = { temperature: temperature };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "originatorId" : "09b97d90-32a4-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"

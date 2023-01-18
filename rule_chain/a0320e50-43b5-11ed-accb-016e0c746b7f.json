@@ -462,8 +462,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 158,
-        "layoutY" : 431
+        "layoutX" : 351,
+        "layoutY" : 611
       },
       "configuration" : {
         "inputValueKey" : "meterReadingDelta",
@@ -501,8 +501,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 160,
-        "layoutY" : 509
+        "layoutX" : 232,
+        "layoutY" : 681
       },
       "configuration" : {
         "inputValueKey" : "meterReadingDelta",
@@ -578,15 +578,15 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 88,
-        "layoutY" : 33
+        "layoutX" : 49,
+        "layoutY" : 208
       },
       "configuration" : {
         "msgCount" : 0,
-        "periodInSeconds" : 30,
+        "periodInSeconds" : 300,
         "scriptLang" : "TBEL",
         "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var pulseCounter;\n/*if (prevMsg != null && prevMsg.pulseCounter != null) {\n  pulseCounter = prevMsg.pulseCounter + Math.random() * (0.5 - 0) + 0;\n}*/\npulseCounter = 19177.65 + Math.random() * (0.5 - 0) + 0;\nvar msg = { \n            pulseCounter: pulseCounter,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
+        "tbelScript" : "var pulseCounter;\nif (prevMsg != null && prevMsg.pulseCounter != null) {\n  pulseCounter = prevMsg.pulseCounter + Math.random() * (0.5 - 0) + 0;\n}\nvar msg = { \n            pulseCounter: pulseCounter,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
         "originatorId" : "a05a08b0-43b5-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
@@ -603,8 +603,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 55,
-        "layoutY" : 694
+        "layoutX" : 44,
+        "layoutY" : 265
       },
       "configuration" : {
         "msgCount" : 0,
@@ -628,8 +628,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 53,
-        "layoutY" : 777
+        "layoutX" : 49,
+        "layoutY" : 351
       },
       "configuration" : {
         "msgCount" : 0,

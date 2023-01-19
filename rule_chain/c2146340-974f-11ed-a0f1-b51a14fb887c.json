@@ -102,22 +102,6 @@
       "fromIndex" : 17,
       "toIndex" : 16,
       "type" : "vero"
-    }, {
-      "fromIndex" : 17,
-      "toIndex" : 19,
-      "type" : "getTemperature"
-    }, {
-      "fromIndex" : 18,
-      "toIndex" : 6,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 19,
-      "toIndex" : 20,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 20,
-      "toIndex" : 18,
-      "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -487,74 +471,6 @@
       "name" : "Is RPC",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 865,
-        "layoutY" : 773
-      },
-      "configuration" : {
-        "requestIdMetaDataAttribute" : "requestId"
-      },
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "3cab78e0-97ec-11ed-a0f1-b51a14fb887c"
-      },
-      "name" : "Get temperature",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.rpc.TbSendRPCReplyNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 184,
-        "layoutY" : 765
-      },
-      "configuration" : {
-        "relationsQuery" : {
-          "fetchLastLevelOnly" : false,
-          "direction" : "FROM",
-          "maxLevel" : 1,
-          "filters" : [ ]
-        },
-        "telemetry" : true,
-        "attrMapping" : {
-          "targetTemperature" : "temp"
-        }
-      },
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "613c0480-97ed-11ed-a0f1-b51a14fb887c"
-      },
-      "name" : "Get temperature",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 470,
-        "layoutY" : 775
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "jsScript" : "var msg = {\"temperature\" : metadata.temp};\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var msg = {\"temperature\" : metadata.temp};\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
-      },
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "613c79b0-97ed-11ed-a0f1-b51a14fb887c"
-      },
-      "name" : "Set temperature",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

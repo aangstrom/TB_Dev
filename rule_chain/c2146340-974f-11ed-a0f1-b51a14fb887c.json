@@ -72,7 +72,7 @@
       "type" : "Success"
     }, {
       "fromIndex" : 9,
-      "toIndex" : 6,
+      "toIndex" : 17,
       "type" : "Success"
     }, {
       "fromIndex" : 12,
@@ -86,6 +86,14 @@
       "fromIndex" : 15,
       "toIndex" : 9,
       "type" : "Success"
+    }, {
+      "fromIndex" : 17,
+      "toIndex" : 6,
+      "type" : "falso"
+    }, {
+      "fromIndex" : 17,
+      "toIndex" : 16,
+      "type" : "vero"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -416,8 +424,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 430,
-        "layoutY" : 644
+        "layoutX" : 663,
+        "layoutY" : 698
       },
       "configuration" : {
         "scriptLang" : "JS",
@@ -434,6 +442,27 @@
       "name" : "Script rpc",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 589,
+        "layoutY" : 509
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "function nextRelation(metadata, msg) {\n    return ['falso'];\n}\nif(msgType == 'RPC_CALL_FROM_SERVER_TO_DEVICE') {\n    if(msg.method==\"setEnabled\"){\n        return ['vero'];\n    }\n}\nreturn nextRelation(metadata, msg);"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "926c15f0-97e7-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "è una chiamata RPC",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     } ],
     "ruleChainConnections" : null
   },

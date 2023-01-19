@@ -282,7 +282,7 @@
         "fetchAlarmRulesStateOnStart" : false
       },
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -459,7 +459,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "function nextRelation(metadata, msg) {\n    return ['falso'];\n}\nif (msgType == 'RPC_CALL_FROM_SERVER_TO_DEVICE') {\n    if(msg.method==\"setEnabled\"){\n        return ['vero'];\n    } else if (msg.method==\"setTemperature\"){\n        return ['vero'];\n    } else if(msg.method==\"getTemperature\"){\n        return ['getTemperature'];\n    } else {\n        return ['falso'];\n    }\n}\nreturn nextRelation(metadata, msg);"
+        "tbelScript" : "function nextRelation(metadata, msg) {\n    return ['falso'];\n}\nif (msgType == 'RPC_CALL_FROM_SERVER_TO_DEVICE') {\n    if(msg.method==\"setEnabled\"){\n        return ['vero'];\n    } else if (msg.method==\"setTemperature\"){\n        return ['vero'];\n    } else {\n        return ['falso'];\n    }\n}\nreturn nextRelation(metadata, msg);"
       },
       "createdTime" : 0,
       "debugMode" : false,

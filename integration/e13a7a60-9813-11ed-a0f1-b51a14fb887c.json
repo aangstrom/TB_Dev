@@ -6,7 +6,6 @@
     },
     "allowCreateDevicesOrAssets" : true,
     "configuration" : {
-      "metadata" : { },
       "clientConfiguration" : {
         "host" : "aa8.aangstrom.it",
         "port" : 1885,
@@ -22,10 +21,11 @@
         }
       },
       "topicFilters" : [ {
-        "filter" : "frigate/test-1/#",
+        "filter" : "frigate/test-1/car/#",
         "qos" : 0
       } ],
-      "downlinkTopicPattern" : "${topic}"
+      "downlinkTopicPattern" : "${topic}",
+      "metadata" : { }
     },
     "createdTime" : 1674144666886,
     "debugMode" : true,
@@ -48,8 +48,28 @@
     "tenantId" : null,
     "type" : "MQTT"
   },
-  "relations" : [ ],
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "e13a7a60-9813-11ed-a0f1-b51a14fb887c"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "6358b840-9814-11ed-a0f1-b51a14fb887c"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  } ],
   "attributes" : {
-    "SERVER_SCOPE" : [ ]
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"success\":true}",
+      "key" : "integration_status_ubuntu-s-2vcpu-4gb-fra1-01",
+      "lastUpdateTs" : 1674144885176,
+      "longValue" : null,
+      "strValue" : null
+    } ]
   }
 }

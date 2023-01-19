@@ -75,6 +75,10 @@
       "toIndex" : 6,
       "type" : "Success"
     }, {
+      "fromIndex" : 12,
+      "toIndex" : 9,
+      "type" : "Success"
+    }, {
       "fromIndex" : 14,
       "toIndex" : 9,
       "type" : "Success"
@@ -319,7 +323,7 @@
         "msgCount" : 0,
         "periodInSeconds" : 30,
         "scriptLang" : "JS",
-        "jsScript" : "var temperature = 18 + Math.random() * (32 - 18);\ntemperature = Math.round( temperature * 100 ) / 100;\nvar humidity = 10 + Math.random() * (90 - 10);\nhumidity = Math.round( humidity * 100 ) / 100;\nvar occupancy = Math.random() < 0.1;\noccupancy = Math.round( occupancy * 100 ) / 100;\nvar co2 = 150 + Math.random() * (300 - 0);\nco2 = Math.round( co2 * 100 ) / 100;\nvar tvoc = Math.random() * (2000 - 0);\ntvoc = Math.round( co2 * 100 ) / 100;\nvar msg = { \n            co2: co2,\n            occupancy: occupancy,\n            temperature: temperature,\n            humidity: humidity,\n            tvoc: tvoc\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
+        "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar occupancy;\nswitch(hour) {\n  case 8:\n  case 9:\n  case 10:\n  case 11:\n  case 12:\n  case 13:\n  case 14:\n  case 15:\n  case 16:\n  case 17:\n    occupancy = Math.random() < 0.8;\n    occupancy = Math.round( occupancy * 100 ) / 100;\n    break;\n  default:\n    occupancy = Math.random() < 0.1;\n    occupancy = Math.round( occupancy * 100 ) / 100;\n}\nvar temperature = 18 + Math.random() * (32 - 18);\ntemperature = Math.round( temperature * 100 ) / 100;\nvar humidity = 10 + Math.random() * (90 - 10);\nhumidity = Math.round( humidity * 100 ) / 100;\nvar co2 = 150 + Math.random() * (300 - 0);\nco2 = Math.round( co2 * 100 ) / 100;\nvar tvoc = Math.random() * (2000 - 0);\ntvoc = Math.round( co2 * 100 ) / 100;\nvar msg = { \n            co2: co2,\n            occupancy: occupancy,\n            temperature: temperature,\n            humidity: humidity,\n            tvoc: tvoc\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
         "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "originatorId" : "f00ceb70-32a3-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"

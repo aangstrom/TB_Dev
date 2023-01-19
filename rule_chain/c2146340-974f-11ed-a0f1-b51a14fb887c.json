@@ -110,6 +110,10 @@
       "fromIndex" : 18,
       "toIndex" : 6,
       "type" : "Success"
+    }, {
+      "fromIndex" : 19,
+      "toIndex" : 20,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -498,6 +502,58 @@
       "name" : "Get temperature",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.rpc.TbSendRPCReplyNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 266,
+        "layoutY" : 719
+      },
+      "configuration" : {
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : true,
+          "direction" : "FROM",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "DEVICE" ]
+          } ]
+        },
+        "telemetry" : true,
+        "attrMapping" : {
+          "targetTemperature" : "temp"
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "613c0480-97ed-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Get temperature",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 470,
+        "layoutY" : 775
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "var msg = {\"temperature\" : metadata.temp};\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var msg = {\"temperature\" : metadata.temp};\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "613c79b0-97ed-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Set temperature",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

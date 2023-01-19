@@ -413,6 +413,27 @@
       "name" : "Energy meter",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 430,
+        "layoutY" : 644
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var enabled;\nif (msg.method==\"setEnabled\"){\n    if(msg.params==\"false\"){\n        enabled = false;\n    }\n    else if(msg.params==\"true\"){\n        enabled = true;\n    }\n}\nelse {\n    \n}\nvar type = \"POST_TELEMETRY_REQUEST\";\nvar t = {\n    enabled: enabled\n}\nreturn {msg: msg, metadata: metadata, msgType: type};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e0999ff0-97e6-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Script",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

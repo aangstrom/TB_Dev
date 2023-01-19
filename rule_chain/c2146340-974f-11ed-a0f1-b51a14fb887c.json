@@ -433,7 +433,7 @@
       },
       "configuration" : {
         "scriptLang" : "JS",
-        "jsScript" : "var enabled;\nif (msg.method==\"setEnabled\"){\n    if(msg.params==\"false\"){\n        enabled = false;\n    }\n    else if(msg.params==\"true\"){\n        enabled = true;\n    }\n}\nelse {\n    \n}\nvar type = \"POST_TELEMETRY_REQUEST\";\nvar messaggio = {\n    enabled: enabled\n}\nreturn {msg: messaggio, metadata: metadata, msgType: type};",
+        "jsScript" : "var enabled, targetTemperature;\nif (msg.method==\"setEnabled\"){\n    if(msg.params==\"false\"){\n        enabled = false;\n    }\n    else if(msg.params==\"true\"){\n        enabled = true;\n    }\n}\nelse if (msg.method==\"setTemperature\"){\n    targetTemperature = msg.params;\n}\nvar type = \"POST_TELEMETRY_REQUEST\";\nvar messaggio = {\n    enabled: enabled,\n    targetTemperature: targetTemperature\n}\nreturn {msg: messaggio, metadata: metadata, msgType: type};",
         "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "createdTime" : 0,

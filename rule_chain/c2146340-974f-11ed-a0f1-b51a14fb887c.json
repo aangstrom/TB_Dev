@@ -102,6 +102,14 @@
       "fromIndex" : 17,
       "toIndex" : 16,
       "type" : "vero"
+    }, {
+      "fromIndex" : 17,
+      "toIndex" : 18,
+      "type" : "getTemperature"
+    }, {
+      "fromIndex" : 18,
+      "toIndex" : 6,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -432,8 +440,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 878,
-        "layoutY" : 597
+        "layoutX" : 893,
+        "layoutY" : 658
       },
       "configuration" : {
         "scriptLang" : "JS",
@@ -459,7 +467,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "function nextRelation(metadata, msg) {\n    return ['falso'];\n}\nif(msgType == 'RPC_CALL_FROM_SERVER_TO_DEVICE') {\n    if(msg.method==\"setEnabled\"){\n        return ['vero'];\n    } else if (msg.method==\"setTemperature\"){\n        return ['vero'];\n    } else {\n        return ['falso'];\n    }\n}\nreturn nextRelation(metadata, msg);"
+        "tbelScript" : "function nextRelation(metadata, msg) {\n    return ['falso'];\n}\nif (msgType == 'RPC_CALL_FROM_SERVER_TO_DEVICE') {\n    if(msg.method==\"setEnabled\"){\n        return ['vero'];\n    } else if (msg.method==\"setTemperature\"){\n        return ['vero'];\n    } else {\n        return ['falso'];\n    }\n}\nelse if (msgType == \"RPC_CALL_FROM_SERVER_TO_DEVICE\") {\n    if(msg.method==\"getTemperature\"){\n        return ['getTemperature'];\n    }\n}\nreturn nextRelation(metadata, msg);"
       },
       "createdTime" : 0,
       "debugMode" : false,
@@ -471,6 +479,25 @@
       "name" : "Is RPC",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 865,
+        "layoutY" : 773
+      },
+      "configuration" : {
+        "requestIdMetaDataAttribute" : "targetTemperature"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "3cab78e0-97ec-11ed-a0f1-b51a14fb887c"
+      },
+      "name" : "Get temperature",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.rpc.TbSendRPCReplyNode"
     } ],
     "ruleChainConnections" : null
   },

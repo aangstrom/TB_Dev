@@ -81,15 +81,7 @@
     }, {
       "fromIndex" : 12,
       "toIndex" : 9,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 12,
-      "toIndex" : 9,
       "type" : "Success"
-    }, {
-      "fromIndex" : 13,
-      "toIndex" : 9,
-      "type" : "Failure"
     }, {
       "fromIndex" : 13,
       "toIndex" : 9,
@@ -157,6 +149,10 @@
     }, {
       "fromIndex" : 24,
       "toIndex" : 21,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 25,
+      "toIndex" : 9,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
@@ -432,7 +428,7 @@
         "entityType" : "RULE_NODE",
         "id" : "ebbef170-43e3-11ed-accb-016e0c746b7f"
       },
-      "name" : "Generator Sensore 3",
+      "name" : "Sensore 3",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
@@ -733,7 +729,7 @@
         "scriptLang" : "JS",
         "jsScript" : "var temp = prevMsg.energy;\nvar d = new Date();\nvar hour = d.getHours();\nvar amperage, energy, frequency, power, voltage;\nswitch(hour) {\n  case 8:\n  case 9:\n  case 10:\n  case 11:\n  case 12:\n  case 13:\n  case 14:\n  case 15:\n  case 16:\n  case 17:\n    amperage = (Math.random() * (5 - 0) + 10).toFixed(1);\n    frequency = (Math.random() * (50 - 0) + 10).toFixed(1);\n    power = Math.random() * (1000 - 0) + 0;\n    power = Math.round( power * 100 ) / 100;\n    energy = power;\n    voltage = (Math.random() * (10 - 0) + 220).toFixed(2);\n    break;\n  default:\n    amperage = 0.1 + (Math.random() * (0.1 - 0) + 0).toFixed(1);\n    frequency = 10;\n    power = null;\n    energy = temp;\n    voltage = 0.5;\n}\namperage = Math.round( amperage * 100 ) / 100;\nfrequency = Math.round( frequency * 100 ) / 100;\nvoltage = Math.round( voltage * 100 ) / 100;\nvar msg = {\n    amperage: amperage,\n    energy: energy,\n    frequency: frequency,\n    power: power,\n    voltage: voltage\n};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "originatorId" : "f0161330-32a3-11ed-accb-016e0c746b7f",
+        "originatorId" : "a0f126d0-97ef-11ed-a0f1-b51a14fb887c",
         "originatorType" : "DEVICE"
       },
       "createdTime" : 0,
@@ -743,7 +739,7 @@
         "entityType" : "RULE_NODE",
         "id" : "62eb0220-97ef-11ed-a0f1-b51a14fb887c"
       },
-      "name" : "Energy meter",
+      "name" : "energy-demo",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     } ],

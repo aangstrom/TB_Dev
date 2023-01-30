@@ -142,7 +142,26 @@
                 "type" : "timeseries",
                 "label" : "Presenti",
                 "color" : "#2196f3",
-                "settings" : { },
+                "settings" : {
+                  "hideDataByDefault" : false,
+                  "disableDataHiding" : false,
+                  "removeFromLegend" : false,
+                  "excludeFromStacking" : false,
+                  "showLines" : true,
+                  "lineWidth" : 1,
+                  "fillLines" : true,
+                  "showPoints" : true,
+                  "showPointsLineWidth" : 5,
+                  "showPointsRadius" : 3,
+                  "showPointShape" : "circle",
+                  "pointShapeFormatter" : "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
+                  "showSeparateAxis" : false,
+                  "axisPosition" : "left",
+                  "comparisonSettings" : {
+                    "showValuesForComparison" : false
+                  },
+                  "thresholds" : [ ]
+                },
                 "_hash" : 0.6091485697357788,
                 "aggregationType" : null,
                 "units" : null,
@@ -176,7 +195,7 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "8px",
             "settings" : {
-              "stack" : true,
+              "stack" : false,
               "fontSize" : 10,
               "fontColor" : "#545454",
               "showTooltip" : true,
@@ -1063,13 +1082,13 @@
         "selectedTab" : 0,
         "realtime" : {
           "realtimeType" : 0,
-          "timewindowMs" : 36000000,
+          "timewindowMs" : 30000,
           "quickInterval" : "CURRENT_DAY",
-          "interval" : 120000
+          "interval" : 1000
         },
         "aggregation" : {
-          "type" : "AVG",
-          "limit" : 25000
+          "type" : "NONE",
+          "limit" : 5825
         }
       },
       "settings" : {

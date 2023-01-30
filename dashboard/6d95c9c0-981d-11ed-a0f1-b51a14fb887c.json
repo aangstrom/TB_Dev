@@ -1292,10 +1292,16 @@
               "dataKeys" : [ {
                 "name" : "person",
                 "type" : "timeseries",
-                "label" : "person",
+                "label" : "people",
                 "color" : "#2196f3",
                 "settings" : { },
-                "_hash" : 0.24583404356130067
+                "_hash" : 0.24583404356130067,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ]
             } ],
             "timewindow" : {
@@ -1345,8 +1351,16 @@
                 "weight" : "500",
                 "color" : "#999999"
               },
-              "showUnitTitle" : false,
+              "showUnitTitle" : true,
+              "unitTitle" : "person",
               "showTimestamp" : false,
+              "labelFont" : {
+                "family" : "Roboto",
+                "size" : 8,
+                "style" : "normal",
+                "weight" : "500",
+                "color" : null
+              },
               "showValue" : true,
               "valueFont" : {
                 "family" : "Roboto",
@@ -1363,7 +1377,10 @@
                 "weight" : "500",
                 "color" : "#666666"
               },
-              "showTicks" : false,
+              "showTicks" : true,
+              "tickWidth" : 4,
+              "colorTicks" : "#666",
+              "ticksValue" : [ ],
               "animation" : true,
               "animationDuration" : 500,
               "animationRule" : "linear"
@@ -1390,9 +1407,9 @@
             "main" : {
               "widgets" : {
                 "3e285d6e-854f-cf33-cf23-ea517b882802" : {
-                  "sizeX" : 13,
+                  "sizeX" : 8,
                   "sizeY" : 6,
-                  "row" : 22,
+                  "row" : 15,
                   "col" : 0
                 },
                 "afd8d920-a47b-04e0-6c8a-f6af4844ec3c" : {

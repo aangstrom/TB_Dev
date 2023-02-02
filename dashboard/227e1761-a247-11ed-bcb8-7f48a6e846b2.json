@@ -2174,8 +2174,9 @@
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
+                "usePostProcessing" : true,
+                "postFuncBody" : "if (value==\"true\") {\n    return \"Avanti\";\n}else{\n    return \"\";\n}",
+                "aggregationType" : null
               }, {
                 "name" : "spinta_indietro",
                 "type" : "timeseries",
@@ -2203,8 +2204,9 @@
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
+                "usePostProcessing" : true,
+                "postFuncBody" : "if (value==\"true\") {\n    return \"Indietro\";\n}else{\n    return \"\";\n}",
+                "aggregationType" : null
               } ],
               "latestDataKeys" : [ ]
             } ],
@@ -2221,11 +2223,7 @@
               "stack" : false,
               "fontSize" : 10,
               "fontColor" : "#545454",
-              "showTooltip" : true,
-              "tooltipIndividual" : false,
-              "tooltipCumulative" : false,
-              "hideZeros" : false,
-              "tooltipValueFormatter" : "if (value==\"true\") {\n    return \"ON\";\n}else{\n    return \"OFF\";\n}",
+              "showTooltip" : false,
               "grid" : {
                 "verticalLines" : true,
                 "horizontalLines" : true,

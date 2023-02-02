@@ -822,7 +822,7 @@
         "getLatestValueWithTs" : false
       },
       "createdTime" : 0,
-      "debugMode" : false,
+      "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -862,7 +862,7 @@
         }
       },
       "createdTime" : 0,
-      "debugMode" : false,
+      "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -880,7 +880,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var newMsg = {\r\n          \"outsideTemp\": msg.main.temp,\r\n          \"outsideMaxTemp\": msg.main.temp_max,\r\n          \"outsideMinTemp\": msg.main.temp_min,\r\n          \"outsideHumidity\": msg.main.humidity,\r\n      };"
+        "tbelScript" : " var newMsg = {\r\n          \"outsideTemp\": msg.main.temp,\r\n          \"outsideMaxTemp\": msg.main.temp_max,\r\n          \"outsideMinTemp\": msg.main.temp_min,\r\n          \"outsideHumidity\": msg.main.humidity,\r\n      };\r\n      \r\n      \r\n      return {msg: newMsg, metadata: metadata, msgType: msgType};"
       },
       "createdTime" : 0,
       "debugMode" : true,

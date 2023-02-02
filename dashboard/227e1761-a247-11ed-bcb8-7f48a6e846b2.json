@@ -257,12 +257,16 @@
                 "icon" : "settings",
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
-                "type" : "customPretty",
-                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\r\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\r\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\r\n        <h2>Impostazioni del dispositivo</h2>\r\n        <span fxFlex></span>\r\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\r\n            <mat-icon class=\"material-icons\">close</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\"></mat-progress-bar>\r\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\r\n    <div mat-dialog-content fxLayout=\"column\">\r\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\r\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Impostazioni del dispositivo</span><br>\r\n            <div>Frequenza dati (si applica alla prossima variazione della commessa/materiale)</div>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Nuova frequenza dati</mat-label>\r\n                <input matInput type=\"number\" placeholder=\"Es: 15\" formControlName=\"frequenza_nuova\" required>\r\n            </mat-form-field>\r\n        </div>\r\n    </div>\r\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n        <button mat-button color=\"primary\" type=\"button\"\r\n                [disabled]=\"(isLoading$ | async)\"\r\n                (click)=\"cancel()\" cdkFocusInitial>\r\n            Cancella\r\n        </button>\r\n        <button mat-button mat-raised-button color=\"primary\" type=\"submit\"\r\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\r\n            Invia\r\n        </button>\r\n    </div>\r\n</form>\r\n",
-                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
-                "customFunction" : "let $injector = widgetContext.$scope.$injector;\r\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\r\nlet assetService = $injector.get(widgetContext.servicesMap.get('assetService'));\r\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\r\nlet attributeService = $injector.get(widgetContext.servicesMap.get('attributeService'));\r\nlet entityRelationService = $injector.get(widgetContext.servicesMap.get('entityRelationService'));\r\n\r\nvar frequenza_attuale;\r\nwidgetContext.http.get('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/values/attributes/?keys=FrqCampione').subscribe(data =>\r\n        {\r\n            frequenza_attuale=data[0].value;\r\n        },function(error){\r\n            console.log(error)\r\n        })\r\n\r\nopenAddEntityDialog();\r\n\r\nfunction openAddEntityDialog() {\r\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\r\n}\r\n\r\nfunction AddEntityDialogController(instance) {\r\n    let vm = instance;\r\n    vm.addEntityFormGroup = vm.fb.group({\r\n     frequenza_nuova:[null, [vm.validators.required]],\r\n    });\r\n\r\n    vm.cancel = function() {\r\n        vm.dialogRef.close(null);\r\n    };\r\n    vm.save = function() {\r\n        var formData=vm.addEntityFormGroup.value;\r\n        vm.addEntityFormGroup.markAsPristine();\r\n        var date=Date.now();\r\n        var attrData={\"FrqCampione\":formData.frequenza_nuova};\r\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/attributes/SHARED_SCOPE', attrData).subscribe(data =>\r\n        {\r\n            vm.dialogRef.close(null);\r\n        },function(error){\r\n            console.log(error)\r\n        })\r\n    };\r\n\r\n}\r\n",
-                "customResources" : [ ],
-                "openInSeparateDialog" : false,
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "modifica_telemetrie",
+                "setEntityId" : true,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "dialogTitle" : "",
+                "dialogHideDashboardToolbar" : true,
+                "dialogWidth" : 80,
+                "dialogHeight" : 80,
+                "openInSeparateDialog" : true,
                 "openInPopover" : false,
                 "id" : "dd7705c4-da4c-2fa7-1d37-9b531474c725"
               } ]
@@ -2339,10 +2343,47 @@
               "dataKeys" : [ {
                 "name" : "IdScavo",
                 "type" : "timeseries",
-                "label" : "IdScavo",
+                "label" : "Codice Scavo",
                 "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.3839458540125731
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "timeseries",
+                  "dataKeyValueType" : "string",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "useCustomIcon" : false,
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.3839458540125731,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "UbicaziScavo",
+                "type" : "timeseries",
+                "label" : "Luogo Scavo",
+                "color" : "#4caf50",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "timeseries",
+                  "dataKeyValueType" : "string",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "useCustomIcon" : false,
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.025163700088736363,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ]
             } ],
             "timewindow" : {

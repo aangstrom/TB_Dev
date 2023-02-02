@@ -2205,19 +2205,6 @@
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
-              }, {
-                "name" : "spinta_avanti",
-                "type" : "timeseries",
-                "label" : "Spinta Avanti",
-                "color" : "#f44336",
-                "settings" : { },
-                "_hash" : 0.8839242474773152,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
               } ],
               "latestDataKeys" : [ ]
             } ],
@@ -2234,7 +2221,11 @@
               "stack" : false,
               "fontSize" : 10,
               "fontColor" : "#545454",
-              "showTooltip" : false,
+              "showTooltip" : true,
+              "tooltipIndividual" : false,
+              "tooltipCumulative" : false,
+              "hideZeros" : false,
+              "tooltipValueFormatter" : "if (value===true) {\n    return \"ON\";\n}else{\n    return \"OFF\";\n}",
               "grid" : {
                 "verticalLines" : true,
                 "horizontalLines" : true,
@@ -2858,14 +2849,12 @@
         "hideTimezone" : false,
         "selectedTab" : 1,
         "history" : {
-          "historyType" : 0,
-          "timewindowMs" : 86400000,
-          "interval" : 5185000,
+          "historyType" : 1,
           "fixedTimewindow" : {
-            "startTimeMs" : 1675248838942,
-            "endTimeMs" : 1675335238942
+            "startTimeMs" : 1.6753207701205332E12,
+            "endTimeMs" : 1675345867967
           },
-          "quickInterval" : "CURRENT_DAY"
+          "interval" : 3585000
         },
         "aggregation" : {
           "type" : "NONE",

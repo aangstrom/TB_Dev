@@ -5,7 +5,6 @@
       "description" : ""
     },
     "configuration" : null,
-    "createdTime" : 1666169916416,
     "debugMode" : false,
     "externalId" : null,
     "firstRuleNodeId" : null,
@@ -15,7 +14,6 @@
     },
     "name" : "Camera Api",
     "root" : false,
-    "tenantId" : null,
     "type" : "CORE"
   },
   "metaData" : {
@@ -76,7 +74,7 @@
         }
       },
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -95,7 +93,7 @@
         "jsScript" : "var string = msg.result.replaceAll('\\r\\n', ',').replaceAll('TempInfo.', '').replaceAll('=', ':');\nvar json = { \n            TemperAver: string.split(\",\")[0].split(\":\")[1],\n            TemperMax: string.split(\",\")[1].split(\":\")[1],\n            TemperMid: string.split(\",\")[2].split(\":\")[1],\n            TemperMin: string.split(\",\")[3].split(\":\")[1],\n            TemperStd: string.split(\",\")[4].split(\":\")[1],\n            TempereratureUnit: string.split(\",\")[5].split(\":\")[1],\n            Type: string.split(\",\")[6].split(\":\")[1],\n};\n\nreturn{msg: json, msgType: \"POST_TELEMETRY_REQUEST\"};"
       },
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -175,7 +173,7 @@
         }
       },
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -194,7 +192,7 @@
         "jsScript" : "var t= decodeToJson(msg);\nvar json = { \n    image: t,\n    data: metadata\n};\nfunction decodeToString(payload) {\n    return String.fromCharCode.apply(String, payload);\n}\nfunction decodeToJson(payload) {\n    var str = decodeToString(payload);\n    var data = JSON.parse(str);\n    return data;\n}\nreturn {msg: t, metadata: metadata, msgType: msgType};"
       },
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -206,6 +204,7 @@
     } ],
     "ruleChainConnections" : null
   },
+  "relations" : [ ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
   }

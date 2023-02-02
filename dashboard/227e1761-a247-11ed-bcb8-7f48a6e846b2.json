@@ -2225,7 +2225,7 @@
               "tooltipIndividual" : false,
               "tooltipCumulative" : false,
               "hideZeros" : false,
-              "tooltipValueFormatter" : "if (value===true) {\n    return \"ON\";\n}else{\n    return \"OFF\";\n}",
+              "tooltipValueFormatter" : "if (value==\"true\") {\n    return \"ON\";\n}else{\n    return \"OFF\";\n}",
               "grid" : {
                 "verticalLines" : true,
                 "horizontalLines" : true,
@@ -2847,14 +2847,12 @@
         "hideAggregation" : false,
         "hideAggInterval" : false,
         "hideTimezone" : false,
-        "selectedTab" : 1,
-        "history" : {
-          "historyType" : 1,
-          "fixedTimewindow" : {
-            "startTimeMs" : 1.6753207701205332E12,
-            "endTimeMs" : 1675345867967
-          },
-          "interval" : 3585000
+        "selectedTab" : 0,
+        "realtime" : {
+          "realtimeType" : 0,
+          "timewindowMs" : 3600000,
+          "quickInterval" : "CURRENT_DAY",
+          "interval" : 1000
         },
         "aggregation" : {
           "type" : "NONE",

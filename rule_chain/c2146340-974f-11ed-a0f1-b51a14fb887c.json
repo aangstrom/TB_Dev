@@ -335,7 +335,7 @@
       },
       "configuration" : {
         "msgCount" : 0,
-        "periodInSeconds" : 120,
+        "periodInSeconds" : 300,
         "scriptLang" : "TBEL",
         "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar occupancy;\nswitch(hour) {\n  case 8:\n  case 9:\n  case 10:\n  case 11:\n  case 12:\n  case 14:\n  case 15:\n  case 16:\n  case 17:\n    occupancy = Math.random() < 0.7;\n    break;\n  default:\n    occupancy = Math.random() < 0.1;\n}\nvar temperature = 18 + Math.random() * (32 - 18);\ntemperature = Math.round( temperature * 100 ) / 100;\nvar humidity = 10 + Math.random() * (90 - 10);\nhumidity = Math.round( humidity * 100 ) / 100;\nvar co2 = 150 + Math.random() * (300 - 0);\nco2 = Math.round( co2 * 100 ) / 100;\nvar tvoc = Math.random() * (5.5 - 0);\ntvoc = Math.round( tvoc * 100 ) / 100;\noccupancy = Math.round( occupancy * 100 ) / 100;\nvar msg = { \n            co2: co2,\n            occupancy: occupancy,\n            temperature: temperature,\n            humidity: humidity,\n            tvoc: tvoc\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
         "tbelScript" : "var hour = new Date().getHours();\nvar occupancy;\nif(hour>=8 && hour<=12)  {\n    occupancy = Math.random() < 0.7;\n} else if(hour>=14 && hour<=17) {\n    occupancy = Math.random() < 0.7;\n} else {\n    occupancy = Math.random() < 0.1;\n}\nvar temperature = 18 + Math.random() * (32 - 18);\ntemperature = toFixed(temperature,2);\nvar humidity = 10 + Math.random() * (90 - 10);\nhumidity = toFixed(humidity,2);\nvar co2 = 150 + Math.random() * (300 - 0);\nco2 = toFixed(co2,2);\nvar tvoc = Math.random() * (5.5 - 0);\ntvoc = toFixed(tvoc,2);\nvar msg = { \n            co2: co2,\n            occupancy: occupancy,\n            temperature: temperature,\n            humidity: humidity,\n            tvoc: tvoc\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
@@ -360,7 +360,7 @@
       },
       "configuration" : {
         "msgCount" : 0,
-        "periodInSeconds" : 120,
+        "periodInSeconds" : 300,
         "scriptLang" : "TBEL",
         "jsScript" : "var airFlow = Math.random() * (0.2 - 0) + 0.1;\nairFlow = Math.round( airFlow * 1000 ) / 1000;\nvar msg = {\n    airFlow: airFlow\n};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var airFlow = Math.random() * (0.2 - 0) + 0.1;\nairFlow = Math.round( airFlow * 1000 ) / 1000;\nvar msg = {\n    airFlow: airFlow\n};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
@@ -385,7 +385,7 @@
       },
       "configuration" : {
         "msgCount" : 0,
-        "periodInSeconds" : 120,
+        "periodInSeconds" : 300,
         "scriptLang" : "TBEL",
         "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar water;\nswitch(hour) {\n  case 8:\n  case 9:\n  case 10:\n  case 11:\n  case 15:\n  case 16:\n  case 17:\n  case 18:\n    water = (Math.random() * (10 - 0) + 0).toFixed(2);\n    break;\n  case 12:\n  case 13:\n  case 14:\n    water = (Math.random() * (20 - 0) + 0).toFixed(2);\n    break;\n  default:\n    water = null;\n}\nwater = Math.round( water * 100 ) / 100;\nvar voltage = 14;\nvar msg = {\n    water: water,\n    voltage: voltage\n};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var hour = new Date().getHours();\nvar water;\nif(hour>=8 && hour<=18) {\n    if(hour>=12 && hour<=14) {\n        water = Math.random() * (20 - 0) + 0;\n    } else {\n        water = Math.random() * (10 - 0) + 0;\n    }\n} else {\n    water = null;\n}\nwater = toFixed(water,2);\nvar voltage = 14;\nvar msg = {\n    water: water,\n    voltage: voltage\n};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
@@ -410,7 +410,7 @@
       },
       "configuration" : {
         "msgCount" : 0,
-        "periodInSeconds" : 120,
+        "periodInSeconds" : 300,
         "scriptLang" : "TBEL",
         "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar amperage, energy, frequency, power, voltage;\nswitch(hour) {\n  case 8:\n  case 9:\n  case 10:\n  case 11:\n  case 12:\n  case 13:\n  case 14:\n  case 15:\n  case 16:\n  case 17:\n    amperage = (Math.random() * (5 - 0) + 10).toFixed(1);\n    frequency = (Math.random() * (50 - 0) + 10).toFixed(1);\n    power = Math.random() * (970 - 0) + 30;\n    power = Math.round( power * 100 ) / 100;\n    energy = power;\n    voltage = (Math.random() * (10 - 0) + 220).toFixed(2);\n    break;\n  default:\n    amperage = 0.1 + (Math.random() * (0.1 - 0) + 0).toFixed(1);\n    frequency = 10;\n    power = Math.random() * (40 - 0) + 10;\n    energy = power;\n    voltage = 0.5;\n}\namperage = Math.round( amperage * 100 ) / 100;\nfrequency = Math.round( frequency * 100 ) / 100;\nvoltage = Math.round( voltage * 100 ) / 100;\nvar msg = {\n    amperage: amperage,\n    energy: energy,\n    frequency: frequency,\n    power: power,\n    voltage: voltage\n};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var hour = new Date().getHours();\nvar amperage;\nvar energy;\nvar frequency;\nvar power;\nvar voltage;\nif(hour>=8 && hour<=17){\n    amperage = Math.random() * (5 - 0) + 10;\n    frequency = Math.random() * (50 - 0) + 10;\n    power = Math.random() * (970 - 0) + 30;\n    power = Math.round( power * 100 ) / 100;\n    energy = power;\n    voltage = Math.random() * (10 - 0) + 220;\n} else {\n    amperage = 0.1 + Math.random() * (0.1 - 0) + 0;\n    frequency = 10;\n    power = Math.random() * (40 - 0) + 10;\n    energy = power;\n    voltage = 0.5;\n}\namperage = toFixed(amperage,1);\nfrequency = toFixed(frequency,1);\nvoltage = toFixed(voltage,2);\nvar msg = {\n    amperage: amperage,\n    energy: energy,\n    frequency: frequency,\n    power: power,\n    voltage: voltage\n};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",

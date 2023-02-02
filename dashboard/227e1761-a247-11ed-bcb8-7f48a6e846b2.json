@@ -171,18 +171,6 @@
                 "settings" : { },
                 "_hash" : 0.7615309822661729
               }, {
-                "name" : "IdScavo",
-                "type" : "timeseries",
-                "label" : "IdScavo",
-                "color" : "#f44336",
-                "settings" : { },
-                "_hash" : 0.7651862998973138,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : false,
-                "postFuncBody" : null
-              }, {
                 "name" : "UbicaziScavo",
                 "type" : "timeseries",
                 "label" : "UbicaziScavo",
@@ -190,24 +178,19 @@
                 "settings" : { },
                 "_hash" : 0.8252999362854097
               }, {
-                "name" : "FrqCampione",
-                "type" : "attribute",
-                "label" : "FrqCampione",
-                "color" : "#607d8b",
-                "settings" : { },
-                "_hash" : 0.5517382774454826,
-                "units" : "s",
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : false,
-                "postFuncBody" : null
-              }, {
                 "name" : "materialeScavo",
                 "type" : "timeseries",
                 "label" : "materialeScavo",
                 "color" : "#9c27b0",
                 "settings" : { },
                 "_hash" : 0.24411283405983997
+              }, {
+                "name" : "IdScavo",
+                "type" : "timeseries",
+                "label" : "IdScavo",
+                "color" : "#3f51b5",
+                "settings" : { },
+                "_hash" : 0.526138486036233
               } ]
             } ],
             "timewindow" : {
@@ -540,18 +523,6 @@
                 "usePostProcessing" : true,
                 "postFuncBody" : "if(value==\"true\"){\n    return '<div style=\"color:green;font-size:15px;\">&#11044</div>';\n}\nelse{\n    return '<div style=\"color:red;font-size:15px;\">&#11044</div>';\n}"
               }, {
-                "name" : "preallarme_off",
-                "type" : "timeseries",
-                "label" : "preallarme_off",
-                "color" : "#4caf50",
-                "settings" : { },
-                "_hash" : 0.06497388290868766,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "if(value==\"true\"){\n    return '<div style=\"color:green;font-size:15px;\">&#11044</div>';\n}\nelse{\n    return '<div style=\"color:red;font-size:15px;\">&#11044</div>';\n}"
-              }, {
                 "name" : "rotazione_Attiva",
                 "type" : "timeseries",
                 "label" : "rotazione_Attiva",
@@ -570,18 +541,6 @@
                 "color" : "#f44336",
                 "settings" : { },
                 "_hash" : 0.46084177530936077,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "if(value==\"true\"){\n    return '<div style=\"color:green;font-size:15px;\">&#11044</div>';\n}\nelse{\n    return '<div style=\"color:red;font-size:15px;\">&#11044</div>';\n}"
-              }, {
-                "name" : "fine_scavo",
-                "type" : "timeseries",
-                "label" : "fine_scavo",
-                "color" : "#ffc107",
-                "settings" : { },
-                "_hash" : 0.05171780679444793,
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
@@ -649,7 +608,7 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "cardHtml" : "<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <h1>Stati Macchina</h1>\n            <div class=\"row\">\n                <li>Allarme:&nbsp;${allarme_off}</li>\n                <li>Preallarme:&nbsp;${preallarme_off}</li>\n                <li>In inserimento tubo:&nbsp;${ins_tubo}</li>\n                <li>Fine scavo:&nbsp;${fine_scavo}</li>\n                <li>Direzione spinta:&nbsp;${avanti}${indietro}</li>\n                <li>Fresa in rotazione:&nbsp;${rotazione_Attiva}</li>\n            </div>\n        </div>\n    </div>\n</div>",
+              "cardHtml" : "<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <h1>Stati Macchina</h1>\n            <div class=\"row\">\n                <li>Allarme:&nbsp;${allarme_off}</li>\n                <li>In inserimento tubo:&nbsp;${ins_tubo}</li>\n                <li>Direzione spinta:&nbsp;${avanti}${indietro}</li>\n                <li>Fresa in rotazione:&nbsp;${rotazione_Attiva}</li>\n            </div>\n        </div>\n    </div>\n</div>",
               "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content {\n   padding: 22px;\n   display: flex;\n   flex-direction: row;\n   height: 100%;\n   align-items: center;\n   justify-content: space-around;\n   box-sizing: border-box;\n}\n\n.row {\n    display: flex;\n    font-size: 18px;\n    flex-direction: row;\n    flex-wrap: wrap;\n    list-style-type: none;\n}\nli{\n    display: flex;\n    margin-right: 10px;\n}\n\n.card .content .column {\n   display: flex;\n   flex-direction: column;    \n   justify-content: space-around;\n   height: 100%;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 20px;\n    font-weight: bold;\n    margin: 0;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n"
             },
             "title" : "New HTML Value Card",

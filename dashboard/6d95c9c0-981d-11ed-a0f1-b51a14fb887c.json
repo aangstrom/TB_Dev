@@ -540,8 +540,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1675269833371,
-                  "endTimeMs" : 1675356233371
+                  "startTimeMs" : 1675271281365,
+                  "endTimeMs" : 1675357681365
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -621,8 +621,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1675269833371,
-                  "endTimeMs" : 1675356233371
+                  "startTimeMs" : 1675271281365,
+                  "endTimeMs" : 1675357681365
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -764,8 +764,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1675269833371,
-                  "endTimeMs" : 1675356233371
+                  "startTimeMs" : 1675271281365,
+                  "endTimeMs" : 1675357681365
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1185,8 +1185,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1675269833371,
-                  "endTimeMs" : 1675356233371
+                  "startTimeMs" : 1675271281365,
+                  "endTimeMs" : 1675357681365
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1318,8 +1318,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1675269833371,
-                  "endTimeMs" : 1675356233371
+                  "startTimeMs" : 1675271281365,
+                  "endTimeMs" : 1675357681365
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1457,8 +1457,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1675269833371,
-                  "endTimeMs" : 1675356233371
+                  "startTimeMs" : 1675271281365,
+                  "endTimeMs" : 1675357681365
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1490,6 +1490,99 @@
           "row" : 0,
           "col" : 0,
           "id" : "83ae368a-6474-8374-600c-3de2eecd7c1a"
+        },
+        "fa91a1b5-1ef7-311f-ace4-4c7a2e42a70f" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "1f06734d-984b-1dd3-65fd-6bad8d13010d",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "person",
+                "type" : "timeseries",
+                "label" : "person",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.6805223854806963
+              }, {
+                "name" : "car",
+                "type" : "timeseries",
+                "label" : "car",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.9903034111595033
+              }, {
+                "name" : "bb",
+                "type" : "attribute",
+                "label" : "bb",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.7307565655819446,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "return value;"
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1675270415463,
+                  "endTimeMs" : 1675356815463
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "\n\n\t<script src=\"https://code.jquery.com/jquery-3.6.3.js\"\n\t\tintegrity=\"sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=\" crossorigin=\"anonymous\">\n\t    \n\t</script>\n\n\n\n<img id=\"motionjpeg\" src=\"https://cam.aangstrom.it/api/market?bbox=1\" />\n\n<script type=\"text/javascript\">\n\t$(document).ready(function () {\n\t\tmotionjpeg(\"#motionjpeg\"); // Use the function on the image\n\t});\n\tfunction motionjpeg(id) {\n\t\tvar image = $(id), src;\n\n\t\tif (!image.length) return;\n\n\t\tsrc = image.attr(\"src\");\n\t\tif (src.indexOf(\"?\") > 0) {\n\t\t\timage.attr(\"src\", src + \"?\"); // must have querystring\n\t\t}\n\n\t\timage.on(\"load\", function () {\n\t\t\t// this cause the load event to be called \"recursively\"\n\t\t\tthis.src = this.src.replace(/\\?[^\\n]*$/, \"?\") +\n\t\t\t\t(new Date()).getTime(); // 'this' refers to the image\n\t\t});\n\t}\n</script>\n",
+              "cardCss" : ".card {\n    font-weight: bold;\n    font-size: 32px;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "fa91a1b5-1ef7-311f-ace4-4c7a2e42a70f"
         }
       },
       "states" : {
@@ -1594,6 +1687,12 @@
                   "sizeY" : 6,
                   "row" : 21,
                   "col" : 0
+                },
+                "fa91a1b5-1ef7-311f-ace4-4c7a2e42a70f" : {
+                  "sizeX" : 8,
+                  "sizeY" : 6,
+                  "row" : 21,
+                  "col" : 8
                 }
               },
               "gridSettings" : {

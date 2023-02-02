@@ -792,7 +792,7 @@
         "periodInSeconds" : 60,
         "scriptLang" : "TBEL",
         "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "return { msg: {}, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };",
+        "tbelScript" : "return { msg: {}, metadata: {}, msgType: \"POST_ATTRIBUTE_REQUEST\" };",
         "originatorId" : "eccb2a30-9649-11ed-a0f1-b51a14fb887c",
         "originatorType" : "ASSET"
       },
@@ -838,7 +838,7 @@
         "layoutY" : 30
       },
       "configuration" : {
-        "restEndpointUrlPattern" : "https://api.openweathermap.org/data/2.5/weather?lat=${ss_latitude}&lon=${ss_longitude}&appid=e44f5f3e8074d38034d3e63533c468a6",
+        "restEndpointUrlPattern" : "https://api.openweathermap.org/data/2.5/weather?lat=${ss_latitude}&lon=${ss_longitude}&units=metric&appid=e44f5f3e8074d38034d3e63533c468a6",
         "requestMethod" : "GET",
         "useSimpleClientHttpFactory" : false,
         "ignoreRequestBody" : false,
@@ -880,7 +880,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : " var newMsg = {\r\n          \"outsideTemp\": msg.main.temp,\r\n          \"outsideMaxTemp\": msg.main.temp_max,\r\n          \"outsideMinTemp\": msg.main.temp_min,\r\n          \"outsideHumidity\": msg.main.humidity,\r\n      };\r\n      \r\n      \r\n      return {msg: newMsg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var newMsg = {\r\n    \"weather\": msg.weather[0].main,\r\n    \"weather_icon\": msg.weather[0].icon,\r\n    \"outsideTemp\": msg.main.temp,\r\n    \"outsideMaxTemp\": msg.main.temp_max,\r\n    \"outsideMinTemp\": msg.main.temp_min,\r\n    \"outsideHumidity\": msg.main.humidity,\r\n};\r\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
       },
       "createdTime" : 0,
       "debugMode" : true,

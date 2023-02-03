@@ -298,8 +298,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493897,
+                  "endTimeMs" : 1675436893897
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -521,7 +521,7 @@
               "dataKeys" : [ {
                 "name" : "energy",
                 "type" : "timeseries",
-                "label" : "Energy Consumed ${name}",
+                "label" : "Energia ${name}",
                 "color" : "#673ab7",
                 "settings" : {
                   "showLines" : false,
@@ -591,7 +591,7 @@
               "tooltipIndividual" : false,
               "defaultBarWidth" : 600
             },
-            "title" : "Energy consumption",
+            "title" : "Energia consumata",
             "dropShadow" : false,
             "enableFullscreen" : true,
             "titleStyle" : {
@@ -618,7 +618,12 @@
               "showAvg" : true,
               "showTotal" : true
             },
-            "displayTimewindow" : true
+            "displayTimewindow" : true,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
           },
           "id" : "f9fcbc13-1a44-5114-a294-c6831e3494ab"
         },
@@ -639,7 +644,7 @@
               "dataKeys" : [ {
                 "name" : "voltage",
                 "type" : "timeseries",
-                "label" : "Voltage ${name}",
+                "label" : "Voltaggio ${name}",
                 "color" : "#2196f3",
                 "settings" : {
                   "showLines" : true,
@@ -658,7 +663,7 @@
               }, {
                 "name" : "frequency",
                 "type" : "timeseries",
-                "label" : "Frequency ${name}",
+                "label" : "Frequenza ${name}",
                 "color" : "#4caf50",
                 "settings" : {
                   "showLines" : true,
@@ -705,32 +710,47 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "8px",
             "settings" : {
-              "shadowSize" : 4,
-              "fontColor" : "#545454",
+              "stack" : false,
               "fontSize" : 10,
+              "fontColor" : "#545454",
+              "showTooltip" : true,
+              "tooltipIndividual" : false,
+              "tooltipCumulative" : false,
+              "hideZeros" : false,
+              "grid" : {
+                "verticalLines" : false,
+                "horizontalLines" : true,
+                "outlineWidth" : 0,
+                "color" : "#545454",
+                "backgroundColor" : null,
+                "tickColor" : "#DDDDDD"
+              },
               "xaxis" : {
+                "title" : null,
                 "showLabels" : true,
                 "color" : "#545454"
               },
               "yaxis" : {
+                "min" : null,
+                "max" : null,
+                "title" : "Volt, V",
                 "showLabels" : true,
                 "color" : "#545454",
-                "title" : "Voltage, V",
-                "titleAngle" : 90,
-                "tickDecimals" : 1
+                "tickSize" : null,
+                "tickDecimals" : 1,
+                "ticksFormatter" : ""
               },
-              "grid" : {
-                "color" : "#545454",
-                "tickColor" : "#DDDDDD",
-                "verticalLines" : false,
-                "horizontalLines" : true,
-                "outlineWidth" : 0
+              "shadowSize" : 4,
+              "smoothLines" : true,
+              "comparisonEnabled" : false,
+              "xaxisSecond" : {
+                "axisPosition" : "top",
+                "title" : null,
+                "showLabels" : true
               },
-              "stack" : false,
-              "tooltipIndividual" : false,
-              "smoothLines" : true
+              "customLegendEnabled" : false
             },
-            "title" : "Voltage and Frequency",
+            "title" : "Voltaggio and Frequenza",
             "dropShadow" : false,
             "enableFullscreen" : true,
             "titleStyle" : {
@@ -757,7 +777,12 @@
               "showTotal" : false
             },
             "actions" : { },
-            "displayTimewindow" : true
+            "displayTimewindow" : true,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
           },
           "id" : "762e5f79-91b0-5509-5b31-4e8cf685b974"
         },
@@ -798,8 +823,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493898,
+                  "endTimeMs" : 1675436893898
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -813,50 +838,39 @@
             "color" : "rgba(1, 1, 1, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "maxValue" : 250,
               "minValue" : 230,
-              "donutStartAngle" : 90,
-              "showValue" : true,
-              "showMinMax" : false,
+              "maxValue" : 250,
+              "gaugeType" : "verticalBar",
+              "defaultColor" : "#0277bd",
               "gaugeWidthScale" : 0.75,
+              "neonGlowBrightness" : 0,
+              "dashThickness" : 1.2,
+              "roundedLineCap" : false,
+              "gaugeColor" : "#b5dffb",
+              "useFixedLevelColor" : false,
               "levelColors" : [ ],
+              "showTitle" : true,
+              "title" : "Voltaggio",
               "titleFont" : {
                 "family" : "Roboto",
                 "size" : 8,
                 "style" : "normal",
                 "weight" : "500"
               },
-              "labelFont" : {
-                "family" : "Roboto",
-                "size" : 8,
-                "style" : "normal",
-                "weight" : "500"
-              },
+              "showUnitTitle" : false,
+              "showTimestamp" : false,
+              "showValue" : true,
               "valueFont" : {
                 "family" : "Roboto",
                 "style" : "normal",
                 "weight" : "500",
                 "size" : 12
               },
-              "minMaxFont" : {
-                "family" : "Segment7Standard",
-                "size" : 8,
-                "style" : "normal",
-                "weight" : "500",
-                "color" : "#ffffff"
-              },
-              "neonGlowBrightness" : 0,
-              "dashThickness" : 1.2,
-              "gaugeColor" : "#b5dffb",
-              "showTitle" : true,
-              "gaugeType" : "verticalBar",
-              "timestampFormat" : "yyyy-MM-dd HH:mm:ss",
+              "showMinMax" : false,
+              "showTicks" : false,
               "animation" : true,
               "animationDuration" : 500,
-              "animationRule" : "linear",
-              "title" : "Voltage",
-              "unitTitle" : "Voltage",
-              "defaultColor" : "#0277bd"
+              "animationRule" : "linear"
             },
             "title" : "New Vertical bar - justGage",
             "dropShadow" : false,
@@ -915,8 +929,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493898,
+                  "endTimeMs" : 1675436893898
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -930,48 +944,37 @@
             "color" : "rgba(1, 1, 1, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "maxValue" : 65,
               "minValue" : 45,
-              "donutStartAngle" : 90,
-              "showValue" : true,
-              "showMinMax" : false,
+              "maxValue" : 65,
+              "gaugeType" : "verticalBar",
               "gaugeWidthScale" : 0.75,
+              "neonGlowBrightness" : 0,
+              "dashThickness" : 1.2,
+              "roundedLineCap" : false,
+              "useFixedLevelColor" : false,
               "levelColors" : [ ],
+              "showTitle" : true,
+              "title" : "Frequenza",
               "titleFont" : {
                 "family" : "Roboto",
                 "size" : 8,
                 "style" : "normal",
                 "weight" : "500"
               },
-              "labelFont" : {
-                "family" : "Roboto",
-                "size" : 8,
-                "style" : "normal",
-                "weight" : "500"
-              },
+              "showUnitTitle" : false,
+              "showTimestamp" : false,
+              "showValue" : true,
               "valueFont" : {
                 "family" : "Roboto",
                 "style" : "normal",
                 "weight" : "500",
                 "size" : 12
               },
-              "minMaxFont" : {
-                "family" : "Segment7Standard",
-                "size" : 8,
-                "style" : "normal",
-                "weight" : "500",
-                "color" : "#ffffff"
-              },
-              "neonGlowBrightness" : 0,
-              "dashThickness" : 1.2,
-              "showTitle" : true,
-              "gaugeType" : "verticalBar",
-              "timestampFormat" : "yyyy-MM-dd HH:mm:ss",
+              "showMinMax" : false,
+              "showTicks" : false,
               "animation" : true,
               "animationDuration" : 500,
-              "animationRule" : "linear",
-              "title" : "Frequency",
-              "unitTitle" : "Frequency"
+              "animationRule" : "linear"
             },
             "title" : "New Vertical bar - justGage",
             "dropShadow" : false,
@@ -1010,10 +1013,16 @@
               "dataKeys" : [ {
                 "name" : "power",
                 "type" : "timeseries",
-                "label" : "power",
+                "label" : "potenza",
                 "color" : "#673ab7",
                 "settings" : { },
-                "_hash" : 0.5373482732538397
+                "_hash" : 0.5373482732538397,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ]
             } ],
             "timewindow" : {
@@ -1030,8 +1039,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1045,47 +1054,44 @@
             "color" : "rgba(1, 1, 1, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "maxValue" : 6000,
               "minValue" : 0,
+              "maxValue" : 6000,
+              "gaugeType" : "donut",
               "donutStartAngle" : 90,
-              "showValue" : true,
-              "showMinMax" : true,
               "gaugeWidthScale" : 1,
+              "neonGlowBrightness" : 0,
+              "dashThickness" : 1.5,
+              "roundedLineCap" : false,
+              "useFixedLevelColor" : false,
               "levelColors" : [ ],
+              "showTitle" : true,
+              "title" : "Potenza",
               "titleFont" : {
                 "family" : "Roboto",
                 "size" : 12,
                 "style" : "normal",
                 "weight" : "500"
               },
-              "labelFont" : {
-                "family" : "Roboto",
-                "size" : 8,
-                "style" : "normal",
-                "weight" : "500"
-              },
+              "showUnitTitle" : false,
+              "showTimestamp" : false,
+              "showValue" : true,
               "valueFont" : {
                 "family" : "Roboto",
                 "style" : "normal",
                 "weight" : "500",
                 "size" : 14
               },
+              "showMinMax" : true,
               "minMaxFont" : {
                 "family" : "Segment7Standard",
                 "size" : 12,
                 "style" : "normal",
                 "weight" : "500"
               },
-              "neonGlowBrightness" : 0,
-              "dashThickness" : 1.5,
-              "gaugeType" : "donut",
+              "showTicks" : false,
               "animation" : true,
               "animationDuration" : 500,
-              "animationRule" : "linear",
-              "timestampFormat" : "yyyy-MM-dd HH:mm:ss",
-              "showTitle" : true,
-              "title" : "Power",
-              "unitTitle" : "Power"
+              "animationRule" : "linear"
             },
             "title" : "New Simple neon gauge - justGage",
             "dropShadow" : false,
@@ -1124,7 +1130,7 @@
               "dataKeys" : [ {
                 "name" : "amperage",
                 "type" : "timeseries",
-                "label" : "Current ${name}",
+                "label" : "Corrente ${name}",
                 "color" : "#f44336",
                 "settings" : {
                   "showLines" : true,
@@ -1143,7 +1149,7 @@
               }, {
                 "name" : "power",
                 "type" : "timeseries",
-                "label" : "Power ${name}",
+                "label" : "Potenza ${name}",
                 "color" : "#673ab7",
                 "settings" : {
                   "showLines" : true,
@@ -1215,7 +1221,7 @@
               "tooltipIndividual" : false,
               "smoothLines" : true
             },
-            "title" : "Current (Amperage) and Power",
+            "title" : "Corrente (A) e Potenza",
             "dropShadow" : false,
             "enableFullscreen" : true,
             "titleStyle" : {
@@ -1242,7 +1248,12 @@
               "showTotal" : false
             },
             "actions" : { },
-            "displayTimewindow" : true
+            "displayTimewindow" : true,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
           },
           "id" : "bcce547e-b105-aea0-1d0c-81d67a3c4123"
         },
@@ -1484,8 +1495,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1997,8 +2008,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -2115,8 +2126,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -2225,8 +2236,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -2339,8 +2350,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -2455,8 +2466,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -2470,47 +2481,44 @@
             "color" : "rgba(1, 1, 1, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "maxValue" : 25,
               "minValue" : 0,
+              "maxValue" : 25,
+              "gaugeType" : "donut",
               "donutStartAngle" : 90,
-              "showValue" : true,
-              "showMinMax" : true,
               "gaugeWidthScale" : 1,
-              "levelColors" : [ ],
+              "neonGlowBrightness" : 0,
+              "dashThickness" : 1.5,
+              "roundedLineCap" : false,
+              "useFixedLevelColor" : false,
+              "showTitle" : true,
+              "title" : "Corrente",
               "titleFont" : {
                 "family" : "Roboto",
                 "size" : 12,
                 "style" : "normal",
                 "weight" : "500"
               },
-              "labelFont" : {
-                "family" : "Roboto",
-                "size" : 8,
-                "style" : "normal",
-                "weight" : "500"
-              },
+              "showUnitTitle" : false,
+              "showTimestamp" : false,
+              "showValue" : true,
               "valueFont" : {
                 "family" : "Roboto",
                 "style" : "normal",
                 "weight" : "500",
                 "size" : 14
               },
+              "showMinMax" : true,
               "minMaxFont" : {
                 "family" : "Segment7Standard",
                 "size" : 12,
                 "style" : "normal",
                 "weight" : "500"
               },
-              "neonGlowBrightness" : 0,
-              "dashThickness" : 1.5,
-              "gaugeType" : "donut",
+              "showTicks" : false,
               "animation" : true,
               "animationDuration" : 500,
               "animationRule" : "linear",
-              "timestampFormat" : "yyyy-MM-dd HH:mm:ss",
-              "showTitle" : true,
-              "title" : "Current",
-              "unitTitle" : "Current"
+              "levelColors" : [ ]
             },
             "title" : "New Simple neon gauge - justGage",
             "dropShadow" : false,
@@ -2954,8 +2962,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -2969,7 +2977,7 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "cardHtml" : "<div class='card' id=\"energyConsumptionHtmlCard\">\n    <div class='content'>\n       <div class='upper-bar'>\n           <video loop muted autoplay>\n               <source src=\"https://thingsboard.io/images/dashboards/districts/energy-consumed-bg.mp4\" type=\"video/mp4\">\n               <source src=\"https://thingsboard.io/images/dashboards/districts/energy-consumed-bg.webm\" type=\"video/webm\">\n           </video>\n            <div class='image-shade'>\n                <h1>Total</h1>\n                <div class='value'>${energy:2} kWh</div>\n            </div>\n       </div>\n       <div class='lower-bar'>\n           <div class='icon-container'>\n               <div class='material-icons icon'>flash_on</div>\n           </div>\n           <div class='description'>Energy consumed per minute</div>\n       </div>\n       <div class='right-top-bar'>\n           <div class='icon-container'>\n               <div id='open-statistics' class='material-icons icon'>flash_on</div>\n           </div>\n       </div>\n    </div>\n</div>",
+              "cardHtml" : "<div class='card' id=\"energyConsumptionHtmlCard\">\n    <div class='content'>\n       <div class='upper-bar'>\n           <video loop muted autoplay>\n               <source src=\"https://thingsboard.io/images/dashboards/districts/energy-consumed-bg.mp4\" type=\"video/mp4\">\n               <source src=\"https://thingsboard.io/images/dashboards/districts/energy-consumed-bg.webm\" type=\"video/webm\">\n           </video>\n            <div class='image-shade'>\n                <h1>Totale</h1>\n                <div class='value'>${energy:2} kWh</div>\n            </div>\n       </div>\n       <div class='lower-bar'>\n           <div class='icon-container'>\n               <div class='material-icons icon'>flash_on</div>\n           </div>\n           <div class='description'>Energia consumata al minuto</div>\n       </div>\n       <div class='right-top-bar'>\n           <div class='icon-container'>\n               <div id='open-statistics' class='material-icons icon'>flash_on</div>\n           </div>\n       </div>\n    </div>\n</div>",
               "cardCss" : ".card,\n.card * {\n    box-sizing: border-box;\n}    \n.card {\n    position: relative;\n    width: 100%;\n    height: 100%;\n}\n.card .content {\n    height: 100%;\n}\n.card .upper-bar {\n    position: relative;\n    z-index: 0;\n    overflow: hidden;\n    height: 70%;\n    box-shadow: 0 1px 3px 0 rgba(0,0,0,.26);\n    color: #fff;\n}\n.card .lower-bar {\n    height: 30%;\n    padding-left: 16px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n\n.card .right-top-bar {\n    display: none;\n    position: absolute;\n    top: 10px;\n    right: 10px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n\n.card .right-top-bar .icon-container {\n    display: none;\n    box-shadow: 0px 0px 4px 2px rgba(0,0,0,.26);\n    cursor: pointer;\n    border: 3px solid #fff;\n    color: #fff;\n    background-color: rgb(255, 157, 12);\n}\n\n.card .right-top-bar .icon-container .icon {\n    color: #fff;\n}\n\n.card .right-top-bar .icon-container:hover {\n    border: 3px solid rgb(255, 157, 12);\n    color: rgb(255, 157, 12);\n    background-color: #fff;\n}\n\n.card .right-top-bar .icon-container:hover .icon {\n    color: rgb(255, 157, 12);\n}\n\n.card .image-shade {\n    width: 100%;\n    height: 100%;\n    padding-left: 16px;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    background-color: rgba(255, 157, 12, .5);\n    z-index: 0;\n}\n.card h1 {\n    margin: 0;\n    font-size: 20px;\n    font-weight: bold;\n    line-height: 30px;\n}\n.card .icon-container {\n    height: 40px;\n    width: 40px;\n    border-radius: 50%;\n    border: 3px solid rgb(255, 157, 12);\n    text-align: center;\n}\n.card .description {\n    margin-left: 16px;\n    font-size: 20px;\n    font-weight: 500;\n    color: rgb(255, 157, 12);\n}\n.card .value {\n    font-size: 40px;\n    font-weight: 300;\n    letter-spacing: -2px;\n}\n.card .icon {\n    line-height: 36px;\n    color: rgb(255, 157, 12);\n}\n.card video {\n    position: absolute;\n    top: 75%;\n    left: 0;\n    width: 160%;\n    z-index: -1;\n    transform: translateY(-70%);\n}"
             },
             "title" : "New HTML Value Card",
@@ -3030,8 +3038,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3124,8 +3132,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3187,8 +3195,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3349,8 +3357,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3510,8 +3518,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3654,8 +3662,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3830,8 +3838,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -4012,8 +4020,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -4191,8 +4199,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -4288,8 +4296,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -4480,8 +4488,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -4577,8 +4585,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -4805,8 +4813,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -4876,8 +4884,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -5063,8 +5071,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -5451,8 +5459,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -5540,8 +5548,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -5671,8 +5679,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -5879,8 +5887,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -5956,50 +5964,6 @@
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
-              }, {
-                "name" : "active",
-                "type" : "attribute",
-                "label" : "Stato",
-                "color" : "#f44336",
-                "settings" : {
-                  "dataKeyHidden" : false,
-                  "dataKeyType" : "server",
-                  "dataKeyValueType" : "string",
-                  "required" : false,
-                  "isEditable" : "disabled",
-                  "useCustomIcon" : false,
-                  "useGetValueFunction" : false,
-                  "useSetValueFunction" : false
-                },
-                "_hash" : 0.6998266730229139,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "if(value=='true') {\n    return \"Acceso\";\n}else{\n    return \"Spento\";\n}"
-              }, {
-                "name" : "vdd",
-                "type" : "timeseries",
-                "label" : "Batteria",
-                "color" : "#ffc107",
-                "settings" : {
-                  "dataKeyHidden" : false,
-                  "dataKeyType" : "server",
-                  "dataKeyValueType" : "string",
-                  "required" : false,
-                  "isEditable" : "disabled",
-                  "useCustomIcon" : false,
-                  "useGetValueFunction" : false,
-                  "useSetValueFunction" : false
-                },
-                "_hash" : 0.7586760925080354,
-                "aggregationType" : "NONE",
-                "units" : "%",
-                "decimals" : 2,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "return (value/5000)*100+\"%\";"
               } ]
             } ],
             "timewindow" : {
@@ -6016,8 +5980,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1674049886206,
-                  "endTimeMs" : 1674136286206
+                  "startTimeMs" : 1675350493899,
+                  "endTimeMs" : 1675436893899
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -6876,7 +6840,6 @@
       },
       "filters" : { }
     },
-    "createdTime" : 1673946071408,
     "customerId" : null,
     "externalId" : null,
     "id" : {
@@ -6888,7 +6851,6 @@
     "mobileOrder" : null,
     "name" : "Fabbrica",
     "ownerId" : null,
-    "tenantId" : null,
     "title" : "Fabbrica"
   },
   "relations" : [ ],

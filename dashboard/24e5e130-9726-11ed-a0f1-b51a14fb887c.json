@@ -153,235 +153,6 @@
           },
           "id" : "783e83b2-bb20-460b-b4a4-7fbbc08aa27c"
         },
-        "40d59849-9d6a-6de4-a023-76ea9fe29a5a" : {
-          "isSystemType" : true,
-          "bundleAlias" : "charts",
-          "typeAlias" : "basic_timeseries",
-          "type" : "timeseries",
-          "title" : "New widget",
-          "sizeX" : 22,
-          "sizeY" : 11,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "dataKeys" : [ {
-                "name" : "temperature",
-                "type" : "timeseries",
-                "label" : "Temperature",
-                "color" : "#ff5722",
-                "settings" : {
-                  "showLines" : true,
-                  "fillLines" : false,
-                  "showPoints" : false,
-                  "showSeparateAxis" : false,
-                  "axisPosition" : "left"
-                },
-                "_hash" : 0.7387395503161205,
-                "units" : "°C",
-                "decimals" : 1
-              } ],
-              "entityAliasId" : "3c5dbaaf-e9af-bee3-891e-7202c319af16"
-            }, {
-              "type" : "entity",
-              "dataKeys" : [ {
-                "name" : "power",
-                "type" : "timeseries",
-                "label" : "Power",
-                "color" : "rgb(30, 136, 229)",
-                "settings" : {
-                  "showLines" : true,
-                  "fillLines" : false,
-                  "showPoints" : false,
-                  "showSeparateAxis" : true,
-                  "axisPosition" : "right",
-                  "axisTitle" : "Power, Watt",
-                  "axisTickDecimals" : 0
-                },
-                "_hash" : 0.7590636902287273,
-                "units" : "W",
-                "decimals" : 0
-              } ],
-              "entityAliasId" : "fe18dacb-77de-1cfd-9583-f76e4708c331"
-            } ],
-            "timewindow" : {
-              "realtime" : {
-                "interval" : 300000,
-                "timewindowMs" : 86400000
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "limit" : 2500
-              }
-            },
-            "showTitle" : true,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "8px",
-            "settings" : {
-              "shadowSize" : 4,
-              "fontColor" : "#545454",
-              "fontSize" : 10,
-              "xaxis" : {
-                "showLabels" : true,
-                "color" : "#545454"
-              },
-              "yaxis" : {
-                "showLabels" : true,
-                "color" : "#545454",
-                "title" : "Temperature, °C",
-                "tickDecimals" : 1
-              },
-              "grid" : {
-                "color" : "#545454",
-                "tickColor" : "#DDDDDD",
-                "verticalLines" : true,
-                "horizontalLines" : true,
-                "outlineWidth" : 1
-              },
-              "stack" : false,
-              "tooltipIndividual" : false,
-              "smoothLines" : true
-            },
-            "title" : "Temperature and Power History",
-            "dropShadow" : false,
-            "enableFullscreen" : true,
-            "titleStyle" : {
-              "fontSize" : "20px",
-              "fontWeight" : "bold",
-              "opacity" : "0.67",
-              "padding" : "5px 10px 5px 10px"
-            },
-            "mobileHeight" : null,
-            "enableDataExport" : true,
-            "widgetStyle" : {
-              "borderBottom" : "solid 1px #aaa",
-              "borderRight" : "solid 1px #aaa",
-              "backgroundImage" : "url(https://thingsboard.io/images/dashboards/smart-building/energy-bg.jpg)",
-              "backgroundSize" : "cover",
-              "backgroundPosition" : "center"
-            },
-            "units" : "°C",
-            "decimals" : 1,
-            "useDashboardTimewindow" : true,
-            "showLegend" : true,
-            "legendConfig" : {
-              "position" : "bottom",
-              "showMin" : true,
-              "showMax" : true,
-              "showAvg" : true,
-              "showTotal" : false
-            },
-            "actions" : { }
-          },
-          "id" : "40d59849-9d6a-6de4-a023-76ea9fe29a5a"
-        },
-        "27efeadc-842a-b232-fe8e-1a41bec1e630" : {
-          "isSystemType" : true,
-          "bundleAlias" : "cards",
-          "typeAlias" : "entities_table",
-          "type" : "latest",
-          "title" : "New widget",
-          "sizeX" : 19,
-          "sizeY" : 11,
-          "config" : {
-            "timewindow" : {
-              "displayValue" : "",
-              "selectedTab" : 0,
-              "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 300000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1675350610390,
-                  "endTimeMs" : 1675437010390
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "NONE",
-                "limit" : 200
-              }
-            },
-            "showTitle" : true,
-            "backgroundColor" : "rgba(255,255,255,0.15)",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "4px",
-            "settings" : {
-              "enableSearch" : true,
-              "displayPagination" : false,
-              "defaultPageSize" : 10,
-              "defaultSortOrder" : "entityName",
-              "displayEntityName" : true,
-              "displayEntityType" : false,
-              "entitiesTitle" : "Devices",
-              "entityNameColumnTitle" : "Name",
-              "enableSelectColumnDisplay" : true
-            },
-            "title" : "New Entities table",
-            "dropShadow" : false,
-            "enableFullscreen" : true,
-            "titleStyle" : {
-              "fontSize" : "20px",
-              "fontWeight" : "bold",
-              "opacity" : "0.67",
-              "padding" : "5px 10px 5px 10px"
-            },
-            "useDashboardTimewindow" : false,
-            "showLegend" : false,
-            "datasources" : [ {
-              "type" : "entity",
-              "dataKeys" : [ {
-                "name" : "type",
-                "type" : "attribute",
-                "label" : "Type",
-                "color" : "#2196f3",
-                "settings" : {
-                  "columnWidth" : "0px",
-                  "useCellStyleFunction" : false,
-                  "useCellContentFunction" : true,
-                  "cellContentFunction" : "if (value === 'smart-sensor') {\n    return 'Smart Sensor';\n} else if (value === 'hvac') {\n    return 'HVAC';\n} else if (value === 'energy-meter') {\n    return 'Energy Meter';\n} else if (value === 'water-meter') {\n    return 'Water Meter';\n}\nreturn value;"
-                },
-                "_hash" : 0.09977301437404118
-              } ],
-              "entityAliasId" : "e73f4fd0-3136-89e7-f802-e071e6e19a6d"
-            } ],
-            "enableDataExport" : true,
-            "widgetStyle" : {
-              "borderBottom" : "solid 1px #aaa",
-              "borderRight" : "solid 1px #aaa",
-              "backgroundImage" : "url(https://thingsboard.io/images/dashboards/smart-building/devices-bg.jpg)",
-              "backgroundSize" : "cover"
-            },
-            "actions" : {
-              "headerButton" : [ ],
-              "actionCellButton" : [ {
-                "name" : "Navigate to Device Details",
-                "icon" : "play_arrow",
-                "type" : "custom",
-                "customFunction" : "var deviceService = widgetContext.deviceService;\n\ndeviceService.getDevice(entityId.id, {ignoreLoading: true}).subscribe(\n    function (device) {\n        var deviceType = device.type;\n        var params = {\n            entityId: entityId,\n            entityName: entityName\n        };\n        var targetDashboardStateId;\n        switch (deviceType) {\n          case \"energy-meter\":\n              targetDashboardStateId = \"energy_meter\";\n              break;\n          case \"hvac\":\n              targetDashboardStateId = \"hvac\";\n              break;\n          case \"smart-sensor\":\n              targetDashboardStateId = \"smart_sensor\";\n              break;\n          case \"water-meter\":\n              targetDashboardStateId = \"water_meter\";\n              break;\n        }\n        if (targetDashboardStateId) {\n              widgetContext.stateController.openState(targetDashboardStateId, params, false);\n        }\n    }\n);\n",
-                "id" : "f1d4aacf-d420-6ce9-1fd2-8e459258fbcc"
-              } ],
-              "rowClick" : [ {
-                "name" : "Navigate to Device Details",
-                "icon" : "more_horiz",
-                "type" : "custom",
-                "customFunction" : "var deviceService = widgetContext.deviceService;\n\ndeviceService.getDevice(entityId.id, {ignoreLoading: true}).subscribe(\n    function (device) {\n        var deviceType = device.type;\n        var params = {\n            entityId: entityId,\n            entityName: entityName\n        };\n        var targetDashboardStateId;\n        switch (deviceType) {\n          case \"energy-meter\":\n              targetDashboardStateId = \"energy_meter\";\n              break;\n          case \"hvac\":\n              targetDashboardStateId = \"hvac\";\n              break;\n          case \"smart-sensor\":\n              targetDashboardStateId = \"smart_sensor\";\n              break;\n          case \"water-meter\":\n              targetDashboardStateId = \"water_meter\";\n              break;\n        }\n        if (targetDashboardStateId) {\n              widgetContext.stateController.openState(targetDashboardStateId, params, false);\n        }\n    }\n);\n",
-                "id" : "c1120dc4-a51a-d4f6-b403-96ad6255fcb9"
-              } ]
-            },
-            "showTitleIcon" : false,
-            "iconColor" : "rgba(0, 0, 0, 0.87)",
-            "iconSize" : "24px",
-            "titleTooltip" : ""
-          },
-          "id" : "27efeadc-842a-b232-fe8e-1a41bec1e630"
-        },
         "2dcb5560-c55f-e238-022e-69baba7c2022" : {
           "isSystemType" : true,
           "bundleAlias" : "alarm_widgets",
@@ -2264,7 +2035,7 @@
               }
             },
             "showTitle" : true,
-            "backgroundColor" : "#ffffff",
+            "backgroundColor" : "rgba(255,255,255,0.11)",
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "4px",
             "settings" : {
@@ -2314,7 +2085,12 @@
             "showTitleIcon" : false,
             "titleTooltip" : "",
             "enableDataExport" : false,
-            "widgetStyle" : { },
+            "widgetStyle" : {
+              "borderBottom" : "solid 1px #aaa",
+              "borderRight" : "solid 1px #aaa",
+              "backgroundImage" : "url(https://thingsboard.io/images/dashboards/smart-building/devices-bg.jpg)",
+              "backgroundSize" : "cover"
+            },
             "widgetCss" : "",
             "noDataDisplayMessage" : "",
             "actions" : {
@@ -7759,19 +7535,6 @@
           "layouts" : {
             "main" : {
               "widgets" : {
-                "40d59849-9d6a-6de4-a023-76ea9fe29a5a" : {
-                  "sizeX" : 2,
-                  "sizeY" : 12,
-                  "mobileHeight" : null,
-                  "row" : 11,
-                  "col" : 18
-                },
-                "27efeadc-842a-b232-fe8e-1a41bec1e630" : {
-                  "sizeX" : 6,
-                  "sizeY" : 12,
-                  "row" : 11,
-                  "col" : 20
-                },
                 "783e83b2-bb20-460b-b4a4-7fbbc08aa27c" : {
                   "sizeX" : 30,
                   "sizeY" : 11,
@@ -7785,10 +7548,10 @@
                   "col" : 0
                 },
                 "3813046f-61b3-16da-4a2f-0306601ce8d6" : {
-                  "sizeX" : 22,
+                  "sizeX" : 30,
                   "sizeY" : 12,
                   "row" : 11,
-                  "col" : 26
+                  "col" : 18
                 }
               },
               "gridSettings" : {

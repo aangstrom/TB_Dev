@@ -651,7 +651,7 @@
       },
       "configuration" : {
         "msgCount" : 0,
-        "periodInSeconds" : 300,
+        "periodInSeconds" : 30,
         "scriptLang" : "TBEL",
         "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar pulseCounter;\nswitch(hour) {\n  case 8:\n    pulseCounter = prevMsg.pulseCounter + Math.random() * (0.4 - 0) + 0;\n    break;\n  case 9:\n    pulseCounter = prevMsg.pulseCounter + Math.random() * (0.45 - 0) + 0;\n    break;  \n  case 10:\n    pulseCounter = prevMsg.pulseCounter + Math.random() * (0.3 - 0) + 0;\n    break;  \n  default:\n    pulseCounter = null;\n}\nvar msg = { \n            pulseCounter: pulseCounter,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
         "tbelScript" : "var hour = new Date().getHours();\nvar pulseCounter;\nif(hour==8) {\n    pulseCounter = prevMsg.pulseCounter + Math.random() * (0.4 - 0) + 0;\n} else if(hour==9) {\n    pulseCounter = prevMsg.pulseCounter + Math.random() * (0.45 - 0) + 0;\n} else if(hour==10) {\n    pulseCounter = prevMsg.pulseCounter + Math.random() * (0.3 - 0) + 0;\n} else {\n    pulseCounter = 0.1;\n}\nvar msg = { \n    pulseCounter: pulseCounter,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",

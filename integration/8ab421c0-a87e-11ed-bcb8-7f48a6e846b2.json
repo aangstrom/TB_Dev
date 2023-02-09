@@ -27,7 +27,7 @@
       "downlinkTopicPattern" : "${topic}",
       "metadata" : { }
     },
-    "debugMode" : false,
+    "debugMode" : true,
     "defaultConverterId" : {
       "entityType" : "CONVERTER",
       "id" : "37f87990-a87e-11ed-bcb8-7f48a6e846b2"
@@ -46,14 +46,26 @@
     "secret" : "6kljyv0oyawwv9kzwugr",
     "type" : "MQTT"
   },
-  "relations" : [ ],
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "8ab421c0-a87e-11ed-bcb8-7f48a6e846b2"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "684afe70-a887-11ed-bcb8-7f48a6e846b2"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  } ],
   "attributes" : {
     "SERVER_SCOPE" : [ {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : "{\"success\":true}",
       "key" : "integration_status_aa8-v3-5-0-12",
-      "lastUpdateTs" : 1675949737423,
+      "lastUpdateTs" : 1675953403277,
       "longValue" : null,
       "strValue" : null
     } ]

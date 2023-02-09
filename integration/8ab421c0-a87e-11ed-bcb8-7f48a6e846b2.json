@@ -1,10 +1,11 @@
 {
   "entityType" : "INTEGRATION",
   "entity" : {
-    "additionalInfo" : null,
+    "additionalInfo" : {
+      "description" : ""
+    },
     "allowCreateDevicesOrAssets" : true,
     "configuration" : {
-      "metadata" : { },
       "clientConfiguration" : {
         "host" : "aa8.aangstrom.it",
         "port" : 1885,
@@ -20,10 +21,11 @@
         }
       },
       "topicFilters" : [ {
-        "filter" : "shellies",
+        "filter" : "shellies/#",
         "qos" : 0
       } ],
-      "downlinkTopicPattern" : "${topic}"
+      "downlinkTopicPattern" : "${topic}",
+      "metadata" : { }
     },
     "debugMode" : true,
     "defaultConverterId" : {

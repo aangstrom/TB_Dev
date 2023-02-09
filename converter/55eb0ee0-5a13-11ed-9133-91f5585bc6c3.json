@@ -1,0 +1,26 @@
+{
+  "entityType" : "CONVERTER",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : {
+      "scriptLang" : "JS",
+      "decoder" : null,
+      "encoder" : "/** Encoder **/\n\nvar value = parseInt(msg.params.replace(/\"/g,\"\"));\nvar data = {value: value}\n// Result object with encoded downlink payload\nvar result = {\n\n    // downlink data content type: JSON, TEXT or BINARY (base64 format)\n    contentType: \"JSON\",\n\n    // downlink data\n    data: JSON.stringify(data),\n\n    // Optional metadata object presented in key/value format\n    metadata: {\n        topic: 'aangstrom/test/'+metadata['deviceName']+'/numero'\n    }\n\n};\n\nreturn result;"
+    },
+    "debugMode" : false,
+    "edgeTemplate" : false,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CONVERTER",
+      "id" : "55eb0ee0-5a13-11ed-9133-91f5585bc6c3"
+    },
+    "name" : "aa8_mosquitto_downlink",
+    "type" : "DOWNLINK"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

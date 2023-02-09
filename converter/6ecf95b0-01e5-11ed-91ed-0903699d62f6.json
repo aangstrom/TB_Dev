@@ -1,0 +1,26 @@
+{
+  "entityType" : "CONVERTER",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : {
+      "scriptLang" : "JS",
+      "decoder" : "var data = decodeToJson(payload);\nvar deviceName = data.end_device_ids.device_id;\nvar deviceType = data.end_device_ids.application_ids.application_id;\n\nvar result = {\n    deviceName: deviceName,\n    deviceType: deviceType,\n    telemetry: {\n         temperature: data.uplink_message.decoded_payload.temperature,\n         humidity: data.uplink_message.decoded_payload.humidity,\n         light: data.uplink_message.decoded_payload.light,\n         motion: data.uplink_message.decoded_payload.motion,\n         soundAvg: data.uplink_message.decoded_payload.soundAvg,\n         soundPeak: data.uplink_message.decoded_payload.soundPeak,\n         vdd: data.uplink_message.decoded_payload.vdd,\n         user_latitude: data.uplink_message.locations.user.latitude,\n         user_longitude: data.uplink_message.locations.user.longitude,\n         dev_latitude: data.uplink_message.rx_metadata[0].location.latitude,\n         dev_longitude: data.uplink_message.rx_metadata[0].location.longitude\n    }\n};\n\nfunction decodeToString(payload) {\n    return String.fromCharCode.apply(String, payload);\n}\n\nfunction decodeToJson(payload) {\n    var str = decodeToString(payload);\n    var data = JSON.parse(str);\n    return data;\n}\n\nreturn result;",
+      "encoder" : null
+    },
+    "debugMode" : false,
+    "edgeTemplate" : false,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CONVERTER",
+      "id" : "6ecf95b0-01e5-11ed-91ed-0903699d62f6"
+    },
+    "name" : "ttt_uplink_converter_old",
+    "type" : "UPLINK"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

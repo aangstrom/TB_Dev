@@ -5,11 +5,11 @@
       "description" : ""
     },
     "configuration" : {
+      "scriptLang" : "JS",
       "decoder" : null,
       "encoder" : "/** Encoder **/\n\nvar value = msg.params;\n\n\nvar deviceName = metadata['deviceName'];\n\n\n// Result object with encoded downlink payload\nvar result = {\n\n    // downlink data content type: JSON, TEXT or BINARY (base64 format)\n    contentType: \"JSON\",\n\n    // downlink data\n    data: value,\n\n    // Optional metadata object presented in key/value format\n    metadata: {\n        topic: 'Palmieri/'+deviceName+'/DataReceive'\n    }\n\n};\n\nreturn result;"
     },
-    "createdTime" : 1666868261346,
-    "debugMode" : true,
+    "debugMode" : false,
     "edgeTemplate" : false,
     "externalId" : {
       "entityType" : "CONVERTER",
@@ -20,7 +20,6 @@
       "id" : "2d8dcc20-55e6-11ed-9133-91f5585bc6c3"
     },
     "name" : "Pato Downlink Converter",
-    "tenantId" : null,
     "type" : "DOWNLINK"
   },
   "relations" : [ ],

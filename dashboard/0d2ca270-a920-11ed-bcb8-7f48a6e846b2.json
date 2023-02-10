@@ -112,7 +112,7 @@
             "noDataDisplayMessage" : "",
             "showLegend" : true,
             "legendConfig" : {
-              "direction" : "column",
+              "direction" : "row",
               "position" : "bottom",
               "sortDataKeys" : false,
               "showMin" : false,
@@ -210,116 +210,6 @@
           "row" : 0,
           "col" : 0,
           "id" : "9cf5e8db-7b40-92f3-68dd-a715bddbcc50"
-        },
-        "da525ab9-a9f3-3756-53fb-dba1354ba820" : {
-          "isSystemType" : true,
-          "bundleAlias" : "cards",
-          "typeAlias" : "html_value_card",
-          "type" : "latest",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
-          "sizeX" : 7.5,
-          "sizeY" : 3,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "ce0a2f21-3c30-58d0-fbe5-4c7115a7bde0",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "energy",
-                "type" : "timeseries",
-                "label" : "energy",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.3502604299303027
-              }, {
-                "name" : "energy_cost",
-                "type" : "attribute",
-                "label" : "energy_cost",
-                "color" : "#4caf50",
-                "settings" : { },
-                "_hash" : 0.2756613962932659
-              }, {
-                "name" : "name",
-                "type" : "entityField",
-                "label" : "Name",
-                "color" : "#f44336",
-                "settings" : { },
-                "_hash" : 0.4603599149938178
-              } ]
-            } ],
-            "timewindow" : {
-              "displayValue" : "",
-              "selectedTab" : 0,
-              "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1675953176377,
-                  "endTimeMs" : 1676039576377
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "limit" : 25000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "cardHtml" : "<script>\n    if(${energy_cost}>0||${energy}>0){\n        var cost=(${energy}/1000)*${energy_cost};\n        var valore=cost+\" €/h\";\n    }else{\n        var valore=\"0 €/h\";\n    }\n    document.getElementById('valore').innerHTML=valore;\n</script>\n<div class='card'>\n    <h1>${Name}</h1>\n    <p id=\"valore\"></p>\n</div>",
-              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   border: 2px solid #ccc;\n   box-sizing: border-box;\n   align-items: center;\n   display: flex;\n   flex-direction: column;    \n   justify-content: space-around;\n   color: #999;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    font-size: 30px;\n    font-weight: bold;\n    margin: 0;\n    padding-top: 10px;\n    line-height: 30px;\n}\n#valore{\n    font-size: 25px;\n    font-weight: bold;\n    line-height: 25px;\n}"
-            },
-            "title" : "New HTML Value Card",
-            "dropShadow" : false,
-            "enableFullscreen" : true,
-            "widgetStyle" : { },
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "useDashboardTimewindow" : true,
-            "showLegend" : false,
-            "actions" : {
-              "headerButton" : [ {
-                "name" : "Costo energia",
-                "icon" : "currency_exchange",
-                "useShowWidgetActionFunction" : null,
-                "showWidgetActionFunction" : "return true;",
-                "type" : "openDashboardState",
-                "targetDashboardStateId" : "energy_cost",
-                "setEntityId" : true,
-                "stateEntityParamName" : null,
-                "openRightLayout" : false,
-                "dialogTitle" : "",
-                "dialogHideDashboardToolbar" : true,
-                "dialogWidth" : 30,
-                "dialogHeight" : 40,
-                "openInSeparateDialog" : true,
-                "openInPopover" : false,
-                "id" : "d13e645a-a4aa-7080-014d-92d67a8ff116"
-              } ]
-            },
-            "enableDataExport" : false,
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : ""
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "da525ab9-a9f3-3756-53fb-dba1354ba820"
         },
         "7d0a6ad3-87fd-7055-e428-21e0a76b470f" : {
           "isSystemType" : true,
@@ -423,116 +313,6 @@
           "row" : 0,
           "col" : 0,
           "id" : "7d0a6ad3-87fd-7055-e428-21e0a76b470f"
-        },
-        "81329b0c-6116-4d74-6ff0-cff29619027d" : {
-          "isSystemType" : true,
-          "bundleAlias" : "cards",
-          "typeAlias" : "html_value_card",
-          "type" : "latest",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
-          "sizeX" : 7.5,
-          "sizeY" : 3,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "cb629f0f-57e1-6797-115a-b836205e1d00",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "energy",
-                "type" : "timeseries",
-                "label" : "energy",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.3502604299303027
-              }, {
-                "name" : "energy_cost",
-                "type" : "attribute",
-                "label" : "energy_cost",
-                "color" : "#4caf50",
-                "settings" : { },
-                "_hash" : 0.2756613962932659
-              }, {
-                "name" : "name",
-                "type" : "entityField",
-                "label" : "Name",
-                "color" : "#f44336",
-                "settings" : { },
-                "_hash" : 0.4603599149938178
-              } ]
-            } ],
-            "timewindow" : {
-              "displayValue" : "",
-              "selectedTab" : 0,
-              "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1675953176377,
-                  "endTimeMs" : 1676039576377
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "limit" : 25000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "cardHtml" : "<script>\n    if(${energy_cost}>0||${energy}>0){\n        var cost=(${energy}/1000)*${energy_cost};\n        var valore=cost.toFixed(2)+\" €/h\";\n    }else{\n        var valore=\"0 €/h\";\n    }\n    document.getElementById('valore').innerHTML=valore;\n</script>\n<div class='card'>\n    <h1>${Name}</h1>\n    <p id=\"valore\"></p>\n</div>",
-              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   border: 2px solid #ccc;\n   box-sizing: border-box;\n   align-items: center;\n   display: flex;\n   flex-direction: column;    \n   justify-content: space-around;\n   color: #999;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    font-size: 30px;\n    font-weight: bold;\n    margin: 0;\n    padding-top: 10px;\n    line-height: 30px;\n}\n#valore{\n    font-size: 25px;\n    font-weight: bold;\n    line-height: 25px;\n}"
-            },
-            "title" : "New HTML Value Card",
-            "dropShadow" : false,
-            "enableFullscreen" : true,
-            "widgetStyle" : { },
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "useDashboardTimewindow" : true,
-            "showLegend" : false,
-            "actions" : {
-              "headerButton" : [ {
-                "name" : "Costo energia",
-                "icon" : "currency_exchange",
-                "useShowWidgetActionFunction" : null,
-                "showWidgetActionFunction" : "return true;",
-                "type" : "openDashboardState",
-                "targetDashboardStateId" : "energy_cost",
-                "setEntityId" : true,
-                "stateEntityParamName" : null,
-                "openRightLayout" : false,
-                "dialogTitle" : "",
-                "dialogHideDashboardToolbar" : true,
-                "dialogWidth" : 30,
-                "dialogHeight" : 40,
-                "openInSeparateDialog" : true,
-                "openInPopover" : false,
-                "id" : "d13e645a-a4aa-7080-014d-92d67a8ff116"
-              } ]
-            },
-            "enableDataExport" : false,
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : ""
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "81329b0c-6116-4d74-6ff0-cff29619027d"
         },
         "66d35903-1c1d-a46b-203a-fa67c7708ef5" : {
           "isSystemType" : true,
@@ -688,27 +468,15 @@
             "main" : {
               "widgets" : {
                 "58448baa-c85b-273e-c61f-73ca1c354276" : {
-                  "sizeX" : 17,
+                  "sizeX" : 24,
                   "sizeY" : 6,
                   "row" : 0,
                   "col" : 0
                 },
                 "9cf5e8db-7b40-92f3-68dd-a715bddbcc50" : {
                   "sizeX" : 7,
-                  "sizeY" : 6,
-                  "row" : 4,
-                  "col" : 17
-                },
-                "da525ab9-a9f3-3756-53fb-dba1354ba820" : {
-                  "sizeX" : 7,
-                  "sizeY" : 2,
-                  "row" : 2,
-                  "col" : 17
-                },
-                "81329b0c-6116-4d74-6ff0-cff29619027d" : {
-                  "sizeX" : 7,
-                  "sizeY" : 2,
-                  "row" : 0,
+                  "sizeY" : 4,
+                  "row" : 6,
                   "col" : 17
                 },
                 "66d35903-1c1d-a46b-203a-fa67c7708ef5" : {

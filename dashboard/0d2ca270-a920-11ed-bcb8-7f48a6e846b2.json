@@ -47,6 +47,19 @@
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
+              }, {
+                "name" : "energy",
+                "type" : "timeseries",
+                "label" : "Costo ${Name}",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.3662231174016759,
+                "aggregationType" : null,
+                "units" : "€/h",
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "return ((value/1000)*0.16).toFixed(2);"
               } ],
               "latestDataKeys" : [ {
                 "name" : "name",
@@ -506,7 +519,7 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "cardHtml" : "<script>\n    if(${energy_cost}>0||${energy}>0){\n        var cost=(${energy}/1000)*${energy_cost};\n        var valore=cost+\" €/h\";\n    }else{\n        var valore=\"0 €/h\";\n    }\n    document.getElementById('valore').innerHTML=valore;\n</script>\n<div class='card'>\n    <h1>${Name}</h1>\n    <p id=\"valore\"></p>\n</div>",
+              "cardHtml" : "<script>\n    if(${energy_cost}>0||${energy}>0){\n        var cost=(${energy}/1000)*${energy_cost};\n        var valore=cost.toFixed(2)+\" €/h\";\n    }else{\n        var valore=\"0 €/h\";\n    }\n    document.getElementById('valore').innerHTML=valore;\n</script>\n<div class='card'>\n    <h1>${Name}</h1>\n    <p id=\"valore\"></p>\n</div>",
               "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   border: 2px solid #ccc;\n   box-sizing: border-box;\n   align-items: center;\n   display: flex;\n   flex-direction: column;    \n   justify-content: space-around;\n   color: #999;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    font-size: 30px;\n    font-weight: bold;\n    margin: 0;\n    padding-top: 10px;\n    line-height: 30px;\n}\n#valore{\n    font-size: 25px;\n    font-weight: bold;\n    line-height: 25px;\n}"
             },
             "title" : "New HTML Value Card",

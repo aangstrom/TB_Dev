@@ -204,13 +204,22 @@
       "configuration" : {
         "direction" : "FROM",
         "relationType" : "Manages",
-        "deduplicationInSec" : 10,
+        "deduplicationInSec" : 60,
         "aggMappings" : [ {
           "sourceScope" : "LATEST_TELEMETRY",
           "source" : "a_power_produced",
-          "defaultValue" : 99,
+          "defaultValue" : 0,
           "aggFunction" : "MAX",
-          "target" : "max_a_power_produced"
+          "target" : "max_a_power_produced",
+          "filter" : {
+            "clientAttributeNames" : [ ],
+            "sharedAttributeNames" : [ ],
+            "serverAttributeNames" : [ ],
+            "latestTsKeyNames" : [ ],
+            "scriptLang" : "TBEL",
+            "filterFunction" : "return true;",
+            "tbelFilterFunction" : "return true;"
+          }
         }, {
           "sourceScope" : "LATEST_TELEMETRY",
           "source" : "a_power_produced",

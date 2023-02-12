@@ -81,34 +81,45 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "8px",
             "settings" : {
-              "shadowSize" : 4,
-              "fontColor" : "#545454",
+              "stack" : false,
               "fontSize" : 10,
+              "fontColor" : "#545454",
+              "showTooltip" : true,
+              "tooltipIndividual" : false,
+              "tooltipCumulative" : false,
+              "hideZeros" : false,
+              "grid" : {
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1,
+                "color" : "#545454",
+                "backgroundColor" : null,
+                "tickColor" : "#DDDDDD"
+              },
               "xaxis" : {
+                "title" : null,
                 "showLabels" : true,
                 "color" : "#545454"
               },
               "yaxis" : {
+                "min" : null,
+                "max" : null,
+                "title" : null,
                 "showLabels" : true,
-                "color" : "#545454"
-              },
-              "grid" : {
                 "color" : "#545454",
-                "tickColor" : "#DDDDDD",
-                "verticalLines" : true,
-                "horizontalLines" : true,
-                "outlineWidth" : 1
+                "tickSize" : null,
+                "tickDecimals" : 0,
+                "ticksFormatter" : ""
               },
-              "legend" : {
-                "show" : true,
-                "position" : "nw",
-                "backgroundColor" : "#f0f0f0",
-                "backgroundOpacity" : 0.85,
-                "labelBoxBorderColor" : "rgba(1, 1, 1, 0.45)"
+              "shadowSize" : 1,
+              "smoothLines" : false,
+              "comparisonEnabled" : false,
+              "xaxisSecond" : {
+                "axisPosition" : "top",
+                "title" : null,
+                "showLabels" : true
               },
-              "decimals" : 1,
-              "stack" : false,
-              "tooltipIndividual" : false
+              "customLegendEnabled" : false
             },
             "title" : "New Timeseries Line Chart",
             "dropShadow" : true,
@@ -200,8 +211,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1676108851143,
-                  "endTimeMs" : 1676195251143
+                  "startTimeMs" : 1676130770554,
+                  "endTimeMs" : 1676217170554
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -295,8 +306,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1676108851143,
-                  "endTimeMs" : 1676195251143
+                  "startTimeMs" : 1676130770554,
+                  "endTimeMs" : 1676217170554
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -638,12 +649,12 @@
         "selectedTab" : 0,
         "realtime" : {
           "realtimeType" : 0,
-          "timewindowMs" : 3600000,
+          "timewindowMs" : 1800000,
           "quickInterval" : "CURRENT_DAY",
           "interval" : 10000
         },
         "aggregation" : {
-          "type" : "AVG",
+          "type" : "NONE",
           "limit" : 25000
         }
       },

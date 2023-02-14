@@ -8749,6 +8749,91 @@
           "row" : 0,
           "col" : 0,
           "id" : "a14c7f43-8c97-964c-c1d3-cd32988ddd67"
+        },
+        "b07aee0d-0db6-7ba8-9aea-f29ff16a7ba2" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "entities_table",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 6.5,
+          "config" : {
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 86400000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1676289224184,
+                  "endTimeMs" : 1676375624184
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "4px",
+            "settings" : {
+              "entitiesTitle" : "",
+              "enableSearch" : true,
+              "enableSelectColumnDisplay" : true,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "reserveSpaceForHiddenAction" : "true",
+              "displayEntityName" : true,
+              "entityNameColumnTitle" : "",
+              "displayEntityLabel" : false,
+              "displayEntityType" : true,
+              "displayPagination" : true,
+              "defaultPageSize" : 10,
+              "defaultSortOrder" : "entityName",
+              "useRowStyleFunction" : false
+            },
+            "title" : "New Entities table",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "3c5dbaaf-e9af-bee3-891e-7202c319af16",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "name",
+                "type" : "attribute",
+                "label" : "name",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.2747096092403596
+              } ]
+            } ],
+            "displayTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "b07aee0d-0db6-7ba8-9aea-f29ff16a7ba2"
         }
       },
       "states" : {
@@ -9514,6 +9599,12 @@
                   "sizeY" : 10,
                   "row" : 0,
                   "col" : 0
+                },
+                "b07aee0d-0db6-7ba8-9aea-f29ff16a7ba2" : {
+                  "sizeX" : 7,
+                  "sizeY" : 6,
+                  "row" : 0,
+                  "col" : 7
                 }
               },
               "gridSettings" : {
@@ -9702,7 +9793,7 @@
             "rootStateEntity" : true,
             "stateEntityParamName" : null,
             "defaultStateEntity" : {
-              "entityType" : "CURRENT_USER_OWNER",
+              "entityType" : "CURRENT_TENANT",
               "id" : null
             },
             "rootEntity" : null,
@@ -9710,7 +9801,7 @@
             "maxLevel" : 1,
             "fetchLastLevelOnly" : false,
             "relationType" : null,
-            "deviceTypes" : [ "AA Sensor" ]
+            "deviceTypes" : [ "AA Sensor", "AA Energy" ]
           }
         },
         "da4322e6-c7c1-d527-bb02-50549d2595f2" : {

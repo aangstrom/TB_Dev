@@ -8177,7 +8177,7 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "cardHtml" : "<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <h1>Eventi</h1>\n            <div class='value'>\n                Eventi.\n            </div>\n        </div>\n    </div>\n</div>",
+              "cardHtml" : "<div class='card' id=\"segnalazione\">\n    <div class='content'>\n        <div class='column'>\n            <h1>Segnala Evento</h1>\n        </div>\n    </div>\n</div>",
               "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   border: 2px solid #ccc;\n   box-sizing: border-box;\n}\n\n.card .content {\n   padding: 20px;\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content .column {\n   display: flex;\n   align-items: center;\n   flex-direction: column;    \n   justify-content: space-around;\n   height: 100%;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 22px;\n    font-weight: bold;\n    margin: 0;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 50px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n"
             },
             "title" : "New HTML Value Card",
@@ -8190,7 +8190,22 @@
             },
             "useDashboardTimewindow" : true,
             "showLegend" : false,
-            "actions" : { },
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "segnalazione",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "segnalazione",
+                "setEntityId" : true,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "f82f5c23-ad9a-4b2d-fe34-49e53df914d9"
+              } ]
+            },
             "enableDataExport" : false,
             "widgetCss" : "",
             "pageSize" : 1024,

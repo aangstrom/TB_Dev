@@ -580,10 +580,16 @@
               "dataKeys" : [ {
                 "name" : "Phase_A_power",
                 "type" : "timeseries",
-                "label" : "Phase_A_power",
+                "label" : "Illuminazione",
                 "color" : "#2196f3",
                 "settings" : { },
-                "_hash" : 0.629406961019265
+                "_hash" : 0.629406961019265,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ]
             }, {
               "type" : "entity",
@@ -593,10 +599,16 @@
               "dataKeys" : [ {
                 "name" : "Phase_B_power",
                 "type" : "timeseries",
-                "label" : "Phase_B_power",
+                "label" : "HVAC Ala Destra",
                 "color" : "#4caf50",
                 "settings" : { },
-                "_hash" : 0.3917370472886561
+                "_hash" : 0.3917370472886561,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ]
             }, {
               "type" : "entity",
@@ -606,10 +618,54 @@
               "dataKeys" : [ {
                 "name" : "Phase_C_power",
                 "type" : "timeseries",
-                "label" : "Phase_C_power",
+                "label" : "HVAC Ala Sinistra",
                 "color" : "#f44336",
                 "settings" : { },
-                "_hash" : 0.6472015653689198
+                "_hash" : 0.6472015653689198,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ]
+            }, {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "cb629f0f-57e1-6797-115a-b836205e1d00",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "power",
+                "type" : "timeseries",
+                "label" : "Frigorifero",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.4119158029160803,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ]
+            }, {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "ce0a2f21-3c30-58d0-fbe5-4c7115a7bde0",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "power",
+                "type" : "timeseries",
+                "label" : "Alimentatore",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.594953302782232,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ]
             } ],
             "timewindow" : {
@@ -640,9 +696,35 @@
             "backgroundColor" : "#fff",
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "8px",
-            "settings" : { },
+            "settings" : {
+              "showTooltip" : true
+            },
             "title" : "New Radar",
-            "useDashboardTimewindow" : true
+            "useDashboardTimewindow" : true,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "enableDataExport" : true,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showLegend" : true,
+            "legendConfig" : {
+              "direction" : "column",
+              "position" : "bottom",
+              "sortDataKeys" : false,
+              "showMin" : true,
+              "showMax" : true,
+              "showAvg" : false,
+              "showTotal" : false,
+              "showLatest" : false
+            }
           },
           "row" : 0,
           "col" : 0,

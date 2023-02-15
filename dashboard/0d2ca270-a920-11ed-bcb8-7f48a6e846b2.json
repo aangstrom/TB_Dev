@@ -228,8 +228,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1676216967929,
-                  "endTimeMs" : 1676303367929
+                  "startTimeMs" : 1676367466163,
+                  "endTimeMs" : 1676453866163
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -323,8 +323,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1676216967929,
-                  "endTimeMs" : 1676303367929
+                  "startTimeMs" : 1676367466163,
+                  "endTimeMs" : 1676453866163
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -526,8 +526,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1676217325667,
-                  "endTimeMs" : 1676303725667
+                  "startTimeMs" : 1676367466163,
+                  "endTimeMs" : 1676453866163
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -560,6 +560,93 @@
           "row" : 0,
           "col" : 0,
           "id" : "352706f1-4896-3afa-1981-9f3103098575"
+        },
+        "1d82295d-f2e7-31cd-91e0-b13aeb2a331e" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "radar_chart_js",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "cb629f0f-57e1-6797-115a-b836205e1d00",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "energy",
+                "type" : "timeseries",
+                "label" : "energy",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.030246317356024344
+              } ]
+            }, {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "ce0a2f21-3c30-58d0-fbe5-4c7115a7bde0",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "energy",
+                "type" : "timeseries",
+                "label" : "energy 2",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.5487080979339212
+              } ]
+            }, {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "75f1ac29-d1dc-f38f-d33a-655996523941",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "temperature",
+                "type" : "timeseries",
+                "label" : "temperature",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.5874656939662455
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1676367545713,
+                  "endTimeMs" : 1676453945713
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : { },
+            "title" : "New Radar",
+            "useDashboardTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "1d82295d-f2e7-31cd-91e0-b13aeb2a331e"
         }
       },
       "states" : {
@@ -592,6 +679,12 @@
                   "sizeY" : 2,
                   "row" : 10,
                   "col" : 0
+                },
+                "1d82295d-f2e7-31cd-91e0-b13aeb2a331e" : {
+                  "sizeX" : 7,
+                  "sizeY" : 5,
+                  "row" : 10,
+                  "col" : 4
                 }
               },
               "gridSettings" : {
@@ -680,6 +773,18 @@
               "id" : "5a095a00-a891-11ed-bcb8-7f48a6e846b2"
             }
           }
+        },
+        "5d6796b4-8f3d-1878-3876-ed021fa7b0c9" : {
+          "id" : "5d6796b4-8f3d-1878-3876-ed021fa7b0c9",
+          "alias" : "3em",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "f0161330-32a3-11ed-accb-016e0c746b7f"
+            }
+          }
         }
       },
       "filters" : {
@@ -746,13 +851,13 @@
         "selectedTab" : 0,
         "realtime" : {
           "realtimeType" : 0,
-          "timewindowMs" : 604800000,
+          "timewindowMs" : 86400000,
           "quickInterval" : "CURRENT_DAY",
           "interval" : 10000
         },
         "aggregation" : {
           "type" : "NONE",
-          "limit" : 25000
+          "limit" : 7675
         }
       },
       "settings" : {

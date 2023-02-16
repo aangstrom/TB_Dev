@@ -219,15 +219,20 @@
                 "label" : "Name",
                 "color" : "#9c27b0",
                 "settings" : {
-                  "columnWidth" : "0px",
+                  "columnWidth" : "30%",
                   "useCellStyleFunction" : false,
-                  "cellStyleFunction" : "",
                   "useCellContentFunction" : false,
-                  "cellContentFunction" : "",
                   "defaultColumnVisibility" : "visible",
-                  "columnSelectionToDisplay" : "enabled"
+                  "columnSelectionToDisplay" : "enabled",
+                  "columnExportOption" : "onlyVisible"
                 },
-                "_hash" : 0.26006066953657436
+                "_hash" : 0.26006066953657436,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               }, {
                 "name" : "label",
                 "type" : "entityField",
@@ -325,7 +330,8 @@
                 "openInPopover" : false,
                 "id" : "e2c3e168-19c1-78c5-2503-36ad30729352"
               } ]
-            }
+            },
+            "displayTimewindow" : true
           },
           "row" : 0,
           "col" : 0,
@@ -1076,15 +1082,17 @@
             } ],
             "timewindow" : {
               "hideInterval" : false,
+              "hideLastInterval" : false,
+              "hideQuickInterval" : false,
               "hideAggregation" : false,
               "hideAggInterval" : false,
               "hideTimezone" : false,
               "selectedTab" : 0,
               "realtime" : {
                 "realtimeType" : 0,
-                "timewindowMs" : 86400000,
+                "timewindowMs" : 300000,
                 "quickInterval" : "CURRENT_DAY",
-                "interval" : 1800000
+                "interval" : 30000
               },
               "aggregation" : {
                 "type" : "AVG",

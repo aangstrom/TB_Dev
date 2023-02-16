@@ -160,7 +160,7 @@
               "realtime" : {
                 "realtimeType" : 1,
                 "interval" : 1000,
-                "timewindowMs" : 86400000,
+                "timewindowMs" : 60000,
                 "quickInterval" : "CURRENT_DAY"
               },
               "history" : {
@@ -168,8 +168,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1676458239256,
-                  "endTimeMs" : 1676544639256
+                  "startTimeMs" : 1676458242640,
+                  "endTimeMs" : 1676544642640
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -690,8 +690,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1676458239256,
-                  "endTimeMs" : 1676544639256
+                  "startTimeMs" : 1676458242640,
+                  "endTimeMs" : 1676544642640
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1615,8 +1615,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1676458239256,
-                  "endTimeMs" : 1676544639256
+                  "startTimeMs" : 1676458242640,
+                  "endTimeMs" : 1676544642640
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1703,8 +1703,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1676458239256,
-                  "endTimeMs" : 1676544639256
+                  "startTimeMs" : 1676458242640,
+                  "endTimeMs" : 1676544642640
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1718,9 +1718,8 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "markdownTextFunction" : "\nvar darkMode = $('.tb-dashboard-page').hasClass('dark');\nvar darkModeExpression = darkMode ? '(darkMode !== false)' : 'darkMode';\n\nreturn '<div class=\"header\" fxLayout=\"column\" fxLayoutAlign=\"space-around center\" fxLayout.gt-sm=\"row\" fxLayoutAlign.gt-sm=\"start stretch\" fxLayoutGap.gt-sm=\"24px\">' +\n        '<div fxLayout=\"column\" fxLayoutAlign=\"center\">' +\n           '<div class=\"title\">Smart energy monitoring</div>' +\n        '</div>' +\n        '<div fxFlex.gt-sm fxLayout=\"column\" fxLayoutAlign=\"space-around center\" fxLayoutGap=\"16px\" fxLayout.gt-sm=\"row\" fxLayoutGap.gt-sm=\"8px\" fxLayoutAlign.gt-sm=\"start center\">' +\n           '<div class=\"powered-by\">Powered by ThingsBoard opensource IoT platform.</div>' +\n           '<div fxLayout=\"row\" fxLayoutGap=\"8px\" fxLayoutAlign=\"start center\">' +\n              '<button id=\"try-it-now\" mat-raised-button color=\"primary\">Try it now</button><div class=\"powered-by\">OR</div><a mat-raised-button color=\"primary\" href=\"https://thingsboard.io/docs/user-guide/install/installation-options/\" target=\"_blank\">Install</a>' +\n           '</div>' +\n        '</div>' +\n        '<div fxLayout=\"column\" fxLayoutAlign=\"center\" style=\"padding-right: 24px;\">' +\n            '<button (click)=\"darkMode = '+darkModeExpression+' ? false : true\" id=\"dark-mode-switch\" mat-icon-button matTooltip=\"{{ '+ darkModeExpression +' ? &quot;Switch to light mode&quot; : &quot;Switch to dark mode&quot; }}\"><mat-icon>{{ '+ darkModeExpression +' ? &quot;light_mode&quot; : &quot;dark_mode&quot; }}</mat-icon></button>' +\n        '</div>' +\n    '</div>';\n    ",
               "useMarkdownTextFunction" : true,
-              "markdownTextPattern" : "<div class=\"header\" fxLayout=\"row\" fxLayoutAlign=\"start stretch\" fxLayoutGap=\"8px\">\n        <div fxFlex fxLayout=\"column\" fxLayoutAlign=\"center\">\n           <div class=\"title\">Smart energy monitoring</div>\n        </div>\n        <div fxLayout=\"column\" fxLayoutAlign=\"center\" style=\"padding-right: 24px;\">\n            <button (click)=\"ctx.darkMode = !ctx.darkMode;\" id=\"dark-mode-switch\" mat-icon-button matTooltip=\"{{ ctx.darkMode ? 'Switch to light mode' : 'Switch to dark mode' }}\"><mat-icon>{{ ctx.darkMode ? 'light_mode' : 'dark_mode' }}</mat-icon></button>\n        </div>\n</div>\n",
+              "markdownTextFunction" : "\nvar darkMode = $('.tb-dashboard-page').hasClass('dark');\nvar darkModeExpression = darkMode ? '(darkMode !== false)' : 'darkMode';\n\nreturn '<div class=\"header\" fxLayout=\"column\" fxLayoutAlign=\"space-around center\" fxLayout.gt-sm=\"row\" fxLayoutAlign.gt-sm=\"start stretch\" fxLayoutGap.gt-sm=\"24px\">' +\n        '<div fxLayout=\"column\" fxLayoutAlign=\"center\">' +\n           '<div class=\"title\">Smart energy monitoring</div>' +\n        '</div>' +\n        '<div fxFlex.gt-sm fxLayout=\"column\" fxLayoutAlign=\"space-around center\" fxLayoutGap=\"16px\" fxLayout.gt-sm=\"row\" fxLayoutGap.gt-sm=\"8px\" fxLayoutAlign.gt-sm=\"start center\">' +\n\n           '<div fxLayout=\"row\" fxLayoutGap=\"8px\" fxLayoutAlign=\"start center\">' +\n           \n           '</div>' +\n        '</div>' +\n        '<div fxLayout=\"column\" fxLayoutAlign=\"center\" style=\"padding-right: 24px;\">' +\n            '<button (click)=\"darkMode = '+darkModeExpression+' ? false : true\" id=\"dark-mode-switch\" mat-icon-button matTooltip=\"{{ '+ darkModeExpression +' ? &quot;Switch to light mode&quot; : &quot;Switch to dark mode&quot; }}\"><mat-icon>{{ '+ darkModeExpression +' ? &quot;light_mode&quot; : &quot;dark_mode&quot; }}</mat-icon></button>' +\n        '</div>' +\n    '</div>';\n    ",
               "markdownCss" : ".header {\n    height: 100%;\n    padding: 0 0 0 24px;\n} \n\n.header .mat-icon.title-icon {\n    width: 40px;\n    height: 40px;\n}\n\n.header .title {\n    font-size: 24px;\n    font-weight: 500;\n    color: #28232D;\n}\n\n.header .subtitle {\n    font-size: 13px;\n    font-weight: normal;\n    color: #757575;\n}\n"
             },
             "title" : "New Markdown/HTML Card",

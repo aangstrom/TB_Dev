@@ -108,6 +108,10 @@
       "fromIndex" : 19,
       "toIndex" : 9,
       "type" : "Success"
+    }, {
+      "fromIndex" : 19,
+      "toIndex" : 20,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -510,7 +514,7 @@
       },
       "configuration" : {
         "msgCount" : 0,
-        "periodInSeconds" : 60,
+        "periodInSeconds" : 5,
         "scriptLang" : "TBEL",
         "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar amperage, energy, frequency, power, voltage;\nswitch(hour) {\n  case 8:\n  case 9:\n  case 10:\n  case 11:\n  case 12:\n  case 13:\n  case 14:\n  case 15:\n  case 16:\n  case 17:\n    amperage = (Math.random() * (5 - 0) + 10).toFixed(1);\n    frequency = (Math.random() * (50 - 0) + 10).toFixed(1);\n    power = Math.random() * (970 - 0) + 30;\n    power = Math.round( power * 100 ) / 100;\n    energy = power;\n    voltage = (Math.random() * (10 - 0) + 220).toFixed(2);\n    break;\n  default:\n    amperage = 0.1 + (Math.random() * (0.1 - 0) + 0).toFixed(1);\n    frequency = 10;\n    power = Math.random() * (40 - 0) + 10;\n    energy = power;\n    voltage = 0.5;\n}\namperage = Math.round( amperage * 100 ) / 100;\nfrequency = Math.round( frequency * 100 ) / 100;\nvoltage = Math.round( voltage * 100 ) / 100;\nvar msg = {\n    amperage: amperage,\n    energy: energy,\n    frequency: frequency,\n    power: power,\n    voltage: voltage\n};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var hour = new Date().getHours();\nvar amperage;\nvar energy;\nvar frequency;\nvar power;\nvar voltage;\nif(hour>=8 && hour<=17){\n    amperage = Math.random() * (5 - 0) + 10;\n    frequency = Math.random() * (50 - 0) + 10;\n    power = Math.random() * (970 - 0) + 30;\n    power = Math.round( power * 100 ) / 100;\n    energy = power;\n    voltage = Math.random() * (10 - 0) + 220;\n} else {\n    amperage = 0.1 + Math.random() * (0.1 - 0) + 0;\n    frequency = 10;\n    power = Math.random() * (40 - 0) + 10;\n    energy = power;\n    voltage = 0.5;\n}\namperage = toFixed(amperage,1);\nfrequency = toFixed(frequency,1);\nvoltage = toFixed(voltage,2);\nvar msg = {\n    amperage: amperage,\n    energy: energy,\n    frequency: frequency,\n    power: power,\n    voltage: voltage\n};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
@@ -527,6 +531,37 @@
       "name" : "Energy meter 3",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 350,
+        "layoutY" : 686
+      },
+      "configuration" : {
+        "topicPattern" : "quickstart",
+        "keyPattern" : null,
+        "bootstrapServers" : "157.230.126.181:9092",
+        "retries" : 0,
+        "batchSize" : 16384,
+        "linger" : 0,
+        "bufferMemory" : 33554432,
+        "acks" : "-1",
+        "keySerializer" : "org.apache.kafka.common.serialization.StringSerializer",
+        "valueSerializer" : "org.apache.kafka.common.serialization.StringSerializer",
+        "otherProperties" : { },
+        "addMetadataKeyValuesAsKafkaHeaders" : false,
+        "kafkaHeadersCharset" : "UTF-8"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "7999f4d0-afce-11ed-8336-6d87e690a5a1"
+      },
+      "name" : "myfirstkafka",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
     } ],
     "ruleChainConnections" : null
   },

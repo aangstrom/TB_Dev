@@ -998,6 +998,46 @@
       "name" : "Whatsapp?",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 600,
+        "layoutY" : 829
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "https://api.textmebot.com/send.php?recipient=${ss_telefono}&apikey=3uVVBeCu8kqg&text=${msg}",
+        "requestMethod" : "POST",
+        "useSimpleClientHttpFactory" : false,
+        "ignoreRequestBody" : true,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : {
+          "Content-Type" : "application/json"
+        },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : false,
+        "maxQueueSize" : 0,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c377f620-b112-11ed-9788-e7e5c5ff9ab6"
+      },
+      "name" : "Send Whatsapp",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
     } ],
     "ruleChainConnections" : null
   },

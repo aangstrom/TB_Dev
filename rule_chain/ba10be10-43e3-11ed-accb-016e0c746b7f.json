@@ -102,11 +102,11 @@
       "type" : "Success"
     }, {
       "fromIndex" : 16,
-      "toIndex" : 20,
+      "toIndex" : 33,
       "type" : "Failure"
     }, {
       "fromIndex" : 16,
-      "toIndex" : 20,
+      "toIndex" : 33,
       "type" : "Success"
     }, {
       "fromIndex" : 19,
@@ -171,6 +171,18 @@
     }, {
       "fromIndex" : 30,
       "toIndex" : 9,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 31,
+      "toIndex" : 32,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 33,
+      "toIndex" : 20,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 33,
+      "toIndex" : 20,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
@@ -458,7 +470,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "var relations = [];\nif(metadata.ss_TeamsEnabled==true && metadata.ss_EmailEnabled==false){\n    relations.push('Send Teams');\n}\nelse if(metadata.ss_TeamsEnabled==true && metadata.ss_EmailEnabled==true){\n    relations.push('Send Teams');\n    relations.push('Send Email');\n}\nelse if(metadata.ss_TeamsEnabled==false && metadata.ss_EmailEnabled==true){\n    relations.push('Send Email');\n}\nelse{\n    relations.push('Other');\n}\n\n/*switch (metadata.type) {\n    case 'Teams':\n        if (metadata.ss_TeamsEnabled === 'true'){\n            relations.push('Send Teams');\n        }\n        break;\n    case 'Teams and Email':\n        if (metadata.ss_TeamsEnabled === 'true'){\n            relations.push('Send Teams');\n        }\n        if (metadata.ss_EmailEnabled === 'true'){\n            relations.push('Send Email');\n        }\n        break; \n    case 'Email':\n        if (metadata.ss_TeamsEnabled === 'true'){\n            relations.push('Send Email');\n        }\n        break;\n    default:\n        relations.push('Other');\n}\n*/\nreturn relations;"
+        "tbelScript" : "var relations = [];\nif(metadata.ss_TeamsEnabled==true && metadata.ss_EmailEnabled==false && metadata.ss_WhatsappEnabled==false){\n    relations.push('Send Teams');\n}\nelse if(metadata.ss_TeamsEnabled==true && metadata.ss_EmailEnabled==true && metadata.ss_WhatsappEnabled==false){\n    relations.push('Send Teams');\n    relations.push('Send Email');\n}\nelse if(metadata.ss_TeamsEnabled==false && metadata.ss_EmailEnabled==true && metadata.ss_WhatsappEnabled==false){\n    relations.push('Send Email');\n}\nelse if(metadata.ss_TeamsEnabled==false && metadata.ss_EmailEnabled==true && metadata.ss_WhatsappEnabled==true){\n    relations.push('Send Email');\n    relations.push('Send Whatsapp');\n}\nelse if(metadata.ss_TeamsEnabled==true && metadata.ss_EmailEnabled==false && metadata.ss_WhatsappEnabled==true){\n    relations.push('Send Teams');\n    relations.push('Send Whatsapp');\n}\nelse if(metadata.ss_TeamsEnabled==true && metadata.ss_EmailEnabled==true && metadata.ss_WhatsappEnabled==false){\n    relations.push('Send Teams');\n    relations.push('Send Email');\n    relations.push('Send Whatsapp');\n}\nelse if(metadata.ss_TeamsEnabled==false && metadata.ss_EmailEnabled==false && metadata.ss_WhatsappEnabled==true){\n    relations.push('Send Whatsapp');\n}\nelse{\n    relations.push('Other');\n}\n\n/*switch (metadata.type) {\n    case 'Teams':\n        if (metadata.ss_TeamsEnabled === 'true'){\n            relations.push('Send Teams');\n        }\n        break;\n    case 'Teams and Email':\n        if (metadata.ss_TeamsEnabled === 'true'){\n            relations.push('Send Teams');\n        }\n        if (metadata.ss_EmailEnabled === 'true'){\n            relations.push('Send Email');\n        }\n        break; \n    case 'Email':\n        if (metadata.ss_TeamsEnabled === 'true'){\n            relations.push('Send Email');\n        }\n        break;\n    default:\n        relations.push('Other');\n}\n*/\nreturn relations;"
       },
       "createdTime" : 0,
       "debugMode" : false,
@@ -622,7 +634,7 @@
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 352,
-        "layoutY" : 807
+        "layoutY" : 881
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -896,6 +908,92 @@
       "name" : "get weather telemetry",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 880,
+        "layoutY" : 696
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var newMsg = {\n   \"type\":\"message\",\n   \"attachments\":[\n      {\n         \"contentType\":\"application/vnd.microsoft.card.adaptive\",\n         \"contentUrl\":null,\n         \"content\":\n{\n    \"type\": \"AdaptiveCard\",\n    \"body\": [\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Large\",\n            \"weight\": \"Bolder\",\n            \"text\": \"! Nuovo Allarme !\",\n            \"horizontalAlignment\": \"Center\",\n            \"color\": \"Attention\"\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Medium\",\n            \"weight\": \"Bolder\",\n            \"text\": msg.type,\n            \"horizontalAlignment\": \"Center\",\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Medium\",\n            \"text\": msg.severity,\n            \"horizontalAlignment\": \"Center\",\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"text\": msg.details.data,\n            \"wrap\": true\n        },\n        {\n            \"type\": \"FactSet\",\n            \"facts\": [\n                {\n                    \"$data\": \"${properties}\",\n                    \"title\": \"Sensore rilevazione:\",\n                    \"value\": metadata.ss_name\n                }\n            ]\n        }\n    ],\n    \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n    \"version\": \"1.4\"\n}\n\n          \n      }\n   ]\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var newMsg = \n{\n   \"type\":\"message\",\n   \"attachments\":[\n      {\n         \"contentType\":\"application/vnd.microsoft.card.adaptive\",\n         \"contentUrl\":null,\n         \"content\":\n{\n    \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n    \"type\": \"AdaptiveCard\",\n    \"version\": \"1.4\",\n    \"speak\": \"<s>The forecast for Seattle ${formatEpoch(dt, 'MMMM d')} is mostly clear with a High of ${formatNumber((main.temp_max - 273) * 9 / 5 + 32, 0)} degrees and Low of ${formatNumber((main.temp_min - 273) * 9 / 5 + 32, 0)} degrees</s>\",\n    \"body\": [\n        {\n            \"type\": \"TextBlock\",\n            \"text\": \"Voltage, WA\",\n            \"size\": \"Large\",\n            \"isSubtle\": true,\n            \"wrap\": true\n        },\n        {\n            \"type\": \"ColumnSet\",\n            \"columns\": [\n                {\n                    \"type\": \"Column\",\n                    \"width\": \"auto\",\n                    \"items\": [\n                        {\n                            \"type\": \"Image\",\n                            \"url\": \"https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Square.png\",\n                            \"size\": \"Small\",\n                            \"altText\": \"Mostly cloudy weather\"\n                        }\n                    ]\n                },\n                {\n                    \"type\": \"Column\",\n                    \"width\": \"auto\",\n                    \"items\": [\n                        {\n                            \"type\": \"TextBlock\",\n                            \"text\": \" - \" + msg.a_voltage,\n                            \"size\": \"ExtraLarge\",\n                            \"spacing\": \"None\",\n                            \"wrap\": true\n                        }\n                    ]\n                },\n                {\n                    \"type\": \"Column\",\n                    \"width\": \"stretch\",\n                    \"items\": [\n                        {\n                            \"type\": \"TextBlock\",\n                            \"text\": \"°F\",\n                            \"weight\": \"Bolder\",\n                            \"spacing\": \"Small\",\n                            \"wrap\": true\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n}\n\n          \n      }\n   ]\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d031d730-b10a-11ed-9788-e7e5c5ff9ab6"
+      },
+      "name" : "Create Card",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 884,
+        "layoutY" : 778
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "https://api.callmebot.com/whatsapp.php?phone=${telefono}&text=[message]&apikey=",
+        "requestMethod" : "POST",
+        "useSimpleClientHttpFactory" : false,
+        "ignoreRequestBody" : false,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : {
+          "Content-Type" : "application/json"
+        },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : false,
+        "maxQueueSize" : 0,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d0335dd0-b10a-11ed-9788-e7e5c5ff9ab6"
+      },
+      "name" : "Send Whatsapp",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 351,
+        "layoutY" : 806
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchToData" : false,
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "WhatsappEnabled", "telefono" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : true
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d033abf0-b10a-11ed-9788-e7e5c5ff9ab6"
+      },
+      "name" : "Whatsapp?",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
     } ],
     "ruleChainConnections" : null
   },

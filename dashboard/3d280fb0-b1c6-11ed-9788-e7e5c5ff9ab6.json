@@ -10487,7 +10487,7 @@
             "maxLevel" : 1,
             "fetchLastLevelOnly" : false,
             "relationType" : "Contains",
-            "deviceTypes" : [ "Chiller", "Freezer", "Smart Shelf", "Smart Bin", "Door Sensor", "Liquid Level Sensor", "Occupancy Sensor", "Smoke Sensor", "Motion Sensor", "sensor", "shelly3em" ]
+            "deviceTypes" : [ "Chiller", "Freezer", "Smart Shelf", "Smart Bin", "Door Sensor", "Liquid Level Sensor", "Occupancy Sensor", "Smoke Sensor", "Motion Sensor", "shelly3em", "Camera" ]
           }
         },
         "4f533ad3-f478-db34-2083-a827bf1992d7" : {
@@ -10662,7 +10662,7 @@
         },
         "59f37c11-7e56-d654-d59f-92e228292640" : {
           "id" : "59f37c11-7e56-d654-d59f-92e228292640",
-          "alias" : "sensor",
+          "alias" : "Camera",
           "filter" : {
             "type" : "deviceSearchQuery",
             "resolveMultiple" : true,
@@ -10674,7 +10674,7 @@
             "maxLevel" : 1,
             "fetchLastLevelOnly" : false,
             "relationType" : "Contains",
-            "deviceTypes" : [ "sensor" ]
+            "deviceTypes" : [ "Camera" ]
           }
         },
         "1f9ba35b-f784-4cb3-8067-b8450c942d11" : {
@@ -10909,8 +10909,12 @@
                   "keyFilterPredicate" : {
                     "operation" : "EQUAL",
                     "value" : {
-                      "defaultValue" : "sensor",
-                      "dynamicValue" : null
+                      "defaultValue" : "Camera",
+                      "dynamicValue" : {
+                        "sourceType" : "CURRENT_USER",
+                        "sourceAttribute" : "displayCamera",
+                        "inherit" : false
+                      }
                     },
                     "ignoreCase" : false,
                     "type" : "STRING"

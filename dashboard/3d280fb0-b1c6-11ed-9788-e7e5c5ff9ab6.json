@@ -8646,18 +8646,15 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "4px",
             "settings" : {
-              "entitiesTitle" : "",
               "enableSearch" : true,
               "enableSelectColumnDisplay" : true,
               "enableStickyHeader" : true,
               "enableStickyAction" : true,
               "reserveSpaceForHiddenAction" : "true",
-              "displayEntityName" : true,
-              "entityNameColumnTitle" : "",
+              "displayEntityName" : false,
               "displayEntityLabel" : false,
-              "displayEntityType" : true,
-              "displayPagination" : true,
-              "defaultPageSize" : 10,
+              "displayEntityType" : false,
+              "displayPagination" : false,
               "defaultSortOrder" : "entityName",
               "useRowStyleFunction" : false
             },
@@ -8685,7 +8682,23 @@
                 "_hash" : 0.10683531550595227
               } ]
             } ],
-            "displayTimewindow" : true
+            "displayTimewindow" : true,
+            "actions" : {
+              "rowClick" : [ {
+                "name" : "Vai alla zona",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "zona",
+                "setEntityId" : true,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "29c6fada-9ff5-3887-6cfd-ef339e147896"
+              } ]
+            }
           },
           "row" : 0,
           "col" : 0,
@@ -9942,7 +9955,7 @@
               "widgets" : {
                 "685aba7d-ac12-7eb7-f03e-d7f42c52cd1a" : {
                   "sizeX" : 10,
-                  "sizeY" : 10,
+                  "sizeY" : 11,
                   "row" : 0,
                   "col" : 0
                 }

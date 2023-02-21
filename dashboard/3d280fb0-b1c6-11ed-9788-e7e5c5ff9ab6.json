@@ -8630,8 +8630,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1676900951239,
-                  "endTimeMs" : 1676987351239
+                  "startTimeMs" : 1676901214958,
+                  "endTimeMs" : 1676987614958
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -8682,19 +8682,19 @@
               }, {
                 "name" : "person",
                 "type" : "timeseries",
-                "label" : "Somma persone",
+                "label" : "Conteggio person",
                 "color" : "#ffc107",
                 "settings" : { },
                 "_hash" : 0.44528202836008934,
-                "aggregationType" : "SUM",
+                "aggregationType" : "COUNT",
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null,
                 "comparisonEnabled" : true,
-                "timeForComparison" : "customInterval",
-                "comparisonResultType" : "DELTA_ABSOLUTE",
+                "timeForComparison" : "days",
+                "comparisonResultType" : "PREVIOUS_VALUE",
                 "comparisonCustomIntervalValue" : 54000000
               }, {
                 "name" : "person",
@@ -8771,7 +8771,22 @@
                 "type" : "timeseries",
                 "label" : "Persone",
                 "color" : "#2196f3",
-                "settings" : { },
+                "settings" : {
+                  "hideDataByDefault" : false,
+                  "disableDataHiding" : false,
+                  "removeFromLegend" : false,
+                  "excludeFromStacking" : false,
+                  "showLines" : false,
+                  "showPoints" : false,
+                  "showSeparateAxis" : false,
+                  "axisPosition" : "left",
+                  "comparisonSettings" : {
+                    "showValuesForComparison" : true,
+                    "comparisonValuesLabel" : "",
+                    "color" : ""
+                  },
+                  "thresholds" : [ ]
+                },
                 "_hash" : 0.9618178555308823,
                 "aggregationType" : null,
                 "units" : null,
@@ -8855,7 +8870,7 @@
               "sortDataKeys" : false,
               "showMin" : false,
               "showMax" : false,
-              "showAvg" : true,
+              "showAvg" : false,
               "showTotal" : false,
               "showLatest" : false
             },

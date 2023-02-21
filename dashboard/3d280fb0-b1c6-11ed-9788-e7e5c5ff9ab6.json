@@ -9271,7 +9271,7 @@
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
                 "type" : "custom",
-                "customFunction" : "var params = widgetContext.stateController.getStateParams();\nparams['selectedSupermarket'] = null;\nwidgetContext.stateController.updateState(null, params);",
+                "customFunction" : "let stateIndex = widgetContext.stateController.getStateIndex();\r\nif (stateIndex > 0) {\r\n    stateIndex -= 1;\r\n    backToPrevState(stateIndex);\r\n}\r\n\r\nfunction backToPrevState(stateIndex) {\r\n    widgetContext.stateController.navigatePrevState(stateIndex);\r\n}\r\n",
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
                 "id" : "37e5e007-da10-e64c-be1e-899094481e42"
@@ -9281,38 +9281,6 @@
           "row" : 0,
           "col" : 0,
           "id" : "1ef13794-c711-4e4b-69da-20346f040948"
-        },
-        "9c12b385-d3c0-ebb9-3976-57f5b9bcb1aa" : {
-          "isSystemType" : true,
-          "bundleAlias" : "cards",
-          "typeAlias" : "html_card",
-          "type" : "static",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
-          "sizeX" : 7.5,
-          "sizeY" : 3,
-          "config" : {
-            "datasources" : [ ],
-            "timewindow" : {
-              "realtime" : {
-                "timewindowMs" : 60000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "rgb(255, 255, 255)",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "8px",
-            "settings" : {
-              "cardHtml" : "<tb-dashboard-state *ngIf=\"ctx.stateController.getStateParams().selectedSupermarket\" style=\"height: 170px;\" [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"supermarket_card_header\"></tb-dashboard-state>",
-              "cardCss" : ".card {\n    font-weight: bold;\n    font-size: 32px;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}"
-            },
-            "title" : "New HTML Card",
-            "dropShadow" : true
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "9c12b385-d3c0-ebb9-3976-57f5b9bcb1aa"
         }
       },
       "states" : {
@@ -10588,16 +10556,10 @@
                   "col" : 0
                 },
                 "1ef13794-c711-4e4b-69da-20346f040948" : {
-                  "sizeX" : 11,
+                  "sizeX" : 24,
                   "sizeY" : 2,
                   "row" : 0,
                   "col" : 0
-                },
-                "9c12b385-d3c0-ebb9-3976-57f5b9bcb1aa" : {
-                  "sizeX" : 7,
-                  "sizeY" : 2,
-                  "row" : 0,
-                  "col" : 11
                 }
               },
               "gridSettings" : {

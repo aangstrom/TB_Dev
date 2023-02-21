@@ -8618,21 +8618,20 @@
           "sizeY" : 6.5,
           "config" : {
             "timewindow" : {
-              "displayValue" : "",
-              "selectedTab" : 0,
-              "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
+              "hideInterval" : false,
+              "hideLastInterval" : false,
+              "hideQuickInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 1,
               "history" : {
                 "historyType" : 0,
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1676899389519,
-                  "endTimeMs" : 1676985789519
+                  "startTimeMs" : 1676900906009,
+                  "endTimeMs" : 1676987306009
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -8683,10 +8682,50 @@
               }, {
                 "name" : "person",
                 "type" : "timeseries",
-                "label" : "person",
+                "label" : "Persone attuali",
                 "color" : "#4caf50",
                 "settings" : { },
-                "_hash" : 0.1090041087923046
+                "_hash" : 0.1090041087923046,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "person",
+                "type" : "timeseries",
+                "label" : "Media",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.15566023467575785,
+                "aggregationType" : "AVG",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null,
+                "comparisonEnabled" : true,
+                "timeForComparison" : "days",
+                "comparisonResultType" : "DELTA_ABSOLUTE",
+                "comparisonCustomIntervalValue" : 7200000
+              }, {
+                "name" : "person",
+                "type" : "timeseries",
+                "label" : "Somma persone",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.44528202836008934,
+                "aggregationType" : "SUM",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null,
+                "comparisonEnabled" : true,
+                "timeForComparison" : "customInterval",
+                "comparisonResultType" : "DELTA_ABSOLUTE",
+                "comparisonCustomIntervalValue" : 54000000
               } ]
             } ],
             "displayTimewindow" : true,

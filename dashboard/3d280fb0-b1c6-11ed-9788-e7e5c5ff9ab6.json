@@ -2373,8 +2373,7 @@
               "allowClear" : true,
               "displayPagination" : false,
               "defaultSortOrder" : "-startTime",
-              "useRowStyleFunction" : true,
-              "rowStyleFunction" : "var severity = alarm.severity;\r\nvar color = '#fff';\r\nswitch (severity) {\r\n  case 'CRITICAL':\r\n    color = '#f87171';\r\n    break;\r\n  case 'MAJOR':\r\n    color = '#fbbf24';\r\n    break;\r\n  case 'MINOR':\r\n    color = '#facc15';\r\n    break;\r\n  case 'WARNING':\r\n    color = '#abab00';\r\n    break;\r\n  case 'INDETERMINATE':\r\n    color = 'green';\r\n    break;\r\n}\r\nreturn {\r\n  backgroundColor: color\r\n};\r\n"
+              "useRowStyleFunction" : false
             },
             "title" : "New Alarms table",
             "dropShadow" : false,
@@ -2438,10 +2437,20 @@
                 "label" : "Severity",
                 "color" : "#ffc107",
                 "settings" : {
+                  "columnWidth" : "0px",
                   "useCellStyleFunction" : false,
-                  "useCellContentFunction" : false
+                  "useCellContentFunction" : false,
+                  "defaultColumnVisibility" : "visible",
+                  "columnSelectionToDisplay" : "enabled",
+                  "columnExportOption" : "onlyVisible"
                 },
-                "_hash" : 0.09927019860088193
+                "_hash" : 0.09927019860088193,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               }, {
                 "name" : "details.data",
                 "type" : "alarm",

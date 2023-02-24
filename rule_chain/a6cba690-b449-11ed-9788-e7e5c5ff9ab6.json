@@ -30,7 +30,7 @@
       "configuration" : {
         "topicPattern" : "newname",
         "keyPattern" : null,
-        "bootstrapServers" : "157.230.126.181:9092",
+        "bootstrapServers" : "157.230.126.181:9093",
         "retries" : 10,
         "batchSize" : 16384,
         "linger" : 0,
@@ -38,7 +38,9 @@
         "acks" : "-1",
         "keySerializer" : "org.apache.kafka.common.serialization.StringSerializer",
         "valueSerializer" : "org.apache.kafka.common.serialization.StringSerializer",
-        "otherProperties" : { },
+        "otherProperties" : {
+          "security.protocol" : "plaintext"
+        },
         "addMetadataKeyValuesAsKafkaHeaders" : null,
         "kafkaHeadersCharset" : null
       },

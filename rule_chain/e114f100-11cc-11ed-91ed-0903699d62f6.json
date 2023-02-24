@@ -34,6 +34,10 @@
       "toIndex" : 5,
       "type" : "Success"
     }, {
+      "fromIndex" : 0,
+      "toIndex" : 8,
+      "type" : "Success"
+    }, {
       "fromIndex" : 2,
       "toIndex" : 1,
       "type" : "Success"
@@ -313,64 +317,35 @@
       "type" : "org.thingsboard.rule.engine.analytics.latest.telemetry.TbAggLatestTelemetryNode"
     }, {
       "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 219,
-        "layoutY" : 519
+        "description" : null,
+        "layoutX" : 362,
+        "layoutY" : 601
       },
       "configuration" : {
-        "topicPattern" : "quickstart",
+        "topicPattern" : "newname",
         "keyPattern" : null,
-        "bootstrapServers" : "157.230.126.181:9092",
-        "retries" : 0,
-        "batchSize" : 16384,
-        "linger" : 0,
-        "bufferMemory" : 1000000,
-        "acks" : "-1",
-        "keySerializer" : "org.apache.kafka.common.serialization.StringSerializer",
-        "valueSerializer" : "org.apache.kafka.common.serialization.StringSerializer",
-        "otherProperties" : { },
-        "addMetadataKeyValuesAsKafkaHeaders" : false,
-        "kafkaHeadersCharset" : "UTF-8"
-      },
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "50bc37f0-b427-11ed-9788-e7e5c5ff9ab6"
-      },
-      "name" : "MyFirstKafka",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 292,
-        "layoutY" : 597
-      },
-      "configuration" : {
-        "topicPattern" : "my-topic",
-        "keyPattern" : null,
-        "bootstrapServers" : "157.230.126.181:9092",
-        "retries" : 0,
+        "bootstrapServers" : "157.230.126.181:9093",
+        "retries" : 10,
         "batchSize" : 16384,
         "linger" : 0,
         "bufferMemory" : 33554432,
         "acks" : "-1",
         "keySerializer" : "org.apache.kafka.common.serialization.StringSerializer",
         "valueSerializer" : "org.apache.kafka.common.serialization.StringSerializer",
-        "otherProperties" : { },
-        "addMetadataKeyValuesAsKafkaHeaders" : false,
-        "kafkaHeadersCharset" : "UTF-8"
+        "otherProperties" : {
+          "security.protocol" : "plaintext"
+        },
+        "addMetadataKeyValuesAsKafkaHeaders" : null,
+        "kafkaHeadersCharset" : null
       },
       "createdTime" : 0,
-      "debugMode" : false,
+      "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "4cdc8ac0-b43d-11ed-9788-e7e5c5ff9ab6"
+        "id" : "c84665b0-b455-11ed-9788-e7e5c5ff9ab6"
       },
-      "name" : "MySecondKafka",
+      "name" : "Push to Kafka",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
     } ],

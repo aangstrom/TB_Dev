@@ -15,9 +15,118 @@
     "type" : "CORE"
   },
   "metaData" : {
-    "connections" : null,
+    "connections" : [ {
+      "fromIndex" : 1,
+      "toIndex" : 0,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 0,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 0,
+      "type" : "Success"
+    } ],
     "firstNodeIndex" : null,
-    "nodes" : [ ],
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 708,
+        "layoutY" : 147
+      },
+      "configuration" : {
+        "topicPattern" : "raw-data-topic",
+        "keyPattern" : null,
+        "bootstrapServers" : "157.230.126.181:9092",
+        "retries" : 0,
+        "batchSize" : 16384,
+        "linger" : 0,
+        "bufferMemory" : 33554432,
+        "acks" : "-1",
+        "keySerializer" : "org.apache.kafka.common.serialization.StringSerializer",
+        "valueSerializer" : "org.apache.kafka.common.serialization.StringSerializer",
+        "otherProperties" : { },
+        "addMetadataKeyValuesAsKafkaHeaders" : null,
+        "kafkaHeadersCharset" : null
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a6ddf610-b449-11ed-9788-e7e5c5ff9ab6"
+      },
+      "name" : "Push to Kafka",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 350,
+        "layoutY" : 73
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 5,
+        "originatorId" : "f9ffce40-fb1f-11e9-bf20-2142506a8114",
+        "originatorType" : "DEVICE",
+        "jsScript" : "var msg = { power: 5, name: \"Module 1\", panel: \"Panel 1\"};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a6deb960-b449-11ed-9788-e7e5c5ff9ab6"
+      },
+      "name" : "Module 1 Simulator",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 351,
+        "layoutY" : 149
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 5,
+        "originatorId" : "00014800-fb20-11e9-bf20-2142506a8114",
+        "originatorType" : "DEVICE",
+        "jsScript" : "var msg = { power: 5, name: \"Module 2\", panel: \"Panel 1\"};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a6df2e90-b449-11ed-9788-e7e5c5ff9ab6"
+      },
+      "name" : "Module 2 Simulator",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 351,
+        "layoutY" : 218
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 5,
+        "originatorId" : "052496c0-fb20-11e9-bf20-2142506a8114",
+        "originatorType" : "DEVICE",
+        "jsScript" : "var msg = { power: 3.5, name: \"Module 3\", panel: \"Panel 1\"};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a6df7cb0-b449-11ed-9788-e7e5c5ff9ab6"
+      },
+      "name" : "Module 2 Simulator",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    } ],
     "ruleChainConnections" : null
   },
   "relations" : [ ],

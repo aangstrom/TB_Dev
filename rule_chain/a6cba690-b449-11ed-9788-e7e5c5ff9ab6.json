@@ -62,15 +62,18 @@
       "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
     }, {
       "additionalInfo" : {
+        "description" : null,
         "layoutX" : 350,
         "layoutY" : 73
       },
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 5,
-        "originatorId" : "f9ffce40-fb1f-11e9-bf20-2142506a8114",
-        "originatorType" : "DEVICE",
-        "jsScript" : "var msg = { power: 5, name: \"Module 1\", panel: \"Panel 1\"};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };"
+        "scriptLang" : "JS",
+        "jsScript" : "var msg = { power: 5, name: \"Module 1\", panel: \"Panel 1\"};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : null,
+        "originatorId" : "dfc62330-b449-11ed-9788-e7e5c5ff9ab6",
+        "originatorType" : "DEVICE"
       },
       "createdTime" : 0,
       "debugMode" : true,
@@ -84,15 +87,18 @@
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
+        "description" : null,
         "layoutX" : 351,
         "layoutY" : 149
       },
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 5,
-        "originatorId" : "00014800-fb20-11e9-bf20-2142506a8114",
-        "originatorType" : "DEVICE",
-        "jsScript" : "var msg = { power: 5, name: \"Module 2\", panel: \"Panel 1\"};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };"
+        "scriptLang" : "JS",
+        "jsScript" : "var msg = { power: 5, name: \"Module 2\", panel: \"Panel 1\"};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : null,
+        "originatorId" : "e430d050-b449-11ed-9788-e7e5c5ff9ab6",
+        "originatorType" : "DEVICE"
       },
       "createdTime" : 0,
       "debugMode" : true,
@@ -106,15 +112,18 @@
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
+        "description" : null,
         "layoutX" : 351,
         "layoutY" : 218
       },
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 5,
-        "originatorId" : "052496c0-fb20-11e9-bf20-2142506a8114",
-        "originatorType" : "DEVICE",
-        "jsScript" : "var msg = { power: 3.5, name: \"Module 3\", panel: \"Panel 1\"};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };"
+        "scriptLang" : "JS",
+        "jsScript" : "var msg = { power: 3.5, name: \"Module 3\", panel: \"Panel 1\"};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : null,
+        "originatorId" : "e8af0570-b449-11ed-9788-e7e5c5ff9ab6",
+        "originatorType" : "DEVICE"
       },
       "createdTime" : 0,
       "debugMode" : true,
@@ -123,7 +132,7 @@
         "entityType" : "RULE_NODE",
         "id" : "a6df7cb0-b449-11ed-9788-e7e5c5ff9ab6"
       },
-      "name" : "Module 2 Simulator",
+      "name" : "Module 3 Simulator",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     } ],

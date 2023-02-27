@@ -2099,9 +2099,8 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "4px",
             "settings" : {
-              "markdownTextPattern" : "### Markdown/HTML card\n - **Current entity**: ${entityName}.\n - **Current value**: ${Random}.",
-              "markdownTextFunction" : "var deviceState;\nif (data && data.length && data[0]['entityId']) {\n    deviceState = true;\n} else {\n    deviceState = false;\n}\n\nreturn '<div class=\"main-layout\" style=\"width: 100%; height: 100%;\" fxLayout=\"column\">' +\n          (deviceState \n            ? ('<tb-dashboard-state style=\"height: 174px;\" [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"device_card_header\"></tb-dashboard-state>' +\n               '<tb-dashboard-state fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"device_card_details\"></tb-dashboard-state>') \n            : '<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"devices_card\"></tb-dashboard-state>') +\n          '<mat-divider style=\"margin-top: 10px; margin-bottom: 10px;\"></mat-divider>' +\n          '<tb-dashboard-state fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"' + (deviceState ? 'true' : 'false') + '\" stateId=\"'+ (deviceState ? 'device_alarms' : 'devices_alarms') +'\"></tb-dashboard-state>' +\n       '</div>';",
               "useMarkdownTextFunction" : true,
+              "markdownTextFunction" : "var deviceState;\nif (data && data.length && data[0]['entityId']) {\n    deviceState = true;\n} else {\n    deviceState = false;\n}\n\nreturn '<div class=\"main-layout\" style=\"width: 100%; height: 100%;\" fxLayout=\"column\">' +\n          (deviceState \n            ? ('<tb-dashboard-state style=\"height: 174px;\" [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"device_card_header\"></tb-dashboard-state>' +\n               '<tb-dashboard-state fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"device_card_details\"></tb-dashboard-state>') \n            : '<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"devices_card\"></tb-dashboard-state>') +\n          '<mat-divider style=\"margin-top: 0px; margin-bottom: 10px;\"></mat-divider>' +\n          '<tb-dashboard-state fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"' + (deviceState ? 'true' : 'false') + '\" stateId=\"'+ (deviceState ? 'device_alarms' : 'devices_alarms') +'\"></tb-dashboard-state>' +\n       '</div>';",
               "markdownCss" : ".tb-markdown-view .tb-progress-cover, .tb-markdown-view .mat-drawer-container {\n    background-color: #fff;\n}\n.tb-markdown-view div, .tb-markdown-view p {\n    line-height: normal;\n}\n\n.tb-markdown-view > div {\n    padding: 0;\n}\n\n.tb-markdown-view table {\n    border: none;\n    border-radius: 0px;\n    overflow: auto;\n}\n\n.tb-markdown-view .mat-toolbar.mat-primary div {\n    color: var(--tb-primary-contrast-500);\n}\n\n.tb-markdown-view .tb-widget-container > .tb-widget {\n    border-radius: 0px;\n}\n\n.tb-markdown-view .tb-widget-container > .tb-widget .tb-table-widget mat-toolbar {\n    height: 65px;\n    max-height: 65px;\n}\n\n\n.tb-markdown-view .tb-widget-container > .tb-widget.tb-has-timewindow .tb-table-widget mat-toolbar {\n    height: 100px;\n    max-height: 100px;\n}\n\n"
             },
             "title" : "New Markdown/HTML Card",
@@ -6314,7 +6313,7 @@
             "showTitle" : false,
             "backgroundColor" : "#fff",
             "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "8px",
+            "padding" : "",
             "settings" : {
               "useMarkdownTextFunction" : true,
               "markdownTextFunction" : "var type;      \nif (data && data.length) {\n    type = data[0]['Type'];\n} else {\n    type = 'N/A';\n}\n             \nvar detailsStateName = getDetailsStateName(type);\n\nreturn '<div style=\"width: 100%; height: 100%;\" fxLayout=\"column\">' + \n           '<tb-dashboard-state fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"' + detailsStateName + '\"></tb-dashboard-state>' +\n       '</div>';\n\nfunction getDetailsStateName(deviceType) {\n    switch(deviceType) {\n        case 'Energy':\n            return 'energy_sensor_details';\n        case 'AA Sensor':\n            return 'aa_sensor_details';\n        case 'Smoke Sensor':\n            return 'smoke_sensor_details';\n        case 'Chiller':\n            return 'chiller_details';\n        case 'Freezer':\n            return 'freezer_details';\n        case 'Liquid Level Sensor':\n            return 'liquid_sensor_details';\n        case 'Smart Bin':\n            return 'smart_bin_details';\n        case 'Motion Sensor':\n            return 'motion_sensor_details';\n        case 'Occupancy Sensor':\n            return 'occupancy_sensor_details';\n        case 'Camera':\n            return 'camera_sensor_details';\n        case 'shelly3em':\n            return 'energy_sensor_details';\n        default:\n            return 'unknown_details';\n    }\n}       \n       "
@@ -6376,7 +6375,8 @@
                 "openInPopover" : true,
                 "id" : "44417062-4a4f-0479-0042-93952e15436a"
               } ]
-            }
+            },
+            "pageSize" : 1024
           },
           "row" : 0,
           "col" : 0,

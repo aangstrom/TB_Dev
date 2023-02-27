@@ -429,7 +429,7 @@
               "type" : "entity",
               "name" : null,
               "entityAliasId" : "48419e4a-90d9-9863-29b2-3877821b7e45",
-              "filterId" : "3a46fadd-6a79-1f15-1c39-f7f0a30ab5f8",
+              "filterId" : null,
               "dataKeys" : [ {
                 "name" : "active",
                 "type" : "attribute",
@@ -473,87 +473,20 @@
                 "settings" : { },
                 "_hash" : 0.8300505638957978
               }, {
-                "name" : "weight",
-                "type" : "timeseries",
-                "label" : "weight",
-                "color" : "#3f51b5",
-                "settings" : { },
-                "_hash" : 0.9334528007194596
-              }, {
                 "name" : "state",
                 "type" : "attribute",
                 "label" : "state",
                 "color" : "#0091ea",
                 "settings" : { },
                 "_hash" : 0.32082557959927205
-              } ]
-            }, {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "4f533ad3-f478-db34-2083-a827bf1992d7",
-              "filterId" : "3a46fadd-6a79-1f15-1c39-f7f0a30ab5f8",
-              "dataKeys" : [ {
-                "name" : "xPos",
-                "type" : "attribute",
-                "label" : "xPos",
-                "color" : "#e91e63",
-                "settings" : { },
-                "_hash" : 0.18823677296060626,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "yPos",
-                "type" : "attribute",
-                "label" : "yPos",
-                "color" : "#ffeb3b",
-                "settings" : { },
-                "_hash" : 0.6309039008437192,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "active",
-                "type" : "attribute",
-                "label" : "active",
-                "color" : "#03a9f4",
-                "settings" : { },
-                "_hash" : 0.7876756601471564,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
               }, {
                 "name" : "temperature",
                 "type" : "timeseries",
                 "label" : "temperature",
-                "color" : "#ff9800",
+                "color" : "#c62828",
                 "settings" : { },
-                "_hash" : 0.8543549415494662
-              }, {
-                "name" : "type",
-                "type" : "entityField",
-                "label" : "Type",
-                "color" : "#2962ff",
-                "settings" : { },
-                "_hash" : 0.3746151295694715,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "state",
-                "type" : "attribute",
-                "label" : "state",
-                "color" : "#ff6d00",
-                "settings" : { },
-                "_hash" : 0.023710096563531735,
+                "_hash" : 0.7150372499895881,
+                "aggregationType" : "NONE",
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
@@ -1265,7 +1198,7 @@
             }, {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "eb3c1bbe-ff4e-ed17-5fe1-e2698828258d",
+              "entityAliasId" : "4f533ad3-f478-db34-2083-a827bf1992d7",
               "filterId" : "3a46fadd-6a79-1f15-1c39-f7f0a30ab5f8",
               "dataKeys" : [ {
                 "name" : "xPos",
@@ -1433,7 +1366,7 @@
               "showTooltipAction" : "hover",
               "autocloseTooltip" : true,
               "useTooltipFunction" : true,
-              "tooltipFunction" : "var content = '<div style=\"font-family: Roboto;\">' +\r\n                 '<div style=\"font-size: 14px; font-weight: 500; padding-bottom: 8px;\">${entityLabel}</div>';\r\n                 \r\nvar deviceType = data['Type'];\r\nif (typeof deviceType !== undefined) {\r\n    content += '<div style=\"font-size: 12px; font-weight: normal;\">' + getInfoByDeviceType(deviceType) + '</div>';\r\n}\r\ncontent += '</div>';\r\nreturn content;\r\n\r\nfunction getInfoByDeviceType(type) {\r\n    switch (type) {\r\n        case 'Smart Shelf':\r\n            return 'Weight: ${weight:1} Kg';\r\n        case 'Chiller':\r\n        case 'Freezer':    \r\n            return 'Temperature: ${temperature:1} °C';\r\n        case 'Smart Bin':\r\n            return 'Fullness: ${level:0}%';\r\n        case 'Liquid Level Sensor':\r\n            return 'Liquid level: ${level:0}%';\r\n        case 'Door Sensor':\r\n            var open = data['open'] === 'true';\r\n            return 'State: ' + (open ? 'Open' : 'Closed');\r\n        case 'Motion Sensor':\r\n            var movement = data['movement'] === 'true';\r\n            return 'Movement detection: ' + (movement ? 'Detected' : 'None');\r\n        case 'Occupancy Sensor':\r\n            var occupied = data['occupied'] === 'true';\r\n            return 'State: ' + (occupied ? 'Occupied' : 'Vacant');\r\n        case 'Smoke Sensor':\r\n            var alarm = data['alarm'] === 'true';\r\n            return 'Fire alarm: ' + (alarm ? 'Alarm' : 'None');\r\n        case 'Camera':\r\n            return 'Persone: ${person}';\r\n        case 'shelly3em':\r\n            return 'Fase A: ${Phase_A_power} KWh.'+' Fase B: ${Phase_B_power} KWh'+' Fase C: ${Phase_C_power} KWh';\r\n        default:\r\n            return 'TODO';\r\n    }\r\n}\r\n",
+              "tooltipFunction" : "var content = '<div style=\"font-family: Roboto;\">' +\r\n                 '<div style=\"font-size: 14px; font-weight: 500; padding-bottom: 8px;\">${entityLabel}</div>';\r\n                 \r\nvar deviceType = data['Type'];\r\nif (typeof deviceType !== undefined) {\r\n    content += '<div style=\"font-size: 12px; font-weight: normal;\">' + getInfoByDeviceType(deviceType) + '</div>';\r\n}\r\ncontent += '</div>';\r\nreturn content;\r\n\r\nfunction getInfoByDeviceType(type) {\r\n    switch (type) {\r\n        case 'AA Sensor':\r\n            return 'Temperatura: ${temperature:1} °C';\r\n        case 'Chiller':\r\n        case 'Freezer':    \r\n            return 'Temperature: ${temperature:1} °C';\r\n        case 'Smart Bin':\r\n            return 'Fullness: ${level:0}%';\r\n        case 'Liquid Level Sensor':\r\n            return 'Liquid level: ${level:0}%';\r\n        case 'Door Sensor':\r\n            var open = data['open'] === 'true';\r\n            return 'State: ' + (open ? 'Open' : 'Closed');\r\n        case 'Motion Sensor':\r\n            var movement = data['movement'] === 'true';\r\n            return 'Movement detection: ' + (movement ? 'Detected' : 'None');\r\n        case 'Occupancy Sensor':\r\n            var occupied = data['occupied'] === 'true';\r\n            return 'State: ' + (occupied ? 'Occupied' : 'Vacant');\r\n        case 'Smoke Sensor':\r\n            var alarm = data['alarm'] === 'true';\r\n            return 'Fire alarm: ' + (alarm ? 'Alarm' : 'None');\r\n        case 'Camera':\r\n            return 'Persone: ${person}';\r\n        case 'shelly3em':\r\n            return 'Fase A: ${Phase_A_power} KWh.'+' Fase B: ${Phase_B_power} KWh'+' Fase C: ${Phase_C_power} KWh';\r\n        default:\r\n            return 'TODO';\r\n    }\r\n}\r\n",
               "tooltipOffsetX" : 0.5,
               "tooltipOffsetY" : -0.5,
               "color" : "#FE7569",
@@ -11188,7 +11121,7 @@
         },
         "48419e4a-90d9-9863-29b2-3877821b7e45" : {
           "id" : "48419e4a-90d9-9863-29b2-3877821b7e45",
-          "alias" : "Smart Shelves",
+          "alias" : "AA Sensor",
           "filter" : {
             "type" : "deviceSearchQuery",
             "resolveMultiple" : true,
@@ -11200,7 +11133,7 @@
             "maxLevel" : 1,
             "fetchLastLevelOnly" : false,
             "relationType" : "Contains",
-            "deviceTypes" : [ "Smart Shelf" ]
+            "deviceTypes" : [ "AA Sensor" ]
           }
         },
         "129977b6-de2f-546b-7df8-2040f39f8732" : {
@@ -11222,7 +11155,7 @@
         },
         "4f533ad3-f478-db34-2083-a827bf1992d7" : {
           "id" : "4f533ad3-f478-db34-2083-a827bf1992d7",
-          "alias" : "Chillers",
+          "alias" : "Energy",
           "filter" : {
             "type" : "deviceSearchQuery",
             "resolveMultiple" : true,
@@ -11234,7 +11167,7 @@
             "maxLevel" : 1,
             "fetchLastLevelOnly" : false,
             "relationType" : "Contains",
-            "deviceTypes" : [ "Chiller" ]
+            "deviceTypes" : [ "shelly3em", "AA Energy" ]
           }
         },
         "412dae47-c5be-1531-0fc0-57a0fae0465d" : {

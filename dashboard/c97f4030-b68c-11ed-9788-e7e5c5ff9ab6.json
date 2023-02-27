@@ -438,13 +438,6 @@
                 "settings" : { },
                 "_hash" : 0.07057010303477718
               }, {
-                "name" : "name",
-                "type" : "entityField",
-                "label" : "Name",
-                "color" : "#f44336",
-                "settings" : { },
-                "_hash" : 0.8768256363159095
-              }, {
                 "name" : "label",
                 "type" : "entityField",
                 "label" : "Label",
@@ -499,6 +492,19 @@
                 "color" : "#0097a7",
                 "settings" : { },
                 "_hash" : 0.8187449941179923
+              }, {
+                "name" : "name",
+                "type" : "attribute",
+                "label" : "Name",
+                "color" : "#304ffe",
+                "settings" : { },
+                "_hash" : 0.5012257746967137,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ]
             }, {
               "type" : "entity",
@@ -641,19 +647,6 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "name",
-                "type" : "entityField",
-                "label" : "Name",
-                "color" : "#5d4037",
-                "settings" : { },
-                "_hash" : 0.32594343410626925,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
                 "name" : "type",
                 "type" : "entityField",
                 "label" : "Type",
@@ -713,6 +706,19 @@
                 "color" : "#c62828",
                 "settings" : { },
                 "_hash" : 0.7449916304056636
+              }, {
+                "name" : "name",
+                "type" : "attribute",
+                "label" : "Name",
+                "color" : "#304ffe",
+                "settings" : { },
+                "_hash" : 0.7495506274413346,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ]
             } ],
             "timewindow" : {
@@ -780,7 +786,7 @@
               "showTooltipAction" : "hover",
               "autocloseTooltip" : true,
               "useTooltipFunction" : true,
-              "tooltipFunction" : "var content = '<div style=\"font-family: Roboto;\">' +\r\n                 '<div style=\"font-size: 14px; font-weight: 500; padding-bottom: 8px;\">${entityLabel}</div>';\r\n                 \r\nvar deviceType = data['Type'];\r\nif (typeof deviceType !== undefined) {\r\n    content += '<div style=\"font-size: 12px; font-weight: normal;\">' + getInfoByDeviceType(deviceType) + '</div>';\r\n}\r\ncontent += '</div>';\r\nreturn content;\r\n\r\nfunction getInfoByDeviceType(type) {\r\n    switch (type) {\r\n        case 'AA Sensor':\r\n            return 'Temperatura: ${temperature:1} °C<br>Umidità: ${humidity:1} %';\r\n        case 'Chiller':\r\n        case 'Freezer':    \r\n            return 'Temperature: ${temperature:1} °C';\r\n        case 'Smart Bin':\r\n            return 'Fullness: ${level:0}%';\r\n        case 'Liquid Level Sensor':\r\n            return 'Liquid level: ${level:0}%';\r\n        case 'Door Sensor':\r\n            var open = data['open'] === 'true';\r\n            return 'State: ' + (open ? 'Open' : 'Closed');\r\n        case 'Motion Sensor':\r\n            var movement = data['movement'] === 'true';\r\n            return 'Movement detection: ' + (movement ? 'Detected' : 'None');\r\n        case 'Occupancy Sensor':\r\n            var occupied = data['occupied'] === 'true';\r\n            return 'State: ' + (occupied ? 'Occupied' : 'Vacant');\r\n        case 'Smoke Sensor':\r\n            var alarm = data['alarm'] === 'true';\r\n            return 'Fire alarm: ' + (alarm ? 'Alarm' : 'None');\r\n        case 'Camera':\r\n            return 'Persone: ${person}';\r\n        case 'shelly3em':\r\n            return 'Fase A: ${Phase_A_power} KWh.'+' Fase B: ${Phase_B_power} KWh'+' Fase C: ${Phase_C_power} KWh';\r\n        default:\r\n            return 'TODO';\r\n    }\r\n}\r\n",
+              "tooltipFunction" : "var content = '<div style=\"font-family: Roboto;\">' +\r\n                 '<div style=\"font-size: 14px; font-weight: 500; padding-bottom: 8px;\">${Name}</div>';\r\n                 \r\nvar deviceType = data['Type'];\r\nif (typeof deviceType !== undefined) {\r\n    content += '<div style=\"font-size: 12px; font-weight: normal;\">' + getInfoByDeviceType(deviceType) + '</div>';\r\n}\r\ncontent += '</div>';\r\nreturn content;\r\n\r\nfunction getInfoByDeviceType(type) {\r\n    switch (type) {\r\n        case 'AA Sensor':\r\n            return 'Temperatura: ${temperature:1} °C<br>Umidità: ${humidity:1} %';\r\n        case 'Chiller':\r\n        case 'Freezer':    \r\n            return 'Temperature: ${temperature:1} °C';\r\n        case 'Smart Bin':\r\n            return 'Fullness: ${level:0}%';\r\n        case 'Liquid Level Sensor':\r\n            return 'Liquid level: ${level:0}%';\r\n        case 'Door Sensor':\r\n            var open = data['open'] === 'true';\r\n            return 'State: ' + (open ? 'Open' : 'Closed');\r\n        case 'Motion Sensor':\r\n            var movement = data['movement'] === 'true';\r\n            return 'Movement detection: ' + (movement ? 'Detected' : 'None');\r\n        case 'Occupancy Sensor':\r\n            var occupied = data['occupied'] === 'true';\r\n            return 'State: ' + (occupied ? 'Occupied' : 'Vacant');\r\n        case 'Smoke Sensor':\r\n            var alarm = data['alarm'] === 'true';\r\n            return 'Fire alarm: ' + (alarm ? 'Alarm' : 'None');\r\n        case 'Camera':\r\n            return 'Persone: ${person}';\r\n        case 'shelly3em':\r\n            return 'Fase A: ${Phase_A_power} KWh.'+' Fase B: ${Phase_B_power} KWh'+' Fase C: ${Phase_C_power} KWh';\r\n        default:\r\n            return 'TODO';\r\n    }\r\n}\r\n",
               "tooltipOffsetX" : 0.5,
               "tooltipOffsetY" : -0.5,
               "color" : "#FE7569",

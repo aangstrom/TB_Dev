@@ -5581,7 +5581,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "return (((value-1750)/3700)*100).toFixed(2);"
+                "postFuncBody" : "var battery_level;\nvar mvolts=value;\nif (mvolts >= 3000)\n{\n\tbattery_level = 100;\n}\nelse if (mvolts > 2900)\n{\n\tbattery_level = 100 - ((3000 - mvolts) * 58) / 100;\n}\nelse if (mvolts > 2740)\n{\n\tbattery_level = 42 - ((2900 - mvolts) * 24) / 160;\n}\nelse if (mvolts > 2440)\n{\n\tbattery_level = 18 - ((2740 - mvolts) * 12) / 300;\n}\nelse if (mvolts > 2100)\n{\n\tbattery_level = 6 - ((2440 - mvolts) * 6) / 340;\n}\nelse\n{\n\tbattery_level = 0;\n}\nreturn battery_level;\n//return (((value-1750)/3700)*100).toFixed(2);"
               }, {
                 "name" : "name",
                 "type" : "attribute",

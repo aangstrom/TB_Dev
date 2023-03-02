@@ -5,7 +5,6 @@
       "description" : "Simulatore Temperatura ed Umidità"
     },
     "configuration" : null,
-    "createdTime" : 1658915049023,
     "debugMode" : false,
     "externalId" : null,
     "firstRuleNodeId" : null,
@@ -15,7 +14,6 @@
     },
     "name" : "Temp_Humi_simulator",
     "root" : false,
-    "tenantId" : null,
     "type" : "CORE"
   },
   "metaData" : {
@@ -38,9 +36,11 @@
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 5,
+        "scriptLang" : "JS",
         "jsScript" : "var temperature = 18 + Math.random() * (32 - 18);\ntemperature = Math.round( temperature * 100 ) / 100;\nvar humidity = 10 + Math.random() * (90 - 10);\nhumidity = Math.round( humidity * 100 ) / 100;\nvar msg = { \n            temperature: temperature,\n            humidity: humidity\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
-        "originatorId" : "0fc19fc0-0d91-11ed-91ed-0903699d62f6",
-        "originatorType" : "DEVICE"
+        "tbelScript" : null,
+        "originatorId" : null,
+        "originatorType" : null
       },
       "createdTime" : 0,
       "debugMode" : false,
@@ -59,7 +59,7 @@
         "layoutY" : 274
       },
       "configuration" : {
-        "ruleChainId" : "7c8360c0-01d5-11ed-8014-35af6f7ed6b6"
+        "ruleChainId" : "f59b4a50-b8e5-11ed-9788-e7e5c5ff9ab6"
       },
       "createdTime" : 0,
       "debugMode" : false,

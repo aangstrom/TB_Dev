@@ -161,8 +161,8 @@
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 681,
-        "layoutY" : 371
+        "layoutX" : 721,
+        "layoutY" : 358
       },
       "configuration" : {
         "originatorTypes" : [ "DEVICE", "ASSET" ]
@@ -180,8 +180,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 900,
-        "layoutY" : 244
+        "layoutX" : 937,
+        "layoutY" : 113
       },
       "configuration" : {
         "jsScript" : "var criticalAlarmsCount = msg.criticalAlarmsCount;\nvar majorAlarmsCount = msg.majorAlarmsCount;\n\nvar state = 'normal';\n\nif (criticalAlarmsCount && Number(criticalAlarmsCount) > 0) {\n    state = 'critical';\n} else if (majorAlarmsCount && Number(majorAlarmsCount) > 0) {\n    state = 'major';\n}\n\nreturn {\n    msg: {\n        state: state\n    },\n    metadata: {\n        scope: 'SERVER_SCOPE'\n    },\n    msgType: 'POST_ATTRIBUTES_REQUEST'\n};"

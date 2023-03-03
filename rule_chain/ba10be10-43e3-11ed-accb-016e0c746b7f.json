@@ -49,6 +49,14 @@
       "toIndex" : 11,
       "type" : "RPC Request to Device"
     }, {
+      "fromIndex" : 2,
+      "toIndex" : 34,
+      "type" : "Alarm Cleared"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 35,
+      "type" : "Entity Created"
+    }, {
       "fromIndex" : 6,
       "toIndex" : 2,
       "type" : "False"
@@ -76,6 +84,18 @@
       "fromIndex" : 9,
       "toIndex" : 24,
       "type" : "Alarm Created"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 34,
+      "type" : "Alarm Cleared"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 34,
+      "type" : "Alarm Created"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 34,
+      "type" : "Alarm Severity Updated"
     }, {
       "fromIndex" : 12,
       "toIndex" : 9,
@@ -179,6 +199,18 @@
     }, {
       "fromIndex" : 32,
       "toIndex" : 20,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 34,
+      "toIndex" : 0,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 35,
+      "toIndex" : 36,
+      "type" : "True"
+    }, {
+      "fromIndex" : 36,
+      "toIndex" : 1,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
@@ -314,8 +346,8 @@
       "type" : "org.thingsboard.rule.engine.filter.TbOriginatorTypeFilterNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 607,
-        "layoutY" : 151
+        "layoutX" : 598,
+        "layoutY" : 406
       },
       "configuration" : {
         "messageTypes" : [ "POST_ATTRIBUTES_REQUEST", "RPC_CALL_FROM_SERVER_TO_DEVICE" ]
@@ -332,8 +364,8 @@
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeFilterNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 915,
-        "layoutY" : 150
+        "layoutX" : 871,
+        "layoutY" : 407
       },
       "configuration" : {
         "entityGroupId" : null,
@@ -460,8 +492,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 667,
-        "layoutY" : 412
+        "layoutX" : 649,
+        "layoutY" : 484
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -532,7 +564,7 @@
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 891,
-        "layoutY" : 600
+        "layoutY" : 636
       },
       "configuration" : {
         "useSystemSmtpSettings" : true,
@@ -564,7 +596,7 @@
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 668,
-        "layoutY" : 644
+        "layoutY" : 680
       },
       "configuration" : {
         "restEndpointUrlPattern" : "${ss_TeamsUrl}",
@@ -604,7 +636,7 @@
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 893,
-        "layoutY" : 524
+        "layoutY" : 560
       },
       "configuration" : {
         "fromTemplate" : "alert@aangstrom.it",
@@ -701,7 +733,7 @@
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 667,
-        "layoutY" : 569
+        "layoutY" : 605
       },
       "configuration" : {
         "scriptLang" : "JS",
@@ -908,7 +940,7 @@
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 884,
-        "layoutY" : 745
+        "layoutY" : 781
       },
       "configuration" : {
         "scriptLang" : "JS",
@@ -954,7 +986,7 @@
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 803,
-        "layoutY" : 844
+        "layoutY" : 880
       },
       "configuration" : {
         "restEndpointUrlPattern" : "https://api.textmebot.com/send.php?recipient=${ss_telefono}&apikey=3uVVBeCu8kqg&text=${msg}",
@@ -990,6 +1022,77 @@
       "name" : "Send Whatsapp",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 624,
+        "layoutY" : 122
+      },
+      "configuration" : {
+        "alarmsCountMappings" : [ {
+          "target" : "criticalAlarmsCount",
+          "typesList" : [ "High Temperature Alarm", "Low Temperature Alarm", "Door left open", "Door was broken", "Low Battery", "Low Liquid Level", "Motion Detected", "Prolonged occupation", "Bin is full", "Low on items", "Fire Alarm" ],
+          "severityList" : [ "CRITICAL" ],
+          "statusList" : [ "ACTIVE_UNACK", "ACTIVE_ACK" ]
+        }, {
+          "target" : "majorAlarmsCount",
+          "typesList" : [ "High Temperature Alarm", "Low Temperature Alarm", "Door left open", "Door was broken", "Low Battery", "Low Liquid Level", "Motion Detected", "Prolonged occupation", "Bin is full", "Low on items", "Fire Alarm" ],
+          "severityList" : [ "MAJOR" ],
+          "statusList" : [ "ACTIVE_UNACK", "ACTIVE_ACK" ]
+        } ],
+        "countAlarmsForPropagationEntities" : true,
+        "propagationEntityTypes" : null,
+        "queueName" : "Main",
+        "outMsgType" : "POST_TELEMETRY_REQUEST"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "5fa99dc0-b9a4-11ed-9788-e7e5c5ff9ab6"
+      },
+      "name" : "Alarms Count",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.analytics.latest.alarm.TbAlarmsCountNodeV2"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 997,
+        "layoutY" : 59
+      },
+      "configuration" : {
+        "originatorTypes" : [ "DEVICE", "ASSET" ]
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "5faaaf30-b9a4-11ed-9788-e7e5c5ff9ab6"
+      },
+      "name" : "isDeviceOrAsset",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.filter.TbOriginatorTypeFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1264,
+        "layoutY" : 64
+      },
+      "configuration" : {
+        "jsScript" : "var criticalAlarmsCount = msg.criticalAlarmsCount;\nvar majorAlarmsCount = msg.majorAlarmsCount;\n\nvar state = 'normal';\n\nif (criticalAlarmsCount && Number(criticalAlarmsCount) > 0) {\n    state = 'critical';\n} else if (majorAlarmsCount && Number(majorAlarmsCount) > 0) {\n    state = 'major';\n}\n\nreturn {\n    msg: {\n        state: state\n    },\n    metadata: {\n        scope: 'SERVER_SCOPE'\n    },\n    msgType: 'POST_ATTRIBUTES_REQUEST'\n};"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "5fab2460-b9a4-11ed-9788-e7e5c5ff9ab6"
+      },
+      "name" : "Update state attributes",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

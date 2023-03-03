@@ -9920,7 +9920,7 @@
               "selectedTab" : 0,
               "realtime" : {
                 "realtimeType" : 0,
-                "timewindowMs" : 86400000,
+                "timewindowMs" : 3600000,
                 "quickInterval" : "CURRENT_DAY",
                 "interval" : 300000
               },
@@ -10014,16 +10014,33 @@
               "dataKeys" : [ {
                 "name" : "status",
                 "type" : "timeseries",
-                "label" : "status",
+                "label" : "On/Off",
                 "color" : "#2196f3",
-                "settings" : { },
+                "settings" : {
+                  "hideDataByDefault" : false,
+                  "disableDataHiding" : false,
+                  "removeFromLegend" : false,
+                  "excludeFromStacking" : false,
+                  "showLines" : true,
+                  "lineWidth" : 1,
+                  "fillLines" : true,
+                  "showPoints" : false,
+                  "showSeparateAxis" : false,
+                  "axisPosition" : "left",
+                  "comparisonSettings" : {
+                    "showValuesForComparison" : true,
+                    "comparisonValuesLabel" : "",
+                    "color" : ""
+                  },
+                  "thresholds" : [ ]
+                },
                 "_hash" : 0.5389315620341646,
                 "aggregationType" : null,
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "if(value>0){\n    return 'On';\n}else{\n    return 'Off'   \n}"
+                "usePostProcessing" : false,
+                "postFuncBody" : null
               } ],
               "latestDataKeys" : null
             } ],
@@ -10037,12 +10054,12 @@
               "selectedTab" : 0,
               "realtime" : {
                 "realtimeType" : 0,
-                "timewindowMs" : 86400000,
+                "timewindowMs" : 3600000,
                 "quickInterval" : "CURRENT_DAY",
                 "interval" : 300000
               },
               "aggregation" : {
-                "type" : "AVG",
+                "type" : "NONE",
                 "limit" : 25000
               }
             },

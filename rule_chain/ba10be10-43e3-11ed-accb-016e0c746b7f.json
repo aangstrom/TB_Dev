@@ -224,6 +224,10 @@
       "fromIndex" : 37,
       "toIndex" : 38,
       "type" : "Success"
+    }, {
+      "fromIndex" : 38,
+      "toIndex" : 39,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -790,8 +794,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 48,
-        "layoutY" : 588
+        "layoutX" : 8,
+        "layoutY" : 761
       },
       "configuration" : {
         "msgCount" : 0,
@@ -815,8 +819,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 53,
-        "layoutY" : 718
+        "layoutX" : 18,
+        "layoutY" : 836
       },
       "configuration" : {
         "msgCount" : 0,
@@ -1108,8 +1112,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 50,
-        "layoutY" : 494
+        "layoutX" : 20,
+        "layoutY" : 471
       },
       "configuration" : {
         "msgCount" : 0,
@@ -1133,8 +1137,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 143,
-        "layoutY" : 554
+        "layoutX" : 79,
+        "layoutY" : 557
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -1155,6 +1159,27 @@
       "name" : "Get setTemperature",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 73,
+        "layoutY" : 633
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: \"POST_TELEMETRY_REQUEST\"};",
+        "tbelScript" : "var newMsg={\n    \n};\nreturn {msg: msg, metadata: metadata, msgType: \"POST_TELEMETRY_REQUEST\"};"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b9da5570-b9bb-11ed-9788-e7e5c5ff9ab6"
+      },
+      "name" : "Trasform to telemetry",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

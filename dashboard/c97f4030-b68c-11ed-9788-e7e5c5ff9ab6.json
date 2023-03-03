@@ -719,6 +719,27 @@
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
+              }, {
+                "name" : "Phase_A_Name",
+                "type" : "attribute",
+                "label" : "Phase_A_Name",
+                "color" : "#304ffe",
+                "settings" : { },
+                "_hash" : 0.6268522489619097
+              }, {
+                "name" : "Phase_B_Name",
+                "type" : "attribute",
+                "label" : "Phase_B_Name",
+                "color" : "#c51162",
+                "settings" : { },
+                "_hash" : 0.0965456024105662
+              }, {
+                "name" : "Phase_C_Name",
+                "type" : "attribute",
+                "label" : "Phase_C_Name",
+                "color" : "#ffd600",
+                "settings" : { },
+                "_hash" : 0.36423288562278566
               } ]
             } ],
             "timewindow" : {
@@ -786,7 +807,7 @@
               "showTooltipAction" : "hover",
               "autocloseTooltip" : true,
               "useTooltipFunction" : true,
-              "tooltipFunction" : "var darkMode = $('.tb-dashboard-page').hasClass('dark');\r\nvar content = (darkMode ? ('<div style=\"font-family: Roboto;\">' +\r\n                 '<div style=\"font-size: 14px; font-weight: 500; padding-bottom: 8px; color:#212121;\">${Name}</div>') : ('<div style=\"font-family: Roboto;\">' +\r\n                 '<div style=\"font-size: 14px; font-weight: 500; padding-bottom: 8px;\">${Name}</div>'));\r\n                 \r\nvar deviceType = data['Type'];\r\nif(darkMode==true){\r\n    if (typeof deviceType !== undefined) {\r\n        content += '<div style=\"font-size: 12px; font-weight: normal; color:#212121;\">' + getInfoByDeviceType(deviceType) + '</div>';\r\n    }\r\n}else{\r\n    if (typeof deviceType !== undefined) {\r\n        content += '<div style=\"font-size: 12px; font-weight: normal; color:#212121;\">' + getInfoByDeviceType(deviceType) + '</div>';\r\n    }\r\n}\r\n\r\ncontent += '</div>';\r\nreturn content;\r\n\r\nfunction getInfoByDeviceType(type) {\r\n    switch (type) {\r\n        case 'AA Sensor':\r\n            return 'Temperatura: ${temperature:1} °C<br>Umidità: ${humidity:1} %';\r\n        case 'Chiller':\r\n        case 'Freezer':    \r\n            return 'Temperature: ${temperature:1} °C';\r\n        case 'Smart Bin':\r\n            return 'Fullness: ${level:0}%';\r\n        case 'Liquid Level Sensor':\r\n            return 'Liquid level: ${level:0}%';\r\n        case 'Door Sensor':\r\n            var open = data['open'] === 'true';\r\n            return 'State: ' + (open ? 'Open' : 'Closed');\r\n        case 'Motion Sensor':\r\n            var movement = data['movement'] === 'true';\r\n            return 'Movement detection: ' + (movement ? 'Detected' : 'None');\r\n        case 'Occupancy Sensor':\r\n            var occupied = data['occupied'] === 'true';\r\n            return 'State: ' + (occupied ? 'Occupied' : 'Vacant');\r\n        case 'Smoke Sensor':\r\n            var alarm = data['alarm'] === 'true';\r\n            return 'Fire alarm: ' + (alarm ? 'Alarm' : 'None');\r\n        case 'Camera':\r\n            return 'Persone: ${person}';\r\n        case 'shelly3em':\r\n            return 'Fase A: ${Phase_A_power} KWh.<br>Fase B: ${Phase_B_power} KWh<br>Fase C: ${Phase_C_power} KWh';\r\n        default:\r\n            return 'TODO';\r\n    }\r\n}\r\n",
+              "tooltipFunction" : "var darkMode = $('.tb-dashboard-page').hasClass('dark');\r\nvar content = (darkMode ? ('<div style=\"font-family: Roboto;\">' +\r\n                 '<div style=\"font-size: 14px; font-weight: 500; padding-bottom: 8px; color:#212121;\">${Name}</div>') : ('<div style=\"font-family: Roboto;\">' +\r\n                 '<div style=\"font-size: 14px; font-weight: 500; padding-bottom: 8px;\">${Name}</div>'));\r\n                 \r\nvar deviceType = data['Type'];\r\nif(darkMode==true){\r\n    if (typeof deviceType !== undefined) {\r\n        content += '<div style=\"font-size: 12px; font-weight: normal; color:#212121;\">' + getInfoByDeviceType(deviceType) + '</div>';\r\n    }\r\n}else{\r\n    if (typeof deviceType !== undefined) {\r\n        content += '<div style=\"font-size: 12px; font-weight: normal; color:#212121;\">' + getInfoByDeviceType(deviceType) + '</div>';\r\n    }\r\n}\r\n\r\ncontent += '</div>';\r\nreturn content;\r\n\r\nfunction getInfoByDeviceType(type) {\r\n    switch (type) {\r\n        case 'AA Sensor':\r\n            return 'Temperatura: ${temperature:1} °C<br>Umidità: ${humidity:1} %';\r\n        case 'Chiller':\r\n        case 'Freezer':    \r\n            return 'Temperature: ${temperature:1} °C';\r\n        case 'Smart Bin':\r\n            return 'Fullness: ${level:0}%';\r\n        case 'Liquid Level Sensor':\r\n            return 'Liquid level: ${level:0}%';\r\n        case 'Door Sensor':\r\n            var open = data['open'] === 'true';\r\n            return 'State: ' + (open ? 'Open' : 'Closed');\r\n        case 'Motion Sensor':\r\n            var movement = data['movement'] === 'true';\r\n            return 'Movement detection: ' + (movement ? 'Detected' : 'None');\r\n        case 'Occupancy Sensor':\r\n            var occupied = data['occupied'] === 'true';\r\n            return 'State: ' + (occupied ? 'Occupied' : 'Vacant');\r\n        case 'Smoke Sensor':\r\n            var alarm = data['alarm'] === 'true';\r\n            return 'Fire alarm: ' + (alarm ? 'Alarm' : 'None');\r\n        case 'Camera':\r\n            return 'Persone: ${person}';\r\n        case 'shelly3em':\r\n            return '${Phase_A_Name}: ${Phase_A_power} KWh.<br>${Phase_B_Name}: ${Phase_B_power} KWh<br>${Phase_C_Name}: ${Phase_C_power} KWh';\r\n        default:\r\n            return 'TODO';\r\n    }\r\n}\r\n",
               "tooltipOffsetX" : 0.5,
               "tooltipOffsetY" : -0.5,
               "color" : "#FE7569",

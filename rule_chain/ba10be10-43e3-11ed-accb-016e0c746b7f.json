@@ -232,6 +232,10 @@
       "fromIndex" : 39,
       "toIndex" : 9,
       "type" : "Success"
+    }, {
+      "fromIndex" : 40,
+      "toIndex" : 41,
+      "type" : "energymeter"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -1189,8 +1193,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1480,
-        "layoutY" : 349
+        "layoutX" : 1455,
+        "layoutY" : 361
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -1207,6 +1211,39 @@
       "name" : "CheckShelly3em",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 1456,
+        "layoutY" : 485
+      },
+      "configuration" : {
+        "topicPattern" : "solar-module-raw",
+        "keyPattern" : null,
+        "bootstrapServers" : "157.230.126.181:9092",
+        "retries" : 0,
+        "batchSize" : 16384,
+        "linger" : 0,
+        "bufferMemory" : 33554432,
+        "acks" : "-1",
+        "keySerializer" : "org.apache.kafka.common.serialization.StringSerializer",
+        "valueSerializer" : "org.apache.kafka.common.serialization.StringSerializer",
+        "otherProperties" : {
+          "security.protocol" : "plaintext"
+        },
+        "addMetadataKeyValuesAsKafkaHeaders" : null,
+        "kafkaHeadersCharset" : null
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d6afce60-ba96-11ed-9788-e7e5c5ff9ab6"
+      },
+      "name" : "3emtokafka",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
     } ],
     "ruleChainConnections" : null
   },

@@ -234,8 +234,12 @@
       "type" : "Success"
     }, {
       "fromIndex" : 40,
-      "toIndex" : 41,
+      "toIndex" : 42,
       "type" : "energymeter"
+    }, {
+      "fromIndex" : 42,
+      "toIndex" : 41,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -1199,7 +1203,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if (metadata.deviceType == 'shelly3em') {\n    return ['energymeter'];\n}\nelse {\n    return ['Other'];\n}\n"
+        "tbelScript" : "var newMsg = {};\nif (metadata.deviceType == 'shelly3em') \n{ \n    newMsg.deviceName = metadata.deviceName;\n    newMsg.Phase_B_power = msg.Phase_B_power;\n    msg = newMsg;\n    return ['energymeter'];\n}\nelse {\n    return ['Other'];\n}\n"
       },
       "createdTime" : 0,
       "debugMode" : true,
@@ -1214,8 +1218,8 @@
     }, {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 1456,
-        "layoutY" : 485
+        "layoutX" : 1472,
+        "layoutY" : 633
       },
       "configuration" : {
         "topicPattern" : "solar-module-raw",
@@ -1244,6 +1248,27 @@
       "name" : "3emtokafka",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1460,
+        "layoutY" : 489
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var newMsg = {};\n    newMsg.deviceName = metadata.deviceName;\n    newMsg.Phase_B_power = msg.Phase_B_power;\n\n\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e8c45780-bab2-11ed-9788-e7e5c5ff9ab6"
+      },
+      "name" : "Add_deviceName",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

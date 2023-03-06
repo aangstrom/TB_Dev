@@ -45,6 +45,10 @@
       "toIndex" : 12,
       "type" : "Success"
     }, {
+      "fromIndex" : 2,
+      "toIndex" : 15,
+      "type" : "Success"
+    }, {
       "fromIndex" : 4,
       "toIndex" : 2,
       "type" : "Post attributes"
@@ -453,6 +457,27 @@
       "name" : "Delta ms totali Mulino Fossò",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.metadata.CalculateDeltaNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 862,
+        "layoutY" : 187
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "bd701dd0-bc15-11ed-9788-e7e5c5ff9ab6"
+      },
+      "name" : "Transform to Boolean",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

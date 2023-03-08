@@ -33,6 +33,10 @@
       "toIndex" : 0,
       "type" : "Success"
     }, {
+      "fromIndex" : 2,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
       "fromIndex" : 5,
       "toIndex" : 0,
       "type" : "Entity Created"
@@ -60,6 +64,22 @@
       "fromIndex" : 5,
       "toIndex" : 8,
       "type" : "RPC Request to Device"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 2,
+      "type" : "Alarm Cleared"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 2,
+      "type" : "Alarm Created"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 2,
+      "type" : "Alarm Severity Updated"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 5,
+      "type" : "Success"
     }, {
       "fromIndex" : 10,
       "toIndex" : 9,
@@ -141,8 +161,8 @@
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 721,
-        "layoutY" : 358
+        "layoutX" : 681,
+        "layoutY" : 371
       },
       "configuration" : {
         "originatorTypes" : [ "DEVICE", "ASSET" ]
@@ -160,13 +180,11 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 937,
-        "layoutY" : 113
+        "layoutX" : 900,
+        "layoutY" : 244
       },
       "configuration" : {
-        "scriptLang" : "TBEL",
-        "jsScript" : "var criticalAlarmsCount = msg.criticalAlarmsCount;\nvar majorAlarmsCount = msg.majorAlarmsCount;\n\nvar state = 'normal';\n\nif (criticalAlarmsCount && Number(criticalAlarmsCount) > 0) {\n    state = 'critical';\n} else if (majorAlarmsCount && Number(majorAlarmsCount) > 0) {\n    state = 'major';\n}\n\nreturn {\n    msg: {\n        state: state\n    },\n    metadata: {\n        scope: 'SERVER_SCOPE'\n    },\n    msgType: 'POST_ATTRIBUTES_REQUEST'\n};",
-        "tbelScript" : "var criticalAlarmsCount = msg.criticalAlarmsCount;\nvar majorAlarmsCount = msg.majorAlarmsCount;\n\nvar state = 'normal';\n\nif (criticalAlarmsCount > 0) {\n    state = 'critical';\n} else if (majorAlarmsCount > 0) {\n    state = 'major';\n}\n\nreturn {\n    msg: {\n        state: state\n    },\n    metadata: {\n        scope: 'SERVER_SCOPE'\n    },\n    msgType: 'POST_ATTRIBUTES_REQUEST'\n};"
+        "jsScript" : "var criticalAlarmsCount = msg.criticalAlarmsCount;\nvar majorAlarmsCount = msg.majorAlarmsCount;\n\nvar state = 'normal';\n\nif (criticalAlarmsCount && Number(criticalAlarmsCount) > 0) {\n    state = 'critical';\n} else if (majorAlarmsCount && Number(majorAlarmsCount) > 0) {\n    state = 'major';\n}\n\nreturn {\n    msg: {\n        state: state\n    },\n    metadata: {\n        scope: 'SERVER_SCOPE'\n    },\n    msgType: 'POST_ATTRIBUTES_REQUEST'\n};"
       },
       "createdTime" : 0,
       "debugMode" : false,
@@ -218,7 +236,7 @@
         "layoutY" : 450
       },
       "configuration" : {
-        "defaultTTL" : 2592000,
+        "defaultTTL" : 604800,
         "skipLatestPersistence" : null,
         "useServerTs" : null
       },
@@ -229,7 +247,7 @@
         "entityType" : "RULE_NODE",
         "id" : "091b1ab0-32a4-11ed-accb-016e0c746b7f"
       },
-      "name" : "Save Timeseries",
+      "name" : "Save Timeseries 7GG",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
     }, {
@@ -346,15 +364,15 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 64,
-        "layoutY" : 816
+        "layoutX" : 16,
+        "layoutY" : 897
       },
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 300,
-        "scriptLang" : "TBEL",
+        "scriptLang" : "JS",
         "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar open;\nswitch(hour) {\n  case 8:\n    open = Math.random() < 0.1;\n    break;\n  case 9:\n    open = Math.random() < 0.1;\n    break;\n  case 10:\n    open = Math.random() < 0.4;\n    break;\n  case 11:\n    open = Math.random() < 0.4;\n    break;\n  case 12:\n    open = Math.random() < 0.4;\n    break;\n  case 13:\n    open = Math.random() < 0.1;\n    break;\n  case 14:\n    open = Math.random() < 0.1;\n    break;\n  case 15:\n    open = Math.random() < 0.1;\n    break;\n  case 16:\n    open = Math.random() < 0.4;\n    break;\n  case 17:\n    open = Math.random() < 0.4;\n    break;\n  case 18:\n    open = Math.random() < 0.4;\n    break;\n  default:\n    open=false;\n}\nvar msg = { open: open };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var hour = new Date().getHours();\nvar open;\nif(hour==8||hour==9||hour==13||hour==14||hour==15){\n    open = Math.random() < 0.1;\n}else if(hour==16||hour==17||hour==18||hour==10||hour==11||hour==12){\n    open = Math.random() < 0.4;\n}else{\n    open = false;\n}\nvar msg = { open: open };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "originatorId" : "09bb5250-32a4-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
@@ -371,15 +389,15 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 67,
-        "layoutY" : 1077
+        "layoutX" : 21,
+        "layoutY" : 1160
       },
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 300,
-        "scriptLang" : "TBEL",
+        "scriptLang" : "JS",
         "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar weight;\nswitch(hour) {\n  case 8:\n    weight = (Math.random() * (10 - 1) + 3).toFixed(2);\n    break;\n  case 9:\n    weight = (Math.random() * (15 - 1) + 3).toFixed(2);\n    break;\n  case 10:\n    weight = (Math.random() * (30 - 1) + 3).toFixed(2);\n    break;\n  case 11:\n    weight = (Math.random() * (50 - 1) + 3).toFixed(2);\n    break;\n  case 12:\n    weight = (Math.random() * (50 - 1) + 3).toFixed(2);\n    break;\n  case 13:\n    weight = (Math.random() * (40 - 1) + 3).toFixed(2);\n    break;\n  case 14:\n    weight = (Math.random() * (30 - 1) + 3).toFixed(2);\n    break;\n  case 15:\n    weight = (Math.random() * (35 - 1) + 3).toFixed(2);\n    break;\n  case 16:\n    weight = (Math.random() * (50 - 1) + 3).toFixed(2);\n    break;\n  case 17:\n    weight = (Math.random() * (50 - 1) + 3).toFixed(2);\n    break;\n  case 18:\n    weight = (Math.random() * (45 - 1) + 3).toFixed(2);\n    break;\n  default:\n    weight=null;\n}\nvar msg = { weight: weight};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var hour = new Date().getHours();\nvar weight;\nif(hour==8){\n    weight = toFixed((Math.random() * (10 - 1) + 3),2);\n}else if(hour==9){\n    weight = toFixed((Math.random() * (15 - 1) + 3),2);\n}else if(hour==10){\n    weight = toFixed((Math.random() * (30 - 1) + 3),2);\n}else if(hour==11){\n    weight = toFixed((Math.random() * (50 - 1) + 3),2);\n}else if(hour==12){\n    weight = toFixed((Math.random() * (50 - 1) + 3),2);\n}else if(hour==13){\n    weight = toFixed((Math.random() * (40 - 1) + 3),2);\n}else if(hour==14){\n    weight = toFixed((Math.random() * (30 - 1) + 3),2);\n}else if(hour==15){\n    weight = toFixed((Math.random() * (35 - 1) + 3),2);\n}else if(hour==16){\n    weight = toFixed((Math.random() * (50 - 1) + 3),2);\n}else if(hour==17){\n    weight = toFixed((Math.random() * (50 - 1) + 3),2);\n}else if(hour==18){\n    weight = toFixed((Math.random() * (45 - 1) + 3),2);\n}else {\n    weight=null;\n}\n\nvar msg = { weight: weight};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "originatorId" : "09b510c0-32a4-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
@@ -396,15 +414,15 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 64,
-        "layoutY" : 601
+        "layoutX" : 18,
+        "layoutY" : 682
       },
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 300,
-        "scriptLang" : "TBEL",
+        "scriptLang" : "JS",
         "jsScript" : "var temp=16.2;\nvar temperature = (temp + Math.random() * (0.5 - 0) + 0).toFixed(2);\nvar msg = { temperature: temperature };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var temp=16.2;\nvar temperature = toFixed((temp + Math.random() * (0.5 - 0) + 0),2);\nvar msg = { temperature: temperature };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "originatorId" : "09b733a0-32a4-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
@@ -421,15 +439,15 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 64,
-        "layoutY" : 860
+        "layoutX" : 18,
+        "layoutY" : 941
       },
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 300,
-        "scriptLang" : "TBEL",
+        "scriptLang" : "JS",
         "jsScript" : "var temp=-6.3;\nvar temperature = (temp + Math.random() * (-0.5 - 0) + 0).toFixed(2);\nvar msg = { temperature: temperature };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var temp=6.3;\nvar temperature = toFixed((temp + Math.random() * (0.5 - 0) + 0),2)*-1;\nvar msg = { temperature: temperature };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "originatorId" : "09b97d90-32a4-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
@@ -446,15 +464,15 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 65,
-        "layoutY" : 729
+        "layoutX" : 16,
+        "layoutY" : 768
       },
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 300,
-        "scriptLang" : "TBEL",
+        "scriptLang" : "JS",
         "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar open;\nswitch(hour) {\n  case 8:\n    open = Math.random() < 0.1;\n    break;\n  case 9:\n    open = Math.random() < 0.1;\n    break;\n  case 10:\n    open = Math.random() < 0.4;\n    break;\n  case 11:\n    open = Math.random() < 0.4;\n    break;\n  case 12:\n    open = Math.random() < 0.4;\n    break;\n  case 13:\n    open = Math.random() < 0.1;\n    break;\n  case 14:\n    open = Math.random() < 0.1;\n    break;\n  case 15:\n    open = Math.random() < 0.1;\n    break;\n  case 16:\n    open = Math.random() < 0.4;\n    break;\n  case 17:\n    open = Math.random() < 0.4;\n    break;\n  case 18:\n    open = Math.random() < 0.4;\n    break;\n  default:\n    open=false;\n}\nvar msg = { open: open };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var hour = new Date().getHours();\nvar open;\nif(hour==8||hour==9||hour==13||hour==14||hour==15){\n    open = Math.random() < 0.1;\n}else if(hour==16||hour==17||hour==18||hour==10||hour==11||hour==12){\n    open = Math.random() < 0.4;\n}else{\n    open = false;\n}\nvar msg = { open: open };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "originatorId" : null,
         "originatorType" : null
       },
@@ -471,15 +489,15 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 66,
-        "layoutY" : 685
+        "layoutX" : 17,
+        "layoutY" : 811
       },
       "configuration" : {
         "msgCount" : 0,
-        "periodInSeconds" : 60,
-        "scriptLang" : "TBEL",
+        "periodInSeconds" : 10,
+        "scriptLang" : "JS",
         "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar open;\nswitch(hour) {\n  case 8:\n    open = Math.random() < 0.8;\n    break;\n  case 9:\n    open = Math.random() < 0.9;\n    break;\n  case 10:\n    open = Math.random() < 0.9;\n    break;\n  case 11:\n    open = Math.random() < 0.8;\n    break;\n  case 12:\n    open = Math.random() < 0.7;\n    break;\n  case 13:\n    open = Math.random() < 0.9;\n    break;\n  case 14:\n    open = Math.random() < 0.7;\n    break;\n  case 15:\n    open = Math.random() < 0.8;\n    break;\n  case 16:\n    open = Math.random() < 0.9;\n    break;\n  case 17:\n    open = Math.random() < 0.7;\n    break;\n  case 18:\n    open = Math.random() < 0.9;\n    break;\n  default:\n    open=false;\n}\nvar msg = { open: open };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var hour = new Date().getHours();\r\nvar open;\r\nif(hour==8||hour==11||hour==15){\r\n    open = Math.random() < 0.8;\r\n}else if(hour==9||hour==10||hour==13||hour==16||hour==18){\r\n    open = Math.random() < 0.9;\r\n}else if(hour==12||hour==14||hour==17){\r\n    open = Math.random() < 0.7;\r\n}else{\r\n    open = false;\r\n}\r\nvar msg = { open: open };\r\nvar metadata = {};\r\nvar msgType = \"POST_TELEMETRY_REQUEST\";\r\n\r\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "originatorId" : "0985ea70-32a4-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
@@ -496,15 +514,15 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 65,
-        "layoutY" : 773
+        "layoutX" : 17,
+        "layoutY" : 724
       },
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 10,
-        "scriptLang" : "TBEL",
+        "scriptLang" : "JS",
         "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar open;\nswitch(hour) {\n  case 8:\n    open = Math.random() < 0.1;\n    break;\n  case 9:\n    open = Math.random() < 0.1;\n    break;\n  case 10:\n    open = Math.random() < 0.1;\n    break;\n  case 11:\n    open = Math.random() < 0.2;\n    break;\n  case 12:\n    open = Math.random() < 0.5;\n    break;\n  case 13:\n    open = Math.random() < 0.5;\n    break;\n  case 14:\n    open = Math.random() < 0.3;\n    break;\n  case 15:\n    open = Math.random() < 0.1;\n    break;\n  case 16:\n    open = Math.random() < 0.1;\n    break;\n  case 17:\n    open = Math.random() < 0.1;\n    break;\n  case 18:\n    open = Math.random() < 0.5;\n    break;\n  default:\n    open=false;\n}\nvar msg = { open: open };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var hour = new Date().getHours();\nvar open;\nif(hour==8||hour==9||hour==10||hour==15||hour==16||hour==17){\n    open = Math.random() < 0.1;\n}else if(hour==11){\n    open = Math.random() < 0.2;\n}else if(hour==14){\n    open = Math.random() < 0.3;\n}else if(hour==12||hour==13||hour==18){\n    open = Math.random() < 0.5;\n}else{\n    open = false;\n}\nvar msg = { open: open };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "originatorId" : "098a7e50-32a4-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
@@ -521,15 +539,15 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 64,
-        "layoutY" : 642
+        "layoutX" : 17,
+        "layoutY" : 853
       },
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 10,
-        "scriptLang" : "TBEL",
+        "scriptLang" : "JS",
         "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar open;\nswitch(hour) {\n  case 8:\n    open = Math.random() < 0.3;\n    break;\n  case 9:\n    open = Math.random() < 0.5;\n    break;\n  case 10:\n    open = Math.random() < 0.7;\n    break;\n  case 11:\n    open = Math.random() < 0.8;\n    break;\n  case 12:\n    open = Math.random() < 0.7;\n    break;\n  case 13:\n    open = Math.random() < 0.5;\n    break;\n  case 14:\n    open = Math.random() < 0.4;\n    break;\n  case 15:\n    open = Math.random() < 0.6;\n    break;\n  case 16:\n    open = Math.random() < 0.8;\n    break;\n  case 17:\n    open = Math.random() < 0.8;\n    break;\n  case 18:\n    open = Math.random() < 0.8;\n    break;\n  default:\n    open=false;\n}\nvar msg = { open: open };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var hour = new Date().getHours();\r\nvar open;\r\nif(hour==11||hour==16||hour==17||hour==18){\r\n    open = Math.random() < 0.8;\r\n}else if(hour==9||hour==13){\r\n    open = Math.random() < 0.5;\r\n}else if(hour==10||hour==12){\r\n    open = Math.random() < 0.7;\r\n}else if(hour==15){\r\n    open = Math.random() < 0.6;\r\n}else if(hour==14){\r\n    open = Math.random() < 0.4;\r\n}else if(hour==8){\r\n    open = Math.random() < 0.3;\r\n}else{\r\n    open = false;\r\n}\r\nvar msg = { open: open };\r\nvar metadata = {};\r\nvar msgType = \"POST_TELEMETRY_REQUEST\";\r\n\r\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "originatorId" : "098c5310-32a4-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
@@ -546,15 +564,15 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 64,
-        "layoutY" : 556
+        "layoutX" : 18,
+        "layoutY" : 637
       },
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 300,
-        "scriptLang" : "TBEL",
+        "scriptLang" : "JS",
         "jsScript" : "var temp=11;\nvar temperature = (temp + Math.random() * (0.5 - 0) + 0).toFixed(2);\nvar msg = { temperature: temperature };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var temp=11;\nvar temperature = toFixed((temp + Math.random() * (0.5 - 0) + 0),2);\nvar msg = { temperature: temperature };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "originatorId" : "09ad96b0-32a4-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
@@ -571,15 +589,15 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 64,
-        "layoutY" : 513
+        "layoutX" : 19,
+        "layoutY" : 594
       },
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 300,
-        "scriptLang" : "TBEL",
+        "scriptLang" : "JS",
         "jsScript" : "var temp=18.6;\nvar temperature = (temp + Math.random() * (0.5 - 0) + 0).toFixed(2);\nvar msg = { temperature: temperature };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var temp=18.6;\nvar temperature = toFixed((temp + Math.random() * (0.5 - 0) + 0),2);\nvar msg = { temperature: temperature };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "originatorId" : "095cb790-32a4-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
@@ -596,15 +614,15 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 65,
-        "layoutY" : 948
+        "layoutX" : 19,
+        "layoutY" : 1029
       },
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 300,
-        "scriptLang" : "TBEL",
+        "scriptLang" : "JS",
         "jsScript" : "var temp=-7;\nvar temperature = (temp + Math.random() * (-0.5 - 0) + 0).toFixed(2);\nvar msg = { temperature: temperature };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var temp=7;\nvar temperature = toFixed((temp + Math.random() * (0.5 - 0) + 0),2)*-1;\nvar msg = { temperature: temperature };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "originatorId" : "09b02ec0-32a4-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
@@ -621,15 +639,15 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 64,
-        "layoutY" : 904
+        "layoutX" : 18,
+        "layoutY" : 985
       },
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 10,
-        "scriptLang" : "TBEL",
+        "scriptLang" : "JS",
         "jsScript" : "var temp=-19.2;\nvar temperature = (temp + Math.random() * (-0.5 - 0) + 0).toFixed(2);\nvar msg = { temperature: temperature };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var temp=19.2;\nvar temperature = toFixed((temp + Math.random() * (0.5 - 0) + 0),2)*-1;\nvar msg = { temperature: temperature };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "originatorId" : "09608820-32a4-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
@@ -646,15 +664,15 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 66,
-        "layoutY" : 991
+        "layoutX" : 20,
+        "layoutY" : 1072
       },
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 300,
-        "scriptLang" : "TBEL",
+        "scriptLang" : "JS",
         "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar weight;\nswitch(hour) {\n  case 8:\n    weight = (Math.random() * (10 - 1) + 3).toFixed(2);\n    break;\n  case 9:\n    weight = (Math.random() * (15 - 1) + 3).toFixed(2);\n    break;\n  case 10:\n    weight = (Math.random() * (30 - 1) + 3).toFixed(2);\n    break;\n  case 11:\n    weight = (Math.random() * (50 - 1) + 3).toFixed(2);\n    break;\n  case 12:\n    weight = (Math.random() * (50 - 1) + 3).toFixed(2);\n    break;\n  case 13:\n    weight = (Math.random() * (40 - 1) + 3).toFixed(2);\n    break;\n  case 14:\n    weight = (Math.random() * (30 - 1) + 3).toFixed(2);\n    break;\n  case 15:\n    weight = (Math.random() * (35 - 1) + 3).toFixed(2);\n    break;\n  case 16:\n    weight = (Math.random() * (50 - 1) + 3).toFixed(2);\n    break;\n  case 17:\n    weight = (Math.random() * (50 - 1) + 3).toFixed(2);\n    break;\n  case 18:\n    weight = (Math.random() * (45 - 1) + 3).toFixed(2);\n    break;\n  default:\n    weight=null;\n}\nvar msg = { weight: weight};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var hour = new Date().getHours();\nvar weight;\nif(hour==8){\n    weight = toFixed((Math.random() * (10 - 1) + 3),2);\n}else if(hour==9){\n    weight = toFixed((Math.random() * (15 - 1) + 3),2);\n}else if(hour==10){\n    weight = toFixed((Math.random() * (30 - 1) + 3),2);\n}else if(hour==11){\n    weight = toFixed((Math.random() * (50 - 1) + 3),2);\n}else if(hour==12){\n    weight = toFixed((Math.random() * (50 - 1) + 3),2);\n}else if(hour==13){\n    weight = toFixed((Math.random() * (40 - 1) + 3),2);\n}else if(hour==14){\n    weight = toFixed((Math.random() * (30 - 1) + 3),2);\n}else if(hour==15){\n    weight = toFixed((Math.random() * (35 - 1) + 3),2);\n}else if(hour==16){\n    weight = toFixed((Math.random() * (50 - 1) + 3),2);\n}else if(hour==17){\n    weight = toFixed((Math.random() * (50 - 1) + 3),2);\n}else if(hour==18){\n    weight = toFixed((Math.random() * (45 - 1) + 3),2);\n}else {\n    weight=null;\n}\n\nvar msg = { weight: weight};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "originatorId" : "0959d160-32a4-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
@@ -671,15 +689,15 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 66,
-        "layoutY" : 1034
+        "layoutX" : 20,
+        "layoutY" : 1115
       },
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 300,
-        "scriptLang" : "TBEL",
+        "scriptLang" : "JS",
         "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar weight;\nswitch(hour) {\n  case 8:\n    weight = (Math.random() * (10 - 1) + 3).toFixed(2);\n    break;\n  case 9:\n    weight = (Math.random() * (15 - 1) + 3).toFixed(2);\n    break;\n  case 10:\n    weight = (Math.random() * (30 - 1) + 3).toFixed(2);\n    break;\n  case 11:\n    weight = (Math.random() * (50 - 1) + 3).toFixed(2);\n    break;\n  case 12:\n    weight = (Math.random() * (50 - 1) + 3).toFixed(2);\n    break;\n  case 13:\n    weight = (Math.random() * (40 - 1) + 3).toFixed(2);\n    break;\n  case 14:\n    weight = (Math.random() * (30 - 1) + 3).toFixed(2);\n    break;\n  case 15:\n    weight = (Math.random() * (35 - 1) + 3).toFixed(2);\n    break;\n  case 16:\n    weight = (Math.random() * (50 - 1) + 3).toFixed(2);\n    break;\n  case 17:\n    weight = (Math.random() * (50 - 1) + 3).toFixed(2);\n    break;\n  case 18:\n    weight = (Math.random() * (45 - 1) + 3).toFixed(2);\n    break;\n  default:\n    weight=null;\n}\nvar msg = { weight: weight};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var hour = new Date().getHours();\nvar weight;\nif(hour==8){\n    weight = toFixed((Math.random() * (10 - 1) + 3),2);\n}else if(hour==9){\n    weight = toFixed((Math.random() * (15 - 1) + 3),2);\n}else if(hour==10){\n    weight = toFixed((Math.random() * (30 - 1) + 3),2);\n}else if(hour==11){\n    weight = toFixed((Math.random() * (50 - 1) + 3),2);\n}else if(hour==12){\n    weight = toFixed((Math.random() * (50 - 1) + 3),2);\n}else if(hour==13){\n    weight = toFixed((Math.random() * (40 - 1) + 3),2);\n}else if(hour==14){\n    weight = toFixed((Math.random() * (30 - 1) + 3),2);\n}else if(hour==15){\n    weight = toFixed((Math.random() * (35 - 1) + 3),2);\n}else if(hour==16){\n    weight = toFixed((Math.random() * (50 - 1) + 3),2);\n}else if(hour==17){\n    weight = toFixed((Math.random() * (50 - 1) + 3),2);\n}else if(hour==18){\n    weight = toFixed((Math.random() * (45 - 1) + 3),2);\n}else {\n    weight=null;\n}\n\nvar msg = { weight: weight};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "originatorId" : "0956eb30-32a4-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
@@ -696,15 +714,15 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 66,
-        "layoutY" : 1120
+        "layoutX" : 20,
+        "layoutY" : 1201
       },
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 300,
-        "scriptLang" : "TBEL",
+        "scriptLang" : "JS",
         "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar weight;\nswitch(hour) {\n  case 8:\n    weight = (Math.random() * (10 - 1) + 3).toFixed(2);\n    break;\n  case 9:\n    weight = (Math.random() * (15 - 1) + 3).toFixed(2);\n    break;\n  case 10:\n    weight = (Math.random() * (30 - 1) + 3).toFixed(2);\n    break;\n  case 11:\n    weight = (Math.random() * (50 - 1) + 3).toFixed(2);\n    break;\n  case 12:\n    weight = (Math.random() * (50 - 1) + 3).toFixed(2);\n    break;\n  case 13:\n    weight = (Math.random() * (40 - 1) + 3).toFixed(2);\n    break;\n  case 14:\n    weight = (Math.random() * (30 - 1) + 3).toFixed(2);\n    break;\n  case 15:\n    weight = (Math.random() * (35 - 1) + 3).toFixed(2);\n    break;\n  case 16:\n    weight = (Math.random() * (50 - 1) + 3).toFixed(2);\n    break;\n  case 17:\n    weight = (Math.random() * (50 - 1) + 3).toFixed(2);\n    break;\n  case 18:\n    weight = (Math.random() * (45 - 1) + 3).toFixed(2);\n    break;\n  default:\n    weight=null;\n}\nvar msg = { weight: weight};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var hour = new Date().getHours();\nvar weight;\nif(hour==8){\n    weight = toFixed((Math.random() * (10 - 1) + 3),2);\n}else if(hour==9){\n    weight = toFixed((Math.random() * (15 - 1) + 3),2);\n}else if(hour==10){\n    weight = toFixed((Math.random() * (30 - 1) + 3),2);\n}else if(hour==11){\n    weight = toFixed((Math.random() * (50 - 1) + 3),2);\n}else if(hour==12){\n    weight = toFixed((Math.random() * (50 - 1) + 3),2);\n}else if(hour==13){\n    weight = toFixed((Math.random() * (40 - 1) + 3),2);\n}else if(hour==14){\n    weight = toFixed((Math.random() * (30 - 1) + 3),2);\n}else if(hour==15){\n    weight = toFixed((Math.random() * (35 - 1) + 3),2);\n}else if(hour==16){\n    weight = toFixed((Math.random() * (50 - 1) + 3),2);\n}else if(hour==17){\n    weight = toFixed((Math.random() * (50 - 1) + 3),2);\n}else if(hour==18){\n    weight = toFixed((Math.random() * (45 - 1) + 3),2);\n}else {\n    weight=null;\n}\n\nvar msg = { weight: weight};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "originatorId" : "09aad790-32a4-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },

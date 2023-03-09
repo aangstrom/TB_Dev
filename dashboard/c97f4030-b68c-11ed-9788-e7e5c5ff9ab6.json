@@ -10305,7 +10305,7 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "cardHtml" : "<div id=\"my-div\" align=\"center\">\r\n  <img src=\"https://cam.aangstrom.it/api/banco_salumi?bbox=1\" hight=\"90%\" width=\"100%\" /></div>\r\n<script>\r\n\t\tfunction refresh() {\r\n\t\t    window.location.reload();\r\n\t\t\r\n\t\t}\r\n\t</script>",
+              "cardHtml" : "<div id=\"my-div\" align=\"center\">\r\n  <img src=\"https://cam.aangstrom.it/api/banco_salumi?bbox=1\" hight=\"90%\" width=\"100%\" /></div>\r\n<script>\r\n\r\nwindow.onload = function() {\r\n    if(!window.location.hash) {\r\n        window.location = window.location + '#loaded';\r\n        window.location.reload();\r\n    }\r\n}\r\n\t</script>",
               "cardCss" : ".card {\n    font-weight: bold;\n    font-size: 32px;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}"
             },
             "title" : "New HTML Card",

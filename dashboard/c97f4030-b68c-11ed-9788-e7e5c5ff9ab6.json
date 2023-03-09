@@ -10305,7 +10305,7 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "cardHtml" : "<div id=\"my-div\" align=\"center\">\r\n  <img src=\"https://cam.aangstrom.it/api/banco_salumi?bbox=1\" hight=\"90%\" width=\"100%\" /></div>\r\n<script>\r\n\r\n  setInterval(function() {\r\n    var div = document.getElementById(\"my-div\");\r\n    div.innerHTML = \"<div id='my-div' align='center'>\r\n  <img src='https://cam.aangstrom.it/api/banco_salumi?bbox=1' hight='100%' width='100%' /></div>\"; \r\n  }, 2000); // refresh every 5 seconds\r\n   </script>\r\n",
+              "cardHtml" : "<div id=\"my-div\" align=\"center\">\r\n  <img src=\"https://cam.aangstrom.it/api/banco_salumi?bbox=1\" hight=\"90%\" width=\"100%\" /></div>\r\n<script>\r\n\t\twindow.setInterval('refresh()', 10000);\r\n\t\tfunction refresh() {\r\n\t\t\twindow.location.reload();\r\n\t\t}\r\n\t</script>",
               "cardCss" : ".card {\n    font-weight: bold;\n    font-size: 32px;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}"
             },
             "title" : "New HTML Card",

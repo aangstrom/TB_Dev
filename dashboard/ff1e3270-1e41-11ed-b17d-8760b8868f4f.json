@@ -7623,13 +7623,6 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "active",
-                "type" : "attribute",
-                "label" : "active",
-                "color" : "#e91e63",
-                "settings" : { },
-                "_hash" : 0.8096121728190535
-              }, {
                 "name" : "macRunLoadingBo",
                 "type" : "timeseries",
                 "label" : "stato",
@@ -7673,7 +7666,7 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "cardHtml" : "<script>\n    if(${active}==true){\n        document.getElementById('stato').innerHTML=${stato};\n    }\n</script>\n<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <h1>Stati Macchina</h1>\n            <div class=\"row\">\n                <li>Stato accensione:&nbsp;${accensione}</li>\n                <li>Stato:&nbsp;<div id=\"stato\"></div></li>\n                <li>Corrente attuale:&nbsp;${I1M03currentMillRe}</li>\n                <li>Allarme:&nbsp;${allarme}</li>\n            </div>\n        </div>\n    </div>\n</div>",
+              "cardHtml" : "<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <h1>Stati Macchina</h1>\n            <div class=\"row\">\n                <li>Stato accensione:&nbsp;${accensione}</li>\n                <li>Stato:&nbsp;${stato}</li>\n                <li>Corrente attuale:&nbsp;${I1M03currentMillRe}</li>\n                <li>Allarme:&nbsp;${allarme}</li>\n            </div>\n        </div>\n    </div>\n</div>",
               "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content {\n   padding: 22px;\n   display: flex;\n   flex-direction: row;\n   height: 100%;\n   align-items: center;\n   justify-content: space-around;\n   box-sizing: border-box;\n}\n\n.row {\n    display: flex;\n    font-size: 18px;\n    flex-direction: row;\n    flex-wrap: wrap;\n    list-style-type: none;\n}\nli{\n    display: flex;\n    padding-right: 20px;\n    padding-left: 20px;\n    font-size: 20px;\n}\n\n.card .content .column {\n   display: flex;\n   flex-direction: column;    \n   justify-content: space-around;\n   height: 100%;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 22px;\n    font-weight: bold;\n    margin: 0;\n    padding-bottom: 10px;\n    line-height: 32px;\n    text-align: center;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}"
             },
             "title" : "New HTML Value Card",

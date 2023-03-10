@@ -81,11 +81,14 @@
       "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
     }, {
       "additionalInfo" : {
+        "description" : null,
         "layoutX" : 538,
         "layoutY" : 524
       },
       "configuration" : {
-        "jsScript" : "var newMsg = {\n    \"outsideTemp\": msg.main.temp,\n    \"outsideMaxTemp\": msg.main.temp_max,\n    \"outsideMinTemp\": msg.main.temp_min,\n    \"outsideHumidity\": msg.main.humidity,\n};\n\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+        "scriptLang" : "TBEL",
+        "jsScript" : "var newMsg = {\n    \"outsideTemp\": msg.main.temp,\n    \"outsideMaxTemp\": msg.main.temp_max,\n    \"outsideMinTemp\": msg.main.temp_min,\n    \"outsideHumidity\": msg.main.humidity,\n};\n\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var newMsg = {\n    \"outsideTemp\": msg.main.temp,\n    \"outsideMaxTemp\": msg.main.temp_max,\n    \"outsideMinTemp\": msg.main.temp_min,\n    \"outsideHumidity\": msg.main.humidity,\n};\n\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
       },
       "createdTime" : 0,
       "debugMode" : false,
@@ -120,15 +123,18 @@
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
     }, {
       "additionalInfo" : {
+        "description" : null,
         "layoutX" : 48,
         "layoutY" : 215
       },
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 15,
-        "originatorId" : "423b52c0-3f6d-11e9-a10f-53a2db67eb94",
-        "originatorType" : "ASSET",
-        "jsScript" : "return { msg: {}, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };"
+        "scriptLang" : "TBEL",
+        "jsScript" : "return { msg: {}, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };",
+        "tbelScript" : "return { msg: {}, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };",
+        "originatorId" : null,
+        "originatorType" : null
       },
       "createdTime" : 0,
       "debugMode" : false,

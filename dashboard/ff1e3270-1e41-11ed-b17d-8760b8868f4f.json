@@ -4578,7 +4578,7 @@
               "customLegendEnabled" : false
             },
             "title" : "Produttività Settimana ton/gg",
-            "dropShadow" : false,
+            "dropShadow" : true,
             "enableFullscreen" : true,
             "titleStyle" : {
               "fontSize" : "16px",
@@ -4603,7 +4603,8 @@
               "showAvg" : false,
               "showTotal" : true
             },
-            "displayTimewindow" : true
+            "displayTimewindow" : true,
+            "pageSize" : 1024
           },
           "row" : 0,
           "col" : 0,
@@ -5049,32 +5050,32 @@
                 "label" : "Allarme",
                 "color" : "#f32121",
                 "settings" : {
-                  "excludeFromStacking" : false,
                   "hideDataByDefault" : false,
                   "disableDataHiding" : false,
                   "removeFromLegend" : false,
+                  "excludeFromStacking" : false,
                   "showLines" : true,
-                  "fillLines" : false,
+                  "lineWidth" : 1,
+                  "fillLines" : true,
                   "showPoints" : false,
-                  "showPointShape" : "circle",
-                  "pointShapeFormatter" : "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
-                  "showPointsLineWidth" : 5,
-                  "showPointsRadius" : 3,
                   "showSeparateAxis" : false,
                   "axisPosition" : "left",
+                  "comparisonSettings" : {
+                    "showValuesForComparison" : true,
+                    "comparisonValuesLabel" : "",
+                    "color" : ""
+                  },
                   "thresholds" : [ {
                     "thresholdValueSource" : "predefinedValue"
-                  } ],
-                  "comparisonSettings" : {
-                    "showValuesForComparison" : true
-                  }
+                  } ]
                 },
                 "_hash" : 0.6501103324026876,
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
+                "usePostProcessing" : true,
+                "postFuncBody" : "if (value==\"True\") {\n    return 1;\n} else {\n    return 0;\n}",
+                "aggregationType" : null
               } ],
               "latestDataKeys" : null
             } ],
@@ -5088,37 +5089,42 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "8px",
             "settings" : {
-              "shadowSize" : 4,
-              "fontColor" : "#545454",
+              "stack" : false,
               "fontSize" : 10,
+              "fontColor" : "#545454",
+              "showTooltip" : true,
+              "tooltipIndividual" : false,
+              "tooltipCumulative" : false,
+              "hideZeros" : false,
+              "grid" : {
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1,
+                "color" : "#545454",
+                "backgroundColor" : null,
+                "tickColor" : "#DDDDDD"
+              },
               "xaxis" : {
+                "title" : null,
                 "showLabels" : true,
                 "color" : "#545454"
               },
               "yaxis" : {
+                "min" : 0,
+                "max" : 1,
+                "title" : null,
                 "showLabels" : true,
                 "color" : "#545454",
-                "ticksFormatter" : "if (value > 0 && value <= 1) {\n    return 'On';\n} else if (value === 0) {\n    return 'Off';\n} else {\n    return '';\n}",
-                "tickDecimals" : 0
+                "tickSize" : null,
+                "tickDecimals" : 0,
+                "ticksFormatter" : "if (value > 0 && value <= 1) {\n    return 'On';\n} else if (value === 0) {\n    return 'Off';\n} else {\n    return '';\n}"
               },
-              "grid" : {
-                "color" : "#545454",
-                "tickColor" : "#DDDDDD",
-                "verticalLines" : true,
-                "horizontalLines" : true,
-                "outlineWidth" : 1
-              },
-              "stack" : false,
-              "tooltipIndividual" : false,
-              "tooltipValueFormatter" : "if (value > 0 && value <= 1) {\n    return 'On';\n} else if (value === 0) {\n    return 'Off';\n} else {\n    return '';\n}",
+              "shadowSize" : 4,
               "smoothLines" : false,
-              "tooltipCumulative" : false,
-              "hideZeros" : false,
-              "showTooltip" : true,
               "comparisonEnabled" : false,
-              "timeForComparison" : "previousInterval",
               "xaxisSecond" : {
                 "axisPosition" : "top",
+                "title" : null,
                 "showLabels" : true
               },
               "customLegendEnabled" : false

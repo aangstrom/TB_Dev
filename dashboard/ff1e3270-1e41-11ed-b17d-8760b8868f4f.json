@@ -2441,32 +2441,32 @@
                 "label" : "Stato",
                 "color" : "#2196f3",
                 "settings" : {
-                  "excludeFromStacking" : false,
                   "hideDataByDefault" : false,
                   "disableDataHiding" : false,
                   "removeFromLegend" : false,
+                  "excludeFromStacking" : false,
                   "showLines" : true,
-                  "fillLines" : false,
+                  "lineWidth" : 1,
+                  "fillLines" : true,
                   "showPoints" : false,
-                  "showPointShape" : "circle",
-                  "pointShapeFormatter" : "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
-                  "showPointsLineWidth" : 5,
-                  "showPointsRadius" : 3,
                   "showSeparateAxis" : false,
                   "axisPosition" : "left",
+                  "comparisonSettings" : {
+                    "showValuesForComparison" : true,
+                    "comparisonValuesLabel" : "",
+                    "color" : ""
+                  },
                   "thresholds" : [ {
                     "thresholdValueSource" : "predefinedValue"
-                  } ],
-                  "comparisonSettings" : {
-                    "showValuesForComparison" : true
-                  }
+                  } ]
                 },
                 "_hash" : 0.4345783939106389,
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if(value==\"True\"){\n    return 1;\n}else{\n    return 0;\n}"
+                "postFuncBody" : "if(value==\"True\"){\n    return 1;\n}else{\n    return 0;\n}",
+                "aggregationType" : null
               } ],
               "latestDataKeys" : null
             } ],

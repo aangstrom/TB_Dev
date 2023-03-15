@@ -6,10 +6,13 @@
     },
     "configuration" : null,
     "debugMode" : true,
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "ba10be10-43e3-11ed-accb-016e0c746b7f"
+    },
     "firstRuleNodeId" : {
       "entityType" : "RULE_NODE",
-      "id" : "ba18fb71-43e3-11ed-accb-016e0c746b7f"
+      "id" : "15df2d50-c349-11ed-adcd-cbfdb5951e23"
     },
     "id" : {
       "entityType" : "RULE_CHAIN",
@@ -21,6 +24,10 @@
   },
   "metaData" : {
     "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 40,
+      "type" : "Success"
+    }, {
       "fromIndex" : 2,
       "toIndex" : 0,
       "type" : "Post telemetry"
@@ -48,6 +55,14 @@
       "fromIndex" : 2,
       "toIndex" : 11,
       "type" : "RPC Request to Device"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 34,
+      "type" : "Alarm Cleared"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 35,
+      "type" : "Entity Created"
     }, {
       "fromIndex" : 6,
       "toIndex" : 2,
@@ -77,13 +92,17 @@
       "toIndex" : 24,
       "type" : "Alarm Created"
     }, {
-      "fromIndex" : 12,
-      "toIndex" : 35,
-      "type" : "Success"
+      "fromIndex" : 9,
+      "toIndex" : 34,
+      "type" : "Alarm Cleared"
     }, {
-      "fromIndex" : 13,
-      "toIndex" : 35,
-      "type" : "Success"
+      "fromIndex" : 9,
+      "toIndex" : 34,
+      "type" : "Alarm Created"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 34,
+      "type" : "Alarm Severity Updated"
     }, {
       "fromIndex" : 14,
       "toIndex" : 19,
@@ -181,12 +200,40 @@
       "toIndex" : 20,
       "type" : "Success"
     }, {
-      "fromIndex" : 35,
-      "toIndex" : 24,
-      "type" : "Alarm Created"
+      "fromIndex" : 34,
+      "toIndex" : 0,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 34,
+      "toIndex" : 35,
+      "type" : "Success"
     }, {
       "fromIndex" : 35,
-      "toIndex" : 34,
+      "toIndex" : 36,
+      "type" : "True"
+    }, {
+      "fromIndex" : 36,
+      "toIndex" : 1,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 37,
+      "toIndex" : 38,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 38,
+      "toIndex" : 39,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 40,
+      "toIndex" : 42,
+      "type" : "energymeter"
+    }, {
+      "fromIndex" : 42,
+      "toIndex" : 41,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 42,
+      "toIndex" : 43,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
@@ -204,7 +251,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "ba188640-43e3-11ed-accb-016e0c746b7f"
+        "id" : "15dd5890-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Save Timeseries",
       "ruleChainId" : null,
@@ -223,7 +270,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "ba18ad50-43e3-11ed-accb-016e0c746b7f"
+        "id" : "15dd7fa0-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Save Attributes",
       "ruleChainId" : null,
@@ -242,7 +289,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "ba18ad51-43e3-11ed-accb-016e0c746b7f"
+        "id" : "15dda6b0-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Message Type Switch",
       "ruleChainId" : null,
@@ -260,7 +307,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "ba18ad52-43e3-11ed-accb-016e0c746b7f"
+        "id" : "15ddcdc0-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Log RPC from Device",
       "ruleChainId" : null,
@@ -278,7 +325,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "ba18d460-43e3-11ed-accb-016e0c746b7f"
+        "id" : "15de9110-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Log Other",
       "ruleChainId" : null,
@@ -297,7 +344,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "ba18d461-43e3-11ed-accb-016e0c746b7f"
+        "id" : "15deb820-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "RPC Call Request",
       "ruleChainId" : null,
@@ -315,15 +362,15 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "ba18d462-43e3-11ed-accb-016e0c746b7f"
+        "id" : "15dedf30-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Is Entity Group",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.filter.TbOriginatorTypeFilterNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 607,
-        "layoutY" : 151
+        "layoutX" : 598,
+        "layoutY" : 406
       },
       "configuration" : {
         "messageTypes" : [ "POST_ATTRIBUTES_REQUEST", "RPC_CALL_FROM_SERVER_TO_DEVICE" ]
@@ -333,15 +380,15 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "ba18d463-43e3-11ed-accb-016e0c746b7f"
+        "id" : "15dedf31-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Post attributes or RPC request",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeFilterNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 915,
-        "layoutY" : 150
+        "layoutX" : 871,
+        "layoutY" : 407
       },
       "configuration" : {
         "entityGroupId" : null,
@@ -352,7 +399,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "ba18fb70-43e3-11ed-accb-016e0c746b7f"
+        "id" : "15df0640-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Duplicate To Group Entities",
       "ruleChainId" : null,
@@ -360,8 +407,8 @@
     }, {
       "additionalInfo" : {
         "description" : "Process incoming messages from devices with the alarm rules defined in the device profile. Dispatch all incoming messages with \"Success\" relation type.",
-        "layoutX" : 297,
-        "layoutY" : 286
+        "layoutX" : 290,
+        "layoutY" : 336
       },
       "configuration" : {
         "persistAlarmRulesState" : false,
@@ -372,7 +419,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "ba18fb71-43e3-11ed-accb-016e0c746b7f"
+        "id" : "15df2d50-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Device Profile Node",
       "ruleChainId" : null,
@@ -391,7 +438,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "ba18fb72-43e3-11ed-accb-016e0c746b7f"
+        "id" : "15df5460-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Generate Report",
       "ruleChainId" : null,
@@ -410,7 +457,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "ba18fb73-43e3-11ed-accb-016e0c746b7f"
+        "id" : "15df5461-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Process RPC Reply",
       "ruleChainId" : null,
@@ -418,15 +465,15 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 54,
-        "layoutY" : 511
+        "layoutX" : 50,
+        "layoutY" : 255
       },
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 300,
         "scriptLang" : "TBEL",
         "jsScript" : "var temperature = 18 + Math.random() * (32 - 18);\ntemperature = Math.round( temperature * 100 ) / 100;\nvar humidity = 10 + Math.random() * (90 - 10);\nhumidity = Math.round( humidity * 100 ) / 100;\nvar soundAvg = 30 + Math.random() * (90 - 10);\nsoundAvg = Math.round( soundAvg * 100 ) / 100;\nvar soundPeak = 50 + Math.random() * (90 - 10);\nsoundPeak = Math.round( soundPeak * 100 ) / 100;\nvar light = 100 + Math.random() * (500 - 20);\nlight = Math.round( light * 100 ) / 100;\nvar user_latitude = 44.8923521;\nvar user_longitude = 11.6176377;\nvar vdd = 3718;\nvar msg = { \n            temperature: temperature,\n            humidity: humidity,\n            soundAvg: soundAvg,\n            soundPeak: soundPeak,\n            light: light,\n            user_latitude: user_latitude,\n            user_longitude: user_longitude,\n            vdd: vdd,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
-        "tbelScript" : "var temperature = 18 + Math.random() * (32 - 18);\ntemperature = Math.round( temperature * 100 ) / 100;\nvar humidity = 10 + Math.random() * (90 - 10);\nhumidity = Math.round( humidity * 100 ) / 100;\nvar soundAvg = 30 + Math.random() * (90 - 10);\nsoundAvg = Math.round( soundAvg * 100 ) / 100;\nvar soundPeak = 50 + Math.random() * (90 - 10);\nsoundPeak = Math.round( soundPeak * 100 ) / 100;\nvar light = 100 + Math.random() * (500 - 20);\nlight = Math.round( light * 100 ) / 100;\nvar user_latitude = 44.8923521;\nvar user_longitude = 11.6176377;\nvar vdd = 3718;\nvar msg = { \n            temperature: temperature,\n            humidity: humidity,\n            soundAvg: soundAvg,\n            soundPeak: soundPeak,\n            light: light,\n            user_latitude: user_latitude,\n            user_longitude: user_longitude,\n            vdd: vdd,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
+        "tbelScript" : "var temperature = 18 + Math.random() * (32 - 18);\ntemperature = Math.round( temperature * 100 ) / 100;\nvar humidity = 10 + Math.random() * (90 - 10);\nhumidity = Math.round( humidity * 100 ) / 100;\nvar soundAvg = 30 + Math.random() * (90 - 10);\nsoundAvg = Math.round( soundAvg * 100 ) / 100;\nvar soundPeak = 50 + Math.random() * (90 - 10);\nsoundPeak = Math.round( soundPeak * 100 ) / 100;\nvar light = 100 + Math.random() * (500 - 20);\nlight = Math.round( light * 100 ) / 100;\nvar vdd = 3718;\nvar msg = { \n            temperature: temperature,\n            humidity: humidity,\n            soundAvg: soundAvg,\n            soundPeak: soundPeak,\n            light: light,\n            vdd: vdd,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
         "originatorId" : "e6238730-430c-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
@@ -435,7 +482,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "ba192280-43e3-11ed-accb-016e0c746b7f"
+        "id" : "15df7b70-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Generator",
       "ruleChainId" : null,
@@ -443,15 +490,15 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 52,
-        "layoutY" : 714
+        "layoutX" : 50,
+        "layoutY" : 403
       },
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 300,
         "scriptLang" : "TBEL",
         "jsScript" : "var temperature = 18 + Math.random() * (32 - 18);\ntemperature = Math.round( temperature * 100 ) / 100;\nvar humidity = 10 + Math.random() * (90 - 10);\nhumidity = Math.round( humidity * 100 ) / 100;\nvar soundAvg = 10 + Math.random() * (90 - 10);\nsoundAvg = Math.round( soundAvg * 100 ) / 100;\nvar soundPeak = 30 + Math.random() * (90 - 10);\nsoundPeak = Math.round( soundPeak * 100 ) / 100;\nvar light = 10 + Math.random() * (500 - 20);\nlight = Math.round( light * 100 ) / 100;\nvar co2 = 300 + Math.random() * (1200 - 50);\nco2 = Math.round( co2 * 100 ) / 100;\nvar user_latitude = 44.9034748;\nvar user_longitude = 11.6190913;\nvar vdd = 3994;\nvar msg = { \n            temperature: temperature,\n            humidity: humidity,\n            soundAvg: soundAvg,\n            soundPeak: soundPeak,\n            light: light,\n            co2: co2,\n            user_latitude: user_latitude,\n            user_longitude: user_longitude,\n            vdd: vdd,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
-        "tbelScript" : "var temperature = 18 + Math.random() * (32 - 18);\ntemperature = Math.round( temperature * 100 ) / 100;\nvar humidity = 10 + Math.random() * (90 - 10);\nhumidity = Math.round( humidity * 100 ) / 100;\nvar soundAvg = 10 + Math.random() * (90 - 10);\nsoundAvg = Math.round( soundAvg * 100 ) / 100;\nvar soundPeak = 30 + Math.random() * (90 - 10);\nsoundPeak = Math.round( soundPeak * 100 ) / 100;\nvar light = 10 + Math.random() * (500 - 20);\nlight = Math.round( light * 100 ) / 100;\nvar co2 = 300 + Math.random() * (1200 - 50);\nco2 = Math.round( co2 * 100 ) / 100;\nvar user_latitude = 44.9034748;\nvar user_longitude = 11.6190913;\nvar vdd = 3994;\nvar msg = { \n            temperature: temperature,\n            humidity: humidity,\n            soundAvg: soundAvg,\n            soundPeak: soundPeak,\n            light: light,\n            co2: co2,\n            user_latitude: user_latitude,\n            user_longitude: user_longitude,\n            vdd: vdd,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
+        "tbelScript" : "var temperature = 18 + Math.random() * (32 - 18);\ntemperature = Math.round( temperature * 100 ) / 100;\nvar humidity = 10 + Math.random() * (90 - 10);\nhumidity = Math.round( humidity * 100 ) / 100;\nvar soundAvg = 10 + Math.random() * (90 - 10);\nsoundAvg = Math.round( soundAvg * 100 ) / 100;\nvar soundPeak = 30 + Math.random() * (90 - 10);\nsoundPeak = Math.round( soundPeak * 100 ) / 100;\nvar light = 10 + Math.random() * (500 - 20);\nlight = Math.round( light * 100 ) / 100;\nvar co2 = 300 + Math.random() * (1200 - 50);\nco2 = Math.round( co2 * 100 ) / 100;\nvar vdd = 3994;\nvar msg = { \n            temperature: temperature,\n            humidity: humidity,\n            soundAvg: soundAvg,\n            soundPeak: soundPeak,\n            light: light,\n            co2: co2,\n            vdd: vdd,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
         "originatorId" : "edae6010-430c-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
@@ -460,7 +507,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "ebbef170-43e3-11ed-accb-016e0c746b7f"
+        "id" : "15df7b71-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Sensore 3",
       "ruleChainId" : null,
@@ -468,20 +515,20 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 666,
-        "layoutY" : 360
+        "layoutX" : 649,
+        "layoutY" : 484
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "var relations = [];\nif(metadata.ss_TeamsEnabled==true && metadata.ss_EmailEnabled==false && metadata.ss_WhatsappEnabled==false){\n    relations.push('Send Teams');\n}\nelse if(metadata.ss_TeamsEnabled==true && metadata.ss_EmailEnabled==true && metadata.ss_WhatsappEnabled==false){\n    relations.push('Send Teams');\n    relations.push('Send Email');\n}\nelse if(metadata.ss_TeamsEnabled==false && metadata.ss_EmailEnabled==true && metadata.ss_WhatsappEnabled==false){\n    relations.push('Send Email');\n}\nelse if(metadata.ss_TeamsEnabled==false && metadata.ss_EmailEnabled==true && metadata.ss_WhatsappEnabled==true){\n    relations.push('Send Email');\n    relations.push('Send Whatsapp');\n}\nelse if(metadata.ss_TeamsEnabled==true && metadata.ss_EmailEnabled==false && metadata.ss_WhatsappEnabled==true){\n    relations.push('Send Teams');\n    relations.push('Send Whatsapp');\n}\nelse if(metadata.ss_TeamsEnabled==true && metadata.ss_EmailEnabled==true && metadata.ss_WhatsappEnabled==false){\n    relations.push('Send Teams');\n    relations.push('Send Email');\n    relations.push('Send Whatsapp');\n}\nelse if(metadata.ss_TeamsEnabled==false && metadata.ss_EmailEnabled==false && metadata.ss_WhatsappEnabled==true){\n    relations.push('Send Whatsapp');\n}\nelse{\n    relations.push('Other');\n}\n\n/*switch (metadata.type) {\n    case 'Teams':\n        if (metadata.ss_TeamsEnabled === 'true'){\n            relations.push('Send Teams');\n        }\n        break;\n    case 'Teams and Email':\n        if (metadata.ss_TeamsEnabled === 'true'){\n            relations.push('Send Teams');\n        }\n        if (metadata.ss_EmailEnabled === 'true'){\n            relations.push('Send Email');\n        }\n        break; \n    case 'Email':\n        if (metadata.ss_TeamsEnabled === 'true'){\n            relations.push('Send Email');\n        }\n        break;\n    default:\n        relations.push('Other');\n}\n*/\nreturn relations;"
+        "tbelScript" : "var relations = [];\nif(metadata.ss_TeamsEnabled==true){\n    relations.push('Send Teams');\n}\nif(metadata.ss_EmailEnabled==true){\n    relations.push('Send Email');\n}\nif(metadata.ss_WhatsappEnabled==true){\n    relations.push('Send Whatsapp');\n}\n\n/*switch (metadata.type) {\n    case 'Teams':\n        if (metadata.ss_TeamsEnabled === 'true'){\n            relations.push('Send Teams');\n        }\n        break;\n    case 'Teams and Email':\n        if (metadata.ss_TeamsEnabled === 'true'){\n            relations.push('Send Teams');\n        }\n        if (metadata.ss_EmailEnabled === 'true'){\n            relations.push('Send Email');\n        }\n        break; \n    case 'Email':\n        if (metadata.ss_TeamsEnabled === 'true'){\n            relations.push('Send Email');\n        }\n        break;\n    default:\n        relations.push('Other');\n}\n*/\nreturn relations;"
       },
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "3e5ee7c0-814f-11ed-a0f1-b51a14fb887c"
+        "id" : "15df7b72-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Email/Teams",
       "ruleChainId" : null,
@@ -489,8 +536,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 443,
-        "layoutY" : 599
+        "layoutX" : 351,
+        "layoutY" : 651
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -506,7 +553,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "537dc980-8151-11ed-a0f1-b51a14fb887c"
+        "id" : "15dff0a0-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Teams?",
       "ruleChainId" : null,
@@ -514,8 +561,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 443,
-        "layoutY" : 678
+        "layoutX" : 351,
+        "layoutY" : 730
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -531,7 +578,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "537e17a0-8151-11ed-a0f1-b51a14fb887c"
+        "id" : "15dff0a1-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Email?",
       "ruleChainId" : null,
@@ -539,8 +586,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 902,
-        "layoutY" : 542
+        "layoutX" : 959,
+        "layoutY" : 636
       },
       "configuration" : {
         "useSystemSmtpSettings" : true,
@@ -563,7 +610,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "537edaf0-8151-11ed-a0f1-b51a14fb887c"
+        "id" : "15e017b0-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Send Email",
       "ruleChainId" : null,
@@ -571,8 +618,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 668,
-        "layoutY" : 525
+        "layoutX" : 649,
+        "layoutY" : 659
       },
       "configuration" : {
         "restEndpointUrlPattern" : "${ss_TeamsUrl}",
@@ -603,7 +650,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "537f2910-8151-11ed-a0f1-b51a14fb887c"
+        "id" : "15e03ec0-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Send Teams",
       "ruleChainId" : null,
@@ -611,8 +658,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 892,
-        "layoutY" : 472
+        "layoutX" : 959,
+        "layoutY" : 567
       },
       "configuration" : {
         "fromTemplate" : "alert@aangstrom.it",
@@ -629,7 +676,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "5cf5e770-81d5-11ed-a0f1-b51a14fb887c"
+        "id" : "15e03ec1-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Crea mail",
       "ruleChainId" : null,
@@ -637,8 +684,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 444,
-        "layoutY" : 829
+        "layoutX" : 352,
+        "layoutY" : 881
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -650,7 +697,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "649defd0-81d6-11ed-a0f1-b51a14fb887c"
+        "id" : "15e065d0-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Trasform to telemetry",
       "ruleChainId" : null,
@@ -658,8 +705,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 443,
-        "layoutY" : 446
+        "layoutX" : 351,
+        "layoutY" : 498
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -675,7 +722,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "c9b57310-81e1-11ed-a0f1-b51a14fb887c"
+        "id" : "15e08ce0-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Get TeamsUrl",
       "ruleChainId" : null,
@@ -683,8 +730,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 443,
-        "layoutY" : 524
+        "layoutX" : 351,
+        "layoutY" : 576
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -700,7 +747,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "c9b60f50-81e1-11ed-a0f1-b51a14fb887c"
+        "id" : "15e0b3f0-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Get email",
       "ruleChainId" : null,
@@ -708,20 +755,20 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 666,
-        "layoutY" : 452
+        "layoutX" : 650,
+        "layoutY" : 588
       },
       "configuration" : {
-        "scriptLang" : "JS",
+        "scriptLang" : "TBEL",
         "jsScript" : "var newMsg = {\n   \"type\":\"message\",\n   \"attachments\":[\n      {\n         \"contentType\":\"application/vnd.microsoft.card.adaptive\",\n         \"contentUrl\":null,\n         \"content\":\n{\n    \"type\": \"AdaptiveCard\",\n    \"body\": [\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Large\",\n            \"weight\": \"Bolder\",\n            \"text\": \"! Nuovo Allarme !\",\n            \"horizontalAlignment\": \"Center\",\n            \"color\": \"Attention\"\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Medium\",\n            \"weight\": \"Bolder\",\n            \"text\": msg.type,\n            \"horizontalAlignment\": \"Center\",\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Medium\",\n            \"text\": msg.severity,\n            \"horizontalAlignment\": \"Center\",\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"text\": msg.details.data,\n            \"wrap\": true\n        },\n        {\n            \"type\": \"FactSet\",\n            \"facts\": [\n                {\n                    \"$data\": \"${properties}\",\n                    \"title\": \"Sensore rilevazione:\",\n                    \"value\": metadata.ss_name\n                }\n            ]\n        }\n    ],\n    \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n    \"version\": \"1.4\"\n}\n\n          \n      }\n   ]\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var newMsg = \n{\n   \"type\":\"message\",\n   \"attachments\":[\n      {\n         \"contentType\":\"application/vnd.microsoft.card.adaptive\",\n         \"contentUrl\":null,\n         \"content\":\n{\n    \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n    \"type\": \"AdaptiveCard\",\n    \"version\": \"1.4\",\n    \"speak\": \"<s>The forecast for Seattle ${formatEpoch(dt, 'MMMM d')} is mostly clear with a High of ${formatNumber((main.temp_max - 273) * 9 / 5 + 32, 0)} degrees and Low of ${formatNumber((main.temp_min - 273) * 9 / 5 + 32, 0)} degrees</s>\",\n    \"body\": [\n        {\n            \"type\": \"TextBlock\",\n            \"text\": \"Voltage, WA\",\n            \"size\": \"Large\",\n            \"isSubtle\": true,\n            \"wrap\": true\n        },\n        {\n            \"type\": \"ColumnSet\",\n            \"columns\": [\n                {\n                    \"type\": \"Column\",\n                    \"width\": \"auto\",\n                    \"items\": [\n                        {\n                            \"type\": \"Image\",\n                            \"url\": \"https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Square.png\",\n                            \"size\": \"Small\",\n                            \"altText\": \"Mostly cloudy weather\"\n                        }\n                    ]\n                },\n                {\n                    \"type\": \"Column\",\n                    \"width\": \"auto\",\n                    \"items\": [\n                        {\n                            \"type\": \"TextBlock\",\n                            \"text\": \" - \" + msg.a_voltage,\n                            \"size\": \"ExtraLarge\",\n                            \"spacing\": \"None\",\n                            \"wrap\": true\n                        }\n                    ]\n                },\n                {\n                    \"type\": \"Column\",\n                    \"width\": \"stretch\",\n                    \"items\": [\n                        {\n                            \"type\": \"TextBlock\",\n                            \"text\": \"°F\",\n                            \"weight\": \"Bolder\",\n                            \"spacing\": \"Small\",\n                            \"wrap\": true\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n}\n\n          \n      }\n   ]\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var newMsg = {\n   \"type\":\"message\",\n   \"attachments\":[\n      {\n         \"contentType\":\"application/vnd.microsoft.card.adaptive\",\n         \"contentUrl\":null,\n         \"content\":\n{\n    \"type\": \"AdaptiveCard\",\n    \"body\": [\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Large\",\n            \"weight\": \"Bolder\",\n            \"text\": \"! Nuovo Allarme !\",\n            \"horizontalAlignment\": \"Center\",\n            \"color\": \"Attention\"\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Medium\",\n            \"weight\": \"Bolder\",\n            \"text\": msg.type,\n            \"horizontalAlignment\": \"Center\",\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Medium\",\n            \"text\": msg.severity,\n            \"horizontalAlignment\": \"Center\",\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"text\": msg.details.data,\n            \"wrap\": true\n        },\n        {\n            \"type\": \"FactSet\",\n            \"facts\": [\n                {\n                    \"$data\": \"${properties}\",\n                    \"title\": \"Sensore rilevazione:\",\n                    \"value\": metadata.ss_name\n                }\n            ]\n        }\n    ],\n    \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n    \"version\": \"1.4\"\n}\n\n          \n      }\n   ]\n};\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
       },
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "39b6e440-81e3-11ed-a0f1-b51a14fb887c"
+        "id" : "15e0db00-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Create Card",
       "ruleChainId" : null,
@@ -729,8 +776,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 443,
-        "layoutY" : 368
+        "layoutX" : 351,
+        "layoutY" : 420
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -746,7 +793,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "e0d26ec0-81e3-11ed-a0f1-b51a14fb887c"
+        "id" : "15e0db01-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Get Name",
       "ruleChainId" : null,
@@ -754,8 +801,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 52,
-        "layoutY" : 774
+        "layoutX" : 73,
+        "layoutY" : 753
       },
       "configuration" : {
         "msgCount" : 0,
@@ -763,7 +810,7 @@
         "scriptLang" : "TBEL",
         "jsScript" : "var temp = prevMsg.energy;\nvar d = new Date();\nvar hour = d.getHours();\nvar amperage, energy, frequency, power, voltage;\nswitch(hour) {\n  case 8:\n  case 9:\n  case 10:\n  case 11:\n  case 12:\n  case 13:\n  case 14:\n  case 15:\n  case 16:\n  case 17:\n    amperage = (Math.random() * (5 - 0) + 10).toFixed(1);\n    frequency = (Math.random() * (50 - 0) + 10).toFixed(1);\n    power = Math.random() * (1000 - 0) + 0;\n    power = Math.round( power * 100 ) / 100;\n    energy = power;\n    voltage = (Math.random() * (10 - 0) + 220).toFixed(2);\n    break;\n  default:\n    amperage = 0.1 + (Math.random() * (0.1 - 0) + 0).toFixed(1);\n    frequency = 10;\n    power = null;\n    energy = temp;\n    voltage = 0.5;\n}\namperage = Math.round( amperage * 100 ) / 100;\nfrequency = Math.round( frequency * 100 ) / 100;\nvoltage = Math.round( voltage * 100 ) / 100;\nvar msg = {\n    amperage: amperage,\n    energy: energy,\n    frequency: frequency,\n    power: power,\n    voltage: voltage\n};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var temp = prevMsg.energy;\nvar hour = new Date().getHours();\nvar amperage;\nvar energy;\nvar frequency;\nvar power;\nvar voltage;\nvar power_factor;\nif(hour>=8 && hour<=17){\n    amperage = Math.random() * (5 - 0) + 10;\n    frequency = Math.random() * (50 - 0) + 10;\n    power = Math.random() * (1000 - 0) + 0;\n    power = Math.round( power * 100 ) / 100;\n    power_factor = Math.random() * (1 - 0.2);\n    energy = power;\n    voltage = Math.random() * (10 - 0) + 220;\n} else {\n    amperage = 0.1 + Math.random() * (0.1 - 0) + 0;\n    frequency = 10;\n    power = null;\n    power_factor = null;\n    energy = temp;\n    voltage = 0.5;\n}\namperage = toFixed(amperage,2);\nfrequency = toFixed(frequency,2);\nvoltage = toFixed(voltage,2);\npower_factor = toFixed(power_factor,2);\nvar msg = {\n    amperage: amperage,\n    energy: energy,\n    frequency: frequency,\n    power: power,\n    power_factor: power_factor,\n    voltage: voltage\n};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "originatorId" : "a0f126d0-97ef-11ed-a0f1-b51a14fb887c",
+        "originatorId" : "7c15f8f0-01d5-11ed-8014-35af6f7ed6b6",
         "originatorType" : "DEVICE"
       },
       "createdTime" : 0,
@@ -771,7 +818,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "62eb0220-97ef-11ed-a0f1-b51a14fb887c"
+        "id" : "15e10210-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "energy-demo",
       "ruleChainId" : null,
@@ -779,24 +826,24 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 54,
-        "layoutY" : 833
+        "layoutX" : 74,
+        "layoutY" : 803
       },
       "configuration" : {
         "msgCount" : 0,
-        "periodInSeconds" : 300,
+        "periodInSeconds" : 10,
         "scriptLang" : "TBEL",
         "jsScript" : "var temp = prevMsg.energy;\nvar d = new Date();\nvar hour = d.getHours();\nvar amperage, energy, frequency, power, voltage;\nswitch(hour) {\n  case 8:\n  case 9:\n  case 10:\n  case 11:\n  case 12:\n  case 13:\n  case 14:\n  case 15:\n  case 16:\n  case 17:\n    amperage = (Math.random() * (5 - 0) + 10).toFixed(1);\n    frequency = (Math.random() * (50 - 0) + 10).toFixed(1);\n    power = Math.random() * (1000 - 0) + 0;\n    power = Math.round( power * 100 ) / 100;\n    energy = power;\n    voltage = (Math.random() * (10 - 0) + 220).toFixed(2);\n    break;\n  default:\n    amperage = 0.1 + (Math.random() * (0.1 - 0) + 0).toFixed(1);\n    frequency = 10;\n    power = null;\n    energy = temp;\n    voltage = 0.5;\n}\namperage = Math.round( amperage * 100 ) / 100;\nfrequency = Math.round( frequency * 100 ) / 100;\nvoltage = Math.round( voltage * 100 ) / 100;\nvar msg = {\n    amperage: amperage,\n    energy: energy,\n    frequency: frequency,\n    power: power,\n    voltage: voltage\n};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var temp;\nif(prevMsg!=null){\n    temp=prevMsg.lunghScavo;\n}else{\n    temp=0.1;\n}\nvar hour = new Date().getHours();\nvar lunghScavo;\nvar pressSpinta;\nvar allarme_off;\nvar ins_tubo;\nvar spinta_avanti;\nvar spinta_indietro;\nvar rotazione_Attiva;\nvar direzione=Math.random() < 0.7;\nif(hour>=8 && hour<=17){\n    temporaneo = Math.random() * (0.5 - 0);\n    lunghScavo= temp;\n    pressSpinta = Math.random() * (100 - 0);\n    allarme_off = Math.random() < 0.9;\n    ins_tubo = Math.random() < 0.5;\n    if(direzione==true){\n        spinta_avanti=true;\n        spinta_indietro=false;\n    }else{\n        spinta_avanti=false;\n        spinta_indietro=true;\n    }\n    rotazione_Attiva=true;\n} else {\n    lunghScavo = null;\n    pressSpinta = null;\n    allarme_off = true;\n    ins_tubo = false;\n    spinta_avanti=false;\n    spinta_indietro=false;\n    rotazione_Attiva = false;\n}\npressSpinta = toFixed(pressSpinta,2);\nlunghScavo = toFixed(lunghScavo,2);\nvar msg = {\n    pressSpinta: pressSpinta,\n    lunghScavo: prevMsg.lunghScavo,\n    allarme_off: allarme_off,\n    ins_tubo: ins_tubo,\n    spinta_avanti: spinta_avanti,\n    spinta_indietro: spinta_indietro,\n    rotazione_Attiva: rotazione_Attiva\n};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };\n\n",
-        "originatorId" : null,
-        "originatorType" : null
+        "originatorId" : "7c15f8f0-01d5-11ed-8014-35af6f7ed6b6",
+        "originatorType" : "DEVICE"
       },
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "5d4c7e80-a2e8-11ed-bcb8-7f48a6e846b2"
+        "id" : "15e10211-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Trivella Demo",
       "ruleChainId" : null,
@@ -804,12 +851,12 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 37,
-        "layoutY" : 20
+        "layoutX" : 51,
+        "layoutY" : 21
       },
       "configuration" : {
         "msgCount" : 0,
-        "periodInSeconds" : 3600,
+        "periodInSeconds" : 10800,
         "scriptLang" : "TBEL",
         "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "return { msg: {}, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };",
@@ -821,7 +868,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "6c3bca70-a312-11ed-bcb8-7f48a6e846b2"
+        "id" : "15e12920-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Meteo sede 1",
       "ruleChainId" : null,
@@ -846,7 +893,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "6c3d5110-a312-11ed-bcb8-7f48a6e846b2"
+        "id" : "15e12921-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Get latitude and longitude",
       "ruleChainId" : null,
@@ -886,7 +933,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "6c3e6280-a312-11ed-bcb8-7f48a6e846b2"
+        "id" : "15e15030-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Get current weather",
       "ruleChainId" : null,
@@ -907,7 +954,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "6c3efec0-a312-11ed-bcb8-7f48a6e846b2"
+        "id" : "15e15031-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "get weather telemetry",
       "ruleChainId" : null,
@@ -915,20 +962,20 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 895,
-        "layoutY" : 607
+        "layoutX" : 961,
+        "layoutY" : 703
       },
       "configuration" : {
-        "scriptLang" : "JS",
+        "scriptLang" : "TBEL",
         "jsScript" : "var metadata= {\n    msg:\"Messaggio da: \"+metadata.ss_name+\", di tipo: \"+msg.severity+\", prescrizione: \"+msg.details.data,\n    ss_telefono: metadata.ss_telefono\n}\nvar newMsg = {\n   \"type\":\"message\",\n   \"attachments\":[\n      {\n         \"contentType\":\"application/vnd.microsoft.card.adaptive\",\n         \"contentUrl\":null,\n         \"content\":\n{\n    \"type\": \"AdaptiveCard\",\n    \"body\": [\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Large\",\n            \"weight\": \"Bolder\",\n            \"text\": \"! Nuovo Allarme !\",\n            \"horizontalAlignment\": \"Center\",\n            \"color\": \"Attention\"\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Medium\",\n            \"weight\": \"Bolder\",\n            \"text\": msg.type,\n            \"horizontalAlignment\": \"Center\",\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Medium\",\n            \"text\": msg.severity,\n            \"horizontalAlignment\": \"Center\",\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"text\": msg.details.data,\n            \"wrap\": true\n        },\n        {\n            \"type\": \"FactSet\",\n            \"facts\": [\n                {\n                    \"$data\": \"${properties}\",\n                    \"title\": \"Sensore rilevazione:\",\n                    \"value\": metadata.ss_name\n                }\n            ]\n        }\n    ],\n    \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n    \"version\": \"1.4\"\n}\n\n          \n      }\n   ]\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var newMsg = \n{\n   \"type\":\"message\",\n   \"attachments\":[\n      {\n         \"contentType\":\"application/vnd.microsoft.card.adaptive\",\n         \"contentUrl\":null,\n         \"content\":\n{\n    \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n    \"type\": \"AdaptiveCard\",\n    \"version\": \"1.4\",\n    \"speak\": \"<s>The forecast for Seattle ${formatEpoch(dt, 'MMMM d')} is mostly clear with a High of ${formatNumber((main.temp_max - 273) * 9 / 5 + 32, 0)} degrees and Low of ${formatNumber((main.temp_min - 273) * 9 / 5 + 32, 0)} degrees</s>\",\n    \"body\": [\n        {\n            \"type\": \"TextBlock\",\n            \"text\": \"Voltage, WA\",\n            \"size\": \"Large\",\n            \"isSubtle\": true,\n            \"wrap\": true\n        },\n        {\n            \"type\": \"ColumnSet\",\n            \"columns\": [\n                {\n                    \"type\": \"Column\",\n                    \"width\": \"auto\",\n                    \"items\": [\n                        {\n                            \"type\": \"Image\",\n                            \"url\": \"https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Square.png\",\n                            \"size\": \"Small\",\n                            \"altText\": \"Mostly cloudy weather\"\n                        }\n                    ]\n                },\n                {\n                    \"type\": \"Column\",\n                    \"width\": \"auto\",\n                    \"items\": [\n                        {\n                            \"type\": \"TextBlock\",\n                            \"text\": \" - \" + msg.a_voltage,\n                            \"size\": \"ExtraLarge\",\n                            \"spacing\": \"None\",\n                            \"wrap\": true\n                        }\n                    ]\n                },\n                {\n                    \"type\": \"Column\",\n                    \"width\": \"stretch\",\n                    \"items\": [\n                        {\n                            \"type\": \"TextBlock\",\n                            \"text\": \"°F\",\n                            \"weight\": \"Bolder\",\n                            \"spacing\": \"Small\",\n                            \"wrap\": true\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n}\n\n          \n      }\n   ]\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var metadata= {\n    msg:\"Messaggio da: \"+metadata.ss_name+\", di tipo: \"+msg.severity+\", prescrizione: \"+msg.details.data,\n    ss_telefono: metadata.ss_telefono\n};\nvar newMsg = {\n   \"type\":\"message\",\n   \"attachments\":[\n      {\n         \"contentType\":\"application/vnd.microsoft.card.adaptive\",\n         \"contentUrl\":null,\n         \"content\":\n{\n    \"type\": \"AdaptiveCard\",\n    \"body\": [\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Large\",\n            \"weight\": \"Bolder\",\n            \"text\": \"! Nuovo Allarme !\",\n            \"horizontalAlignment\": \"Center\",\n            \"color\": \"Attention\"\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Medium\",\n            \"weight\": \"Bolder\",\n            \"text\": msg.type,\n            \"horizontalAlignment\": \"Center\",\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Medium\",\n            \"text\": msg.severity,\n            \"horizontalAlignment\": \"Center\",\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"text\": msg.details.data,\n            \"wrap\": true\n        },\n        {\n            \"type\": \"FactSet\",\n            \"facts\": [\n                {\n                    \"$data\": \"${properties}\",\n                    \"title\": \"Sensore rilevazione:\",\n                    \"value\": metadata.ss_name\n                }\n            ]\n        }\n    ],\n    \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n    \"version\": \"1.4\"\n}\n\n          \n      }\n   ]\n};\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "d031d730-b10a-11ed-9788-e7e5c5ff9ab6"
+        "id" : "15e17740-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Create Card",
       "ruleChainId" : null,
@@ -936,8 +983,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 443,
-        "layoutY" : 754
+        "layoutX" : 351,
+        "layoutY" : 806
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -953,7 +1000,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "d033abf0-b10a-11ed-9788-e7e5c5ff9ab6"
+        "id" : "15e17741-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Whatsapp?",
       "ruleChainId" : null,
@@ -961,8 +1008,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 896,
-        "layoutY" : 683
+        "layoutX" : 965,
+        "layoutY" : 772
       },
       "configuration" : {
         "restEndpointUrlPattern" : "https://api.textmebot.com/send.php?recipient=${ss_telefono}&apikey=3uVVBeCu8kqg&text=${msg}",
@@ -993,7 +1040,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "c377f620-b112-11ed-9788-e7e5c5ff9ab6"
+        "id" : "15e19e50-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Send Whatsapp",
       "ruleChainId" : null,
@@ -1001,42 +1048,255 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 447,
-        "layoutY" : 895
+        "layoutX" : 624,
+        "layoutY" : 122
       },
       "configuration" : {
-        "ruleChainId" : "a8a64db0-bd83-11ed-b0b2-3d060a5456ec"
+        "alarmsCountMappings" : [ {
+          "target" : "criticalAlarmsCount",
+          "typesList" : [ "High Temperature Alarm", "Low Temperature Alarm", "Door left open", "Door was broken", "Low Battery", "Low Liquid Level", "Motion Detected", "Prolonged occupation", "Bin is full", "Low on items", "Fire Alarm" ],
+          "severityList" : [ "CRITICAL" ],
+          "statusList" : [ "ACTIVE_UNACK", "ACTIVE_ACK" ]
+        }, {
+          "target" : "majorAlarmsCount",
+          "typesList" : [ "High Temperature Alarm", "Low Temperature Alarm", "Door left open", "Door was broken", "Low Battery", "Low Liquid Level", "Motion Detected", "Prolonged occupation", "Bin is full", "Low on items", "Fire Alarm" ],
+          "severityList" : [ "MAJOR" ],
+          "statusList" : [ "ACTIVE_UNACK", "ACTIVE_ACK" ]
+        } ],
+        "countAlarmsForPropagationEntities" : true,
+        "propagationEntityTypes" : null,
+        "queueName" : "Main",
+        "outMsgType" : "POST_TELEMETRY_REQUEST"
       },
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "c9226280-bd84-11ed-b0b2-3d060a5456ec"
+        "id" : "15e19e51-c349-11ed-adcd-cbfdb5951e23"
       },
-      "name" : "To Root Rule Chain 7GG",
+      "name" : "Alarms Count",
       "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+      "type" : "org.thingsboard.rule.engine.analytics.latest.alarm.TbAlarmsCountNodeV2"
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 185,
-        "layoutY" : 615
+        "layoutX" : 910,
+        "layoutY" : 36
       },
       "configuration" : {
-        "persistAlarmRulesState" : false,
-        "fetchAlarmRulesStateOnStart" : false
+        "originatorTypes" : [ "DEVICE", "ASSET" ]
       },
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "c92325d0-bd84-11ed-b0b2-3d060a5456ec"
+        "id" : "15e1c560-c349-11ed-adcd-cbfdb5951e23"
       },
-      "name" : "Device Profile 7GG",
+      "name" : "isDeviceOrAsset",
       "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.profile.TbDeviceProfileNode"
+      "type" : "org.thingsboard.rule.engine.filter.TbOriginatorTypeFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1009,
+        "layoutY" : 103
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "var criticalAlarmsCount = msg.criticalAlarmsCount;\nvar majorAlarmsCount = msg.majorAlarmsCount;\n\nvar state = 'normal';\n\nif (criticalAlarmsCount && Number(criticalAlarmsCount) > 0) {\n    state = 'critical';\n} else if (majorAlarmsCount && Number(majorAlarmsCount) > 0) {\n    state = 'major';\n}\n\nreturn {\n    msg: {\n        state: state\n    },\n    metadata: {\n        scope: 'SERVER_SCOPE'\n    },\n    msgType: 'POST_ATTRIBUTES_REQUEST'\n};",
+        "tbelScript" : "var criticalAlarmsCount = msg.criticalAlarmsCount;\nvar majorAlarmsCount = msg.majorAlarmsCount;\n\nvar state = 'normal';\n\nif (criticalAlarmsCount > 0) {\n    state = 'critical';\n} else if (majorAlarmsCount > 0) {\n    state = 'major';\n}\n\nreturn {\n    msg: {\n        state: state\n    },\n    metadata: {\n        scope: 'SERVER_SCOPE'\n    },\n    msgType: 'POST_ATTRIBUTES_REQUEST'\n};"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "15e1c561-c349-11ed-adcd-cbfdb5951e23"
+      },
+      "name" : "Update state attributes",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 57,
+        "layoutY" : 476
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 30,
+        "scriptLang" : "TBEL",
+        "jsScript" : "var temperature = 18 + Math.random() * (32 - 18);\ntemperature = Math.round( temperature * 100 ) / 100;\nvar humidity = 10 + Math.random() * (90 - 10);\nhumidity = Math.round( humidity * 100 ) / 100;\nvar soundAvg = 10 + Math.random() * (90 - 10);\nsoundAvg = Math.round( soundAvg * 100 ) / 100;\nvar soundPeak = 30 + Math.random() * (90 - 10);\nsoundPeak = Math.round( soundPeak * 100 ) / 100;\nvar light = 10 + Math.random() * (500 - 20);\nlight = Math.round( light * 100 ) / 100;\nvar co2 = 300 + Math.random() * (1200 - 50);\nco2 = Math.round( co2 * 100 ) / 100;\nvar user_latitude = 44.9034748;\nvar user_longitude = 11.6190913;\nvar vdd = 3994;\nvar msg = { \n            temperature: temperature,\n            humidity: humidity,\n            soundAvg: soundAvg,\n            soundPeak: soundPeak,\n            light: light,\n            co2: co2,\n            user_latitude: user_latitude,\n            user_longitude: user_longitude,\n            vdd: vdd,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
+        "tbelScript" : "var temperature = 19 + Math.random() * (5 - 0);\ntemperature = Math.round( temperature * 100 ) / 100;\nvar msg = { \n            temperature: temperature,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
+        "originatorId" : "7c15f8f0-01d5-11ed-8014-35af6f7ed6b6",
+        "originatorType" : "DEVICE"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "15e1ec70-c349-11ed-adcd-cbfdb5951e23"
+      },
+      "name" : "Caldaia",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 79,
+        "layoutY" : 557
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchToData" : true,
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "setNewTemperature" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "15e1ec71-c349-11ed-adcd-cbfdb5951e23"
+      },
+      "name" : "Get setTemperature",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 73,
+        "layoutY" : 633
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: \"POST_TELEMETRY_REQUEST\"};",
+        "tbelScript" : "var status;\nif(msg.temperature>=msg.ss_setNewTemperature){\n    status=0;\n}else{\n    status=1;\n}\nvar newMsg={\n    status: status,\n    temperature: msg.temperature,\n    setTemperature: msg.ss_setNewTemperature\n};\nreturn {msg: newMsg, metadata: metadata, msgType: \"POST_TELEMETRY_REQUEST\"};"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "15e1ec72-c349-11ed-adcd-cbfdb5951e23"
+      },
+      "name" : "Trasform to telemetry",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1455,
+        "layoutY" : 361
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "var newMsg = {};\nif (metadata.deviceType == 'shelly3em') \n{ \n    newMsg.deviceName = metadata.deviceName;\n    newMsg.Phase_B_power = msg.Phase_B_power;\n    msg = newMsg;\n    return ['energymeter'];\n}\nelse {\n    return ['Other'];\n}\n"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "15e21380-c349-11ed-adcd-cbfdb5951e23"
+      },
+      "name" : "CheckShelly3em",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 1460,
+        "layoutY" : 615
+      },
+      "configuration" : {
+        "topicPattern" : "energyp",
+        "keyPattern" : null,
+        "bootstrapServers" : "157.230.126.181:9093",
+        "retries" : 0,
+        "batchSize" : 16384,
+        "linger" : 0,
+        "bufferMemory" : 33554432,
+        "acks" : "-1",
+        "keySerializer" : "org.apache.kafka.common.serialization.StringSerializer",
+        "valueSerializer" : "org.apache.kafka.common.serialization.StringSerializer",
+        "otherProperties" : {
+          "security.protocol" : "plaintext"
+        },
+        "addMetadataKeyValuesAsKafkaHeaders" : null,
+        "kafkaHeadersCharset" : null
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "15e23a90-c349-11ed-adcd-cbfdb5951e23"
+      },
+      "name" : "3emtokafka",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1459,
+        "layoutY" : 451
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var newMsg = {};\n    newMsg.deviceName = metadata.deviceName;\n    newMsg.Phase_B_power = msg.Phase_B_power;\n\n\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "15e23a91-c349-11ed-adcd-cbfdb5951e23"
+      },
+      "name" : "Add_deviceName",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 1463,
+        "layoutY" : 694
+      },
+      "configuration" : {
+        "topicPattern" : "energyprod",
+        "keyPattern" : null,
+        "bootstrapServers" : "142.93.165.190:9093",
+        "retries" : 0,
+        "batchSize" : 16384,
+        "linger" : 0,
+        "bufferMemory" : 33554432,
+        "acks" : "-1",
+        "keySerializer" : "org.apache.kafka.common.serialization.StringSerializer",
+        "valueSerializer" : "org.apache.kafka.common.serialization.StringSerializer",
+        "otherProperties" : {
+          "security.protocol" : "plaintext"
+        },
+        "addMetadataKeyValuesAsKafkaHeaders" : null,
+        "kafkaHeadersCharset" : null
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "15e261a0-c349-11ed-adcd-cbfdb5951e23"
+      },
+      "name" : "3emtokafka2",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
     } ],
     "ruleChainConnections" : null
   },

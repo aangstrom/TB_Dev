@@ -540,7 +540,8 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if(value==\"True\"){\n    return 1;\n}else{\n    return 0;\n}"
+                "postFuncBody" : "if(value==\"True\"){\n    var date=new Date(0);\n    return date-timePrev;\n    //return 1;\n}else{\n    return 0;\n}",
+                "aggregationType" : "NONE"
               }, {
                 "name" : "Avviato_Nastro_carico",
                 "type" : "timeseries",

@@ -7659,8 +7659,8 @@
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
+                "usePostProcessing" : true,
+                "postFuncBody" : "var date = new Date();\nvar milliseconds = date.getTime()-time; \nif(milliseconds<600000){\n    return value;\n}else{\n    return 0;\n}"
               }, {
                 "name" : "macRunLoadingBo",
                 "type" : "timeseries",
@@ -7673,7 +7673,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "var date = new Date();\nvar milliseconds = date.getTime()-time; \nif(milliseconds<600000){\n    if(value==\"False\"){\n    return '<div style=\"color:green;font-size:20px;\">Run</div>';\n    }\n    else{\n        return '<div style=\"color:orange;font-size:20px;\">Loading</div>';\n    }\n}else{\n    return '';\n}"
+                "postFuncBody" : "var date = new Date();\nvar milliseconds = date.getTime()-time; \nif(milliseconds<600000){\n    if(value==\"False\"){\n    return '<div style=\"color:green;font-size:20px;\">Run</div>';\n    }\n    else{\n        return '<div style=\"color:orange;font-size:20px;\">Loading</div>';\n    }\n}else{\n    return '<div style=\"color:red;font-size:20px;\">Spenta</div>';;\n}"
               } ]
             } ],
             "timewindow" : {

@@ -7925,8 +7925,8 @@
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
+                "usePostProcessing" : true,
+                "postFuncBody" : "var date = new Date();\nvar milliseconds = date.getTime()-time; \nif(milliseconds<600000){\n    return value;\n}else{\n    return 0;\n}"
               }, {
                 "name" : "active",
                 "type" : "attribute",
@@ -7966,7 +7966,13 @@
                 "label" : "Assorbimento_Rotore_2",
                 "color" : "#8bc34a",
                 "settings" : { },
-                "_hash" : 0.6035938411945225
+                "_hash" : 0.6035938411945225,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "var date = new Date();\nvar milliseconds = date.getTime()-time; \nif(milliseconds<600000){\n    return value;\n}else{\n    return 0;\n}"
               } ]
             } ],
             "timewindow" : {

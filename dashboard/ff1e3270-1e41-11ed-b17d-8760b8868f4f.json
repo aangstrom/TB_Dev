@@ -7782,7 +7782,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if(value==\"False\"){\n    return '<div style=\"color:green;font-size:20px;\">Run</div>';\n}\nelse{\n    return '<div style=\"color:orange;font-size:20px;\">Loading</div>';\n}"
+                "postFuncBody" : "var date = new Date();\nvar milliseconds = date.getTime()-time; \nif(milliseconds<600000){\n    if(value==\"False\"){\n    return '<div style=\"color:green;font-size:20px;\">Run</div>';\n    }\n    else{\n        return '<div style=\"color:orange;font-size:20px;\">Loading</div>';\n    }\n}else{\n    return '<div style=\"color:red;font-size:20px;\">Spenta</div>';\n}"
               }, {
                 "name" : "I6000_Rotor01CurrentRe",
                 "type" : "timeseries",

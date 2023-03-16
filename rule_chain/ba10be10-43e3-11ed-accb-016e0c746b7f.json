@@ -104,6 +104,14 @@
       "toIndex" : 34,
       "type" : "Alarm Severity Updated"
     }, {
+      "fromIndex" : 12,
+      "toIndex" : 44,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 13,
+      "toIndex" : 44,
+      "type" : "Success"
+    }, {
       "fromIndex" : 14,
       "toIndex" : 19,
       "type" : "Send Email"
@@ -224,6 +232,10 @@
       "toIndex" : 39,
       "type" : "Success"
     }, {
+      "fromIndex" : 39,
+      "toIndex" : 44,
+      "type" : "Success"
+    }, {
       "fromIndex" : 40,
       "toIndex" : 42,
       "type" : "energymeter"
@@ -235,6 +247,18 @@
       "fromIndex" : 42,
       "toIndex" : 43,
       "type" : "Success"
+    }, {
+      "fromIndex" : 44,
+      "toIndex" : 46,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 46,
+      "toIndex" : 1,
+      "type" : "Post attributes"
+    }, {
+      "fromIndex" : 46,
+      "toIndex" : 45,
+      "type" : "Post telemetry"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -465,8 +489,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 50,
-        "layoutY" : 255
+        "layoutX" : 53,
+        "layoutY" : 338
       },
       "configuration" : {
         "msgCount" : 0,
@@ -515,8 +539,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 649,
-        "layoutY" : 484
+        "layoutX" : 804,
+        "layoutY" : 515
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -536,8 +560,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 351,
-        "layoutY" : 651
+        "layoutX" : 573,
+        "layoutY" : 711
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -561,8 +585,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 351,
-        "layoutY" : 730
+        "layoutX" : 573,
+        "layoutY" : 790
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -586,8 +610,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 959,
-        "layoutY" : 636
+        "layoutX" : 1015,
+        "layoutY" : 709
       },
       "configuration" : {
         "useSystemSmtpSettings" : true,
@@ -618,8 +642,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 649,
-        "layoutY" : 659
+        "layoutX" : 802,
+        "layoutY" : 663
       },
       "configuration" : {
         "restEndpointUrlPattern" : "${ss_TeamsUrl}",
@@ -658,8 +682,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 959,
-        "layoutY" : 567
+        "layoutX" : 1015,
+        "layoutY" : 640
       },
       "configuration" : {
         "fromTemplate" : "alert@aangstrom.it",
@@ -684,8 +708,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 352,
-        "layoutY" : 881
+        "layoutX" : 575,
+        "layoutY" : 937
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -705,8 +729,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 351,
-        "layoutY" : 498
+        "layoutX" : 573,
+        "layoutY" : 558
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -730,8 +754,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 351,
-        "layoutY" : 576
+        "layoutX" : 573,
+        "layoutY" : 636
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -755,8 +779,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 650,
-        "layoutY" : 588
+        "layoutX" : 803,
+        "layoutY" : 592
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -776,8 +800,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 351,
-        "layoutY" : 420
+        "layoutX" : 573,
+        "layoutY" : 480
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -962,8 +986,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 961,
-        "layoutY" : 703
+        "layoutX" : 1017,
+        "layoutY" : 776
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -983,8 +1007,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 351,
-        "layoutY" : 806
+        "layoutX" : 573,
+        "layoutY" : 866
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -1008,8 +1032,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 965,
-        "layoutY" : 772
+        "layoutX" : 1021,
+        "layoutY" : 845
       },
       "configuration" : {
         "restEndpointUrlPattern" : "https://api.textmebot.com/send.php?recipient=${ss_telefono}&apikey=3uVVBeCu8kqg&text=${msg}",
@@ -1297,6 +1321,66 @@
       "name" : "3emtokafka2",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 295,
+        "layoutY" : 487
+      },
+      "configuration" : {
+        "persistAlarmRulesState" : false,
+        "fetchAlarmRulesStateOnStart" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "6d125f30-c3de-11ed-adcd-cbfdb5951e23"
+      },
+      "name" : "Device Profile 7GG",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.profile.TbDeviceProfileNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 312,
+        "layoutY" : 656
+      },
+      "configuration" : {
+        "defaultTTL" : 604800,
+        "skipLatestPersistence" : null,
+        "useServerTs" : null
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "6d1397b0-c3de-11ed-adcd-cbfdb5951e23"
+      },
+      "name" : "Save Timeseries 7GG",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 311,
+        "layoutY" : 558
+      },
+      "configuration" : {
+        "version" : 0
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "6d140ce0-c3de-11ed-adcd-cbfdb5951e23"
+      },
+      "name" : "Message Type Switch",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
     } ],
     "ruleChainConnections" : null
   },

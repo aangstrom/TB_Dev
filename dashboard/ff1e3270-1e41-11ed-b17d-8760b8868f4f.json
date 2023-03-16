@@ -2329,7 +2329,8 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if(value==\"True\"){\n    return 1;\n}else{\n    return 0;\n}"
+                "postFuncBody" : "if(value==\"True\"){\n    var date = new Date();\n    var milliseconds = date.getTime()-time; \n    if(milliseconds>600000){\n        return 0;\n    }\n    return 1;\n}else{\n    return 0;\n}",
+                "aggregationType" : "NONE"
               }, {
                 "name" : "Avviato_Nastro_carico",
                 "type" : "timeseries",
@@ -2341,7 +2342,8 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if(value==\"True\"){\n    return 1;\n}else{\n    return 0;\n}"
+                "postFuncBody" : "if(value==\"True\"){\n    var date = new Date();\n    var milliseconds = date.getTime()-time; \n    if(milliseconds>600000){\n        return 0;\n    }\n    return 1;\n}else{\n    return 0;\n}",
+                "aggregationType" : "NONE"
               }, {
                 "name" : "Avviato_Nastro_elevazione",
                 "type" : "timeseries",
@@ -2353,7 +2355,8 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if(value==\"True\"){\n    return 1;\n}else{\n    return 0;\n}"
+                "postFuncBody" : "if(value==\"True\"){\n    var date = new Date();\n    var milliseconds = date.getTime()-time; \n    if(milliseconds>600000){\n        return 0;\n    }\n    return 1;\n}else{\n    return 0;\n}",
+                "aggregationType" : "NONE"
               }, {
                 "name" : "Avviato_Piani_vibranti",
                 "type" : "timeseries",
@@ -2365,7 +2368,8 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if(value==\"True\"){\n    return 1;\n}else{\n    return 0;\n}"
+                "postFuncBody" : "if(value==\"True\"){\n    var date = new Date();\n    var milliseconds = date.getTime()-time; \n    if(milliseconds>600000){\n        return 0;\n    }\n    return 1;\n}else{\n    return 0;\n}",
+                "aggregationType" : "NONE"
               } ]
             } ],
             "timewindow" : {
@@ -2421,7 +2425,8 @@
               "showMax" : false,
               "showAvg" : false,
               "showTotal" : false
-            }
+            },
+            "useDashboardTimewindow" : true
           },
           "row" : 0,
           "col" : 0,

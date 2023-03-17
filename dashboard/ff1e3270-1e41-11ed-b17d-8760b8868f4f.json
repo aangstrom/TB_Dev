@@ -2486,7 +2486,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if(value==\"True\"){\n    return 1;\n}else{\n    return 0;\n}",
+                "postFuncBody" : "if(value==\"True\"){\n    var date = new Date();\n    var milliseconds = date.getTime()-time; \n    if(milliseconds<600000){\n        if(value==\"True\"){\n            return 1;\n        }else{\n            return 0;\n        }\n    }else{\n        return 0;\n    }\n}else{\n    return 0;\n}",
                 "aggregationType" : null
               } ],
               "latestDataKeys" : null
@@ -2501,39 +2501,43 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "8px",
             "settings" : {
-              "shadowSize" : 4,
-              "fontColor" : "#545454",
+              "stack" : false,
               "fontSize" : 10,
+              "fontColor" : "#545454",
+              "showTooltip" : true,
+              "tooltipIndividual" : false,
+              "tooltipCumulative" : false,
+              "hideZeros" : false,
+              "tooltipValueFormatter" : "if (value === 1) {\n    return 'On';\n} else {\n    return 'Off';\n}",
+              "grid" : {
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1,
+                "color" : "#545454",
+                "backgroundColor" : null,
+                "tickColor" : "#DDDDDD"
+              },
               "xaxis" : {
+                "title" : null,
                 "showLabels" : true,
                 "color" : "#545454"
               },
               "yaxis" : {
+                "min" : 0,
+                "max" : 1,
+                "title" : null,
                 "showLabels" : true,
                 "color" : "#545454",
-                "ticksFormatter" : "if (value > 0 && value <= 1) {\n    return 'On';\n} else if (value === 0) {\n    return 'Off';\n} else {\n    return '';\n}",
+                "tickSize" : null,
                 "tickDecimals" : 0,
-                "min" : 0,
-                "max" : 1
+                "ticksFormatter" : "if (value > 0 && value <= 1) {\n    return 'On';\n} else if (value === 0) {\n    return 'Off';\n} else {\n    return '';\n}"
               },
-              "grid" : {
-                "color" : "#545454",
-                "tickColor" : "#DDDDDD",
-                "verticalLines" : true,
-                "horizontalLines" : true,
-                "outlineWidth" : 1
-              },
-              "stack" : false,
-              "tooltipIndividual" : false,
-              "tooltipValueFormatter" : "if (value > 0 && value <= 1) {\n    return 'On';\n} else if (value === 0) {\n    return 'Off';\n} else {\n    return '';\n}",
+              "shadowSize" : 4,
               "smoothLines" : false,
-              "tooltipCumulative" : false,
-              "hideZeros" : false,
-              "showTooltip" : true,
               "comparisonEnabled" : false,
-              "timeForComparison" : "previousInterval",
               "xaxisSecond" : {
                 "axisPosition" : "top",
+                "title" : null,
                 "showLabels" : true
               },
               "customLegendEnabled" : false

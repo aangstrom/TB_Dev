@@ -1486,7 +1486,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "//Data di oggi\nif(msg.lunVen!=null){\n    msg.tempo=0;\n}else{\n    msg.tempo=1;\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var hour = new Date().getHours();\nvar minute = new Date().getMinutes();\nvar orario_attuale=hour+':'+minute;\nvar calcolo=msg.lunedi[0].split(\":\");\nvar dateFormat = new Date(metadata.ts);\n\n\n\nif(msg.lunVen!=null){\n    msg.tempo=0;\n    msg.hour=parseInt(calcolo[0]);\n    msg.data=dateFormat;\n}else{\n    msg.tempo=1;\n    msg.hour=calcolo;\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};\n\nfunction getDateFromHours(time) {\n    time = time.split(':');\n    var now = new Date();\n    return new Date(now.getYear(), now.getMonth(), now.getDate(), time);\n}"
       },
       "createdTime" : 0,
       "debugMode" : false,

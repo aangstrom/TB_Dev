@@ -180,6 +180,10 @@
       "toIndex" : 21,
       "type" : "Success"
     }, {
+      "fromIndex" : 25,
+      "toIndex" : 47,
+      "type" : "Success"
+    }, {
       "fromIndex" : 27,
       "toIndex" : 28,
       "type" : "Success"
@@ -255,6 +259,38 @@
       "fromIndex" : 46,
       "toIndex" : 45,
       "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 47,
+      "toIndex" : 48,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 47,
+      "toIndex" : 48,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 48,
+      "toIndex" : 49,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 48,
+      "toIndex" : 49,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 49,
+      "toIndex" : 50,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 49,
+      "toIndex" : 50,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 50,
+      "toIndex" : 51,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 50,
+      "toIndex" : 51,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -826,12 +862,12 @@
       },
       "configuration" : {
         "msgCount" : 0,
-        "periodInSeconds" : 300,
+        "periodInSeconds" : 10,
         "scriptLang" : "TBEL",
         "jsScript" : "var temp = prevMsg.energy;\nvar d = new Date();\nvar hour = d.getHours();\nvar amperage, energy, frequency, power, voltage;\nswitch(hour) {\n  case 8:\n  case 9:\n  case 10:\n  case 11:\n  case 12:\n  case 13:\n  case 14:\n  case 15:\n  case 16:\n  case 17:\n    amperage = (Math.random() * (5 - 0) + 10).toFixed(1);\n    frequency = (Math.random() * (50 - 0) + 10).toFixed(1);\n    power = Math.random() * (1000 - 0) + 0;\n    power = Math.round( power * 100 ) / 100;\n    energy = power;\n    voltage = (Math.random() * (10 - 0) + 220).toFixed(2);\n    break;\n  default:\n    amperage = 0.1 + (Math.random() * (0.1 - 0) + 0).toFixed(1);\n    frequency = 10;\n    power = null;\n    energy = temp;\n    voltage = 0.5;\n}\namperage = Math.round( amperage * 100 ) / 100;\nfrequency = Math.round( frequency * 100 ) / 100;\nvoltage = Math.round( voltage * 100 ) / 100;\nvar msg = {\n    amperage: amperage,\n    energy: energy,\n    frequency: frequency,\n    power: power,\n    voltage: voltage\n};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var temp = prevMsg.energy;\nvar hour = new Date().getHours();\nvar amperage;\nvar energy;\nvar frequency;\nvar power;\nvar voltage;\nvar power_factor;\nif(hour>=8 && hour<=17){\n    amperage = Math.random() * (5 - 0) + 10;\n    frequency = Math.random() * (50 - 0) + 10;\n    power = Math.random() * (1000 - 0) + 0;\n    power = Math.round( power * 100 ) / 100;\n    power_factor = Math.random() * (1 - 0.2);\n    energy = power;\n    voltage = Math.random() * (10 - 0) + 220;\n} else {\n    amperage = 0.1 + Math.random() * (0.1 - 0) + 0;\n    frequency = 10;\n    power = null;\n    power_factor = null;\n    energy = temp;\n    voltage = 0.5;\n}\namperage = toFixed(amperage,2);\nfrequency = toFixed(frequency,2);\nvoltage = toFixed(voltage,2);\npower_factor = toFixed(power_factor,2);\nvar msg = {\n    amperage: amperage,\n    energy: energy,\n    frequency: frequency,\n    power: power,\n    power_factor: power_factor,\n    voltage: voltage\n};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "originatorId" : "7c15f8f0-01d5-11ed-8014-35af6f7ed6b6",
-        "originatorType" : "DEVICE"
+        "originatorId" : null,
+        "originatorType" : null
       },
       "createdTime" : 0,
       "debugMode" : false,

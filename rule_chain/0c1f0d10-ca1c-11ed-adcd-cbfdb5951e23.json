@@ -72,6 +72,14 @@
       "fromIndex" : 9,
       "toIndex" : 6,
       "type" : "Success"
+    }, {
+      "fromIndex" : 12,
+      "toIndex" : 13,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 12,
+      "toIndex" : 14,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -208,8 +216,8 @@
       "type" : "org.thingsboard.rule.engine.filter.TbOriginatorTypeFilterNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 499,
-        "layoutY" : 131
+        "layoutX" : 501,
+        "layoutY" : 151
       },
       "configuration" : {
         "messageTypes" : [ "POST_ATTRIBUTES_REQUEST", "RPC_CALL_FROM_SERVER_TO_DEVICE" ]
@@ -227,7 +235,7 @@
     }, {
       "additionalInfo" : {
         "layoutX" : 807,
-        "layoutY" : 130
+        "layoutY" : 152
       },
       "configuration" : {
         "entityGroupId" : null,
@@ -301,6 +309,93 @@
       "name" : "Process RPC Reply",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 239,
+        "layoutY" : 604
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var newMsg = {};\n    newMsg.deviceName = metadata.deviceName;\n    newMsg.events = metadata.events;\n\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "be345870-ca1c-11ed-adcd-cbfdb5951e23"
+      },
+      "name" : "Add_deviceName",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 620,
+        "layoutY" : 678
+      },
+      "configuration" : {
+        "topicPattern" : "energyp",
+        "keyPattern" : null,
+        "bootstrapServers" : "157.230.126.181:9093",
+        "retries" : 0,
+        "batchSize" : 16384,
+        "linger" : 0,
+        "bufferMemory" : 33554432,
+        "acks" : "-1",
+        "keySerializer" : "org.apache.kafka.common.serialization.StringSerializer",
+        "valueSerializer" : "org.apache.kafka.common.serialization.StringSerializer",
+        "otherProperties" : {
+          "security.protocol" : "plaintext"
+        },
+        "addMetadataKeyValuesAsKafkaHeaders" : null,
+        "kafkaHeadersCharset" : null
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "be34a690-ca1c-11ed-adcd-cbfdb5951e23"
+      },
+      "name" : "3emtokafka",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 618,
+        "layoutY" : 593
+      },
+      "configuration" : {
+        "topicPattern" : "energyprod",
+        "keyPattern" : null,
+        "bootstrapServers" : "142.93.165.190:9093",
+        "retries" : 0,
+        "batchSize" : 16384,
+        "linger" : 0,
+        "bufferMemory" : 33554432,
+        "acks" : "-1",
+        "keySerializer" : "org.apache.kafka.common.serialization.StringSerializer",
+        "valueSerializer" : "org.apache.kafka.common.serialization.StringSerializer",
+        "otherProperties" : {
+          "security.protocol" : "plaintext"
+        },
+        "addMetadataKeyValuesAsKafkaHeaders" : null,
+        "kafkaHeadersCharset" : null
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "be351bc0-ca1c-11ed-adcd-cbfdb5951e23"
+      },
+      "name" : "3emtokafka2",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
     } ],
     "ruleChainConnections" : null
   },

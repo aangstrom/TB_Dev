@@ -76,6 +76,14 @@
       "fromIndex" : 9,
       "toIndex" : 6,
       "type" : "Success"
+    }, {
+      "fromIndex" : 12,
+      "toIndex" : 13,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 12,
+      "toIndex" : 14,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -314,10 +322,10 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var newMsg = {};\n    newMsg.deviceName = metadata.deviceName;\n    newMsg.events = metadata.events;\n\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var events=msg.events;\nvar newMsg = {};\n    newMsg.deviceName = metadata.deviceName;\n    newMsg.events = events;\n\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
       },
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",

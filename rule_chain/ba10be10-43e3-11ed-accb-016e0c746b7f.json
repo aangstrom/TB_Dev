@@ -116,6 +116,10 @@
       "toIndex" : 47,
       "type" : "Success"
     }, {
+      "fromIndex" : 13,
+      "toIndex" : 52,
+      "type" : "Success"
+    }, {
       "fromIndex" : 14,
       "toIndex" : 19,
       "type" : "Send Email"
@@ -291,6 +295,14 @@
       "fromIndex" : 50,
       "toIndex" : 51,
       "type" : "Success"
+    }, {
+      "fromIndex" : 52,
+      "toIndex" : 0,
+      "type" : "Other"
+    }, {
+      "fromIndex" : 52,
+      "toIndex" : 53,
+      "type" : "Energy"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -1532,6 +1544,82 @@
         "id" : "970aaab0-c8c3-11ed-adcd-cbfdb5951e23"
       },
       "name" : "Test Orari operativi",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 73,
+        "layoutY" : 871
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if(msg.power!=null || msg.Phase_A_power!=null || msg.Phase_B_power!=null || msg.Phase_C_power!=null){\n    return ['Energy'];\n}else{\n    return ['Other'];\n}\nreturn nextRelation(metadata, msg);"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f8af6a80-ca30-11ed-adcd-cbfdb5951e23"
+      },
+      "name" : "Switch Energy/Other",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 74,
+        "layoutY" : 965
+      },
+      "configuration" : {
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "FROM",
+          "maxLevel" : null,
+          "filters" : [ {
+            "relationType" : null,
+            "entityTypes" : [ "DEVICE", "ASSET" ]
+          } ]
+        },
+        "telemetry" : false,
+        "attrMapping" : {
+          "F1" : "F1",
+          "F2" : "F2",
+          "F3" : "F3",
+          "F23" : "F23"
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f8b054e0-ca30-11ed-adcd-cbfdb5951e23"
+      },
+      "name" : "Get F1/F2/F3/F23",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 62,
+        "layoutY" : 1032
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var weekday=[\"domenica\",\"lunedi\",\"martedi\",\"mercoledi\",\"giovedi\",\"venerdi\",\"sabato\"];\nvar data=new Date();\nvar minute=new Date().getMinutes();\nvar ora=data.getHours()*100+data.getMinutes();\nvar day=weekday[new Date().getDay()];\n//prezzo per fasce;\nvar F1=null;\nvar F2=null;\nvar F3=null;\nvar F23=null;\n//orari F1\nvar inizioFascia1=800; //8:00\nvar fineFascia1=1900; //19:00\n//orari F2\nvar inizioFascia2_1=700; //7:00\nvar fineFascia2_1=800; //8:00\nvar inizioFascia2_2=1900; //19:00\nvar fineFascia2_2=2300; //23:00\n//orari F3\nvar inizioFascia3=2300; //00:00\nvar fineFascia3=700; //7:00\n//orari F23\nvar inizioFascia23=1900; //19:00\nvar fineFascia23=800; //8:00\n\n/** Calcoli **/\n//F1\nif((day!=\"domenica\" || day!=\"sabato\") && (ora>=inizioFascia1 && ora<fineFascia1)){\n    msg.true=true;\n    calcoloCosto(F1);\n}\n//Se F23 non è nullo\nif(F23!=null){\n    //Se corrisponde a F23\n    if(day==\"domenica\" || day==\"sabato\" || ((day!=\"domenica\" || day!=\"sabato\") && (ora>=inizioFascia23 && ora<fineFascia23))){\n        calcoloCosto(F23);\n    }\n}else{\n    //Se F2 non è nullo\n    if(F2!=null && ((day==\"sabato\" && (ora>=inizioFascia2_1 && ora<fineFascia2_2)) || ((day!=\"domenica\" || day!=\"sabato\") && ((ora>=inizioFascia2_1 && ora<fineFascia2_1) || (ora>=inizioFascia2_2 && ora<fineFascia2_2))))){\n        calcoloCosto(F2);\n    }\n    //Se F3 non è nullo\n    if(F3!=null && (day==\"domenica\" || (day!=\"domenica\" && ((ora>=inizioFascia3 || ora<fineFascia3))))){\n        calcoloCosto(F3);\n    }\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};\n\nfunction calcoloCosto(fascia){\n    if(msg.power>0){\n        msg.powerCost=msg.power*fascia;\n    }else if(msg.Phase_A_power>0){\n        msg.Phase_A_powerCost=msg.Phase_A_power*fascia;\n    }else if(msg.Phase_B_power>0){\n        msg.Phase_B_powerCost=msg.Phase_B_power*fascia;\n    }else if(msg.Phase_C_power>0){\n        msg.Phase_C_powerCost=msg.Phase_C_power*fascia;\n    }\n}"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f8b0ca10-ca30-11ed-adcd-cbfdb5951e23"
+      },
+      "name" : "Get price",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],

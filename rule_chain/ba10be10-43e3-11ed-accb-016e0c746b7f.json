@@ -1553,13 +1553,13 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1217,
-        "layoutY" : 292
+        "layoutX" : 1291,
+        "layoutY" : 290
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(msg.power!=null || msg.Phase_A_power!=null || msg.Phase_B_power!=null || msg.Phase_C_power!=null){\n    return ['Energy'];\n}else{\n    return ['Other'];\n}\nreturn nextRelation(metadata, msg);"
+        "tbelScript" : "if(msg.power!=null || msg.Phase_A_power!=null || msg.Phase_B_power!=null || msg.Phase_C_power!=null){\n    return ['Other'];\n}else{\n    return ['Other'];\n}\nreturn nextRelation(metadata, msg);"
       },
       "createdTime" : 0,
       "debugMode" : false,

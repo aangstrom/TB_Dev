@@ -31,15 +31,11 @@
       "type" : "Success"
     }, {
       "fromIndex" : 0,
-      "toIndex" : 8,
+      "toIndex" : 7,
       "type" : "Success"
     }, {
       "fromIndex" : 2,
       "toIndex" : 1,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 7,
-      "toIndex" : 6,
       "type" : "Success"
     } ],
     "firstNodeIndex" : null,
@@ -230,8 +226,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 889,
-        "layoutY" : 165
+        "layoutX" : 883,
+        "layoutY" : 160
       },
       "configuration" : {
         "topicPattern" : "aangstrom/simulator/env/fotovoltaico_latest",
@@ -258,51 +254,6 @@
       "name" : "aa8",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.mqtt.TbMqttNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 312,
-        "layoutY" : 97
-      },
-      "configuration" : {
-        "periodValue" : 1,
-        "periodTimeUnit" : "MINUTES",
-        "outMsgType" : "POST_TELEMETRY_REQUEST",
-        "parentEntitiesQuery" : {
-          "type" : "single",
-          "entityId" : {
-            "entityType" : "DEVICE",
-            "id" : "8b611770-11cc-11ed-91ed-0903699d62f6"
-          },
-          "childRelationsQuery" : {
-            "fetchLastLevelOnly" : false,
-            "direction" : "FROM",
-            "maxLevel" : 1,
-            "filters" : [ {
-              "relationType" : null,
-              "entityTypes" : [ ]
-            } ]
-          }
-        },
-        "aggMappings" : [ {
-          "sourceScope" : "LATEST_TELEMETRY",
-          "source" : "a_power_produced",
-          "defaultValue" : 0,
-          "aggFunction" : "MAX",
-          "target" : "max_a_power_produced"
-        } ],
-        "queueName" : null
-      },
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "7e60a250-a9f4-11ed-bcb8-7f48a6e846b2"
-      },
-      "name" : "latest-old",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.analytics.latest.telemetry.TbAggLatestTelemetryNode"
     }, {
       "additionalInfo" : {
         "description" : null,

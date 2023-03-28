@@ -9,7 +9,7 @@
       "decoder" : null,
       "encoder" : "/** Encoder **/\n\nvar value = parseInt(msg.params.replace(/\"/g,\"\"));\nvar data = {value: value}\n// Result object with encoded downlink payload\nvar result = {\n\n    // downlink data content type: JSON, TEXT or BINARY (base64 format)\n    contentType: \"JSON\",\n\n    // downlink data\n    data: JSON.stringify(data),\n\n    // Optional metadata object presented in key/value format\n    metadata: {\n        topic: 'aangstrom/test/'+metadata['deviceName']+'/numero'\n    }\n\n};\n\nreturn result;"
     },
-    "debugMode" : true,
+    "debugMode" : false,
     "edgeTemplate" : false,
     "externalId" : null,
     "id" : {

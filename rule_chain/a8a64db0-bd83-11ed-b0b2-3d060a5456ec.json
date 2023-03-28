@@ -22,10 +22,6 @@
   "metaData" : {
     "connections" : [ {
       "fromIndex" : 2,
-      "toIndex" : 0,
-      "type" : "Post telemetry"
-    }, {
-      "fromIndex" : 2,
       "toIndex" : 1,
       "type" : "Post attributes"
     }, {
@@ -48,6 +44,10 @@
       "fromIndex" : 2,
       "toIndex" : 11,
       "type" : "RPC Request to Device"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 12,
+      "type" : "Post telemetry"
     }, {
       "fromIndex" : 6,
       "toIndex" : 2,
@@ -72,13 +72,17 @@
       "fromIndex" : 9,
       "toIndex" : 6,
       "type" : "Success"
+    }, {
+      "fromIndex" : 12,
+      "toIndex" : 0,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 1179,
-        "layoutY" : 293
+        "layoutX" : 1186,
+        "layoutY" : 258
       },
       "configuration" : {
         "defaultTTL" : 604800,
@@ -301,6 +305,27 @@
       "name" : "Process RPC Reply",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1185,
+        "layoutY" : 328
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if((JSON.stringify(msg) === '{}')==true) {\n    return ['Failed'];\n}else{\n    return ['Success'];\n}\nreturn nextRelation(metadata, msg);"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "bea10bd0-cd70-11ed-b483-d7ac3d8e6493"
+      },
+      "name" : "Discard empty",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     } ],
     "ruleChainConnections" : null
   },

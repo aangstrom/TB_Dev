@@ -9,7 +9,7 @@
       "decoder" : "/** Decoder **/\n\n// decode payload to string\nvar payloadStr = decodeToString(payload);\nvar data = JSON.parse(payloadStr);\nvar topicPattern = 'aangstrom/test/(.+)/numero';\n\nvar deviceName =  metadata.topic.match(topicPattern)[1];\n// decode payload to JSON\nvar deviceType = 'sensor';\n\n// Result object with device attributes/telemetry data\nvar result = {\n   deviceName: deviceName,\n   deviceType: deviceType,\n   attributes: {\n       integrationName: metadata['integrationName'],\n   },\n   telemetry: {\n       numero: data,\n   }\n};\n\n/** Helper functions **/\n\nfunction decodeToString(payload) {\n   return String.fromCharCode.apply(String, payload);\n}\n\nfunction decodeToJson(payload) {\n   // convert payload to string.\n   var str = decodeToString(payload);\n\n   // parse string to JSON\n   var data = JSON.parse(str);\n   return data;\n}\n\nreturn result;",
       "encoder" : null
     },
-    "debugMode" : false,
+    "debugMode" : true,
     "edgeTemplate" : false,
     "externalId" : null,
     "id" : {

@@ -61,7 +61,7 @@
       "type" : "Entity Created"
     }, {
       "fromIndex" : 2,
-      "toIndex" : 52,
+      "toIndex" : 54,
       "type" : "Post telemetry"
     }, {
       "fromIndex" : 6,
@@ -213,7 +213,7 @@
       "type" : "Success"
     }, {
       "fromIndex" : 34,
-      "toIndex" : 52,
+      "toIndex" : 54,
       "type" : "Success"
     }, {
       "fromIndex" : 35,
@@ -289,26 +289,22 @@
       "type" : "Success"
     }, {
       "fromIndex" : 51,
-      "toIndex" : 55,
+      "toIndex" : 54,
       "type" : "Failure"
     }, {
       "fromIndex" : 51,
-      "toIndex" : 55,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 52,
-      "toIndex" : 55,
-      "type" : "Other"
-    }, {
-      "fromIndex" : 53,
       "toIndex" : 54,
       "type" : "Success"
     }, {
-      "fromIndex" : 54,
+      "fromIndex" : 52,
+      "toIndex" : 53,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 53,
       "toIndex" : 47,
       "type" : "Success"
     }, {
-      "fromIndex" : 55,
+      "fromIndex" : 54,
       "toIndex" : 0,
       "type" : "Success"
     } ],
@@ -1557,27 +1553,6 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1210,
-        "layoutY" : 293
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(msg.power!=null || msg.Phase_A_power!=null || msg.Phase_B_power!=null || msg.Phase_C_power!=null){\n    return ['Other'];\n}else{\n    return ['Other'];\n}\nreturn nextRelation(metadata, msg);"
-      },
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "f8af6a80-ca30-11ed-adcd-cbfdb5951e23"
-      },
-      "name" : "Switch Energy/Other",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
         "layoutX" : 1499,
         "layoutY" : 74
       },
@@ -1633,8 +1608,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1496,
-        "layoutY" : 335
+        "layoutX" : 1379,
+        "layoutY" : 292
       },
       "configuration" : {
         "scriptLang" : "TBEL",

@@ -12483,6 +12483,148 @@
             "margin" : "0px"
           },
           "id" : "6c1d7472-ba96-0194-5b41-cb19ead78b7f"
+        },
+        "b90bd116-e32f-f1d5-10b4-b96a8f45af5b" : {
+          "isSystemType" : true,
+          "bundleAlias" : "input_widgets",
+          "typeAlias" : "markers_placement_openstreetmap",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8.5,
+          "sizeY" : 6.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "1d799daf-1882-7a76-938b-c97e8c08ff11",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "xPos",
+                "type" : "attribute",
+                "label" : "xPos",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.5950684689883055
+              }, {
+                "name" : "yPos",
+                "type" : "attribute",
+                "label" : "yPos",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.2341461771810287
+              }, {
+                "name" : "name",
+                "type" : "attribute",
+                "label" : "name",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.03540356956190949
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1680169169198,
+                  "endTimeMs" : 1680255569198
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "fitMapBounds" : true,
+              "latKeyName" : "latitude",
+              "lngKeyName" : "longitude",
+              "showLabel" : true,
+              "label" : "${entityName}",
+              "tooltipPattern" : "<b>${entityName}</b><br/><br/><b>Latitude:</b> ${latitude:7}<br/><b>Longitude:</b> ${longitude:7}<br/><br/><link-act name='delete'>Delete</link-act>",
+              "markerImageSize" : 34,
+              "useColorFunction" : false,
+              "markerImages" : [ ],
+              "useMarkerImageFunction" : false,
+              "color" : "#fe7569",
+              "mapProvider" : "OpenStreetMap.Mapnik",
+              "showTooltip" : true,
+              "autocloseTooltip" : true,
+              "defaultCenterPosition" : "0,0",
+              "customProviderTileUrl" : "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+              "showTooltipAction" : "click",
+              "polygonKeyName" : "coordinates",
+              "polygonOpacity" : 0.5,
+              "polygonStrokeOpacity" : 1,
+              "polygonStrokeWeight" : 1,
+              "zoomOnClick" : true,
+              "showCoverageOnHover" : true,
+              "animate" : true,
+              "maxClusterRadius" : 80,
+              "removeOutsideVisibleBounds" : true,
+              "defaultZoomLevel" : 5,
+              "provider" : "openstreet-map",
+              "draggableMarker" : true,
+              "editablePolygon" : true,
+              "mapPageSize" : 16384,
+              "showPolygon" : false,
+              "polygonTooltipPattern" : "<b>${entityName}</b><br/><br/><b>TimeStamp:</b> ${coordinates|ts:7}<br/><br/><link-act name='delete'>Delete</link-act>"
+            },
+            "title" : "New Markers Placement - OpenStreetMap",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : {
+              "tooltipAction" : [ {
+                "name" : "delete",
+                "icon" : "more_horiz",
+                "type" : "custom",
+                "customFunction" : "var entityDatasource = widgetContext.map.map.datasources.filter(\n    function(entity) {\n        return entity.entityId === entityId.id;\n    });\n\nwidgetContext.map.setMarkerLocation(entityDatasource[0], null, null).subscribe(() => widgetContext.updateAliases());",
+                "id" : "54c293c4-9ca6-e34f-dc6a-0271944c1c66"
+              }, {
+                "name" : "delete_polygon",
+                "icon" : "more_horiz",
+                "type" : "custom",
+                "customFunction" : "var entityDatasource = widgetContext.map.map.datasources.filter(\n    function(entity) {\n        return entity.entityId === entityId.id\n    });\n\nwidgetContext.map.savePolygonLocation(entityDatasource[0], null).subscribe(() => widgetContext.updateAliases());",
+                "id" : "6beb7bed-dfd8-388d-b60c-82988ab52f06"
+              } ]
+            },
+            "showTitleIcon" : false,
+            "titleIcon" : "more_horiz",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "displayTimewindow" : true,
+            "enableDataExport" : true,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "b90bd116-e32f-f1d5-10b4-b96a8f45af5b"
         }
       },
       "states" : {
@@ -14143,6 +14285,12 @@
                   "sizeX" : 24,
                   "sizeY" : 10,
                   "row" : 0,
+                  "col" : 0
+                },
+                "b90bd116-e32f-f1d5-10b4-b96a8f45af5b" : {
+                  "sizeX" : 24,
+                  "sizeY" : 11,
+                  "row" : 10,
                   "col" : 0
                 }
               },

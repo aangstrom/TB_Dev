@@ -7183,9 +7183,8 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "8px",
             "settings" : {
-              "markdownTextPattern" : "### Markdown/HTML card\n - **Current entity**: ${entityName}.\n - **Current value**: ${Random}.",
-              "markdownTextFunction" : "var criticalAlarmsCount;\nvar majorAlarmsCount;\nif (data && data.length) {\n    criticalAlarmsCount = data[0]['criticalAlarmsCount'];\n    majorAlarmsCount = data[0]['majorAlarmsCount'];\n} else {\n    criticalAlarmsCount = 'N/A';\n    majorAlarmsCount = 'N/A';\n}\n\nreturn '<div><tb-dashboard-state style=\"width: 100%; height: 90px;\" [ctx]=\"ctx\" stateId=\"alarm_badges\"></tb-dashboard-state></div>';\n",
-              "useMarkdownTextFunction" : true
+              "useMarkdownTextFunction" : true,
+              "markdownTextFunction" : "var criticalAlarmsCount;\nvar majorAlarmsCount;\nif (data && data.length) {\n    criticalAlarmsCount = data[0]['criticalAlarmsCount'];\n    majorAlarmsCount = data[0]['majorAlarmsCount'];\n} else {\n    criticalAlarmsCount = 'N/A';\n    majorAlarmsCount = 'N/A';\n}\n\n//return '<div><tb-dashboard-state style=\"width: 100%; height: 90px;\" [ctx]=\"ctx\" stateId=\"alarm_badges\"></tb-dashboard-state></div>';\n"
             },
             "title" : "New Markdown/HTML Card",
             "showTitleIcon" : false,

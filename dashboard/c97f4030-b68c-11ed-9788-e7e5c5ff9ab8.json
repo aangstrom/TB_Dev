@@ -1732,11 +1732,8 @@
                 "icon" : "more_horiz",
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
-                "type" : "openDashboardState",
-                "targetDashboardStateId" : "default",
-                "setEntityId" : false,
-                "stateEntityParamName" : null,
-                "openRightLayout" : false,
+                "type" : "custom",
+                "customFunction" : "let stateIndex = widgetContext.stateController.getStateIndex();\r\nif (stateIndex > 0) {\r\n    stateIndex -= 1;\r\n    backToPrevState(stateIndex);\r\n}\r\n\r\nfunction backToPrevState(stateIndex) {\r\n    widgetContext.stateController.navigatePrevState(stateIndex);\r\n}\r\n",
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
                 "id" : "5a2ff0b9-cadb-e33b-96d5-898a582f8909"

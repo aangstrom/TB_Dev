@@ -277,8 +277,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1680704823144,
-                  "endTimeMs" : 1680791223144
+                  "startTimeMs" : 1680705013165,
+                  "endTimeMs" : 1680791413165
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -369,8 +369,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1680704823144,
-                  "endTimeMs" : 1680791223144
+                  "startTimeMs" : 1680705013165,
+                  "endTimeMs" : 1680791413165
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -408,6 +408,113 @@
           "row" : 0,
           "col" : 0,
           "id" : "73d90ad3-b26a-7194-2d51-d5ad718c9317"
+        },
+        "a050e855-e152-eacf-0740-e04774b084b5" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "basic_timeseries",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "4be71500-50ec-fdb3-179e-eb616c96e72b",
+              "filterId" : "b2cdf77d-d3be-d087-41f7-4957bdeb7397",
+              "dataKeys" : [ {
+                "name" : "operativo",
+                "type" : "timeseries",
+                "label" : "operativo",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.7048805691217117
+              } ],
+              "latestDataKeys" : [ ]
+            }, {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "4be71500-50ec-fdb3-179e-eb616c96e72b",
+              "filterId" : "f061b40d-1b77-3254-a775-bde8b4745942",
+              "dataKeys" : [ {
+                "name" : "operativo",
+                "type" : "timeseries",
+                "label" : "operativo 2",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.7896114545417907
+              } ],
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "hideInterval" : false,
+              "hideLastInterval" : false,
+              "hideQuickInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 0,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY",
+                "interval" : 1000
+              },
+              "aggregation" : {
+                "type" : "COUNT",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "shadowSize" : 4,
+              "fontColor" : "#545454",
+              "fontSize" : 10,
+              "xaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "grid" : {
+                "color" : "#545454",
+                "tickColor" : "#DDDDDD",
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1
+              },
+              "legend" : {
+                "show" : true,
+                "position" : "nw",
+                "backgroundColor" : "#f0f0f0",
+                "backgroundOpacity" : 0.85,
+                "labelBoxBorderColor" : "rgba(1, 1, 1, 0.45)"
+              },
+              "decimals" : 1,
+              "stack" : false,
+              "tooltipIndividual" : false
+            },
+            "title" : "New Timeseries Line Chart",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : false,
+            "displayTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "a050e855-e152-eacf-0740-e04774b084b5"
         }
       },
       "states" : {
@@ -446,6 +553,12 @@
                   "sizeY" : 3,
                   "row" : 6,
                   "col" : 14
+                },
+                "a050e855-e152-eacf-0740-e04774b084b5" : {
+                  "sizeX" : 8,
+                  "sizeY" : 5,
+                  "row" : 12,
+                  "col" : 0
                 }
               },
               "gridSettings" : {
@@ -507,7 +620,7 @@
                   "defaultValue" : "secondo pomeriggio",
                   "dynamicValue" : null
                 },
-                "ignoreCase" : true,
+                "ignoreCase" : false,
                 "type" : "STRING"
               },
               "userInfo" : {
@@ -531,12 +644,12 @@
             "valueType" : "STRING",
             "predicates" : [ {
               "keyFilterPredicate" : {
-                "operation" : "CONTAINS",
+                "operation" : "EQUAL",
                 "value" : {
                   "defaultValue" : "sera",
                   "dynamicValue" : null
                 },
-                "ignoreCase" : true,
+                "ignoreCase" : false,
                 "type" : "STRING"
               },
               "userInfo" : {

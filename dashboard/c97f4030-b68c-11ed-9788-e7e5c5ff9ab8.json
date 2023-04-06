@@ -6279,6 +6279,17 @@
             "widgetStyle" : { },
             "actions" : {
               "markerClick" : [ {
+                "name" : "supermarket-details",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "var params = JSON.parse(JSON.stringify(widgetContext.stateController.getStateParams()));\nparams['selectedSupermarket'] = {\n        entityId: entityId,\n        entityName: entityName,\n        entityLabel: entityLabel,\n};\nparams['targetEntityParamName'] = 'selectedSupermarket';\nparams['selectedDevice'] = null;\n\nwidgetContext.stateController.openState('supermarket_details', params);\t",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "1ca54350-817a-27b3-26a7-3572544d8523"
+              } ],
+              "tooltipAction" : [ {
                 "name" : "Select supermarket",
                 "icon" : "more_horiz",
                 "useShowWidgetActionFunction" : null,
@@ -6289,17 +6300,7 @@
                 "openInPopover" : false,
                 "id" : "4de7962b-a1de-5cb1-cd78-993dc7863614"
               } ],
-              "tooltipAction" : [ {
-                "name" : "supermarket-details",
-                "icon" : "more_horiz",
-                "useShowWidgetActionFunction" : null,
-                "showWidgetActionFunction" : "return true;",
-                "type" : "custom",
-                "customFunction" : "var params = JSON.parse(JSON.stringify(widgetContext.stateController.getStateParams()));\nparams['selectedSupermarket'] = {\n        entityId: entityId,\n        entityName: entityName,\n        entityLabel: entityLabel,\n};\nparams['targetEntityParamName'] = 'selectedSupermarket';\nparams['selectedDevice'] = null;\n\nwidgetContext.stateController.openState('supermarket_details', params);\t",
-                "openInSeparateDialog" : false,
-                "openInPopover" : false,
-                "id" : "1ca54350-817a-27b3-26a7-3572544d8523"
-              } ]
+              "polygonClick" : [ ]
             },
             "showTitleIcon" : false,
             "enableDataExport" : false,

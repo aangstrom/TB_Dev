@@ -57,7 +57,7 @@
       "type" : "Entity Created"
     }, {
       "fromIndex" : 2,
-      "toIndex" : 50,
+      "toIndex" : 49,
       "type" : "Post telemetry"
     }, {
       "fromIndex" : 6,
@@ -209,7 +209,7 @@
       "type" : "Success"
     }, {
       "fromIndex" : 34,
-      "toIndex" : 50,
+      "toIndex" : 49,
       "type" : "Success"
     }, {
       "fromIndex" : 35,
@@ -248,12 +248,12 @@
       "toIndex" : 0,
       "type" : "Success"
     }, {
-      "fromIndex" : 50,
+      "fromIndex" : 49,
       "toIndex" : 47,
       "type" : "Other"
     }, {
-      "fromIndex" : 50,
-      "toIndex" : 49,
+      "fromIndex" : 49,
+      "toIndex" : 48,
       "type" : "Energy"
     } ],
     "firstNodeIndex" : 9,
@@ -1396,27 +1396,6 @@
         "id" : "a09e6600-cd70-11ed-b483-d7ac3d8e6493"
       },
       "name" : "Discard empty",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 1310,
-        "layoutY" : 127
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "var newMsg = {};\nif (metadata.deviceType == 'shelly3em') \n{ \n    newMsg.deviceName = metadata.deviceName;\n    newMsg.Phase_B_power = msg.Phase_B_power;\n    msg = newMsg;\n    return ['energymeter'];\n}\nelse {\n    return ['Other'];\n}\n"
-      },
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "4ded0890-d477-11ed-9fb5-f96805f2c8b4"
-      },
-      "name" : "CheckShelly3em",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     }, {

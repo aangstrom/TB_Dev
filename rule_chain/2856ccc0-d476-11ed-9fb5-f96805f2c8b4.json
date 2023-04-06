@@ -6,10 +6,13 @@
     },
     "configuration" : null,
     "debugMode" : false,
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "2856ccc0-d476-11ed-9fb5-f96805f2c8b4"
+    },
     "firstRuleNodeId" : {
       "entityType" : "RULE_NODE",
-      "id" : "8cff1470-d476-11ed-9fb5-f96805f2c8b4"
+      "id" : "ee6efd61-d48a-11ed-9fb5-f96805f2c8b4"
     },
     "id" : {
       "entityType" : "RULE_CHAIN",
@@ -94,7 +97,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "8cfd18a0-d476-11ed-9fb5-f96805f2c8b4"
+        "id" : "ee6eaf40-d48a-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Orari operativi",
       "ruleChainId" : null,
@@ -119,7 +122,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "8cfe2a10-d476-11ed-9fb5-f96805f2c8b4"
+        "id" : "ee6ed650-d48a-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Orari operativi Fase A",
       "ruleChainId" : null,
@@ -144,7 +147,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "8cfe7830-d476-11ed-9fb5-f96805f2c8b4"
+        "id" : "ee6ed651-d48a-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Orari operativi Fase B",
       "ruleChainId" : null,
@@ -169,7 +172,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "8cfeed60-d476-11ed-9fb5-f96805f2c8b4"
+        "id" : "ee6efd60-d48a-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Orari operativi Fase C",
       "ruleChainId" : null,
@@ -203,7 +206,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "8cff1470-d476-11ed-9fb5-f96805f2c8b4"
+        "id" : "ee6efd61-d48a-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Get F1/F2/F3/F23",
       "ruleChainId" : null,
@@ -224,7 +227,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "8cffb0b0-d476-11ed-9fb5-f96805f2c8b4"
+        "id" : "ee6efd62-d48a-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Costo per Fascia",
       "ruleChainId" : null,
@@ -238,14 +241,14 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var weekday=[\"domenica\",\"lunedi\",\"martedi\",\"mercoledi\",\"giovedi\",\"venerdi\",\"sabato\"];\nvar risultato=[\"non_op\"];\nvar hour=new Date().getHours();\nvar minute=new Date().getMinutes();\nvar day=weekday[new Date().getDay()];\nvar orari;\nif(msg.power!=null){orari=JSON.parse(metadata.ss_orari_operativi);}\nif(msg.Phase_A_power!=null){orari=JSON.parse(metadata.ss_orari_operativi_A);}\nif(msg.Phase_B_power!=null){orari=JSON.parse(metadata.ss_orari_operativi_B);}\nif(msg.Phase_C_power!=null){orari=JSON.parse(metadata.ss_orari_operativi_C);}\n\n\nif(orari.lunven!=null){\n    risultato=operativo(orari.lunven,hour,minute);\n}else{\n    if(day==\"lunedi\"){if(orari.lunedi!=null){risultato=operativo(orari.lunedi,hour,minute)}}\n    if(day==\"martedi\"){if(orari.martedi!=null){risultato=operativo(orari.martedi,hour,minute)}}\n    if(day==\"mercoledi\"){if(orari.mercoledi!=null){risultato=operativo(orari.mercoledi,hour,minute)}}\n    if(day==\"giovedi\"){if(orari.giovedi!=null){risultato=operativo(orari.giovedi,hour,minute)}}\n    if(day==\"venerdi\"){if(orari.venerdi!=null){risultato=operativo(orari.venerdi,hour,minute)}}\n    if(day==\"sabato\"){if(orari.sabato!=null){risultato=operativo(orari.sabato,hour,minute)}}\n    if(day==\"domenica\"){if(orari.domenica!=null){risultato=operativo(orari.domenica,hour,minute)}}\n}\n\nmsg.operativo=risultato;\nmetadata.ss_orari_operativi=null;\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};\n\nfunction operativo(array,hour,minute){\n    var result=[5];\n    var currtime = hour * 100 + minute;\n    for(var i=0;i<array.length;i+=3){\n        var t=i+1;\n        var te=i+2;\n        var temp=array[i].split(\":\");\n        var temp2=array[t].split(\":\");\n        var temp3=array[te].split(\":\");\n        var temptime=parseInt(temp[0])*100+parseInt(temp[1]);\n        var temptime2=parseInt(temp2[0])*100+parseInt(temp2[1]);\n        if(currtime>=temptime && currtime<temptime2){\n            result=temp3[0];\n        }else{\n            result=\"non_op\";\n        }\n    }\n    return result;\n}"
+        "tbelScript" : "var weekday=[\"domenica\",\"lunedi\",\"martedi\",\"mercoledi\",\"giovedi\",\"venerdi\",\"sabato\"];\nvar risultato=[\"non_op\"];\nvar hour=new Date().getHours();\nvar minute=new Date().getMinutes();\nvar day=weekday[new Date().getDay()];\nvar orari;\nif(msg.power!=null){orari=JSON.parse(metadata.ss_orari_operativi);}\nif(msg.Phase_A_power!=null){orari=JSON.parse(metadata.ss_orari_operativi_A);}\nif(msg.Phase_B_power!=null){orari=JSON.parse(metadata.ss_orari_operativi_B);}\nif(msg.Phase_C_power!=null){orari=JSON.parse(metadata.ss_orari_operativi_C);}\n\n\nif(orari.lunven!=null){\n    risultato=operativo(orari.lunven,hour,minute);\n}else{\n    if(day==\"lunedi\"){if(orari.lunedi!=null){risultato=operativo(orari.lunedi,hour,minute)}}\n    if(day==\"martedi\"){if(orari.martedi!=null){risultato=operativo(orari.martedi,hour,minute)}}\n    if(day==\"mercoledi\"){if(orari.mercoledi!=null){risultato=operativo(orari.mercoledi,hour,minute)}}\n    if(day==\"giovedi\"){if(orari.giovedi!=null){risultato=operativo(orari.giovedi,hour,minute)}}\n    if(day==\"venerdi\"){if(orari.venerdi!=null){risultato=operativo(orari.venerdi,hour,minute)}}\n    if(day==\"sabato\"){if(orari.sabato!=null){risultato=operativo(orari.sabato,hour,minute)}}\n    if(day==\"domenica\"){if(orari.domenica!=null){risultato=operativo(orari.domenica,hour,minute)}}\n}\n\nmsg.operativo=risultato;\nmetadata.ss_orari_operativi=null;\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};\n\nfunction operativo(array,hour,minute){\n    var result=[5];\n    var temporaneo=0;\n    result.set(temporaneo,\"non_op\");\n    var currtime = hour * 100 + minute;\n    for(var i=0;i<array.length;i+=3){\n        var t=i+1;\n        var te=i+2;\n        var temp=array[i].split(\":\");\n        var temp2=array[t].split(\":\");\n        var temp3=array[te].split(\":\");\n        var temptime=parseInt(temp[0])*100+parseInt(temp[1]);\n        var temptime2=parseInt(temp2[0])*100+parseInt(temp2[1]);\n        if(currtime>=temptime && currtime<temptime2){\n            result.remove(\"non_op\");\n            result.add(temporaneo,temp3[0]);\n            temporaneo+=1;\n        }\n    }\n    return result;\n}"
       },
       "createdTime" : 0,
-      "debugMode" : false,
+      "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "8cfffed0-d476-11ed-9fb5-f96805f2c8b4"
+        "id" : "ee6f2470-d48a-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Test Orari operativi",
       "ruleChainId" : null,
@@ -266,7 +269,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "8d004cf0-d476-11ed-9fb5-f96805f2c8b4"
+        "id" : "ee6f2471-d48a-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Discard empty",
       "ruleChainId" : null,
@@ -287,7 +290,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "8d00c220-d476-11ed-9fb5-f96805f2c8b4"
+        "id" : "ee6f2472-d48a-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Save Timeseries",
       "ruleChainId" : null,

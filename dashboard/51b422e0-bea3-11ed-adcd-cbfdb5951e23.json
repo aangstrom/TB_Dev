@@ -524,26 +524,6 @@
               "type" : "entity",
               "name" : null,
               "entityAliasId" : "4be71500-50ec-fdb3-179e-eb616c96e72b",
-              "filterId" : "b2cdf77d-d3be-d087-41f7-4957bdeb7397",
-              "dataKeys" : [ {
-                "name" : "operativo",
-                "type" : "timeseries",
-                "label" : "Pomeriggio",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.08227635793750498,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              } ],
-              "latestDataKeys" : [ ]
-            }, {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "4be71500-50ec-fdb3-179e-eb616c96e72b",
               "filterId" : "f061b40d-1b77-3254-a775-bde8b4745942",
               "dataKeys" : [ {
                 "name" : "operativo",
@@ -556,8 +536,22 @@
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==\"sera\"){\n    return value;\n}else{\n    return null;\n}\n"
+              } ],
+              "latestDataKeys" : [ ]
+            }, {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "4be71500-50ec-fdb3-179e-eb616c96e72b",
+              "filterId" : "b2cdf77d-d3be-d087-41f7-4957bdeb7397",
+              "dataKeys" : [ {
+                "name" : "operativo",
+                "type" : "timeseries",
+                "label" : "operativo",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.510571434732966
               } ],
               "latestDataKeys" : [ ]
             } ],
@@ -749,7 +743,7 @@
                   "defaultValue" : "sera",
                   "dynamicValue" : null
                 },
-                "ignoreCase" : true,
+                "ignoreCase" : false,
                 "type" : "STRING"
               },
               "userInfo" : {

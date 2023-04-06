@@ -131,6 +131,99 @@
           "row" : 0,
           "col" : 0,
           "id" : "a5cf7c9d-768b-37e5-2c6a-ca7cf2d5977c"
+        },
+        "80f1a116-fdb9-12db-df1c-a9983dd3e0ea" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "timeseries_table",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 6.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "4be71500-50ec-fdb3-179e-eb616c96e72b",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "Phase_A_power",
+                "type" : "timeseries",
+                "label" : "Phase_A_power",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.3905159124504096
+              }, {
+                "name" : "Phase_B_power",
+                "type" : "timeseries",
+                "label" : "Phase_B_power",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.293024875137611
+              }, {
+                "name" : "Phase_C_power",
+                "type" : "timeseries",
+                "label" : "Phase_C_power",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.49532763204236496
+              }, {
+                "name" : "operativo[0]",
+                "type" : "timeseries",
+                "label" : "operativo",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.16978312969256093,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "interval" : 1000,
+                "timewindowMs" : 60000
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "showTimestamp" : true,
+              "displayPagination" : true,
+              "defaultPageSize" : 10
+            },
+            "title" : "New Timeseries table",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "displayTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "80f1a116-fdb9-12db-df1c-a9983dd3e0ea"
         }
       },
       "states" : {
@@ -151,6 +244,12 @@
                   "sizeY" : 6,
                   "row" : 6,
                   "col" : 0
+                },
+                "80f1a116-fdb9-12db-df1c-a9983dd3e0ea" : {
+                  "sizeX" : 13,
+                  "sizeY" : 6,
+                  "row" : 0,
+                  "col" : 11
                 }
               },
               "gridSettings" : {
@@ -180,6 +279,18 @@
             "defaultStateEntityGroup" : null,
             "groupType" : "CUSTOMER",
             "entityGroup" : "093d48b0-32a4-11ed-accb-016e0c746b7f"
+          }
+        },
+        "4be71500-50ec-fdb3-179e-eb616c96e72b" : {
+          "id" : "4be71500-50ec-fdb3-179e-eb616c96e72b",
+          "alias" : "Energy",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "684afe70-a887-11ed-bcb8-7f48a6e846b2"
+            }
           }
         }
       },

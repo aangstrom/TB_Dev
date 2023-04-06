@@ -240,7 +240,7 @@
               "type" : "entity",
               "name" : null,
               "entityAliasId" : "4be71500-50ec-fdb3-179e-eb616c96e72b",
-              "filterId" : "b2cdf77d-d3be-d087-41f7-4957bdeb7397",
+              "filterId" : null,
               "dataKeys" : [ {
                 "name" : "operativo",
                 "type" : "timeseries",
@@ -277,8 +277,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1680704505882,
-                  "endTimeMs" : 1680790905882
+                  "startTimeMs" : 1680704823144,
+                  "endTimeMs" : 1680791223144
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -350,6 +350,7 @@
               } ]
             } ],
             "timewindow" : {
+              "displayValue" : "",
               "hideInterval" : false,
               "hideLastInterval" : false,
               "hideQuickInterval" : false,
@@ -359,9 +360,19 @@
               "selectedTab" : 0,
               "realtime" : {
                 "realtimeType" : 1,
+                "interval" : 1000,
                 "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_HOUR",
-                "interval" : 1000
+                "quickInterval" : "CURRENT_HOUR"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1680704823144,
+                  "endTimeMs" : 1680791223144
+                },
+                "quickInterval" : "CURRENT_DAY"
               },
               "aggregation" : {
                 "type" : "AVG",
@@ -520,7 +531,7 @@
             "valueType" : "STRING",
             "predicates" : [ {
               "keyFilterPredicate" : {
-                "operation" : "EQUAL",
+                "operation" : "CONTAINS",
                 "value" : {
                   "defaultValue" : "sera",
                   "dynamicValue" : null

@@ -192,16 +192,12 @@
               "hideAggregation" : false,
               "hideAggInterval" : false,
               "hideTimezone" : false,
-              "selectedTab" : 1,
-              "history" : {
-                "historyType" : 0,
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 0,
                 "timewindowMs" : 600000,
-                "interval" : 1000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1680765525324,
-                  "endTimeMs" : 1680851925324
-                },
-                "quickInterval" : "CURRENT_DAY"
+                "quickInterval" : "CURRENT_DAY",
+                "interval" : 1000
               },
               "aggregation" : {
                 "type" : "NONE",
@@ -770,15 +766,16 @@
               "type" : "TIME_SERIES",
               "key" : "Phase_B_power"
             },
-            "valueType" : "NUMERIC",
+            "valueType" : "STRING",
             "predicates" : [ {
               "keyFilterPredicate" : {
-                "operation" : "LESS",
+                "operation" : "STARTS_WITH",
                 "value" : {
-                  "defaultValue" : 35,
+                  "defaultValue" : "35",
                   "dynamicValue" : null
                 },
-                "type" : "NUMERIC"
+                "ignoreCase" : false,
+                "type" : "STRING"
               },
               "userInfo" : {
                 "editable" : true,

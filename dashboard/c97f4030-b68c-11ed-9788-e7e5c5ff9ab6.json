@@ -6256,7 +6256,7 @@
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
                 "type" : "custom",
-                "customFunction" : "var params = widgetContext.stateController.getStateParams();\nvar selectedSupermarket = params['selectedSupermarket'];\nif (selectedSupermarket && selectedSupermarket.entityId.id === entityId.id) {\n    params['selectedSupermarket'] = null;\n} else {\n    params['selectedSupermarket'] = { entityId: entityId, entityName: entityName, entityLabel: entityLabel };\n}\nwidgetContext.stateController.updateState(null, params);\n",
+                "customFunction" : "var params = JSON.parse(JSON.stringify(widgetContext.stateController.getStateParams()));\nparams['selectedSupermarket'] = {\n        entityId: entityId,\n        entityName: entityName,\n        entityLabel: entityLabel,\n};\nparams['targetEntityParamName'] = 'selectedSupermarket';\nparams['selectedDevice'] = null;\n\nwidgetContext.stateController.openState('supermarket_details', params);\t",
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
                 "id" : "4de7962b-a1de-5cb1-cd78-993dc7863614"
@@ -6267,7 +6267,7 @@
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
                 "type" : "custom",
-                "customFunction" : "var params = JSON.parse(JSON.stringify(widgetContext.stateController.getStateParams()));\nparams['selectedSupermarket'] = {\n        entityId: entityId,\n        entityName: entityName,\n        entityLabel: entityLabel,\n};\nparams['targetEntityParamName'] = 'selectedSupermarket';\nparams['selectedDevice'] = null;\n\nwidgetContext.stateController.openState('supermarket_details', params);\t",
+                "customFunction" : "/*var params = JSON.parse(JSON.stringify(widgetContext.stateController.getStateParams()));\nparams['selectedSupermarket'] = {\n        entityId: entityId,\n        entityName: entityName,\n        entityLabel: entityLabel,\n};\nparams['targetEntityParamName'] = 'selectedSupermarket';\nparams['selectedDevice'] = null;\n\nwidgetContext.stateController.openState('supermarket_details', params);\t*/",
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
                 "id" : "1ca54350-817a-27b3-26a7-3572544d8523"

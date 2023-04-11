@@ -6664,7 +6664,7 @@
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
                 "type" : "custom",
-                "customFunction" : "var params = widgetContext.stateController.getStateParams();\nparams['selectedSupermarket'] = null;\nwidgetContext.stateController.updateState(null, params);",
+                "customFunction" : "var stateIndex = widgetContext.stateController.getStateIndex();\nwhile (stateIndex > 0) {\n    stateIndex -= 1;\n    backToPrevState(stateIndex);\n}\nopenDashboardState('devices');\n\nfunction backToPrevState(stateIndex) {\n    widgetContext.stateController.navigatePrevState(stateIndex);\n}\n\nfunction openDashboardState(statedId) {\n    var params = widgetContext.stateController.getStateParams();\n    params['selectedSupermarket'] = null;\n    widgetContext.stateController.updateState(null, params);\n}\n\n",
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
                 "id" : "37e5e007-da10-e64c-be1e-899094481e42"

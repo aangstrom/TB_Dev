@@ -20,7 +20,7 @@
               "type" : "entity",
               "name" : null,
               "entityAliasId" : "2dd37bb2-2a47-278c-64f5-db32c8bd6137",
-              "filterId" : "dcdd7bee-a8a5-6433-105f-0c6a102bcde8",
+              "filterId" : null,
               "dataKeys" : [ {
                 "name" : "a_power_produced",
                 "type" : "timeseries",
@@ -111,16 +111,17 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "8px",
             "settings" : {
-              "showTimestamp" : true,
-              "displayPagination" : true,
-              "defaultPageSize" : 10,
               "enableSearch" : true,
               "enableStickyHeader" : true,
               "enableStickyAction" : true,
               "reserveSpaceForHiddenAction" : "true",
+              "showTimestamp" : true,
               "showMilliseconds" : false,
+              "displayPagination" : true,
               "useEntityLabel" : false,
+              "defaultPageSize" : 10,
               "hideEmptyLines" : false,
+              "disableStickyHeader" : false,
               "useRowStyleFunction" : false
             },
             "title" : "Elenco Energie",
@@ -171,25 +172,32 @@
                 "label" : "Sell",
                 "color" : "#2196f3",
                 "settings" : {
-                  "excludeFromStacking" : false,
                   "hideDataByDefault" : false,
                   "disableDataHiding" : false,
                   "removeFromLegend" : false,
+                  "excludeFromStacking" : false,
                   "showLines" : true,
+                  "lineWidth" : 1,
                   "fillLines" : true,
                   "showPoints" : false,
-                  "showPointShape" : "circle",
-                  "pointShapeFormatter" : "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
-                  "showPointsLineWidth" : 5,
-                  "showPointsRadius" : 3,
                   "showSeparateAxis" : false,
                   "axisPosition" : "left",
-                  "thresholds" : [ {
-                    "thresholdValueSource" : "predefinedValue"
-                  } ],
                   "comparisonSettings" : {
-                    "showValuesForComparison" : true
-                  }
+                    "showValuesForComparison" : true,
+                    "comparisonValuesLabel" : "",
+                    "color" : ""
+                  },
+                  "thresholds" : [ {
+                    "thresholdValueSource" : "predefinedValue",
+                    "thresholdValue" : 1000,
+                    "lineWidth" : 50,
+                    "color" : "rgba(151,96,96,0.33)"
+                  }, {
+                    "thresholdValueSource" : "predefinedValue",
+                    "thresholdValue" : 0,
+                    "lineWidth" : 40,
+                    "color" : "rgba(228,163,92,0.42)"
+                  } ]
                 },
                 "_hash" : 0.058385260555145146,
                 "units" : null,

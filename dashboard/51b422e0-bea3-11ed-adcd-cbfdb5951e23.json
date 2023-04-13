@@ -147,7 +147,7 @@
               "type" : "entity",
               "name" : null,
               "entityAliasId" : "4be71500-50ec-fdb3-179e-eb616c96e72b",
-              "filterId" : "2908e09f-7f2e-b155-ae40-4a133f175f6b",
+              "filterId" : null,
               "dataKeys" : [ {
                 "name" : "Phase_A_power",
                 "type" : "timeseries",
@@ -180,8 +180,8 @@
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "return value;"
+                "usePostProcessing" : false,
+                "postFuncBody" : null
               } ],
               "latestDataKeys" : [ ]
             } ],
@@ -209,9 +209,18 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "8px",
             "settings" : {
+              "enableSearch" : true,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "reserveSpaceForHiddenAction" : "true",
               "showTimestamp" : true,
+              "showMilliseconds" : false,
               "displayPagination" : true,
-              "defaultPageSize" : 10
+              "useEntityLabel" : false,
+              "defaultPageSize" : 10,
+              "hideEmptyLines" : false,
+              "disableStickyHeader" : false,
+              "useRowStyleFunction" : false
             },
             "title" : "New Timeseries table",
             "dropShadow" : true,

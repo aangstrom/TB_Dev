@@ -60,6 +60,10 @@
       "toIndex" : 35,
       "type" : "Post telemetry"
     }, {
+      "fromIndex" : 2,
+      "toIndex" : 39,
+      "type" : "RPC Request to Device"
+    }, {
       "fromIndex" : 6,
       "toIndex" : 2,
       "type" : "False"
@@ -175,6 +179,10 @@
       "fromIndex" : 35,
       "toIndex" : 34,
       "type" : "Energy"
+    }, {
+      "fromIndex" : 39,
+      "toIndex" : 38,
+      "type" : "Relay"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -1026,6 +1034,46 @@
       "name" : "Save Attributes",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1225,
+        "layoutY" : 698
+      },
+      "configuration" : {
+        "integrationId" : "8ab421c0-a87e-11ed-bcb8-7f48a6e846b2"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "2f5e90a0-dad1-11ed-9fb5-f96805f2c8b4"
+      },
+      "name" : "Shelly Relay",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.integration.TbIntegrationDownlinkNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1223,
+        "layoutY" : 627
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if(msg.relay!=null){\n    return ['Relay'];\n}\nelse{\n    return ['Other'];\n}\nreturn nextRelation(metadata, msg);"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "2f5f53f0-dad1-11ed-9fb5-f96805f2c8b4"
+      },
+      "name" : "If relay change",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     } ],
     "ruleChainConnections" : null
   },

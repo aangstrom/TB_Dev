@@ -295,8 +295,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1681398510884,
-                  "endTimeMs" : 1681484910884
+                  "startTimeMs" : 1681398590511,
+                  "endTimeMs" : 1681484990511
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -387,8 +387,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1681398510884,
-                  "endTimeMs" : 1681484910884
+                  "startTimeMs" : 1681398590511,
+                  "endTimeMs" : 1681484990511
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -630,8 +630,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1681398510884,
-                  "endTimeMs" : 1681484910884
+                  "startTimeMs" : 1681398590511,
+                  "endTimeMs" : 1681484990511
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -821,8 +821,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1681398510884,
-                  "endTimeMs" : 1681484910884
+                  "startTimeMs" : 1681398590511,
+                  "endTimeMs" : 1681484990511
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -886,7 +886,7 @@
               "initialValue" : true,
               "retrieveValueMethod" : "attribute",
               "valueKey" : "relay",
-              "parseValueFunction" : "if(data==\"on\"){\n   return true; \n}else{\n    return false;\n}",
+              "parseValueFunction" : "return data==\"on\" ? true : false;",
               "setValueMethod" : "relay",
               "convertValueFunction" : "return value;",
               "requestTimeout" : 1000,

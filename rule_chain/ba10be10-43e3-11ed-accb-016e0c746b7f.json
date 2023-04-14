@@ -1062,10 +1062,10 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(msg.relay!=null){\n    return ['Relay'];\n}\nelse{\n    return ['Other'];\n}\nreturn nextRelation(metadata, msg);"
+        "tbelScript" : "if(msg.method==\"relay\"){\n    return ['Relay'];\n}\nelse{\n    return ['Other'];\n}\nreturn nextRelation(metadata, msg);"
       },
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",

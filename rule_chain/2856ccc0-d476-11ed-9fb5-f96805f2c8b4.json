@@ -65,11 +65,11 @@
       "type" : "Success"
     }, {
       "fromIndex" : 4,
-      "toIndex" : 9,
+      "toIndex" : 10,
       "type" : "Failure"
     }, {
       "fromIndex" : 4,
-      "toIndex" : 9,
+      "toIndex" : 10,
       "type" : "Success"
     }, {
       "fromIndex" : 5,
@@ -88,8 +88,12 @@
       "toIndex" : 8,
       "type" : "Success"
     }, {
-      "fromIndex" : 9,
-      "toIndex" : 10,
+      "fromIndex" : 10,
+      "toIndex" : 9,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 10,
+      "toIndex" : 9,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 4,
@@ -314,55 +318,6 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 727,
-        "layoutY" : 150
-      },
-      "configuration" : {
-        "inputValueKey" : "power",
-        "outputValueKey" : "sumPower",
-        "mathFunction" : "SUM",
-        "aggIntervalType" : "DAY",
-        "timeZoneId" : "Europe/Rome",
-        "aggIntervalValue" : 1,
-        "aggIntervalTimeUnit" : "HOURS",
-        "intervalPersistencePolicy" : "ON_EACH_CHECK",
-        "outMsgType" : "POST_TELEMETRY_REQUEST",
-        "intervalCheckValue" : 1,
-        "intervalCheckTimeUnit" : "DAYS",
-        "statePersistencePolicy" : "ON_EACH_CHANGE",
-        "statePersistenceValue" : 1,
-        "statePersistenceTimeUnit" : "MINUTES",
-        "autoCreateIntervals" : false,
-        "periodValue" : 1,
-        "periodTimeUnit" : "DAYS",
-        "parentEntitiesQuery" : {
-          "type" : "relationsQuery",
-          "rootEntityId" : null,
-          "relationsQuery" : {
-            "fetchLastLevelOnly" : false,
-            "direction" : "FROM",
-            "maxLevel" : 1,
-            "filters" : [ {
-              "relationType" : "Contains",
-              "entityTypes" : [ ]
-            } ]
-          }
-        },
-        "queueName" : null
-      },
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "cd65f900-ddd8-11ed-9fb5-f96805f2c8b4"
-      },
-      "name" : "Test Stream",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
         "layoutX" : 1051,
         "layoutY" : 150
       },
@@ -381,6 +336,46 @@
       "name" : "Log",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.action.TbLogNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 726,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "inputValueKey" : "power",
+        "outputValueKey" : "sumPower",
+        "mathFunction" : "SUM",
+        "aggIntervalType" : "HOUR",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "HOURS",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "HOURS",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "10609440-ddd9-11ed-9fb5-f96805f2c8b4"
+      },
+      "name" : "Test Stream",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
     } ],
     "ruleChainConnections" : null
   },

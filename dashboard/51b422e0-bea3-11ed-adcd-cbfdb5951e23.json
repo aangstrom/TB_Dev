@@ -295,8 +295,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1681399319942,
-                  "endTimeMs" : 1681485719942
+                  "startTimeMs" : 1681746857971,
+                  "endTimeMs" : 1681833257971
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -387,8 +387,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1681399319942,
-                  "endTimeMs" : 1681485719942
+                  "startTimeMs" : 1681746857971,
+                  "endTimeMs" : 1681833257971
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -630,8 +630,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1681399319942,
-                  "endTimeMs" : 1681485719942
+                  "startTimeMs" : 1681746857971,
+                  "endTimeMs" : 1681833257971
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -821,8 +821,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1681399319942,
-                  "endTimeMs" : 1681485719942
+                  "startTimeMs" : 1681746857971,
+                  "endTimeMs" : 1681833257971
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -863,6 +863,205 @@
           "row" : 0,
           "col" : 0,
           "id" : "725cad03-bb32-974f-8830-8c60cb95b284"
+        },
+        "d7985d9f-1bad-1209-f9f5-03cde7e18fce" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "polar_area_chart_js",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "4be71500-50ec-fdb3-179e-eb616c96e72b",
+              "filterId" : "79c3ca35-89f0-8989-6fac-7c5dfa48326d",
+              "dataKeys" : [ {
+                "name" : "Phase_B_power",
+                "type" : "timeseries",
+                "label" : "${Phase_A_Name}",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.324055978838913,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "Phase_A_power",
+                "type" : "timeseries",
+                "label" : "Phase_A_power",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.7730316507865171
+              }, {
+                "name" : "Phase_C_power",
+                "type" : "timeseries",
+                "label" : "Phase_C_power",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.5632151018986462
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1681746913999,
+                  "endTimeMs" : 1681833313999
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : { },
+            "title" : "New Polar Area",
+            "useDashboardTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "d7985d9f-1bad-1209-f9f5-03cde7e18fce"
+        },
+        "33328189-05f7-1a22-629f-48d0d972d907" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "pie_chart_js",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "4be71500-50ec-fdb3-179e-eb616c96e72b",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "Phase_A_power",
+                "type" : "timeseries",
+                "label" : "Phase_A_power",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.774970427716676,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null,
+                "comparisonEnabled" : true,
+                "timeForComparison" : "days",
+                "comparisonResultType" : "DELTA_ABSOLUTE",
+                "comparisonCustomIntervalValue" : 7200000
+              }, {
+                "name" : "Phase_B_power",
+                "type" : "timeseries",
+                "label" : "Phase_B_power",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.5302655727359238
+              }, {
+                "name" : "Phase_C_power",
+                "type" : "timeseries",
+                "label" : "Phase_C_power",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.7129840810616017
+              }, {
+                "name" : "Phase_A_Name",
+                "type" : "attribute",
+                "label" : "Phase_A_Name",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.5186789027372838
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1681747092295,
+                  "endTimeMs" : 1681833492295
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "showTooltip" : true
+            },
+            "title" : "New Pie - Chart.js",
+            "useDashboardTimewindow" : true,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "enableDataExport" : false,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showLegend" : false,
+            "legendConfig" : {
+              "direction" : "column",
+              "position" : "bottom",
+              "sortDataKeys" : false,
+              "showMin" : false,
+              "showMax" : false,
+              "showAvg" : false,
+              "showTotal" : false,
+              "showLatest" : false
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "33328189-05f7-1a22-629f-48d0d972d907"
         }
       },
       "states" : {
@@ -931,6 +1130,18 @@
                   "sizeY" : 2,
                   "row" : 9,
                   "col" : 10
+                },
+                "d7985d9f-1bad-1209-f9f5-03cde7e18fce" : {
+                  "sizeX" : 7,
+                  "sizeY" : 5,
+                  "row" : 22,
+                  "col" : 0
+                },
+                "33328189-05f7-1a22-629f-48d0d972d907" : {
+                  "sizeX" : 8,
+                  "sizeY" : 5,
+                  "row" : 22,
+                  "col" : 8
                 }
               },
               "gridSettings" : {
@@ -1071,6 +1282,34 @@
               "userInfo" : {
                 "editable" : false,
                 "label" : "Phase_B_power greater than",
+                "autogeneratedLabel" : true,
+                "order" : 0
+              }
+            } ]
+          } ],
+          "editable" : true
+        },
+        "79c3ca35-89f0-8989-6fac-7c5dfa48326d" : {
+          "id" : "79c3ca35-89f0-8989-6fac-7c5dfa48326d",
+          "filter" : "Test",
+          "keyFilters" : [ {
+            "key" : {
+              "type" : "ENTITY_FIELD",
+              "key" : "Phase_A_Name"
+            },
+            "valueType" : "STRING",
+            "predicates" : [ {
+              "keyFilterPredicate" : {
+                "operation" : "CONTAINS",
+                "value" : {
+                  "defaultValue" : ""
+                },
+                "ignoreCase" : false,
+                "type" : "STRING"
+              },
+              "userInfo" : {
+                "editable" : true,
+                "label" : "",
                 "autogeneratedLabel" : true,
                 "order" : 0
               }

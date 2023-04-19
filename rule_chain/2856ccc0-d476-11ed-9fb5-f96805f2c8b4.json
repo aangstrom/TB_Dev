@@ -89,11 +89,11 @@
       "type" : "Success"
     }, {
       "fromIndex" : 9,
-      "toIndex" : 11,
+      "toIndex" : 7,
       "type" : "Success"
     }, {
       "fromIndex" : 9,
-      "toIndex" : 17,
+      "toIndex" : 11,
       "type" : "Success"
     }, {
       "fromIndex" : 11,
@@ -132,6 +132,10 @@
       "toIndex" : 14,
       "type" : "Phase_C_power"
     }, {
+      "fromIndex" : 15,
+      "toIndex" : 20,
+      "type" : "Power"
+    }, {
       "fromIndex" : 16,
       "toIndex" : 7,
       "type" : "Success"
@@ -146,6 +150,10 @@
     }, {
       "fromIndex" : 19,
       "toIndex" : 18,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 20,
+      "toIndex" : 17,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 4,
@@ -642,7 +650,7 @@
         "clientAttributeNames" : [ ],
         "sharedAttributeNames" : [ ],
         "serverAttributeNames" : [ ],
-        "latestTsKeyNames" : [ "sumHourPower" ],
+        "latestTsKeyNames" : [ "avgHourPower" ],
         "getLatestValueWithTs" : false
       },
       "createdTime" : 0,
@@ -652,7 +660,7 @@
         "entityType" : "RULE_NODE",
         "id" : "5ea38e10-deb4-11ed-9fb5-f96805f2c8b4"
       },
-      "name" : "Get latest sumHourPower",
+      "name" : "Get latest avgHourPower",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
     }, {
@@ -685,7 +693,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "msg.sumHourPowerBefore=toFixed(metadata.sumHourPower,2);\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "msg.avgHourPowerBefore=toFixed(metadata.avgHourPower,2);\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "createdTime" : 0,
       "debugMode" : true,
@@ -697,6 +705,46 @@
       "name" : "Atttributes",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 702,
+        "layoutY" : 250
+      },
+      "configuration" : {
+        "inputValueKey" : "power",
+        "outputValueKey" : "avgHourPower",
+        "mathFunction" : "AVG",
+        "aggIntervalType" : "HOUR",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 5,
+        "periodTimeUnit" : "MINUTES",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : null
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "69439a90-ded2-11ed-9fb5-f96805f2c8b4"
+      },
+      "name" : "Media potenza",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
     } ],
     "ruleChainConnections" : null
   },

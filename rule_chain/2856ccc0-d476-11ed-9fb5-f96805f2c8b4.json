@@ -97,7 +97,7 @@
       "type" : "Success"
     }, {
       "fromIndex" : 9,
-      "toIndex" : 16,
+      "toIndex" : 18,
       "type" : "Success"
     }, {
       "fromIndex" : 11,
@@ -140,8 +140,8 @@
       "toIndex" : 17,
       "type" : "Success"
     }, {
-      "fromIndex" : 17,
-      "toIndex" : 18,
+      "fromIndex" : 18,
+      "toIndex" : 16,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 4,
@@ -325,7 +325,7 @@
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 1227,
-        "layoutY" : 295
+        "layoutY" : 395
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -346,7 +346,7 @@
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 1226,
-        "layoutY" : 374
+        "layoutY" : 474
       },
       "configuration" : {
         "defaultTTL" : 0,
@@ -608,33 +608,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1225,
-        "layoutY" : 93
-      },
-      "configuration" : {
-        "tellFailureIfAbsent" : true,
-        "fetchToData" : false,
-        "clientAttributeNames" : [ ],
-        "sharedAttributeNames" : [ ],
-        "serverAttributeNames" : [ ],
-        "latestTsKeyNames" : [ "${sumHourPower}" ],
-        "getLatestValueWithTs" : false
-      },
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "b3aa6f80-de98-11ed-9fb5-f96805f2c8b4"
-      },
-      "name" : "Latest power",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 1225,
-        "layoutY" : 161
+        "layoutX" : 1254,
+        "layoutY" : 179
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -654,8 +629,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1234,
-        "layoutY" : 231
+        "layoutX" : 1259,
+        "layoutY" : 251
       },
       "configuration" : {
         "scope" : "SERVER_SCOPE",
@@ -672,6 +647,36 @@
       "name" : "Save Attributes",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1252,
+        "layoutY" : 105
+      },
+      "configuration" : {
+        "latestTsKeyNames" : [ "sumHourPower" ],
+        "aggregation" : "NONE",
+        "fetchMode" : "LAST",
+        "orderBy" : "ASC",
+        "limit" : 1000,
+        "useMetadataIntervalPatterns" : false,
+        "startInterval" : 1.5,
+        "startIntervalTimeUnit" : "HOURS",
+        "endInterval" : 1,
+        "endIntervalTimeUnit" : "MINUTES",
+        "startIntervalPattern" : "",
+        "endIntervalPattern" : ""
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "7efa2a40-de99-11ed-9fb5-f96805f2c8b4"
+      },
+      "name" : "Latest sumHourPower",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetTelemetryNode"
     } ],
     "ruleChainConnections" : null
   },

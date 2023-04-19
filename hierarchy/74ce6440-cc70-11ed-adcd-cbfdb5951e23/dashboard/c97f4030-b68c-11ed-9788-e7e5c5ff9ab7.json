@@ -5538,6 +5538,13 @@
                 "color" : "#ffc107",
                 "settings" : { },
                 "_hash" : 0.5157976480659352
+              }, {
+                "name" : "model",
+                "type" : "attribute",
+                "label" : "model",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.3685121949771346
               } ]
             } ],
             "timewindow" : {
@@ -5570,7 +5577,7 @@
             "padding" : "0px",
             "settings" : {
               "useMarkdownTextFunction" : true,
-              "markdownTextFunction" : "var type;      \nif (data && data.length) {\n    type = data[0]['Type'];\n} else {\n    type = 'N/A';\n}\n             \nvar detailsStateName = getDetailsStateName(type);\n\nreturn '<div style=\"width: 100%; height: 100%;\" fxLayout=\"column\">' + \n           '<tb-dashboard-state fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"' + detailsStateName + '\"></tb-dashboard-state>' +\n       '</div>';\n\nfunction getDetailsStateName(deviceType) {\n    switch(deviceType) {\n        case 'Energy':\n            return 'energy_sensor_details';\n        case 'AA Sensor':\n            return 'aa_sensor_details';\n        case 'shelly3em':\n            return 'energy_sensor_details';\n        case 'Camera':\n            return 'camera_sensor_details';\n        case 'Caldaia':\n            return 'caldaia_details';\n        default:\n            return 'unknown_details';\n    }\n}      "
+              "markdownTextFunction" : "var type;      \nif (data && data.length) {\n    type = data[0]['Type'];\n} else {\n    type = 'N/A';\n}\n\nvar model;      \nif (data && data.length) {\n    model = data[0]['model'];\n} else {\n    model = 'N/A';\n}\n             \nvar detailsStateName = getDetailsStateName(model);\n\nreturn '<div style=\"width: 100%; height: 100%;\" fxLayout=\"column\">' + \n           '<tb-dashboard-state fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"' + detailsStateName + '\"></tb-dashboard-state>' +\n       '</div>';\n\nfunction getDetailsStateName(deviceType) {\n    switch(deviceType) {\n        case 'Energy':\n            return 'energy_sensor_details';\n        case 'aa_co2':\n            return 'aa_co2_details';\n        case 'aa_multisensor':\n            return 'aa_multisensor_details';\n        case 'AA Sensor':\n            return 'aa_sensor_details';\n        case 'shelly3em':\n            return 'energy_sensor_details';\n        case 'Camera':\n            return 'camera_sensor_details';\n        case 'Caldaia':\n            return 'caldaia_details';\n        default:\n            return 'unknown_details';\n    }\n}      "
             },
             "title" : "New Markdown/HTML Card",
             "showTitleIcon" : false,
@@ -5630,7 +5637,8 @@
                 "id" : "44417062-4a4f-0479-0042-93952e15436a"
               } ]
             },
-            "pageSize" : 1024
+            "pageSize" : 1024,
+            "useDashboardTimewindow" : true
           },
           "row" : 0,
           "col" : 0,
@@ -13087,38 +13095,6 @@
             }
           }
         },
-        "aa_sensor_details" : {
-          "name" : "aa_sensor_details",
-          "root" : false,
-          "layouts" : {
-            "main" : {
-              "widgets" : {
-                "4c060d3e-c22b-0df0-6f5d-41a16e03bda6" : {
-                  "sizeX" : 80,
-                  "sizeY" : 20,
-                  "row" : 0,
-                  "col" : 0
-                },
-                "4026e9c0-baeb-0985-a388-4c4e2bc263a4" : {
-                  "sizeX" : 80,
-                  "sizeY" : 20,
-                  "row" : 20,
-                  "col" : 0
-                }
-              },
-              "gridSettings" : {
-                "backgroundColor" : "#ffffff",
-                "columns" : 80,
-                "margin" : 0,
-                "backgroundSizeMode" : "100%",
-                "autoFillHeight" : true,
-                "backgroundImageUrl" : null,
-                "mobileAutoFillHeight" : true,
-                "mobileRowHeight" : 70
-              }
-            }
-          }
-        },
         "energy_settings" : {
           "name" : "energy_settings",
           "root" : false,
@@ -13391,6 +13367,53 @@
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
                 "mobileRowHeight" : 70
+              }
+            }
+          }
+        },
+        "aa_co2_details" : {
+          "name" : "aa_co2_details",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "4c060d3e-c22b-0df0-6f5d-41a16e03bda6" : {
+                  "sizeX" : 80,
+                  "sizeY" : 20,
+                  "row" : 0,
+                  "col" : 0
+                },
+                "4026e9c0-baeb-0985-a388-4c4e2bc263a4" : {
+                  "sizeX" : 80,
+                  "sizeY" : 20,
+                  "row" : 20,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#ffffff",
+                "columns" : 80,
+                "margin" : 0,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : true,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : true,
+                "mobileRowHeight" : 70
+              }
+            }
+          }
+        },
+        "aa_multisensor_detail" : {
+          "name" : "aa_multisensor_detail",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : { },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "backgroundSizeMode" : "100%"
               }
             }
           }

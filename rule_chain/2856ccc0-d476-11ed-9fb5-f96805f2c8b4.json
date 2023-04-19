@@ -93,7 +93,7 @@
       "type" : "Success"
     }, {
       "fromIndex" : 9,
-      "toIndex" : 18,
+      "toIndex" : 17,
       "type" : "Success"
     }, {
       "fromIndex" : 11,
@@ -132,20 +132,20 @@
       "toIndex" : 14,
       "type" : "Phase_C_power"
     }, {
-      "fromIndex" : 17,
-      "toIndex" : 18,
+      "fromIndex" : 16,
+      "toIndex" : 7,
       "type" : "Success"
     }, {
-      "fromIndex" : 18,
+      "fromIndex" : 17,
       "toIndex" : 16,
       "type" : "Success"
     }, {
-      "fromIndex" : 18,
-      "toIndex" : 20,
+      "fromIndex" : 17,
+      "toIndex" : 19,
       "type" : "Success"
     }, {
-      "fromIndex" : 20,
-      "toIndex" : 19,
+      "fromIndex" : 19,
+      "toIndex" : 18,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 4,
@@ -612,8 +612,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1232,
-        "layoutY" : 227
+        "layoutX" : 1230,
+        "layoutY" : 221
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -630,31 +630,6 @@
       "name" : "Converto to telemetry",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 259,
-        "layoutY" : 572
-      },
-      "configuration" : {
-        "msgCount" : 0,
-        "periodInSeconds" : 10,
-        "scriptLang" : "TBEL",
-        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var msg = { sumHourPower: 42 };\nvar metadata={};\nvar msgType = \"POST_ATTRIBUTES_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "originatorId" : "5a095a00-a891-11ed-bcb8-7f48a6e846b2",
-        "originatorType" : "DEVICE"
-      },
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "478e1700-deb3-11ed-9fb5-f96805f2c8b4"
-      },
-      "name" : "Test",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
         "description" : "",

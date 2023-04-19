@@ -295,8 +295,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1681824585611,
-                  "endTimeMs" : 1681910985611
+                  "startTimeMs" : 1681825892211,
+                  "endTimeMs" : 1681912292211
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -387,8 +387,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1681824585611,
-                  "endTimeMs" : 1681910985611
+                  "startTimeMs" : 1681825892211,
+                  "endTimeMs" : 1681912292211
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -630,8 +630,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1681824585611,
-                  "endTimeMs" : 1681910985611
+                  "startTimeMs" : 1681825892211,
+                  "endTimeMs" : 1681912292211
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -821,8 +821,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1681824585611,
-                  "endTimeMs" : 1681910985611
+                  "startTimeMs" : 1681825892211,
+                  "endTimeMs" : 1681912292211
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -923,8 +923,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1681824585611,
-                  "endTimeMs" : 1681910985611
+                  "startTimeMs" : 1681825892211,
+                  "endTimeMs" : 1681912292211
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1015,8 +1015,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1681824585611,
-                  "endTimeMs" : 1681910985611
+                  "startTimeMs" : 1681825892211,
+                  "endTimeMs" : 1681912292211
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1313,8 +1313,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1681824585611,
-                  "endTimeMs" : 1681910985611
+                  "startTimeMs" : 1681825892211,
+                  "endTimeMs" : 1681912292211
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1351,6 +1351,117 @@
           "row" : 0,
           "col" : 0,
           "id" : "9af9d26b-e588-3cf3-6b0c-9172c807a468"
+        },
+        "3c89d503-3a51-ca36-6ced-f4922bb693c5" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "e9a20706-59b8-4f64-b15a-cbb87a921f41",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "sumHourPower",
+                "type" : "timeseries",
+                "label" : "sumHourPower",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.30290089914833374,
+                "aggregationType" : "NONE",
+                "units" : "",
+                "decimals" : 4,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "return (value/1000);"
+              }, {
+                "name" : "energy_cost",
+                "type" : "attribute",
+                "label" : "energy_cost",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.29545692224550457
+              }, {
+                "name" : "sumHourPower",
+                "type" : "timeseries",
+                "label" : "sumHourPowerDeltaPercentuale",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.16423814239983758,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : false,
+                "postFuncBody" : null
+              }, {
+                "name" : "sumHourPowerBefore",
+                "type" : "attribute",
+                "label" : "sumHourPowerBefore",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.5351806737866969
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1681825892211,
+                  "endTimeMs" : 1681912292211
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<script>\n    var sumHourPowerDeltaPercentuale=${sumHourPowerDeltaPercentuale}/1000;\n    var sumHourPowerBefore=${sumHourPowerBefore}/1000;\n    var valore=(((sumHourPowerDeltaPercentuale-sumHourPowerBefore)/sumHourPowerBefore)*100).toFixed(2);\n    if(valore==0){\n        var testo='<p class=\"description\" style=\"color:blue;\"><i class=\"fa fa-circle\" style=\"font-size:15px; aria-hidden=\"true\"></i> +'+valore+'% <p>';\n    }else if(valore>0){\n        var testo='<p class=\"description\" style=\"color:red;\"><i class=\"fa fa-caret-up\" style=\"font-size:30px;\" aria-hidden=\"true\"></i> +'+valore+'% <p>';\n    }else{\n        var testo='<p class=\"description\" style=\"color:green;\"><i class=\"fa fa-caret-down\" style=\"font-size:30px;\" aria-hidden=\"true\"></i> '+valore+'% <p>'\n    }\n    var costo=(${sumHourPower}*${energy_cost}).toFixed(2)+'€';\n    document.getElementById(\"costo\").innerHTML=costo;\n    document.getElementById(\"percentuale\").innerHTML=testo;\n</script>\n<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <div class='column2'>\n                <h1>Potenza ora precedente</h1>\n                <div class='value' id='costo'></div>\n                <div id=\"percentuale\"></div>\n            </div>\n        </div>\n        <i class=\"fa fa-lightbulb-o fa-gradient\" aria-hidden=\"true\"></i>\n    </div>\n</div>",
+              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   border: 2px solid #ccc;\n   box-sizing: border-box;\n}\n\n.card .content {\n   padding: 20px;\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content .column {\n   display: flex;\n   flex-direction: column;    \n   justify-content: space-around;\n   height: 100%;\n}\n.column2{\n    margin-top: 50px;\n    height: 40%;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 25px;\n    font-weight: bold;\n    margin: 0;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 50px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n}\n\n.fa-gradient{\n    font-size: 250px;\n    background: rgb(238,255,0);\n    background: linear-gradient(0deg, rgba(255,242,0,1) 10%, rgba(255,178,0,1) 100%);\n\t-webkit-background-clip: text;\n\t-webkit-text-fill-color: transparent;\n}\n"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "decimals" : 4,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "3c89d503-3a51-ca36-6ced-f4922bb693c5"
         }
       },
       "states" : {
@@ -1442,6 +1553,12 @@
                   "sizeX" : 7,
                   "sizeY" : 5,
                   "row" : 27,
+                  "col" : 16
+                },
+                "3c89d503-3a51-ca36-6ced-f4922bb693c5" : {
+                  "sizeX" : 7,
+                  "sizeY" : 5,
+                  "row" : 22,
                   "col" : 16
                 }
               },

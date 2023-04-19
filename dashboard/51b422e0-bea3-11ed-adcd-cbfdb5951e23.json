@@ -1463,10 +1463,10 @@
           "col" : 0,
           "id" : "3c89d503-3a51-ca36-6ced-f4922bb693c5"
         },
-        "e9098760-bfd8-4f36-05bb-532f8fea7c9d" : {
+        "c275f016-b8d2-08eb-9843-738b1a857da8" : {
           "isSystemType" : true,
           "bundleAlias" : "charts",
-          "typeAlias" : "timeseries_bars_flot",
+          "typeAlias" : "basic_timeseries",
           "type" : "timeseries",
           "title" : "New widget",
           "image" : null,
@@ -1482,16 +1482,10 @@
               "dataKeys" : [ {
                 "name" : "power",
                 "type" : "timeseries",
-                "label" : "ShellyPlug",
+                "label" : "power",
                 "color" : "#2196f3",
                 "settings" : { },
-                "_hash" : 0.34728807458599054,
-                "aggregationType" : null,
-                "units" : "",
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : false,
-                "postFuncBody" : null
+                "_hash" : 0.07980811714281488
               } ],
               "latestDataKeys" : [ ]
             } ],
@@ -1505,13 +1499,13 @@
               "selectedTab" : 0,
               "realtime" : {
                 "realtimeType" : 0,
-                "timewindowMs" : 86400000,
+                "timewindowMs" : 3600000,
                 "quickInterval" : "CURRENT_DAY",
-                "interval" : 3600000
+                "interval" : 10000
               },
               "aggregation" : {
-                "type" : "SUM",
-                "limit" : 200
+                "type" : "NONE",
+                "limit" : 25000
               }
             },
             "showTitle" : true,
@@ -1537,42 +1531,30 @@
                 "horizontalLines" : true,
                 "outlineWidth" : 1
               },
-              "stack" : true,
-              "tooltipIndividual" : false,
-              "defaultBarWidth" : 600
+              "legend" : {
+                "show" : true,
+                "position" : "nw",
+                "backgroundColor" : "#f0f0f0",
+                "backgroundOpacity" : 0.85,
+                "labelBoxBorderColor" : "rgba(1, 1, 1, 0.45)"
+              },
+              "decimals" : 1,
+              "stack" : false,
+              "tooltipIndividual" : false
             },
-            "title" : "New Timeseries Bar Chart",
+            "title" : "New Timeseries Line Chart",
             "dropShadow" : true,
             "enableFullscreen" : true,
             "titleStyle" : {
               "fontSize" : "16px",
               "fontWeight" : 400
             },
-            "widgetStyle" : { },
             "useDashboardTimewindow" : false,
-            "showLegend" : true,
-            "actions" : { },
-            "displayTimewindow" : true,
-            "showTitleIcon" : false,
-            "titleTooltip" : "",
-            "enableDataExport" : true,
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : "",
-            "legendConfig" : {
-              "direction" : "column",
-              "position" : "bottom",
-              "sortDataKeys" : false,
-              "showMin" : false,
-              "showMax" : false,
-              "showAvg" : true,
-              "showTotal" : true,
-              "showLatest" : false
-            }
+            "displayTimewindow" : true
           },
           "row" : 0,
           "col" : 0,
-          "id" : "e9098760-bfd8-4f36-05bb-532f8fea7c9d"
+          "id" : "c275f016-b8d2-08eb-9843-738b1a857da8"
         }
       },
       "states" : {
@@ -1672,11 +1654,11 @@
                   "row" : 22,
                   "col" : 16
                 },
-                "e9098760-bfd8-4f36-05bb-532f8fea7c9d" : {
+                "c275f016-b8d2-08eb-9843-738b1a857da8" : {
                   "sizeX" : 8,
                   "sizeY" : 5,
-                  "row" : 8,
-                  "col" : 16
+                  "row" : 32,
+                  "col" : 0
                 }
               },
               "gridSettings" : {

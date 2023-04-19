@@ -73,11 +73,11 @@
       "type" : "Success"
     }, {
       "fromIndex" : 4,
-      "toIndex" : 12,
+      "toIndex" : 11,
       "type" : "Failure"
     }, {
       "fromIndex" : 4,
-      "toIndex" : 12,
+      "toIndex" : 11,
       "type" : "Success"
     }, {
       "fromIndex" : 5,
@@ -100,15 +100,11 @@
       "toIndex" : 7,
       "type" : "Success"
     }, {
-      "fromIndex" : 12,
-      "toIndex" : 11,
+      "fromIndex" : 11,
+      "toIndex" : 7,
       "type" : "Success"
     }, {
-      "fromIndex" : 12,
-      "toIndex" : 13,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 13,
+      "fromIndex" : 11,
       "toIndex" : 10,
       "type" : "Success"
     } ],
@@ -292,8 +288,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1017,
-        "layoutY" : 577
+        "layoutX" : 1207,
+        "layoutY" : 366
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -313,8 +309,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1015,
-        "layoutY" : 650
+        "layoutX" : 1211,
+        "layoutY" : 445
       },
       "configuration" : {
         "defaultTTL" : 0,
@@ -371,27 +367,6 @@
       "name" : "Hour Power",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 1126,
-        "layoutY" : 49
-      },
-      "configuration" : {
-        "scope" : "SERVER_SCOPE",
-        "notifyDevice" : false,
-        "sendAttributesUpdatedNotification" : false
-      },
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "b579cbd0-dde9-11ed-9fb5-f96805f2c8b4"
-      },
-      "name" : "Save Attributes",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
     }, {
       "additionalInfo" : {
         "description" : "",
@@ -453,27 +428,6 @@
       "name" : "Day Power",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 1127,
-        "layoutY" : 118
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var msgType=\"POST_ATTRIBUTES\";\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
-      },
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "f000ab00-de7c-11ed-9fb5-f96805f2c8b4"
-      },
-      "name" : "Transform to Attributes",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

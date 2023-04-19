@@ -80,6 +80,30 @@
       "toIndex" : 11,
       "type" : "Success"
     }, {
+      "fromIndex" : 4,
+      "toIndex" : 12,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 12,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 13,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 13,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 14,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 14,
+      "type" : "Success"
+    }, {
       "fromIndex" : 5,
       "toIndex" : 0,
       "type" : "Success"
@@ -106,6 +130,18 @@
     }, {
       "fromIndex" : 11,
       "toIndex" : 10,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 12,
+      "toIndex" : 7,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 13,
+      "toIndex" : 7,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 14,
+      "toIndex" : 7,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 4,
@@ -288,8 +324,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1207,
-        "layoutY" : 366
+        "layoutX" : 1227,
+        "layoutY" : 295
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -309,8 +345,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1211,
-        "layoutY" : 445
+        "layoutX" : 1226,
+        "layoutY" : 374
       },
       "configuration" : {
         "defaultTTL" : 0,
@@ -330,8 +366,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 719,
-        "layoutY" : 118
+        "layoutX" : 713,
+        "layoutY" : 56
       },
       "configuration" : {
         "inputValueKey" : "power",
@@ -370,8 +406,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1124,
-        "layoutY" : 179
+        "layoutX" : 1154,
+        "layoutY" : 47
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -391,8 +427,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 718,
-        "layoutY" : 183
+        "layoutX" : 713,
+        "layoutY" : 2
       },
       "configuration" : {
         "inputValueKey" : "power",
@@ -426,6 +462,126 @@
         "id" : "b0e65140-ddfa-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Day Power",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 714,
+        "layoutY" : 112
+      },
+      "configuration" : {
+        "inputValueKey" : "Phase_A_power",
+        "outputValueKey" : "sumHourPhase_A_power",
+        "mathFunction" : "SUM",
+        "aggIntervalType" : "HOUR",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "821cebe0-de8a-11ed-9fb5-f96805f2c8b4"
+      },
+      "name" : "Hour Power Phase A",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 714,
+        "layoutY" : 163
+      },
+      "configuration" : {
+        "inputValueKey" : "Phase_B_power",
+        "outputValueKey" : "sumHourPhase_B_power",
+        "mathFunction" : "SUM",
+        "aggIntervalType" : "HOUR",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "821dd640-de8a-11ed-9fb5-f96805f2c8b4"
+      },
+      "name" : "Hour Power Phase B",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 716,
+        "layoutY" : 218
+      },
+      "configuration" : {
+        "inputValueKey" : "Phase_C_power",
+        "outputValueKey" : "sumHourPhase_C_power",
+        "mathFunction" : "SUM",
+        "aggIntervalType" : "HOUR",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "821e7280-de8a-11ed-9fb5-f96805f2c8b4"
+      },
+      "name" : "Hour Power Phase C",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
     } ],

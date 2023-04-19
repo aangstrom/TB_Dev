@@ -139,10 +139,6 @@
       "fromIndex" : 18,
       "toIndex" : 16,
       "type" : "Success"
-    }, {
-      "fromIndex" : 19,
-      "toIndex" : 18,
-      "type" : "Success"
     } ],
     "firstNodeIndex" : 4,
     "nodes" : [ {
@@ -650,11 +646,11 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1251,
-        "layoutY" : 101
+        "layoutX" : 967,
+        "layoutY" : 96
       },
       "configuration" : {
-        "latestTsKeyNames" : [ "sumHourPower", "${sumHourPower}" ],
+        "latestTsKeyNames" : [ "sumHourPower" ],
         "aggregation" : "NONE",
         "fetchMode" : "LAST",
         "orderBy" : "ASC",
@@ -677,31 +673,6 @@
       "name" : "Latest sumHourPower",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetTelemetryNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 949,
-        "layoutY" : 150
-      },
-      "configuration" : {
-        "msgCount" : 0,
-        "periodInSeconds" : 10,
-        "scriptLang" : "TBEL",
-        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "originatorId" : null,
-        "originatorType" : null
-      },
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "cc3984e0-deb2-11ed-9fb5-f96805f2c8b4"
-      },
-      "name" : "test",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     } ],
     "ruleChainConnections" : null
   },

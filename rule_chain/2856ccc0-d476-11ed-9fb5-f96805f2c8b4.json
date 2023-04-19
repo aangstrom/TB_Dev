@@ -656,7 +656,7 @@
       "configuration" : {
         "latestTsKeyNames" : [ "sumHourPower" ],
         "aggregation" : "NONE",
-        "fetchMode" : "LAST",
+        "fetchMode" : "ALL",
         "orderBy" : "ASC",
         "limit" : 1000,
         "useMetadataIntervalPatterns" : false,
@@ -688,7 +688,7 @@
         "periodInSeconds" : 10,
         "scriptLang" : "TBEL",
         "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var msg = { sumHourPower: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { sumHourPower: 42, humidity: 77 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "originatorId" : "5a095a00-a891-11ed-bcb8-7f48a6e846b2",
         "originatorType" : "DEVICE"
       },

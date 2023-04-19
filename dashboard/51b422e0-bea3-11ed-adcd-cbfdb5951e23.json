@@ -1289,7 +1289,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "var valore=(prevOrigValue/value)*100;\nif(valore==0){\n    return '<p class=\"description\" style=\"color:blue;\"><i class=\"fa fa-circle\" style=\"font-size:15px; aria-hidden=\"true\"></i> +'+valore+'% <p>';\n}else if(valore>0){\n    return '<p class=\"description\" style=\"color:red;\"><i class=\"fa fa-caret-up\" style=\"font-size:30px;\" aria-hidden=\"true\"></i> +'+valore+'% <p>';\n}else{\n    return '<p class=\"description\" style=\"color:green;\"><i class=\"fa fa-caret-down\" style=\"font-size:30px;\" aria-hidden=\"true\"></i> '+valore+'% <p>'\n}"
+                "postFuncBody" : "//var valore=((prevOrigValue/1000)/(value/1000))*100;\nvar valore=prevValue;\nif(valore==0){\n    return '<p class=\"description\" style=\"color:blue;\"><i class=\"fa fa-circle\" style=\"font-size:15px; aria-hidden=\"true\"></i> +'+valore+'% <p>';\n}else if(valore>0){\n    return '<p class=\"description\" style=\"color:red;\"><i class=\"fa fa-caret-up\" style=\"font-size:30px;\" aria-hidden=\"true\"></i> +'+valore+'% <p>';\n}else{\n    return '<p class=\"description\" style=\"color:green;\"><i class=\"fa fa-caret-down\" style=\"font-size:30px;\" aria-hidden=\"true\"></i> '+valore+'% <p>'\n}"
               } ]
             } ],
             "timewindow" : {

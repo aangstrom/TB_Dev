@@ -96,6 +96,10 @@
       "toIndex" : 11,
       "type" : "Success"
     }, {
+      "fromIndex" : 9,
+      "toIndex" : 16,
+      "type" : "Success"
+    }, {
       "fromIndex" : 11,
       "toIndex" : 7,
       "type" : "Success"
@@ -131,6 +135,14 @@
       "fromIndex" : 15,
       "toIndex" : 14,
       "type" : "Phase_C_power"
+    }, {
+      "fromIndex" : 16,
+      "toIndex" : 17,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 17,
+      "toIndex" : 18,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 4,
     "nodes" : [ {
@@ -394,8 +406,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1239,
-        "layoutY" : 131
+        "layoutX" : 1266,
+        "layoutY" : 14
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -593,6 +605,73 @@
       "name" : "Switch Power",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1225,
+        "layoutY" : 93
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchToData" : false,
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ ],
+        "latestTsKeyNames" : [ "${sumHourPower}" ],
+        "getLatestValueWithTs" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b3aa6f80-de98-11ed-9fb5-f96805f2c8b4"
+      },
+      "name" : "Latest power",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1225,
+        "layoutY" : 161
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var tipo='POST_ATTRIBUTES';\nreturn {msg: msg, metadata: metadata, msgType: tipo};"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b3ab59e0-de98-11ed-9fb5-f96805f2c8b4"
+      },
+      "name" : "Converto to attribute",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1234,
+        "layoutY" : 231
+      },
+      "configuration" : {
+        "scope" : "SERVER_SCOPE",
+        "notifyDevice" : false,
+        "sendAttributesUpdatedNotification" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b3abcf10-de98-11ed-9fb5-f96805f2c8b4"
+      },
+      "name" : "Save Attributes",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
     } ],
     "ruleChainConnections" : null
   },

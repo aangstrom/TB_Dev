@@ -137,6 +137,14 @@
       "type" : "Success"
     }, {
       "fromIndex" : 18,
+      "toIndex" : 16,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 18,
+      "toIndex" : 20,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 20,
       "toIndex" : 19,
       "type" : "Success"
     } ],
@@ -604,8 +612,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1257,
-        "layoutY" : 262
+        "layoutX" : 1232,
+        "layoutY" : 227
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -619,14 +627,14 @@
         "entityType" : "RULE_NODE",
         "id" : "b3ab59e0-de98-11ed-9fb5-f96805f2c8b4"
       },
-      "name" : "Converto to attribute",
+      "name" : "Converto to telemetry",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 931,
-        "layoutY" : 146
+        "layoutX" : 259,
+        "layoutY" : 572
       },
       "configuration" : {
         "msgCount" : 0,
@@ -650,8 +658,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1227,
-        "layoutY" : 106
+        "layoutX" : 975,
+        "layoutY" : 102
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -676,7 +684,7 @@
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 1227,
-        "layoutY" : 177
+        "layoutY" : 154
       },
       "configuration" : {
         "scope" : "SERVER_SCOPE",
@@ -693,6 +701,27 @@
       "name" : "Save Attributes",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1227,
+        "layoutY" : 78
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "095c1570-deb5-11ed-9fb5-f96805f2c8b4"
+      },
+      "name" : "Atttributes",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

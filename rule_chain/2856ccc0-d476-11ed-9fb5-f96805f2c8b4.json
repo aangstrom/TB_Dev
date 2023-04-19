@@ -65,43 +65,11 @@
       "type" : "Success"
     }, {
       "fromIndex" : 4,
-      "toIndex" : 9,
+      "toIndex" : 15,
       "type" : "Failure"
     }, {
       "fromIndex" : 4,
-      "toIndex" : 9,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 4,
-      "toIndex" : 11,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 4,
-      "toIndex" : 11,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 4,
-      "toIndex" : 12,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 4,
-      "toIndex" : 12,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 4,
-      "toIndex" : 13,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 4,
-      "toIndex" : 13,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 4,
-      "toIndex" : 14,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 4,
-      "toIndex" : 14,
+      "toIndex" : 15,
       "type" : "Success"
     }, {
       "fromIndex" : 5,
@@ -143,6 +111,26 @@
       "fromIndex" : 14,
       "toIndex" : 7,
       "type" : "Success"
+    }, {
+      "fromIndex" : 15,
+      "toIndex" : 9,
+      "type" : "Power"
+    }, {
+      "fromIndex" : 15,
+      "toIndex" : 11,
+      "type" : "Power"
+    }, {
+      "fromIndex" : 15,
+      "toIndex" : 12,
+      "type" : "Phase_A_power"
+    }, {
+      "fromIndex" : 15,
+      "toIndex" : 13,
+      "type" : "Phase_B_power"
+    }, {
+      "fromIndex" : 15,
+      "toIndex" : 14,
+      "type" : "Phase_C_power"
     } ],
     "firstNodeIndex" : 4,
     "nodes" : [ {
@@ -366,8 +354,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 713,
-        "layoutY" : 56
+        "layoutX" : 712,
+        "layoutY" : 80
       },
       "configuration" : {
         "inputValueKey" : "power",
@@ -427,8 +415,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 713,
-        "layoutY" : 0
+        "layoutX" : 712,
+        "layoutY" : 24
       },
       "configuration" : {
         "inputValueKey" : "power",
@@ -467,8 +455,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 714,
-        "layoutY" : 112
+        "layoutX" : 713,
+        "layoutY" : 136
       },
       "configuration" : {
         "inputValueKey" : "Phase_A_power",
@@ -507,8 +495,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 714,
-        "layoutY" : 163
+        "layoutX" : 713,
+        "layoutY" : 187
       },
       "configuration" : {
         "inputValueKey" : "Phase_B_power",
@@ -547,8 +535,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 716,
-        "layoutY" : 218
+        "layoutX" : 715,
+        "layoutY" : 242
       },
       "configuration" : {
         "inputValueKey" : "Phase_C_power",
@@ -584,6 +572,27 @@
       "name" : "Hour Power Phase C",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 385,
+        "layoutY" : 58
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if(msg.power!=null){\n    return ['Power'];\n}else if(msg.Phase_A_power!=null){\n    return ['Phase_A_power'];\n}else if(msg.Phase_B_power!=null){\n    return ['Phase_B_power'];\n}else if(msg.Phase_C_power!=null){\n    return ['Phase_C_power'];\n}else{\n    return ['other'];\n}\n\nreturn nextRelation(metadata, msg);"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "5656e870-de8b-11ed-9fb5-f96805f2c8b4"
+      },
+      "name" : "Switch Power",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     } ],
     "ruleChainConnections" : null
   },

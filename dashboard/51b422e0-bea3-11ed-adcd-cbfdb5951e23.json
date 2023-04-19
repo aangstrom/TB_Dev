@@ -295,8 +295,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1681806362604,
-                  "endTimeMs" : 1681892762604
+                  "startTimeMs" : 1681824585611,
+                  "endTimeMs" : 1681910985611
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -387,8 +387,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1681806362604,
-                  "endTimeMs" : 1681892762604
+                  "startTimeMs" : 1681824585611,
+                  "endTimeMs" : 1681910985611
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -630,8 +630,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1681806362604,
-                  "endTimeMs" : 1681892762604
+                  "startTimeMs" : 1681824585611,
+                  "endTimeMs" : 1681910985611
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -821,8 +821,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1681806362604,
-                  "endTimeMs" : 1681892762604
+                  "startTimeMs" : 1681824585611,
+                  "endTimeMs" : 1681910985611
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -923,8 +923,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1681806362604,
-                  "endTimeMs" : 1681892762604
+                  "startTimeMs" : 1681824585611,
+                  "endTimeMs" : 1681910985611
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1015,8 +1015,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1681806362604,
-                  "endTimeMs" : 1681892762604
+                  "startTimeMs" : 1681824585611,
+                  "endTimeMs" : 1681910985611
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1288,8 +1288,15 @@
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "//var valore=((prevOrigValue/1000)/(value/1000))*100;\nvar valore=prevValue;\nif(valore==0){\n    return '<p class=\"description\" style=\"color:blue;\"><i class=\"fa fa-circle\" style=\"font-size:15px; aria-hidden=\"true\"></i> +'+valore+'% <p>';\n}else if(valore>0){\n    return '<p class=\"description\" style=\"color:red;\"><i class=\"fa fa-caret-up\" style=\"font-size:30px;\" aria-hidden=\"true\"></i> +'+valore+'% <p>';\n}else{\n    return '<p class=\"description\" style=\"color:green;\"><i class=\"fa fa-caret-down\" style=\"font-size:30px;\" aria-hidden=\"true\"></i> '+valore+'% <p>'\n}"
+                "usePostProcessing" : false,
+                "postFuncBody" : null
+              }, {
+                "name" : "sumHourPowerBefore",
+                "type" : "attribute",
+                "label" : "sumHourPowerBefore",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.5351806737866969
               } ]
             } ],
             "timewindow" : {
@@ -1306,8 +1313,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1681806373664,
-                  "endTimeMs" : 1681892773664
+                  "startTimeMs" : 1681824585611,
+                  "endTimeMs" : 1681910985611
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1321,8 +1328,8 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "cardHtml" : "<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <div class='column2'>\n                <h1>Potenza ultima Ora</h1>\n                <div class='value'>\n                    ${sumHourPower} kWh\n                </div>\n            </div>\n        </div>\n        <i class=\"fa fa-lightbulb-o fa-gradient\" aria-hidden=\"true\"></i>\n    </div>\n</div>",
-              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   border: 2px solid #ccc;\n   box-sizing: border-box;\n}\n\n.card .content {\n   padding: 20px;\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content .column {\n   display: flex;\n   flex-direction: column;    \n   justify-content: space-around;\n   height: 100%;\n}\n.column2{\n    margin-top: 75px;\n    height: 30%;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 25px;\n    font-weight: bold;\n    margin: 0;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 50px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n}\n\n.fa-gradient{\n    font-size: 250px;\n    background: rgb(238,255,0);\n    background: linear-gradient(0deg, rgba(255,242,0,1) 10%, rgba(255,178,0,1) 100%);\n\t-webkit-background-clip: text;\n\t-webkit-text-fill-color: transparent;\n}\n"
+              "cardHtml" : "<script>\n    var sumHourPowerDeltaPercentuale=${sumHourPowerDeltaPercentuale}/1000;\n    var sumHourPowerBefore=${sumHourPowerBefore}/1000;\n    var valore=sumHourPowerDeltaPercentuale-sumHourPowerBefore;\n    if(valore==0){\n        var testo='<p class=\"description\" style=\"color:blue;\"><i class=\"fa fa-circle\" style=\"font-size:15px; aria-hidden=\"true\"></i> +'+valore+'% <p>';\n    }else if(valore>0){\n        var testo='<p class=\"description\" style=\"color:red;\"><i class=\"fa fa-caret-up\" style=\"font-size:30px;\" aria-hidden=\"true\"></i> +'+valore+'% <p>';\n    }else{\n        var testo='<p class=\"description\" style=\"color:green;\"><i class=\"fa fa-caret-down\" style=\"font-size:30px;\" aria-hidden=\"true\"></i> '+valore+'% <p>'\n    }\n    document.getElementById(\"percentuale\").innerHTML=testo;\n</script>\n<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <div class='column2'>\n                <h1>Potenza ultima Ora</h1>\n                <div class='value'>\n                    ${sumHourPower} kWh\n                </div>\n                <div id=\"percentuale\"></div>\n            </div>\n        </div>\n        <i class=\"fa fa-lightbulb-o fa-gradient\" aria-hidden=\"true\"></i>\n    </div>\n</div>",
+              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   border: 2px solid #ccc;\n   box-sizing: border-box;\n}\n\n.card .content {\n   padding: 20px;\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content .column {\n   display: flex;\n   flex-direction: column;    \n   justify-content: space-around;\n   height: 100%;\n}\n.column2{\n    margin-top: 75px;\n    height: 40%;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 25px;\n    font-weight: bold;\n    margin: 0;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 50px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n}\n\n.fa-gradient{\n    font-size: 250px;\n    background: rgb(238,255,0);\n    background: linear-gradient(0deg, rgba(255,242,0,1) 10%, rgba(255,178,0,1) 100%);\n\t-webkit-background-clip: text;\n\t-webkit-text-fill-color: transparent;\n}\n"
             },
             "title" : "New HTML Value Card",
             "dropShadow" : true,

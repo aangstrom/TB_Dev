@@ -79,8 +79,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1682506964132,
-                  "endTimeMs" : 1682593364132
+                  "startTimeMs" : 1682525119378,
+                  "endTimeMs" : 1682611519378
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -121,30 +121,27 @@
               "mapPageSize" : 16384,
               "markerOffsetX" : 0.5,
               "markerOffsetY" : 1,
-              "posFunction" : "return {x: origXPos, y: origYPos};",
               "draggableMarker" : false,
               "showLabel" : true,
               "useLabelFunction" : false,
               "label" : "${entityName}",
-              "showTooltip" : true,
-              "showTooltipAction" : "click",
-              "autocloseTooltip" : true,
-              "useTooltipFunction" : false,
-              "tooltipPattern" : "<b>${entityName}</b><br/><br/><b>Latitude:</b> ${latitude:7}<br/><b>Longitude:</b> ${longitude:7}<br/><b>Temperature:</b> ${temperature} °C<br/><small>See advanced settings for details</small>",
-              "tooltipOffsetX" : 0,
-              "tooltipOffsetY" : -1,
+              "showTooltip" : false,
               "color" : "#fe7569",
               "useColorFunction" : false,
               "useMarkerImageFunction" : false,
               "markerImageSize" : 34,
-              "markerImages" : [ ],
               "showPolygon" : true,
               "polygonKeyName" : "perimeter",
               "editablePolygon" : false,
               "showPolygonLabel" : true,
               "usePolygonLabelFunction" : true,
+              "polygonLabel" : "${entityName}",
               "polygonLabelFunction" : "var html = '<div>';\nhtml += '<div style=\"color: #FFF; font-weight: 600; text-align: center; padding-bottom: 8px;\">${entityName} (${cropType})</div>';\n\nvar avgMoisture = data['avgMoisture'];\nvar avgMoistureText = avgMoisture !== '' ?  Number(avgMoisture).toFixed(1) + '%' : 'n/a';\nvar minMoistureThreshold = data['minMoistureThreshold'];\nvar maxMoistureThreshold = data['maxMoistureThreshold'];\nvar color = '#FFFFFF';\nvar textColor = '#000000';\nif (avgMoisture < minMoistureThreshold || avgMoisture > maxMoistureThreshold) {\n    color = '#D12730';\n    textColor = '#FFFFFF';\n}\n\nhtml += '<div style=\"text-align: center;\"><span style=\"background: ' + color + '; color: ' + textColor + '; border-radius: 8px; padding: 4px;\">'+avgMoistureText+'</span></div>';\n\nhtml += '<div>';\n\nreturn html;",
               "showPolygonTooltip" : false,
+              "showPolygonTooltipAction" : "click",
+              "autoClosePolygonTooltip" : true,
+              "usePolygonTooltipFunction" : false,
+              "polygonTooltipPattern" : "<b>${entityName}</b><br/><br/><b>TimeStamp:</b> ${ts:7}",
               "polygonColor" : "#3388ff",
               "polygonOpacity" : 0.2,
               "usePolygonColorFunction" : false,
@@ -177,7 +174,8 @@
               "spiderfyOnMaxZoom" : false,
               "showCoverageOnHover" : true,
               "chunkedLoading" : false,
-              "removeOutsideVisibleBounds" : true
+              "removeOutsideVisibleBounds" : true,
+              "useIconCreateFunction" : false
             },
             "title" : "Fields",
             "dropShadow" : true,
@@ -242,8 +240,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1682506964132,
-                  "endTimeMs" : 1682593364132
+                  "startTimeMs" : 1682525119378,
+                  "endTimeMs" : 1682611519378
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -520,8 +518,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1682506964132,
-                  "endTimeMs" : 1682593364132
+                  "startTimeMs" : 1682525119378,
+                  "endTimeMs" : 1682611519378
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -805,8 +803,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1682506964132,
-                  "endTimeMs" : 1682593364132
+                  "startTimeMs" : 1682525119378,
+                  "endTimeMs" : 1682611519378
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1096,8 +1094,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1682506964132,
-                  "endTimeMs" : 1682593364132
+                  "startTimeMs" : 1682525119378,
+                  "endTimeMs" : 1682611519378
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1329,8 +1327,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1682506964132,
-                  "endTimeMs" : 1682593364132
+                  "startTimeMs" : 1682525119378,
+                  "endTimeMs" : 1682611519378
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1568,8 +1566,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1682506964132,
-                  "endTimeMs" : 1682593364132
+                  "startTimeMs" : 1682525119378,
+                  "endTimeMs" : 1682611519378
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1910,8 +1908,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1682506964132,
-                  "endTimeMs" : 1682593364132
+                  "startTimeMs" : 1682525119378,
+                  "endTimeMs" : 1682611519378
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -2017,8 +2015,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1682506964132,
-                  "endTimeMs" : 1682593364132
+                  "startTimeMs" : 1682525119378,
+                  "endTimeMs" : 1682611519378
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -2280,8 +2278,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1682506964132,
-                  "endTimeMs" : 1682593364132
+                  "startTimeMs" : 1682525119378,
+                  "endTimeMs" : 1682611519378
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -2547,8 +2545,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1682506964132,
-                  "endTimeMs" : 1682593364132
+                  "startTimeMs" : 1682525119378,
+                  "endTimeMs" : 1682611519378
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3108,8 +3106,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1682506964132,
-                  "endTimeMs" : 1682593364132
+                  "startTimeMs" : 1682525119378,
+                  "endTimeMs" : 1682611519378
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3195,8 +3193,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1682506964132,
-                  "endTimeMs" : 1682593364132
+                  "startTimeMs" : 1682525119378,
+                  "endTimeMs" : 1682611519378
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3347,8 +3345,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1682506964132,
-                  "endTimeMs" : 1682593364132
+                  "startTimeMs" : 1682525119378,
+                  "endTimeMs" : 1682611519378
                 },
                 "quickInterval" : "CURRENT_DAY"
               },

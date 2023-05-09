@@ -3802,7 +3802,7 @@
                 "label" : "count",
                 "color" : "#2196f3",
                 "settings" : { },
-                "_hash" : 0.49292565200343397
+                "_hash" : 0.5214115961205943
               } ]
             } ],
             "timewindow" : {
@@ -8095,6 +8095,79 @@
           "row" : 0,
           "col" : 0,
           "id" : "a5d0ff59-a178-8f75-2fad-8517b8560735"
+        },
+        "ce9fb533-e96e-c8a1-690e-9ba761337647" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entityCount",
+              "name" : null,
+              "entityAliasId" : "62fac1ba-42a3-6dc7-c445-e42adcce1233",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "count",
+                "type" : "count",
+                "label" : "count",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.27802945397288026
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1683536039477,
+                  "endTimeMs" : 1683622439477
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div class=\"status_bar\">\r\n    <i class=\"fa fa-building\" aria-hidden=\"true\"><div class=\"status_bar_notification\">${count:0}</div></i>\r\n    <i class=\"fa fa-podcast\" aria-hidden=\"true\"></i>\r\n    <i class=\"fa fa-rss\" aria-hidden=\"true\"></i>\r\n    <i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i>\r\n</div>",
+              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n}\n\n.card .content {\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   margin-left: 50px;\n   margin-right: 50px;\n   justify-content: space-between;\n   height: 100%;\n}\n\n.card .content .column {\n    display: flex;\n    align-items: center;\n    flex-direction: row;\n    justify-content: space-between;\n}\n.status_bar{\n    width: 200px;\n    display: flex;\n    align-items: center;\n    flex-direction: row;\n    justify-content: space-between;\n}\n.status_bar_notification{\n    height: 25px;\n    margin-top: -10px;\n    font-size: 18px;\n    color: white;\n    background-color: #00CDFF;\n    border-radius: 20%;\n    padding: 3px 8px;\n    \n}\n\n.card h1 {\n    text-transform: uppercase;\n    font-size: 20px;\n    font-weight: bold;\n    margin: 0;\n    line-height: 32px;\n    font-family: Arial;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n\n.fa{\n    font-size: 30px;\n    text-align: center;\n    padding-bottom: 0px;\n    display: flex;\n    flex-direction: row;\n}\n.fa:hover{\n    opacity: 0.5;\n    cursor: pointer;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "ce9fb533-e96e-c8a1-690e-9ba761337647"
         }
       },
       "states" : {
@@ -8790,6 +8863,28 @@
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
                 "mobileRowHeight" : 70
+              }
+            }
+          }
+        },
+        "status_bar" : {
+          "name" : "status_bar",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "ce9fb533-e96e-c8a1-690e-9ba761337647" : {
+                  "sizeX" : 7,
+                  "sizeY" : 3,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "backgroundSizeMode" : "100%"
               }
             }
           }

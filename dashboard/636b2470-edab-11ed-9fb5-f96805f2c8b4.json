@@ -3834,8 +3834,8 @@
             "color" : "#18ff00",
             "padding" : "0px",
             "settings" : {
-              "cardHtml" : "<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <i id=\"home\" class=\"fa fa-home\"><h1>&nbsp;Home</h1></i>\n        </div>\n        <div class='column'>\n            <div class=\"status_bar\">\n                <i class=\"fa fa-building\" aria-hidden=\"true\"><div class=\"status_bar_notification\">${count:0}</div></i>\n                <i class=\"fa fa-podcast\" aria-hidden=\"true\"></i>\n                <i class=\"fa fa-rss\" aria-hidden=\"true\"></i>\n                <i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i>\n            </div>\n\n            <!--<i id=\"setting\" class=\"fa fa-cog\"><h1>&nbsp;Status Bar sentinelle</h1></i>-->\n        </div>\n    </div>\n</div>",
-              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n}\n\n.card .content {\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   margin-left: 50px;\n   margin-right: 50px;\n   justify-content: space-between;\n   height: 100%;\n}\n\n.card .content .column {\n    display: flex;\n    align-items: center;\n    flex-direction: row;\n    justify-content: space-between;\n}\n.status_bar{\n    width: 200px;\n    display: flex;\n    align-items: center;\n    flex-direction: row;\n    justify-content: space-between;\n}\n.status_bar_notification{\n    height: 25px;\n    margin-top: -10px;\n    font-size: 18px;\n    color: white;\n    background-color: #00CDFF;\n    border-radius: 20%;\n    padding: 3px 8px;\n    \n}\n\n.card h1 {\n    text-transform: uppercase;\n    font-size: 20px;\n    font-weight: bold;\n    margin: 0;\n    line-height: 32px;\n    font-family: Arial;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n\n.fa{\n    font-size: 30px;\n    text-align: center;\n    padding-bottom: 0px;\n    display: flex;\n    flex-direction: row;\n}\n.fa:hover{\n    opacity: 0.5;\n    cursor: pointer;\n}"
+              "cardHtml" : "<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <i id=\"home\" class=\"fa fa-home\"><h1>&nbsp;Home</h1></i>\n        </div>\n        <div class='column'>\n             <tb-dashboard-state fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"status_bar\"></tb-dashboard-state>\n            <!--<div class=\"status_bar\">\n                <i class=\"fa fa-building\" aria-hidden=\"true\"><div class=\"status_bar_notification\">${count:0}</div></i>\n                <i class=\"fa fa-podcast\" aria-hidden=\"true\"></i>\n                <i class=\"fa fa-rss\" aria-hidden=\"true\"></i>\n                <i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i>\n            </div>-->\n\n            <!--<i id=\"setting\" class=\"fa fa-cog\"><h1>&nbsp;Status Bar sentinelle</h1></i>-->\n        </div>\n    </div>\n</div>",
+              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n}\n\n.card .content {\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   margin-left: 50px;\n   margin-right: 50px;\n   justify-content: space-between;\n   height: 100%;\n}\n\n.card .content .column {\n    display: flex;\n    align-items: center;\n    flex-direction: row;\n    justify-content: space-between;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    font-size: 20px;\n    font-weight: bold;\n    margin: 0;\n    line-height: 32px;\n    font-family: Arial;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n\n.fa{\n    font-size: 30px;\n    text-align: center;\n    padding-bottom: 0px;\n    display: flex;\n    flex-direction: row;\n}\n.fa:hover{\n    opacity: 0.5;\n    cursor: pointer;\n}"
             },
             "title" : "New HTML Value Card",
             "dropShadow" : false,
@@ -8874,8 +8874,8 @@
             "main" : {
               "widgets" : {
                 "ce9fb533-e96e-c8a1-690e-9ba761337647" : {
-                  "sizeX" : 7,
-                  "sizeY" : 3,
+                  "sizeX" : 4,
+                  "sizeY" : 1,
                   "row" : 0,
                   "col" : 0
                 }
@@ -8883,8 +8883,12 @@
               "gridSettings" : {
                 "backgroundColor" : "#eeeeee",
                 "columns" : 24,
-                "margin" : 10,
-                "backgroundSizeMode" : "100%"
+                "margin" : 0,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : true,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70
               }
             }
           }

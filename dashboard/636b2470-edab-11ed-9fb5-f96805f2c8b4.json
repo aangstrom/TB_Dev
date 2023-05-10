@@ -10874,7 +10874,7 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "62fac1ba-42a3-6dc7-c445-e42adcce1233",
+              "entityAliasId" : "439d7ace-59b7-32a8-78de-751fe8108c76",
               "filterId" : null,
               "dataKeys" : [ {
                 "name" : "criticalAlarmsCount",
@@ -10883,12 +10883,13 @@
                 "color" : "#2196f3",
                 "settings" : { },
                 "_hash" : 0.9148849898858011,
-                "aggregationType" : "NONE",
+                "aggregationType" : "SUM",
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : null,
-                "postFuncBody" : null
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
               } ]
             } ],
             "timewindow" : {
@@ -10998,7 +10999,7 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "62fac1ba-42a3-6dc7-c445-e42adcce1233",
+              "entityAliasId" : "439d7ace-59b7-32a8-78de-751fe8108c76",
               "filterId" : null,
               "dataKeys" : [ {
                 "name" : "majorAlarmsCount",
@@ -11007,12 +11008,13 @@
                 "color" : "#2196f3",
                 "settings" : { },
                 "_hash" : 0.9148849898858011,
-                "aggregationType" : "NONE",
+                "aggregationType" : "SUM",
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : null,
-                "postFuncBody" : null
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
               } ]
             } ],
             "timewindow" : {
@@ -11122,7 +11124,7 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "62fac1ba-42a3-6dc7-c445-e42adcce1233",
+              "entityAliasId" : "439d7ace-59b7-32a8-78de-751fe8108c76",
               "filterId" : null,
               "dataKeys" : [ {
                 "name" : "minorAlarmsCount",
@@ -11131,12 +11133,13 @@
                 "color" : "#2196f3",
                 "settings" : { },
                 "_hash" : 0.9148849898858011,
-                "aggregationType" : "NONE",
+                "aggregationType" : "SUM",
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : null,
-                "postFuncBody" : null
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
               } ]
             } ],
             "timewindow" : {
@@ -16364,6 +16367,23 @@
               "entityType" : "CUSTOMER",
               "id" : "cb303550-0373-11ed-91ed-0903699d62f6"
             },
+            "direction" : "FROM",
+            "maxLevel" : null,
+            "fetchLastLevelOnly" : false,
+            "relationType" : null,
+            "deviceTypes" : [ "AA Energy", "AA Sensor", "Camera" ]
+          }
+        },
+        "439d7ace-59b7-32a8-78de-751fe8108c76" : {
+          "id" : "439d7ace-59b7-32a8-78de-751fe8108c76",
+          "alias" : "Device per reparto",
+          "filter" : {
+            "type" : "deviceSearchQuery",
+            "resolveMultiple" : true,
+            "rootStateEntity" : true,
+            "stateEntityParamName" : "reparto_selezionato",
+            "defaultStateEntity" : null,
+            "rootEntity" : null,
             "direction" : "FROM",
             "maxLevel" : null,
             "fetchLastLevelOnly" : false,

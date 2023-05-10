@@ -21,6 +21,10 @@
   },
   "metaData" : {
     "connections" : [ {
+      "fromIndex" : 2,
+      "toIndex" : 1,
+      "type" : "Success"
+    }, {
       "fromIndex" : 3,
       "toIndex" : 0,
       "type" : "Failure"
@@ -89,7 +93,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "if(metadata.criticalAlarmsCount==null){\n    metadata.criticalAlarmsCount=0;\n}\nif(msg.severity==\"CRITICAL\"){\n    msg.criticalAlarmsCount=metadata.criticalAlarmsCount+1;\n}\nif(msg.severity==\"MAJOR\"){\n    msg.criticalAlarmsCount=metadata.majorAlarmsCount+1;\n}\nif(msg.severity==\"MINOR\"){\n    msg.criticalAlarmsCount=metadata.minorAlarmsCount+1;\n}\nif(msg.type==\"test\"){\n    msg.infortunistici=metadata.infortunistici+1;\n}\nif(msg.type==\"test1\"){\n    msg.ig_amb=metadata.ig_amb+1;\n}\nif(msg.type==\"test2\"){\n    msg.trasversali=metadata.trasversali+1;\n}\n\n\n\nreturn {msg: msg, metadata: metadata, msgType: \"POST_TELEMETRY_REQUEST\"};"
+        "tbelScript" : "var message={};\n\nif(msg.severity==\"CRITICAL\"){\n    message.criticalAlarmsCount=parseInt(metadata.criticalAlarmsCount)+1;\n}\nif(msg.severity==\"MAJOR\"){\n    message.majorAlarmsCount=parseInt(metadata.majorAlarmsCount)+1;\n}\nif(msg.severity==\"MINOR\"){\n    message.minorAlarmsCount=parseInt(metadata.minorAlarmsCount)+1;\n}\nif(msg.type==\"test\"){\n    message.infortunistici=metadata.infortunistici+1;\n}\nif(msg.type==\"test1\"){\n    message.ig_amb=metadata.ig_amb+1;\n}\nif(msg.type==\"test2\"){\n    message.trasversali=metadata.trasversali+1;\n}\n\n\nreturn {msg: message, metadata: metadata, msgType: \"POST_TELEMETRY_REQUEST\"};"
       },
       "createdTime" : 0,
       "debugMode" : true,

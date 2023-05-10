@@ -15640,8 +15640,8 @@
           "filter" : {
             "type" : "deviceSearchQuery",
             "resolveMultiple" : true,
-            "rootStateEntity" : false,
-            "stateEntityParamName" : "Sedi",
+            "rootStateEntity" : true,
+            "stateEntityParamName" : "current_customer",
             "defaultStateEntity" : null,
             "rootEntity" : {
               "entityType" : "CUSTOMER",
@@ -15652,6 +15652,19 @@
             "fetchLastLevelOnly" : false,
             "relationType" : null,
             "deviceTypes" : [ "AA Energy", "AA Sensor", "Camera" ]
+          }
+        },
+        "bae875f6-f65d-d734-fbf6-6355f1774ed7" : {
+          "id" : "bae875f6-f65d-d734-fbf6-6355f1774ed7",
+          "alias" : "Cliente",
+          "filter" : {
+            "type" : "stateEntity",
+            "resolveMultiple" : false,
+            "stateEntityParamName" : "current_customer",
+            "defaultStateEntity" : {
+              "entityType" : "CURRENT_CUSTOMER",
+              "id" : null
+            }
           }
         }
       },

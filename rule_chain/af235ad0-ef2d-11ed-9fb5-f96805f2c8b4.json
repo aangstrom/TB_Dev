@@ -28,6 +28,14 @@
       "fromIndex" : 3,
       "toIndex" : 0,
       "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 2,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 2,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 3,
     "nodes" : [ {
@@ -75,16 +83,16 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 376,
-        "layoutY" : 227
+        "layoutX" : 448,
+        "layoutY" : 214
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "if(msg.severity==\"CRITICAL\"){\n    msg.criticalAlarmsCount=metadata.criticalAlarmsCount+1;\n}\nif(msg.severity==\"MAJOR\"){\n    msg.criticalAlarmsCount=metadata.majorAlarmsCount+1;\n}\nif(msg.severity==\"MINOR\"){\n    msg.criticalAlarmsCount=metadata.minorAlarmsCount+1;\n}\nif(msg.type==\"test\"){\n    msg.infortunistici=metadata.infortunistici+1;\n}\nif(msg.type==\"test1\"){\n    msg.ig_amb=metadata.ig_amb+1;\n}\nif(msg.type==\"test2\"){\n    msg.trasversali=metadata.trasversali+1;\n}\n\n\n\nreturn {msg: msg, metadata: metadata, msgType: \"POST_TELEMETRY_REQUEST\"};"
+        "tbelScript" : "if(metadata.criticalAlarmsCount==null){\n    metadata.criticalAlarmsCount=0;\n}\nif(msg.severity==\"CRITICAL\"){\n    msg.criticalAlarmsCount=metadata.criticalAlarmsCount+1;\n}\nif(msg.severity==\"MAJOR\"){\n    msg.criticalAlarmsCount=metadata.majorAlarmsCount+1;\n}\nif(msg.severity==\"MINOR\"){\n    msg.criticalAlarmsCount=metadata.minorAlarmsCount+1;\n}\nif(msg.type==\"test\"){\n    msg.infortunistici=metadata.infortunistici+1;\n}\nif(msg.type==\"test1\"){\n    msg.ig_amb=metadata.ig_amb+1;\n}\nif(msg.type==\"test2\"){\n    msg.trasversali=metadata.trasversali+1;\n}\n\n\n\nreturn {msg: msg, metadata: metadata, msgType: \"POST_TELEMETRY_REQUEST\"};"
       },
       "createdTime" : 0,
-      "debugMode" : false,
+      "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",

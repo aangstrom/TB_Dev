@@ -9,7 +9,7 @@
     "externalId" : null,
     "firstRuleNodeId" : {
       "entityType" : "RULE_NODE",
-      "id" : "cc92e860-ef2d-11ed-9fb5-f96805f2c8b4"
+      "id" : "174f1c90-ef31-11ed-9fb5-f96805f2c8b4"
     },
     "id" : {
       "entityType" : "RULE_CHAIN",
@@ -20,13 +20,17 @@
     "type" : "CORE"
   },
   "metaData" : {
-    "connections" : null,
-    "firstNodeIndex" : 0,
+    "connections" : [ {
+      "fromIndex" : 3,
+      "toIndex" : 0,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 3,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 377,
-        "layoutY" : 123
+        "layoutX" : 552,
+        "layoutY" : 64
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -43,6 +47,73 @@
       "name" : "Debug",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.action.TbLogNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 518,
+        "layoutY" : 371
+      },
+      "configuration" : {
+        "defaultTTL" : 31536000,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "174d95f0-ef31-11ed-9fb5-f96805f2c8b4"
+      },
+      "name" : "Save Timeseries",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 376,
+        "layoutY" : 227
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "if(msg.severity==\"CRITICAL\"){\n    msg.criticalAlarmsCount=metadata.criticalAlarmsCount+1;\n}\nif(msg.severity==\"MAJOR\"){\n    msg.criticalAlarmsCount=metadata.majorAlarmsCount+1;\n}\nif(msg.severity==\"MINOR\"){\n    msg.criticalAlarmsCount=metadata.minorAlarmsCount+1;\n}\nif(msg.type==\"test\"){\n    msg.infortunistici=metadata.infortunistici+1;\n}\nif(msg.type==\"test1\"){\n    msg.ig_amb=metadata.ig_amb+1;\n}\nif(msg.type==\"test2\"){\n    msg.trasversali=metadata.trasversali+1;\n}\n\n\n\nreturn {msg: msg, metadata: metadata, msgType: \"POST_TELEMETRY_REQUEST\"};"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "174ea760-ef31-11ed-9fb5-f96805f2c8b4"
+      },
+      "name" : "Add or remove telemetry",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 290,
+        "layoutY" : 100
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchToData" : false,
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ ],
+        "latestTsKeyNames" : [ "ig_amb", "infortunistici", "trasversali", "criticalAlarmsCount", "majorAlarmsCount", "minorAlarmsCount" ],
+        "getLatestValueWithTs" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "174f1c90-ef31-11ed-9fb5-f96805f2c8b4"
+      },
+      "name" : "Get latest alarm value",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
     } ],
     "ruleChainConnections" : null
   },

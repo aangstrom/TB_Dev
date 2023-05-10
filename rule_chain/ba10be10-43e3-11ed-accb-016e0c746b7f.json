@@ -49,19 +49,11 @@
       "type" : "RPC Request to Device"
     }, {
       "fromIndex" : 2,
-      "toIndex" : 20,
-      "type" : "Alarm Cleared"
-    }, {
-      "fromIndex" : 2,
-      "toIndex" : 21,
-      "type" : "Entity Created"
-    }, {
-      "fromIndex" : 2,
-      "toIndex" : 35,
+      "toIndex" : 32,
       "type" : "Post telemetry"
     }, {
       "fromIndex" : 2,
-      "toIndex" : 39,
+      "toIndex" : 36,
       "type" : "RPC Request to Device"
     }, {
       "fromIndex" : 6,
@@ -89,35 +81,23 @@
       "type" : "Success"
     }, {
       "fromIndex" : 9,
-      "toIndex" : 20,
-      "type" : "Alarm Cleared"
-    }, {
-      "fromIndex" : 9,
-      "toIndex" : 20,
+      "toIndex" : 33,
       "type" : "Alarm Created"
     }, {
       "fromIndex" : 9,
-      "toIndex" : 20,
-      "type" : "Alarm Severity Updated"
-    }, {
-      "fromIndex" : 9,
-      "toIndex" : 36,
-      "type" : "Alarm Created"
-    }, {
-      "fromIndex" : 9,
-      "toIndex" : 40,
+      "toIndex" : 37,
       "type" : "Alarm Cleared"
     }, {
       "fromIndex" : 9,
-      "toIndex" : 40,
+      "toIndex" : 37,
       "type" : "Alarm Created"
     }, {
       "fromIndex" : 12,
-      "toIndex" : 30,
+      "toIndex" : 27,
       "type" : "Success"
     }, {
       "fromIndex" : 13,
-      "toIndex" : 30,
+      "toIndex" : 27,
       "type" : "Success"
     }, {
       "fromIndex" : 16,
@@ -140,56 +120,40 @@
       "toIndex" : 21,
       "type" : "Success"
     }, {
-      "fromIndex" : 20,
-      "toIndex" : 35,
-      "type" : "Success"
-    }, {
       "fromIndex" : 21,
       "toIndex" : 22,
-      "type" : "True"
-    }, {
-      "fromIndex" : 22,
-      "toIndex" : 1,
       "type" : "Success"
     }, {
       "fromIndex" : 23,
-      "toIndex" : 24,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 24,
       "toIndex" : 25,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 26,
-      "toIndex" : 28,
       "type" : "energymeter"
     }, {
-      "fromIndex" : 30,
-      "toIndex" : 32,
+      "fromIndex" : 27,
+      "toIndex" : 29,
       "type" : "Success"
     }, {
-      "fromIndex" : 32,
-      "toIndex" : 31,
+      "fromIndex" : 29,
+      "toIndex" : 28,
       "type" : "Post telemetry"
     }, {
-      "fromIndex" : 32,
-      "toIndex" : 37,
+      "fromIndex" : 29,
+      "toIndex" : 34,
       "type" : "Post attributes"
     }, {
-      "fromIndex" : 33,
+      "fromIndex" : 30,
       "toIndex" : 0,
       "type" : "Success"
     }, {
-      "fromIndex" : 35,
-      "toIndex" : 33,
+      "fromIndex" : 32,
+      "toIndex" : 30,
       "type" : "Other"
     }, {
-      "fromIndex" : 35,
-      "toIndex" : 34,
+      "fromIndex" : 32,
+      "toIndex" : 31,
       "type" : "Energy"
     }, {
-      "fromIndex" : 39,
-      "toIndex" : 38,
+      "fromIndex" : 36,
+      "toIndex" : 35,
       "type" : "Relay"
     } ],
     "firstNodeIndex" : 9,
@@ -627,79 +591,6 @@
         "id" : "15e15031-c349-11ed-adcd-cbfdb5951e23"
       },
       "name" : "get weather telemetry",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 607,
-        "layoutY" : 122
-      },
-      "configuration" : {
-        "alarmsCountMappings" : [ {
-          "target" : "criticalAlarmsCount",
-          "typesList" : [ "High Temperature Alarm", "Low Temperature Alarm", "Door left open", "Door was broken", "Low Battery", "Low Liquid Level", "Motion Detected", "Prolonged occupation", "Bin is full", "Low on items", "Fire Alarm" ],
-          "severityList" : [ "CRITICAL" ],
-          "statusList" : [ "ACTIVE_UNACK", "ACTIVE_ACK" ]
-        }, {
-          "target" : "majorAlarmsCount",
-          "typesList" : [ "High Temperature Alarm", "Low Temperature Alarm", "Door left open", "Door was broken", "Low Battery", "Low Liquid Level", "Motion Detected", "Prolonged occupation", "Bin is full", "Low on items", "Fire Alarm" ],
-          "severityList" : [ "MAJOR" ],
-          "statusList" : [ "ACTIVE_UNACK", "ACTIVE_ACK" ]
-        } ],
-        "countAlarmsForPropagationEntities" : true,
-        "propagationEntityTypes" : null,
-        "queueName" : "Main",
-        "outMsgType" : "POST_TELEMETRY_REQUEST"
-      },
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "15e19e51-c349-11ed-adcd-cbfdb5951e23"
-      },
-      "name" : "Alarms Count",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.analytics.latest.alarm.TbAlarmsCountNodeV2"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 882,
-        "layoutY" : 72
-      },
-      "configuration" : {
-        "originatorTypes" : [ "DEVICE", "ASSET" ]
-      },
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "15e1c560-c349-11ed-adcd-cbfdb5951e23"
-      },
-      "name" : "isDeviceOrAsset",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.filter.TbOriginatorTypeFilterNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 1150,
-        "layoutY" : 71
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "jsScript" : "var criticalAlarmsCount = msg.criticalAlarmsCount;\nvar majorAlarmsCount = msg.majorAlarmsCount;\n\nvar state = 'normal';\n\nif (criticalAlarmsCount && Number(criticalAlarmsCount) > 0) {\n    state = 'critical';\n} else if (majorAlarmsCount && Number(majorAlarmsCount) > 0) {\n    state = 'major';\n}\n\nreturn {\n    msg: {\n        state: state\n    },\n    metadata: {\n        scope: 'SERVER_SCOPE'\n    },\n    msgType: 'POST_ATTRIBUTES_REQUEST'\n};",
-        "tbelScript" : "var criticalAlarmsCount = msg.criticalAlarmsCount;\nvar majorAlarmsCount = msg.majorAlarmsCount;\n\nvar state = 'normal';\n\nif (criticalAlarmsCount > 0) {\n    state = 'critical';\n} else if (majorAlarmsCount > 0) {\n    state = 'major';\n}\n\nreturn {\n    msg: {\n        state: state\n    },\n    metadata: {\n        scope: 'SERVER_SCOPE'\n    },\n    msgType: 'POST_ATTRIBUTES_REQUEST'\n};"
-      },
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "15e1c561-c349-11ed-adcd-cbfdb5951e23"
-      },
-      "name" : "Update state attributes",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {

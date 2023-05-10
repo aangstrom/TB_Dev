@@ -21,49 +21,12 @@
   },
   "metaData" : {
     "connections" : [ {
-      "fromIndex" : 3,
+      "fromIndex" : 1,
       "toIndex" : 0,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 3,
-      "toIndex" : 0,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 3,
-      "toIndex" : 2,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 3,
-      "toIndex" : 2,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 4,
-      "toIndex" : 1,
       "type" : "Success"
     } ],
-    "firstNodeIndex" : 4,
+    "firstNodeIndex" : 1,
     "nodes" : [ {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 595,
-        "layoutY" : 96
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);",
-        "tbelScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
-      },
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "cc92e860-ef2d-11ed-9fb5-f96805f2c8b4"
-      },
-      "name" : "Debug",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.action.TbLogNode"
-    }, {
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 518,
@@ -84,52 +47,6 @@
       "name" : "Save Timeseries",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 448,
-        "layoutY" : 214
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var message={};\nvar criticalAlarmsCount=0;\nvar majorAlarmsCount=0;\nvar minorAlarmsCount=0;\n(metadata.criticalAlarmsCount>=0 ? criticalAlarmsCount=parseInt(metadata.criticalAlarmsCount) : '');\n(metadata.majorAlarmsCount>=0 ? majorAlarmsCount=parseInt(metadata.majorAlarmsCount) : '');\n(metadata.minorAlarmsCount>=0 ? minorAlarmsCount=parseInt(metadata.minorAlarmsCount) : '');\n\nif(msg.severity==\"CRITICAL\"){\n    if(msg.status==\"ACTIVE_UNACK\"){\n        message.criticalAlarmsCount=criticalAlarmsCount+1;\n    }if(msg.status==\"CLEARED_UNACK\" || msg.status==\"CLEARED_ACK\" && criticalAlarmsCount>0){\n        message.criticalAlarmsCount=criticalAlarmsCount-1;\n    }\n}\nif(msg.severity==\"MAJOR\"){\n    if(msg.status==\"ACTIVE_UNACK\"){\n        message.majorAlarmsCount=majorAlarmsCount+1;\n    }\n    if(msg.status==\"CLEARED_UNACK\" || msg.status==\"CLEARED_ACK\" && majorAlarmsCount>0){\n        message.majorAlarmsCount=majorAlarmsCount-1;\n    }\n}\nif(msg.severity==\"MINOR\"){\n    if(msg.status==\"ACTIVE_UNACK\"){\n        message.minorAlarmsCount=minorAlarmsCount+1;\n    }\n    if(msg.status==\"CLEARED_UNACK\" || msg.status==\"CLEARED_ACK\" && minorAlarmsCount>0){\n        message.minorAlarmsCount=minorAlarmsCount-1;\n    }\n}\nif(msg.type==\"test\"){\n    message.infortunistici=metadata.infortunistici+1;\n}\nif(msg.type==\"test1\"){\n    message.ig_amb=metadata.ig_amb+1;\n}\nif(msg.type==\"test2\"){\n    message.trasversali=metadata.trasversali+1;\n}\n\n\nreturn {msg: message, metadata: metadata, msgType: \"POST_TELEMETRY_REQUEST\"};"
-      },
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "174ea760-ef31-11ed-9fb5-f96805f2c8b4"
-      },
-      "name" : "Add or remove telemetry",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 306,
-        "layoutY" : 91
-      },
-      "configuration" : {
-        "tellFailureIfAbsent" : true,
-        "fetchToData" : false,
-        "clientAttributeNames" : [ ],
-        "sharedAttributeNames" : [ ],
-        "serverAttributeNames" : [ ],
-        "latestTsKeyNames" : [ "ig_amb", "infortunistici", "trasversali", "criticalAlarmsCount", "majorAlarmsCount", "minorAlarmsCount" ],
-        "getLatestValueWithTs" : false
-      },
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "174f1c90-ef31-11ed-9fb5-f96805f2c8b4"
-      },
-      "name" : "Get latest alarm value",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
     }, {
       "additionalInfo" : {
         "description" : "",

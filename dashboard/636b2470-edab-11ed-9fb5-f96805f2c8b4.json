@@ -13317,6 +13317,82 @@
           "row" : 0,
           "col" : 0,
           "id" : "4bc1b365-96ed-8094-fc56-2f34cbd0671b"
+        },
+        "c2aa87a4-fa37-73cf-aa84-83d9f136563c" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "markdown_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 5,
+          "sizeY" : 3.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "8656bdce-ff9c-61ca-e8e6-23ce2576a60f",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "type",
+                "type" : "entityField",
+                "label" : "Type",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.7742023025037552
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1683618202394,
+                  "endTimeMs" : 1683704602394
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "useMarkdownTextFunction" : true,
+              "markdownTextFunction" : "var type;      \nif (data && data.length) {\n    type = data[0]['Type'];\n} else {\n    type = 'N/A';\n}\n             \nvar detailsStateName = getDetailsStateName(type);\n\nreturn '<div style=\"width: 100%; height: 100%;\" fxLayout=\"column\">' + \n           '<tb-dashboard-state fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"' + detailsStateName + '\"></tb-dashboard-state>' +\n       '</div>';\n\nfunction getDetailsStateName(deviceType) {\n    switch(deviceType) {\n        case 'AA Sensor':\n            return 'aa_sensor_details';\n        case 'AA Energy':\n            return 'energy_sensor_details';\n        case 'Camera':\n            return 'camera_sensor_details';\n        default:\n            return 'unknown_details';\n    }\n}      "
+            },
+            "title" : "New Markdown/HTML Card",
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "showLegend" : false,
+            "useDashboardTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "c2aa87a4-fa37-73cf-aa84-83d9f136563c"
         }
       },
       "states" : {
@@ -14401,13 +14477,23 @@
                   "sizeY" : 1,
                   "row" : 0,
                   "col" : 0
+                },
+                "c2aa87a4-fa37-73cf-aa84-83d9f136563c" : {
+                  "sizeX" : 24,
+                  "sizeY" : 10,
+                  "row" : 1,
+                  "col" : 0
                 }
               },
               "gridSettings" : {
-                "backgroundColor" : "#eeeeee",
+                "backgroundColor" : "#ffffff",
                 "columns" : 24,
-                "margin" : 10,
-                "backgroundSizeMode" : "100%"
+                "margin" : 0,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : true,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70
               }
             }
           }

@@ -130,6 +130,44 @@
       "name" : "Get latest alarm value",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 165,
+        "layoutY" : 509
+      },
+      "configuration" : {
+        "alarmsCountMappings" : [ {
+          "target" : "criticalAlarmsCount",
+          "typesList" : [ ],
+          "severityList" : [ "CRITICAL" ],
+          "statusList" : [ "ACTIVE_UNACK", "ACTIVE_ACK" ]
+        }, {
+          "target" : "majorAlarmsCount",
+          "typesList" : [ ],
+          "severityList" : [ "MAJOR" ],
+          "statusList" : [ "ACTIVE_UNACK", "ACTIVE_ACK" ]
+        }, {
+          "target" : "minorAlarmsCount",
+          "typesList" : [ ],
+          "severityList" : [ "MINOR" ],
+          "statusList" : [ "ACTIVE_UNACK", "ACTIVE_ACK" ]
+        } ],
+        "countAlarmsForPropagationEntities" : true,
+        "propagationEntityTypes" : null,
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "queueName" : "Main"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ca3f24a0-ef3e-11ed-9fb5-f96805f2c8b4"
+      },
+      "name" : "Alarms Count",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.analytics.latest.alarm.TbAlarmsCountNodeV2"
     } ],
     "ruleChainConnections" : null
   },

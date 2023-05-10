@@ -15032,6 +15032,58 @@
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
+              }, {
+                "name" : "Phase_B_power",
+                "type" : "timeseries",
+                "label" : "valore_1",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.9655228128581759,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "Phase_B_Name",
+                "type" : "attribute",
+                "label" : "nome_1",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.13529217012294859,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "Phase_C_power",
+                "type" : "timeseries",
+                "label" : "valore_2",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.3333795670591182,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "Phase_C_Name",
+                "type" : "attribute",
+                "label" : "nome_2",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.39715577025872917,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ]
             } ],
             "timewindow" : {
@@ -15063,7 +15115,7 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "cardHtml" : "<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <h1>Potenza ${name}</h1>\n            <div class='value'>\n                ${valore:2} W\n            </div>    \n        </div>\n    </div>\n</div>",
+              "cardHtml" : "<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <h1>Potenza ${name}</h1>\n            <div class='value'>\n                ${valore:2} W\n            </div>\n            <h1>Potenza ${name_1}</h1>\n            <div class='value'>\n                ${valore_1:2} W\n            </div>\n            <h1>Potenza ${name_2}</h1>\n            <div class='value'>\n                ${valore_2:2} W\n            </div>\n        </div>\n    </div>\n</div>",
               "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   background-color: #ff5722;\n}\n\n.card .content {\n   padding: 20px;\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content .column {\n   display: flex;\n   flex-direction: column;    \n   justify-content: space-around;\n   height: 100%;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    color: white;\n    opacity: 0.7;\n    font-size: 18px;\n    font-weight: bold;\n    margin: 0px;\n    padding: 0px;\n    padding-bottom: 10px;\n    line-height: 25px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 400;\n    color: white;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n"
             },
             "title" : "New HTML Value Card",
@@ -15085,198 +15137,6 @@
           "row" : 0,
           "col" : 0,
           "id" : "6924a6ff-dd4f-09bf-dda1-d0e7d2d41d8d"
-        },
-        "e7d0dbd3-75a1-1d78-9b25-b704b626dc1f" : {
-          "isSystemType" : true,
-          "bundleAlias" : "cards",
-          "typeAlias" : "html_value_card",
-          "type" : "latest",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
-          "sizeX" : 7.5,
-          "sizeY" : 3,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "8656bdce-ff9c-61ca-e8e6-23ce2576a60f",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "Phase_B_power",
-                "type" : "timeseries",
-                "label" : "valore",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 3.7011757760274655E-4,
-                "aggregationType" : "NONE",
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "Phase_B_Name",
-                "type" : "attribute",
-                "label" : "name",
-                "color" : "#4caf50",
-                "settings" : { },
-                "_hash" : 0.12568022672950652,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              } ]
-            } ],
-            "timewindow" : {
-              "displayValue" : "",
-              "selectedTab" : 0,
-              "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1683622555783,
-                  "endTimeMs" : 1683708955783
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "limit" : 25000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "cardHtml" : "<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <h1>Potenza ${name}</h1>\n            <div class='value'>\n                ${valore:2} W\n            </div>    \n        </div>\n    </div>\n</div>",
-              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   background-color: #ff5722;\n}\n\n.card .content {\n   padding: 20px;\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content .column {\n   display: flex;\n   flex-direction: column;    \n   justify-content: space-around;\n   height: 100%;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    color: white;\n    opacity: 0.7;\n    font-size: 18px;\n    font-weight: bold;\n    margin: 0px;\n    padding: 0px;\n    padding-bottom: 10px;\n    line-height: 25px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 400;\n    color: white;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n"
-            },
-            "title" : "New HTML Value Card",
-            "dropShadow" : false,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "useDashboardTimewindow" : true,
-            "showLegend" : false,
-            "actions" : { },
-            "enableDataExport" : false,
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : ""
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "e7d0dbd3-75a1-1d78-9b25-b704b626dc1f"
-        },
-        "778faeb0-33da-896a-2146-59a5739cc499" : {
-          "isSystemType" : true,
-          "bundleAlias" : "cards",
-          "typeAlias" : "html_value_card",
-          "type" : "latest",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
-          "sizeX" : 7.5,
-          "sizeY" : 3,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "8656bdce-ff9c-61ca-e8e6-23ce2576a60f",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "Phase_C_power",
-                "type" : "timeseries",
-                "label" : "valore",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 3.7011757760274655E-4,
-                "aggregationType" : "NONE",
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "Phase_C_Name",
-                "type" : "attribute",
-                "label" : "name",
-                "color" : "#4caf50",
-                "settings" : { },
-                "_hash" : 0.12568022672950652,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              } ]
-            } ],
-            "timewindow" : {
-              "displayValue" : "",
-              "selectedTab" : 0,
-              "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1683622295107,
-                  "endTimeMs" : 1683708695107
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "limit" : 25000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "cardHtml" : "<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <h1>Potenza ${name}</h1>\n            <div class='value'>\n                ${valore:2} W\n            </div>    \n        </div>\n    </div>\n</div>",
-              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   background-color: #ff5722;\n}\n\n.card .content {\n   padding: 20px;\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content .column {\n   display: flex;\n   flex-direction: column;    \n   justify-content: space-around;\n   height: 100%;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    color: white;\n    opacity: 0.7;\n    font-size: 18px;\n    font-weight: bold;\n    margin: 0px;\n    padding: 0px;\n    padding-bottom: 10px;\n    line-height: 25px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 400;\n    color: white;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n"
-            },
-            "title" : "New HTML Value Card",
-            "dropShadow" : false,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "useDashboardTimewindow" : true,
-            "showLegend" : false,
-            "actions" : { },
-            "enableDataExport" : false,
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : ""
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "778faeb0-33da-896a-2146-59a5739cc499"
         }
       },
       "states" : {
@@ -16456,20 +16316,8 @@
                 },
                 "6924a6ff-dd4f-09bf-dda1-d0e7d2d41d8d" : {
                   "sizeX" : 5,
-                  "sizeY" : 2,
+                  "sizeY" : 6,
                   "row" : 0,
-                  "col" : 0
-                },
-                "e7d0dbd3-75a1-1d78-9b25-b704b626dc1f" : {
-                  "sizeX" : 5,
-                  "sizeY" : 2,
-                  "row" : 2,
-                  "col" : 0
-                },
-                "778faeb0-33da-896a-2146-59a5739cc499" : {
-                  "sizeX" : 5,
-                  "sizeY" : 2,
-                  "row" : 4,
                   "col" : 0
                 }
               },

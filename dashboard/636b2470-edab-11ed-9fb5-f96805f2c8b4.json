@@ -13740,15 +13740,47 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "822c445e-17e6-4ce0-0a40-4f3adf13ef31",
+              "entityAliasId" : "8656bdce-ff9c-61ca-e8e6-23ce2576a60f",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "name",
+                "name" : "criticalAlarmsCount",
                 "type" : "timeseries",
-                "label" : "name",
+                "label" : "Allarmi Critici",
                 "color" : "#2196f3",
                 "settings" : { },
-                "_hash" : 0.6291663133368874
+                "_hash" : 0.9368732071128194,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : false,
+                "postFuncBody" : null
+              }, {
+                "name" : "majorAlarmsCount",
+                "type" : "timeseries",
+                "label" : "Allarmi Maggiori",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.12346454510071281,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "minorAlarmsCount",
+                "type" : "timeseries",
+                "label" : "Allarmi Minori",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.3791691741734018,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ],
               "latestDataKeys" : [ ]
             } ],
@@ -13767,7 +13799,7 @@
                 "interval" : 300000
               },
               "aggregation" : {
-                "type" : "COUNT",
+                "type" : "SUM",
                 "limit" : 200
               }
             },

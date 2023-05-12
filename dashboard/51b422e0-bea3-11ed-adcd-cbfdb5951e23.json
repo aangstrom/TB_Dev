@@ -1718,7 +1718,7 @@
               "initialValue" : true,
               "retrieveValueMethod" : "attribute",
               "valueKey" : "relay",
-              "parseValueFunction" : "if(data=='on'){\n    return true;\n}\nif(data=='off'){\n    return false;\n}",
+              "parseValueFunction" : "return data ? true : false;\r\n",
               "setValueMethod" : "relay",
               "convertValueFunction" : "return value;",
               "requestTimeout" : 500,

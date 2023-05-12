@@ -5,7 +5,10 @@
     "configuration" : null,
     "debugMode" : false,
     "externalId" : null,
-    "firstRuleNodeId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "73359670-f0fc-11ed-9a4b-e3fd271b8b84"
+    },
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "72fb4c90-f0fc-11ed-9a4b-e3fd271b8b84"
@@ -15,9 +18,159 @@
     "type" : "CORE"
   },
   "metaData" : {
-    "connections" : null,
-    "firstNodeIndex" : null,
-    "nodes" : [ ],
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 1,
+      "type" : "True"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 5,
+      "type" : "False"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 3,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 0,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 350,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "latestTsKeyNames" : [ "temperature" ],
+        "aggregation" : null,
+        "fetchMode" : "LAST",
+        "orderBy" : null,
+        "limit" : null,
+        "useMetadataIntervalPatterns" : null,
+        "startInterval" : 24,
+        "startIntervalTimeUnit" : "HOURS",
+        "endInterval" : 5,
+        "endIntervalTimeUnit" : "MINUTES",
+        "startIntervalPattern" : "24h",
+        "endIntervalPattern" : "5m"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "73359670-f0fc-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Latest five-minute old record",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetTelemetryNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1116,
+        "layoutY" : 250
+      },
+      "configuration" : {
+        "alarmType" : "General Alarm",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+        "severity" : "CRITICAL",
+        "propagate" : true
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "733b62d0-f0fc-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Create alarm",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 661,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\n\nnewMsg.deltaTemperature = parseFloat(Math.abs(msg.temperature - JSON.parse(metadata.temperature)).toFixed(2));\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "733bd800-f0fc-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Calculate delta",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 825,
+        "layoutY" : 301
+      },
+      "configuration" : {
+        "jsScript" : "return msg.deltaTemperature > 5;"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "733c4d30-f0fc-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "validate delta",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 954,
+        "layoutY" : 151
+      },
+      "configuration" : {
+        "defaultTTL" : 0
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "733d1080-f0fc-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Save Timeseries",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1115,
+        "layoutY" : 351
+      },
+      "configuration" : {
+        "alarmType" : "General Alarm",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "733dacc0-f0fc-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Clear alarm",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbClearAlarmNode"
+    } ],
     "ruleChainConnections" : null
   },
   "relations" : [ ],

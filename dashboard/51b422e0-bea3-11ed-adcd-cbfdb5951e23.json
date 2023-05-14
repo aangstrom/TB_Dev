@@ -1750,6 +1750,59 @@
           "row" : 0,
           "col" : 0,
           "id" : "cb25af70-40af-7d0e-afa0-c88e3cc74f30"
+        },
+        "14f829da-1dbd-a75d-763c-fcd02df44eeb" : {
+          "isSystemType" : true,
+          "bundleAlias" : "control_widgets",
+          "typeAlias" : "switch_control",
+          "type" : "rpc",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 4,
+          "sizeY" : 2.5,
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : false,
+            "backgroundColor" : "#e6e7e8",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "title" : "Switch Frigo",
+              "showOnOffLabels" : true,
+              "initialValue" : true,
+              "retrieveValueMethod" : "rpc",
+              "getValueMethod" : "shellies/shellyplug-s-80646F8201FA/relay/0",
+              "parseValueFunction" : "return data ? true : false;\r\n",
+              "setValueMethod" : "relay",
+              "convertValueFunction" : "return value;",
+              "requestTimeout" : 500,
+              "requestPersistent" : false
+            },
+            "title" : "Frigorifero",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 2,
+            "datasources" : [ ],
+            "targetDeviceAliasIds" : [ "83ac32b6-dab4-3338-a297-75ab5e416b6b" ],
+            "enableDataExport" : true,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showTitleIcon" : false,
+            "titleTooltip" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "14f829da-1dbd-a75d-763c-fcd02df44eeb"
         }
       },
       "states" : {
@@ -1860,6 +1913,12 @@
                   "sizeY" : 2,
                   "row" : 8,
                   "col" : 14
+                },
+                "14f829da-1dbd-a75d-763c-fcd02df44eeb" : {
+                  "sizeX" : 4,
+                  "sizeY" : 2,
+                  "row" : 11,
+                  "col" : 16
                 }
               },
               "gridSettings" : {
@@ -1870,7 +1929,8 @@
                 "autoFillHeight" : false,
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70
+                "mobileRowHeight" : 70,
+                "outerMargin" : true
               }
             }
           }
@@ -1892,7 +1952,8 @@
                 "backgroundColor" : "#eeeeee",
                 "columns" : 24,
                 "margin" : 10,
-                "backgroundSizeMode" : "100%"
+                "backgroundSizeMode" : "100%",
+                "outerMargin" : true
               }
             }
           }
@@ -1940,6 +2001,18 @@
         "e9a20706-59b8-4f64-b15a-cbb87a921f41" : {
           "id" : "e9a20706-59b8-4f64-b15a-cbb87a921f41",
           "alias" : "Test",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "5a095a00-a891-11ed-bcb8-7f48a6e846b2"
+            }
+          }
+        },
+        "83ac32b6-dab4-3338-a297-75ab5e416b6b" : {
+          "id" : "83ac32b6-dab4-3338-a297-75ab5e416b6b",
+          "alias" : "Frigo",
           "filter" : {
             "type" : "singleEntity",
             "resolveMultiple" : false,

@@ -1772,12 +1772,14 @@
               "showOnOffLabels" : true,
               "initialValue" : true,
               "retrieveValueMethod" : "rpc",
+              "valueKey" : "value",
               "getValueMethod" : "shellies/shellyplug-s-80646F8201FA/relay/0",
               "parseValueFunction" : "return data ? true : false;\r\n",
-              "setValueMethod" : "relay",
+              "setValueMethod" : "shellies/shellyplug-s-80646F8201FA/relay/0/command",
               "convertValueFunction" : "return value;",
-              "requestTimeout" : 500,
-              "requestPersistent" : false
+              "requestTimeout" : 2000,
+              "requestPersistent" : false,
+              "persistentPollingInterval" : 5000
             },
             "title" : "Frigorifero",
             "dropShadow" : true,

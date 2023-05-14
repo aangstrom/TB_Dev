@@ -1751,7 +1751,7 @@
           "col" : 0,
           "id" : "cb25af70-40af-7d0e-afa0-c88e3cc74f30"
         },
-        "14f829da-1dbd-a75d-763c-fcd02df44eeb" : {
+        "a3cd3e11-2c48-7a05-ce7a-82dd654d9989" : {
           "isSystemType" : true,
           "bundleAlias" : "control_widgets",
           "typeAlias" : "switch_control",
@@ -1768,20 +1768,20 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "title" : "Switch Frigo",
+              "title" : "Switch control",
               "showOnOffLabels" : true,
               "initialValue" : true,
-              "retrieveValueMethod" : "rpc",
-              "valueKey" : "value",
-              "getValueMethod" : "shellies/shellyplug-s-80646F8201FA/relay/0",
+              "retrieveValueMethod" : "attribute",
+              "valueKey" : "relay",
+              "getValueMethod" : "getValue",
               "parseValueFunction" : "return data ? true : false;\r\n",
-              "setValueMethod" : "shellies/shellyplug-s-80646F8201FA/relay/0/command",
+              "setValueMethod" : "relay",
               "convertValueFunction" : "return value;",
-              "requestTimeout" : 2000,
+              "requestTimeout" : 500,
               "requestPersistent" : false,
               "persistentPollingInterval" : 5000
             },
-            "title" : "Frigorifero",
+            "title" : "Shelly plug casa",
             "dropShadow" : true,
             "enableFullscreen" : false,
             "widgetStyle" : { },
@@ -1804,7 +1804,7 @@
           },
           "row" : 0,
           "col" : 0,
-          "id" : "14f829da-1dbd-a75d-763c-fcd02df44eeb"
+          "id" : "a3cd3e11-2c48-7a05-ce7a-82dd654d9989"
         }
       },
       "states" : {
@@ -1916,11 +1916,11 @@
                   "row" : 8,
                   "col" : 14
                 },
-                "14f829da-1dbd-a75d-763c-fcd02df44eeb" : {
+                "a3cd3e11-2c48-7a05-ce7a-82dd654d9989" : {
                   "sizeX" : 4,
                   "sizeY" : 2,
-                  "row" : 11,
-                  "col" : 16
+                  "row" : 10,
+                  "col" : 18
                 }
               },
               "gridSettings" : {

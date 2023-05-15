@@ -56,14 +56,6 @@
       "toIndex" : 36,
       "type" : "RPC Request to Device"
     }, {
-      "fromIndex" : 2,
-      "toIndex" : 41,
-      "type" : "RPC Request to Device"
-    }, {
-      "fromIndex" : 3,
-      "toIndex" : 41,
-      "type" : "Success"
-    }, {
       "fromIndex" : 6,
       "toIndex" : 2,
       "type" : "False"
@@ -172,6 +164,10 @@
       "toIndex" : 35,
       "type" : "Relay"
     }, {
+      "fromIndex" : 36,
+      "toIndex" : 40,
+      "type" : "getRelay"
+    }, {
       "fromIndex" : 38,
       "toIndex" : 9,
       "type" : "Success"
@@ -179,10 +175,6 @@
       "fromIndex" : 40,
       "toIndex" : 39,
       "type" : "Success"
-    }, {
-      "fromIndex" : 41,
-      "toIndex" : 40,
-      "type" : "Relay"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -1000,8 +992,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1225,
-        "layoutY" : 698
+        "layoutX" : 1501,
+        "layoutY" : 626
       },
       "configuration" : {
         "integrationId" : "8ab421c0-a87e-11ed-bcb8-7f48a6e846b2"
@@ -1026,7 +1018,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(msg.method==\"relay\"){\n    return ['Relay'];\n}\nelse{\n    return ['Other'];\n}\nreturn nextRelation(metadata, msg);"
+        "tbelScript" : "if(msg.method==\"relay\"){\n    return ['Relay'];\n}else if(msg.method==\"getRelay\"){\n    return ['getRelay'];\n}else{\n    return ['Other'];\n}\nreturn nextRelation(metadata, msg);"
       },
       "createdTime" : 0,
       "debugMode" : false,
@@ -1088,8 +1080,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 928,
-        "layoutY" : 556
+        "layoutX" : 1224,
+        "layoutY" : 776
       },
       "configuration" : {
         "requestIdMetaDataAttribute" : "relay"
@@ -1108,8 +1100,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 673,
-        "layoutY" : 571
+        "layoutX" : 1225,
+        "layoutY" : 703
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -1131,28 +1123,6 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 807,
-        "layoutY" : 482
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(msg.method==\"getRelay\"){\n    return ['Relay'];\n}\nelse{\n    return ['Other'];\n}\nreturn nextRelation(metadata, msg);"
-      },
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "398e85c0-f323-11ed-9a4b-e3fd271b8b84"
-      },
-      "name" : "If relay change",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     } ],
     "ruleChainConnections" : null
   },

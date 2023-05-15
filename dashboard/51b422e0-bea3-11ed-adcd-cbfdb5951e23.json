@@ -1965,7 +1965,7 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "ledColor" : "#FFE236",
+              "ledColor" : "#FF0000",
               "initialValue" : true,
               "performCheckStatus" : false,
               "retrieveValueMethod" : "attribute",
@@ -2081,6 +2081,84 @@
           "row" : 0,
           "col" : 0,
           "id" : "16c7bbcd-ee8e-ae8f-5158-5b79fbd65f85"
+        },
+        "8eacb938-50ca-ecee-ff62-e89499802c3b" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "pie_chart_js",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "4be71500-50ec-fdb3-179e-eb616c96e72b",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "Phase_A_power",
+                "type" : "timeseries",
+                "label" : "Phase_A_power",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.24940000733649303
+              }, {
+                "name" : "Phase_B_power",
+                "type" : "timeseries",
+                "label" : "Phase_B_power",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.731507362433927
+              }, {
+                "name" : "Phase_C_power",
+                "type" : "timeseries",
+                "label" : "Phase_C_power",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.11333749958535244
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1684058120079,
+                  "endTimeMs" : 1684144520079
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : { },
+            "title" : "New Pie - Chart.js",
+            "useDashboardTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "8eacb938-50ca-ecee-ff62-e89499802c3b"
         }
       },
       "states" : {
@@ -2233,6 +2311,12 @@
                   "sizeY" : 2,
                   "row" : 13,
                   "col" : 20
+                },
+                "8eacb938-50ca-ecee-ff62-e89499802c3b" : {
+                  "sizeX" : 8,
+                  "sizeY" : 5,
+                  "row" : 37,
+                  "col" : 0
                 }
               },
               "gridSettings" : {

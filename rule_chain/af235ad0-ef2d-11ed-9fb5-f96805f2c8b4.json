@@ -9,7 +9,7 @@
     "externalId" : null,
     "firstRuleNodeId" : {
       "entityType" : "RULE_NODE",
-      "id" : "ca3f24a0-ef3e-11ed-9fb5-f96805f2c8b4"
+      "id" : "7b058a10-f32a-11ed-9a4b-e3fd271b8b84"
     },
     "id" : {
       "entityType" : "RULE_CHAIN",
@@ -25,16 +25,20 @@
       "toIndex" : 0,
       "type" : "Success"
     }, {
-      "fromIndex" : 1,
+      "fromIndex" : 3,
+      "toIndex" : 1,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 3,
       "toIndex" : 2,
       "type" : "Success"
     } ],
-    "firstNodeIndex" : 1,
+    "firstNodeIndex" : 3,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 518,
-        "layoutY" : 371
+        "layoutX" : 299,
+        "layoutY" : 308
       },
       "configuration" : {
         "defaultTTL" : 31536000,
@@ -50,12 +54,13 @@
       },
       "name" : "Save Timeseries",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 321,
-        "layoutY" : 278
+        "layoutX" : 301,
+        "layoutY" : 230
       },
       "configuration" : {
         "alarmsCountMappings" : [ {
@@ -88,12 +93,13 @@
       },
       "name" : "Alarms Count",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.latest.alarm.TbAlarmsCountNodeV2"
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 571,
-        "layoutY" : 165
+        "layoutX" : 642,
+        "layoutY" : 117
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -101,7 +107,7 @@
         "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "createdTime" : 0,
-      "debugMode" : false,
+      "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -109,7 +115,30 @@
       },
       "name" : "Test",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 307,
+        "layoutY" : 128
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if(msg.testamentonatale == true) {\n    return ['error'];\n}else{\n    return ['Success'];\n}\n\nreturn nextRelation(metadata, msg);"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "7b058a10-f32a-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Duplicate",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     } ],
     "ruleChainConnections" : null
   },

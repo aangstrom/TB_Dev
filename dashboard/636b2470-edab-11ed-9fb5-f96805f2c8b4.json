@@ -11645,7 +11645,7 @@
                 "type" : "updateDashboardState",
                 "targetDashboardStateId" : "sensore",
                 "setEntityId" : true,
-                "stateEntityParamName" : null,
+                "stateEntityParamName" : "selectedDevice",
                 "openRightLayout" : false,
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
@@ -15594,7 +15594,17 @@
                 "color" : "#795548",
                 "settings" : { },
                 "_hash" : 0.08115127502681951
-              } ]
+              }, {
+                "name" : "label",
+                "type" : "entityField",
+                "label" : "Label",
+                "color" : "#00bcd4",
+                "settings" : { },
+                "_hash" : 0.7825772818716952
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
             } ],
             "timewindow" : {
               "displayValue" : "",
@@ -15655,7 +15665,7 @@
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
                 "type" : "custom",
-                "customFunction" : "const targetElement = $($event.target).closest('#settings', widgetContext.$container[0]);\n\nvar type = decodeURIComponent($(targetElement).attr('data-device-type'));\n\nvar stateId = getSettingsState(type);\n\nvar params = {\n    selectedDevice: {\n        entityId: entityId,\n        entityName: entityName,\n        entityLabel: entityLabel,\n    },\n    targetEntityParamName: 'selectedDevice'\n};\n\nwidgetContext.actionsApi.openDashboardStateInPopover($event, stateId, params, true, 'bottomRight', true, '400px', getSettingsHeight(type));\n\nfunction getSettingsState(type) {\n    switch (type) {\n        case 'AA Sensor':\n            return 'sound_sensor_settings';\n        case 'shelly3em':            \n            return 'energy_settings';\n        case 'Caldaia':            \n            return 'caldaia_settings';\n        case 'Chiller':            \n            return 'chiller_settings';                      \n        case 'Smart Bin':\n            return 'smart_bin_settings';          \n        case 'Door Sensor':\n            return 'door_settings';\n        case 'Liquid Level Sensor':\n            return 'liquid_sensor_settings';\n        case 'Motion Sensor':\n            return 'motion_sensor_settings';\n        case 'Occupancy Sensor':\n            return 'occupancy_sensor_settings';\n        case 'Smoke Sensor':\n            return 'smoke_sensor_settings';\n        default:\n            return 'unknown_settings';\n    }\n}\n\nfunction getSettingsHeight(type) {\n    switch (type) {\n        case 'AA Sensor':\n            return '600px';\n        case 'shelly3em':            \n            return '500px';\n        case 'Caldaia':            \n            return '200px';\n        case 'Smart Shelf':\n            return '280px';\n        case 'Freezer':            \n            return '420px';\n        case 'Chiller':            \n            return '420px';                  \n        case 'Smart Bin':\n            return '420px';                  \n        case 'Door Sensor':\n            return '420px';\n        case 'Liquid Level Sensor':\n            return '420px';\n        case 'Motion Sensor':\n            return '280px';\n        case 'Occupancy Sensor':\n            return '420px';\n        case 'Smoke Sensor':\n            return '280px';\n        default:\n            return '35vh';\n    }\n}\n",
+                "customFunction" : "const targetElement = $($event.target).closest('#settings', widgetContext.$container[0]);\n\nvar type = decodeURIComponent($(targetElement).attr('data-device-type'));\n\nvar stateId = getSettingsState(type);\n\nvar params = {\n    Entità_dashboard: {\n        entityId: entityId,\n        entityName: entityName,\n        entityLabel: entityLabel,\n    },\n    targetEntityParamName: 'Entità_dashboard'\n};\n\nwidgetContext.actionsApi.openDashboardStateInPopover($event, stateId, params, true, 'bottomRight', true, '400px', getSettingsHeight(type));\n\nfunction getSettingsState(type) {\n    switch (type) {\n        case 'AA Sensor':\n            return 'sound_sensor_settings';\n        case 'shelly3em':            \n            return 'energy_settings';\n        case 'Caldaia':            \n            return 'caldaia_settings';\n        case 'Chiller':            \n            return 'chiller_settings';                      \n        case 'Smart Bin':\n            return 'smart_bin_settings';          \n        case 'Door Sensor':\n            return 'door_settings';\n        case 'Liquid Level Sensor':\n            return 'liquid_sensor_settings';\n        case 'Motion Sensor':\n            return 'motion_sensor_settings';\n        case 'Occupancy Sensor':\n            return 'occupancy_sensor_settings';\n        case 'Smoke Sensor':\n            return 'smoke_sensor_settings';\n        default:\n            return 'unknown_settings';\n    }\n}\n\nfunction getSettingsHeight(type) {\n    switch (type) {\n        case 'AA Sensor':\n            return '600px';\n        case 'shelly3em':            \n            return '500px';\n        case 'Caldaia':            \n            return '200px';\n        case 'Smart Shelf':\n            return '280px';\n        case 'Freezer':            \n            return '420px';\n        case 'Chiller':            \n            return '420px';                  \n        case 'Smart Bin':\n            return '420px';                  \n        case 'Door Sensor':\n            return '420px';\n        case 'Liquid Level Sensor':\n            return '420px';\n        case 'Motion Sensor':\n            return '280px';\n        case 'Occupancy Sensor':\n            return '420px';\n        case 'Smoke Sensor':\n            return '280px';\n        default:\n            return '35vh';\n    }\n}\n",
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
                 "id" : "865e24a9-df26-c1cd-f88c-5a4c6c244de6"
@@ -16242,7 +16252,7 @@
           "col" : 0,
           "id" : "6e89f734-f9d4-0b37-4205-0c9517736bd3"
         },
-        "d05f6be7-65e1-1870-1065-7d5958396ef6" : {
+        "2135ef1e-4240-1047-3cdd-d70d7a78a848" : {
           "isSystemType" : true,
           "bundleAlias" : "input_widgets",
           "typeAlias" : "update_multiple_attributes",
@@ -16254,7 +16264,7 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "8656bdce-ff9c-61ca-e8e6-23ce2576a60f",
+              "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
               "filterId" : null,
               "dataKeys" : [ {
                 "name" : "name",
@@ -16734,10 +16744,7 @@
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
-              } ],
-              "alarmFilterConfig" : {
-                "statusList" : [ "ACTIVE" ]
-              }
+              } ]
             } ],
             "timewindow" : {
               "displayValue" : "",
@@ -16802,7 +16809,7 @@
             "noDataDisplayMessage" : "Nessun sensore presente",
             "margin" : "0px"
           },
-          "id" : "d05f6be7-65e1-1870-1065-7d5958396ef6"
+          "id" : "2135ef1e-4240-1047-3cdd-d70d7a78a848"
         }
       },
       "states" : {
@@ -18146,7 +18153,7 @@
           "layouts" : {
             "main" : {
               "widgets" : {
-                "d05f6be7-65e1-1870-1065-7d5958396ef6" : {
+                "2135ef1e-4240-1047-3cdd-d70d7a78a848" : {
                   "sizeX" : 24,
                   "sizeY" : 18,
                   "row" : 0,
@@ -18330,6 +18337,16 @@
             "fetchLastLevelOnly" : false,
             "relationType" : "Contains",
             "deviceTypes" : [ "AA Energy", "AA Sensor", "Camera" ]
+          }
+        },
+        "84beb002-f654-4c52-c4eb-3303e726b3aa" : {
+          "id" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
+          "alias" : "Selected device",
+          "filter" : {
+            "type" : "stateEntity",
+            "resolveMultiple" : false,
+            "stateEntityParamName" : "selectedDevice",
+            "defaultStateEntity" : null
           }
         }
       },

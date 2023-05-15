@@ -7353,7 +7353,17 @@
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
-              } ]
+              }, {
+                "name" : "criticalAlarmsCount",
+                "type" : "timeseries",
+                "label" : "criticalAlarmsCount",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.4550885051049127
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
             } ],
             "displayTimewindow" : true,
             "showTitleIcon" : false,
@@ -16803,6 +16813,7 @@
               }
             } ],
             "timewindow" : {
+              "displayValue" : "",
               "hideInterval" : false,
               "hideLastInterval" : false,
               "hideQuickInterval" : false,
@@ -16812,9 +16823,19 @@
               "selectedTab" : 0,
               "realtime" : {
                 "realtimeType" : 1,
+                "interval" : 1000,
                 "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY",
-                "interval" : 1000
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1684075776029,
+                  "endTimeMs" : 1684162176029
+                },
+                "quickInterval" : "CURRENT_DAY"
               },
               "aggregation" : {
                 "type" : "AVG",

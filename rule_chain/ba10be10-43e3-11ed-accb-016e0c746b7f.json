@@ -56,6 +56,10 @@
       "toIndex" : 36,
       "type" : "RPC Request to Device"
     }, {
+      "fromIndex" : 3,
+      "toIndex" : 41,
+      "type" : "Success"
+    }, {
       "fromIndex" : 6,
       "toIndex" : 2,
       "type" : "False"
@@ -167,6 +171,14 @@
       "fromIndex" : 38,
       "toIndex" : 9,
       "type" : "Success"
+    }, {
+      "fromIndex" : 40,
+      "toIndex" : 39,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 41,
+      "toIndex" : 40,
+      "type" : "Relay"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -231,6 +243,7 @@
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
     }, {
       "additionalInfo" : {
+        "description" : null,
         "layoutX" : 1217,
         "layoutY" : 349
       },
@@ -238,7 +251,7 @@
         "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
       },
       "createdTime" : 0,
-      "debugMode" : false,
+      "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -1071,8 +1084,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 770,
-        "layoutY" : 554
+        "layoutX" : 928,
+        "layoutY" : 556
       },
       "configuration" : {
         "requestIdMetaDataAttribute" : "relay"
@@ -1088,6 +1101,54 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.rpc.TbSendRPCReplyNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 673,
+        "layoutY" : 571
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchToData" : false,
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ "relay" ],
+        "serverAttributeNames" : [ ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "398e1090-f323-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Get Relay Value",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 807,
+        "layoutY" : 482
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if(msg.method==\"getRelay\"){\n    return ['Relay'];\n}\nelse{\n    return ['Other'];\n}\nreturn nextRelation(metadata, msg);"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "398e85c0-f323-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "If relay change",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     } ],
     "ruleChainConnections" : null
   },

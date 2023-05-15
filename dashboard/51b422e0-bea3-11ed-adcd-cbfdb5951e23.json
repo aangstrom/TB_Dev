@@ -1716,15 +1716,13 @@
               "title" : "Switch control",
               "showOnOffLabels" : true,
               "initialValue" : true,
-              "retrieveValueMethod" : "attribute",
-              "valueKey" : "relay",
-              "getValueMethod" : "getValue",
+              "retrieveValueMethod" : "rpc",
+              "getValueMethod" : "getRelay",
               "parseValueFunction" : "return data ? true : false;\r\n",
               "setValueMethod" : "relay",
               "convertValueFunction" : "return value;",
               "requestTimeout" : 500,
-              "requestPersistent" : false,
-              "persistentPollingInterval" : 5000
+              "requestPersistent" : false
             },
             "title" : "Shelly plug casa",
             "dropShadow" : true,

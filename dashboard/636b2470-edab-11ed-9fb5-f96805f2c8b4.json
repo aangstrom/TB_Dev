@@ -16783,34 +16783,44 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null,
                 "comparisonEnabled" : null
+              }, {
+                "name" : "alarmDurationSound",
+                "type" : "timeseries",
+                "label" : "Durata Allarmi",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.19181031311859487,
+                "aggregationType" : "SUM",
+                "units" : "m",
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "return value/60;",
+                "comparisonEnabled" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
               }
             } ],
             "timewindow" : {
-              "displayValue" : "",
+              "hideInterval" : false,
+              "hideLastInterval" : false,
+              "hideQuickInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
               "selectedTab" : 0,
               "realtime" : {
                 "realtimeType" : 1,
-                "interval" : 1000,
                 "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1684070789184,
-                  "endTimeMs" : 1684157189184
-                },
-                "quickInterval" : "CURRENT_DAY"
+                "quickInterval" : "CURRENT_DAY",
+                "interval" : 1000
               },
               "aggregation" : {
                 "type" : "AVG",
                 "limit" : 25000
-              }
+              },
+              "timezone" : null
             },
             "showTitle" : true,
             "backgroundColor" : "#fff",

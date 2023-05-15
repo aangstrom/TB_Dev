@@ -183,6 +183,7 @@
       },
       "name" : "isDeviceOrAsset",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbOriginatorTypeFilterNode"
     }, {
       "additionalInfo" : {
@@ -196,7 +197,7 @@
         "tbelScript" : "var criticalAlarmsCount = msg.criticalAlarmsCount;\nvar majorAlarmsCount = msg.majorAlarmsCount;\n\nvar state = 'normal';\n\nif (criticalAlarmsCount!=null && criticalAlarmsCount > 0) {\n    state = 'critical';\n} else if (majorAlarmsCount!=null && majorAlarmsCount > 0) {\n    state = 'major';\n}\n\nreturn {\n    msg: {\n        state: state\n    },\n    metadata: {\n        scope: 'SERVER_SCOPE'\n    },\n    msgType: 'POST_ATTRIBUTES_REQUEST'\n};"
       },
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -204,6 +205,7 @@
       },
       "name" : "Update state attributes",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
@@ -237,6 +239,7 @@
       },
       "name" : "Alarms Count",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.latest.alarm.TbAlarmsCountNodeV2"
     }, {
       "additionalInfo" : {
@@ -250,7 +253,7 @@
         "useServerTs" : null
       },
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -258,6 +261,7 @@
       },
       "name" : "Save Timeseries",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
     }, {
       "additionalInfo" : {
@@ -276,6 +280,7 @@
       },
       "name" : "Save Client Attributes",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
     }, {
       "additionalInfo" : {
@@ -295,6 +300,7 @@
       },
       "name" : "Message Type Switch",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
     }, {
       "additionalInfo" : {
@@ -313,6 +319,7 @@
       },
       "name" : "Log RPC from Device",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.action.TbLogNode"
     }, {
       "additionalInfo" : {
@@ -331,6 +338,7 @@
       },
       "name" : "Log Other",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.action.TbLogNode"
     }, {
       "additionalInfo" : {
@@ -349,6 +357,7 @@
       },
       "name" : "RPC Call Request",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.rpc.TbSendRPCRequestNode"
     }, {
       "additionalInfo" : {
@@ -369,12 +378,13 @@
       },
       "name" : "Device Profile Node",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.profile.TbDeviceProfileNode"
     }, {
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 64,
-        "layoutY" : 816
+        "layoutY" : 821
       },
       "configuration" : {
         "msgCount" : 0,
@@ -394,12 +404,13 @@
       },
       "name" : "Door Sensor 3456",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 67,
-        "layoutY" : 1077
+        "layoutX" : 66,
+        "layoutY" : 1082
       },
       "configuration" : {
         "msgCount" : 0,
@@ -419,6 +430,7 @@
       },
       "name" : "Smart Shelf 89546",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
@@ -444,6 +456,7 @@
       },
       "name" : "Chiller 378876",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
@@ -469,6 +482,7 @@
       },
       "name" : "Freezer 67478",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
@@ -494,12 +508,13 @@
       },
       "name" : "Door Sensor 4534",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 66,
-        "layoutY" : 685
+        "layoutX" : 64,
+        "layoutY" : 683
       },
       "configuration" : {
         "msgCount" : 0,
@@ -519,6 +534,7 @@
       },
       "name" : "Door Sensor 1",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
@@ -528,7 +544,7 @@
       },
       "configuration" : {
         "msgCount" : 0,
-        "periodInSeconds" : 10,
+        "periodInSeconds" : 300,
         "scriptLang" : "TBEL",
         "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar open;\nswitch(hour) {\n  case 8:\n    open = Math.random() < 0.1;\n    break;\n  case 9:\n    open = Math.random() < 0.1;\n    break;\n  case 10:\n    open = Math.random() < 0.1;\n    break;\n  case 11:\n    open = Math.random() < 0.2;\n    break;\n  case 12:\n    open = Math.random() < 0.5;\n    break;\n  case 13:\n    open = Math.random() < 0.5;\n    break;\n  case 14:\n    open = Math.random() < 0.3;\n    break;\n  case 15:\n    open = Math.random() < 0.1;\n    break;\n  case 16:\n    open = Math.random() < 0.1;\n    break;\n  case 17:\n    open = Math.random() < 0.1;\n    break;\n  case 18:\n    open = Math.random() < 0.5;\n    break;\n  default:\n    open=false;\n}\nvar msg = { open: open };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var hour = new Date().getHours();\nvar open;\nif(hour==8||hour==9||hour==10||hour==15||hour==16||hour==17){\n    open = Math.random() < 0.1;\n}else if(hour==11){\n    open = Math.random() < 0.2;\n}else if(hour==14){\n    open = Math.random() < 0.3;\n}else if(hour==12||hour==13||hour==18){\n    open = Math.random() < 0.5;\n}else{\n    open = false;\n}\nvar msg = { open: open };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
@@ -544,6 +560,7 @@
       },
       "name" : "Door Sensor 2",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
@@ -553,7 +570,7 @@
       },
       "configuration" : {
         "msgCount" : 0,
-        "periodInSeconds" : 10,
+        "periodInSeconds" : 300,
         "scriptLang" : "TBEL",
         "jsScript" : "var d = new Date();\nvar hour = d.getHours();\nvar open;\nswitch(hour) {\n  case 8:\n    open = Math.random() < 0.3;\n    break;\n  case 9:\n    open = Math.random() < 0.5;\n    break;\n  case 10:\n    open = Math.random() < 0.7;\n    break;\n  case 11:\n    open = Math.random() < 0.8;\n    break;\n  case 12:\n    open = Math.random() < 0.7;\n    break;\n  case 13:\n    open = Math.random() < 0.5;\n    break;\n  case 14:\n    open = Math.random() < 0.4;\n    break;\n  case 15:\n    open = Math.random() < 0.6;\n    break;\n  case 16:\n    open = Math.random() < 0.8;\n    break;\n  case 17:\n    open = Math.random() < 0.8;\n    break;\n  case 18:\n    open = Math.random() < 0.8;\n    break;\n  default:\n    open=false;\n}\nvar msg = { open: open };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var hour = new Date().getHours();\r\nvar open;\r\nif(hour==11||hour==16||hour==17||hour==18){\r\n    open = Math.random() < 0.8;\r\n}else if(hour==9||hour==13){\r\n    open = Math.random() < 0.5;\r\n}else if(hour==10||hour==12){\r\n    open = Math.random() < 0.7;\r\n}else if(hour==15){\r\n    open = Math.random() < 0.6;\r\n}else if(hour==14){\r\n    open = Math.random() < 0.4;\r\n}else if(hour==8){\r\n    open = Math.random() < 0.3;\r\n}else{\r\n    open = false;\r\n}\r\nvar msg = { open: open };\r\nvar metadata = {};\r\nvar msgType = \"POST_TELEMETRY_REQUEST\";\r\n\r\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
@@ -569,6 +586,7 @@
       },
       "name" : "Door Sensor 3",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
@@ -594,12 +612,13 @@
       },
       "name" : "Chiller 65644",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 64,
-        "layoutY" : 513
+        "layoutY" : 507
       },
       "configuration" : {
         "msgCount" : 0,
@@ -619,12 +638,13 @@
       },
       "name" : "Chiller 3",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 65,
-        "layoutY" : 948
+        "layoutX" : 66,
+        "layoutY" : 953
       },
       "configuration" : {
         "msgCount" : 0,
@@ -644,6 +664,7 @@
       },
       "name" : "Freezer 43545",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
@@ -653,7 +674,7 @@
       },
       "configuration" : {
         "msgCount" : 0,
-        "periodInSeconds" : 10,
+        "periodInSeconds" : 300,
         "scriptLang" : "TBEL",
         "jsScript" : "var temp=-19.2;\nvar temperature = (temp + Math.random() * (-0.5 - 0) + 0).toFixed(2);\nvar msg = { temperature: temperature };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var temp=19.2;\nvar temperature = toFixed((temp + Math.random() * (0.5 - 0) + 0),2)*-1;\nvar msg = { temperature: temperature };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
@@ -669,6 +690,7 @@
       },
       "name" : "Freezer 1",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
@@ -694,6 +716,7 @@
       },
       "name" : "Smart Shelf 557322",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
@@ -719,12 +742,13 @@
       },
       "name" : "Smart Shelf 457321",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 66,
-        "layoutY" : 1120
+        "layoutY" : 1131
       },
       "configuration" : {
         "msgCount" : 0,
@@ -744,6 +768,7 @@
       },
       "name" : "Smart Shelf 765765",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
@@ -764,6 +789,7 @@
       },
       "name" : "Device Profile Node",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.profile.TbDeviceProfileNode"
     }, {
       "additionalInfo" : {
@@ -785,6 +811,7 @@
       },
       "name" : "Discard empty",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     } ],
     "ruleChainConnections" : null

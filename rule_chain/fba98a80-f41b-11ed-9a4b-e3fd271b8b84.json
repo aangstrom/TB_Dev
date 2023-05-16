@@ -17,7 +17,11 @@
     "type" : "CORE"
   },
   "metaData" : {
-    "connections" : null,
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "Success"
+    } ],
     "firstNodeIndex" : null,
     "nodes" : [ {
       "additionalInfo" : {
@@ -30,7 +34,7 @@
         "periodInSeconds" : 5,
         "scriptLang" : "TBEL",
         "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nvar kw = 500 + Math.random() * (1800 - 500);\nkw = Math.round( kw * 100 ) / 100;\n\nif(hour==17){\n    max_current_produced = 14;\n    max_power_requested = 2500;\n}else if(hour==18){\n    max_current_produced = 10;\n    max_power_requested = 2500;\n}else if(hour==19){\n    max_current_produced = 6;\n    max_power_requested = 2000;\n}else if(hour==20){\n    max_current_produced = 0;\n    max_power_requested = 1500;\n}else if(hour==21){\n    max_current_produced = 0;\n    max_power_requested = 1000;\n}else if(hour==22){\n    max_current_produced = 0;\n    max_power_requested = 800;\n}else if(hour==6){\n    max_current_produced = 0;\n    max_power_requested = 400;\n}else if(hour==7){\n    max_current_produced = 4;\n    max_power_requested = 600;\n}else if(hour>23 || hour<5){\n    max_current_produced = 0;\n    max_power_requested = 250;\n}else{\n    max_current_produced = 14;\n    max_power_requested = 2500;\n}\n\n\n\n\nvar msg = { \n            kw: temperature,\n            humidity: humidity,\n            soundAvg: soundAvg,\n            soundPeak: soundPeak,\n            light: light,\n            vdd: vdd,\n};\n\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\nvar hour = new Date().getHours();\n\nvar kw = 500 + Math.random() * (1800 - 500);\nkw = Math.round( kw * 100 ) / 100;\n\n// Calcolo Importi per Tariffa\nif (hour>=0 && hour<=8) {\n    var Tariffa1 = kw * (Math.random() * (10 - 0));\n    var Tariffa2 = 0;\n    var Tariffa3 = 0;\n}else if (hour>=9 && hour<=16) {\n    var Tariffa2 = kw * (Math.random() * (10 - 0));\n    var Tariffa1 = 0;\n    var Tariffa3 = 0;    \n}else if (hour>=17 && hour<=23) {\n    var Tariffa3 = kw * (Math.random() * (10 - 0));\n    var Tariffa2 = 0;\n    var Tariffa1 = 0;    \n}else {\n    var Tariffa3 = kw * (Math.random() * (10 - 0));\n}\n\n// Calcolo Tipologia Oraria\nif (hour>=8 && hour<=12) {\n    var Operativo = kw;\n    var Pranzo = 0;\n    var NonOperativo = 0;\n}else if (hour>=13 && hour<=14) {\n    var Pranzo = kw;\n    var Operativo = 0;\n    var NonOperativo = 0;    \n}else if (hour>=15 && hour<=18) {\n    var Operativo = kw;\n    var NonOperativo = 0;\n    var Pranzo = 0;    \n}else {\n    var NonOperativo = kw;\n}\n\n// Calcolo Tipologia Carico\nif (kw>=500 && kw<=600) {\n    var LowCharge = kw;\n    var NormalCharge = 0;\n    var HighCharge = 0;\n}else if (kw>=601 && kw<=1300) {\n    var LowCharge = 0;\n    var NormalCharge = kw;\n    var HighCharge = 0;\n}else if (kw>=1301 && kw<=1800) {\n    var LowCharge = 0;\n    var NormalCharge = 0;\n    var HighCharge = kw;\n}\n\n\nvar msg = { \n            kw: kw,\n            tariffa1: Tariffa1,\n            Tariffa2: Tariffa2,\n            Tariffa3: Tariffa3,  \n            Operativo = Operativo;\n            Pranzo = Pranzo;\n            NonOperativo = NonOperativo;\n            LowCharge = LowCharge;\n            NormalCharge = NormalCharge;\n            HighCharge = HighCharge;            \n\n};\n\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "queueName" : null,
         "originatorId" : "e6203c40-f41b-11ed-9a4b-e3fd271b8b84",
         "originatorType" : "DEVICE"
@@ -46,6 +50,28 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 471,
+        "layoutY" : 256
+      },
+      "configuration" : {
+        "defaultTTL" : 86400,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "bfcb5540-f423-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "timeseries",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
     } ],
     "ruleChainConnections" : null
   },

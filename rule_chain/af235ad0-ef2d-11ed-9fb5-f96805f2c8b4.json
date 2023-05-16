@@ -112,7 +112,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var message={};\nif(metadata.isExistingAlarm===\"true\" && msg.clearTs!=0){\n    var duration=(msg.clearTs-msg.startTs)/1000;\n    if(msg.name===\"Picco sonoro alto\"){\n        message.alarmDurationSound=duration;\n    }\n    //message.alarmDuration=duration;\n}\nreturn {msg: message, metadata: metadata, msgType: \"POST_TELEMETRY_REQUEST\"};"
+        "tbelScript" : "var message={};\nif(metadata.isClearedAlarm===\"true\" && msg.clearTs!=0){\n    var duration=(msg.clearTs-msg.startTs)/1000;\n    if(msg.name===\"Picco sonoro alto\"){\n        message.alarmDurationSound=duration;\n    }\n    //message.alarmDuration=duration;\n}\nreturn {msg: message, metadata: metadata, msgType: \"POST_TELEMETRY_REQUEST\"};"
       },
       "createdTime" : 0,
       "debugMode" : true,

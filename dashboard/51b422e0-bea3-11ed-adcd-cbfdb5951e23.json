@@ -2210,6 +2210,107 @@
           "row" : 0,
           "col" : 0,
           "id" : "48d66643-36e1-a07d-56fa-69739b73ae7e"
+        },
+        "f1aa0475-414b-6688-5bf6-d94c8b89d46a" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "radar_chart_js",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "4be71500-50ec-fdb3-179e-eb616c96e72b",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "Phase_A_power",
+                "type" : "timeseries",
+                "label" : "Somma Phase_A_power",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.4271825960159994,
+                "aggregationType" : "SUM",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null,
+                "comparisonEnabled" : false,
+                "timeForComparison" : "previousInterval",
+                "comparisonResultType" : "DELTA_ABSOLUTE"
+              }, {
+                "name" : "Phase_B_power",
+                "type" : "timeseries",
+                "label" : "Somma Phase_B_power",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.07971544849126455,
+                "aggregationType" : "SUM",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
+              }, {
+                "name" : "Phase_C_power",
+                "type" : "timeseries",
+                "label" : "Somma Phase_C_power",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.2585007227586049,
+                "aggregationType" : "SUM",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1684164486256,
+                  "endTimeMs" : 1684250886256
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : { },
+            "title" : "New Radar",
+            "useDashboardTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "f1aa0475-414b-6688-5bf6-d94c8b89d46a"
         }
       },
       "states" : {
@@ -2374,6 +2475,12 @@
                   "sizeY" : 2,
                   "row" : 8,
                   "col" : 14
+                },
+                "f1aa0475-414b-6688-5bf6-d94c8b89d46a" : {
+                  "sizeX" : 7,
+                  "sizeY" : 5,
+                  "row" : 36,
+                  "col" : 8
                 }
               },
               "gridSettings" : {

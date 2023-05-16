@@ -34,6 +34,10 @@
       "type" : "Success"
     }, {
       "fromIndex" : 3,
+      "toIndex" : 5,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
       "toIndex" : 2,
       "type" : "Success"
     } ],
@@ -102,8 +106,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 642,
-        "layoutY" : 117
+        "layoutX" : 740,
+        "layoutY" : 159
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -140,6 +144,50 @@
         "id" : "7b058a10-f32a-11ed-9a4b-e3fd271b8b84"
       },
       "name" : "Duplicate",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 173,
+        "layoutY" : 545
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return msg.temperature > 20;",
+        "tbelScript" : "var test=\"2347daf0-f0b2-11ed-9fb5-f96805f2c8b4\";\n\nreturn msg.temperature > 20;"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "755cabd0-f3d3-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Test",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 641,
+        "layoutY" : 75
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if(msg.originator.id===\"2347daf0-f0b2-11ed-9fb5-f96805f2c8b4\"){\n    return ['Success'];\n}else{\n    return['Failed'];\n}\nreturn nextRelation(metadata, msg);"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "755dbd40-f3d3-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Test",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"

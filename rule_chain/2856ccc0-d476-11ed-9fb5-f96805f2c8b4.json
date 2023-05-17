@@ -159,6 +159,30 @@
       "fromIndex" : 20,
       "toIndex" : 17,
       "type" : "Success"
+    }, {
+      "fromIndex" : 21,
+      "toIndex" : 22,
+      "type" : "phaseA"
+    }, {
+      "fromIndex" : 21,
+      "toIndex" : 23,
+      "type" : "phaseC"
+    }, {
+      "fromIndex" : 21,
+      "toIndex" : 24,
+      "type" : "phaseB"
+    }, {
+      "fromIndex" : 22,
+      "toIndex" : 7,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 23,
+      "toIndex" : 7,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 24,
+      "toIndex" : 7,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 4,
     "nodes" : [ {
@@ -773,13 +797,13 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 427,
-        "layoutY" : 602
+        "layoutX" : 621,
+        "layoutY" : 757
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(metadata.name===\"shellyem3-485519D78A95\"){\n    return[\"shellyem3-485519D78A95\"];\n}else{\n    return[\"Failed\"];\n}\nreturn nextRelation(metadata, msg);"
+        "tbelScript" : "if(msg.Phase_A_power!=null || msg.Phase_A_pf!=null || msg.Phase_A_current!=null || msg.Phase_A_voltage!=null || msg.Phase_A_total!=null || msg.Phase_A_total_returned!=null || msg.Phase_A_energy!=null || msg.Phase_A_returned_energy!=null){\n    return[\"phaseA\"];\n}else if(msg.Phase_B_power!=null || msg.Phase_B_pf!=null || msg.Phase_B_current!=null || msg.Phase_B_voltage!=null || msg.Phase_B_total!=null || msg.Phase_B_total_returned!=null || msg.Phase_B_energy!=null || msg.Phase_B_returned_energy!=null){\n    return[\"phaseB\"];\n}else if(msg.Phase_C_power!=null || msg.Phase_C_pf!=null || msg.Phase_C_current!=null || msg.Phase_C_voltage!=null || msg.Phase_C_total!=null || msg.Phase_C_total_returned!=null || msg.Phase_C_energy!=null || msg.Phase_C_returned_energy!=null){\n    return[\"phaseC\"];\n}else{\n    return[\"Failed\"];\n}\nreturn nextRelation(metadata, msg);"
       },
       "createdTime" : 0,
       "debugMode" : true,
@@ -792,6 +816,99 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 901,
+        "layoutY" : 690
+      },
+      "configuration" : {
+        "originatorSource" : "RELATED",
+        "entityType" : null,
+        "entityNamePattern" : null,
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "FROM",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "phaseA",
+            "entityTypes" : [ "ASSET" ]
+          } ]
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e9e0ec50-f4a0-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Cambia tipo A",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 902,
+        "layoutY" : 812
+      },
+      "configuration" : {
+        "originatorSource" : "RELATED",
+        "entityType" : null,
+        "entityNamePattern" : null,
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "FROM",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "phaseC",
+            "entityTypes" : [ "ASSET" ]
+          } ]
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e9e1afa0-f4a0-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Cambia tipo C",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 902,
+        "layoutY" : 754
+      },
+      "configuration" : {
+        "originatorSource" : "RELATED",
+        "entityType" : null,
+        "entityNamePattern" : null,
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "FROM",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "phaseB",
+            "entityTypes" : [ "ASSET" ]
+          } ]
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e9e224d0-f4a0-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Cambia tipo B",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
     } ],
     "ruleChainConnections" : null
   },

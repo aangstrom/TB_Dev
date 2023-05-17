@@ -3079,12 +3079,22 @@
               } ]
             } ],
             "timewindow" : {
+              "hideInterval" : false,
+              "hideLastInterval" : false,
+              "hideQuickInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 0,
               "realtime" : {
-                "timewindowMs" : 60000
+                "realtimeType" : 1,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY",
+                "interval" : 3600000
               },
               "aggregation" : {
-                "limit" : 200,
-                "type" : "AVG"
+                "type" : "SUM",
+                "limit" : 200
               }
             },
             "showTitle" : true,
@@ -3122,7 +3132,7 @@
               "fontWeight" : 400
             },
             "widgetStyle" : { },
-            "useDashboardTimewindow" : true,
+            "useDashboardTimewindow" : false,
             "showLegend" : true,
             "actions" : { },
             "showTitleIcon" : false,
@@ -3140,7 +3150,8 @@
               "showAvg" : true,
               "showTotal" : false,
               "showLatest" : false
-            }
+            },
+            "displayTimewindow" : true
           },
           "row" : 0,
           "col" : 0,

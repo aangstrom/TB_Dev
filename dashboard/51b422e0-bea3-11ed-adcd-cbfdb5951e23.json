@@ -3035,6 +3035,116 @@
           "row" : 0,
           "col" : 0,
           "id" : "318113fe-1fe6-606c-36d7-a32a61461575"
+        },
+        "9f4ddc9f-c05c-087b-7d85-a20a885e4988" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "timeseries_bars_flot",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "5cdf0544-b17f-2b12-7fbd-acff56a8f9c9",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "power",
+                "type" : "timeseries",
+                "label" : "${name}",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.28475617599776126,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ {
+                "name" : "name",
+                "type" : "attribute",
+                "label" : "name",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.34908458321103186
+              } ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              },
+              "aggregation" : {
+                "limit" : 200,
+                "type" : "AVG"
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "shadowSize" : 4,
+              "fontColor" : "#545454",
+              "fontSize" : 10,
+              "xaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "grid" : {
+                "color" : "#545454",
+                "tickColor" : "#DDDDDD",
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1
+              },
+              "stack" : true,
+              "tooltipIndividual" : false,
+              "defaultBarWidth" : 600
+            },
+            "title" : "New Timeseries Bar Chart",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "widgetStyle" : { },
+            "useDashboardTimewindow" : true,
+            "showLegend" : true,
+            "actions" : { },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "legendConfig" : {
+              "direction" : "row",
+              "position" : "bottom",
+              "sortDataKeys" : false,
+              "showMin" : false,
+              "showMax" : false,
+              "showAvg" : true,
+              "showTotal" : false,
+              "showLatest" : false
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "9f4ddc9f-c05c-087b-7d85-a20a885e4988"
         }
       },
       "states" : {
@@ -3241,6 +3351,12 @@
                   "sizeY" : 6,
                   "row" : 41,
                   "col" : 6
+                },
+                "9f4ddc9f-c05c-087b-7d85-a20a885e4988" : {
+                  "sizeX" : 24,
+                  "sizeY" : 5,
+                  "row" : 54,
+                  "col" : 0
                 }
               },
               "gridSettings" : {
@@ -3366,6 +3482,26 @@
               "entityType" : "DEVICE",
               "id" : "e6203c40-f41b-11ed-9a4b-e3fd271b8b84"
             }
+          }
+        },
+        "5cdf0544-b17f-2b12-7fbd-acff56a8f9c9" : {
+          "id" : "5cdf0544-b17f-2b12-7fbd-acff56a8f9c9",
+          "alias" : "Test Energy Asset",
+          "filter" : {
+            "type" : "assetSearchQuery",
+            "resolveMultiple" : true,
+            "rootStateEntity" : false,
+            "stateEntityParamName" : null,
+            "defaultStateEntity" : null,
+            "rootEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "684afe70-a887-11ed-bcb8-7f48a6e846b2"
+            },
+            "direction" : "FROM",
+            "maxLevel" : 1,
+            "fetchLastLevelOnly" : false,
+            "relationType" : null,
+            "assetTypes" : [ "AA Energy" ]
           }
         }
       },

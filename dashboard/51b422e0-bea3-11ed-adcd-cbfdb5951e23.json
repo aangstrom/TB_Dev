@@ -2297,6 +2297,7 @@
               }
             } ],
             "timewindow" : {
+              "displayValue" : "",
               "hideInterval" : false,
               "hideLastInterval" : false,
               "hideQuickInterval" : false,
@@ -2304,10 +2305,16 @@
               "hideAggInterval" : false,
               "hideTimezone" : false,
               "selectedTab" : 1,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
               "history" : {
                 "historyType" : 2,
-                "timewindowMs" : 60000,
                 "interval" : 1000,
+                "timewindowMs" : 60000,
                 "fixedTimewindow" : {
                   "startTimeMs" : 1684164486256,
                   "endTimeMs" : 1684250886256
@@ -2319,14 +2326,23 @@
                 "limit" : 25000
               }
             },
-            "showTitle" : true,
+            "showTitle" : false,
             "backgroundColor" : "#fff",
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "8px",
             "settings" : { },
             "title" : "New Radar",
             "useDashboardTimewindow" : false,
-            "displayTimewindow" : false
+            "displayTimewindow" : false,
+            "showTitleIcon" : false,
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "enableDataExport" : true,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showLegend" : false
           },
           "row" : 0,
           "col" : 0,
@@ -2571,7 +2587,7 @@
               }
             },
             "showTitle" : false,
-            "backgroundColor" : "#ff5722",
+            "backgroundColor" : "#53CC0E",
             "color" : "rgba(255, 255, 255, 0.87)",
             "padding" : "16px",
             "settings" : {
@@ -2599,6 +2615,361 @@
           "row" : 0,
           "col" : 0,
           "id" : "131aa644-8539-471e-26dd-18401bc22d41"
+        },
+        "b5e807a5-7387-96d7-4548-fdba34953a52" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "pie_chart_js",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "c2e5921b-063f-f4b8-74e0-51752c3e5ab0",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "tariffa1",
+                "type" : "timeseries",
+                "label" : "Somma tariffa1",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.3637177387570356,
+                "aggregationType" : "SUM",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
+              }, {
+                "name" : "tariffa2",
+                "type" : "timeseries",
+                "label" : "Somma tariffa2",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.9834386920215179,
+                "aggregationType" : "SUM",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
+              }, {
+                "name" : "tariffa3",
+                "type" : "timeseries",
+                "label" : "Somma tariffa3",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.7187368949549808,
+                "aggregationType" : "SUM",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1684058120079,
+                  "endTimeMs" : 1684144520079
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "showTooltip" : false
+            },
+            "title" : "New Pie - Chart.js",
+            "useDashboardTimewindow" : false,
+            "displayTimewindow" : false,
+            "showTitleIcon" : false,
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "enableDataExport" : false,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showLegend" : false,
+            "legendConfig" : {
+              "direction" : "column",
+              "position" : "bottom",
+              "sortDataKeys" : false,
+              "showMin" : false,
+              "showMax" : false,
+              "showAvg" : false,
+              "showTotal" : false,
+              "showLatest" : false
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "b5e807a5-7387-96d7-4548-fdba34953a52"
+        },
+        "25c64c18-54b2-d3db-083f-60dec8e36c1c" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "bars",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "c2e5921b-063f-f4b8-74e0-51752c3e5ab0",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "importo",
+                "type" : "timeseries",
+                "label" : "Somma importo",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.5914176050057847,
+                "aggregationType" : "SUM",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
+              }, {
+                "name" : "tariffa1",
+                "type" : "timeseries",
+                "label" : "Somma tariffa1",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.5384531490424576,
+                "aggregationType" : "SUM",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
+              }, {
+                "name" : "tariffa2",
+                "type" : "timeseries",
+                "label" : "Somma tariffa2",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.6404386726201932,
+                "aggregationType" : "SUM",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
+              }, {
+                "name" : "tariffa3",
+                "type" : "timeseries",
+                "label" : "Somma tariffa3",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.27916305389401574,
+                "aggregationType" : "SUM",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1684185105371,
+                  "endTimeMs" : 1684271505371
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : { },
+            "title" : "New Bars",
+            "useDashboardTimewindow" : false,
+            "showTitleIcon" : false,
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "enableDataExport" : true,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showLegend" : false,
+            "displayTimewindow" : false
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "25c64c18-54b2-d3db-083f-60dec8e36c1c"
+        },
+        "dd94e110-89be-3b7b-2fd4-d49b63d06c8c" : {
+          "isSystemType" : true,
+          "bundleAlias" : "digital_gauges",
+          "typeAlias" : "mini_gauge_justgage",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 2,
+          "sizeY" : 2,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "c2e5921b-063f-f4b8-74e0-51752c3e5ab0",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "tariffa1",
+                "type" : "timeseries",
+                "label" : "tariffa1",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.3369391966304196
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1684219003706,
+                  "endTimeMs" : 1684305403706
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#ffffff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "maxValue" : 100,
+              "minValue" : 0,
+              "donutStartAngle" : 90,
+              "showValue" : true,
+              "showMinMax" : true,
+              "gaugeWidthScale" : 0.75,
+              "levelColors" : [ ],
+              "refreshAnimationType" : ">",
+              "refreshAnimationTime" : 700,
+              "startAnimationType" : ">",
+              "startAnimationTime" : 700,
+              "titleFont" : {
+                "family" : "Roboto",
+                "size" : 12,
+                "style" : "normal",
+                "weight" : "500"
+              },
+              "labelFont" : {
+                "family" : "Roboto",
+                "size" : 8,
+                "style" : "normal",
+                "weight" : "500"
+              },
+              "valueFont" : {
+                "family" : "Roboto",
+                "style" : "normal",
+                "weight" : "500",
+                "size" : 32
+              },
+              "minMaxFont" : {
+                "family" : "Segment7Standard",
+                "size" : 12,
+                "style" : "normal",
+                "weight" : "500"
+              },
+              "neonGlowBrightness" : 0,
+              "dashThickness" : 0,
+              "decimals" : 0,
+              "roundedLineCap" : true,
+              "gaugeType" : "donut"
+            },
+            "title" : "New Mini gauge",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "dd94e110-89be-3b7b-2fd4-d49b63d06c8c"
         }
       },
       "states" : {
@@ -2787,6 +3158,24 @@
                   "sizeY" : 2,
                   "row" : 41,
                   "col" : 5
+                },
+                "b5e807a5-7387-96d7-4548-fdba34953a52" : {
+                  "sizeX" : 7,
+                  "sizeY" : 5,
+                  "row" : 41,
+                  "col" : 10
+                },
+                "25c64c18-54b2-d3db-083f-60dec8e36c1c" : {
+                  "sizeX" : 8,
+                  "sizeY" : 4,
+                  "row" : 43,
+                  "col" : 0
+                },
+                "dd94e110-89be-3b7b-2fd4-d49b63d06c8c" : {
+                  "sizeX" : 2,
+                  "sizeY" : 2,
+                  "row" : 41,
+                  "col" : 17
                 }
               },
               "gridSettings" : {

@@ -12547,17 +12547,19 @@
           "id" : "439d7ace-59b7-32a8-78de-751fe8108c76",
           "alias" : "Device del reparto",
           "filter" : {
-            "type" : "deviceSearchQuery",
+            "type" : "relationsQuery",
             "resolveMultiple" : true,
             "rootStateEntity" : true,
             "stateEntityParamName" : "reparto_selezionato",
             "defaultStateEntity" : null,
             "rootEntity" : null,
             "direction" : "FROM",
-            "maxLevel" : null,
+            "maxLevel" : 1,
             "fetchLastLevelOnly" : false,
-            "relationType" : "Contains",
-            "deviceTypes" : [ "AA Energy", "AA Sensor", "Camera" ]
+            "filters" : [ {
+              "relationType" : "Contains",
+              "entityTypes" : [ "DEVICE", "ASSET" ]
+            } ]
           }
         },
         "84beb002-f654-4c52-c4eb-3303e726b3aa" : {

@@ -1551,38 +1551,16 @@
                 "postFuncBody" : null,
                 "aggregationType" : null
               }, {
-                "name" : "state",
-                "type" : "attribute",
-                "label" : "State",
-                "color" : "#ffc107",
-                "settings" : {
-                  "columnWidth" : "0px",
-                  "useCellStyleFunction" : false,
-                  "cellStyleFunction" : "",
-                  "useCellContentFunction" : true,
-                  "defaultColumnVisibility" : "visible",
-                  "columnSelectionToDisplay" : "enabled",
-                  "columnExportOption" : "onlyVisible",
-                  "cellContentFunction" : "var state = value;\nvar active = entity.active;\nif (active === 'false') {\n    state = 'disconnected';\n}\n\nvar stateSvg = getStateSvg(state);\nvar encodedStateSvg = encodeURIComponent(stateSvg);\nvar stateSvgUrl = 'data:image/svg+xml,' + encodedStateSvg;\nvar stateLabel = getStateLabel(state);\n\nreturn '<span>'+\n           '<img style=\"vertical-align: middle;\" class=\"mat-icon\" src=\"'+ stateSvgUrl +'\">' +\n           '<span style=\"vertical-align: middle; padding-left: 8px;\">'+ stateLabel +'</span>' +\n       '</span>';\n            \nfunction getStateSvg(state) {\n    switch (state) {\n        case 'critical':\n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#E64A19\"/>' +\n                   '</svg>';\n        case 'major':            \n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#D5C21B\"/>' +\n                   '</svg>';\n        case 'normal':            \n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#1F8B4D\"/>' +\n                   '</svg>';\n        case 'disconnected':\n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<g clip-path=\"url(#clip0_2839_52564)\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#CAC1D2\"/>' +\n                   '<path d=\"M1.92896 16.728L16.0711 2.58589L17.4853 4.00011L3.34317 18.1422L1.92896 16.728Z\" fill=\"#CAC1D2\"/>' +\n                   '<path d=\"M2.10692 16.3171C1.81393 16.0241 1.81393 15.5491 2.10692 15.2561L15.1852 2.17788C15.4781 1.88489 15.9532 1.88489 16.2462 2.17788C16.5392 2.47088 16.5392 2.94591 16.2462 3.2389L3.16794 16.3171C2.87495 16.6101 2.39991 16.6101 2.10692 16.3171Z\" fill=\"white\"/>' +\n                   '</g>' +\n                   '<defs>' +\n                   '<clipPath id=\"clip0_2839_52564\">' +\n                   '<rect width=\"20\" height=\"20\" fill=\"white\"/>' +\n                   '</clipPath>' +\n                   '</defs>' +\n                   '</svg>';\n        default:\n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#AAAAAA\"/>' +\n                   '</svg>';\n    }\n}\n\nfunction getStateLabel(state) {\n    switch(state) {\n        case 'critical':\n            return 'Critical';\n        case 'major':\n            return 'Major';\n        case 'normal':\n            return 'Normal';\n        case 'disconnected':\n            return 'Disconnected';\n        default:\n            return state;\n    }\n}\n"
-                },
-                "_hash" : 0.2718881518921066,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
                 "name" : "active",
                 "type" : "attribute",
-                "label" : "active",
+                "label" : "State",
                 "color" : "#607d8b",
                 "settings" : {
                   "columnWidth" : "0px",
                   "useCellStyleFunction" : false,
-                  "cellStyleFunction" : "",
-                  "useCellContentFunction" : false,
-                  "cellContentFunction" : "",
-                  "defaultColumnVisibility" : "hidden",
+                  "useCellContentFunction" : true,
+                  "cellContentFunction" : "var state = value;\nvar active = entity.active;\nif (active === 'false') {\n    state = 'disconnected';\n}\n\nvar stateSvg = getStateSvg(state);\nvar encodedStateSvg = encodeURIComponent(stateSvg);\nvar stateSvgUrl = 'data:image/svg+xml,' + encodedStateSvg;\nvar stateLabel = getStateLabel(state);\n\nreturn '<span>'+\n           '<img style=\"vertical-align: middle;\" class=\"mat-icon\" src=\"'+ stateSvgUrl +'\">' +\n           '<span style=\"vertical-align: middle; padding-left: 8px;\">'+ stateLabel +'</span>' +\n       '</span>';\n            \nfunction getStateSvg(state) {\n    switch (state) {\n        case 'critical':\n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#E64A19\"/>' +\n                   '</svg>';\n        case 'major':            \n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#D5C21B\"/>' +\n                   '</svg>';\n        case 'true':\n        case 'normal':            \n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#1F8B4D\"/>' +\n                   '</svg>';\n        case 'false':\n        case 'disconnected':\n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<g clip-path=\"url(#clip0_2839_52564)\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#CAC1D2\"/>' +\n                   '<path d=\"M1.92896 16.728L16.0711 2.58589L17.4853 4.00011L3.34317 18.1422L1.92896 16.728Z\" fill=\"#CAC1D2\"/>' +\n                   '<path d=\"M2.10692 16.3171C1.81393 16.0241 1.81393 15.5491 2.10692 15.2561L15.1852 2.17788C15.4781 1.88489 15.9532 1.88489 16.2462 2.17788C16.5392 2.47088 16.5392 2.94591 16.2462 3.2389L3.16794 16.3171C2.87495 16.6101 2.39991 16.6101 2.10692 16.3171Z\" fill=\"white\"/>' +\n                   '</g>' +\n                   '<defs>' +\n                   '<clipPath id=\"clip0_2839_52564\">' +\n                   '<rect width=\"20\" height=\"20\" fill=\"white\"/>' +\n                   '</clipPath>' +\n                   '</defs>' +\n                   '</svg>';\n        default:\n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#AAAAAA\"/>' +\n                   '</svg>';\n    }\n}\n\nfunction getStateLabel(state) {\n    switch(state) {\n        case 'critical':\n            return 'Critical';\n        case 'major':\n            return 'Major';\n        case 'normal':\n            return 'Normal';\n        case 'true':\n            return 'Active';\n        case 'false':\n            return 'Disconnected';\n        case 'disconnected':\n            return 'Disconnected';\n        default:\n            return state;\n    }\n}\n",
+                  "defaultColumnVisibility" : "visible",
                   "columnSelectionToDisplay" : "disabled",
                   "columnExportOption" : "onlyVisible"
                 },
@@ -1591,8 +1569,12 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : null,
-                "postFuncBody" : null
-              } ]
+                "postFuncBody" : null,
+                "aggregationType" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
             } ],
             "showTitleIcon" : false,
             "titleTooltip" : "",

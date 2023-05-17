@@ -49,11 +49,11 @@
       "type" : "Success"
     }, {
       "fromIndex" : 2,
-      "toIndex" : 18,
+      "toIndex" : 24,
       "type" : "Failure"
     }, {
       "fromIndex" : 2,
-      "toIndex" : 18,
+      "toIndex" : 24,
       "type" : "Success"
     }, {
       "fromIndex" : 3,
@@ -156,16 +156,36 @@
       "toIndex" : 23,
       "type" : "Success"
     }, {
+      "fromIndex" : 19,
+      "toIndex" : 25,
+      "type" : "Success"
+    }, {
       "fromIndex" : 20,
       "toIndex" : 23,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 20,
+      "toIndex" : 25,
       "type" : "Success"
     }, {
       "fromIndex" : 21,
       "toIndex" : 23,
       "type" : "Success"
     }, {
+      "fromIndex" : 21,
+      "toIndex" : 25,
+      "type" : "Success"
+    }, {
       "fromIndex" : 23,
       "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 24,
+      "toIndex" : 18,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 24,
+      "toIndex" : 18,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 1,
@@ -844,8 +864,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 871,
-        "layoutY" : 512
+        "layoutX" : 889,
+        "layoutY" : 532
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -860,6 +880,54 @@
         "id" : "297b6340-f4ba-11ed-9a4b-e3fd271b8b84"
       },
       "name" : "Transform name to power",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 338,
+        "layoutY" : 340
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchToData" : false,
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ "active" ],
+        "serverAttributeNames" : [ ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "7f67bfb0-f4bf-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Get active status",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 894,
+        "layoutY" : 727
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "7f680dd0-f4bf-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Status",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"

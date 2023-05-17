@@ -153,14 +153,18 @@
       "type" : "phaseB"
     }, {
       "fromIndex" : 19,
-      "toIndex" : 4,
+      "toIndex" : 23,
       "type" : "Success"
     }, {
       "fromIndex" : 20,
-      "toIndex" : 4,
+      "toIndex" : 23,
       "type" : "Success"
     }, {
       "fromIndex" : 21,
+      "toIndex" : 23,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 23,
       "toIndex" : 4,
       "type" : "Success"
     } ],
@@ -721,8 +725,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 901,
-        "layoutY" : 690
+        "layoutX" : 676,
+        "layoutY" : 602
       },
       "configuration" : {
         "originatorSource" : "RELATED",
@@ -752,8 +756,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 902,
-        "layoutY" : 812
+        "layoutX" : 681,
+        "layoutY" : 731
       },
       "configuration" : {
         "originatorSource" : "RELATED",
@@ -783,8 +787,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 902,
-        "layoutY" : 754
+        "layoutX" : 681,
+        "layoutY" : 673
       },
       "configuration" : {
         "originatorSource" : "RELATED",
@@ -837,6 +841,28 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 970,
+        "layoutY" : 574
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "if(msg.Phase_A_power!=null){\n    msg.power=msg.Phase_A_power;\n}\nif(msg.Phase_B_power!=null){\n    msg.power=msg.Phase_B_power;\n}\nif(msg.Phase_C_power!=null){\n    msg.power=msg.Phase_C_power;\n}\n\nmsg.Phase_A_power=null;\nmsg.Phase_B_power=null;\nmsg.Phase_C_power=null;\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "297b6340-f4ba-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Transform name to power",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

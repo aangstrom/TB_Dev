@@ -4188,6 +4188,128 @@
           "row" : 0,
           "col" : 0,
           "id" : "84b9f5ad-5b43-9bf8-e893-c6c0cccb5251"
+        },
+        "076ffd5d-2cd5-8e63-0b09-5b88813a18a2" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "0891326f-7dc4-1dd5-cec8-150dcb23500c",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Name",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.8015537582783248
+              }, {
+                "name" : "bbox",
+                "type" : "attribute",
+                "label" : "bbox",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.5702561935350752
+              }, {
+                "name" : "motion",
+                "type" : "attribute",
+                "label" : "motion",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.08415958111024469
+              }, {
+                "name" : "mask",
+                "type" : "attribute",
+                "label" : "mask",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.8445355884488381
+              }, {
+                "name" : "zones",
+                "type" : "attribute",
+                "label" : "zones",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.9886489772983964
+              }, {
+                "name" : "timestamp",
+                "type" : "attribute",
+                "label" : "timestamp",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.45804507676016293
+              }, {
+                "name" : "camera_url",
+                "type" : "attribute",
+                "label" : "camera_url",
+                "color" : "#8bc34a",
+                "settings" : { },
+                "_hash" : 0.9550247924616571
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1684352183785,
+                  "endTimeMs" : 1684438583785
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<script>\r\n\r\ndocument.getElementById('cameraframe1').src = \"${camera_url}?${bbox}&${motion}&${mask}&${zones}&${timestamp}\";\r\n\r\n</script>\r\n\r\n<div id=\"my-div\" align=\"center\" onload=\"LoadOnce\">\r\n<iframe id=\"cameraframe1\" width=\"1080\" height=\"1080\" src=\"\" >\r\n</iframe>\r\n\r\n</div>\r\n",
+              "cardCss" : ".card {\n    font-weight: bold;\n    font-size: 32px;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "076ffd5d-2cd5-8e63-0b09-5b88813a18a2"
         }
       },
       "states" : {
@@ -4459,9 +4581,15 @@
             "main" : {
               "widgets" : {
                 "830f0ae9-0978-65e8-c03d-14fb7b749f4a" : {
-                  "sizeX" : 24,
-                  "sizeY" : 11,
+                  "sizeX" : 17,
+                  "sizeY" : 6,
                   "row" : 0,
+                  "col" : 0
+                },
+                "076ffd5d-2cd5-8e63-0b09-5b88813a18a2" : {
+                  "sizeX" : 9,
+                  "sizeY" : 5,
+                  "row" : 6,
                   "col" : 0
                 }
               },

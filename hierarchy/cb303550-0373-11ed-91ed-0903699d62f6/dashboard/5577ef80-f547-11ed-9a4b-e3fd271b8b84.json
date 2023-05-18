@@ -7785,7 +7785,8 @@
             "padding" : "0px",
             "settings" : {
               "useMarkdownTextFunction" : true,
-              "markdownTextFunction" : "var type;      \nif (data && data.length) {\n    type = data[0]['Label'];\n} else {\n    type = 'N/A';\n}\n             \nvar detailsStateName = getDetailsStateName(type);\n\nreturn '<div style=\"width: 100%; height: 100%; margin:0px; padding:0px;\" fxLayout=\"column\">' + \n           '<tb-dashboard-state fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"' + detailsStateName + '\"></tb-dashboard-state>' +\n       '</div>';\n\nfunction getDetailsStateName(deviceType) {\n    switch(deviceType) {\n        case 'ERS Sound':\n        case 'ERS CO2 Lite':\n            return 'aa_sensor_details';\n        case 'Energy Meter':\n            return 'energy_sensor_details';\n        case 'Camera':\n            return 'camera_sensor_details';\n        case 'Rumore':\n            return 'sound_sensor_details';\n        default:\n            return 'unknown_details';\n    }\n}      "
+              "markdownTextFunction" : "var type;      \nif (data && data.length) {\n    type = data[0]['Label'];\n} else {\n    type = 'N/A';\n}\n             \nvar detailsStateName = getDetailsStateName(type);\n\nreturn '<div style=\"width: 100%; height: 100%; margin:0px; padding:0px;\" fxLayout=\"column\">' + \n           '<tb-dashboard-state fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"' + detailsStateName + '\"></tb-dashboard-state>' +\n       '</div>';\n\nfunction getDetailsStateName(deviceType) {\n    switch(deviceType) {\n        case 'ERS Sound':\n        case 'ERS CO2 Lite':\n            return 'aa_sensor_details';\n        case 'AA Energy':\n            return 'energy_sensor_details';\n        case 'Camera':\n            return 'camera_sensor_details';\n        case 'Rumore':\n            return 'sound_sensor_details';\n        default:\n            return 'unknown_details';\n    }\n}      ",
+              "applyDefaultMarkdownStyle" : true
             },
             "title" : "New Markdown/HTML Card",
             "showTitleIcon" : false,
@@ -7937,264 +7938,6 @@
           "row" : 0,
           "col" : 0,
           "id" : "7abdfb17-e916-3a0a-4526-918487d5111b"
-        },
-        "63dc13d3-0560-74f0-880d-ae0445def471" : {
-          "isSystemType" : true,
-          "bundleAlias" : "cards",
-          "typeAlias" : "html_value_card",
-          "type" : "latest",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
-          "sizeX" : 7.5,
-          "sizeY" : 3,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "infortunistici",
-                "type" : "timeseries",
-                "label" : "valore",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.36685561164425295,
-                "aggregationType" : "NONE",
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "if(value>0){\n    return value;\n}else{\n    return 0;\n}"
-              } ],
-              "alarmFilterConfig" : {
-                "statusList" : [ "ACTIVE" ]
-              }
-            } ],
-            "timewindow" : {
-              "displayValue" : "",
-              "selectedTab" : 0,
-              "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1683809072630,
-                  "endTimeMs" : 1683895472630
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "limit" : 25000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "cardHtml" : "<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <h1>Infortunistici</h1>\n            <div class='value'>\n                ${valore:0}\n            </div>    \n        </div>\n        <img height=\"60px\" src=\"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgY2xhc3M9Imljb24gaWNvbi10YWJsZXIgaWNvbi10YWJsZXItZmFsbCIgZmlsbD0ibm9uZSIgaGVpZ2h0PSIyNCIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIiBzdHJva2U9Im5vbmUiLz48cGF0aCBkPSJNMTEgMjFsMSAtNWwtMSAtNGwtMyAtNGg0bDMgLTMiLz48cGF0aCBkPSJNNiAxNmwtMSAtNGwzIC00Ii8+PGNpcmNsZSBjeD0iNiIgY3k9IjUiIHI9IjEiLz48cGF0aCBkPSJNMTMuNSAxMmgyLjVsNCAyIi8+PC9zdmc+\" />\n    </div>\n</div>",
-              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content {\n   padding: 20px;\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content .column {\n   display: flex;\n   flex-direction: column;    \n   justify-content: space-around;\n   height: 100%;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 20px;\n    font-weight: bold;\n    margin: 0;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n"
-            },
-            "title" : "New HTML Value Card",
-            "dropShadow" : false,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "useDashboardTimewindow" : true,
-            "showLegend" : false,
-            "actions" : { },
-            "enableDataExport" : false,
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : ""
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "63dc13d3-0560-74f0-880d-ae0445def471"
-        },
-        "49d5dcd4-bd2b-4f2c-12f6-04e906ef42e1" : {
-          "isSystemType" : true,
-          "bundleAlias" : "cards",
-          "typeAlias" : "html_value_card",
-          "type" : "latest",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
-          "sizeX" : 7.5,
-          "sizeY" : 3,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "ig_amb",
-                "type" : "timeseries",
-                "label" : "valore",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.36685561164425295,
-                "aggregationType" : "NONE",
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "if(value>0){\n    return value;\n}else{\n    return 0;\n}"
-              } ],
-              "alarmFilterConfig" : {
-                "statusList" : [ "ACTIVE" ]
-              }
-            } ],
-            "timewindow" : {
-              "displayValue" : "",
-              "selectedTab" : 0,
-              "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1683809072630,
-                  "endTimeMs" : 1683895472630
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "limit" : 25000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "cardHtml" : "<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <h1>Igienico/Amb</h1>\n            <div class='value'>\n                ${valore:0}\n            </div>    \n        </div>\n        <img height=\"60px\" src=\"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pjxzdmcgdmlld0JveD0iMCAwIDQ0OCA1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTQxMy44IDQ0Ny4xTDI1NiA0NDhsMCAzMS45OUMyNTYgNDk3LjcgMjQxLjggNTEyIDIyNC4xIDUxMmMtMTcuNjcgMC0zMi4xLTE0LjMyLTMyLjEtMzEuOTlsMC0zMS45OWwtMTU4LjktLjAwOTljLTI4LjUgMC00My42OS0zNC40OS0yNC42OS01Ni40bDY4Ljk4LTc5LjU5SDYyLjIyYy0yNS40MSAwLTM5LjE1LTI5LjgtMjIuNjctNDkuMTNsNjAuNDEtNzAuODVIODkuMjFjLTIxLjI4IDAtMzIuODctMjIuNS0xOS4yOC0zNy4zMWwxMzQuOC0xNDYuNWMxMC40LTExLjMgMjguMjItMTEuMyAzOC42Mi0uMDAzM2wxMzQuOSAxNDYuNWMxMy42MiAxNC44MSAyLjAwMSAzNy4zMS0xOS4yOCAzNy4zMWgtMTAuNzdsNjAuMzUgNzAuODZjMTYuNDYgMTkuMzQgMi43MTYgNDkuMTItMjIuNjggNDkuMTJoLTE1LjJsNjguOTggNzkuNTlDNDU4LjcgNDEzLjcgNDQzLjEgNDQ3LjEgNDEzLjggNDQ3LjF6Ii8+PC9zdmc+\" />\n    </div>\n</div>",
-              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content {\n   padding: 20px;\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content .column {\n   display: flex;\n   flex-direction: column;    \n   justify-content: space-around;\n   height: 100%;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 20px;\n    font-weight: bold;\n    margin: 0;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n"
-            },
-            "title" : "New HTML Value Card",
-            "dropShadow" : false,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "useDashboardTimewindow" : true,
-            "showLegend" : false,
-            "actions" : { },
-            "enableDataExport" : false,
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : ""
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "49d5dcd4-bd2b-4f2c-12f6-04e906ef42e1"
-        },
-        "4c992fa7-186f-2082-d8b8-72dfb0d71822" : {
-          "isSystemType" : true,
-          "bundleAlias" : "cards",
-          "typeAlias" : "html_value_card",
-          "type" : "latest",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
-          "sizeX" : 7.5,
-          "sizeY" : 3,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "trasversali",
-                "type" : "timeseries",
-                "label" : "valore",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.36685561164425295,
-                "aggregationType" : "NONE",
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "if(value>0){\n    return value;\n}else{\n    return 0;\n}"
-              } ],
-              "alarmFilterConfig" : {
-                "statusList" : [ "ACTIVE" ]
-              }
-            } ],
-            "timewindow" : {
-              "displayValue" : "",
-              "selectedTab" : 0,
-              "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1683809072630,
-                  "endTimeMs" : 1683895472630
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "limit" : 25000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "cardHtml" : "<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <h1>Trasversali</h1>\n            <div class='value'>\n                ${valore:0}\n            </div>    \n        </div>\n        <img height=\"60px\" src=\"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDUxMiA1MTIiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48Zz48cGF0aCBkPSJNNDM0LjUsNzIuM1Y0MTJjMCwzMy42LTI3LjUsNjEuMS02MSw2MS4xSDEyNi43Yy01LjYsMC0xMS0xLTE2LjItMi41YzcuOCwyMy43LDMwLDQxLjEsNTYuMiw0MS4xaDI0OS45ICAgYzMyLjcsMCw1OS41LTI2LjgsNTkuNS01OS41VjEyOC44QzQ3Ni4xLDEwMi4zLDQ1OC41LDgwLDQzNC41LDcyLjN6IiBmaWxsPSIjMzAzQTNGIi8+PHBhdGggZD0iTTM0NS4yLDBIOTUuNEM2Mi43LDAsMzUuOSwyNi44LDM1LjksNTkuNVYzODNjMCwzMi43LDI2LjgsNTkuNSw1OS41LDU5LjVoMjQ5LjkgICBjMzIuNywwLDU5LjUtMjYuOCw1OS41LTU5LjVWNTkuNUM0MDQuNywyNi44LDM3OCwwLDM0NS4yLDB6IE0zNjQuMiwzNDkuOGMwLDI1LjctMjEuMSw0Ni44LTQ2LjgsNDYuOEgxMjAuOSAgIGMtMjUuNywwLTQ2LjgtMjEuMS00Ni44LTQ2LjhWOTUuNGMwLTI1LjcsMjEuMS00Ni44LDQ2LjgtNDYuOGgxOTYuNmMyNS43LDAsNDYuOCwyMS4xLDQ2LjgsNDYuOFYzNDkuOHoiIGZpbGw9IiMzMDNBM0YiLz48Zz48cGF0aCBkPSJNMzE5LjgsMTE3LjVIMTkwLjVjLTUuNCwwLTkuOC00LjQtOS44LTkuOHYtMC43YzAtNS40LDQuNC05LjgsOS44LTkuOGgxMjkuM2M1LjQsMCw5LjgsNC40LDkuOCw5Ljh2MC43ICAgIEMzMjkuNywxMTMuMSwzMjUuMiwxMTcuNSwzMTkuOCwxMTcuNXoiIGZpbGw9IiMzMDNBM0YiLz48cGF0aCBkPSJNMzE5LjgsMTc1LjJIMTIwLjRjLTUuNCwwLTkuOC00LjQtOS44LTkuOHYtMC43YzAtNS40LDQuNC05LjgsOS44LTkuOGgxOTkuNWM1LjQsMCw5LjgsNC40LDkuOCw5Ljh2MC43ICAgIEMzMjkuNywxNzAuNywzMjUuMiwxNzUuMiwzMTkuOCwxNzUuMnoiIGZpbGw9IiMzMDNBM0YiLz48cGF0aCBkPSJNMzE5LjgsMjMyLjhIMTIwLjRjLTUuNCwwLTkuOC00LjQtOS44LTkuOHYtMC43YzAtNS40LDQuNC05LjgsOS44LTkuOGgxOTkuNWM1LjQsMCw5LjgsNC40LDkuOCw5Ljh2MC43ICAgIEMzMjkuNywyMjguNCwzMjUuMiwyMzIuOCwzMTkuOCwyMzIuOHoiIGZpbGw9IiMzMDNBM0YiLz48cGF0aCBkPSJNMzE5LjgsMjkwLjVIMTIwLjRjLTUuNCwwLTkuOC00LjQtOS44LTkuOHYtMC43YzAtNS40LDQuNC05LjgsOS44LTkuOGgxOTkuNWM1LjQsMCw5LjgsNC40LDkuOCw5Ljh2MC43ICAgIEMzMjkuNywyODYuMSwzMjUuMiwyOTAuNSwzMTkuOCwyOTAuNXoiIGZpbGw9IiMzMDNBM0YiLz48cGF0aCBkPSJNMzE5LjgsMzQ4LjJIMTIwLjRjLTUuNCwwLTkuOC00LjQtOS44LTkuOHYtMC43YzAtNS40LDQuNC05LjgsOS44LTkuOGgxOTkuNWM1LjQsMCw5LjgsNC40LDkuOCw5Ljh2MC43ICAgIEMzMjkuNywzNDMuNywzMjUuMiwzNDguMiwzMTkuOCwzNDguMnoiIGZpbGw9IiMzMDNBM0YiLz48L2c+PC9nPjwvc3ZnPg==\" />\n    </div>\n</div>",
-              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content {\n   padding: 20px;\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-around;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content .column {\n   display: flex;\n   flex-direction: column;    \n   justify-content: space-around;\n   height: 100%;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 20px;\n    font-weight: bold;\n    margin: 0;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n"
-            },
-            "title" : "New HTML Value Card",
-            "dropShadow" : false,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "useDashboardTimewindow" : true,
-            "showLegend" : false,
-            "actions" : { },
-            "enableDataExport" : false,
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : ""
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "4c992fa7-186f-2082-d8b8-72dfb0d71822"
         },
         "189d8cf9-de0c-2a80-2f87-68d930d146a5" : {
           "isSystemType" : true,
@@ -12143,37 +11886,19 @@
                   "sizeX" : 3,
                   "sizeY" : 2,
                   "row" : 1,
-                  "col" : 6
-                },
-                "63dc13d3-0560-74f0-880d-ae0445def471" : {
-                  "sizeX" : 3,
-                  "sizeY" : 2,
-                  "row" : 1,
                   "col" : 15
-                },
-                "49d5dcd4-bd2b-4f2c-12f6-04e906ef42e1" : {
-                  "sizeX" : 3,
-                  "sizeY" : 2,
-                  "row" : 1,
-                  "col" : 18
-                },
-                "4c992fa7-186f-2082-d8b8-72dfb0d71822" : {
-                  "sizeX" : 3,
-                  "sizeY" : 2,
-                  "row" : 1,
-                  "col" : 21
                 },
                 "189d8cf9-de0c-2a80-2f87-68d930d146a5" : {
                   "sizeX" : 3,
                   "sizeY" : 2,
                   "row" : 1,
-                  "col" : 9
+                  "col" : 18
                 },
                 "f9eaf57b-32ee-c6e8-0e75-629935a9b10d" : {
                   "sizeX" : 3,
                   "sizeY" : 2,
                   "row" : 1,
-                  "col" : 12
+                  "col" : 21
                 },
                 "9f44680e-84af-f265-0793-51e080a7bd75" : {
                   "sizeX" : 8,

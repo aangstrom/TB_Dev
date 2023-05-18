@@ -208,6 +208,10 @@
       "toIndex" : 24,
       "type" : "Success"
     }, {
+      "fromIndex" : 27,
+      "toIndex" : 29,
+      "type" : "Success"
+    }, {
       "fromIndex" : 28,
       "toIndex" : 27,
       "type" : "Failure"
@@ -1043,6 +1047,28 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 288,
+        "layoutY" : 375
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var weekday=[\"domenica\",\"lunedi\",\"martedi\",\"mercoledi\",\"giovedi\",\"venerdi\",\"sabato\"];\nvar data=new Date();\n//var minute=new Date().getMinutes();\nvar ora=data.getHours()*100+data.getMinutes();\nvar day=weekday[new Date().getDay()];\n//prezzo per fasce;\nvar F1=parseFloat(metadata.F1);\nvar F2=parseFloat(metadata.F2);\nvar F3=parseFloat(metadata.F3);\nvar F23=parseFloat(metadata.F23);\n//orari F1\nvar inizioFascia1=800; //8:00\nvar fineFascia1=1900; //19:00\n//orari F2\nvar inizioFascia2_1=700; //7:00\nvar fineFascia2_1=800; //8:00\nvar inizioFascia2_2=1900; //19:00\nvar fineFascia2_2=2300; //23:00\n//orari F3\nvar inizioFascia3=2300; //00:00\nvar fineFascia3=700; //7:00\n//orari F23\nvar inizioFascia23=1900; //19:00\nvar fineFascia23=800; //8:00\n\n/** Calcoli **/\n//F1\nif((day!=\"domenica\" || day!=\"sabato\") && (ora>=inizioFascia1 && ora<fineFascia1)){\n    calcoloCosto(F1,\"F1\");\n}\n//Se F23 non è nullo\nif(F23!=null){\n    //Se corrisponde a F23\n    if(day==\"domenica\" || day==\"sabato\" || ((day!=\"domenica\" || day!=\"sabato\") && (ora>=inizioFascia23 || ora<fineFascia23))){\n        calcoloCosto(F23,\"F23\");\n    }\n}else{\n    //Se F2 non è nullo\n    if(F2!=null && ((day==\"sabato\" && (ora>=inizioFascia2_1 && ora<fineFascia2_2)) || ((day!=\"domenica\" || day!=\"sabato\") && ((ora>=inizioFascia2_1 && ora<fineFascia2_1) || (ora>=inizioFascia2_2 && ora<fineFascia2_2))))){\n        calcoloCosto(F2,\"F2\");\n    }\n    //Se F3 non è nullo\n    if(F3!=null && (day==\"domenica\" || (day!=\"domenica\" && ((ora>=inizioFascia3 || ora<fineFascia3))))){\n        calcoloCosto(F3,\"F3\");\n    }\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};\n\nfunction calcoloCosto(fascia,nomeFascia){\n    if(nomeFascia==\"F1\"){\n        if(msg.power>0){\n            msg.F1=(msg.power/1000)*fascia;\n        }else if(msg.Phase_A_power>0){\n            msg.Phase_A_F1=(msg.Phase_A_power/1000)*fascia;\n        }else if(msg.Phase_B_power>0){\n            msg.Phase_B_F1=(msg.Phase_B_power/1000)*fascia;\n        }else if(msg.Phase_C_power>0){\n            msg.Phase_C_F1=(msg.Phase_C_power/1000)*fascia;\n        }\n    }else if(nomeFascia==\"F2\"){\n        if(msg.power>0){\n            msg.F2=(msg.power/1000)*fascia;\n        }else if(msg.Phase_A_power>0){\n            msg.Phase_A_F2=(msg.Phase_A_power/1000)*fascia;\n        }else if(msg.Phase_B_power>0){\n            msg.Phase_B_F2=(msg.Phase_B_power/1000)*fascia;\n        }else if(msg.Phase_C_power>0){\n            msg.Phase_C_F2=(msg.Phase_C_power/1000)*fascia;\n        }\n    }else if(nomeFascia==\"F3\"){\n        if(msg.power>0){\n            msg.F3=(msg.power/1000)*fascia;\n        }else if(msg.Phase_A_power>0){\n            msg.Phase_A_F3=(msg.Phase_A_power/1000)*fascia;\n        }else if(msg.Phase_B_power>0){\n            msg.Phase_B_F3=(msg.Phase_B_power/1000)*fascia;\n        }else if(msg.Phase_C_power>0){\n            msg.Phase_C_F3=(msg.Phase_C_power/1000)*fascia;\n        }\n    }else if(nomeFascia==\"F23\"){\n        if(msg.power>0){\n            msg.F23=(msg.power/1000)*fascia;\n        }else if(msg.Phase_A_power>0){\n            msg.Phase_A_F23=(msg.Phase_A_power/1000)*fascia;\n        }else if(msg.Phase_B_power>0){\n            msg.Phase_B_F23=(msg.Phase_B_power/1000)*fascia;\n        }else if(msg.Phase_C_power>0){\n            msg.Phase_C_F23=(msg.Phase_C_power/1000)*fascia;\n        }\n    }\n}"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "46f35960-f577-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Costo per Fascia",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

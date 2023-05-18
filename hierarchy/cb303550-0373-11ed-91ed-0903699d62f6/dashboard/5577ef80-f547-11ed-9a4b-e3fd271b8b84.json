@@ -9435,123 +9435,12 @@
                 "settings" : { },
                 "_hash" : 0.6128032812278745
               }, {
-                "name" : "temperature",
-                "type" : "timeseries",
-                "label" : "temperature",
-                "color" : "#4caf50",
-                "settings" : { },
-                "_hash" : 0.15349002483591434
-              }, {
-                "name" : "humidity",
-                "type" : "timeseries",
-                "label" : "humidity",
-                "color" : "#f44336",
-                "settings" : { },
-                "_hash" : 0.2568222256758643
-              }, {
-                "name" : "co2",
-                "type" : "attribute",
-                "label" : "co2",
-                "color" : "#ffc107",
-                "settings" : { },
-                "_hash" : 0.7170762798750334
-              }, {
-                "name" : "vdd",
-                "type" : "timeseries",
-                "label" : "vdd",
-                "color" : "#607d8b",
-                "settings" : { },
-                "_hash" : 0.013720746003162532,
-                "aggregationType" : "NONE",
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "var battery_level;\nvar mvolts=value;\nif (mvolts >= 3000){\n\tbattery_level = 100;\n}\nelse if (mvolts > 2900){\n\tbattery_level = 100 - ((3000 - mvolts) * 58) / 100;\n}else if (mvolts > 2740){\n\tbattery_level = 42 - ((2900 - mvolts) * 24) / 160;\n}else if (mvolts > 2440){\n\tbattery_level = 18 - ((2740 - mvolts) * 12) / 300;\n}else if (mvolts > 2100){\n\tbattery_level = 6 - ((2440 - mvolts) * 6) / 340;\n}else{\n\tbattery_level = 0;\n}\nreturn battery_level;\n//return (((value-1750)/3700)*100).toFixed(2);"
-              }, {
                 "name" : "type",
                 "type" : "entityField",
                 "label" : "Type",
                 "color" : "#9c27b0",
                 "settings" : { },
                 "_hash" : 0.9525866728055117
-              }, {
-                "name" : "active",
-                "type" : "attribute",
-                "label" : "active",
-                "color" : "#8bc34a",
-                "settings" : { },
-                "_hash" : 0.05511859780117723
-              }, {
-                "name" : "Phase_A_power",
-                "type" : "timeseries",
-                "label" : "Phase_A_power",
-                "color" : "#3f51b5",
-                "settings" : { },
-                "_hash" : 0.7009223265591438
-              }, {
-                "name" : "Phase_B_power",
-                "type" : "timeseries",
-                "label" : "Phase_B_power",
-                "color" : "#e91e63",
-                "settings" : { },
-                "_hash" : 0.7437092273216817
-              }, {
-                "name" : "Phase_C_power",
-                "type" : "timeseries",
-                "label" : "Phase_C_power",
-                "color" : "#ffeb3b",
-                "settings" : { },
-                "_hash" : 0.1878580139517665
-              }, {
-                "name" : "Phase_A_Name",
-                "type" : "attribute",
-                "label" : "Phase_A_Name",
-                "color" : "#03a9f4",
-                "settings" : { },
-                "_hash" : 0.9792391357396877
-              }, {
-                "name" : "Phase_B_Name",
-                "type" : "attribute",
-                "label" : "Phase_B_Name",
-                "color" : "#ff9800",
-                "settings" : { },
-                "_hash" : 0.18217035891757916
-              }, {
-                "name" : "Phase_C_Name",
-                "type" : "attribute",
-                "label" : "Phase_C_Name",
-                "color" : "#673ab7",
-                "settings" : { },
-                "_hash" : 0.3412960187171876
-              }, {
-                "name" : "Phase_A_pf",
-                "type" : "timeseries",
-                "label" : "Phase_A_pf",
-                "color" : "#cddc39",
-                "settings" : { },
-                "_hash" : 0.3115947625340174
-              }, {
-                "name" : "Phase_B_pf",
-                "type" : "timeseries",
-                "label" : "Phase_B_pf",
-                "color" : "#009688",
-                "settings" : { },
-                "_hash" : 0.21756137404349452
-              }, {
-                "name" : "Phase_C_pf",
-                "type" : "timeseries",
-                "label" : "Phase_C_pf",
-                "color" : "#795548",
-                "settings" : { },
-                "_hash" : 0.08115127502681951
-              }, {
-                "name" : "label",
-                "type" : "entityField",
-                "label" : "Label",
-                "color" : "#00bcd4",
-                "settings" : { },
-                "_hash" : 0.7825772818716952
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -9616,7 +9505,7 @@
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
                 "type" : "custom",
-                "customFunction" : "const targetElement = $($event.target).closest('#settings', widgetContext.$container[0]);\n\nvar type = decodeURIComponent($(targetElement).attr('data-device-type'));\n\nvar stateId = getSettingsState(type);\n\nvar params = {\n    device_selezionato: {\n        entityId: entityId,\n        entityName: entityName,\n        entityLabel: entityLabel,\n    },\n    targetEntityParamName: 'device_selezionato'\n};\n\nwidgetContext.actionsApi.openDashboardStateInPopover($event, stateId, params, true, 'bottomRight', true, '400px', getSettingsHeight(type));\n\nfunction getSettingsState(type) {\n    switch (type) {\n        case 'AA Sensor':\n            return 'sound_sensor_settings';\n        case 'shelly3em':            \n            return 'energy_settings';\n        case 'Caldaia':            \n            return 'caldaia_settings';\n        case 'Chiller':            \n            return 'chiller_settings';                      \n        case 'Smart Bin':\n            return 'smart_bin_settings';          \n        case 'Door Sensor':\n            return 'door_settings';\n        case 'Liquid Level Sensor':\n            return 'liquid_sensor_settings';\n        case 'Motion Sensor':\n            return 'motion_sensor_settings';\n        case 'Occupancy Sensor':\n            return 'occupancy_sensor_settings';\n        case 'Smoke Sensor':\n            return 'smoke_sensor_settings';\n        default:\n            return 'unknown_settings';\n    }\n}\n\nfunction getSettingsHeight(type) {\n    switch (type) {\n        case 'AA Sensor':\n            return '600px';\n        case 'shelly3em':            \n            return '500px';\n        case 'Caldaia':            \n            return '200px';\n        case 'Smart Shelf':\n            return '280px';\n        case 'Freezer':            \n            return '420px';\n        case 'Chiller':            \n            return '420px';                  \n        case 'Smart Bin':\n            return '420px';                  \n        case 'Door Sensor':\n            return '420px';\n        case 'Liquid Level Sensor':\n            return '420px';\n        case 'Motion Sensor':\n            return '280px';\n        case 'Occupancy Sensor':\n            return '420px';\n        case 'Smoke Sensor':\n            return '280px';\n        default:\n            return '35vh';\n    }\n}\n",
+                "customFunction" : "const targetElement = $($event.target).closest('#settings', widgetContext.$container[0]);\n\nvar type = decodeURIComponent($(targetElement).attr('data-device-type'));\n\nvar stateId = getSettingsState(type);\n\nvar params = {\n    device_selezionato: {\n        entityId: entityId,\n        entityName: entityName,\n        entityLabel: entityLabel,\n    },\n    targetEntityParamName: 'device_selezionato'\n};\n\nwidgetContext.actionsApi.openDashboardStateInPopover($event, stateId, params, true, 'bottomRight', true, '400px', getSettingsHeight(type));\n\nfunction getSettingsState(type) {\n    switch (type) {\n        case 'AA Sensor':\n            return 'sound_sensor_settings';\n        case 'AA Energy':            \n            return 'energy_settings';\n        case 'Caldaia':            \n            return 'caldaia_settings';\n        case 'Chiller':            \n            return 'chiller_settings';                      \n        case 'Smart Bin':\n            return 'smart_bin_settings';          \n        case 'Door Sensor':\n            return 'door_settings';\n        case 'Liquid Level Sensor':\n            return 'liquid_sensor_settings';\n        case 'Motion Sensor':\n            return 'motion_sensor_settings';\n        case 'Occupancy Sensor':\n            return 'occupancy_sensor_settings';\n        case 'Smoke Sensor':\n            return 'smoke_sensor_settings';\n        default:\n            return 'unknown_settings';\n    }\n}\n\nfunction getSettingsHeight(type) {\n    switch (type) {\n        case 'AA Sensor':\n            return '600px';\n        case 'shelly3em':            \n            return '500px';\n        case 'Caldaia':            \n            return '200px';\n        case 'Smart Shelf':\n            return '280px';\n        case 'Freezer':            \n            return '420px';\n        case 'Chiller':            \n            return '420px';                  \n        case 'Smart Bin':\n            return '420px';                  \n        case 'Door Sensor':\n            return '420px';\n        case 'Liquid Level Sensor':\n            return '420px';\n        case 'Motion Sensor':\n            return '280px';\n        case 'Occupancy Sensor':\n            return '420px';\n        case 'Smoke Sensor':\n            return '280px';\n        default:\n            return '35vh';\n    }\n}\n",
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
                 "id" : "865e24a9-df26-c1cd-f88c-5a4c6c244de6"
@@ -12348,6 +12237,22 @@
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
                 "mobileRowHeight" : 70
+              }
+            }
+          }
+        },
+        "energy_settings" : {
+          "name" : "energy_settings",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : { },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%"
               }
             }
           }

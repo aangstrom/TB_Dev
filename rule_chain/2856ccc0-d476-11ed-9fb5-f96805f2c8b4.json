@@ -951,7 +951,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "message={};\nmessage.active=metadata.ss_active;\nType=\"POST_ATTRIBUTES_REQUEST\";\nreturn {msg: message, metadata: metadata, msgType: Type};"
+        "tbelScript" : "message={};\nmessage.active=JSON.parse(metadata.ss_active);\n\nType=\"POST_ATTRIBUTES_REQUEST\";\nreturn {msg: message, metadata: metadata, msgType: Type};"
       },
       "createdTime" : 0,
       "debugMode" : true,

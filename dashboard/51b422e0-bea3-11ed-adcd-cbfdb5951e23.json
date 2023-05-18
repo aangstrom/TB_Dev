@@ -3378,6 +3378,137 @@
           "row" : 0,
           "col" : 0,
           "id" : "22460227-0ac7-7749-b46d-c4139177aa79"
+        },
+        "7b34b299-ec6f-b03d-2171-3ac08610cce6" : {
+          "isSystemType" : true,
+          "bundleAlias" : "input_widgets",
+          "typeAlias" : "update_multiple_attributes",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "5f41c19d-3181-27a4-18ef-360821e3d475",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "bbox",
+                "type" : "attribute",
+                "label" : "bbox",
+                "color" : "#9c27b0",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "booleanSwitch",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "slideToggleLabelPosition" : "after",
+                  "useCustomIcon" : false,
+                  "icon" : "open_in_new",
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.12711554930668112,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "motion",
+                "type" : "attribute",
+                "label" : "motion",
+                "color" : "#8bc34a",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "booleanSwitch",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "slideToggleLabelPosition" : "after",
+                  "useCustomIcon" : false,
+                  "icon" : "my_location",
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.3753173067757687,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1681657065321,
+                  "endTimeMs" : 1681743465321
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "showActionButtons" : false,
+              "showResultMessage" : false,
+              "showGroupTitle" : false,
+              "fieldsAlignment" : "row",
+              "updateAllValues" : false,
+              "groupTitle" : "${entityName}",
+              "fieldsInRow" : 1
+            },
+            "title" : "Filter",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "enableDataExport" : false,
+            "widgetStyle" : {
+              "fontWeight" : "bold",
+              "fontSize" : "14px"
+            },
+            "titleStyle" : {
+              "fontSize" : "20px",
+              "fontWeight" : "bold",
+              "paddingBottom" : "30px"
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "noDataDisplayMessage" : "",
+            "widgetCss" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "7b34b299-ec6f-b03d-2171-3ac08610cce6"
         }
       },
       "states" : {
@@ -3602,6 +3733,12 @@
                   "sizeY" : 5,
                   "row" : 0,
                   "col" : 16
+                },
+                "7b34b299-ec6f-b03d-2171-3ac08610cce6" : {
+                  "sizeX" : 12,
+                  "sizeY" : 5,
+                  "row" : 59,
+                  "col" : 8
                 }
               },
               "gridSettings" : {
@@ -3724,6 +3861,18 @@
             "fetchLastLevelOnly" : false,
             "relationType" : null,
             "assetTypes" : [ "AA Energy" ]
+          }
+        },
+        "5f41c19d-3181-27a4-18ef-360821e3d475" : {
+          "id" : "5f41c19d-3181-27a4-18ef-360821e3d475",
+          "alias" : "camera",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "5d898b10-a0c5-11ed-bcb8-7f48a6e846b2"
+            }
           }
         }
       },

@@ -11231,6 +11231,20 @@
                 "usePostProcessing" : true,
                 "postFuncBody" : "return value/1000;",
                 "comparisonEnabled" : null
+              }, {
+                "name" : "non_operativo",
+                "type" : "timeseries",
+                "label" : "non_operativo",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.49050262304106096,
+                "aggregationType" : "SUM",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "return value/10000;",
+                "comparisonEnabled" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -11265,7 +11279,7 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "cardHtml" : "<div class='card'>\n    <h1>Totale non operativo</h1>\n    <table>\n        <tr>\n            <th>Fascia</th>\n            <th>Consumo</th>\n            <th>Prezzo</th>\n        </tr>\n        <tr>\n            <td>F1</td>\n            <td>${power} Kwh</td>\n            <td>${F1} €</td>\n        </tr>\n        <tr>\n            <td>F2</td>\n            <td>${power} Kwh</td>\n            <td>${F2} €</td>\n        </tr>\n        <tr>\n            <td>F3</td>\n            <td>${power} Kwh</td>\n            <td>${F3} €</td>\n        </tr>\n    </table>\n</div>",
+              "cardHtml" : "<div class='card'>\n    <h1>Totale non operativo</h1>\n    <table>\n        <tr>\n            <th>Fascia</th>\n            <th>Consumo</th>\n            <th>Prezzo</th>\n        </tr>\n        <tr>\n            <td>Non operativo</td>\n            <td>${non_operativo} Kwh</td>\n            <td>${F1} €</td>\n        </tr>\n        <tr>\n            <td>F2</td>\n            <td>${power} Kwh</td>\n            <td>${F2} €</td>\n        </tr>\n        <tr>\n            <td>F3</td>\n            <td>${power} Kwh</td>\n            <td>${F3} €</td>\n        </tr>\n    </table>\n</div>",
               "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   align-items: center;\n   justify-content: center;\n}\ntable {\n    margin: 0px 10%;\n    width: 80%;\n}\nth,td,tr {\n    padding: 10px 0px;\n    text-align: center;\n    justify-content: space-between;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 20px;\n    font-weight: bold;\n    margin: 0;\n    padding-bottom: 10px;\n    line-height: 32px;\n    text-align: center;\n}"
             },
             "title" : "New HTML Value Card",
@@ -11546,41 +11560,6 @@
               "entityAliasId" : "e8e6f5bc-837a-6813-f60e-b8f1941a6914",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "name",
-                "type" : "attribute",
-                "label" : "Nome Reparto",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.6726509212486327,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "orari_operativi",
-                "type" : "attribute",
-                "label" : "Orari Operativi",
-                "color" : "#3f51b5",
-                "settings" : {
-                  "dataKeyHidden" : false,
-                  "dataKeyType" : "server",
-                  "dataKeyValueType" : "JSON",
-                  "required" : false,
-                  "isEditable" : "editable",
-                  "useCustomIcon" : false,
-                  "useGetValueFunction" : false,
-                  "useSetValueFunction" : false
-                },
-                "_hash" : 0.2536856666353664,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
                 "name" : "turno1inizio",
                 "type" : "attribute",
                 "label" : "Inizio Turno 1",
@@ -11706,6 +11685,63 @@
                   "useSetValueFunction" : false
                 },
                 "_hash" : 0.580255639203791,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "name",
+                "type" : "attribute",
+                "label" : "Nome Reparto",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.6726509212486327,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "orari_operativi",
+                "type" : "attribute",
+                "label" : "Orari Operativi",
+                "color" : "#3f51b5",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "JSON",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "useCustomIcon" : false,
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.2536856666353664,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "orari_pranzo",
+                "type" : "attribute",
+                "label" : "Orari Pranzo",
+                "color" : "#e91e63",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "JSON",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "useCustomIcon" : false,
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.05442464140655545,
                 "aggregationType" : null,
                 "units" : null,
                 "decimals" : null,

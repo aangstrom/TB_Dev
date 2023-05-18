@@ -33,19 +33,19 @@
       "type" : "Success"
     }, {
       "fromIndex" : 1,
-      "toIndex" : 12,
+      "toIndex" : 2,
       "type" : "Failure"
     }, {
       "fromIndex" : 1,
-      "toIndex" : 12,
+      "toIndex" : 2,
       "type" : "Success"
     }, {
       "fromIndex" : 1,
-      "toIndex" : 28,
+      "toIndex" : 12,
       "type" : "Failure"
     }, {
       "fromIndex" : 1,
-      "toIndex" : 28,
+      "toIndex" : 12,
       "type" : "Success"
     }, {
       "fromIndex" : 2,
@@ -54,6 +54,14 @@
     }, {
       "fromIndex" : 2,
       "toIndex" : 24,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 28,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 28,
       "type" : "Success"
     }, {
       "fromIndex" : 3,
@@ -180,10 +188,6 @@
       "toIndex" : 25,
       "type" : "Success"
     }, {
-      "fromIndex" : 20,
-      "toIndex" : 29,
-      "type" : "Success"
-    }, {
       "fromIndex" : 21,
       "toIndex" : 23,
       "type" : "Success"
@@ -212,21 +216,13 @@
       "toIndex" : 26,
       "type" : "Success"
     }, {
-      "fromIndex" : 27,
-      "toIndex" : 2,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 27,
-      "toIndex" : 2,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 28,
-      "toIndex" : 2,
-      "type" : "Success"
-    }, {
       "fromIndex" : 28,
       "toIndex" : 27,
       "type" : "Failure"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 27,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 1,
     "nodes" : [ {
@@ -996,65 +992,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 41,
-        "layoutY" : 325
-      },
-      "configuration" : {
-        "relationsQuery" : {
-          "fetchLastLevelOnly" : false,
-          "direction" : "TO",
-          "maxLevel" : null,
-          "filters" : [ {
-            "relationType" : null,
-            "entityTypes" : [ "CUSTOMER" ]
-          } ]
-        },
-        "telemetry" : false,
-        "attrMapping" : {
-          "F1" : "F1",
-          "F2" : "F2",
-          "F3" : "F3",
-          "F23" : "F23"
-        }
-      },
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "35a74a00-f553-11ed-9a4b-e3fd271b8b84"
-      },
-      "name" : "Get F1/F2/F3/F23 Cliente",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 52,
-        "layoutY" : 227
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(metadata.F1!=null || metadata.F2!=null || metadata.F3!=null || metadata.F23!=null){\n    return['Success'];\n}else{\n    return ['Failure'];\n}\nreturn nextRelation(metadata, msg);"
-      },
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "2a70e363-f555-11ed-9a4b-e3fd271b8b84"
-      },
-      "name" : "If F1/F2/F3/F23",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 104,
-        "layoutY" : 547
+        "layoutX" : 74,
+        "layoutY" : 483
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -1075,8 +1014,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 61,
-        "layoutY" : 429
+        "layoutX" : 101,
+        "layoutY" : 332
       },
       "configuration" : {
         "relationsQuery" : {

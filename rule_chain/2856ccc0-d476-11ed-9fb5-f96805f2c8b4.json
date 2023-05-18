@@ -1053,8 +1053,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 66,
-        "layoutY" : 526
+        "layoutX" : 104,
+        "layoutY" : 547
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -1072,6 +1072,41 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 61,
+        "layoutY" : 429
+      },
+      "configuration" : {
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "TO",
+          "maxLevel" : null,
+          "filters" : [ {
+            "relationType" : null,
+            "entityTypes" : [ "ASSET" ]
+          } ]
+        },
+        "telemetry" : false,
+        "attrMapping" : {
+          "turno1inizio" : "turno1inizio",
+          "turno1fine" : "turno1fine",
+          "turno2inizio" : "turno2inizio",
+          "turno2fine" : "turno2fine"
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4b75a170-f55c-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Get F1/F2/F3/F23",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
     } ],
     "ruleChainConnections" : null
   },

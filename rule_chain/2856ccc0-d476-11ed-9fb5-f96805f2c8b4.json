@@ -261,10 +261,10 @@
         },
         "telemetry" : false,
         "attrMapping" : {
-          "F1" : "f1",
-          "F2" : "f2",
-          "F3" : "f3",
-          "F23" : "f23"
+          "F1" : "F1",
+          "F2" : "F2",
+          "F3" : "F3",
+          "F23" : "F23"
         }
       },
       "createdTime" : 0,
@@ -1016,6 +1016,28 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 90,
+        "layoutY" : 327
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if(metadata.f1!=null || metadata.f2!=null || metadata.f3!=null || metadata.f23!=null){\n    return['Success'];\n}else{\n    return ['Failed'];\n}\nreturn nextRelation(metadata, msg);"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "2a70e363-f555-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "If F1/F2/F3/F23",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     } ],
     "ruleChainConnections" : null
   },

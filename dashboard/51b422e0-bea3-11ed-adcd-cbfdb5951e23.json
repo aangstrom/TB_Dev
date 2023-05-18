@@ -3447,6 +3447,58 @@
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
+              }, {
+                "name" : "mask",
+                "type" : "attribute",
+                "label" : "mask",
+                "color" : "#f44336",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "booleanSwitch",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "slideToggleLabelPosition" : "after",
+                  "useCustomIcon" : false,
+                  "icon" : "warning",
+                  "useGetValueFunction" : true,
+                  "getValueFunctionBody" : "return !value || value === 'mask=1';",
+                  "useSetValueFunction" : true,
+                  "setValueFunctionBody" : "return value ? 'mask=1' : 'mask=0'"
+                },
+                "_hash" : 0.42158833194146683,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "zones",
+                "type" : "attribute",
+                "label" : "zones",
+                "color" : "#ffc107",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "booleanSwitch",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "slideToggleLabelPosition" : "after",
+                  "useCustomIcon" : false,
+                  "icon" : "dashboards",
+                  "useGetValueFunction" : true,
+                  "getValueFunctionBody" : "return !value || value === 'zones=1';",
+                  "useSetValueFunction" : true,
+                  "setValueFunctionBody" : "return value ? 'zones=1' : 'zones=0'"
+                },
+                "_hash" : 0.8055592316397866,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -3578,12 +3630,12 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "cardHtml" : "<script>\r\nvar bbox = \"${bbox}\";\r\nvar motion = \"${motion}\"\r\ndocument.getElementById('cameraframe').src = \"https://cam.aangstrom.it/api/barriera_cassa?\" + bbox + \"&\" + motion;\r\n\r\n</script>\r\n\r\n<div id=\"my-div\" align=\"center\" onload=\"LoadOnce\">\r\n<iframe id=\"cameraframe\" width=\"1080\" height=\"1080\" src=\"\" >\r\n</iframe>\r\n\r\n</div>\r\n",
+              "cardHtml" : "<script>\r\nvar bbox = \"${bbox}\";\r\nvar motion = \"${motion}\";\r\nvar mask = \"${mask}\";\r\ndocument.getElementById('cameraframe').src = \"https://cam.aangstrom.it/api/barriera_cassa?\" + bbox + \"&\" + motion +\"&${mask}\";\r\n\r\n</script>\r\n\r\n<div id=\"my-div\" align=\"center\" onload=\"LoadOnce\">\r\n<iframe id=\"cameraframe\" width=\"1080\" height=\"1080\" src=\"\" >\r\n</iframe>\r\n\r\n</div>\r\n",
               "cardCss" : ".card {\n    font-weight: bold;\n    font-size: 32px;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}"
             },
             "title" : "New HTML Value Card",
             "dropShadow" : false,
-            "enableFullscreen" : true,
+            "enableFullscreen" : false,
             "widgetStyle" : { },
             "titleStyle" : {
               "fontSize" : "16px",
@@ -3591,7 +3643,11 @@
             },
             "useDashboardTimewindow" : true,
             "showLegend" : false,
-            "actions" : { }
+            "actions" : { },
+            "enableDataExport" : true,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
           },
           "row" : 0,
           "col" : 0,

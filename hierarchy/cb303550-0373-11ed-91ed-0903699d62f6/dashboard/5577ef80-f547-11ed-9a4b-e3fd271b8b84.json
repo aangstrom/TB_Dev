@@ -7785,7 +7785,7 @@
             "padding" : "0px",
             "settings" : {
               "useMarkdownTextFunction" : true,
-              "markdownTextFunction" : "var type;      \nif (data && data.length) {\n    type = data[0]['entityType'];\n} else {\n    type = 'N/A';\n}\n             \nvar detailsStateName = getDetailsStateName(type);\n\nreturn '<div style=\"width: 100%; height: 100%; margin:0px; padding:0px;\" fxLayout=\"column\">' + \n           '<tb-dashboard-state fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"' + detailsStateName + '\"></tb-dashboard-state>' +\n       '</div>';\n\nfunction getDetailsStateName(deviceType) {\n    switch(deviceType) {\n        case 'ERS Sound':\n        case 'ERS CO2 Lite':\n            return 'aa_sensor_details';\n        case 'AA Energy':\n            return 'energy_sensor_details';\n        case 'Camera':\n            return 'camera_sensor_details';\n        case 'Rumore':\n            return 'sound_sensor_details';\n        default:\n            return 'unknown_details';\n    }\n}      ",
+              "markdownTextFunction" : "var type;      \nif (data && data.length) {\n    type = data[0]['Type'];\n} else {\n    type = 'N/A';\n}\n             \nvar detailsStateName = getDetailsStateName(type);\n\nreturn '<div style=\"width: 100%; height: 100%; margin:0px; padding:0px;\" fxLayout=\"column\">' + \n           '<tb-dashboard-state fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"' + detailsStateName + '\"></tb-dashboard-state>' +\n       '</div>';\n\nfunction getDetailsStateName(deviceType) {\n    switch(deviceType) {\n        case 'ERS Sound':\n        case 'ERS CO2 Lite':\n            return 'aa_sensor_details';\n        case 'AA Energy':\n            return 'energy_sensor_details';\n        case 'Camera':\n            return 'camera_sensor_details';\n        case 'Rumore':\n            return 'sound_sensor_details';\n        default:\n            return 'unknown_details';\n    }\n}      ",
               "applyDefaultMarkdownStyle" : true
             },
             "title" : "New Markdown/HTML Card",
@@ -8192,144 +8192,6 @@
           "row" : 0,
           "col" : 0,
           "id" : "f9eaf57b-32ee-c6e8-0e75-629935a9b10d"
-        },
-        "9f44680e-84af-f265-0793-51e080a7bd75" : {
-          "isSystemType" : true,
-          "bundleAlias" : "cards",
-          "typeAlias" : "entities_table",
-          "type" : "latest",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
-          "sizeX" : 7.5,
-          "sizeY" : 6.5,
-          "config" : {
-            "timewindow" : {
-              "displayValue" : "",
-              "selectedTab" : 0,
-              "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1683809072630,
-                  "endTimeMs" : 1683895472630
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "NONE",
-                "limit" : 200
-              }
-            },
-            "showTitle" : true,
-            "backgroundColor" : "rgb(255, 255, 255)",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "4px",
-            "settings" : {
-              "entitiesTitle" : "Trend",
-              "enableSearch" : true,
-              "enableSelectColumnDisplay" : true,
-              "enableStickyHeader" : true,
-              "enableStickyAction" : true,
-              "reserveSpaceForHiddenAction" : "true",
-              "displayEntityName" : false,
-              "displayEntityLabel" : false,
-              "displayEntityType" : false,
-              "displayPagination" : false,
-              "defaultSortOrder" : "name",
-              "useRowStyleFunction" : false
-            },
-            "title" : "New Entities table",
-            "dropShadow" : false,
-            "enableFullscreen" : false,
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400,
-              "padding" : "5px 10px 5px 10px"
-            },
-            "useDashboardTimewindow" : false,
-            "showLegend" : false,
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "name",
-                "type" : "attribute",
-                "label" : "Nome",
-                "color" : "#ffc107",
-                "settings" : { },
-                "_hash" : 0.8525717522837815,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "infortunistici",
-                "type" : "timeseries",
-                "label" : "Infortunistici",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.15248076027779756,
-                "aggregationType" : "NONE",
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "igienici/ambientali",
-                "type" : "timeseries",
-                "label" : "Igienici/Ambientali",
-                "color" : "#4caf50",
-                "settings" : { },
-                "_hash" : 0.9509004464676651,
-                "aggregationType" : "NONE",
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "trasversali",
-                "type" : "timeseries",
-                "label" : "Trasversali",
-                "color" : "#f44336",
-                "settings" : { },
-                "_hash" : 0.6571657044599168,
-                "aggregationType" : "NONE",
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              } ],
-              "alarmFilterConfig" : {
-                "statusList" : [ "ACTIVE" ]
-              }
-            } ],
-            "displayTimewindow" : true,
-            "showTitleIcon" : false,
-            "titleTooltip" : "",
-            "enableDataExport" : true,
-            "widgetStyle" : { },
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : ""
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "9f44680e-84af-f265-0793-51e080a7bd75"
         },
         "5255ae4e-06ce-790b-96c8-f4fc1809fcbc" : {
           "isSystemType" : true,
@@ -11160,154 +11022,6 @@
           },
           "id" : "2135ef1e-4240-1047-3cdd-d70d7a78a848"
         },
-        "7215ba95-a7fb-67de-eeca-5f07d6a3b432" : {
-          "isSystemType" : true,
-          "bundleAlias" : "charts",
-          "typeAlias" : "bars",
-          "type" : "latest",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
-          "sizeX" : 7,
-          "sizeY" : 5,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "criticalAlarmsCount",
-                "type" : "timeseries",
-                "label" : "Critical",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.39885518656662744,
-                "aggregationType" : "SUM",
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null,
-                "comparisonEnabled" : null
-              }, {
-                "name" : "majorAlarmsCount",
-                "type" : "timeseries",
-                "label" : "Major",
-                "color" : "#4caf50",
-                "settings" : { },
-                "_hash" : 0.8981099398094292,
-                "aggregationType" : "SUM",
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null,
-                "comparisonEnabled" : null
-              }, {
-                "name" : "minorAlarmsCount",
-                "type" : "timeseries",
-                "label" : "Minor",
-                "color" : "#f44336",
-                "settings" : { },
-                "_hash" : 0.07327622976240655,
-                "aggregationType" : "SUM",
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null,
-                "comparisonEnabled" : null
-              }, {
-                "name" : "alarmDurationSound",
-                "type" : "timeseries",
-                "label" : "Durata Allarmi",
-                "color" : "#ffc107",
-                "settings" : { },
-                "_hash" : 0.19181031311859487,
-                "aggregationType" : "SUM",
-                "units" : "m",
-                "decimals" : 2,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "return value/60;",
-                "comparisonEnabled" : null
-              } ],
-              "alarmFilterConfig" : {
-                "statusList" : [ "ACTIVE" ]
-              }
-            } ],
-            "timewindow" : {
-              "displayValue" : "",
-              "hideInterval" : false,
-              "hideLastInterval" : false,
-              "hideQuickInterval" : false,
-              "hideAggregation" : false,
-              "hideAggInterval" : false,
-              "hideTimezone" : false,
-              "selectedTab" : 0,
-              "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1684075776029,
-                  "endTimeMs" : 1684162176029
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "limit" : 25000
-              },
-              "timezone" : null
-            },
-            "showTitle" : true,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "8px",
-            "settings" : {
-              "showTooltip" : true
-            },
-            "title" : "Totali sopra soglia",
-            "useDashboardTimewindow" : false,
-            "displayTimewindow" : true,
-            "showTitleIcon" : false,
-            "titleTooltip" : "",
-            "dropShadow" : false,
-            "enableFullscreen" : false,
-            "enableDataExport" : false,
-            "widgetStyle" : { },
-            "widgetCss" : "",
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : "",
-            "showLegend" : false,
-            "legendConfig" : {
-              "direction" : "column",
-              "position" : "bottom",
-              "sortDataKeys" : false,
-              "showMin" : false,
-              "showMax" : false,
-              "showAvg" : false,
-              "showTotal" : false,
-              "showLatest" : false
-            },
-            "decimals" : 2
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "7215ba95-a7fb-67de-eeca-5f07d6a3b432"
-        },
         "d6a18183-0628-f0dd-3014-d10afaeef9be" : {
           "isSystemType" : true,
           "bundleAlias" : "analogue_gauges",
@@ -12183,7 +11897,7 @@
                   "col" : 0
                 },
                 "c2aa87a4-fa37-73cf-aa84-83d9f136563c" : {
-                  "sizeX" : 16,
+                  "sizeX" : 24,
                   "sizeY" : 13,
                   "row" : 3,
                   "col" : 0
@@ -12206,12 +11920,6 @@
                   "row" : 1,
                   "col" : 21
                 },
-                "9f44680e-84af-f265-0793-51e080a7bd75" : {
-                  "sizeX" : 8,
-                  "sizeY" : 6,
-                  "row" : 10,
-                  "col" : 16
-                },
                 "5255ae4e-06ce-790b-96c8-f4fc1809fcbc" : {
                   "sizeX" : 2,
                   "sizeY" : 2,
@@ -12223,12 +11931,6 @@
                   "sizeY" : 2,
                   "row" : 1,
                   "col" : 0
-                },
-                "7215ba95-a7fb-67de-eeca-5f07d6a3b432" : {
-                  "sizeX" : 8,
-                  "sizeY" : 7,
-                  "row" : 3,
-                  "col" : 16
                 }
               },
               "gridSettings" : {

@@ -8581,38 +8581,12 @@
               "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "Phase_A_power",
+                "name" : "power",
                 "type" : "timeseries",
-                "label" : "${Phase_A_Name}",
-                "color" : "#4caf50",
+                "label" : "Potenza",
+                "color" : "#8bc34a",
                 "settings" : { },
-                "_hash" : 0.20672354403560833,
-                "aggregationType" : null,
-                "units" : "",
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "Phase_B_power",
-                "type" : "timeseries",
-                "label" : "${Phase_B_Name}",
-                "color" : "#f44336",
-                "settings" : { },
-                "_hash" : 0.44577325807834023,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "Phase_C_power",
-                "type" : "timeseries",
-                "label" : "${Phase_C_Name}",
-                "color" : "#ffc107",
-                "settings" : { },
-                "_hash" : 0.5564871768005251,
+                "_hash" : 0.9138681392272756,
                 "aggregationType" : null,
                 "units" : null,
                 "decimals" : null,
@@ -8623,28 +8597,7 @@
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
               },
-              "latestDataKeys" : [ {
-                "name" : "Phase_A_Name",
-                "type" : "attribute",
-                "label" : "Phase_A_Name",
-                "color" : "#ffc107",
-                "settings" : { },
-                "_hash" : 0.6529004349224279
-              }, {
-                "name" : "Phase_B_Name",
-                "type" : "attribute",
-                "label" : "Phase_B_Name",
-                "color" : "#607d8b",
-                "settings" : { },
-                "_hash" : 0.08051712897886065
-              }, {
-                "name" : "Phase_C_Name",
-                "type" : "attribute",
-                "label" : "Phase_C_Name",
-                "color" : "#9c27b0",
-                "settings" : { },
-                "_hash" : 0.2502875270623752
-              } ]
+              "latestDataKeys" : null
             } ],
             "timewindow" : {
               "hideInterval" : false,
@@ -11304,6 +11257,192 @@
           "row" : 0,
           "col" : 0,
           "id" : "a43e7838-c281-d130-3f85-a712e128cd6c"
+        },
+        "b5688f63-ac0c-4d63-04de-d53eefdd0d24" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "attributes_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "power",
+                "type" : "timeseries",
+                "label" : "Somma power",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.1879216310741565,
+                "aggregationType" : "SUM",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "return value/1000;",
+                "comparisonEnabled" : null
+              }, {
+                "name" : "F1",
+                "type" : "timeseries",
+                "label" : "F1",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.22345951373245798
+              }, {
+                "name" : "F2",
+                "type" : "timeseries",
+                "label" : "F2",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.18538596031877996
+              }, {
+                "name" : "F3",
+                "type" : "timeseries",
+                "label" : "F3",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.9688831485280092
+              }, {
+                "name" : "F23",
+                "type" : "timeseries",
+                "label" : "F23",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.5578557670560587
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1684307745587,
+                  "endTimeMs" : 1684394145587
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : { },
+            "title" : "New Attributes card",
+            "useDashboardTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "b5688f63-ac0c-4d63-04de-d53eefdd0d24"
+        },
+        "0481bd97-32f7-5e2b-9f65-af84a529a04b" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "markdown_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 5,
+          "sizeY" : 3.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "power",
+                "type" : "timeseries",
+                "label" : "Somma power",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.34334677202236086,
+                "aggregationType" : "SUM",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "return value/1000;",
+                "comparisonEnabled" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1684307968761,
+                  "endTimeMs" : 1684394368761
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "markdownTextPattern" : "### Markdown/HTML card\n - **Current entity**: ${entityName}.\n - **Current value**: ${Random}.",
+              "markdownTextFunction" : "return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
+              "useMarkdownTextFunction" : false
+            },
+            "title" : "New Markdown/HTML Card",
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "showLegend" : false,
+            "useDashboardTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "0481bd97-32f7-5e2b-9f65-af84a529a04b"
         }
       },
       "states" : {
@@ -11959,6 +12098,18 @@
                   "sizeY" : 5,
                   "row" : 0,
                   "col" : 19
+                },
+                "b5688f63-ac0c-4d63-04de-d53eefdd0d24" : {
+                  "sizeX" : 5,
+                  "sizeY" : 6,
+                  "row" : 6,
+                  "col" : 0
+                },
+                "0481bd97-32f7-5e2b-9f65-af84a529a04b" : {
+                  "sizeX" : 5,
+                  "sizeY" : 3,
+                  "row" : 12,
+                  "col" : 0
                 }
               },
               "gridSettings" : {
@@ -12367,12 +12518,14 @@
       },
       "timewindow" : {
         "hideInterval" : false,
+        "hideLastInterval" : false,
+        "hideQuickInterval" : false,
         "hideAggregation" : false,
         "hideAggInterval" : false,
         "hideTimezone" : false,
         "selectedTab" : 1,
         "history" : {
-          "historyType" : 0,
+          "historyType" : 2,
           "timewindowMs" : 86400000,
           "interval" : 900000,
           "fixedTimewindow" : {
@@ -12384,7 +12537,8 @@
         "aggregation" : {
           "type" : "AVG",
           "limit" : 25000
-        }
+        },
+        "timezone" : null
       },
       "settings" : {
         "stateControllerId" : "entity",

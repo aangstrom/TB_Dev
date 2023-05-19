@@ -30,7 +30,7 @@
       "type" : "Success"
     }, {
       "fromIndex" : 0,
-      "toIndex" : 8,
+      "toIndex" : 9,
       "type" : "Success"
     }, {
       "fromIndex" : 1,
@@ -63,6 +63,14 @@
     }, {
       "fromIndex" : 7,
       "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 8,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 8,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 0,
@@ -275,7 +283,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var message={};\nmessage.person=msg.person;\nmessage.lavoratori=msg.person;\n\nreturn {msg: message, metadata: metadata, msgType: msgType};"
       },
       "createdTime" : 0,
       "debugMode" : true,
@@ -288,6 +296,28 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 395,
+        "layoutY" : 259
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if(msg.person!=null){\n    return['Success'];\n}else{\n    return['Failed'];\n}\nreturn nextRelation(metadata, msg);"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a6cfad50-f678-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "if person",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     } ],
     "ruleChainConnections" : null
   },

@@ -1397,186 +1397,6 @@
           "col" : 0,
           "id" : "e2aa308f-a6b9-ad7e-f343-39d6b465caa5"
         },
-        "e18f3bc4-b487-b170-6660-458b3a6cdce9" : {
-          "isSystemType" : true,
-          "bundleAlias" : "cards",
-          "typeAlias" : "markdown_card",
-          "type" : "latest",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
-          "sizeX" : 5,
-          "sizeY" : 3.5,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entityCount",
-              "name" : null,
-              "entityAliasId" : "62fac1ba-42a3-6dc7-c445-e42adcce1233",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "count",
-                "type" : "count",
-                "label" : "count_sedi",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.6649287753186348,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              } ]
-            }, {
-              "type" : "entityCount",
-              "name" : null,
-              "entityAliasId" : "8f2393ca-48df-1efd-bf19-e35f324f6fa9",
-              "filterId" : "109c3873-761e-ff02-b09e-a762ccfda0f6",
-              "dataKeys" : [ {
-                "name" : "count",
-                "type" : "count",
-                "label" : "count_sentinelle",
-                "color" : "#4caf50",
-                "settings" : { },
-                "_hash" : 0.567243403688547,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              } ]
-            }, {
-              "type" : "entityCount",
-              "name" : null,
-              "entityAliasId" : "8f2393ca-48df-1efd-bf19-e35f324f6fa9",
-              "filterId" : "4952dd9f-098b-bbd8-076d-dbf3a1f9d8f4",
-              "dataKeys" : [ {
-                "name" : "count",
-                "type" : "count",
-                "label" : "count_disconnected",
-                "color" : "#f44336",
-                "settings" : { },
-                "_hash" : 0.006039437151656335,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              } ]
-            } ],
-            "timewindow" : {
-              "displayValue" : "",
-              "selectedTab" : 0,
-              "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1683809072630,
-                  "endTimeMs" : 1683895472630
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "limit" : 25000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "rgba(0,0,0,0.6)",
-            "color" : "#19ff00",
-            "padding" : "0px",
-            "settings" : {
-              "useMarkdownTextFunction" : false,
-              "markdownTextPattern" : "<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <i id=\"home\" class=\"fa fa-home fas\"><h1>&nbsp;Home</h1></i>\n        </div>\n        <div class='column'>\n            <div class=\"status_bar\">\n                <i class=\"fa fa-building\" aria-hidden=\"true\"><div id=\"sedi\" class=\"status_bar_notification\">${count_sedi:0}</div></i>\n                <!--<i class=\"fa fa-podcast\" aria-hidden=\"true\"><div class=\"status_bar_notification\">error</div></i>-->\n                <i id=\"connected\" class=\"fa fa-rss fas\" aria-hidden=\"true\"><div class=\"status_bar_notification\">${count_sentinelle:0}</div></i>\n                <i id=\"disconnected\" class=\"fa fa-exclamation-triangle fas\" aria-hidden=\"true\"><div class=\"status_bar_notification_red\">${count_disconnected:0}</div></i>\n            </div>\n        </div>\n    </div>\n</div>",
-              "applyDefaultMarkdownStyle" : true,
-              "markdownCss" : ".card {\n   width: 100%;\n   height: 100%;\n}\n\n.card .content {\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-between;\n   height: 100%;\n}\n\n.card .content .column {\n    display: flex;\n    margin-left: 50px;\n    margin-right: 50px;\n    align-items: center;\n    flex-direction: row;\n    justify-content: space-between;\n}\n.status_bar{\n    width: 250px;\n    display: flex;\n    align-items: center;\n    flex-direction: row;\n    justify-content: space-between;\n}\n.status_bar_notification{\n    height: 22px;\n    margin-top: -10px;\n    font-size: 16px;\n    color: white;\n    border-radius: 20%;\n    padding: 0px 8px;\n    background-color: #00CDFF;\n}\n.status_bar_notification_red{\n    height: 24px;\n    margin-top: -10px;\n    font-size: 16px;\n    color: white;\n    border-radius: 20%;\n    padding: 2px 8px;\n    background-color: red;\n}\n.card h1 {\n    text-transform: uppercase;\n    font-size: 20px;\n    font-weight: bold;\n    margin: 0px;\n    padding:0px;\n    line-height: 32px;\n    font-family: Arial;\n    color: #18ff00;\n}\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n\n.fa{\n    font-size: 30px;\n    text-align: center;\n    padding-bottom: 0px;\n    display: flex;\n    flex-direction: row;\n    color: #18ff00;\n}\n.fas:hover{\n    opacity: 0.5;\n    cursor: pointer;\n}"
-            },
-            "title" : "New Markdown/HTML Card",
-            "showTitleIcon" : false,
-            "iconColor" : "rgba(0, 0, 0, 0.87)",
-            "iconSize" : "24px",
-            "titleTooltip" : "",
-            "dropShadow" : false,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "showLegend" : false,
-            "enableDataExport" : false,
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : "",
-            "useDashboardTimewindow" : true,
-            "actions" : {
-              "elementClick" : [ {
-                "name" : "home",
-                "icon" : "more_horiz",
-                "useShowWidgetActionFunction" : null,
-                "showWidgetActionFunction" : "return true;",
-                "type" : "updateDashboardState",
-                "targetDashboardStateId" : "home",
-                "setEntityId" : true,
-                "stateEntityParamName" : null,
-                "openRightLayout" : false,
-                "openInSeparateDialog" : false,
-                "openInPopover" : false,
-                "id" : "2c334d54-8dd2-c44c-72eb-fad89f6c39cd"
-              }, {
-                "name" : "disconnected",
-                "icon" : "more_horiz",
-                "useShowWidgetActionFunction" : null,
-                "showWidgetActionFunction" : "return true;",
-                "type" : "openDashboardState",
-                "targetDashboardStateId" : "sentinelle_disconnesse",
-                "setEntityId" : true,
-                "stateEntityParamName" : null,
-                "openRightLayout" : false,
-                "popoverPreferredPlacement" : "bottom",
-                "popoverHideOnClickOutside" : true,
-                "popoverHideDashboardToolbar" : true,
-                "popoverWidth" : "300px",
-                "popoverHeight" : "600px",
-                "popoverStyle" : { },
-                "openInSeparateDialog" : false,
-                "openInPopover" : true,
-                "id" : "323ee94f-0592-c5d2-37d3-7ad3f6c6494e"
-              }, {
-                "name" : "connected",
-                "icon" : "more_horiz",
-                "useShowWidgetActionFunction" : null,
-                "showWidgetActionFunction" : "return true;",
-                "type" : "openDashboardState",
-                "targetDashboardStateId" : "sentinelle_connesse",
-                "setEntityId" : true,
-                "stateEntityParamName" : null,
-                "openRightLayout" : false,
-                "popoverPreferredPlacement" : "bottom",
-                "popoverHideOnClickOutside" : true,
-                "popoverHideDashboardToolbar" : true,
-                "popoverWidth" : "300px",
-                "popoverHeight" : "600px",
-                "popoverStyle" : { },
-                "openInSeparateDialog" : false,
-                "openInPopover" : true,
-                "id" : "0befd363-bf4d-43c3-a4dd-4387274f3dc0"
-              } ]
-            }
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "e18f3bc4-b487-b170-6660-458b3a6cdce9"
-        },
         "3b936d7f-a5a9-130d-f8f9-98ae84d18781" : {
           "isSystemType" : true,
           "bundleAlias" : "cards",
@@ -9260,6 +9080,186 @@
           "row" : 0,
           "col" : 0,
           "id" : "ce73d79a-7642-809d-bf7d-a901bbb79db8"
+        },
+        "7ba1830b-9ddb-74fa-3a70-4c33f55a2940" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "markdown_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 5,
+          "sizeY" : 3.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entityCount",
+              "name" : null,
+              "entityAliasId" : "62fac1ba-42a3-6dc7-c445-e42adcce1233",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "count",
+                "type" : "count",
+                "label" : "count_sedi",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.6649287753186348,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ]
+            }, {
+              "type" : "entityCount",
+              "name" : null,
+              "entityAliasId" : "c3cf1118-97ec-3b19-f619-9ffa73c72bc4",
+              "filterId" : "b99fbf22-f2dc-5d40-5953-443485d63da7",
+              "dataKeys" : [ {
+                "name" : "count",
+                "type" : "count",
+                "label" : "count_sentinelle",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.567243403688547,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ]
+            }, {
+              "type" : "entityCount",
+              "name" : null,
+              "entityAliasId" : "c3cf1118-97ec-3b19-f619-9ffa73c72bc4",
+              "filterId" : "c0aa1cb9-8fbb-5054-e82e-94a164c1b1dd",
+              "dataKeys" : [ {
+                "name" : "count",
+                "type" : "count",
+                "label" : "count_disconnected",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.006039437151656335,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1683809072630,
+                  "endTimeMs" : 1683895472630
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgb(63, 81, 181)",
+            "color" : "#FFFFFF",
+            "padding" : "0px",
+            "settings" : {
+              "useMarkdownTextFunction" : false,
+              "markdownTextPattern" : "<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <i id=\"home\" class=\"fa fa-home fas\"><h1>&nbsp;Home</h1></i>\n        </div>\n        <div class='column'>\n            <div class=\"status_bar\">\n                <i class=\"fa fa-building\" aria-hidden=\"true\"><div id=\"sedi\" class=\"status_bar_notification\">${count_sedi:0}</div></i>\n                <!--<i class=\"fa fa-podcast\" aria-hidden=\"true\"><div class=\"status_bar_notification\">error</div></i>-->\n                <i id=\"connected\" class=\"fa fa-rss fas\" aria-hidden=\"true\"><div class=\"status_bar_notification\">${count_sentinelle:0}</div></i>\n                <i id=\"disconnected\" class=\"fa fa-exclamation-triangle fas\" aria-hidden=\"true\"><div class=\"status_bar_notification_red\">${count_disconnected:0}</div></i>\n            </div>\n        </div>\n    </div>\n</div>",
+              "applyDefaultMarkdownStyle" : true,
+              "markdownCss" : ".card {\n   width: 100%;\n   height: 100%;\n}\n\n.card .content {\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-between;\n   height: 100%;\n}\n\n.card .content .column {\n    display: flex;\n    margin-left: 50px;\n    margin-right: 50px;\n    align-items: center;\n    flex-direction: row;\n    justify-content: space-between;\n}\n.status_bar{\n    width: 250px;\n    display: flex;\n    align-items: center;\n    flex-direction: row;\n    justify-content: space-between;\n}\n.status_bar_notification{\n    height: 22px;\n    margin-top: -10px;\n    font-size: 16px;\n    color: white;\n    border-radius: 20%;\n    padding: 0px 8px;\n    background-color: #00CDFF;\n}\n.status_bar_notification_red{\n    height: 24px;\n    margin-top: -10px;\n    font-size: 16px;\n    color: white;\n    border-radius: 20%;\n    padding: 2px 8px;\n    background-color: red;\n}\n.card h1 {\n    text-transform: uppercase;\n    font-size: 20px;\n    font-weight: bold;\n    margin: 0px;\n    padding:0px;\n    line-height: 32px;\n    font-family: Arial;\n    color: #ffffff;\n}\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n\n.fa{\n    font-size: 30px;\n    text-align: center;\n    padding-bottom: 0px;\n    display: flex;\n    flex-direction: row;\n    color: #ffffff;\n}\n.fas:hover{\n    opacity: 0.5;\n    cursor: pointer;\n}"
+            },
+            "title" : "New Markdown/HTML Card",
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "showLegend" : false,
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "useDashboardTimewindow" : true,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "home",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "updateDashboardState",
+                "targetDashboardStateId" : "home",
+                "setEntityId" : true,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "2c334d54-8dd2-c44c-72eb-fad89f6c39cd"
+              }, {
+                "name" : "disconnected",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "sentinelle_disconnesse",
+                "setEntityId" : true,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "popoverPreferredPlacement" : "bottom",
+                "popoverHideOnClickOutside" : true,
+                "popoverHideDashboardToolbar" : true,
+                "popoverWidth" : "300px",
+                "popoverHeight" : "600px",
+                "popoverStyle" : { },
+                "openInSeparateDialog" : false,
+                "openInPopover" : true,
+                "id" : "323ee94f-0592-c5d2-37d3-7ad3f6c6494e"
+              }, {
+                "name" : "connected",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "sentinelle_connesse",
+                "setEntityId" : true,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "popoverPreferredPlacement" : "bottom",
+                "popoverHideOnClickOutside" : true,
+                "popoverHideDashboardToolbar" : true,
+                "popoverWidth" : "300px",
+                "popoverHeight" : "600px",
+                "popoverStyle" : { },
+                "openInSeparateDialog" : false,
+                "openInPopover" : true,
+                "id" : "0befd363-bf4d-43c3-a4dd-4387274f3dc0"
+              } ]
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "7ba1830b-9ddb-74fa-3a70-4c33f55a2940"
         }
       },
       "states" : {
@@ -9340,12 +9340,6 @@
                   "row" : 1,
                   "col" : 20
                 },
-                "e18f3bc4-b487-b170-6660-458b3a6cdce9" : {
-                  "sizeX" : 24,
-                  "sizeY" : 1,
-                  "row" : 0,
-                  "col" : 0
-                },
                 "62fef37f-ec00-c163-c12f-4f974ef61e21" : {
                   "sizeX" : 7,
                   "sizeY" : 7,
@@ -9381,6 +9375,12 @@
                   "sizeY" : 7,
                   "row" : 1,
                   "col" : 7
+                },
+                "7ba1830b-9ddb-74fa-3a70-4c33f55a2940" : {
+                  "sizeX" : 24,
+                  "sizeY" : 1,
+                  "row" : 0,
+                  "col" : 0
                 }
               },
               "gridSettings" : {
@@ -10189,6 +10189,26 @@
               "id" : "cb303550-0373-11ed-91ed-0903699d62f6"
             }
           }
+        },
+        "c3cf1118-97ec-3b19-f619-9ffa73c72bc4" : {
+          "id" : "c3cf1118-97ec-3b19-f619-9ffa73c72bc4",
+          "alias" : "Devices1",
+          "filter" : {
+            "type" : "deviceSearchQuery",
+            "resolveMultiple" : true,
+            "rootStateEntity" : false,
+            "stateEntityParamName" : "current_customer",
+            "defaultStateEntity" : null,
+            "rootEntity" : {
+              "entityType" : "CUSTOMER",
+              "id" : "cb303550-0373-11ed-91ed-0903699d62f6"
+            },
+            "direction" : "FROM",
+            "maxLevel" : null,
+            "fetchLastLevelOnly" : false,
+            "relationType" : null,
+            "deviceTypes" : [ "AA Sensor", "Camera" ]
+          }
         }
       },
       "filters" : {
@@ -10312,6 +10332,196 @@
                 },
                 "ignoreCase" : false,
                 "type" : "STRING"
+              },
+              "userInfo" : {
+                "editable" : true,
+                "label" : "",
+                "autogeneratedLabel" : true,
+                "order" : 0
+              }
+            } ]
+          } ],
+          "editable" : false
+        },
+        "b99fbf22-f2dc-5d40-5953-443485d63da7" : {
+          "id" : "b99fbf22-f2dc-5d40-5953-443485d63da7",
+          "filter" : "If Active1",
+          "keyFilters" : [ {
+            "key" : {
+              "type" : "ATTRIBUTE",
+              "key" : "active"
+            },
+            "valueType" : "BOOLEAN",
+            "predicates" : [ {
+              "keyFilterPredicate" : {
+                "operation" : "EQUAL",
+                "value" : {
+                  "defaultValue" : true,
+                  "dynamicValue" : null
+                },
+                "type" : "BOOLEAN"
+              },
+              "userInfo" : {
+                "editable" : true,
+                "label" : "",
+                "autogeneratedLabel" : true,
+                "order" : 0
+              }
+            } ]
+          }, {
+            "key" : {
+              "type" : "ENTITY_FIELD",
+              "key" : "type"
+            },
+            "valueType" : "STRING",
+            "predicates" : [ {
+              "keyFilterPredicate" : {
+                "operation" : "OR",
+                "predicates" : [ {
+                  "keyFilterPredicate" : {
+                    "operation" : "EQUAL",
+                    "value" : {
+                      "defaultValue" : "AA Sensor",
+                      "dynamicValue" : null
+                    },
+                    "ignoreCase" : false,
+                    "type" : "STRING"
+                  },
+                  "userInfo" : {
+                    "editable" : true,
+                    "label" : "",
+                    "autogeneratedLabel" : true,
+                    "order" : 0
+                  }
+                }, {
+                  "keyFilterPredicate" : {
+                    "operation" : "EQUAL",
+                    "value" : {
+                      "defaultValue" : "Camera",
+                      "dynamicValue" : null
+                    },
+                    "ignoreCase" : false,
+                    "type" : "STRING"
+                  },
+                  "userInfo" : {
+                    "editable" : true,
+                    "label" : "",
+                    "autogeneratedLabel" : true,
+                    "order" : 0
+                  }
+                }, {
+                  "keyFilterPredicate" : {
+                    "operation" : "EQUAL",
+                    "value" : {
+                      "defaultValue" : "Rumore",
+                      "dynamicValue" : null
+                    },
+                    "ignoreCase" : false,
+                    "type" : "STRING"
+                  },
+                  "userInfo" : {
+                    "editable" : true,
+                    "label" : "",
+                    "autogeneratedLabel" : true,
+                    "order" : 0
+                  }
+                } ],
+                "type" : "COMPLEX"
+              },
+              "userInfo" : {
+                "editable" : true,
+                "label" : "",
+                "autogeneratedLabel" : true,
+                "order" : 0
+              }
+            } ]
+          } ],
+          "editable" : false
+        },
+        "c0aa1cb9-8fbb-5054-e82e-94a164c1b1dd" : {
+          "id" : "c0aa1cb9-8fbb-5054-e82e-94a164c1b1dd",
+          "filter" : "if Disconnected1",
+          "keyFilters" : [ {
+            "key" : {
+              "type" : "ATTRIBUTE",
+              "key" : "active"
+            },
+            "valueType" : "BOOLEAN",
+            "predicates" : [ {
+              "keyFilterPredicate" : {
+                "operation" : "EQUAL",
+                "value" : {
+                  "defaultValue" : false,
+                  "dynamicValue" : null
+                },
+                "type" : "BOOLEAN"
+              },
+              "userInfo" : {
+                "editable" : true,
+                "label" : "",
+                "autogeneratedLabel" : true,
+                "order" : 0
+              }
+            } ]
+          }, {
+            "key" : {
+              "type" : "ENTITY_FIELD",
+              "key" : "type"
+            },
+            "valueType" : "STRING",
+            "predicates" : [ {
+              "keyFilterPredicate" : {
+                "operation" : "OR",
+                "predicates" : [ {
+                  "keyFilterPredicate" : {
+                    "operation" : "EQUAL",
+                    "value" : {
+                      "defaultValue" : "AA Sensor",
+                      "dynamicValue" : null
+                    },
+                    "ignoreCase" : false,
+                    "type" : "STRING"
+                  },
+                  "userInfo" : {
+                    "editable" : true,
+                    "label" : "",
+                    "autogeneratedLabel" : true,
+                    "order" : 0
+                  }
+                }, {
+                  "keyFilterPredicate" : {
+                    "operation" : "EQUAL",
+                    "value" : {
+                      "defaultValue" : "Camera",
+                      "dynamicValue" : null
+                    },
+                    "ignoreCase" : false,
+                    "type" : "STRING"
+                  },
+                  "userInfo" : {
+                    "editable" : true,
+                    "label" : "",
+                    "autogeneratedLabel" : true,
+                    "order" : 0
+                  }
+                }, {
+                  "keyFilterPredicate" : {
+                    "operation" : "EQUAL",
+                    "value" : {
+                      "defaultValue" : "Rumore",
+                      "dynamicValue" : null
+                    },
+                    "ignoreCase" : false,
+                    "type" : "STRING"
+                  },
+                  "userInfo" : {
+                    "editable" : true,
+                    "label" : "",
+                    "autogeneratedLabel" : true,
+                    "order" : 0
+                  }
+                } ],
+                "type" : "COMPLEX"
               },
               "userInfo" : {
                 "editable" : true,

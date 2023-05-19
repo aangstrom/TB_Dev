@@ -208,12 +208,28 @@
       "toIndex" : 24,
       "type" : "Success"
     }, {
+      "fromIndex" : 27,
+      "toIndex" : 32,
+      "type" : "Success"
+    }, {
       "fromIndex" : 28,
       "toIndex" : 27,
       "type" : "Failure"
     }, {
       "fromIndex" : 28,
       "toIndex" : 27,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 29,
+      "toIndex" : 30,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 29,
+      "toIndex" : 31,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 30,
+      "toIndex" : 31,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 1,
@@ -867,8 +883,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 179,
-        "layoutY" : 674
+        "layoutX" : 60,
+        "layoutY" : 40
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -915,8 +931,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 51,
-        "layoutY" : 571
+        "layoutX" : 322,
+        "layoutY" : 353
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -1043,6 +1059,138 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 242,
+        "layoutY" : 718
+      },
+      "configuration" : {
+        "originatorSource" : "RELATED",
+        "entityType" : null,
+        "entityNamePattern" : null,
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "FROM",
+          "maxLevel" : null,
+          "filters" : [ {
+            "relationType" : null,
+            "entityTypes" : [ "ASSET" ]
+          } ]
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "3ce84790-f622-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Add to Reparto e Sede",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 227,
+        "layoutY" : 791
+      },
+      "configuration" : {
+        "originatorSource" : "RELATED",
+        "entityType" : null,
+        "entityNamePattern" : null,
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "FROM",
+          "maxLevel" : null,
+          "filters" : [ {
+            "relationType" : null,
+            "entityTypes" : [ "CUSTOMER" ]
+          } ]
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "3ce98010-f622-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Add to Cliente",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 592,
+        "layoutY" : 765
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "3ce9f540-f622-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Save Timeseries",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 238,
+        "layoutY" : 636
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "if(msg.Phase_A_power!=null){msg.power=msg.Phase_A_power;msg.Phase_A_power=null;}\nif(msg.Phase_B_power!=null){msg.power=msg.Phase_B_power;msg.Phase_B_power=null;}\nif(msg.Phase_C_power!=null){msg.power=msg.Phase_C_power;msg.Phase_C_power=null;}\nif(msg.Phase_A_energy!=null){msg.energy=msg.Phase_A_energy;msg.Phase_A_energy=null;}\nif(msg.Phase_B_energy!=null){msg.energy=msg.Phase_B_energy;msg.Phase_B_energy=null;}\nif(msg.Phase_C_energy!=null){msg.energy=msg.Phase_C_energy;msg.Phase_C_energy=null;}\nif(msg.Phase_A_pf!=null){msg.pf=msg.Phase_A_pf;msg.Phase_A_pf=null;}\nif(msg.Phase_B_pf!=null){msg.pf=msg.Phase_B_pf;msg.Phase_B_pf=null;}\nif(msg.Phase_C_pf!=null){msg.pf=msg.Phase_C_pf;msg.Phase_C_pf=null;}\nif(msg.Phase_A_F1!=null){msg.F1=msg.Phase_A_F1;msg.Phase_A_F1=null;}\nif(msg.Phase_B_F1!=null){msg.F1=msg.Phase_B_F1;msg.Phase_B_F1=null;}\nif(msg.Phase_C_F1!=null){msg.F1=msg.Phase_C_F1;msg.Phase_C_F1=null;}\nif(msg.Phase_A_F2!=null){msg.F2=msg.Phase_A_F2;msg.Phase_A_F2=null;}\nif(msg.Phase_B_F2!=null){msg.F2=msg.Phase_B_F2;msg.Phase_B_F2=null;}\nif(msg.Phase_C_F2!=null){msg.F2=msg.Phase_C_F2;msg.Phase_C_F2=null;}\nif(msg.Phase_A_F3!=null){msg.F3=msg.Phase_A_F3;msg.Phase_A_F3=null;}\nif(msg.Phase_B_F3!=null){msg.F3=msg.Phase_B_F3;msg.Phase_B_F3=null;}\nif(msg.Phase_C_F3!=null){msg.F3=msg.Phase_C_F3;msg.Phase_C_F3=null;}\nif(msg.Phase_A_F23!=null){msg.F23=msg.Phase_A_F23;msg.Phase_A_F23=null;}\nif(msg.Phase_B_F23!=null){msg.F23=msg.Phase_B_F23;msg.Phase_B_F23=null;}\nif(msg.Phase_C_F23!=null){msg.F23=msg.Phase_C_F23;msg.Phase_C_F23=null;}\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "3cea9180-f622-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Transform name to power",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 40,
+        "layoutY" : 535
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchToData" : false,
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "location", "tipologia" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "3ceb54d0-f622-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Get Device Type",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
     } ],
     "ruleChainConnections" : null
   },

@@ -9371,6 +9371,1415 @@
           "row" : 0,
           "col" : 0,
           "id" : "6ca5a932-627a-9f13-969d-772f3ca030f6"
+        },
+        "de8735e4-88b5-4b17-862d-88e05086afd4" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
+              "filterId" : null,
+              "dataKeys" : [ ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1682513492328,
+                  "endTimeMs" : 1682599892328
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div id=\"segnalazione\" class='card'>\n    <h1>Guasto</h1>\n    <i class=\"fa fa-cogs\" aria-hidden=\"true\"></i>\n</div>",
+              "cardCss" : "@media (min-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (max-width: 960px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (min-width:960px) and (max-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n.card {\n    font-weight: bold;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    \n}\n.card:hover{\n    transform: scale(0.9);\n}\nh1{\n    flex-wrap: wrap;\n    font-weight: bold;\n}\n.fa{\n    color:#facc15;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "segnalazione",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\n        <h2>Nuova Segnalazione</h2>\n        <span fxFlex></span>\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\n            <mat-icon class=\"material-icons\">close</mat-icon>\n        </button>\n    </mat-toolbar>\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\n    </mat-progress-bar>\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\n    <div mat-dialog-content fxLayout=\"column\">\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Guasto</span><br>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Oggetto</mat-label>\n                <input matInput formControlName=\"oggetto\" required>\n            </mat-form-field>\n            <section fxLayout=\"row\" fxLayoutAlign=\"center\" fxLayoutGap=\"10px\" fxLayout.xs=\"column\" fxLayoutGap.xs=\"0\">\n                <mat-form-field appearance=\"fill\" style=\"width: 300px\">\n                  <mat-label>Data inizio</mat-label>\n                  <mat-datetimepicker-toggle [for]=\"DatePicker\" matPrefix></mat-datetimepicker-toggle>\n                  <mat-datetimepicker #DatePicker type=\"date\" openOnFocus=\"true\"></mat-datetimepicker>\n                  <input matInput [disabled]=\"disabled\"  [matDatetimepicker]=\"DatePicker\" formControlName=\"eventDate\" required>\n                  <mat-hint>GG/MM/AAAA</mat-hint>\n                </mat-form-field>\n                <mat-form-field appearance=\"fill\"  style=\"width: 300px\">\n                  <mat-label>Ora inizio</mat-label>\n                  <mat-datetimepicker-toggle [for]=\"TimePicker\" matPrefix></mat-datetimepicker-toggle>\n                  <mat-datetimepicker #TimePicker type=\"time\" openOnFocus=\"true\"></mat-datetimepicker>\n                  <input matInput [disabled]=\"disabled\" [matDatetimepicker]=\"TimePicker\" formControlName=\"eventTime\" required><mat-hint>H/Min</mat-hint>\n                </mat-form-field>\n            </section>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Durata</mat-label>\n                <input matInput formControlName=\"durata\" required>\n            </mat-form-field>\n            <mat-form-field appearance=\"fill\">\n              <mat-label>Note</mat-label>\n              <textarea matInput formControlName=\"note\"></textarea>\n            </mat-form-field>\n            <!--<mat-form-field appearance=\"fill\">\n                <mat-label>Registrato dall'utente</mat-label>\n                <input matInput formControlName=\"user\" required>\n            </mat-form-field>-->\n        </div>\n    </div>\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\n        <button mat-button color=\"primary\"\n                type=\"button\"\n                [disabled]=\"(isLoading$ | async)\"\n                (click)=\"cancel()\" cdkFocusInitial>\n            Cancella\n        </button>\n        <button mat-button mat-raised-button color=\"primary\"\n                type=\"submit\"\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\n            Invia\n        </button>\n    </div>\n</form>\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\n\nvar user = widgetContext.currentUser.sub;\nconsole.log(user);\nlet segnalazione = \"Guasto\";\n\nopenAddEntityDialog();\n\nfunction openAddEntityDialog() {\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\n}\n\nfunction AddEntityDialogController(instance) {\n    let vm = instance;\n    vm.addEntityFormGroup = vm.fb.group({\n     oggetto: [null, [vm.validators.required]],\n     eventDate:[null, [vm.validators.required]],\n     eventTime:[null, [vm.validators.required]],\n     durata:[null, [vm.validators.required]],\n     note: [\"\"]\n    });\n\n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    vm.save = function() {\n        var formData=vm.addEntityFormGroup.value;\n        formData.eventDate.setHours(formData.eventTime.getHours());\n        formData.eventDate.setMinutes(formData.eventTime.getMinutes());\n        vm.addEntityFormGroup.markAsPristine();\n        var telData={\"ts\":formData.eventDate.valueOf(), \"values\":{\"maloreoggetto\":formData.oggetto, \"maloreuser\":user, \"maloredurata\":formData.durata, \"malorenote\":formData.note, \"maloreevento\":segnalazione}};\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\n        {\n        // console.log(\"data: \",data)\n            // widgetContext.updateAliases();\n            vm.dialogRef.close(null);\n        },function(error){\n            console.log(error);\n        });\n    };\n\n}\n",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "b1cb8f72-0cc1-654a-dc07-80ab5ffa429b"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "margin" : "0px"
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "de8735e4-88b5-4b17-862d-88e05086afd4"
+        },
+        "81c72907-11b5-d5ed-9eac-90deae6304dd" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
+              "filterId" : null,
+              "dataKeys" : [ ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1682513492328,
+                  "endTimeMs" : 1682599892328
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div id=\"segnalazione\" class='card'>\n    <h1>Fermo Generico</h1>\n    <i class=\"fa fa-pause\" aria-hidden=\"true\"></i>\n</div>",
+              "cardCss" : "@media (min-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (max-width: 960px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (min-width:960px) and (max-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n.card {\n    font-weight: bold;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.card:hover{\n    transform: scale(0.9);\n}\nh1{\n    flex-wrap: wrap;\n    font-weight: bold;\n}\n.fa{\n    color:#84cc16;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "segnalazione",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\r\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\r\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\r\n        <h2>Nuova Segnalazione</h2>\r\n        <span fxFlex></span>\r\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\r\n            <mat-icon class=\"material-icons\">close</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\r\n    </mat-progress-bar>\r\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\r\n    <div mat-dialog-content fxLayout=\"column\">\r\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\r\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Fermo Generico</span><br>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Oggetto</mat-label>\r\n                <input matInput formControlName=\"oggetto\" required>\r\n            </mat-form-field>\r\n            <section fxLayout=\"row\" fxLayoutAlign=\"center\" fxLayoutGap=\"10px\" fxLayout.xs=\"column\" fxLayoutGap.xs=\"0\">\r\n                <mat-form-field appearance=\"fill\" style=\"width: 300px\">\r\n                  <mat-label>Data inizio</mat-label>\r\n                  <mat-datetimepicker-toggle [for]=\"DatePicker\" matPrefix></mat-datetimepicker-toggle>\r\n                  <mat-datetimepicker #DatePicker type=\"date\" openOnFocus=\"true\"></mat-datetimepicker>\r\n                  <input matInput [disabled]=\"disabled\"  [matDatetimepicker]=\"DatePicker\" formControlName=\"eventDate\" required>\r\n                  <mat-hint>GG/MM/AAAA</mat-hint>\r\n                </mat-form-field>\r\n                <mat-form-field appearance=\"fill\"  style=\"width: 300px\">\r\n                  <mat-label>Ora inizio</mat-label>\r\n                  <mat-datetimepicker-toggle [for]=\"TimePicker\" matPrefix></mat-datetimepicker-toggle>\r\n                  <mat-datetimepicker #TimePicker type=\"time\" openOnFocus=\"true\"></mat-datetimepicker>\r\n                  <input matInput [disabled]=\"disabled\" [matDatetimepicker]=\"TimePicker\" formControlName=\"eventTime\" required><mat-hint>H/Min</mat-hint>\r\n                </mat-form-field>\r\n            </section>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Durata</mat-label>\r\n                <input matInput formControlName=\"durata\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n              <mat-label>Note</mat-label>\r\n              <textarea matInput formControlName=\"note\"></textarea>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Registrato dall'utente</mat-label>\r\n                <input matInput formControlName=\"user\" required>\r\n            </mat-form-field>\r\n        </div>\r\n    </div>\r\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n        <button mat-button color=\"primary\"\r\n                type=\"button\"\r\n                [disabled]=\"(isLoading$ | async)\"\r\n                (click)=\"cancel()\" cdkFocusInitial>\r\n            Cancella\r\n        </button>\r\n        <button mat-button mat-raised-button color=\"primary\"\r\n                type=\"submit\"\r\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\r\n            Invia\r\n        </button>\r\n    </div>\r\n</form>\r\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\r\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\r\n\r\nlet segnalazione = \"Fermo Generico\";\r\n    openAddEntityDialog();\r\n\r\nfunction openAddEntityDialog() {\r\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\r\n}\r\n\r\nfunction AddEntityDialogController(instance) {\r\n    let vm = instance;\r\n    vm.addEntityFormGroup = vm.fb.group({\r\n     oggetto: [null, [vm.validators.required]],\r\n     eventDate:[null, [vm.validators.required]],\r\n     eventTime:[null, [vm.validators.required]],\r\n     durata:[null, [vm.validators.required]],\r\n     user: [null, [vm.validators.required]],\r\n     note: [\"\"]\r\n    });\r\n\r\n    vm.cancel = function() {\r\n        vm.dialogRef.close(null);\r\n    };\r\n    vm.save = function() {\r\n        var formData=vm.addEntityFormGroup.value;\r\n        formData.eventDate.setHours(formData.eventTime.getHours());\r\n        formData.eventDate.setMinutes(formData.eventTime.getMinutes());\r\n        vm.addEntityFormGroup.markAsPristine();\r\n        var telData={\"ts\":formData.eventDate.valueOf(), \"values\":{\"maloreoggetto\":formData.oggetto, \"maloreuser\":formData.user, \"maloredurata\":formData.durata, \"malorenote\":formData.note, \"maloreevento\":segnalazione}};\r\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\r\n        {\r\n        // console.log(\"data: \",data)\r\n            // widgetContext.updateAliases();\r\n            vm.dialogRef.close(null);\r\n        },function(error){\r\n            console.log(error);\r\n        });\r\n    };\r\n\r\n}\r\n",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "c4dbda5b-4661-cda0-011a-57143dab10d4"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "81c72907-11b5-d5ed-9eac-90deae6304dd"
+        },
+        "09176378-0645-b74b-4ed5-8bf54e5cec5e" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
+              "filterId" : null,
+              "dataKeys" : [ ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1682513492328,
+                  "endTimeMs" : 1682599892328
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div id=\"segnalazione\" class='card'>\n    <h1>Manutenzione</h1>\n    <i class=\"fa fa-life-ring\" aria-hidden=\"true\"></i>\n</div>",
+              "cardCss" : "@media (min-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (max-width: 960px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (min-width:960px) and (max-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n.card {\n    font-weight: bold;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.card:hover{\n    transform: scale(0.9);\n}\nh1{\n    flex-wrap: wrap;\n    font-weight: bold;\n}\n.fa{\n    color:blue;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "segnalazione",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\r\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\r\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\r\n        <h2>Nuova Segnalazione</h2>\r\n        <span fxFlex></span>\r\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\r\n            <mat-icon class=\"material-icons\">close</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\r\n    </mat-progress-bar>\r\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\r\n    <div mat-dialog-content fxLayout=\"column\">\r\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\r\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Manutenzione</span><br>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Oggetto</mat-label>\r\n                <input matInput formControlName=\"oggetto\" required>\r\n            </mat-form-field>\r\n            <section fxLayout=\"row\" fxLayoutAlign=\"center\" fxLayoutGap=\"10px\" fxLayout.xs=\"column\" fxLayoutGap.xs=\"0\">\r\n                <mat-form-field appearance=\"fill\" style=\"width: 300px\">\r\n                  <mat-label>Data inizio</mat-label>\r\n                  <mat-datetimepicker-toggle [for]=\"DatePicker\" matPrefix></mat-datetimepicker-toggle>\r\n                  <mat-datetimepicker #DatePicker type=\"date\" openOnFocus=\"true\"></mat-datetimepicker>\r\n                  <input matInput [disabled]=\"disabled\"  [matDatetimepicker]=\"DatePicker\" formControlName=\"eventDate\" required>\r\n                  <mat-hint>GG/MM/AAAA</mat-hint>\r\n                </mat-form-field>\r\n                <mat-form-field appearance=\"fill\"  style=\"width: 300px\">\r\n                  <mat-label>Ora inizio</mat-label>\r\n                  <mat-datetimepicker-toggle [for]=\"TimePicker\" matPrefix></mat-datetimepicker-toggle>\r\n                  <mat-datetimepicker #TimePicker type=\"time\" openOnFocus=\"true\"></mat-datetimepicker>\r\n                  <input matInput [disabled]=\"disabled\" [matDatetimepicker]=\"TimePicker\" formControlName=\"eventTime\" required><mat-hint>H/Min</mat-hint>\r\n                </mat-form-field>\r\n            </section>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Durata</mat-label>\r\n                <input matInput formControlName=\"durata\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n              <mat-label>Note</mat-label>\r\n              <textarea matInput formControlName=\"note\"></textarea>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Registrato dall'utente</mat-label>\r\n                <input matInput formControlName=\"user\" required>\r\n            </mat-form-field>\r\n        </div>\r\n    </div>\r\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n        <button mat-button color=\"primary\"\r\n                type=\"button\"\r\n                [disabled]=\"(isLoading$ | async)\"\r\n                (click)=\"cancel()\" cdkFocusInitial>\r\n            Cancella\r\n        </button>\r\n        <button mat-button mat-raised-button color=\"primary\"\r\n                type=\"submit\"\r\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\r\n            Invia\r\n        </button>\r\n    </div>\r\n</form>\r\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\r\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\r\n\r\nlet segnalazione = \"Manutenzione\";\r\n    openAddEntityDialog();\r\n\r\nfunction openAddEntityDialog() {\r\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\r\n}\r\n\r\nfunction AddEntityDialogController(instance) {\r\n    let vm = instance;\r\n    vm.addEntityFormGroup = vm.fb.group({\r\n     oggetto: [null, [vm.validators.required]],\r\n     eventDate:[null, [vm.validators.required]],\r\n     eventTime:[null, [vm.validators.required]],\r\n     durata:[null, [vm.validators.required]],\r\n     user: [null, [vm.validators.required]],\r\n     note: [\"\"]\r\n    });\r\n\r\n    vm.cancel = function() {\r\n        vm.dialogRef.close(null);\r\n    };\r\n    vm.save = function() {\r\n        var formData=vm.addEntityFormGroup.value;\r\n        formData.eventDate.setHours(formData.eventTime.getHours());\r\n        formData.eventDate.setMinutes(formData.eventTime.getMinutes());\r\n        vm.addEntityFormGroup.markAsPristine();\r\n        var telData={\"ts\":formData.eventDate.valueOf(), \"values\":{\"maloreoggetto\":formData.oggetto, \"maloreuser\":formData.user, \"maloredurata\":formData.durata, \"malorenote\":formData.note, \"maloreevento\":segnalazione}};\r\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\r\n        {\r\n        // console.log(\"data: \",data)\r\n            // widgetContext.updateAliases();\r\n            vm.dialogRef.close(null);\r\n        },function(error){\r\n            console.log(error);\r\n        });\r\n    };\r\n\r\n}\r\n",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "c4dbda5b-4661-cda0-011a-57143dab10d4"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "09176378-0645-b74b-4ed5-8bf54e5cec5e"
+        },
+        "27d9b869-a32c-81f8-113a-5d319d25ca2e" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
+              "filterId" : null,
+              "dataKeys" : [ ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1682513492328,
+                  "endTimeMs" : 1682599892328
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div id=\"segnalazione\" class='card'>\n    <h1>Taratura</h1>\n    <i class=\"fa fa-sliders\" aria-hidden=\"true\"></i>\n</div>",
+              "cardCss" : "@media (min-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (max-width: 960px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (min-width:960px) and (max-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n.card {\n    font-weight: bold;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.card:hover{\n    transform: scale(0.9);\n}\nh1{\n    flex-wrap: wrap;\n    font-weight: bold;\n}\n.fa{\n    color:#ef4444;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "segnalazione",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\r\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\r\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\r\n        <h2>Nuova Segnalazione</h2>\r\n        <span fxFlex></span>\r\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\r\n            <mat-icon class=\"material-icons\">close</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\r\n    </mat-progress-bar>\r\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\r\n    <div mat-dialog-content fxLayout=\"column\">\r\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\r\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Taratura</span><br>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Oggetto</mat-label>\r\n                <input matInput formControlName=\"oggetto\" required>\r\n            </mat-form-field>\r\n            <section fxLayout=\"row\" fxLayoutAlign=\"center\" fxLayoutGap=\"10px\" fxLayout.xs=\"column\" fxLayoutGap.xs=\"0\">\r\n                <mat-form-field appearance=\"fill\" style=\"width: 300px\">\r\n                  <mat-label>Data inizio</mat-label>\r\n                  <mat-datetimepicker-toggle [for]=\"DatePicker\" matPrefix></mat-datetimepicker-toggle>\r\n                  <mat-datetimepicker #DatePicker type=\"date\" openOnFocus=\"true\"></mat-datetimepicker>\r\n                  <input matInput [disabled]=\"disabled\"  [matDatetimepicker]=\"DatePicker\" formControlName=\"eventDate\" required>\r\n                  <mat-hint>GG/MM/AAAA</mat-hint>\r\n                </mat-form-field>\r\n                <mat-form-field appearance=\"fill\"  style=\"width: 300px\">\r\n                  <mat-label>Ora inizio</mat-label>\r\n                  <mat-datetimepicker-toggle [for]=\"TimePicker\" matPrefix></mat-datetimepicker-toggle>\r\n                  <mat-datetimepicker #TimePicker type=\"time\" openOnFocus=\"true\"></mat-datetimepicker>\r\n                  <input matInput [disabled]=\"disabled\" [matDatetimepicker]=\"TimePicker\" formControlName=\"eventTime\" required><mat-hint>H/Min</mat-hint>\r\n                </mat-form-field>\r\n            </section>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Durata</mat-label>\r\n                <input matInput formControlName=\"durata\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n              <mat-label>Note</mat-label>\r\n              <textarea matInput formControlName=\"note\"></textarea>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Registrato dall'utente</mat-label>\r\n                <input matInput formControlName=\"user\" required>\r\n            </mat-form-field>\r\n        </div>\r\n    </div>\r\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n        <button mat-button color=\"primary\"\r\n                type=\"button\"\r\n                [disabled]=\"(isLoading$ | async)\"\r\n                (click)=\"cancel()\" cdkFocusInitial>\r\n            Cancella\r\n        </button>\r\n        <button mat-button mat-raised-button color=\"primary\"\r\n                type=\"submit\"\r\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\r\n            Invia\r\n        </button>\r\n    </div>\r\n</form>\r\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\r\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\r\n\r\nlet segnalazione = \"Taratura\";\r\n    openAddEntityDialog();\r\n\r\nfunction openAddEntityDialog() {\r\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\r\n}\r\n\r\nfunction AddEntityDialogController(instance) {\r\n    let vm = instance;\r\n    vm.addEntityFormGroup = vm.fb.group({\r\n     oggetto: [null, [vm.validators.required]],\r\n     eventDate:[null, [vm.validators.required]],\r\n     eventTime:[null, [vm.validators.required]],\r\n     durata:[null, [vm.validators.required]],\r\n     user: [null, [vm.validators.required]],\r\n     note: [\"\"]\r\n    });\r\n\r\n    vm.cancel = function() {\r\n        vm.dialogRef.close(null);\r\n    };\r\n    vm.save = function() {\r\n        var formData=vm.addEntityFormGroup.value;\r\n        formData.eventDate.setHours(formData.eventTime.getHours());\r\n        formData.eventDate.setMinutes(formData.eventTime.getMinutes());\r\n        vm.addEntityFormGroup.markAsPristine();\r\n        var telData={\"ts\":formData.eventDate.valueOf(), \"values\":{\"maloreoggetto\":formData.oggetto, \"maloreuser\":formData.user, \"maloredurata\":formData.durata, \"malorenote\":formData.note, \"maloreevento\":segnalazione}};\r\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\r\n        {\r\n        // console.log(\"data: \",data)\r\n            // widgetContext.updateAliases();\r\n            vm.dialogRef.close(null);\r\n        },function(error){\r\n            console.log(error);\r\n        });\r\n    };\r\n\r\n}\r\n",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "c4dbda5b-4661-cda0-011a-57143dab10d4"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "27d9b869-a32c-81f8-113a-5d319d25ca2e"
+        },
+        "f60c240b-6d04-11db-6ba2-741e13cc4634" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
+              "filterId" : null,
+              "dataKeys" : [ ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1682513492328,
+                  "endTimeMs" : 1682599892328
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div id=\"segnalazione\" class='card'>\n    <h1>Installazione Ricambio</h1>\n    <i class=\"fa fa-wrench\" aria-hidden=\"true\"></i>\n</div>",
+              "cardCss" : "@media (min-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (max-width: 960px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (min-width:960px) and (max-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n.card {\n    font-weight: bold;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.card:hover{\n    transform: scale(0.9);\n}\nh1{\n    flex-wrap: wrap;\n    font-weight: bold;\n}\n.fa{\n    color:#0ea5e9;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "segnalazione",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\r\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\r\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\r\n        <h2>Nuova Segnalazione</h2>\r\n        <span fxFlex></span>\r\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\r\n            <mat-icon class=\"material-icons\">close</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\r\n    </mat-progress-bar>\r\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\r\n    <div mat-dialog-content fxLayout=\"column\">\r\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\r\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Installazione Ricambio</span><br>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Oggetto</mat-label>\r\n                <input matInput formControlName=\"oggetto\" required>\r\n            </mat-form-field>\r\n            <section fxLayout=\"row\" fxLayoutAlign=\"center\" fxLayoutGap=\"10px\" fxLayout.xs=\"column\" fxLayoutGap.xs=\"0\">\r\n                <mat-form-field appearance=\"fill\" style=\"width: 300px\">\r\n                  <mat-label>Data inizio</mat-label>\r\n                  <mat-datetimepicker-toggle [for]=\"DatePicker\" matPrefix></mat-datetimepicker-toggle>\r\n                  <mat-datetimepicker #DatePicker type=\"date\" openOnFocus=\"true\"></mat-datetimepicker>\r\n                  <input matInput [disabled]=\"disabled\"  [matDatetimepicker]=\"DatePicker\" formControlName=\"eventDate\" required>\r\n                  <mat-hint>GG/MM/AAAA</mat-hint>\r\n                </mat-form-field>\r\n                <mat-form-field appearance=\"fill\"  style=\"width: 300px\">\r\n                  <mat-label>Ora inizio</mat-label>\r\n                  <mat-datetimepicker-toggle [for]=\"TimePicker\" matPrefix></mat-datetimepicker-toggle>\r\n                  <mat-datetimepicker #TimePicker type=\"time\" openOnFocus=\"true\"></mat-datetimepicker>\r\n                  <input matInput [disabled]=\"disabled\" [matDatetimepicker]=\"TimePicker\" formControlName=\"eventTime\" required><mat-hint>H/Min</mat-hint>\r\n                </mat-form-field>\r\n            </section>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Durata</mat-label>\r\n                <input matInput formControlName=\"durata\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n              <mat-label>Note</mat-label>\r\n              <textarea matInput formControlName=\"note\"></textarea>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Registrato dall'utente</mat-label>\r\n                <input matInput formControlName=\"user\" required>\r\n            </mat-form-field>\r\n        </div>\r\n    </div>\r\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n        <button mat-button color=\"primary\"\r\n                type=\"button\"\r\n                [disabled]=\"(isLoading$ | async)\"\r\n                (click)=\"cancel()\" cdkFocusInitial>\r\n            Cancella\r\n        </button>\r\n        <button mat-button mat-raised-button color=\"primary\"\r\n                type=\"submit\"\r\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\r\n            Invia\r\n        </button>\r\n    </div>\r\n</form>\r\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\r\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\r\n\r\nlet segnalazione = \"Installazione Ricambio\";\r\n    openAddEntityDialog();\r\n\r\nfunction openAddEntityDialog() {\r\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\r\n}\r\n\r\nfunction AddEntityDialogController(instance) {\r\n    let vm = instance;\r\n    vm.addEntityFormGroup = vm.fb.group({\r\n     oggetto: [null, [vm.validators.required]],\r\n     eventDate:[null, [vm.validators.required]],\r\n     eventTime:[null, [vm.validators.required]],\r\n     durata:[null, [vm.validators.required]],\r\n     user: [null, [vm.validators.required]],\r\n     note: [\"\"]\r\n    });\r\n\r\n    vm.cancel = function() {\r\n        vm.dialogRef.close(null);\r\n    };\r\n    vm.save = function() {\r\n        var formData=vm.addEntityFormGroup.value;\r\n        formData.eventDate.setHours(formData.eventTime.getHours());\r\n        formData.eventDate.setMinutes(formData.eventTime.getMinutes());\r\n        vm.addEntityFormGroup.markAsPristine();\r\n        var telData={\"ts\":formData.eventDate.valueOf(), \"values\":{\"maloreoggetto\":formData.oggetto, \"maloreuser\":formData.user, \"maloredurata\":formData.durata, \"malorenote\":formData.note, \"maloreevento\":segnalazione}};\r\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\r\n        {\r\n        // console.log(\"data: \",data)\r\n            // widgetContext.updateAliases();\r\n            vm.dialogRef.close(null);\r\n        },function(error){\r\n            console.log(error);\r\n        });\r\n    };\r\n\r\n}\r\n",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "c4dbda5b-4661-cda0-011a-57143dab10d4"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "f60c240b-6d04-11db-6ba2-741e13cc4634"
+        },
+        "1bb842f8-d770-e953-648f-dcdf89e4beb0" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
+              "filterId" : null,
+              "dataKeys" : [ ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1682513492328,
+                  "endTimeMs" : 1682599892328
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div id=\"segnalazione\" class='card'>\n    <h1>Cambio Produzione</h1>\n    <i class=\"fa fa-refresh\" aria-hidden=\"true\"></i>\n</div>",
+              "cardCss" : "@media (min-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (max-width: 960px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (min-width:960px) and (max-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n.card {\n    font-weight: bold;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.card:hover{\n    transform: scale(0.9);\n}\nh1{\n    flex-wrap: wrap;\n    font-weight: bold;\n}\n.fa{\n    color:#a3e635;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "segnalazione",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\r\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\r\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\r\n        <h2>Nuova Segnalazione</h2>\r\n        <span fxFlex></span>\r\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\r\n            <mat-icon class=\"material-icons\">close</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\r\n    </mat-progress-bar>\r\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\r\n    <div mat-dialog-content fxLayout=\"column\">\r\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\r\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Cambio Produzione</span><br>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Oggetto</mat-label>\r\n                <input matInput formControlName=\"oggetto\" required>\r\n            </mat-form-field>\r\n            <section fxLayout=\"row\" fxLayoutAlign=\"center\" fxLayoutGap=\"10px\" fxLayout.xs=\"column\" fxLayoutGap.xs=\"0\">\r\n                <mat-form-field appearance=\"fill\" style=\"width: 300px\">\r\n                  <mat-label>Data inizio</mat-label>\r\n                  <mat-datetimepicker-toggle [for]=\"DatePicker\" matPrefix></mat-datetimepicker-toggle>\r\n                  <mat-datetimepicker #DatePicker type=\"date\" openOnFocus=\"true\"></mat-datetimepicker>\r\n                  <input matInput [disabled]=\"disabled\"  [matDatetimepicker]=\"DatePicker\" formControlName=\"eventDate\" required>\r\n                  <mat-hint>GG/MM/AAAA</mat-hint>\r\n                </mat-form-field>\r\n                <mat-form-field appearance=\"fill\"  style=\"width: 300px\">\r\n                  <mat-label>Ora inizio</mat-label>\r\n                  <mat-datetimepicker-toggle [for]=\"TimePicker\" matPrefix></mat-datetimepicker-toggle>\r\n                  <mat-datetimepicker #TimePicker type=\"time\" openOnFocus=\"true\"></mat-datetimepicker>\r\n                  <input matInput [disabled]=\"disabled\" [matDatetimepicker]=\"TimePicker\" formControlName=\"eventTime\" required><mat-hint>H/Min</mat-hint>\r\n                </mat-form-field>\r\n            </section>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Durata</mat-label>\r\n                <input matInput formControlName=\"durata\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n              <mat-label>Note</mat-label>\r\n              <textarea matInput formControlName=\"note\"></textarea>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Registrato dall'utente</mat-label>\r\n                <input matInput formControlName=\"user\" required>\r\n            </mat-form-field>\r\n        </div>\r\n    </div>\r\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n        <button mat-button color=\"primary\"\r\n                type=\"button\"\r\n                [disabled]=\"(isLoading$ | async)\"\r\n                (click)=\"cancel()\" cdkFocusInitial>\r\n            Cancella\r\n        </button>\r\n        <button mat-button mat-raised-button color=\"primary\"\r\n                type=\"submit\"\r\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\r\n            Invia\r\n        </button>\r\n    </div>\r\n</form>\r\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\r\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\r\n\r\nlet segnalazione = \"Cambio Produzione\";\r\n    openAddEntityDialog();\r\n\r\nfunction openAddEntityDialog() {\r\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\r\n}\r\n\r\nfunction AddEntityDialogController(instance) {\r\n    let vm = instance;\r\n    vm.addEntityFormGroup = vm.fb.group({\r\n     oggetto: [null, [vm.validators.required]],\r\n     eventDate:[null, [vm.validators.required]],\r\n     eventTime:[null, [vm.validators.required]],\r\n     durata:[null, [vm.validators.required]],\r\n     user: [null, [vm.validators.required]],\r\n     note: [\"\"]\r\n    });\r\n\r\n    vm.cancel = function() {\r\n        vm.dialogRef.close(null);\r\n    };\r\n    vm.save = function() {\r\n        var formData=vm.addEntityFormGroup.value;\r\n        formData.eventDate.setHours(formData.eventTime.getHours());\r\n        formData.eventDate.setMinutes(formData.eventTime.getMinutes());\r\n        vm.addEntityFormGroup.markAsPristine();\r\n        var telData={\"ts\":formData.eventDate.valueOf(), \"values\":{\"maloreoggetto\":formData.oggetto, \"maloreuser\":formData.user, \"maloredurata\":formData.durata, \"malorenote\":formData.note, \"maloreevento\":segnalazione}};\r\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\r\n        {\r\n        // console.log(\"data: \",data)\r\n            // widgetContext.updateAliases();\r\n            vm.dialogRef.close(null);\r\n        },function(error){\r\n            console.log(error);\r\n        });\r\n    };\r\n\r\n}\r\n",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "c4dbda5b-4661-cda0-011a-57143dab10d4"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "1bb842f8-d770-e953-648f-dcdf89e4beb0"
+        },
+        "e5ea88e5-ef05-e3da-19d3-1a801d37929c" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
+              "filterId" : null,
+              "dataKeys" : [ ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1682513492328,
+                  "endTimeMs" : 1682599892328
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div id=\"segnalazione\" class='card'>\n    <h1>Setup Macchina</h1>\n    <i class=\"fa fa-history\" aria-hidden=\"true\"></i>\n</div>",
+              "cardCss" : "@media (min-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (max-width: 960px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (min-width:960px) and (max-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n.card {\n    font-weight: bold;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.card:hover{\n    transform: scale(0.9);\n}\nh1{\n    flex-wrap: wrap;\n    font-weight: bold;\n}\n.fa{\n    color:#fde047;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "segnalazione",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\r\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\r\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\r\n        <h2>Nuova Segnalazione</h2>\r\n        <span fxFlex></span>\r\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\r\n            <mat-icon class=\"material-icons\">close</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\r\n    </mat-progress-bar>\r\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\r\n    <div mat-dialog-content fxLayout=\"column\">\r\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\r\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Setup Macchina</span><br>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Oggetto</mat-label>\r\n                <input matInput formControlName=\"oggetto\" required>\r\n            </mat-form-field>\r\n            <section fxLayout=\"row\" fxLayoutAlign=\"center\" fxLayoutGap=\"10px\" fxLayout.xs=\"column\" fxLayoutGap.xs=\"0\">\r\n                <mat-form-field appearance=\"fill\" style=\"width: 300px\">\r\n                  <mat-label>Data inizio</mat-label>\r\n                  <mat-datetimepicker-toggle [for]=\"DatePicker\" matPrefix></mat-datetimepicker-toggle>\r\n                  <mat-datetimepicker #DatePicker type=\"date\" openOnFocus=\"true\"></mat-datetimepicker>\r\n                  <input matInput [disabled]=\"disabled\"  [matDatetimepicker]=\"DatePicker\" formControlName=\"eventDate\" required>\r\n                  <mat-hint>GG/MM/AAAA</mat-hint>\r\n                </mat-form-field>\r\n                <mat-form-field appearance=\"fill\"  style=\"width: 300px\">\r\n                  <mat-label>Ora inizio</mat-label>\r\n                  <mat-datetimepicker-toggle [for]=\"TimePicker\" matPrefix></mat-datetimepicker-toggle>\r\n                  <mat-datetimepicker #TimePicker type=\"time\" openOnFocus=\"true\"></mat-datetimepicker>\r\n                  <input matInput [disabled]=\"disabled\" [matDatetimepicker]=\"TimePicker\" formControlName=\"eventTime\" required><mat-hint>H/Min</mat-hint>\r\n                </mat-form-field>\r\n            </section>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Durata</mat-label>\r\n                <input matInput formControlName=\"durata\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n              <mat-label>Note</mat-label>\r\n              <textarea matInput formControlName=\"note\"></textarea>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Registrato dall'utente</mat-label>\r\n                <input matInput formControlName=\"user\" required>\r\n            </mat-form-field>\r\n        </div>\r\n    </div>\r\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n        <button mat-button color=\"primary\"\r\n                type=\"button\"\r\n                [disabled]=\"(isLoading$ | async)\"\r\n                (click)=\"cancel()\" cdkFocusInitial>\r\n            Cancella\r\n        </button>\r\n        <button mat-button mat-raised-button color=\"primary\"\r\n                type=\"submit\"\r\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\r\n            Invia\r\n        </button>\r\n    </div>\r\n</form>\r\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\r\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\r\n\r\nlet segnalazione = \"Setup Macchina\";\r\n    openAddEntityDialog();\r\n\r\nfunction openAddEntityDialog() {\r\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\r\n}\r\n\r\nfunction AddEntityDialogController(instance) {\r\n    let vm = instance;\r\n    vm.addEntityFormGroup = vm.fb.group({\r\n     oggetto: [null, [vm.validators.required]],\r\n     eventDate:[null, [vm.validators.required]],\r\n     eventTime:[null, [vm.validators.required]],\r\n     durata:[null, [vm.validators.required]],\r\n     user: [null, [vm.validators.required]],\r\n     note: [\"\"]\r\n    });\r\n\r\n    vm.cancel = function() {\r\n        vm.dialogRef.close(null);\r\n    };\r\n    vm.save = function() {\r\n        var formData=vm.addEntityFormGroup.value;\r\n        formData.eventDate.setHours(formData.eventTime.getHours());\r\n        formData.eventDate.setMinutes(formData.eventTime.getMinutes());\r\n        vm.addEntityFormGroup.markAsPristine();\r\n        var telData={\"ts\":formData.eventDate.valueOf(), \"values\":{\"maloreoggetto\":formData.oggetto, \"maloreuser\":formData.user, \"maloredurata\":formData.durata, \"malorenote\":formData.note, \"maloreevento\":segnalazione}};\r\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\r\n        {\r\n        // console.log(\"data: \",data)\r\n            // widgetContext.updateAliases();\r\n            vm.dialogRef.close(null);\r\n        },function(error){\r\n            console.log(error);\r\n        });\r\n    };\r\n\r\n}\r\n",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "c4dbda5b-4661-cda0-011a-57143dab10d4"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "e5ea88e5-ef05-e3da-19d3-1a801d37929c"
+        },
+        "736209a6-7263-c989-767b-88fa61775bd7" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
+              "filterId" : null,
+              "dataKeys" : [ ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1682513492328,
+                  "endTimeMs" : 1682599892328
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div id=\"segnalazione\" class='card'>\n    <h1>Mancanza Energia</h1>\n    <i class=\"fa fa-battery-empty\" aria-hidden=\"true\"></i>\n</div>",
+              "cardCss" : "@media (min-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (max-width: 960px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (min-width:960px) and (max-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n.card {\n    font-weight: bold;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.card:hover{\n    transform: scale(0.9);\n}\nh1{\n    flex-wrap: wrap;\n    font-weight: bold;\n}\n.fa{\n    color:#86efac;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "segnalazione",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\r\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\r\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\r\n        <h2>Nuova Segnalazione</h2>\r\n        <span fxFlex></span>\r\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\r\n            <mat-icon class=\"material-icons\">close</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\r\n    </mat-progress-bar>\r\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\r\n    <div mat-dialog-content fxLayout=\"column\">\r\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\r\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Mancanza Energia</span><br>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Oggetto</mat-label>\r\n                <input matInput formControlName=\"oggetto\" required>\r\n            </mat-form-field>\r\n            <section fxLayout=\"row\" fxLayoutAlign=\"center\" fxLayoutGap=\"10px\" fxLayout.xs=\"column\" fxLayoutGap.xs=\"0\">\r\n                <mat-form-field appearance=\"fill\" style=\"width: 300px\">\r\n                  <mat-label>Data inizio</mat-label>\r\n                  <mat-datetimepicker-toggle [for]=\"DatePicker\" matPrefix></mat-datetimepicker-toggle>\r\n                  <mat-datetimepicker #DatePicker type=\"date\" openOnFocus=\"true\"></mat-datetimepicker>\r\n                  <input matInput [disabled]=\"disabled\"  [matDatetimepicker]=\"DatePicker\" formControlName=\"eventDate\" required>\r\n                  <mat-hint>GG/MM/AAAA</mat-hint>\r\n                </mat-form-field>\r\n                <mat-form-field appearance=\"fill\"  style=\"width: 300px\">\r\n                  <mat-label>Ora inizio</mat-label>\r\n                  <mat-datetimepicker-toggle [for]=\"TimePicker\" matPrefix></mat-datetimepicker-toggle>\r\n                  <mat-datetimepicker #TimePicker type=\"time\" openOnFocus=\"true\"></mat-datetimepicker>\r\n                  <input matInput [disabled]=\"disabled\" [matDatetimepicker]=\"TimePicker\" formControlName=\"eventTime\" required><mat-hint>H/Min</mat-hint>\r\n                </mat-form-field>\r\n            </section>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Durata</mat-label>\r\n                <input matInput formControlName=\"durata\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n              <mat-label>Note</mat-label>\r\n              <textarea matInput formControlName=\"note\"></textarea>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Registrato dall'utente</mat-label>\r\n                <input matInput formControlName=\"user\" required>\r\n            </mat-form-field>\r\n        </div>\r\n    </div>\r\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n        <button mat-button color=\"primary\"\r\n                type=\"button\"\r\n                [disabled]=\"(isLoading$ | async)\"\r\n                (click)=\"cancel()\" cdkFocusInitial>\r\n            Cancella\r\n        </button>\r\n        <button mat-button mat-raised-button color=\"primary\"\r\n                type=\"submit\"\r\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\r\n            Invia\r\n        </button>\r\n    </div>\r\n</form>\r\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\r\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\r\n\r\nlet segnalazione = \"Mancanza Energia\";\r\n    openAddEntityDialog();\r\n\r\nfunction openAddEntityDialog() {\r\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\r\n}\r\n\r\nfunction AddEntityDialogController(instance) {\r\n    let vm = instance;\r\n    vm.addEntityFormGroup = vm.fb.group({\r\n     oggetto: [null, [vm.validators.required]],\r\n     eventDate:[null, [vm.validators.required]],\r\n     eventTime:[null, [vm.validators.required]],\r\n     durata:[null, [vm.validators.required]],\r\n     user: [null, [vm.validators.required]],\r\n     note: [\"\"]\r\n    });\r\n\r\n    vm.cancel = function() {\r\n        vm.dialogRef.close(null);\r\n    };\r\n    vm.save = function() {\r\n        var formData=vm.addEntityFormGroup.value;\r\n        formData.eventDate.setHours(formData.eventTime.getHours());\r\n        formData.eventDate.setMinutes(formData.eventTime.getMinutes());\r\n        vm.addEntityFormGroup.markAsPristine();\r\n        var telData={\"ts\":formData.eventDate.valueOf(), \"values\":{\"maloreoggetto\":formData.oggetto, \"maloreuser\":formData.user, \"maloredurata\":formData.durata, \"malorenote\":formData.note, \"maloreevento\":segnalazione}};\r\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\r\n        {\r\n        // console.log(\"data: \",data)\r\n            // widgetContext.updateAliases();\r\n            vm.dialogRef.close(null);\r\n        },function(error){\r\n            console.log(error);\r\n        });\r\n    };\r\n\r\n}\r\n",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "c4dbda5b-4661-cda0-011a-57143dab10d4"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "736209a6-7263-c989-767b-88fa61775bd7"
+        },
+        "1ea5769c-6fbc-bffb-cf24-65c5638fa79e" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
+              "filterId" : null,
+              "dataKeys" : [ ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1682513492328,
+                  "endTimeMs" : 1682599892328
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div id=\"segnalazione\" class='card'>\n    <h1>Incidente Personale</h1>\n    <i class=\"fa fa-medkit\" aria-hidden=\"true\"></i>\n</div>",
+              "cardCss" : "@media (min-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (max-width: 960px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (min-width:960px) and (max-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n.card {\n    font-weight: bold;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.card:hover{\n    transform: scale(0.9);\n}\nh1{\n    flex-wrap: wrap;\n    font-weight: bold;\n}\n.fa{\n    color:red;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "segnalazione",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\r\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\r\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\r\n        <h2>Nuova Segnalazione</h2>\r\n        <span fxFlex></span>\r\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\r\n            <mat-icon class=\"material-icons\">close</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\r\n    </mat-progress-bar>\r\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\r\n    <div mat-dialog-content fxLayout=\"column\">\r\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\r\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Incidente Personale</span><br>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Oggetto</mat-label>\r\n                <input matInput formControlName=\"oggetto\" required>\r\n            </mat-form-field>\r\n            <section fxLayout=\"row\" fxLayoutAlign=\"center\" fxLayoutGap=\"10px\" fxLayout.xs=\"column\" fxLayoutGap.xs=\"0\">\r\n                <mat-form-field appearance=\"fill\" style=\"width: 300px\">\r\n                  <mat-label>Data inizio</mat-label>\r\n                  <mat-datetimepicker-toggle [for]=\"DatePicker\" matPrefix></mat-datetimepicker-toggle>\r\n                  <mat-datetimepicker #DatePicker type=\"date\" openOnFocus=\"true\"></mat-datetimepicker>\r\n                  <input matInput [disabled]=\"disabled\"  [matDatetimepicker]=\"DatePicker\" formControlName=\"eventDate\" required>\r\n                  <mat-hint>GG/MM/AAAA</mat-hint>\r\n                </mat-form-field>\r\n                <mat-form-field appearance=\"fill\"  style=\"width: 300px\">\r\n                  <mat-label>Ora inizio</mat-label>\r\n                  <mat-datetimepicker-toggle [for]=\"TimePicker\" matPrefix></mat-datetimepicker-toggle>\r\n                  <mat-datetimepicker #TimePicker type=\"time\" openOnFocus=\"true\"></mat-datetimepicker>\r\n                  <input matInput [disabled]=\"disabled\" [matDatetimepicker]=\"TimePicker\" formControlName=\"eventTime\" required><mat-hint>H/Min</mat-hint>\r\n                </mat-form-field>\r\n            </section>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Durata</mat-label>\r\n                <input matInput formControlName=\"durata\" required>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n              <mat-label>Note</mat-label>\r\n              <textarea matInput formControlName=\"note\"></textarea>\r\n            </mat-form-field>\r\n            <mat-form-field appearance=\"fill\">\r\n                <mat-label>Registrato dall'utente</mat-label>\r\n                <input matInput formControlName=\"user\" required>\r\n            </mat-form-field>\r\n        </div>\r\n    </div>\r\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\r\n        <button mat-button color=\"primary\"\r\n                type=\"button\"\r\n                [disabled]=\"(isLoading$ | async)\"\r\n                (click)=\"cancel()\" cdkFocusInitial>\r\n            Cancella\r\n        </button>\r\n        <button mat-button mat-raised-button color=\"primary\"\r\n                type=\"submit\"\r\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\r\n            Invia\r\n        </button>\r\n    </div>\r\n</form>\r\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\r\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\r\n\r\nlet segnalazione = \"Incidente Personale\";\r\n    openAddEntityDialog();\r\n\r\nfunction openAddEntityDialog() {\r\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\r\n}\r\n\r\nfunction AddEntityDialogController(instance) {\r\n    let vm = instance;\r\n    vm.addEntityFormGroup = vm.fb.group({\r\n     oggetto: [null, [vm.validators.required]],\r\n     eventDate:[null, [vm.validators.required]],\r\n     eventTime:[null, [vm.validators.required]],\r\n     durata:[null, [vm.validators.required]],\r\n     user: [null, [vm.validators.required]],\r\n     note: [\"\"]\r\n    });\r\n\r\n    vm.cancel = function() {\r\n        vm.dialogRef.close(null);\r\n    };\r\n    vm.save = function() {\r\n        var formData=vm.addEntityFormGroup.value;\r\n        formData.eventDate.setHours(formData.eventTime.getHours());\r\n        formData.eventDate.setMinutes(formData.eventTime.getMinutes());\r\n        vm.addEntityFormGroup.markAsPristine();\r\n        var telData={\"ts\":formData.eventDate.valueOf(), \"values\":{\"maloreoggetto\":formData.oggetto, \"maloreuser\":formData.user, \"maloredurata\":formData.durata, \"malorenote\":formData.note, \"maloreevento\":segnalazione}};\r\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\r\n        {\r\n        // console.log(\"data: \",data)\r\n            // widgetContext.updateAliases();\r\n            vm.dialogRef.close(null);\r\n        },function(error){\r\n            console.log(error);\r\n        });\r\n    };\r\n\r\n}\r\n",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "c4dbda5b-4661-cda0-011a-57143dab10d4"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "1ea5769c-6fbc-bffb-cf24-65c5638fa79e"
+        },
+        "25152aba-9fe9-ad89-3081-62c9d8c66c68" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
+              "filterId" : null,
+              "dataKeys" : [ ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1682513492328,
+                  "endTimeMs" : 1682599892328
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div id=\"segnalazione\" class='card'>\n    <h1>Incendio</h1>\n    <i class=\"fa fa-fire\" aria-hidden=\"true\"></i>\n</div>",
+              "cardCss" : "@media (min-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (max-width: 960px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (min-width:960px) and (max-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n.card {\n    font-weight: bold;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.card:hover{\n    transform: scale(0.9);\n}\nh1{\n    flex-wrap: wrap;\n    font-weight: bold;\n}\n.fa{\n    color:#ea580c;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "segnalazione",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\n        <h2>Nuova Segnalazione</h2>\n        <span fxFlex></span>\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\n            <mat-icon class=\"material-icons\">close</mat-icon>\n        </button>\n    </mat-toolbar>\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\n    </mat-progress-bar>\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\n    <div mat-dialog-content fxLayout=\"column\">\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Incendio</span><br>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Oggetto</mat-label>\n                <input matInput formControlName=\"oggetto\" required>\n            </mat-form-field>\n            <section fxLayout=\"row\" fxLayoutAlign=\"center\" fxLayoutGap=\"10px\" fxLayout.xs=\"column\" fxLayoutGap.xs=\"0\">\n                <mat-form-field appearance=\"fill\" style=\"width: 300px\">\n                  <mat-label>Data inizio</mat-label>\n                  <mat-datetimepicker-toggle [for]=\"DatePicker\" matPrefix></mat-datetimepicker-toggle>\n                  <mat-datetimepicker #DatePicker type=\"date\" openOnFocus=\"true\"></mat-datetimepicker>\n                  <input matInput [disabled]=\"disabled\"  [matDatetimepicker]=\"DatePicker\" formControlName=\"eventDate\" required>\n                  <mat-hint>GG/MM/AAAA</mat-hint>\n                </mat-form-field>\n                <mat-form-field appearance=\"fill\"  style=\"width: 300px\">\n                  <mat-label>Ora inizio</mat-label>\n                  <mat-datetimepicker-toggle [for]=\"TimePicker\" matPrefix></mat-datetimepicker-toggle>\n                  <mat-datetimepicker #TimePicker type=\"time\" openOnFocus=\"true\"></mat-datetimepicker>\n                  <input matInput [disabled]=\"disabled\" [matDatetimepicker]=\"TimePicker\" formControlName=\"eventTime\" required><mat-hint>H/Min</mat-hint>\n                </mat-form-field>\n            </section>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Durata</mat-label>\n                <input matInput formControlName=\"durata\" required>\n            </mat-form-field>\n            <mat-form-field appearance=\"fill\">\n              <mat-label>Note</mat-label>\n              <textarea matInput formControlName=\"note\"></textarea>\n            </mat-form-field>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Registrato dall'utente</mat-label>\n                <input matInput formControlName=\"user\" required>\n            </mat-form-field>\n        </div>\n    </div>\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\n        <button mat-button color=\"primary\"\n                type=\"button\"\n                [disabled]=\"(isLoading$ | async)\"\n                (click)=\"cancel()\" cdkFocusInitial>\n            Cancella\n        </button>\n        <button mat-button mat-raised-button color=\"primary\"\n                type=\"submit\"\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\n            Invia\n        </button>\n    </div>\n</form>\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\n\nlet segnalazione = \"Incendio\";\n    openAddEntityDialog();\n\nfunction openAddEntityDialog() {\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\n}\n\nfunction AddEntityDialogController(instance) {\n    let vm = instance;\n    vm.addEntityFormGroup = vm.fb.group({\n     oggetto: [null, [vm.validators.required]],\n     eventDate:[null, [vm.validators.required]],\n     eventTime:[null, [vm.validators.required]],\n     durata:[null, [vm.validators.required]],\n     user: [null, [vm.validators.required]],\n     note: [\"\"]\n    });\n\n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    vm.save = function() {\n        var formData=vm.addEntityFormGroup.value;\n        formData.eventDate.setHours(formData.eventTime.getHours());\n        formData.eventDate.setMinutes(formData.eventTime.getMinutes());\n        vm.addEntityFormGroup.markAsPristine();\n        var telData={\"ts\":formData.eventDate.valueOf(), \"values\":{\"maloreoggetto\":formData.oggetto, \"maloreuser\":formData.user, \"maloredurata\":formData.durata, \"malorenote\":formData.note, \"maloreevento\":segnalazione}};\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\n        {\n        // console.log(\"data: \",data)\n            // widgetContext.updateAliases();\n            vm.dialogRef.close(null);\n        },function(error){\n            console.log(error);\n        });\n    };\n\n}\n",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "b1cb8f72-0cc1-654a-dc07-80ab5ffa429b"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "25152aba-9fe9-ad89-3081-62c9d8c66c68"
+        },
+        "07fa4b16-21f5-2e8c-1785-3d35196bca52" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
+              "filterId" : null,
+              "dataKeys" : [ ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1682513492328,
+                  "endTimeMs" : 1682599892328
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div id=\"segnalazione\" class='card'>\n    <h1>Allagamento</h1>\n    <i class=\"fa fa-tint\" aria-hidden=\"true\"></i>\n</div>\n",
+              "cardCss" : "@media (min-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (max-width: 960px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (min-width:960px) and (max-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n.card {\n    font-weight: bold;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.card:hover{\n    transform: scale(0.9);\n}\nh1{\n    flex-wrap: wrap;\n    font-weight: bold;\n}\n.fa{\n    color:#22d3ee;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "segnalazione",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\n        <h2>Nuova Segnalazione</h2>\n        <span fxFlex></span>\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\n            <mat-icon class=\"material-icons\">close</mat-icon>\n        </button>\n    </mat-toolbar>\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\n    </mat-progress-bar>\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\n    <div mat-dialog-content fxLayout=\"column\">\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Allagamento</span><br>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Oggetto</mat-label>\n                <input matInput formControlName=\"oggetto\" required>\n            </mat-form-field>\n            <section fxLayout=\"row\" fxLayoutAlign=\"center\" fxLayoutGap=\"10px\" fxLayout.xs=\"column\" fxLayoutGap.xs=\"0\">\n                <mat-form-field appearance=\"fill\" style=\"width: 300px\">\n                  <mat-label>Data inizio</mat-label>\n                  <mat-datetimepicker-toggle [for]=\"DatePicker\" matPrefix></mat-datetimepicker-toggle>\n                  <mat-datetimepicker #DatePicker type=\"date\" openOnFocus=\"true\"></mat-datetimepicker>\n                  <input matInput [disabled]=\"disabled\"  [matDatetimepicker]=\"DatePicker\" formControlName=\"eventDate\" required>\n                  <mat-hint>GG/MM/AAAA</mat-hint>\n                </mat-form-field>\n                <mat-form-field appearance=\"fill\"  style=\"width: 300px\">\n                  <mat-label>Ora inizio</mat-label>\n                  <mat-datetimepicker-toggle [for]=\"TimePicker\" matPrefix></mat-datetimepicker-toggle>\n                  <mat-datetimepicker #TimePicker type=\"time\" openOnFocus=\"true\"></mat-datetimepicker>\n                  <input matInput [disabled]=\"disabled\" [matDatetimepicker]=\"TimePicker\" formControlName=\"eventTime\" required><mat-hint>H/Min</mat-hint>\n                </mat-form-field>\n            </section>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Durata</mat-label>\n                <input matInput formControlName=\"durata\" required>\n            </mat-form-field>\n            <mat-form-field appearance=\"fill\">\n              <mat-label>Note</mat-label>\n              <textarea matInput formControlName=\"note\"></textarea>\n            </mat-form-field>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Registrato dall'utente</mat-label>\n                <input matInput formControlName=\"user\" required>\n            </mat-form-field>\n        </div>\n    </div>\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\n        <button mat-button color=\"primary\"\n                type=\"button\"\n                [disabled]=\"(isLoading$ | async)\"\n                (click)=\"cancel()\" cdkFocusInitial>\n            Cancella\n        </button>\n        <button mat-button mat-raised-button color=\"primary\"\n                type=\"submit\"\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\n            Invia\n        </button>\n    </div>\n</form>\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\n\nlet segnalazione = \"Allagamento\";\n    openAddEntityDialog();\n\nfunction openAddEntityDialog() {\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\n}\n\nfunction AddEntityDialogController(instance) {\n    let vm = instance;\n    vm.addEntityFormGroup = vm.fb.group({\n     oggetto: [null, [vm.validators.required]],\n     eventDate:[null, [vm.validators.required]],\n     eventTime:[null, [vm.validators.required]],\n     durata:[null, [vm.validators.required]],\n     user: [null, [vm.validators.required]],\n     note: [\"\"]\n    });\n\n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    vm.save = function() {\n        var formData=vm.addEntityFormGroup.value;\n        formData.eventDate.setHours(formData.eventTime.getHours());\n        formData.eventDate.setMinutes(formData.eventTime.getMinutes());\n        vm.addEntityFormGroup.markAsPristine();\n        var telData={\"ts\":formData.eventDate.valueOf(), \"values\":{\"maloreoggetto\":formData.oggetto, \"maloreuser\":formData.user, \"maloredurata\":formData.durata, \"malorenote\":formData.note, \"maloreevento\":segnalazione}};\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\n        {\n        // console.log(\"data: \",data)\n            // widgetContext.updateAliases();\n            vm.dialogRef.close(null);\n        },function(error){\n            console.log(error);\n        });\n    };\n\n}\n",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "b1cb8f72-0cc1-654a-dc07-80ab5ffa429b"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "07fa4b16-21f5-2e8c-1785-3d35196bca52"
+        },
+        "659f956a-c8c8-cae7-c952-17f14359483a" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
+              "filterId" : null,
+              "dataKeys" : [ ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1682513492328,
+                  "endTimeMs" : 1682599892328
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div id=\"segnalazione\" class='card'>\n    <h1>Blackout</h1>\n    <i class=\"fa fa-bolt\" aria-hidden=\"true\"></i>\n</div>",
+              "cardCss" : "@media (min-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (max-width: 960px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (min-width:960px) and (max-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n.card {\n    font-weight: bold;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.card:hover{\n    transform: scale(0.9);\n}\nh1{\n    flex-wrap: wrap;\n    font-weight: bold;\n}\n.fa{\n    color:#facc15;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "segnalazione",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\n        <h2>Nuova Segnalazione</h2>\n        <span fxFlex></span>\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\n            <mat-icon class=\"material-icons\">close</mat-icon>\n        </button>\n    </mat-toolbar>\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\n    </mat-progress-bar>\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\n    <div mat-dialog-content fxLayout=\"column\">\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Blackout</span><br>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Oggetto</mat-label>\n                <input matInput formControlName=\"oggetto\" required>\n            </mat-form-field>\n            <section fxLayout=\"row\" fxLayoutAlign=\"center\" fxLayoutGap=\"10px\" fxLayout.xs=\"column\" fxLayoutGap.xs=\"0\">\n                <mat-form-field appearance=\"fill\" style=\"width: 300px\">\n                  <mat-label>Data inizio</mat-label>\n                  <mat-datetimepicker-toggle [for]=\"DatePicker\" matPrefix></mat-datetimepicker-toggle>\n                  <mat-datetimepicker #DatePicker type=\"date\" openOnFocus=\"true\"></mat-datetimepicker>\n                  <input matInput [disabled]=\"disabled\"  [matDatetimepicker]=\"DatePicker\" formControlName=\"eventDate\" required>\n                  <mat-hint>GG/MM/AAAA</mat-hint>\n                </mat-form-field>\n                <mat-form-field appearance=\"fill\"  style=\"width: 300px\">\n                  <mat-label>Ora inizio</mat-label>\n                  <mat-datetimepicker-toggle [for]=\"TimePicker\" matPrefix></mat-datetimepicker-toggle>\n                  <mat-datetimepicker #TimePicker type=\"time\" openOnFocus=\"true\"></mat-datetimepicker>\n                  <input matInput [disabled]=\"disabled\" [matDatetimepicker]=\"TimePicker\" formControlName=\"eventTime\" required><mat-hint>H/Min</mat-hint>\n                </mat-form-field>\n            </section>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Durata</mat-label>\n                <input matInput formControlName=\"durata\" required>\n            </mat-form-field>\n            <mat-form-field appearance=\"fill\">\n              <mat-label>Note</mat-label>\n              <textarea matInput formControlName=\"note\"></textarea>\n            </mat-form-field>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Registrato dall'utente</mat-label>\n                <input matInput formControlName=\"user\" required>\n            </mat-form-field>\n        </div>\n    </div>\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\n        <button mat-button color=\"primary\"\n                type=\"button\"\n                [disabled]=\"(isLoading$ | async)\"\n                (click)=\"cancel()\" cdkFocusInitial>\n            Cancella\n        </button>\n        <button mat-button mat-raised-button color=\"primary\"\n                type=\"submit\"\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\n            Invia\n        </button>\n    </div>\n</form>\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\n\nlet segnalazione = \"Blackout\";\n    openAddEntityDialog();\n\nfunction openAddEntityDialog() {\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\n}\n\nfunction AddEntityDialogController(instance) {\n    let vm = instance;\n    vm.addEntityFormGroup = vm.fb.group({\n     oggetto: [null, [vm.validators.required]],\n     eventDate:[null, [vm.validators.required]],\n     eventTime:[null, [vm.validators.required]],\n     durata:[null, [vm.validators.required]],\n     user: [null, [vm.validators.required]],\n     note: [\"\"]\n    });\n\n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    vm.save = function() {\n        var formData=vm.addEntityFormGroup.value;\n        formData.eventDate.setHours(formData.eventTime.getHours());\n        formData.eventDate.setMinutes(formData.eventTime.getMinutes());\n        vm.addEntityFormGroup.markAsPristine();\n        var telData={\"ts\":formData.eventDate.valueOf(), \"values\":{\"maloreoggetto\":formData.oggetto, \"maloreuser\":formData.user, \"maloredurata\":formData.durata, \"malorenote\":formData.note, \"maloreevento\":segnalazione}};\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\n        {\n        // console.log(\"data: \",data)\n            // widgetContext.updateAliases();\n            vm.dialogRef.close(null);\n        },function(error){\n            console.log(error);\n        });\n    };\n\n}\n",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "b1cb8f72-0cc1-654a-dc07-80ab5ffa429b"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "659f956a-c8c8-cae7-c952-17f14359483a"
+        },
+        "ae988bd6-8077-d2f5-9bae-0139acd99d8c" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
+              "filterId" : null,
+              "dataKeys" : [ ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1682513492328,
+                  "endTimeMs" : 1682599892328
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div id=\"segnalazione\" class='card'>\n    <h1>Maltempo</h1>\n    <i class=\"fa fa-snowflake-o\" aria-hidden=\"true\"></i>\n</div>",
+              "cardCss" : "@media (min-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (max-width: 960px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (min-width:960px) and (max-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n.card {\n    font-weight: bold;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.card:hover{\n    transform: scale(0.9);\n}\nh1{\n    flex-wrap: wrap;\n    font-weight: bold;\n}\n.fa{\n    color:#a5f3fc;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "segnalazione",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\n        <h2>Nuova Segnalazione</h2>\n        <span fxFlex></span>\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\n            <mat-icon class=\"material-icons\">close</mat-icon>\n        </button>\n    </mat-toolbar>\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\n    </mat-progress-bar>\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\n    <div mat-dialog-content fxLayout=\"column\">\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Maltempo</span><br>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Oggetto</mat-label>\n                <input matInput formControlName=\"oggetto\" required>\n            </mat-form-field>\n            <section fxLayout=\"row\" fxLayoutAlign=\"center\" fxLayoutGap=\"10px\" fxLayout.xs=\"column\" fxLayoutGap.xs=\"0\">\n                <mat-form-field appearance=\"fill\" style=\"width: 300px\">\n                  <mat-label>Data inizio</mat-label>\n                  <mat-datetimepicker-toggle [for]=\"DatePicker\" matPrefix></mat-datetimepicker-toggle>\n                  <mat-datetimepicker #DatePicker type=\"date\" openOnFocus=\"true\"></mat-datetimepicker>\n                  <input matInput [disabled]=\"disabled\"  [matDatetimepicker]=\"DatePicker\" formControlName=\"eventDate\" required>\n                  <mat-hint>GG/MM/AAAA</mat-hint>\n                </mat-form-field>\n                <mat-form-field appearance=\"fill\"  style=\"width: 300px\">\n                  <mat-label>Ora inizio</mat-label>\n                  <mat-datetimepicker-toggle [for]=\"TimePicker\" matPrefix></mat-datetimepicker-toggle>\n                  <mat-datetimepicker #TimePicker type=\"time\" openOnFocus=\"true\"></mat-datetimepicker>\n                  <input matInput [disabled]=\"disabled\" [matDatetimepicker]=\"TimePicker\" formControlName=\"eventTime\" required><mat-hint>H/Min</mat-hint>\n                </mat-form-field>\n            </section>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Durata</mat-label>\n                <input matInput formControlName=\"durata\" required>\n            </mat-form-field>\n            <mat-form-field appearance=\"fill\">\n              <mat-label>Note</mat-label>\n              <textarea matInput formControlName=\"note\"></textarea>\n            </mat-form-field>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Registrato dall'utente</mat-label>\n                <input matInput formControlName=\"user\" required>\n            </mat-form-field>\n        </div>\n    </div>\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\n        <button mat-button color=\"primary\"\n                type=\"button\"\n                [disabled]=\"(isLoading$ | async)\"\n                (click)=\"cancel()\" cdkFocusInitial>\n            Cancella\n        </button>\n        <button mat-button mat-raised-button color=\"primary\"\n                type=\"submit\"\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\n            Invia\n        </button>\n    </div>\n</form>\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\n\nlet segnalazione = \"Maltempo\";\n    openAddEntityDialog();\n\nfunction openAddEntityDialog() {\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\n}\n\nfunction AddEntityDialogController(instance) {\n    let vm = instance;\n    vm.addEntityFormGroup = vm.fb.group({\n     oggetto: [null, [vm.validators.required]],\n     eventDate:[null, [vm.validators.required]],\n     eventTime:[null, [vm.validators.required]],\n     durata:[null, [vm.validators.required]],\n     user: [null, [vm.validators.required]],\n     note: [\"\"]\n    });\n\n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    vm.save = function() {\n        var formData=vm.addEntityFormGroup.value;\n        formData.eventDate.setHours(formData.eventTime.getHours());\n        formData.eventDate.setMinutes(formData.eventTime.getMinutes());\n        vm.addEntityFormGroup.markAsPristine();\n        var telData={\"ts\":formData.eventDate.valueOf(), \"values\":{\"maloreoggetto\":formData.oggetto, \"maloreuser\":formData.user, \"maloredurata\":formData.durata, \"malorenote\":formData.note, \"maloreevento\":segnalazione}};\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\n        {\n        // console.log(\"data: \",data)\n            // widgetContext.updateAliases();\n            vm.dialogRef.close(null);\n        },function(error){\n            console.log(error);\n        });\n    };\n\n}\n",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "b1cb8f72-0cc1-654a-dc07-80ab5ffa429b"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "ae988bd6-8077-d2f5-9bae-0139acd99d8c"
+        },
+        "2a5fa250-8b48-05fe-9bc2-bd81c6eedbca" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
+              "filterId" : null,
+              "dataKeys" : [ ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1682513492328,
+                  "endTimeMs" : 1682599892328
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div id=\"segnalazione\" class='card'>\n    <h1>Macchina non disponibile</h1>\n    <i class=\"fa fa-ban\" aria-hidden=\"true\"></i>\n</div>",
+              "cardCss" : "@media (min-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (max-width: 960px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (min-width:960px) and (max-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 20px;\n    }\n}\n.card {\n    font-weight: bold;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.card:hover{\n    transform: scale(0.9);\n}\nh1{\n    flex-wrap: wrap;\n    font-weight: bold;\n}\n.fa{\n    color:red;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "segnalazione",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\n        <h2>Nuova Segnalazione</h2>\n        <span fxFlex></span>\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\n            <mat-icon class=\"material-icons\">close</mat-icon>\n        </button>\n    </mat-toolbar>\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\n    </mat-progress-bar>\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\n    <div mat-dialog-content fxLayout=\"column\">\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Macchina non disponibile</span><br>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Oggetto</mat-label>\n                <input matInput formControlName=\"oggetto\" required>\n            </mat-form-field>\n            <section fxLayout=\"row\" fxLayoutAlign=\"center\" fxLayoutGap=\"10px\" fxLayout.xs=\"column\" fxLayoutGap.xs=\"0\">\n                <mat-form-field appearance=\"fill\" style=\"width: 300px\">\n                  <mat-label>Data inizio</mat-label>\n                  <mat-datetimepicker-toggle [for]=\"DatePicker\" matPrefix></mat-datetimepicker-toggle>\n                  <mat-datetimepicker #DatePicker type=\"date\" openOnFocus=\"true\"></mat-datetimepicker>\n                  <input matInput [disabled]=\"disabled\"  [matDatetimepicker]=\"DatePicker\" formControlName=\"eventDate\" required>\n                  <mat-hint>GG/MM/AAAA</mat-hint>\n                </mat-form-field>\n                <mat-form-field appearance=\"fill\"  style=\"width: 300px\">\n                  <mat-label>Ora inizio</mat-label>\n                  <mat-datetimepicker-toggle [for]=\"TimePicker\" matPrefix></mat-datetimepicker-toggle>\n                  <mat-datetimepicker #TimePicker type=\"time\" openOnFocus=\"true\"></mat-datetimepicker>\n                  <input matInput [disabled]=\"disabled\" [matDatetimepicker]=\"TimePicker\" formControlName=\"eventTime\" required><mat-hint>H/Min</mat-hint>\n                </mat-form-field>\n            </section>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Durata</mat-label>\n                <input matInput formControlName=\"durata\" required>\n            </mat-form-field>\n            <mat-form-field appearance=\"fill\">\n              <mat-label>Note</mat-label>\n              <textarea matInput formControlName=\"note\"></textarea>\n            </mat-form-field>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Registrato dall'utente</mat-label>\n                <input matInput formControlName=\"user\" required>\n            </mat-form-field>\n        </div>\n    </div>\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\n        <button mat-button color=\"primary\"\n                type=\"button\"\n                [disabled]=\"(isLoading$ | async)\"\n                (click)=\"cancel()\" cdkFocusInitial>\n            Cancella\n        </button>\n        <button mat-button mat-raised-button color=\"primary\"\n                type=\"submit\"\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\n            Invia\n        </button>\n    </div>\n</form>\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\n\nlet segnalazione = \"Macchina non disponibile\";\n    openAddEntityDialog();\n\nfunction openAddEntityDialog() {\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\n}\n\nfunction AddEntityDialogController(instance) {\n    let vm = instance;\n    vm.addEntityFormGroup = vm.fb.group({\n     oggetto: [null, [vm.validators.required]],\n     eventDate:[null, [vm.validators.required]],\n     eventTime:[null, [vm.validators.required]],\n     durata:[null, [vm.validators.required]],\n     user: [null, [vm.validators.required]],\n     note: [\"\"]\n    });\n\n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    vm.save = function() {\n        var formData=vm.addEntityFormGroup.value;\n        formData.eventDate.setHours(formData.eventTime.getHours());\n        formData.eventDate.setMinutes(formData.eventTime.getMinutes());\n        vm.addEntityFormGroup.markAsPristine();\n        var telData={\"ts\":formData.eventDate.valueOf(), \"values\":{\"maloreoggetto\":formData.oggetto, \"maloreuser\":formData.user, \"maloredurata\":formData.durata, \"malorenote\":formData.note, \"maloreevento\":segnalazione}};\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\n        {\n        // console.log(\"data: \",data)\n            // widgetContext.updateAliases();\n            vm.dialogRef.close(null);\n        },function(error){\n            console.log(error);\n        });\n    };\n\n}\n",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "b1cb8f72-0cc1-654a-dc07-80ab5ffa429b"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "2a5fa250-8b48-05fe-9bc2-bd81c6eedbca"
+        },
+        "962a442e-4c96-e5e0-9c91-df6e6dd92de9" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
+              "filterId" : null,
+              "dataKeys" : [ ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1682513492328,
+                  "endTimeMs" : 1682599892328
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div id=\"segnalazione\" class='card'>\n    <h1>Organizzazione</h1>\n    <i class=\"fa fa-users\" aria-hidden=\"true\"></i>\n</div>",
+              "cardCss" : "@media (min-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (max-width: 960px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (min-width:960px) and (max-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n.card {\n    font-weight: bold;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.card:hover{\n    transform: scale(0.9);\n}\nh1{\n    flex-wrap: wrap;\n    font-weight: bold;\n}\n.fa{\n    color:#84cc16;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "segnalazione",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\n        <h2>Nuova Segnalazione</h2>\n        <span fxFlex></span>\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\n            <mat-icon class=\"material-icons\">close</mat-icon>\n        </button>\n    </mat-toolbar>\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\n    </mat-progress-bar>\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\n    <div mat-dialog-content fxLayout=\"column\">\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Organizzazione</span><br>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Oggetto</mat-label>\n                <input matInput formControlName=\"oggetto\" required>\n            </mat-form-field>\n            <section fxLayout=\"row\" fxLayoutAlign=\"center\" fxLayoutGap=\"10px\" fxLayout.xs=\"column\" fxLayoutGap.xs=\"0\">\n                <mat-form-field appearance=\"fill\" style=\"width: 300px\">\n                  <mat-label>Data inizio</mat-label>\n                  <mat-datetimepicker-toggle [for]=\"DatePicker\" matPrefix></mat-datetimepicker-toggle>\n                  <mat-datetimepicker #DatePicker type=\"date\" openOnFocus=\"true\"></mat-datetimepicker>\n                  <input matInput [disabled]=\"disabled\"  [matDatetimepicker]=\"DatePicker\" formControlName=\"eventDate\" required>\n                  <mat-hint>GG/MM/AAAA</mat-hint>\n                </mat-form-field>\n                <mat-form-field appearance=\"fill\"  style=\"width: 300px\">\n                  <mat-label>Ora inizio</mat-label>\n                  <mat-datetimepicker-toggle [for]=\"TimePicker\" matPrefix></mat-datetimepicker-toggle>\n                  <mat-datetimepicker #TimePicker type=\"time\" openOnFocus=\"true\"></mat-datetimepicker>\n                  <input matInput [disabled]=\"disabled\" [matDatetimepicker]=\"TimePicker\" formControlName=\"eventTime\" required><mat-hint>H/Min</mat-hint>\n                </mat-form-field>\n            </section>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Durata</mat-label>\n                <input matInput formControlName=\"durata\" required>\n            </mat-form-field>\n            <mat-form-field appearance=\"fill\">\n              <mat-label>Note</mat-label>\n              <textarea matInput formControlName=\"note\"></textarea>\n            </mat-form-field>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Registrato dall'utente</mat-label>\n                <input matInput formControlName=\"user\" required>\n            </mat-form-field>\n        </div>\n    </div>\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\n        <button mat-button color=\"primary\"\n                type=\"button\"\n                [disabled]=\"(isLoading$ | async)\"\n                (click)=\"cancel()\" cdkFocusInitial>\n            Cancella\n        </button>\n        <button mat-button mat-raised-button color=\"primary\"\n                type=\"submit\"\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\n            Invia\n        </button>\n    </div>\n</form>\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\n\nlet segnalazione = \"Organizzazione\";\n    openAddEntityDialog();\n\nfunction openAddEntityDialog() {\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\n}\n\nfunction AddEntityDialogController(instance) {\n    let vm = instance;\n    vm.addEntityFormGroup = vm.fb.group({\n     oggetto: [null, [vm.validators.required]],\n     eventDate:[null, [vm.validators.required]],\n     eventTime:[null, [vm.validators.required]],\n     durata:[null, [vm.validators.required]],\n     user: [null, [vm.validators.required]],\n     note: [\"\"]\n    });\n\n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    vm.save = function() {\n        var formData=vm.addEntityFormGroup.value;\n        formData.eventDate.setHours(formData.eventTime.getHours());\n        formData.eventDate.setMinutes(formData.eventTime.getMinutes());\n        vm.addEntityFormGroup.markAsPristine();\n        var telData={\"ts\":formData.eventDate.valueOf(), \"values\":{\"maloreoggetto\":formData.oggetto, \"maloreuser\":formData.user, \"maloredurata\":formData.durata, \"malorenote\":formData.note, \"maloreevento\":segnalazione}};\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\n        {\n        // console.log(\"data: \",data)\n            // widgetContext.updateAliases();\n            vm.dialogRef.close(null);\n        },function(error){\n            console.log(error);\n        });\n    };\n\n}\n",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "b1cb8f72-0cc1-654a-dc07-80ab5ffa429b"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "962a442e-4c96-e5e0-9c91-df6e6dd92de9"
+        },
+        "dae5a690-9150-f81e-254b-504b3424b51a" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
+              "filterId" : null,
+              "dataKeys" : [ ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1682513492328,
+                  "endTimeMs" : 1682599892328
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div id=\"segnalazione\" class='card'>\n    <h1>Nulla da fare</h1>\n    <i class=\"fa fa-question-circle-o\" aria-hidden=\"true\"></i>\n</div>",
+              "cardCss" : "@media (min-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (max-width: 960px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n@media (min-width:960px) and (max-width: 1500px) {\n    .card {\n        font-size: 50px;\n    }\n    h1{\n        font-size: 22px;\n    }\n}\n.card {\n    font-weight: bold;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.card:hover{\n    transform: scale(0.9);\n}\nh1{\n    flex-wrap: wrap;\n    font-weight: bold;\n}\n.fa{\n    color:blue;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "segnalazione",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\n        <h2>Nuova Segnalazione</h2>\n        <span fxFlex></span>\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\n            <mat-icon class=\"material-icons\">close</mat-icon>\n        </button>\n    </mat-toolbar>\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\n    </mat-progress-bar>\n    <div style=\"height: 4px; width: 600px \" *ngIf=\"!(isLoading$ | async)\"></div>\n    <div mat-dialog-content fxLayout=\"column\">\n        <div fxLayout=\"column\" fxLayoutGap=\"2px\" fxLayout.md=\"column\" fxLayoutGap.md=\"0\">\n            <span style=\"font-size:20px;font-weight:bold;text-align:center;\">Nulla da fare</span><br>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Oggetto</mat-label>\n                <input matInput formControlName=\"oggetto\" required>\n            </mat-form-field>\n            <section fxLayout=\"row\" fxLayoutAlign=\"center\" fxLayoutGap=\"10px\" fxLayout.xs=\"column\" fxLayoutGap.xs=\"0\">\n                <mat-form-field appearance=\"fill\" style=\"width: 300px\">\n                  <mat-label>Data inizio</mat-label>\n                  <mat-datetimepicker-toggle [for]=\"DatePicker\" matPrefix></mat-datetimepicker-toggle>\n                  <mat-datetimepicker #DatePicker type=\"date\" openOnFocus=\"true\"></mat-datetimepicker>\n                  <input matInput [disabled]=\"disabled\"  [matDatetimepicker]=\"DatePicker\" formControlName=\"eventDate\" required>\n                  <mat-hint>GG/MM/AAAA</mat-hint>\n                </mat-form-field>\n                <mat-form-field appearance=\"fill\"  style=\"width: 300px\">\n                  <mat-label>Ora inizio</mat-label>\n                  <mat-datetimepicker-toggle [for]=\"TimePicker\" matPrefix></mat-datetimepicker-toggle>\n                  <mat-datetimepicker #TimePicker type=\"time\" openOnFocus=\"true\"></mat-datetimepicker>\n                  <input matInput [disabled]=\"disabled\" [matDatetimepicker]=\"TimePicker\" formControlName=\"eventTime\" required><mat-hint>H/Min</mat-hint>\n                </mat-form-field>\n            </section>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Durata</mat-label>\n                <input matInput formControlName=\"durata\" required>\n            </mat-form-field>\n            <mat-form-field appearance=\"fill\">\n              <mat-label>Note</mat-label>\n              <textarea matInput formControlName=\"note\"></textarea>\n            </mat-form-field>\n            <mat-form-field appearance=\"fill\">\n                <mat-label>Registrato dall'utente</mat-label>\n                <input matInput formControlName=\"user\" required>\n            </mat-form-field>\n        </div>\n    </div>\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\n        <button mat-button color=\"primary\"\n                type=\"button\"\n                [disabled]=\"(isLoading$ | async)\"\n                (click)=\"cancel()\" cdkFocusInitial>\n            Cancella\n        </button>\n        <button mat-button mat-raised-button color=\"primary\"\n                type=\"submit\"\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\n            Invia\n        </button>\n    </div>\n</form>\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\n\nlet segnalazione = \"Nulla da fare\";\n    openAddEntityDialog();\n\nfunction openAddEntityDialog() {\n    customDialog.customDialog(htmlTemplate, AddEntityDialogController).subscribe();\n}\n\nfunction AddEntityDialogController(instance) {\n    let vm = instance;\n    vm.addEntityFormGroup = vm.fb.group({\n     oggetto: [null, [vm.validators.required]],\n     eventDate:[null, [vm.validators.required]],\n     eventTime:[null, [vm.validators.required]],\n     durata:[null, [vm.validators.required]],\n     user: [null, [vm.validators.required]],\n     note: [\"\"]\n    });\n\n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    vm.save = function() {\n        var formData=vm.addEntityFormGroup.value;\n        formData.eventDate.setHours(formData.eventTime.getHours());\n        formData.eventDate.setMinutes(formData.eventTime.getMinutes());\n        vm.addEntityFormGroup.markAsPristine();\n        var telData={\"ts\":formData.eventDate.valueOf(), \"values\":{\"maloreoggetto\":formData.oggetto, \"maloreuser\":formData.user, \"maloredurata\":formData.durata, \"malorenote\":formData.note, \"maloreevento\":segnalazione}};\n        widgetContext.http.post('/api/plugins/telemetry/'+entityId.entityType+'/'+entityId.id+'/timeseries/ANY?scope=ANY', telData).subscribe(data =>\n        {\n        // console.log(\"data: \",data)\n            // widgetContext.updateAliases();\n            vm.dialogRef.close(null);\n        },function(error){\n            console.log(error);\n        });\n    };\n\n}\n",
+                "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "b1cb8f72-0cc1-654a-dc07-80ab5ffa429b"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "dae5a690-9150-f81e-254b-504b3424b51a"
         }
       },
       "states" : {
@@ -10111,6 +11520,123 @@
               }
             }
           }
+        },
+        "manutenzione" : {
+          "name" : "manutenzione",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "de8735e4-88b5-4b17-862d-88e05086afd4" : {
+                  "sizeX" : 6,
+                  "sizeY" : 3,
+                  "row" : 0,
+                  "col" : 0
+                },
+                "81c72907-11b5-d5ed-9eac-90deae6304dd" : {
+                  "sizeX" : 6,
+                  "sizeY" : 3,
+                  "row" : 0,
+                  "col" : 6
+                },
+                "09176378-0645-b74b-4ed5-8bf54e5cec5e" : {
+                  "sizeX" : 6,
+                  "sizeY" : 3,
+                  "row" : 0,
+                  "col" : 12
+                },
+                "27d9b869-a32c-81f8-113a-5d319d25ca2e" : {
+                  "sizeX" : 6,
+                  "sizeY" : 3,
+                  "row" : 0,
+                  "col" : 18
+                },
+                "f60c240b-6d04-11db-6ba2-741e13cc4634" : {
+                  "sizeX" : 6,
+                  "sizeY" : 3,
+                  "row" : 3,
+                  "col" : 0
+                },
+                "1bb842f8-d770-e953-648f-dcdf89e4beb0" : {
+                  "sizeX" : 6,
+                  "sizeY" : 3,
+                  "row" : 3,
+                  "col" : 6
+                },
+                "e5ea88e5-ef05-e3da-19d3-1a801d37929c" : {
+                  "sizeX" : 6,
+                  "sizeY" : 3,
+                  "row" : 3,
+                  "col" : 12
+                },
+                "736209a6-7263-c989-767b-88fa61775bd7" : {
+                  "sizeX" : 6,
+                  "sizeY" : 3,
+                  "row" : 3,
+                  "col" : 18
+                },
+                "1ea5769c-6fbc-bffb-cf24-65c5638fa79e" : {
+                  "sizeX" : 6,
+                  "sizeY" : 3,
+                  "row" : 6,
+                  "col" : 0
+                },
+                "25152aba-9fe9-ad89-3081-62c9d8c66c68" : {
+                  "sizeX" : 6,
+                  "sizeY" : 3,
+                  "row" : 6,
+                  "col" : 6
+                },
+                "07fa4b16-21f5-2e8c-1785-3d35196bca52" : {
+                  "sizeX" : 6,
+                  "sizeY" : 3,
+                  "row" : 6,
+                  "col" : 12
+                },
+                "659f956a-c8c8-cae7-c952-17f14359483a" : {
+                  "sizeX" : 6,
+                  "sizeY" : 3,
+                  "row" : 6,
+                  "col" : 18
+                },
+                "ae988bd6-8077-d2f5-9bae-0139acd99d8c" : {
+                  "sizeX" : 6,
+                  "sizeY" : 3,
+                  "row" : 9,
+                  "col" : 0
+                },
+                "2a5fa250-8b48-05fe-9bc2-bd81c6eedbca" : {
+                  "sizeX" : 6,
+                  "sizeY" : 3,
+                  "row" : 9,
+                  "col" : 6
+                },
+                "962a442e-4c96-e5e0-9c91-df6e6dd92de9" : {
+                  "sizeX" : 6,
+                  "sizeY" : 3,
+                  "row" : 9,
+                  "col" : 12
+                },
+                "dae5a690-9150-f81e-254b-504b3424b51a" : {
+                  "sizeX" : 6,
+                  "sizeY" : 3,
+                  "row" : 9,
+                  "col" : 18
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : true,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70
+              }
+            }
+          }
         }
       },
       "entityAliases" : {
@@ -10319,6 +11845,16 @@
             "fetchLastLevelOnly" : false,
             "relationType" : null,
             "deviceTypes" : [ "AA Sensor", "Camera" ]
+          }
+        },
+        "51164428-885e-eac2-ef41-9b8e41eec9d0" : {
+          "id" : "51164428-885e-eac2-ef41-9b8e41eec9d0",
+          "alias" : "Selected Supermarket",
+          "filter" : {
+            "type" : "stateEntity",
+            "resolveMultiple" : false,
+            "stateEntityParamName" : "selectedSupermarket",
+            "defaultStateEntity" : null
           }
         }
       },

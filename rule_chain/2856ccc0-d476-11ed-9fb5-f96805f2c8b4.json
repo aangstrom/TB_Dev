@@ -176,10 +176,6 @@
       "toIndex" : 25,
       "type" : "Success"
     }, {
-      "fromIndex" : 20,
-      "toIndex" : 33,
-      "type" : "Success"
-    }, {
       "fromIndex" : 21,
       "toIndex" : 23,
       "type" : "Success"
@@ -190,6 +186,10 @@
     }, {
       "fromIndex" : 23,
       "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 23,
+      "toIndex" : 33,
       "type" : "Success"
     }, {
       "fromIndex" : 24,
@@ -1156,7 +1156,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "if(msg.Phase_A_power!=null){msg.power=msg.Phase_A_power;msg.Phase_A_power=null;}\nif(msg.Phase_B_power!=null){msg.power=msg.Phase_B_power;msg.Phase_B_power=null;}\nif(msg.Phase_C_power!=null){msg.power=msg.Phase_C_power;msg.Phase_C_power=null;}\nif(msg.Phase_A_energy!=null){msg.energy=msg.Phase_A_energy;msg.Phase_A_energy=null;}\nif(msg.Phase_B_energy!=null){msg.energy=msg.Phase_B_energy;msg.Phase_B_energy=null;}\nif(msg.Phase_C_energy!=null){msg.energy=msg.Phase_C_energy;msg.Phase_C_energy=null;}\nif(msg.Phase_A_pf!=null){msg.pf=msg.Phase_A_pf;msg.Phase_A_pf=null;}\nif(msg.Phase_B_pf!=null){msg.pf=msg.Phase_B_pf;msg.Phase_B_pf=null;}\nif(msg.Phase_C_pf!=null){msg.pf=msg.Phase_C_pf;msg.Phase_C_pf=null;}\nif(msg.Phase_A_F1!=null){msg.F1=msg.Phase_A_F1;msg.Phase_A_F1=null;}\nif(msg.Phase_B_F1!=null){msg.F1=msg.Phase_B_F1;msg.Phase_B_F1=null;}\nif(msg.Phase_C_F1!=null){msg.F1=msg.Phase_C_F1;msg.Phase_C_F1=null;}\nif(msg.Phase_A_F2!=null){msg.F2=msg.Phase_A_F2;msg.Phase_A_F2=null;}\nif(msg.Phase_B_F2!=null){msg.F2=msg.Phase_B_F2;msg.Phase_B_F2=null;}\nif(msg.Phase_C_F2!=null){msg.F2=msg.Phase_C_F2;msg.Phase_C_F2=null;}\nif(msg.Phase_A_F3!=null){msg.F3=msg.Phase_A_F3;msg.Phase_A_F3=null;}\nif(msg.Phase_B_F3!=null){msg.F3=msg.Phase_B_F3;msg.Phase_B_F3=null;}\nif(msg.Phase_C_F3!=null){msg.F3=msg.Phase_C_F3;msg.Phase_C_F3=null;}\nif(msg.Phase_A_F23!=null){msg.F23=msg.Phase_A_F23;msg.Phase_A_F23=null;}\nif(msg.Phase_B_F23!=null){msg.F23=msg.Phase_B_F23;msg.Phase_B_F23=null;}\nif(msg.Phase_C_F23!=null){msg.F23=msg.Phase_C_F23;msg.Phase_C_F23=null;}\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var message={};\nvar tipologia=metadata.ss_tipologia;\nvar location=metadata.ss_location;\nif(tipologia!=null){\n    if(tipologia==\"produzione\"){\n        message.produzione=1;\n    }else if(tipologia==\"illuminazione\"){\n        message.illuminazione=1;\n    }else if(tipologia==\"clima\"){\n        message.clima=1;\n    }else if(tipologia==\"generale\"){\n        message.generale=1;\n    }\n}\n/*if(location!=null){\n    if(location==\"uffici\"){\n        messag\n    }else if(location==\"produzione\"){\n        \n    }\n}*/\nreturn {msg: message, metadata: metadata, msgType: msgType};"
       },
       "createdTime" : 0,
       "debugMode" : true,

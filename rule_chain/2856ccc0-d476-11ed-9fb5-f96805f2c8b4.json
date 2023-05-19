@@ -279,6 +279,10 @@
       "fromIndex" : 39,
       "toIndex" : 2,
       "type" : "Success"
+    }, {
+      "fromIndex" : 40,
+      "toIndex" : 41,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 1,
     "nodes" : [ {
@@ -1360,7 +1364,7 @@
         "tbelScript" : "if(msg.Phase_A_total!=null){\n    return[\"phaseA\"];\n}else if(msg.Phase_B_total!=null){\n    return[\"phaseB\"];\n}else if(msg.Phase_C_total!=null){\n    return[\"phaseC\"];\n}else{\n    return[\"Other\"];\n}\nreturn nextRelation(metadata, msg);"
       },
       "createdTime" : 0,
-      "debugMode" : false,
+      "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -1395,8 +1399,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 40,
-        "layoutY" : 284
+        "layoutX" : 137,
+        "layoutY" : 818
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -1418,6 +1422,28 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 402,
+        "layoutY" : 763
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if(msg.Phase_A_total!=null){\n    return[\"phaseA\"];\n}else if(msg.Phase_B_total!=null){\n    return[\"phaseB\"];\n}else if(msg.Phase_C_total!=null){\n    return[\"phaseC\"];\n}else{\n    return[\"Other\"];\n}\nreturn nextRelation(metadata, msg);"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "2d603e70-f642-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Switch Total",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     } ],
     "ruleChainConnections" : null
   },

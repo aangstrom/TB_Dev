@@ -23,15 +23,27 @@
       "type" : "Success"
     }, {
       "fromIndex" : 0,
-      "toIndex" : 4,
+      "toIndex" : 7,
       "type" : "Success"
     }, {
       "fromIndex" : 0,
-      "toIndex" : 7,
+      "toIndex" : 8,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 3,
       "type" : "Success"
     }, {
       "fromIndex" : 4,
       "toIndex" : 6,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 3,
       "type" : "Success"
     }, {
       "fromIndex" : 6,
@@ -87,8 +99,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 735,
-        "layoutY" : 596
+        "layoutX" : 1029,
+        "layoutY" : 79
       },
       "configuration" : {
         "scope" : "SERVER_SCOPE",
@@ -109,8 +121,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1027,
-        "layoutY" : 310
+        "layoutX" : 1041,
+        "layoutY" : 389
       },
       "configuration" : {
         "defaultTTL" : 604800,
@@ -224,8 +236,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 805,
-        "layoutY" : 411
+        "layoutX" : 727,
+        "layoutY" : 78
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -240,6 +252,28 @@
         "id" : "05999b00-f676-11ed-9a4b-e3fd271b8b84"
       },
       "name" : "State active",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 400,
+        "layoutY" : 323
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "7542a870-f676-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "To relation",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"

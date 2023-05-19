@@ -37,8 +37,16 @@
       "toIndex" : 4,
       "type" : "Success"
     }, {
+      "fromIndex" : 3,
+      "toIndex" : 5,
+      "type" : "Success"
+    }, {
       "fromIndex" : 4,
       "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 0,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 3,
@@ -99,7 +107,7 @@
         "entityType" : "RULE_NODE",
         "id" : "ca3f24a0-ef3e-11ed-9fb5-f96805f2c8b4"
       },
-      "name" : "Alarms Count",
+      "name" : "Alarms Count Asset",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.latest.alarm.TbAlarmsCountNodeV2"
@@ -169,6 +177,45 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 566,
+        "layoutY" : 210
+      },
+      "configuration" : {
+        "alarmsCountMappings" : [ {
+          "target" : "criticalAlarmsCount",
+          "typesList" : [ ],
+          "severityList" : [ "CRITICAL" ],
+          "statusList" : [ "ACTIVE_UNACK", "ACTIVE_ACK" ]
+        }, {
+          "target" : "majorAlarmsCount",
+          "typesList" : [ ],
+          "severityList" : [ "MAJOR" ],
+          "statusList" : [ "ACTIVE_UNACK", "ACTIVE_ACK" ]
+        }, {
+          "target" : "minorAlarmsCount",
+          "typesList" : [ ],
+          "severityList" : [ "MINOR" ],
+          "statusList" : [ "ACTIVE_UNACK", "ACTIVE_ACK" ]
+        } ],
+        "countAlarmsForPropagationEntities" : true,
+        "propagationEntityTypes" : [ "CUSTOMER" ],
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "queueName" : "Main"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "17cff410-f67e-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Alarms Count Cliente",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.latest.alarm.TbAlarmsCountNodeV2"
     } ],
     "ruleChainConnections" : null
   },

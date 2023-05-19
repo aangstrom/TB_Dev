@@ -33,19 +33,19 @@
       "type" : "Success"
     }, {
       "fromIndex" : 1,
-      "toIndex" : 2,
+      "toIndex" : 12,
       "type" : "Failure"
     }, {
       "fromIndex" : 1,
-      "toIndex" : 2,
+      "toIndex" : 12,
       "type" : "Success"
     }, {
       "fromIndex" : 1,
-      "toIndex" : 12,
+      "toIndex" : 38,
       "type" : "Failure"
     }, {
       "fromIndex" : 1,
-      "toIndex" : 12,
+      "toIndex" : 38,
       "type" : "Success"
     }, {
       "fromIndex" : 2,
@@ -251,6 +251,34 @@
       "fromIndex" : 34,
       "toIndex" : 30,
       "type" : "Success"
+    }, {
+      "fromIndex" : 35,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 36,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 37,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 38,
+      "toIndex" : 2,
+      "type" : "Other"
+    }, {
+      "fromIndex" : 38,
+      "toIndex" : 35,
+      "type" : "phaseA"
+    }, {
+      "fromIndex" : 38,
+      "toIndex" : 36,
+      "type" : "phaseB"
+    }, {
+      "fromIndex" : 38,
+      "toIndex" : 37,
+      "type" : "phaseC"
     } ],
     "firstNodeIndex" : 1,
     "nodes" : [ {
@@ -318,8 +346,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 296,
-        "layoutY" : 232
+        "layoutX" : 367,
+        "layoutY" : 334
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -362,8 +390,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1190,
-        "layoutY" : 444
+        "layoutX" : 1237,
+        "layoutY" : 415
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -384,8 +412,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1190,
-        "layoutY" : 506
+        "layoutX" : 1226,
+        "layoutY" : 522
       },
       "configuration" : {
         "defaultTTL" : 0,
@@ -788,7 +816,7 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 315,
+        "layoutX" : 334,
         "layoutY" : 447
       },
       "configuration" : {
@@ -951,8 +979,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 322,
-        "layoutY" : 353
+        "layoutX" : 343,
+        "layoutY" : 628
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -1021,8 +1049,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 51,
-        "layoutY" : 430
+        "layoutX" : 53,
+        "layoutY" : 617
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -1043,8 +1071,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 51,
-        "layoutY" : 327
+        "layoutX" : 56,
+        "layoutY" : 486
       },
       "configuration" : {
         "relationsQuery" : {
@@ -1242,6 +1270,106 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 360,
+        "layoutY" : 232
+      },
+      "configuration" : {
+        "inputValueKey" : "Phase_A_total",
+        "outputValueKey" : "Phase_A_energy",
+        "useCache" : true,
+        "addPeriodBetweenMsgs" : false,
+        "periodValueKey" : "periodInMs",
+        "round" : null,
+        "tellFailureIfDeltaIsNegative" : true
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4559b210-f631-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Phase_A_total Delta",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.CalculateDeltaNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 52,
+        "layoutY" : 340
+      },
+      "configuration" : {
+        "inputValueKey" : "Phase_B_total",
+        "outputValueKey" : "Phase_B_energy",
+        "useCache" : true,
+        "addPeriodBetweenMsgs" : false,
+        "periodValueKey" : "periodInMs",
+        "round" : null,
+        "tellFailureIfDeltaIsNegative" : true
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "455a7560-f631-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Phase_B_total Delta",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.CalculateDeltaNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 48,
+        "layoutY" : 388
+      },
+      "configuration" : {
+        "inputValueKey" : "Phase_C_total",
+        "outputValueKey" : "Phase_C_energy",
+        "useCache" : true,
+        "addPeriodBetweenMsgs" : false,
+        "periodValueKey" : "periodInMs",
+        "round" : null,
+        "tellFailureIfDeltaIsNegative" : true
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "455aea90-f631-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Phase_C_total Delta",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.CalculateDeltaNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 51,
+        "layoutY" : 223
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if(msg.Phase_A_total!=null){\n    return[\"phaseA\"];\n}else if(msg.Phase_B_total!=null){\n    return[\"phaseB\"];\n}else if(msg.Phase_C_total!=null){\n    return[\"phaseC\"];\n}else{\n    return[\"Other\"];\n}\nreturn nextRelation(metadata, msg);"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "455b38b0-f631-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "Switch Total",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     } ],
     "ruleChainConnections" : null
   },

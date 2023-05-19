@@ -1876,15 +1876,60 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "822c445e-17e6-4ce0-0a40-4f3adf13ef31",
+              "entityAliasId" : "c17b148f-2907-bddb-622b-30cd3811830a",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "name",
+                "name" : "criticalAlarmsCount",
                 "type" : "timeseries",
-                "label" : "name",
+                "label" : "Allarmi Critici",
                 "color" : "#2196f3",
                 "settings" : { },
-                "_hash" : 0.6291663133368874
+                "_hash" : 0.24211449295555276,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "majorAlarmsCount",
+                "type" : "timeseries",
+                "label" : "Allarmi Maggiori",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.7612043355201481,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "minorAlarmsCount",
+                "type" : "timeseries",
+                "label" : "Allarmi Minori",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.9475041691523747,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "person",
+                "type" : "timeseries",
+                "label" : "Persone",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.4121237219387921,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -1893,20 +1938,20 @@
             } ],
             "timewindow" : {
               "hideInterval" : false,
-              "hideLastInterval" : false,
+              "hideLastInterval" : true,
               "hideQuickInterval" : false,
               "hideAggregation" : true,
               "hideAggInterval" : true,
               "hideTimezone" : false,
               "selectedTab" : 0,
               "realtime" : {
-                "realtimeType" : 0,
+                "realtimeType" : 1,
                 "timewindowMs" : 60000,
                 "quickInterval" : "CURRENT_DAY",
-                "interval" : 1000
+                "interval" : 300000
               },
               "aggregation" : {
-                "type" : "COUNT",
+                "type" : "SUM",
                 "limit" : 200
               }
             },

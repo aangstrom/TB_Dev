@@ -1,0 +1,193 @@
+{
+  "entityType" : "DEVICE_PROFILE",
+  "entity" : {
+    "default" : false,
+    "defaultDashboardId" : {
+      "entityType" : "DASHBOARD",
+      "id" : "276852b0-b6a9-11ed-9788-e7e5c5ff9ab6"
+    },
+    "defaultEdgeRuleChainId" : null,
+    "defaultQueueName" : null,
+    "defaultRuleChainId" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "0c1f0d10-ca1c-11ed-adcd-cbfdb5951e23"
+    },
+    "description" : "",
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "27e2c970-9816-11ed-a0f1-b51a14fb887c"
+    },
+    "image" : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARvSURBVHhe7Z2LUtswEEVx6b/CJ8G/lqbZVHKFGltvWdKeM+MJEMCx79HqFYYXAAAAAAAA0MRmHqERn5+fv8yHh7y9vf00H3YHARrhBP9qHs/4ukoCBKiI19pjgt+53W6/t2279RYBAQopCf2ArtUAATJoELpPNwkQIJIOobsgwAh0Dt2niwQI4HFx6C4I0IuBQvdpLoFaAQYO3QUBajJJ6C4IUAMn+BlC92kqwbICTNjaj0CAWBYK3QUBzlg0dJ9mEkwpgJLQXRBgwtC/zKNLyetuIsHQAszY0s+2dc315F6HDgEWKO+nQRVIsK4AC4RuCYY0WhW4TICFQneJCmikKvDDPHZDLt65AfaAi+gqgBe8Sgpav/Bqfr4a3QQovPBZqB5Qa7oIoCT8B/dp4HYkwYj3ofkgUFP4HrUXglyqDQa7DwIVIWH7x3A0rQCKW38PqlQBKoByEEA5CDAvVaacCKAcBFAOAsxNcTeAAMppKoCZpz5bEYNBoALMT1E3gADKaS4A3cDYUAHWILsbQADldHtTKDuDXUjeIUyuABKke5gvw6REVwAnbL8VPwZ4IfPMz1MB2pJcAaIEiAwveHIk6EKSBEEBEkP77+RO5RAIvz31BMhssf6cn9D7kiRAq2mghG4P6EvSmkALAQh9IlgIUg4CrEl0N4AAykEA5dReB4CxCE4JqQDKQYC1CQ4GgwKYEsI7ehaFCqAcBFBOlAB0A+tCBVAOAignWgC6gTWhAign+k2hFpaGp4KlYK3I/y0IhS8gwIJI+O/v71FVOrkLEOgGxiUlfIEKsBZfKeELCLAGMj1Peju4JasLEOgGLmdfk8kJ3oIAc1EldJfRBLAXiFj/qB66S7YAQiUJvl0gleVB09BdrhTgcZHPLlCpBN1Cd7l0FtDzQgdFQn8cci/s8XimE0UVQCitAkcXvHgVOKx+qZj7tJP6O1kH6Mu31v73S/k4jWQ/fCFCFAtgLmTvv+CcGsELHx8fcs+fVchX81wUw1YAxDpGAt627TA7eS5WArqAybiX+NPwLUaCYHdQPAi0ZAzaotauM37v6GSt2QuZ9+L0fNUqgJxEtiLNp6fEvllhQKSs2mMJqnYBshUZkiB1v9qIcuUN30OX1zKpuIdUHwOYcI8CS96vvoj/Ql8teEu1MYDPs/loyU3sMBbYpQ29zgqvJXkcUHDO03M1E6AFMqq9j25rShAduk+hBMMIMNU08N59RA80A1xd3pNW7FK+N5WpKoAlszVkt/ZnFFYAy/6aApScZ50uwMVpFWc3p2roLpUE6MGaAljOymPL0o4AMIsE6wwCoT4IoBwEUA4CFGD61tip3JAggHIQoJDZqwACVGBmCRCgErNKgAAVcSSosWHVBQSojEhwP2R1UEQYviKwFNyYs72KRHKXnNkLWIGCfQf2AuAYBJgEZ4BZFQRQDgIoBwGUgwDKYRo4GYnTwdMpoEAFmAwJNOZvI2L/AJcKMCmBShBs+RYEmJijZebY8AEAAAAAAEAZLy9/AI4kQpWz6QYzAAAAAElFTkSuQmCC",
+    "name" : "Camera",
+    "profileData" : {
+      "alarms" : [ {
+        "alarmType" : "Folla Critica",
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "person",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "NUMERIC",
+                "operation" : "LESS",
+                "value" : {
+                  "defaultValue" : 3.0,
+                  "dynamicValue" : null,
+                  "userValue" : null
+                }
+              },
+              "value" : null,
+              "valueType" : "NUMERIC"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
+          },
+          "dashboardId" : null,
+          "schedule" : null
+        },
+        "createRules" : {
+          "CRITICAL" : {
+            "alarmDetails" : "Molte persone in attesa (${person})",
+            "condition" : {
+              "condition" : [ {
+                "key" : {
+                  "key" : "person",
+                  "type" : "TIME_SERIES"
+                },
+                "predicate" : {
+                  "type" : "NUMERIC",
+                  "operation" : "GREATER_OR_EQUAL",
+                  "value" : {
+                    "defaultValue" : 3.0,
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                },
+                "value" : null,
+                "valueType" : "NUMERIC"
+              } ],
+              "spec" : {
+                "type" : "SIMPLE"
+              }
+            },
+            "dashboardId" : {
+              "entityType" : "DASHBOARD",
+              "id" : "276852b0-b6a9-11ed-9788-e7e5c5ff9ab6"
+            },
+            "schedule" : null
+          }
+        },
+        "id" : "9950c17c-24a7-f749-3ff8-ad08ef1c4206",
+        "propagate" : true,
+        "propagateRelationTypes" : [ "Contains" ],
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : true,
+        "propagateToTenant" : false
+      }, {
+        "alarmType" : "Presenza Folla",
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "person",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "COMPLEX",
+                "operation" : "OR",
+                "predicates" : [ {
+                  "type" : "NUMERIC",
+                  "operation" : "LESS",
+                  "value" : {
+                    "defaultValue" : 2.0,
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                }, {
+                  "type" : "NUMERIC",
+                  "operation" : "GREATER_OR_EQUAL",
+                  "value" : {
+                    "defaultValue" : 3.0,
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                } ]
+              },
+              "value" : null,
+              "valueType" : "NUMERIC"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
+          },
+          "dashboardId" : null,
+          "schedule" : null
+        },
+        "createRules" : {
+          "MAJOR" : {
+            "alarmDetails" : "Coda in aumento (${person})",
+            "condition" : {
+              "condition" : [ {
+                "key" : {
+                  "key" : "person",
+                  "type" : "TIME_SERIES"
+                },
+                "predicate" : {
+                  "type" : "NUMERIC",
+                  "operation" : "EQUAL",
+                  "value" : {
+                    "defaultValue" : 2.0,
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                },
+                "value" : null,
+                "valueType" : "NUMERIC"
+              } ],
+              "spec" : {
+                "type" : "SIMPLE"
+              }
+            },
+            "dashboardId" : {
+              "entityType" : "DASHBOARD",
+              "id" : "276852b0-b6a9-11ed-9788-e7e5c5ff9ab6"
+            },
+            "schedule" : null
+          }
+        },
+        "id" : "c3ea1b94-dbf6-3dc7-d830-f5fcd48b3e10",
+        "propagate" : true,
+        "propagateRelationTypes" : [ "Contains" ],
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : true,
+        "propagateToTenant" : false
+      } ],
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "provisionConfiguration" : {
+        "type" : "DISABLED",
+        "provisionDeviceSecret" : null
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "provisionDeviceKey" : null,
+    "provisionType" : "DISABLED",
+    "softwareId" : null,
+    "transportType" : "DEFAULT",
+    "type" : "DEFAULT"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

@@ -1425,25 +1425,25 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 418,
-        "layoutY" : 791
+        "layoutX" : 436,
+        "layoutY" : 807
       },
       "configuration" : {
         "scriptLang" : "TBEL",
-        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(msg.Phase_A_total!=null){\n    return[\"phaseA\"];\n}else if(msg.Phase_B_total!=null){\n    return[\"phaseB\"];\n}else if(msg.Phase_C_total!=null){\n    return[\"phaseC\"];\n}else{\n    return[\"Other\"];\n}\nreturn nextRelation(metadata, msg);"
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "createdTime" : 0,
       "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "2d603e70-f642-11ed-9a4b-e3fd271b8b84"
+        "id" : "05cc0860-f644-11ed-9a4b-e3fd271b8b84"
       },
-      "name" : "Switch Total",
+      "name" : "Delta",
       "ruleChainId" : null,
       "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

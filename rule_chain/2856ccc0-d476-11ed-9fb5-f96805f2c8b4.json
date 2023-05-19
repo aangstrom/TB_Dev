@@ -232,6 +232,10 @@
       "toIndex" : 31,
       "type" : "Success"
     }, {
+      "fromIndex" : 32,
+      "toIndex" : 29,
+      "type" : "Success"
+    }, {
       "fromIndex" : 33,
       "toIndex" : 32,
       "type" : "Success"
@@ -1066,8 +1070,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 817,
-        "layoutY" : 946
+        "layoutX" : 826,
+        "layoutY" : 921
       },
       "configuration" : {
         "originatorSource" : "RELATED",
@@ -1097,8 +1101,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 802,
-        "layoutY" : 1019
+        "layoutX" : 828,
+        "layoutY" : 989
       },
       "configuration" : {
         "originatorSource" : "RELATED",
@@ -1128,8 +1132,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1183,
-        "layoutY" : 796
+        "layoutX" : 1146,
+        "layoutY" : 816
       },
       "configuration" : {
         "defaultTTL" : 0,
@@ -1150,13 +1154,13 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 813,
-        "layoutY" : 864
+        "layoutX" : 824,
+        "layoutY" : 851
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var message={};\nvar tipologia=metadata.ss_tipologia;\nvar location=metadata.ss_location;\nif(tipologia!=null){\n    if(tipologia==\"produzione\"){\n        message.produzione=1;\n    }else if(tipologia==\"illuminazione\"){\n        message.illuminazione=1;\n    }else if(tipologia==\"clima\"){\n        message.clima=1;\n    }else if(tipologia==\"generale\"){\n        message.generale=1;\n    }\n}\n/*if(location!=null){\n    if(location==\"uffici\"){\n        messag\n    }else if(location==\"produzione\"){\n        \n    }\n}*/\nreturn {msg: message, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var message={};\nvar tipologia=metadata.ss_tipologia;\nvar location=metadata.ss_location;\nvar energy=msg.energy;\nif(tipologia!=null && energy!=null){\n    if(location!=null && location==\"produzione\"){\n        if(tipologia==\"produzione\"){\n            message.produzione=energy;\n            if(cost()!=null){message.produzioneCost=cost();}\n        }else if(tipologia==\"illuminazione\"){\n            message.illuminazione=energy;\n            if(cost()!=null){message.illuminazioneCost=cost();}\n        }else if(tipologia==\"clima\"){\n            message.clima=energy;\n            if(cost()!=null){message.climaCost=cost();}\n        }else if(tipologia==\"generale\"){\n            message.generale=energy;\n            if(cost()!=null){message.generaleCost=cost();}\n        }\n    }else if(location!=null && location==\"uffici\"){\n        if(tipologia==\"produzione\"){\n            message.produzioneUffici=energy;\n            if(cost()!=null){message.produzioneUfficiCost=cost();}\n        }else if(tipologia==\"illuminazione\"){\n            message.illuminazioneUffici=energy;\n            if(cost()!=null){message.illuminazioneUfficiCost=cost();}\n        }else if(tipologia==\"clima\"){\n            message.climaUffici=energy;\n            if(cost()!=null){message.climaUfficiCost=cost();}\n        }else if(tipologia==\"generale\"){\n            message.generaleUffici=energy;\n            if(cost()!=null){message.generaleUfficiCost=cost();}\n        }\n    }\n}\n\nreturn {msg: message, metadata: metadata, msgType: msgType};\n\nfunction cost(){\n    if(msg.F1!=null){\n        return msg.F1;\n    }else if(msg.F2!=null){\n        return msg.F2;\n    }else if(msg.F3!=null){\n        return msg.F3;\n    }else if(msg.F23!=null){\n        return msg.F23\n    }\n}"
       },
       "createdTime" : 0,
       "debugMode" : true,
@@ -1172,8 +1176,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 600,
-        "layoutY" : 767
+        "layoutX" : 823,
+        "layoutY" : 780
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,

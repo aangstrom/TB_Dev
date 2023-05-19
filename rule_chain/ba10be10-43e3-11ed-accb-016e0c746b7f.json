@@ -934,7 +934,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "var newMsg = {};\nif (msg.power!=null || msg.Phase_A_power!=null || msg.Phase_B_power!=null || msg.Phase_C_power!=null || msg.Phase_A_pf!=null || msg.Phase_B_pf!=null || msg.Phase_C_pf!=null) \n{\n    return ['Energy'];\n}\nelse {\n    return ['Other'];\n}\n"
+        "tbelScript" : "var newMsg = {};\nif (msg.power!=null || msg.Phase_A_power!=null || msg.Phase_B_power!=null || msg.Phase_C_power!=null || msg.Phase_A_pf!=null || msg.Phase_B_pf!=null || msg.Phase_C_pf!=null || msg.Phase_A_energy!=null || msg.Phase_B_energy!=null || msg.Phase_C_energy!=null){\n    return ['Energy'];\n}\nelse {\n    return ['Other'];\n}\n"
       },
       "createdTime" : 0,
       "debugMode" : false,

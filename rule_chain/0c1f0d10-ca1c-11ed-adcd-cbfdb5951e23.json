@@ -70,12 +70,20 @@
       "type" : "Success"
     }, {
       "fromIndex" : 9,
-      "toIndex" : 6,
+      "toIndex" : 15,
       "type" : "Success"
     }, {
       "fromIndex" : 14,
       "toIndex" : 0,
       "type" : "Success"
+    }, {
+      "fromIndex" : 15,
+      "toIndex" : 6,
+      "type" : "Failed"
+    }, {
+      "fromIndex" : 15,
+      "toIndex" : 16,
+      "type" : "test-2-7"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -98,6 +106,7 @@
       },
       "name" : "Save Timeseries 7GG",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
     }, {
       "additionalInfo" : {
@@ -117,6 +126,7 @@
       },
       "name" : "Save Attributes",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
     }, {
       "additionalInfo" : {
@@ -136,6 +146,7 @@
       },
       "name" : "Message Type Switch",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
     }, {
       "additionalInfo" : {
@@ -154,6 +165,7 @@
       },
       "name" : "Log RPC from Device",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.action.TbLogNode"
     }, {
       "additionalInfo" : {
@@ -172,6 +184,7 @@
       },
       "name" : "Log Other",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.action.TbLogNode"
     }, {
       "additionalInfo" : {
@@ -191,6 +204,7 @@
       },
       "name" : "RPC Call Request",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.rpc.TbSendRPCRequestNode"
     }, {
       "additionalInfo" : {
@@ -209,6 +223,7 @@
       },
       "name" : "Is Entity Group",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbOriginatorTypeFilterNode"
     }, {
       "additionalInfo" : {
@@ -227,6 +242,7 @@
       },
       "name" : "Post attributes or RPC request",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeFilterNode"
     }, {
       "additionalInfo" : {
@@ -246,6 +262,7 @@
       },
       "name" : "Duplicate To Group Entities",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbDuplicateMsgToGroupNode"
     }, {
       "additionalInfo" : {
@@ -266,6 +283,7 @@
       },
       "name" : "Device Profile Node",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.profile.TbDeviceProfileNode"
     }, {
       "additionalInfo" : {
@@ -285,6 +303,7 @@
       },
       "name" : "Generate Report",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
     }, {
       "additionalInfo" : {
@@ -304,6 +323,7 @@
       },
       "name" : "Process RPC Reply",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
     }, {
       "additionalInfo" : {
@@ -325,6 +345,7 @@
       },
       "name" : "Trasform for kafka",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
@@ -358,6 +379,7 @@
       },
       "name" : "camere",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
     }, {
       "additionalInfo" : {
@@ -379,7 +401,50 @@
       },
       "name" : "Discard empty",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 152,
+        "layoutY" : 373
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if(metadata.deviceName==\"test-2-7\"){\n     return ['test-2-7'];\n}else{\n    return ['Failed'];\n}\nreturn nextRelation(metadata, msg);"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "098e1140-f677-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "test-2-7",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 138,
+        "layoutY" : 519
+      },
+      "configuration" : {
+        "ruleChainId" : "4f08d9a0-f675-11ed-9a4b-e3fd271b8b84"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "098efba0-f677-11ed-9a4b-e3fd271b8b84"
+      },
+      "name" : "to HSE Demo",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
     } ],
     "ruleChainConnections" : null
   },

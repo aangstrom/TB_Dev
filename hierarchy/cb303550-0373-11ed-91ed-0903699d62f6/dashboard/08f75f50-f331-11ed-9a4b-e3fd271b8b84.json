@@ -1971,7 +1971,7 @@
               "type" : "entity",
               "name" : null,
               "entityAliasId" : "62fac1ba-42a3-6dc7-c445-e42adcce1233",
-              "filterId" : null,
+              "filterId" : "b1085fbc-848d-fa9c-56b3-496088cb510c",
               "dataKeys" : [ {
                 "name" : "createdTime",
                 "type" : "alarm",
@@ -2033,7 +2033,10 @@
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
-              } ]
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
             },
             "alarmsPollingInterval" : 5,
             "showTitleIcon" : false,
@@ -2117,7 +2120,7 @@
               "type" : "entity",
               "name" : null,
               "entityAliasId" : "62fac1ba-42a3-6dc7-c445-e42adcce1233",
-              "filterId" : null,
+              "filterId" : "b1085fbc-848d-fa9c-56b3-496088cb510c",
               "dataKeys" : [ {
                 "name" : "createdTime",
                 "type" : "alarm",
@@ -2179,7 +2182,10 @@
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
-              } ]
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
             },
             "alarmsPollingInterval" : 5,
             "showTitleIcon" : false,
@@ -4607,7 +4613,7 @@
               "type" : "entity",
               "name" : null,
               "entityAliasId" : "822c445e-17e6-4ce0-0a40-4f3adf13ef31",
-              "filterId" : null,
+              "filterId" : "b1085fbc-848d-fa9c-56b3-496088cb510c",
               "dataKeys" : [ {
                 "name" : "createdTime",
                 "type" : "alarm",
@@ -4755,7 +4761,7 @@
               "type" : "entity",
               "name" : null,
               "entityAliasId" : "822c445e-17e6-4ce0-0a40-4f3adf13ef31",
-              "filterId" : null,
+              "filterId" : "b1085fbc-848d-fa9c-56b3-496088cb510c",
               "dataKeys" : [ {
                 "name" : "createdTime",
                 "type" : "alarm",
@@ -6235,7 +6241,7 @@
               "type" : "entity",
               "name" : null,
               "entityAliasId" : "439d7ace-59b7-32a8-78de-751fe8108c76",
-              "filterId" : null,
+              "filterId" : "b1085fbc-848d-fa9c-56b3-496088cb510c",
               "dataKeys" : [ {
                 "name" : "name",
                 "type" : "attribute",
@@ -6288,7 +6294,10 @@
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
-              } ]
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
             } ],
             "displayTimewindow" : true,
             "showTitleIcon" : false,
@@ -6917,7 +6926,7 @@
               "type" : "entity",
               "name" : null,
               "entityAliasId" : "439d7ace-59b7-32a8-78de-751fe8108c76",
-              "filterId" : null,
+              "filterId" : "b1085fbc-848d-fa9c-56b3-496088cb510c",
               "dataKeys" : [ {
                 "name" : "name",
                 "type" : "attribute",
@@ -6970,7 +6979,10 @@
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
-              } ]
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
             } ],
             "displayTimewindow" : true,
             "showTitleIcon" : false,
@@ -7209,7 +7221,7 @@
               "type" : "entity",
               "name" : null,
               "entityAliasId" : "439d7ace-59b7-32a8-78de-751fe8108c76",
-              "filterId" : null,
+              "filterId" : "b1085fbc-848d-fa9c-56b3-496088cb510c",
               "dataKeys" : [ {
                 "name" : "createdTime",
                 "type" : "alarm",
@@ -7357,7 +7369,7 @@
               "type" : "entity",
               "name" : null,
               "entityAliasId" : "439d7ace-59b7-32a8-78de-751fe8108c76",
-              "filterId" : null,
+              "filterId" : "b1085fbc-848d-fa9c-56b3-496088cb510c",
               "dataKeys" : [ {
                 "name" : "createdTime",
                 "type" : "alarm",
@@ -12562,7 +12574,7 @@
             "fetchLastLevelOnly" : false,
             "filters" : [ {
               "relationType" : "Contains",
-              "entityTypes" : [ "DEVICE", "ASSET" ]
+              "entityTypes" : [ "DEVICE" ]
             } ]
           }
         },
@@ -12681,6 +12693,63 @@
                 },
                 "ignoreCase" : false,
                 "type" : "STRING"
+              },
+              "userInfo" : {
+                "editable" : true,
+                "label" : "",
+                "autogeneratedLabel" : true,
+                "order" : 0
+              }
+            } ]
+          } ],
+          "editable" : false
+        },
+        "b1085fbc-848d-fa9c-56b3-496088cb510c" : {
+          "id" : "b1085fbc-848d-fa9c-56b3-496088cb510c",
+          "filter" : "Only AA Sensor",
+          "keyFilters" : [ {
+            "key" : {
+              "type" : "ENTITY_FIELD",
+              "key" : "type"
+            },
+            "valueType" : "STRING",
+            "predicates" : [ {
+              "keyFilterPredicate" : {
+                "operation" : "OR",
+                "predicates" : [ {
+                  "keyFilterPredicate" : {
+                    "operation" : "EQUAL",
+                    "value" : {
+                      "defaultValue" : "AA Sensor",
+                      "dynamicValue" : null
+                    },
+                    "ignoreCase" : false,
+                    "type" : "STRING"
+                  },
+                  "userInfo" : {
+                    "editable" : true,
+                    "label" : "",
+                    "autogeneratedLabel" : true,
+                    "order" : 0
+                  }
+                }, {
+                  "keyFilterPredicate" : {
+                    "operation" : "EQUAL",
+                    "value" : {
+                      "defaultValue" : "Rumore",
+                      "dynamicValue" : null
+                    },
+                    "ignoreCase" : false,
+                    "type" : "STRING"
+                  },
+                  "userInfo" : {
+                    "editable" : true,
+                    "label" : "",
+                    "autogeneratedLabel" : true,
+                    "order" : 0
+                  }
+                } ],
+                "type" : "COMPLEX"
               },
               "userInfo" : {
                 "editable" : true,

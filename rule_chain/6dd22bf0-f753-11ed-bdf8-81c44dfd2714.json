@@ -22,28 +22,24 @@
   "metaData" : {
     "connections" : [ {
       "fromIndex" : 1,
-      "toIndex" : 5,
+      "toIndex" : 4,
       "type" : "Post telemetry"
     }, {
       "fromIndex" : 2,
-      "toIndex" : 3,
+      "toIndex" : 0,
       "type" : "Success"
     }, {
-      "fromIndex" : 2,
-      "toIndex" : 4,
-      "type" : "Failure"
-    }, {
       "fromIndex" : 3,
-      "toIndex" : 0,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 2,
       "type" : "Success"
     }, {
       "fromIndex" : 4,
       "toIndex" : 3,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 5,
-      "toIndex" : 2,
-      "type" : "Success"
+      "type" : "Failure"
     } ],
     "firstNodeIndex" : 1,
     "nodes" : [ {
@@ -87,32 +83,6 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
-    }, {
-      "additionalInfo" : {
-        "description" : null,
-        "layoutX" : 522,
-        "layoutY" : 93
-      },
-      "configuration" : {
-        "tellFailureIfAbsent" : true,
-        "fetchToData" : false,
-        "clientAttributeNames" : [ ],
-        "sharedAttributeNames" : [ ],
-        "serverAttributeNames" : [ ],
-        "latestTsKeyNames" : [ "person" ],
-        "getLatestValueWithTs" : null
-      },
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "6e0b3d50-f753-11ed-bdf8-81c44dfd2714"
-      },
-      "name" : "Fetch Previous Telemetry",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
     }, {
       "additionalInfo" : {
         "description" : null,
@@ -160,8 +130,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 408,
-        "layoutY" : 288
+        "layoutX" : 556,
+        "layoutY" : 152
       },
       "configuration" : {
         "latestTsKeyNames" : [ "person" ],
@@ -170,10 +140,10 @@
         "orderBy" : "ASC",
         "limit" : 1000,
         "useMetadataIntervalPatterns" : false,
-        "startInterval" : 30,
+        "startInterval" : 5,
         "startIntervalTimeUnit" : "MINUTES",
         "endInterval" : 1,
-        "endIntervalTimeUnit" : "MINUTES",
+        "endIntervalTimeUnit" : "MILLISECONDS",
         "startIntervalPattern" : "",
         "endIntervalPattern" : ""
       },

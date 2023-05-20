@@ -67,7 +67,7 @@
       },
       "configuration" : {
         "scriptLang" : "JS",
-        "jsScript" : "var newMsg = {};\n\nnewMsg.delta = parseFloat(Math.abs(msg.person - JSON.parse(metadata.person)).toFixed(2));\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};",
+        "jsScript" : "\nmsg.delta = parseFloat(Math.abs(msg.person - JSON.parse(metadata.person)).toFixed(2));\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
         "tbelScript" : null
       },
       "createdTime" : 0,

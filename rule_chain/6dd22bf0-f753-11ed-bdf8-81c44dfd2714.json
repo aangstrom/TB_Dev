@@ -22,7 +22,7 @@
   "metaData" : {
     "connections" : [ {
       "fromIndex" : 1,
-      "toIndex" : 2,
+      "toIndex" : 5,
       "type" : "Post telemetry"
     }, {
       "fromIndex" : 2,
@@ -39,6 +39,10 @@
     }, {
       "fromIndex" : 4,
       "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 2,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 1,
@@ -86,8 +90,8 @@
     }, {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 582,
-        "layoutY" : 151
+        "layoutX" : 522,
+        "layoutY" : 93
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -153,6 +157,37 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 408,
+        "layoutY" : 288
+      },
+      "configuration" : {
+        "latestTsKeyNames" : [ "person" ],
+        "aggregation" : "NONE",
+        "fetchMode" : "LAST",
+        "orderBy" : "ASC",
+        "limit" : 1000,
+        "useMetadataIntervalPatterns" : false,
+        "startInterval" : 30,
+        "startIntervalTimeUnit" : "MINUTES",
+        "endInterval" : 1,
+        "endIntervalTimeUnit" : "MINUTES",
+        "startIntervalPattern" : "",
+        "endIntervalPattern" : ""
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9511e720-f756-11ed-bdf8-81c44dfd2714"
+      },
+      "name" : "fetch last person",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetTelemetryNode"
     } ],
     "ruleChainConnections" : null
   },

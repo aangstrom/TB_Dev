@@ -5,7 +5,10 @@
     "configuration" : null,
     "debugMode" : false,
     "externalId" : null,
-    "firstRuleNodeId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "6e0a52f0-f753-11ed-bdf8-81c44dfd2714"
+    },
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "6dd22bf0-f753-11ed-bdf8-81c44dfd2714"
@@ -15,9 +18,137 @@
     "type" : "CORE"
   },
   "metaData" : {
-    "connections" : null,
-    "firstNodeIndex" : null,
-    "nodes" : [ ],
+    "connections" : [ {
+      "fromIndex" : 1,
+      "toIndex" : 2,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 4,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 0,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 3,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 1,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "layoutX" : 1153,
+        "layoutY" : 151
+      },
+      "configuration" : {
+        "defaultTTL" : 0
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "6e023ca0-f753-11ed-bdf8-81c44dfd2714"
+      },
+      "name" : "SaveTS",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 285,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "version" : 0
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "6e0a52f0-f753-11ed-bdf8-81c44dfd2714"
+      },
+      "name" : "Message Type Switch",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 582,
+        "layoutY" : 151
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchToData" : false,
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ ],
+        "latestTsKeyNames" : [ "person" ],
+        "getLatestValueWithTs" : null
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "6e0b3d50-f753-11ed-bdf8-81c44dfd2714"
+      },
+      "name" : "Fetch Previous Telemetry",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 860,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "msg.delta = msg.person - metadata.person;\nif (msg.delta <= 0) { msg.delta = 0 }\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : null
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "6e0c27b0-f753-11ed-bdf8-81c44dfd2714"
+      },
+      "name" : "Delta Calculation",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 769,
+        "layoutY" : 288
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "metadata.person = msg.person;\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : null
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "6e0c9ce0-f753-11ed-bdf8-81c44dfd2714"
+      },
+      "name" : "Default Previous Counter",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    } ],
     "ruleChainConnections" : null
   },
   "relations" : [ ],

@@ -678,291 +678,86 @@
           "col" : 0,
           "id" : "c56bb618-ed2c-9d7a-60ab-612162de7537"
         },
-        "07ca4948-b78d-a165-23b7-34d33565e8e5" : {
+        "0b0214f1-0117-e61d-7698-5199324b49c2" : {
           "isSystemType" : true,
-          "bundleAlias" : "cards",
-          "typeAlias" : "html_value_card",
-          "type" : "latest",
+          "bundleAlias" : "charts",
+          "typeAlias" : "basic_timeseries",
+          "type" : "timeseries",
           "title" : "New widget",
           "image" : null,
           "description" : null,
-          "sizeX" : 7.5,
-          "sizeY" : 3,
+          "sizeX" : 8,
+          "sizeY" : 5,
           "config" : {
             "datasources" : [ {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "fd87c9b6-8cde-8919-8bcb-a9bc3bd2a8f0",
+              "entityAliasId" : "5f41c19d-3181-27a4-18ef-360821e3d475",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "name",
-                "type" : "entityField",
-                "label" : "Name",
-                "color" : "#607d8b",
-                "settings" : { },
-                "_hash" : 0.8015537582783248
-              }, {
-                "name" : "bbox",
-                "type" : "attribute",
-                "label" : "bbox",
+                "name" : "person",
+                "type" : "timeseries",
+                "label" : "person",
                 "color" : "#2196f3",
                 "settings" : { },
-                "_hash" : 0.5702561935350752
-              }, {
-                "name" : "motion",
-                "type" : "attribute",
-                "label" : "motion",
-                "color" : "#4caf50",
-                "settings" : { },
-                "_hash" : 0.08415958111024469
-              }, {
-                "name" : "mask",
-                "type" : "attribute",
-                "label" : "mask",
-                "color" : "#f44336",
-                "settings" : { },
-                "_hash" : 0.8445355884488381
-              }, {
-                "name" : "zones",
-                "type" : "attribute",
-                "label" : "zones",
-                "color" : "#ffc107",
-                "settings" : { },
-                "_hash" : 0.9886489772983964
-              }, {
-                "name" : "timestamp",
-                "type" : "attribute",
-                "label" : "timestamp",
-                "color" : "#9c27b0",
-                "settings" : { },
-                "_hash" : 0.45804507676016293
-              }, {
-                "name" : "camera_url",
-                "type" : "attribute",
-                "label" : "camera_url",
-                "color" : "#8bc34a",
-                "settings" : { },
-                "_hash" : 0.5470441505055939
+                "_hash" : 0.006578837153613515
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
-              }
+              },
+              "latestDataKeys" : [ ]
             } ],
             "timewindow" : {
-              "displayValue" : "",
-              "selectedTab" : 0,
               "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1684352183785,
-                  "endTimeMs" : 1684438583785
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "limit" : 25000
+                "timewindowMs" : 60000
               }
             },
-            "showTitle" : false,
+            "showTitle" : true,
             "backgroundColor" : "#fff",
             "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
+            "padding" : "8px",
             "settings" : {
-              "cardHtml" : "<script>\r\n\r\ndocument.getElementById('${Name}').src = \"${camera_url}?${bbox}&${motion}&${mask}&${zones}&${timestamp}\";\r\n\r\n</script>\r\n\r\n<div id=\"my-div\" align=\"center\" onload=\"LoadOnce\">\r\n<iframe id=\"${Name}\" width=\"1080\" height=\"1080\" src=\"\" >\r\n</iframe>\r\n\r\n</div>\r\n",
-              "cardCss" : ".card {\n    font-weight: bold;\n    font-size: 32px;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}"
+              "shadowSize" : 4,
+              "fontColor" : "#545454",
+              "fontSize" : 10,
+              "xaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "grid" : {
+                "color" : "#545454",
+                "tickColor" : "#DDDDDD",
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1
+              },
+              "legend" : {
+                "show" : true,
+                "position" : "nw",
+                "backgroundColor" : "#f0f0f0",
+                "backgroundOpacity" : 0.85,
+                "labelBoxBorderColor" : "rgba(1, 1, 1, 0.45)"
+              },
+              "decimals" : 1,
+              "stack" : false,
+              "tooltipIndividual" : false
             },
-            "title" : "New HTML Value Card",
-            "dropShadow" : false,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
+            "title" : "New Timeseries Line Chart",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
             "titleStyle" : {
               "fontSize" : "16px",
               "fontWeight" : 400
             },
-            "useDashboardTimewindow" : true,
-            "showLegend" : false,
-            "actions" : {
-              "headerButton" : [ {
-                "name" : "camerasetupdialog",
-                "icon" : "settings",
-                "useShowWidgetActionFunction" : null,
-                "showWidgetActionFunction" : "return true;",
-                "type" : "openDashboardState",
-                "targetDashboardStateId" : "camerasetup",
-                "setEntityId" : true,
-                "stateEntityParamName" : null,
-                "openRightLayout" : false,
-                "popoverPreferredPlacement" : "rightTop",
-                "popoverHideOnClickOutside" : true,
-                "popoverHideDashboardToolbar" : true,
-                "popoverWidth" : "15vw",
-                "popoverHeight" : "30vh",
-                "popoverStyle" : { },
-                "openInSeparateDialog" : false,
-                "openInPopover" : true,
-                "id" : "71a5f2db-5410-3883-c1c3-c02d3cc115f9"
-              } ]
-            },
-            "enableDataExport" : false,
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : ""
+            "useDashboardTimewindow" : true
           },
           "row" : 0,
           "col" : 0,
-          "id" : "07ca4948-b78d-a165-23b7-34d33565e8e5"
-        },
-        "35c81f80-aa34-f0e1-2855-42b6574e7904" : {
-          "isSystemType" : true,
-          "bundleAlias" : "cards",
-          "typeAlias" : "html_value_card",
-          "type" : "latest",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
-          "sizeX" : 7.5,
-          "sizeY" : 3,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "0891326f-7dc4-1dd5-cec8-150dcb23500c",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "name",
-                "type" : "entityField",
-                "label" : "Name",
-                "color" : "#607d8b",
-                "settings" : { },
-                "_hash" : 0.8015537582783248
-              }, {
-                "name" : "bbox",
-                "type" : "attribute",
-                "label" : "bbox",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.5702561935350752
-              }, {
-                "name" : "motion",
-                "type" : "attribute",
-                "label" : "motion",
-                "color" : "#4caf50",
-                "settings" : { },
-                "_hash" : 0.08415958111024469
-              }, {
-                "name" : "mask",
-                "type" : "attribute",
-                "label" : "mask",
-                "color" : "#f44336",
-                "settings" : { },
-                "_hash" : 0.8445355884488381
-              }, {
-                "name" : "zones",
-                "type" : "attribute",
-                "label" : "zones",
-                "color" : "#ffc107",
-                "settings" : { },
-                "_hash" : 0.9886489772983964
-              }, {
-                "name" : "timestamp",
-                "type" : "attribute",
-                "label" : "timestamp",
-                "color" : "#9c27b0",
-                "settings" : { },
-                "_hash" : 0.45804507676016293
-              }, {
-                "name" : "camera_url",
-                "type" : "attribute",
-                "label" : "camera_url",
-                "color" : "#8bc34a",
-                "settings" : { },
-                "_hash" : 0.5470441505055939
-              } ],
-              "alarmFilterConfig" : {
-                "statusList" : [ "ACTIVE" ]
-              }
-            } ],
-            "timewindow" : {
-              "displayValue" : "",
-              "selectedTab" : 0,
-              "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1684352183785,
-                  "endTimeMs" : 1684438583785
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "limit" : 25000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "cardHtml" : "<script>\r\n\r\ndocument.getElementById('${Name}').src = \"${camera_url}?${bbox}&${motion}&${mask}&${zones}&${timestamp}\";\r\n\r\n</script>\r\n\r\n<div id=\"my-div\" align=\"center\" onload=\"LoadOnce\">\r\n<iframe id=\"${Name}\" width=\"1080\" height=\"1080\" src=\"\" >\r\n</iframe>\r\n\r\n</div>\r\n",
-              "cardCss" : ".card {\n    font-weight: bold;\n    font-size: 32px;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}"
-            },
-            "title" : "New HTML Value Card",
-            "dropShadow" : false,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "useDashboardTimewindow" : true,
-            "showLegend" : false,
-            "actions" : {
-              "headerButton" : [ {
-                "name" : "camerasetupdialog",
-                "icon" : "settings",
-                "useShowWidgetActionFunction" : null,
-                "showWidgetActionFunction" : "return true;",
-                "type" : "openDashboardState",
-                "targetDashboardStateId" : "camerasetup",
-                "setEntityId" : true,
-                "stateEntityParamName" : null,
-                "openRightLayout" : false,
-                "popoverPreferredPlacement" : "rightTop",
-                "popoverHideOnClickOutside" : true,
-                "popoverHideDashboardToolbar" : true,
-                "popoverWidth" : "15vw",
-                "popoverHeight" : "30vh",
-                "popoverStyle" : { },
-                "openInSeparateDialog" : false,
-                "openInPopover" : true,
-                "id" : "71a5f2db-5410-3883-c1c3-c02d3cc115f9"
-              } ]
-            },
-            "enableDataExport" : false,
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : ""
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "35c81f80-aa34-f0e1-2855-42b6574e7904"
+          "id" : "0b0214f1-0117-e61d-7698-5199324b49c2"
         }
       },
       "states" : {
@@ -976,13 +771,13 @@
                   "sizeX" : 3,
                   "sizeY" : 2,
                   "row" : 2,
-                  "col" : 18
+                  "col" : 9
                 },
                 "2cce9660-9484-06a7-01f6-790ac466a621" : {
                   "sizeX" : 3,
                   "sizeY" : 2,
                   "row" : 0,
-                  "col" : 18
+                  "col" : 9
                 },
                 "7e5117b7-2eb6-8491-01a7-bccb4e92737d" : {
                   "sizeX" : 9,
@@ -993,20 +788,14 @@
                 "c56bb618-ed2c-9d7a-60ab-612162de7537" : {
                   "sizeX" : 9,
                   "sizeY" : 5,
-                  "row" : 0,
-                  "col" : 9
-                },
-                "07ca4948-b78d-a165-23b7-34d33565e8e5" : {
-                  "sizeX" : 9,
-                  "sizeY" : 5,
                   "row" : 5,
                   "col" : 0
                 },
-                "35c81f80-aa34-f0e1-2855-42b6574e7904" : {
-                  "sizeX" : 9,
+                "0b0214f1-0117-e61d-7698-5199324b49c2" : {
+                  "sizeX" : 8,
                   "sizeY" : 5,
-                  "row" : 5,
-                  "col" : 9
+                  "row" : 0,
+                  "col" : 12
                 }
               },
               "gridSettings" : {

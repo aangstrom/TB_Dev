@@ -62,7 +62,7 @@
                 },
                 "predicate" : {
                   "type" : "NUMERIC",
-                  "operation" : "GREATER_OR_EQUAL",
+                  "operation" : "GREATER",
                   "value" : {
                     "defaultValue" : 3.0,
                     "dynamicValue" : null,
@@ -80,6 +80,33 @@
               "entityType" : "DASHBOARD",
               "id" : "276852b0-b6a9-11ed-9788-e7e5c5ff9ab6"
             },
+            "schedule" : null
+          },
+          "MAJOR" : {
+            "alarmDetails" : "Alcune persone in attesa (${person})",
+            "condition" : {
+              "condition" : [ {
+                "key" : {
+                  "key" : "person",
+                  "type" : "TIME_SERIES"
+                },
+                "predicate" : {
+                  "type" : "NUMERIC",
+                  "operation" : "EQUAL",
+                  "value" : {
+                    "defaultValue" : 3.0,
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                },
+                "value" : null,
+                "valueType" : "NUMERIC"
+              } ],
+              "spec" : {
+                "type" : "SIMPLE"
+              }
+            },
+            "dashboardId" : null,
             "schedule" : null
           }
         },

@@ -236,11 +236,11 @@
               "dataKeys" : [ {
                 "name" : "person",
                 "type" : "timeseries",
-                "label" : "Media Persone Ultima Ora",
+                "label" : "person",
                 "color" : "#2196f3",
                 "settings" : { },
                 "_hash" : 0.547056486760247,
-                "aggregationType" : "AVG",
+                "aggregationType" : "NONE",
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
@@ -499,12 +499,12 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "cardHtml" : "<script>\r\n\r\ndocument.getElementById('${Name}').src = \"${camera_url}?${bbox}&${motion}&${mask}&${zones}&${timestamp}\";\r\n\r\n</script>\r\n\r\n<div id=\"my-div\" align=\"center\" onload=\"LoadOnce\">\r\n<iframe id=\"${Name}\" width=\"1080\" height=\"1080\" src=\"\" >\r\n</iframe>\r\n\r\n</div>\r\n",
+              "cardHtml" : "<script>\r\n\r\ndocument.getElementById('${Name}').src = \"${camera_url}?${bbox}&${motion}&${mask}&${zones}&${timestamp}\";\r\n\r\n</script>\r\n\r\n<div id=\"my-div\" align=\"center\" onload=\"LoadOnce\">\r\n<iframe id=\"${Name}\" width=\"1280\" height=\"1080\" src=\"\" >\r\n</iframe>\r\n\r\n</div>\r\n",
               "cardCss" : ".card {\n    font-weight: bold;\n    font-size: 32px;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}"
             },
             "title" : "New HTML Value Card",
             "dropShadow" : false,
-            "enableFullscreen" : false,
+            "enableFullscreen" : true,
             "widgetStyle" : { },
             "titleStyle" : {
               "fontSize" : "16px",
@@ -734,163 +734,12 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "person",
+                "name" : "entrati",
                 "type" : "timeseries",
-                "label" : "In/Out",
-                "color" : "#4caf50",
+                "label" : "entrati",
+                "color" : "#0EF54F",
                 "settings" : { },
-                "_hash" : 0.3778823104559035,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "return value - prevOrigValue;"
-              } ],
-              "alarmFilterConfig" : {
-                "statusList" : [ "ACTIVE" ]
-              },
-              "latestDataKeys" : [ ]
-            } ],
-            "timewindow" : {
-              "hideInterval" : false,
-              "hideLastInterval" : false,
-              "hideQuickInterval" : false,
-              "hideAggregation" : false,
-              "hideAggInterval" : false,
-              "hideTimezone" : false,
-              "selectedTab" : 0,
-              "realtime" : {
-                "realtimeType" : 0,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY",
-                "interval" : 1000
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "limit" : 25000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "8px",
-            "settings" : {
-              "stack" : false,
-              "fontSize" : 10,
-              "fontColor" : "#545454",
-              "showTooltip" : true,
-              "tooltipIndividual" : false,
-              "tooltipCumulative" : false,
-              "hideZeros" : false,
-              "grid" : {
-                "verticalLines" : true,
-                "horizontalLines" : true,
-                "outlineWidth" : 1,
-                "color" : "#545454",
-                "backgroundColor" : null,
-                "tickColor" : "#DDDDDD"
-              },
-              "xaxis" : {
-                "title" : null,
-                "showLabels" : true,
-                "color" : "#545454"
-              },
-              "yaxis" : {
-                "min" : null,
-                "max" : null,
-                "title" : null,
-                "showLabels" : true,
-                "color" : "#545454",
-                "tickSize" : null,
-                "tickDecimals" : 0,
-                "ticksFormatter" : ""
-              },
-              "shadowSize" : 4,
-              "smoothLines" : true,
-              "comparisonEnabled" : false,
-              "timeForComparison" : "previousInterval",
-              "comparisonCustomIntervalValue" : 7200000,
-              "xaxisSecond" : {
-                "axisPosition" : "top",
-                "title" : null,
-                "showLabels" : true
-              },
-              "customLegendEnabled" : false,
-              "dataKeysListForLabels" : [ ]
-            },
-            "title" : "New Timeseries Line Chart",
-            "dropShadow" : true,
-            "enableFullscreen" : true,
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "useDashboardTimewindow" : false,
-            "showTitleIcon" : false,
-            "enableDataExport" : true,
-            "widgetStyle" : { },
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : "",
-            "showLegend" : true,
-            "legendConfig" : {
-              "direction" : "column",
-              "position" : "bottom",
-              "sortDataKeys" : false,
-              "showMin" : false,
-              "showMax" : false,
-              "showAvg" : true,
-              "showTotal" : false,
-              "showLatest" : false
-            },
-            "displayTimewindow" : true
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "0b0214f1-0117-e61d-7698-5199324b49c2"
-        },
-        "84b91d8b-f1b9-b767-f4d4-c240d7638a9f" : {
-          "isSystemType" : true,
-          "bundleAlias" : "charts",
-          "typeAlias" : "basic_timeseries",
-          "type" : "timeseries",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
-          "sizeX" : 8,
-          "sizeY" : 5,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "5f41c19d-3181-27a4-18ef-360821e3d475",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "person",
-                "type" : "timeseries",
-                "label" : "Persone",
-                "color" : "#2196f3",
-                "settings" : {
-                  "hideDataByDefault" : false,
-                  "disableDataHiding" : false,
-                  "removeFromLegend" : false,
-                  "excludeFromStacking" : false,
-                  "showLines" : true,
-                  "lineWidth" : 1,
-                  "fillLines" : true,
-                  "fillLinesOpacity" : 0.4,
-                  "showPoints" : false,
-                  "showSeparateAxis" : false,
-                  "axisPosition" : "left",
-                  "comparisonSettings" : {
-                    "showValuesForComparison" : true,
-                    "comparisonValuesLabel" : "",
-                    "color" : ""
-                  },
-                  "thresholds" : [ ]
-                },
-                "_hash" : 0.006578837153613515,
+                "_hash" : 0.36947383825722446,
                 "aggregationType" : null,
                 "units" : null,
                 "decimals" : null,
@@ -898,18 +747,18 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "person",
+                "name" : "usciti",
                 "type" : "timeseries",
-                "label" : "In/Out",
-                "color" : "#4caf50",
+                "label" : "usciti",
+                "color" : "#ffc107",
                 "settings" : { },
-                "_hash" : 0.3778823104559035,
+                "_hash" : 0.4332159197838732,
                 "aggregationType" : null,
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "return value - prevOrigValue;"
+                "postFuncBody" : "return value * -1;"
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -917,8 +766,22 @@
               "latestDataKeys" : [ ]
             } ],
             "timewindow" : {
+              "hideInterval" : false,
+              "hideLastInterval" : false,
+              "hideQuickInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 0,
               "realtime" : {
-                "timewindowMs" : 60000
+                "realtimeType" : 0,
+                "timewindowMs" : 300000,
+                "quickInterval" : "CURRENT_DAY",
+                "interval" : 1000
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 25000
               }
             },
             "showTitle" : false,
@@ -970,156 +833,8 @@
               "dataKeysListForLabels" : [ ]
             },
             "title" : "New Timeseries Line Chart",
-            "dropShadow" : true,
-            "enableFullscreen" : true,
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "useDashboardTimewindow" : true,
-            "showTitleIcon" : false,
-            "enableDataExport" : true,
-            "widgetStyle" : { },
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : "",
-            "showLegend" : true,
-            "legendConfig" : {
-              "direction" : "column",
-              "position" : "bottom",
-              "sortDataKeys" : false,
-              "showMin" : false,
-              "showMax" : false,
-              "showAvg" : true,
-              "showTotal" : false,
-              "showLatest" : false
-            }
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "84b91d8b-f1b9-b767-f4d4-c240d7638a9f"
-        },
-        "7a659a63-7bd8-b645-1ca7-46a8b8160d54" : {
-          "isSystemType" : true,
-          "bundleAlias" : "charts",
-          "typeAlias" : "basic_timeseries",
-          "type" : "timeseries",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
-          "sizeX" : 8,
-          "sizeY" : 5,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "e9434235-d9d8-1132-8234-cbad91407fd5",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "person",
-                "type" : "timeseries",
-                "label" : "person",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.6970087999314145
-              }, {
-                "name" : "bicycle",
-                "type" : "timeseries",
-                "label" : "bicycle",
-                "color" : "#4caf50",
-                "settings" : { },
-                "_hash" : 0.34006204283120156
-              }, {
-                "name" : "motorcycle",
-                "type" : "timeseries",
-                "label" : "motorcycle",
-                "color" : "#f44336",
-                "settings" : { },
-                "_hash" : 0.6259134138723201
-              }, {
-                "name" : "car",
-                "type" : "timeseries",
-                "label" : "car",
-                "color" : "#ffc107",
-                "settings" : { },
-                "_hash" : 0.15028150541402585
-              } ],
-              "alarmFilterConfig" : {
-                "statusList" : [ "ACTIVE" ]
-              },
-              "latestDataKeys" : [ ]
-            } ],
-            "timewindow" : {
-              "hideInterval" : false,
-              "hideLastInterval" : false,
-              "hideQuickInterval" : false,
-              "hideAggregation" : false,
-              "hideAggInterval" : false,
-              "hideTimezone" : false,
-              "selectedTab" : 0,
-              "realtime" : {
-                "realtimeType" : 0,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY",
-                "interval" : 1000
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "limit" : 25000
-              },
-              "timezone" : null
-            },
-            "showTitle" : false,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "8px",
-            "settings" : {
-              "stack" : false,
-              "fontSize" : 10,
-              "fontColor" : "#545454",
-              "showTooltip" : true,
-              "tooltipIndividual" : false,
-              "tooltipCumulative" : false,
-              "hideZeros" : false,
-              "grid" : {
-                "verticalLines" : true,
-                "horizontalLines" : true,
-                "outlineWidth" : 1,
-                "color" : "#545454",
-                "backgroundColor" : null,
-                "tickColor" : "#DDDDDD"
-              },
-              "xaxis" : {
-                "title" : null,
-                "showLabels" : true,
-                "color" : "#545454"
-              },
-              "yaxis" : {
-                "min" : null,
-                "max" : null,
-                "title" : null,
-                "showLabels" : true,
-                "color" : "#545454",
-                "tickSize" : null,
-                "tickDecimals" : 0,
-                "ticksFormatter" : ""
-              },
-              "shadowSize" : 4,
-              "smoothLines" : true,
-              "comparisonEnabled" : false,
-              "timeForComparison" : "previousInterval",
-              "comparisonCustomIntervalValue" : 7200000,
-              "xaxisSecond" : {
-                "axisPosition" : "top",
-                "title" : null,
-                "showLabels" : true
-              },
-              "customLegendEnabled" : false,
-              "dataKeysListForLabels" : [ ]
-            },
-            "title" : "New Timeseries Line Chart",
-            "dropShadow" : true,
-            "enableFullscreen" : true,
+            "dropShadow" : false,
+            "enableFullscreen" : false,
             "titleStyle" : {
               "fontSize" : "16px",
               "fontWeight" : 400
@@ -1131,7 +846,7 @@
             "widgetCss" : "",
             "pageSize" : 1024,
             "noDataDisplayMessage" : "",
-            "showLegend" : true,
+            "showLegend" : false,
             "legendConfig" : {
               "direction" : "column",
               "position" : "bottom",
@@ -1142,11 +857,11 @@
               "showTotal" : false,
               "showLatest" : false
             },
-            "displayTimewindow" : true
+            "displayTimewindow" : false
           },
           "row" : 0,
           "col" : 0,
-          "id" : "7a659a63-7bd8-b645-1ca7-46a8b8160d54"
+          "id" : "0b0214f1-0117-e61d-7698-5199324b49c2"
         },
         "0a17ce5d-e9c2-948f-cad0-db95e01417c9" : {
           "isSystemType" : true,
@@ -1255,7 +970,7 @@
                 "2cce9660-9484-06a7-01f6-790ac466a621" : {
                   "sizeX" : 3,
                   "sizeY" : 2,
-                  "row" : 5,
+                  "row" : 6,
                   "col" : 9
                 },
                 "7e5117b7-2eb6-8491-01a7-bccb4e92737d" : {
@@ -1267,32 +982,20 @@
                 "c56bb618-ed2c-9d7a-60ab-612162de7537" : {
                   "sizeX" : 9,
                   "sizeY" : 5,
-                  "row" : 5,
+                  "row" : 6,
                   "col" : 0
                 },
                 "0b0214f1-0117-e61d-7698-5199324b49c2" : {
-                  "sizeX" : 6,
+                  "sizeX" : 10,
                   "sizeY" : 5,
                   "row" : 0,
                   "col" : 12
-                },
-                "84b91d8b-f1b9-b767-f4d4-c240d7638a9f" : {
-                  "sizeX" : 6,
-                  "sizeY" : 5,
-                  "row" : 0,
-                  "col" : 18
-                },
-                "7a659a63-7bd8-b645-1ca7-46a8b8160d54" : {
-                  "sizeX" : 8,
-                  "sizeY" : 5,
-                  "row" : 10,
-                  "col" : 1
                 },
                 "0a17ce5d-e9c2-948f-cad0-db95e01417c9" : {
-                  "sizeX" : 12,
+                  "sizeX" : 11,
                   "sizeY" : 6,
                   "row" : 5,
-                  "col" : 12
+                  "col" : 13
                 }
               },
               "gridSettings" : {
@@ -1688,9 +1391,10 @@
           "interval" : 1000
         },
         "aggregation" : {
-          "type" : "AVG",
+          "type" : "SUM",
           "limit" : 25000
-        }
+        },
+        "timezone" : null
       },
       "settings" : {
         "stateControllerId" : "entity",

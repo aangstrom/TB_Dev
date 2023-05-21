@@ -50,19 +50,16 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "person",
+                "name" : "delta",
                 "type" : "timeseries",
-                "label" : "Delta",
-                "color" : "#4caf50",
+                "label" : "delta",
+                "color" : "#f44336",
                 "settings" : { },
-                "_hash" : 0.9581904130940058,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "return value - prevOrigValue;"
+                "_hash" : 0.07551545436536333
               } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
               "latestDataKeys" : [ ]
             } ],
             "timewindow" : {
@@ -514,38 +511,37 @@
               "entityAliasId" : "1f06734d-984b-1dd3-65fd-6bad8d13010d",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "person",
+                "name" : "entrati",
                 "type" : "timeseries",
-                "label" : "Entrati/Usciti",
+                "label" : "Sum Entrati",
                 "color" : "#2196f3",
                 "settings" : { },
-                "_hash" : 0.7018674368036932,
-                "aggregationType" : "NONE",
+                "_hash" : 0.5343267865159989,
+                "aggregationType" : "SUM",
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "return value - prevOrigValue;"
-              } ]
+                "usePostProcessing" : null,
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
             } ],
             "timewindow" : {
-              "displayValue" : "",
+              "hideInterval" : false,
+              "hideLastInterval" : false,
+              "hideQuickInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
               "selectedTab" : 0,
               "realtime" : {
                 "realtimeType" : 1,
-                "interval" : 1000,
                 "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1678285808451,
-                  "endTimeMs" : 1678372208451
-                },
-                "quickInterval" : "CURRENT_DAY"
+                "quickInterval" : "CURRENT_HOUR",
+                "interval" : 1000
               },
               "aggregation" : {
                 "type" : "AVG",
@@ -568,14 +564,15 @@
             },
             "units" : "",
             "decimals" : 0,
-            "useDashboardTimewindow" : true,
+            "useDashboardTimewindow" : false,
             "showLegend" : false,
             "widgetStyle" : { },
             "actions" : { },
             "enableDataExport" : false,
             "widgetCss" : "",
             "pageSize" : 1024,
-            "noDataDisplayMessage" : ""
+            "noDataDisplayMessage" : "",
+            "displayTimewindow" : false
           },
           "row" : 0,
           "col" : 0,
@@ -719,7 +716,7 @@
               "dataKeys" : [ {
                 "name" : "person",
                 "type" : "timeseries",
-                "label" : "Now",
+                "label" : "Presenti",
                 "color" : "#2196f3",
                 "settings" : { },
                 "_hash" : 0.7018674368036932,
@@ -729,7 +726,10 @@
                 "funcBody" : null,
                 "usePostProcessing" : false,
                 "postFuncBody" : null
-              } ]
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
             } ],
             "timewindow" : {
               "displayValue" : "",
@@ -801,38 +801,37 @@
               "entityAliasId" : "1f06734d-984b-1dd3-65fd-6bad8d13010d",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "person",
+                "name" : "usciti",
                 "type" : "timeseries",
-                "label" : "Previous",
+                "label" : "Sum Usciti",
                 "color" : "#2196f3",
                 "settings" : { },
-                "_hash" : 0.7018674368036932,
-                "aggregationType" : "NONE",
+                "_hash" : 0.8249361970088378,
+                "aggregationType" : "SUM",
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "return prevOrigValue;"
-              } ]
+                "usePostProcessing" : null,
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
             } ],
             "timewindow" : {
-              "displayValue" : "",
+              "hideInterval" : false,
+              "hideLastInterval" : false,
+              "hideQuickInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
               "selectedTab" : 0,
               "realtime" : {
                 "realtimeType" : 1,
-                "interval" : 1000,
                 "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1678285808452,
-                  "endTimeMs" : 1678372208452
-                },
-                "quickInterval" : "CURRENT_DAY"
+                "quickInterval" : "CURRENT_HOUR",
+                "interval" : 1000
               },
               "aggregation" : {
                 "type" : "AVG",
@@ -855,14 +854,15 @@
             },
             "units" : "",
             "decimals" : 0,
-            "useDashboardTimewindow" : true,
+            "useDashboardTimewindow" : false,
             "showLegend" : false,
             "widgetStyle" : { },
             "actions" : { },
             "enableDataExport" : false,
             "widgetCss" : "",
             "pageSize" : 1024,
-            "noDataDisplayMessage" : ""
+            "noDataDisplayMessage" : "",
+            "displayTimewindow" : false
           },
           "row" : 0,
           "col" : 0,
@@ -1021,7 +1021,7 @@
                 "818449b4-979a-a2c3-680a-9813cdc4a8cc" : {
                   "sizeX" : 3,
                   "sizeY" : 2,
-                  "row" : 2,
+                  "row" : 4,
                   "col" : 15
                 },
                 "5da32258-f4c4-08dc-511b-7661b467d240" : {
@@ -1033,7 +1033,7 @@
                 "fd4d4891-68df-4404-c499-51702665e464" : {
                   "sizeX" : 3,
                   "sizeY" : 2,
-                  "row" : 4,
+                  "row" : 2,
                   "col" : 15
                 },
                 "2fe526e8-2838-878b-532a-85526fbdd558" : {
@@ -1067,19 +1067,7 @@
       "entityAliases" : {
         "1f06734d-984b-1dd3-65fd-6bad8d13010d" : {
           "id" : "1f06734d-984b-1dd3-65fd-6bad8d13010d",
-          "alias" : "Test-1",
-          "filter" : {
-            "type" : "singleEntity",
-            "resolveMultiple" : false,
-            "singleEntity" : {
-              "entityType" : "DEVICE",
-              "id" : "5d898b10-a0c5-11ed-bcb8-7f48a6e846b2"
-            }
-          }
-        },
-        "c1995806-4b57-878f-448e-fb1056d83a25" : {
-          "id" : "c1995806-4b57-878f-448e-fb1056d83a25",
-          "alias" : "Frigate",
+          "alias" : "barriera_cassa",
           "filter" : {
             "type" : "singleEntity",
             "resolveMultiple" : false,

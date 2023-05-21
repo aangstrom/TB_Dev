@@ -2640,6 +2640,186 @@
           "row" : 0,
           "col" : 0,
           "id" : "3d1d9e70-8992-799b-6432-47ab9e473521"
+        },
+        "5e901a5b-946b-83ad-a362-90e87e11d458" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "markdown_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 5,
+          "sizeY" : 3.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entityCount",
+              "name" : null,
+              "entityAliasId" : "8dea55db-dadc-0a4b-5e81-8d50c427cfa4",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "count",
+                "type" : "count",
+                "label" : "count_sedi",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.6649287753186348,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ]
+            }, {
+              "type" : "entityCount",
+              "name" : null,
+              "entityAliasId" : "d8895d98-52e4-97b0-f2d4-cded430af0ce",
+              "filterId" : "70e85366-289a-dfc9-7e92-55e64301c226",
+              "dataKeys" : [ {
+                "name" : "count",
+                "type" : "count",
+                "label" : "count_sentinelle",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.567243403688547,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ]
+            }, {
+              "type" : "entityCount",
+              "name" : null,
+              "entityAliasId" : "d8895d98-52e4-97b0-f2d4-cded430af0ce",
+              "filterId" : "89ce0188-8560-1cd1-e71b-b415a27c6428",
+              "dataKeys" : [ {
+                "name" : "count",
+                "type" : "count",
+                "label" : "count_disconnected",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.006039437151656335,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1683809072630,
+                  "endTimeMs" : 1683895472630
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgb(63, 81, 181)",
+            "color" : "#FFFFFF",
+            "padding" : "0px",
+            "settings" : {
+              "useMarkdownTextFunction" : false,
+              "markdownTextPattern" : "<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <i id=\"home\" class=\"fa fa-home fas\"><h1>&nbsp;Home</h1></i>\n        </div>\n        <div class='column'>\n            <div class=\"status_bar\">\n                <i class=\"fa fa-building\" aria-hidden=\"true\"><div id=\"sedi\" class=\"status_bar_notification\">${count_sedi:0}</div></i>\n                <!--<i class=\"fa fa-podcast\" aria-hidden=\"true\"><div class=\"status_bar_notification\">error</div></i>-->\n                <i id=\"connected\" class=\"fa fa-rss fas\" aria-hidden=\"true\"><div class=\"status_bar_notification\">${count_sentinelle:0}</div></i>\n                <i id=\"disconnected\" class=\"fa fa-exclamation-triangle fas\" aria-hidden=\"true\"><div class=\"status_bar_notification_red\">${count_disconnected:0}</div></i>\n            </div>\n        </div>\n    </div>\n</div>",
+              "applyDefaultMarkdownStyle" : true,
+              "markdownCss" : ".card {\n   width: 100%;\n   height: 100%;\n}\n\n.card .content {\n   display: flex;\n   flex-direction: row;\n   align-items: center;\n   justify-content: space-between;\n   height: 100%;\n}\n\n.card .content .column {\n    display: flex;\n    margin-left: 50px;\n    margin-right: 50px;\n    align-items: center;\n    flex-direction: row;\n    justify-content: space-between;\n}\n.status_bar{\n    width: 250px;\n    display: flex;\n    align-items: center;\n    flex-direction: row;\n    justify-content: space-between;\n}\n.status_bar_notification{\n    height: 22px;\n    margin-top: -10px;\n    font-size: 16px;\n    color: white;\n    border-radius: 20%;\n    padding: 0px 8px;\n    background-color: #00CDFF;\n}\n.status_bar_notification_red{\n    height: 24px;\n    margin-top: -10px;\n    font-size: 16px;\n    color: white;\n    border-radius: 20%;\n    padding: 2px 8px;\n    background-color: red;\n}\n.card h1 {\n    text-transform: uppercase;\n    font-size: 20px;\n    font-weight: bold;\n    margin: 0px;\n    padding:0px;\n    line-height: 32px;\n    font-family: Arial;\n    color: #ffffff;\n}\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n\n.fa{\n    font-size: 30px;\n    text-align: center;\n    padding-bottom: 0px;\n    display: flex;\n    flex-direction: row;\n    color: #ffffff;\n}\n.fas:hover{\n    opacity: 0.5;\n    cursor: pointer;\n}"
+            },
+            "title" : "New Markdown/HTML Card",
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "showLegend" : false,
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "useDashboardTimewindow" : true,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "home",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "updateDashboardState",
+                "targetDashboardStateId" : "home",
+                "setEntityId" : true,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "2c334d54-8dd2-c44c-72eb-fad89f6c39cd"
+              }, {
+                "name" : "disconnected",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "sentinelle_disconnesse",
+                "setEntityId" : true,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "popoverPreferredPlacement" : "bottom",
+                "popoverHideOnClickOutside" : true,
+                "popoverHideDashboardToolbar" : true,
+                "popoverWidth" : "300px",
+                "popoverHeight" : "600px",
+                "popoverStyle" : { },
+                "openInSeparateDialog" : false,
+                "openInPopover" : true,
+                "id" : "323ee94f-0592-c5d2-37d3-7ad3f6c6494e"
+              }, {
+                "name" : "connected",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "sentinelle_connesse",
+                "setEntityId" : true,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "popoverPreferredPlacement" : "bottom",
+                "popoverHideOnClickOutside" : true,
+                "popoverHideDashboardToolbar" : true,
+                "popoverWidth" : "300px",
+                "popoverHeight" : "600px",
+                "popoverStyle" : { },
+                "openInSeparateDialog" : false,
+                "openInPopover" : true,
+                "id" : "0befd363-bf4d-43c3-a4dd-4387274f3dc0"
+              } ]
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "5e901a5b-946b-83ad-a362-90e87e11d458"
         }
       },
       "states" : {
@@ -2652,13 +2832,13 @@
                 "c8dbd350-fd6b-6841-db71-768c43ac03a9" : {
                   "sizeX" : 3,
                   "sizeY" : 1,
-                  "row" : 2,
+                  "row" : 3,
                   "col" : 9
                 },
                 "7e5117b7-2eb6-8491-01a7-bccb4e92737d" : {
                   "sizeX" : 9,
                   "sizeY" : 5,
-                  "row" : 0,
+                  "row" : 1,
                   "col" : 0
                 },
                 "c56bb618-ed2c-9d7a-60ab-612162de7537" : {
@@ -2670,25 +2850,25 @@
                 "0b0214f1-0117-e61d-7698-5199324b49c2" : {
                   "sizeX" : 12,
                   "sizeY" : 5,
-                  "row" : 0,
+                  "row" : 1,
                   "col" : 12
                 },
                 "12aa76e8-c2e1-4afc-16a6-b00811b92c2d" : {
                   "sizeX" : 3,
                   "sizeY" : 1,
-                  "row" : 3,
+                  "row" : 4,
                   "col" : 9
                 },
                 "b5568e06-fd6a-314a-a965-21f8ffdb267a" : {
                   "sizeX" : 3,
                   "sizeY" : 1,
-                  "row" : 4,
+                  "row" : 5,
                   "col" : 9
                 },
                 "ea062ab1-3716-9311-f019-10e1ab10e3e7" : {
                   "sizeX" : 3,
                   "sizeY" : 2,
-                  "row" : 0,
+                  "row" : 1,
                   "col" : 9
                 },
                 "d1a566ab-a541-c437-6bd4-d207ca7420ce" : {
@@ -2720,6 +2900,12 @@
                   "sizeY" : 5,
                   "row" : 6,
                   "col" : 12
+                },
+                "5e901a5b-946b-83ad-a362-90e87e11d458" : {
+                  "sizeX" : 24,
+                  "sizeY" : 1,
+                  "row" : 0,
+                  "col" : 0
                 }
               },
               "gridSettings" : {

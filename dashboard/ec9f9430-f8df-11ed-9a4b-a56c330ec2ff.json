@@ -104,7 +104,7 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "cardHtml" : "\r\n<script>\r\n//document.getElementById('${Name}').src = \"${camera_url}?${bbox}&${motion}&${mask}&${zones}&${timestamp}&h=350\";\r\n\r\n</script>\r\n\r\n<div id=\"my-div\" align=\"center\">\r\n<iframe id=\"testvideo\" height=390 width=630 src=\"https://cam.aangstrom.it/live/webrtc/stream.html?src=people\" >\r\n</iframe>\r\n\r\n\r\n</div>\r\n",
+              "cardHtml" : "\r\n<script>\r\n//document.getElementById('${Name}').src = \"${camera_url}?${bbox}&${motion}&${mask}&${zones}&${timestamp}&h=350\";\r\n\r\n</script>\r\n\r\n<div id=\"my-div\" align=\"center\">\r\n<iframe id=\"testvideo2\" height=390 width=630 src=\"https://cam.aangstrom.it/live/webrtc/stream.html?src=people\" >\r\n</iframe>\r\n\r\n\r\n</div>\r\n",
               "cardCss" : ".card {\n    font-weight: bold;\n    font-size: 32px;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}"
             },
             "title" : "New HTML Value Card",
@@ -291,149 +291,6 @@
           "col" : 0,
           "id" : "008daaa7-5da1-6d4c-59f2-2299a1cebd7d"
         },
-        "19ff76ea-8969-02d0-37ca-0ef14aa79730" : {
-          "isSystemType" : true,
-          "bundleAlias" : "cards",
-          "typeAlias" : "html_value_card",
-          "type" : "latest",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
-          "sizeX" : 7.5,
-          "sizeY" : 3,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "29a5f291-9098-01fb-d5e4-9deaa21d97f5",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "name",
-                "type" : "entityField",
-                "label" : "Name",
-                "color" : "#607d8b",
-                "settings" : { },
-                "_hash" : 0.8015537582783248
-              }, {
-                "name" : "bbox",
-                "type" : "attribute",
-                "label" : "bbox",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.5702561935350752
-              }, {
-                "name" : "motion",
-                "type" : "attribute",
-                "label" : "motion",
-                "color" : "#4caf50",
-                "settings" : { },
-                "_hash" : 0.08415958111024469
-              }, {
-                "name" : "mask",
-                "type" : "attribute",
-                "label" : "mask",
-                "color" : "#f44336",
-                "settings" : { },
-                "_hash" : 0.8445355884488381
-              }, {
-                "name" : "zones",
-                "type" : "attribute",
-                "label" : "zones",
-                "color" : "#ffc107",
-                "settings" : { },
-                "_hash" : 0.9886489772983964
-              }, {
-                "name" : "timestamp",
-                "type" : "attribute",
-                "label" : "timestamp",
-                "color" : "#9c27b0",
-                "settings" : { },
-                "_hash" : 0.45804507676016293
-              }, {
-                "name" : "camera_url",
-                "type" : "attribute",
-                "label" : "camera_url",
-                "color" : "#8bc34a",
-                "settings" : { },
-                "_hash" : 0.5470441505055939
-              } ],
-              "alarmFilterConfig" : {
-                "statusList" : [ "ACTIVE" ]
-              }
-            } ],
-            "timewindow" : {
-              "displayValue" : "",
-              "selectedTab" : 0,
-              "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1684352183785,
-                  "endTimeMs" : 1684438583785
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "limit" : 25000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "cardHtml" : "\r\n<script>\r\n//document.getElementById('${Name}').src = \"${camera_url}?${bbox}&${motion}&${mask}&${zones}&${timestamp}&h=350\";\r\n\r\n</script>\r\n\r\n<div id=\"my-div\" align=\"center\">\r\n<iframe id=\"testvideo\" height=390 width=630 src=\"https://cam.aangstrom.it/live/webrtc/stream.html?src=barriera_cassa\" >\r\n</iframe>\r\n\r\n\r\n</div>\r\n",
-              "cardCss" : ".card {\n    font-weight: bold;\n    font-size: 32px;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}"
-            },
-            "title" : "New HTML Value Card",
-            "dropShadow" : false,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "useDashboardTimewindow" : true,
-            "showLegend" : false,
-            "actions" : {
-              "headerButton" : [ {
-                "name" : "camerasetupdialog",
-                "icon" : "settings",
-                "useShowWidgetActionFunction" : null,
-                "showWidgetActionFunction" : "return true;",
-                "type" : "openDashboardState",
-                "targetDashboardStateId" : "camerasetup",
-                "setEntityId" : true,
-                "stateEntityParamName" : null,
-                "openRightLayout" : false,
-                "popoverPreferredPlacement" : "rightTop",
-                "popoverHideOnClickOutside" : true,
-                "popoverHideDashboardToolbar" : true,
-                "popoverWidth" : "15vw",
-                "popoverHeight" : "30vh",
-                "popoverStyle" : { },
-                "openInSeparateDialog" : false,
-                "openInPopover" : true,
-                "id" : "71a5f2db-5410-3883-c1c3-c02d3cc115f9"
-              } ]
-            },
-            "enableDataExport" : false,
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : ""
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "19ff76ea-8969-02d0-37ca-0ef14aa79730"
-        },
         "9a7ba6d2-4dd7-bc71-2bd7-99bff3a74ddf" : {
           "isSystemType" : true,
           "bundleAlias" : "cards",
@@ -533,7 +390,7 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "cardHtml" : "\r\n<script>\r\n//document.getElementById('${Name}').src = \"${camera_url}?${bbox}&${motion}&${mask}&${zones}&${timestamp}&h=350\";\r\n\r\n</script>\r\n\r\n<div id=\"my-div\" align=\"center\">\r\n<iframe id=\"testvideo\" height=390 width=630 src=\"https://cam.aangstrom.it/live/webrtc/stream.html?src=test-2-7&amp;mode=webrtc\" >\r\n</iframe>\r\n\r\n\r\n</div>\r\n",
+              "cardHtml" : "\r\n<script>\r\n//document.getElementById('${Name}').src = \"${camera_url}?${bbox}&${motion}&${mask}&${zones}&${timestamp}&h=350\";\r\n\r\n</script>\r\n\r\n<div id=\"my-div\" align=\"center\">\r\n<iframe id=\"testvideo3\" height=390 width=630 src=\"https://cam.aangstrom.it/live/webrtc/stream.html?src=test-2-7&amp;mode=webrtc\" >\r\n</iframe>\r\n\r\n\r\n</div>\r\n",
               "cardCss" : ".card {\n    font-weight: bold;\n    font-size: 32px;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}"
             },
             "title" : "New HTML Value Card",
@@ -576,6 +433,149 @@
           "row" : 0,
           "col" : 0,
           "id" : "9a7ba6d2-4dd7-bc71-2bd7-99bff3a74ddf"
+        },
+        "c42ffdde-77a1-a2bc-0790-d3303b766ae6" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "29a5f291-9098-01fb-d5e4-9deaa21d97f5",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Name",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.8015537582783248
+              }, {
+                "name" : "bbox",
+                "type" : "attribute",
+                "label" : "bbox",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.5702561935350752
+              }, {
+                "name" : "motion",
+                "type" : "attribute",
+                "label" : "motion",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.08415958111024469
+              }, {
+                "name" : "mask",
+                "type" : "attribute",
+                "label" : "mask",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.8445355884488381
+              }, {
+                "name" : "zones",
+                "type" : "attribute",
+                "label" : "zones",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.9886489772983964
+              }, {
+                "name" : "timestamp",
+                "type" : "attribute",
+                "label" : "timestamp",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.45804507676016293
+              }, {
+                "name" : "camera_url",
+                "type" : "attribute",
+                "label" : "camera_url",
+                "color" : "#8bc34a",
+                "settings" : { },
+                "_hash" : 0.5470441505055939
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1684352183785,
+                  "endTimeMs" : 1684438583785
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "\r\n<script>\r\n//document.getElementById('${Name}').src = \"${camera_url}?${bbox}&${motion}&${mask}&${zones}&${timestamp}&h=350\";\r\n\r\n</script>\r\n\r\n<div id=\"my-div\" align=\"center\">\r\n<iframe id=\"testvideo1\" height=390 width=630 src=\"https://cam.aangstrom.it/live/webrtc/stream.html?src=barriera_cassa\" >\r\n</iframe>\r\n\r\n\r\n</div>\r\n",
+              "cardCss" : ".card {\n    font-weight: bold;\n    font-size: 32px;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "headerButton" : [ {
+                "name" : "camerasetupdialog",
+                "icon" : "settings",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "camerasetup",
+                "setEntityId" : true,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "popoverPreferredPlacement" : "rightTop",
+                "popoverHideOnClickOutside" : true,
+                "popoverHideDashboardToolbar" : true,
+                "popoverWidth" : "15vw",
+                "popoverHeight" : "30vh",
+                "popoverStyle" : { },
+                "openInSeparateDialog" : false,
+                "openInPopover" : true,
+                "id" : "71a5f2db-5410-3883-c1c3-c02d3cc115f9"
+              } ]
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "c42ffdde-77a1-a2bc-0790-d3303b766ae6"
         }
       },
       "states" : {
@@ -597,16 +597,16 @@
                   "row" : 0,
                   "col" : 0
                 },
-                "19ff76ea-8969-02d0-37ca-0ef14aa79730" : {
-                  "sizeX" : 8,
-                  "sizeY" : 6,
-                  "row" : 3,
-                  "col" : 16
-                },
                 "9a7ba6d2-4dd7-bc71-2bd7-99bff3a74ddf" : {
                   "sizeX" : 8,
-                  "sizeY" : 6,
+                  "sizeY" : 5,
                   "row" : 0,
+                  "col" : 8
+                },
+                "c42ffdde-77a1-a2bc-0790-d3303b766ae6" : {
+                  "sizeX" : 8,
+                  "sizeY" : 6,
+                  "row" : 5,
                   "col" : 8
                 }
               },

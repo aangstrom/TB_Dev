@@ -12079,6 +12079,112 @@
           "row" : 0,
           "col" : 0,
           "id" : "a475c489-ca79-9dc9-e9b4-21fafd3f8e92"
+        },
+        "9b0299dc-f87d-40d0-8371-dcb2e87cc13c" : {
+          "isSystemType" : true,
+          "bundleAlias" : "input_widgets",
+          "typeAlias" : "update_multiple_attributes",
+          "type" : "latest",
+          "title" : "New widget",
+          "sizeX" : 11,
+          "sizeY" : 16,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "84beb002-f654-4c52-c4eb-3303e726b3aa",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "name",
+                "type" : "attribute",
+                "label" : "Nome sensore",
+                "color" : "#e91e63",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "string",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "useCustomIcon" : false,
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.19353574854107936,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1682513492328,
+                  "endTimeMs" : 1682599892328
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "widgetTitle" : "Soglie Allarmi",
+              "showResultMessage" : false,
+              "showActionButtons" : true,
+              "updateAllValues" : false,
+              "showGroupTitle" : false,
+              "fieldsAlignment" : "column",
+              "groupTitle" : "${entityName}",
+              "fieldsInRow" : 2
+            },
+            "title" : "Soglie allarmi",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "enableDataExport" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "18px",
+              "fontWeight" : 600,
+              "padding" : "5px 10px 5px 5px",
+              "textTransform" : "capitalize"
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "showTitleIcon" : false,
+            "titleIcon" : null,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "displayTimewindow" : true,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "Nessun sensore presente",
+            "margin" : "0px"
+          },
+          "id" : "9b0299dc-f87d-40d0-8371-dcb2e87cc13c"
         }
       },
       "states" : {
@@ -13004,7 +13110,14 @@
           "root" : false,
           "layouts" : {
             "main" : {
-              "widgets" : { },
+              "widgets" : {
+                "9b0299dc-f87d-40d0-8371-dcb2e87cc13c" : {
+                  "sizeX" : 24,
+                  "sizeY" : 18,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
               "gridSettings" : {
                 "backgroundColor" : "#eeeeee",
                 "columns" : 24,

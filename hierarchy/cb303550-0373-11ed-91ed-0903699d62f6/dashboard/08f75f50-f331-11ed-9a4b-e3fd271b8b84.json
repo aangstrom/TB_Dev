@@ -2422,10 +2422,12 @@
               "displayDetails" : true,
               "allowAcknowledgment" : true,
               "allowClear" : true,
+              "allowAssign" : true,
               "displayPagination" : true,
               "defaultPageSize" : 10,
               "defaultSortOrder" : "-createdTime",
-              "useRowStyleFunction" : false
+              "useRowStyleFunction" : true,
+              "rowStyleFunction" : "var severity = alarm.severity;\r\nvar color = '#fff';\r\nswitch (severity) {\r\n  case 'CRITICAL':\r\n    color = 'red';\r\n    break;\r\n  case 'MAJOR':\r\n    color = 'orange';\r\n    break;\r\n  case 'MINOR':\r\n    color = '#ffca3d';\r\n    break;\r\n  case 'WARNING':\r\n    color = '#abab00';\r\n    break;\r\n  case 'INDETERMINATE':\r\n    color = 'green';\r\n    break;\r\n}\r\nreturn {\r\n  backgroundColor: color\r\n};\r\n"
             },
             "title" : "Allarmi Critici",
             "dropShadow" : false,
@@ -2570,10 +2572,12 @@
               "displayDetails" : true,
               "allowAcknowledgment" : true,
               "allowClear" : true,
+              "allowAssign" : true,
               "displayPagination" : true,
               "defaultPageSize" : 10,
               "defaultSortOrder" : "-createdTime",
-              "useRowStyleFunction" : false
+              "useRowStyleFunction" : true,
+              "rowStyleFunction" : "var severity = alarm.severity;\r\nvar color = '#fff';\r\nswitch (severity) {\r\n  case 'CRITICAL':\r\n    color = 'red';\r\n    break;\r\n  case 'MAJOR':\r\n    color = 'orange';\r\n    break;\r\n  case 'MINOR':\r\n    color = '#ffca3d';\r\n    break;\r\n  case 'WARNING':\r\n    color = '#abab00';\r\n    break;\r\n  case 'INDETERMINATE':\r\n    color = 'green';\r\n    break;\r\n}\r\nreturn {\r\n  backgroundColor: color\r\n};\r\n"
             },
             "title" : "Allarmi Critici",
             "dropShadow" : false,

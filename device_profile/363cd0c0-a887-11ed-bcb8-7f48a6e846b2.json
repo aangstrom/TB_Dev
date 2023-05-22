@@ -1,0 +1,206 @@
+{
+  "entityType" : "DEVICE_PROFILE",
+  "entity" : {
+    "default" : false,
+    "defaultDashboardId" : null,
+    "defaultEdgeRuleChainId" : null,
+    "defaultQueueName" : null,
+    "defaultRuleChainId" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "ba10be10-43e3-11ed-accb-016e0c746b7f"
+    },
+    "description" : "Default device profile",
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "363cd0c0-a887-11ed-bcb8-7f48a6e846b2"
+    },
+    "image" : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANiSURBVHhe7du9bhNBFMVxO1AjochgCZD4KiLehY4noOGxeABa3oUudJFQuvRgPGKuECZxdr2zO/fe8/81trt459wzM1GyXgX16tnmw+W36y/1o1tvLjYfL6+uP9eP7oQNwO5mtatv3Vs/8vucz+prKJEW37uQAYjE8/QXBEAcAZiR9+kvCIC4cAHgANgWDTCTCPVfEABxBGAGUaa/IADiQgWAA2B7NEBjkeq/IADiCEBD0aa/IADiwgTA+wFwP/0hh4kGaCfkDYUAiCMADUQ8/BkCIC5Ecj0fACNPf0EDiCMA4gjABNHrvyAA4twn2OsBMMP0FzSAOAIgjgCcIEv9F64DwJ+AzY8GGCnT9BcEQBwBEEcARshW/4XbAHAAXAYNMFDG6S8IgDgCII4ADJC1/guXAeAAuByXyVYJwOuLp++/X/34Wj92QQA66729cAboaL/4D+vbbghAXz/razfutgCV+vdys6ABOvBQ/YYA9NG9+g0BWJi3XyoRgAXtF/9BfeuGqwAIHAB/1Vc3aICFeKt+QwAW4LH6DQFYhrvqNwRgZl6r37gJQMYD4H7x3Q8YDTAv96EmADPxXv2GAMwgQvUbAjCPMOcZFzWV6QAYpfoNDdBQpOo3BKCtcE1GABqJVv2GADQQsfpN9x88yQEw7HegASaKWv2GAEwQufoNAZgm/PbVtb4i7//Rq990bYCoDzFD9ZvwKe7RIlmmv+AMMFKmxS9CB2Dp6c9U/YYGGCf8qf8QARgoW/UbAjBAxuo3BGCYdNVvCMA9sla/CRuAJW4Amavf0ADHpa1+QwDukL36DQG4hcriFwRAHAE4oDT9RcgvO9cNQG3xCxpAHAGoFKe/IAB7qotfEABx8gFQnv4i3JdveQNQX/yCLUCcbACY/j8kA8Di/8UWIE4uAEz/v0I9jKk3ABb/f2wB4mQCwPTfTiIALP7d2ALEpQ8A039cmIdzyg2Axb8fW4C4tAFg+odJGQAWfzi2AHHpAsD0jxPiYQ29AbD447EFiEsTAKb/NCkCwOKfji1AXPgAMP3TuH94x24ALP50bAHiwgaA6W8jZABY/HbYAsSFCwDT35brh3l4A2Dx22MLEBcmAEy/oJfbJ5+m/jsYjnPdAGfr3eMX756f149Q83a73dS3mMVq9RtFvXZ0JztSFAAAAABJRU5ErkJggg==",
+    "name" : "AA Energy",
+    "profileData" : {
+      "alarms" : [ {
+        "alarmType" : "High Energy Consumption",
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "Phase_A_power",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "NUMERIC",
+                "operation" : "LESS",
+                "value" : {
+                  "defaultValue" : 700.0,
+                  "dynamicValue" : null,
+                  "userValue" : null
+                }
+              },
+              "value" : null,
+              "valueType" : "NUMERIC"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
+          },
+          "dashboardId" : null,
+          "schedule" : null
+        },
+        "createRules" : {
+          "CRITICAL" : {
+            "alarmDetails" : "Consumo Stratosferico (${Phase_A_power}W)",
+            "condition" : {
+              "condition" : [ {
+                "key" : {
+                  "key" : "Phase_A_power",
+                  "type" : "TIME_SERIES"
+                },
+                "predicate" : {
+                  "type" : "NUMERIC",
+                  "operation" : "GREATER",
+                  "value" : {
+                    "defaultValue" : 700.0,
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                },
+                "value" : null,
+                "valueType" : "NUMERIC"
+              } ],
+              "spec" : {
+                "type" : "DURATION",
+                "predicate" : {
+                  "defaultValue" : 10,
+                  "dynamicValue" : null,
+                  "userValue" : null
+                },
+                "unit" : "SECONDS"
+              }
+            },
+            "dashboardId" : null,
+            "schedule" : null
+          }
+        },
+        "id" : "49bdcf02-92c1-907a-385d-a5851857787e",
+        "propagate" : false,
+        "propagateRelationTypes" : [ ],
+        "propagateToOwner" : false,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false
+      }, {
+        "alarmType" : "Major Energy Consumption",
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "Phase_A_power",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "COMPLEX",
+                "operation" : "OR",
+                "predicates" : [ {
+                  "type" : "NUMERIC",
+                  "operation" : "GREATER",
+                  "value" : {
+                    "defaultValue" : 700.0,
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                }, {
+                  "type" : "NUMERIC",
+                  "operation" : "LESS",
+                  "value" : {
+                    "defaultValue" : 500.0,
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                } ]
+              },
+              "value" : null,
+              "valueType" : "NUMERIC"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
+          },
+          "dashboardId" : null,
+          "schedule" : null
+        },
+        "createRules" : {
+          "MAJOR" : {
+            "alarmDetails" : "Consumo Eccessivo (${Phase_A_power}W)",
+            "condition" : {
+              "condition" : [ {
+                "key" : {
+                  "key" : "Phase_A_power",
+                  "type" : "TIME_SERIES"
+                },
+                "predicate" : {
+                  "type" : "NUMERIC",
+                  "operation" : "GREATER",
+                  "value" : {
+                    "defaultValue" : 500.0,
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                },
+                "value" : null,
+                "valueType" : "NUMERIC"
+              }, {
+                "key" : {
+                  "key" : "Phase_A_power",
+                  "type" : "TIME_SERIES"
+                },
+                "predicate" : {
+                  "type" : "NUMERIC",
+                  "operation" : "LESS",
+                  "value" : {
+                    "defaultValue" : 700.0,
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                },
+                "value" : null,
+                "valueType" : "NUMERIC"
+              } ],
+              "spec" : {
+                "type" : "SIMPLE"
+              }
+            },
+            "dashboardId" : null,
+            "schedule" : null
+          }
+        },
+        "id" : "6c47f53f-c32e-bf3b-27fe-b40b1f05107a",
+        "propagate" : true,
+        "propagateRelationTypes" : null,
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : true,
+        "propagateToTenant" : false
+      } ],
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "provisionConfiguration" : {
+        "type" : "DISABLED",
+        "provisionDeviceSecret" : null
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "provisionDeviceKey" : null,
+    "provisionType" : "DISABLED",
+    "softwareId" : null,
+    "transportType" : "DEFAULT",
+    "type" : "DEFAULT"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

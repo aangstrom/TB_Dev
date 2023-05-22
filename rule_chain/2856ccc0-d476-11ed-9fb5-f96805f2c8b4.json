@@ -40,10 +40,6 @@
       "toIndex" : 35,
       "type" : "Success"
     }, {
-      "fromIndex" : 1,
-      "toIndex" : 36,
-      "type" : "Success"
-    }, {
       "fromIndex" : 2,
       "toIndex" : 28,
       "type" : "Success"
@@ -251,6 +247,18 @@
       "fromIndex" : 35,
       "toIndex" : 2,
       "type" : "Other"
+    }, {
+      "fromIndex" : 35,
+      "toIndex" : 36,
+      "type" : "phaseA"
+    }, {
+      "fromIndex" : 35,
+      "toIndex" : 36,
+      "type" : "phaseB"
+    }, {
+      "fromIndex" : 35,
+      "toIndex" : 36,
+      "type" : "phaseC"
     }, {
       "fromIndex" : 36,
       "toIndex" : 37,
@@ -1262,7 +1270,7 @@
         "tbelScript" : "if(msg.Phase_A_total!=null){\n    return[\"phaseA\"];\n}else if(msg.Phase_B_total!=null){\n    return[\"phaseB\"];\n}else if(msg.Phase_C_total!=null){\n    return[\"phaseC\"];\n}else{\n    return[\"Other\"];\n}\nreturn nextRelation(metadata, msg);"
       },
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -1275,8 +1283,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 313,
-        "layoutY" : 253
+        "layoutX" : 400,
+        "layoutY" : 231
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,

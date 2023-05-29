@@ -1476,7 +1476,7 @@
         "propagateToOwnerHierarchy" : true,
         "propagateToTenant" : false
       }, {
-        "alarmType" : "Formaldeide Alta",
+        "alarmType" : "Formaldeide Alta (Critico)",
         "clearRule" : {
           "alarmDetails" : null,
           "condition" : {
@@ -1555,7 +1555,48 @@
             },
             "dashboardId" : null,
             "schedule" : null
+          }
+        },
+        "id" : "2daa86cc-3e8c-551d-e954-d0139ac717af",
+        "propagate" : true,
+        "propagateRelationTypes" : null,
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : true,
+        "propagateToTenant" : false
+      }, {
+        "alarmType" : "Formaldeide Alta (Maggiore)",
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "formaldeide",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "NUMERIC",
+                "operation" : "LESS",
+                "value" : {
+                  "defaultValue" : 0.0,
+                  "dynamicValue" : {
+                    "inherit" : false,
+                    "sourceAttribute" : "FormaldeideAlarmThresholdMedium",
+                    "sourceType" : "CURRENT_DEVICE"
+                  },
+                  "userValue" : null
+                }
+              },
+              "value" : null,
+              "valueType" : "NUMERIC"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
           },
+          "dashboardId" : null,
+          "schedule" : null
+        },
+        "createRules" : {
           "MAJOR" : {
             "alarmDetails" : "Formaldeide corrente: ${formaldeide}",
             "condition" : {
@@ -1602,7 +1643,48 @@
             },
             "dashboardId" : null,
             "schedule" : null
+          }
+        },
+        "id" : "13c8bc60-e793-84d7-c86d-021011e0167b",
+        "propagate" : true,
+        "propagateRelationTypes" : null,
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : true,
+        "propagateToTenant" : false
+      }, {
+        "alarmType" : "Formaldeide Alta",
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "formaldeide",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "NUMERIC",
+                "operation" : "LESS",
+                "value" : {
+                  "defaultValue" : 0.0,
+                  "dynamicValue" : {
+                    "inherit" : false,
+                    "sourceAttribute" : "FormaldeideAlarmThresholdLow",
+                    "sourceType" : "CURRENT_DEVICE"
+                  },
+                  "userValue" : null
+                }
+              },
+              "value" : null,
+              "valueType" : "NUMERIC"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
           },
+          "dashboardId" : null,
+          "schedule" : null
+        },
+        "createRules" : {
           "MINOR" : {
             "alarmDetails" : "Formaldeide corrente: ${formaldeide}",
             "condition" : {
@@ -1651,7 +1733,7 @@
             "schedule" : null
           }
         },
-        "id" : "2daa86cc-3e8c-551d-e954-d0139ac717af",
+        "id" : "38b0551c-e1d0-8d38-79c2-ba5571828e87",
         "propagate" : true,
         "propagateRelationTypes" : null,
         "propagateToOwner" : true,

@@ -222,14 +222,24 @@
               "latestDataKeys" : [ ]
             } ],
             "timewindow" : {
+              "hideInterval" : false,
+              "hideLastInterval" : false,
+              "hideQuickInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 0,
               "realtime" : {
-                "interval" : 1000,
-                "timewindowMs" : 60000
+                "realtimeType" : 0,
+                "timewindowMs" : 120000,
+                "quickInterval" : "CURRENT_DAY",
+                "interval" : 1000
               },
               "aggregation" : {
                 "type" : "NONE",
                 "limit" : 200
-              }
+              },
+              "timezone" : null
             },
             "showTitle" : true,
             "backgroundColor" : "rgb(255, 255, 255)",
@@ -371,10 +381,14 @@
           "id" : "9cc5c750-59d2-32ab-29c3-b3b275c79d1b",
           "alias" : "testgroup",
           "filter" : {
-            "type" : "entityGroupList",
+            "type" : "entityGroup",
             "resolveMultiple" : true,
+            "groupStateEntity" : false,
+            "stateEntityParamName" : null,
+            "defaultStateGroupType" : null,
+            "defaultStateEntityGroup" : null,
             "groupType" : "DEVICE",
-            "entityGroupList" : [ "09cc7960-00b5-11ee-9a4b-a56c330ec2ff" ]
+            "entityGroup" : "09cc7960-00b5-11ee-9a4b-a56c330ec2ff"
           }
         }
       },

@@ -7,10 +7,7 @@
     "configuration" : null,
     "debugMode" : false,
     "externalId" : null,
-    "firstRuleNodeId" : {
-      "entityType" : "RULE_NODE",
-      "id" : "7d0d6250-00af-11ee-9a4b-a56c330ec2ff"
-    },
+    "firstRuleNodeId" : null,
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "12424820-00ad-11ee-9a4b-a56c330ec2ff"
@@ -30,34 +27,26 @@
       "type" : "Success"
     }, {
       "fromIndex" : 2,
-      "toIndex" : 8,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 3,
-      "toIndex" : 4,
+      "toIndex" : 6,
       "type" : "Success"
     }, {
       "fromIndex" : 4,
-      "toIndex" : 5,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 2,
       "type" : "Success"
     }, {
       "fromIndex" : 6,
-      "toIndex" : 2,
+      "toIndex" : 7,
       "type" : "Success"
     }, {
       "fromIndex" : 7,
-      "toIndex" : 2,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 8,
-      "toIndex" : 9,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 9,
-      "toIndex" : 5,
+      "toIndex" : 3,
       "type" : "Success"
     } ],
-    "firstNodeIndex" : 3,
+    "firstNodeIndex" : null,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
@@ -137,80 +126,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 333,
-        "layoutY" : 154
-      },
-      "configuration" : {
-        "originatorSource" : "RELATED",
-        "entityType" : null,
-        "entityNamePattern" : null,
-        "relationsQuery" : {
-          "fetchLastLevelOnly" : false,
-          "direction" : "TO",
-          "maxLevel" : 1,
-          "filters" : [ {
-            "relationType" : "Contains",
-            "entityTypes" : [ "ASSET" ]
-          } ]
-        }
-      },
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "7d0d6250-00af-11ee-9a4b-a56c330ec2ff"
-      },
-      "name" : "change_or",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 682,
-        "layoutY" : 153
-      },
-      "configuration" : {
-        "inputValueKey" : "sumMinTemp",
-        "outputValueKey" : "sumMinTemp1",
-        "mathFunction" : "SUM",
-        "aggIntervalType" : "CUSTOM",
-        "timeZoneId" : "Europe/Rome",
-        "aggIntervalValue" : 1,
-        "aggIntervalTimeUnit" : "MINUTES",
-        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
-        "outMsgType" : "POST_TELEMETRY_REQUEST",
-        "intervalCheckValue" : 1,
-        "intervalCheckTimeUnit" : "MINUTES",
-        "statePersistencePolicy" : "ON_EACH_CHANGE",
-        "statePersistenceValue" : 1,
-        "statePersistenceTimeUnit" : "MINUTES",
-        "autoCreateIntervals" : false,
-        "periodValue" : 5,
-        "periodTimeUnit" : "MINUTES",
-        "parentEntitiesQuery" : {
-          "type" : "group",
-          "entityGroupId" : null
-        },
-        "queueName" : null
-      },
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "7d0db070-00af-11ee-9a4b-a56c330ec2ff"
-      },
-      "name" : "sum1",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 1118,
-        "layoutY" : 226
+        "layoutX" : 1107,
+        "layoutY" : 162
       },
       "configuration" : {
         "defaultTTL" : 86400,
@@ -285,8 +202,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 643,
-        "layoutY" : 324
+        "layoutX" : 637,
+        "layoutY" : 160
       },
       "configuration" : {
         "originatorSource" : "RELATED",

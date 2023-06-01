@@ -104,35 +104,74 @@
           "col" : 0,
           "id" : "1e652b5d-cb9e-be98-27ff-6ce3201e9f6b"
         },
-        "1d0a3dc9-68c8-f59a-b780-d06a8a21623d" : {
+        "82960c4b-a9dd-0c2e-df07-c3e17337b587" : {
           "isSystemType" : true,
-          "bundleAlias" : "home_page_widgets",
-          "typeAlias" : "dashboards",
-          "type" : "static",
+          "bundleAlias" : "cards",
+          "typeAlias" : "timeseries_table",
+          "type" : "timeseries",
           "title" : "New widget",
           "image" : null,
           "description" : null,
-          "sizeX" : 7.5,
+          "sizeX" : 8,
           "sizeY" : 6.5,
           "config" : {
-            "showTitle" : false,
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "153859f0-e26e-82ea-f812-b9b5a150d298",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "sumMinTemp",
+                "type" : "timeseries",
+                "label" : "sumMinTemp",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.8708261100524379
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "interval" : 1000,
+                "timewindowMs" : 60000
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : true,
             "backgroundColor" : "rgb(255, 255, 255)",
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "8px",
-            "settings" : { },
-            "title" : "New Dashboards",
+            "settings" : {
+              "showTimestamp" : true,
+              "displayPagination" : true,
+              "defaultPageSize" : 10
+            },
+            "title" : "New Timeseries table",
             "dropShadow" : true,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : "",
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
             "showLegend" : false,
-            "datasources" : [ ]
+            "widgetStyle" : { },
+            "actions" : { },
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "displayTimewindow" : true
           },
           "row" : 0,
           "col" : 0,
-          "id" : "1d0a3dc9-68c8-f59a-b780-d06a8a21623d"
+          "id" : "82960c4b-a9dd-0c2e-df07-c3e17337b587"
         }
       },
       "states" : {
@@ -163,9 +202,9 @@
             },
             "right" : {
               "widgets" : {
-                "1d0a3dc9-68c8-f59a-b780-d06a8a21623d" : {
-                  "sizeX" : 7,
-                  "sizeY" : 6,
+                "82960c4b-a9dd-0c2e-df07-c3e17337b587" : {
+                  "sizeX" : 5,
+                  "sizeY" : 5,
                   "row" : 0,
                   "col" : 0
                 }
@@ -201,6 +240,28 @@
             "type" : "entityType",
             "resolveMultiple" : true,
             "entityType" : "CUSTOMER"
+          }
+        },
+        "153859f0-e26e-82ea-f812-b9b5a150d298" : {
+          "id" : "153859f0-e26e-82ea-f812-b9b5a150d298",
+          "alias" : "test_device",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "ASSET",
+              "id" : "e6339860-00ac-11ee-9a4b-a56c330ec2ff"
+            }
+          }
+        },
+        "d25e91aa-2950-eaa1-eb8d-9a1109b9fdd1" : {
+          "id" : "d25e91aa-2950-eaa1-eb8d-9a1109b9fdd1",
+          "alias" : "test_sensore",
+          "filter" : {
+            "type" : "entityList",
+            "resolveMultiple" : true,
+            "entityType" : "DEVICE",
+            "entityList" : [ "b62866a0-00ac-11ee-9a4b-a56c330ec2ff", "da2f6c60-00ac-11ee-9a4b-a56c330ec2ff" ]
           }
         }
       },

@@ -30,20 +30,12 @@
       "toIndex" : 5,
       "type" : "Success"
     }, {
-      "fromIndex" : 2,
-      "toIndex" : 6,
-      "type" : "Success"
-    }, {
       "fromIndex" : 3,
       "toIndex" : 2,
       "type" : "Success"
     }, {
       "fromIndex" : 4,
       "toIndex" : 2,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 6,
-      "toIndex" : 7,
       "type" : "Success"
     } ],
     "firstNodeIndex" : null,
@@ -197,68 +189,6 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 619,
-        "layoutY" : 495
-      },
-      "configuration" : {
-        "direction" : "FROM",
-        "relationType" : "Contains",
-        "deduplicationInSec" : 10,
-        "aggMappings" : [ {
-          "sourceScope" : "LATEST_TELEMETRY",
-          "source" : "temp",
-          "defaultValue" : 0,
-          "aggFunction" : "SUM",
-          "target" : "tempLatest",
-          "filter" : {
-            "clientAttributeNames" : [ ],
-            "sharedAttributeNames" : [ ],
-            "serverAttributeNames" : [ ],
-            "latestTsKeyNames" : [ "temp" ],
-            "scriptLang" : "TBEL",
-            "filterFunction" : "return true;",
-            "tbelFilterFunction" : "return true;"
-          }
-        } ],
-        "outMsgType" : "POST_TELEMETRY_REQUEST",
-        "queueName" : null
-      },
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "08ca4000-0183-11ee-9a4b-a56c330ec2ff"
-      },
-      "name" : "xxx",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.analytics.latest.telemetry.TbAggLatestTelemetryNodeV2"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 927,
-        "layoutY" : 494
-      },
-      "configuration" : {
-        "defaultTTL" : 86400,
-        "skipLatestPersistence" : false,
-        "useServerTs" : false
-      },
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "08cab530-0183-11ee-9a4b-a56c330ec2ff"
-      },
-      "name" : "ccc",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
     } ],
     "ruleChainConnections" : null
   },

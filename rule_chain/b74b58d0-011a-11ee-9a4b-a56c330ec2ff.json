@@ -22,10 +22,10 @@
   "metaData" : {
     "connections" : [ {
       "fromIndex" : 1,
-      "toIndex" : 2,
+      "toIndex" : 3,
       "type" : "Success"
     }, {
-      "fromIndex" : 2,
+      "fromIndex" : 3,
       "toIndex" : 0,
       "type" : "Success"
     } ],
@@ -124,6 +124,37 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 548,
+        "layoutY" : 299
+      },
+      "configuration" : {
+        "direction" : "TO",
+        "relationType" : "Contains",
+        "deduplicationInSec" : 30,
+        "aggMappings" : [ {
+          "sourceScope" : "LATEST_TELEMETRY",
+          "source" : "temp",
+          "defaultValue" : 0,
+          "aggFunction" : "SUM",
+          "target" : "latestSumTemp"
+        } ],
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "queueName" : null
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "098e3040-0157-11ee-9a4b-a56c330ec2ff"
+      },
+      "name" : "Latest",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.latest.telemetry.TbAggLatestTelemetryNodeV2"
     } ],
     "ruleChainConnections" : null
   },

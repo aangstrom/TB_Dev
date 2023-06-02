@@ -21,6 +21,10 @@
   },
   "metaData" : {
     "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
       "fromIndex" : 1,
       "toIndex" : 2,
       "type" : "Success"
@@ -28,13 +32,17 @@
       "fromIndex" : 2,
       "toIndex" : 0,
       "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 4,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 1,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1107,
-        "layoutY" : 162
+        "layoutX" : 648,
+        "layoutY" : 265
       },
       "configuration" : {
         "defaultTTL" : 86400,
@@ -86,8 +94,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 766,
-        "layoutY" : 160
+        "layoutX" : 392,
+        "layoutY" : 258
       },
       "configuration" : {
         "inputValueKey" : "temp",
@@ -127,34 +135,56 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 648,
-        "layoutY" : 299
+        "layoutX" : 388,
+        "layoutY" : 391
       },
       "configuration" : {
-        "direction" : "FROM",
-        "relationType" : "Manages",
-        "deduplicationInSec" : 30,
-        "aggMappings" : [ {
-          "sourceScope" : "LATEST_TELEMETRY",
-          "source" : "temp",
-          "defaultValue" : 0,
-          "aggFunction" : "SUM",
-          "target" : "latestSumTemp"
-        } ],
-        "outMsgType" : "POST_TELEMETRY_REQUEST",
-        "queueName" : null
+        "originatorSource" : "RELATED",
+        "entityType" : null,
+        "entityNamePattern" : null,
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "TO",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "ASSET" ]
+          } ]
+        }
       },
       "createdTime" : 0,
       "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "098e3040-0157-11ee-9a4b-a56c330ec2ff"
+        "id" : "6971ceb0-017d-11ee-9a4b-a56c330ec2ff"
       },
-      "name" : "Latest",
+      "name" : "change_or",
       "ruleChainId" : null,
       "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.analytics.latest.telemetry.TbAggLatestTelemetryNodeV2"
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 645,
+        "layoutY" : 389
+      },
+      "configuration" : {
+        "defaultTTL" : 86400,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "69729200-017d-11ee-9a4b-a56c330ec2ff"
+      },
+      "name" : "save",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
     } ],
     "ruleChainConnections" : null
   },

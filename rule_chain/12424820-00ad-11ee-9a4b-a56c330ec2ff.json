@@ -212,7 +212,16 @@
           "source" : "temp",
           "defaultValue" : 0,
           "aggFunction" : "SUM",
-          "target" : "tempLatest"
+          "target" : "tempLatest",
+          "filter" : {
+            "clientAttributeNames" : [ ],
+            "sharedAttributeNames" : [ ],
+            "serverAttributeNames" : [ ],
+            "latestTsKeyNames" : [ "temp" ],
+            "scriptLang" : "TBEL",
+            "filterFunction" : "return true;",
+            "tbelFilterFunction" : "return true;"
+          }
         } ],
         "outMsgType" : "POST_TELEMETRY_REQUEST",
         "queueName" : null

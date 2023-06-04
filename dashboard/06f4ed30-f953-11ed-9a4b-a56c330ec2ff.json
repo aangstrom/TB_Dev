@@ -343,9 +343,24 @@
               "latestDataKeys" : [ ]
             } ],
             "timewindow" : {
+              "hideInterval" : false,
+              "hideLastInterval" : false,
+              "hideQuickInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 0,
               "realtime" : {
-                "timewindowMs" : 60000
-              }
+                "realtimeType" : 0,
+                "timewindowMs" : 600000,
+                "quickInterval" : "CURRENT_DAY",
+                "interval" : 5000
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              },
+              "timezone" : null
             },
             "showTitle" : true,
             "backgroundColor" : "#fff",

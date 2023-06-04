@@ -29,6 +29,10 @@
       "toIndex" : 2,
       "type" : "Success"
     }, {
+      "fromIndex" : 1,
+      "toIndex" : 6,
+      "type" : "Success"
+    }, {
       "fromIndex" : 2,
       "toIndex" : 0,
       "type" : "Success"
@@ -39,6 +43,10 @@
     }, {
       "fromIndex" : 5,
       "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 0,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 1,
@@ -230,6 +238,37 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 698,
+        "layoutY" : 87
+      },
+      "configuration" : {
+        "direction" : "FROM",
+        "relationType" : "Contains",
+        "deduplicationInSec" : 10,
+        "aggMappings" : [ {
+          "sourceScope" : "LATEST_TELEMETRY",
+          "source" : "temp",
+          "defaultValue" : 0,
+          "aggFunction" : "AVG",
+          "target" : "latestAvgTemperature"
+        } ],
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "queueName" : null
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "feef6a10-02ea-11ee-9a4b-a56c330ec2ff"
+      },
+      "name" : "ssss",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.latest.telemetry.TbAggLatestTelemetryNodeV2"
     } ],
     "ruleChainConnections" : null
   },

@@ -268,6 +268,14 @@
       "toIndex" : 50,
       "type" : "Success"
     }, {
+      "fromIndex" : 29,
+      "toIndex" : 51,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 29,
+      "toIndex" : 52,
+      "type" : "Success"
+    }, {
       "fromIndex" : 30,
       "toIndex" : 29,
       "type" : "Success"
@@ -369,6 +377,14 @@
       "type" : "Success"
     }, {
       "fromIndex" : 50,
+      "toIndex" : 27,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 51,
+      "toIndex" : 27,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 52,
       "toIndex" : 27,
       "type" : "Success"
     } ],
@@ -1510,8 +1526,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 301,
-        "layoutY" : 959
+        "layoutX" : 302,
+        "layoutY" : 1466
       },
       "configuration" : {
         "inputValueKey" : "F2",
@@ -1551,8 +1567,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 302,
-        "layoutY" : 915
+        "layoutX" : 303,
+        "layoutY" : 1422
       },
       "configuration" : {
         "inputValueKey" : "F1",
@@ -1592,8 +1608,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 302,
-        "layoutY" : 1003
+        "layoutX" : 303,
+        "layoutY" : 1510
       },
       "configuration" : {
         "inputValueKey" : "F3",
@@ -1633,8 +1649,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 301,
-        "layoutY" : 1047
+        "layoutX" : 302,
+        "layoutY" : 1554
       },
       "configuration" : {
         "inputValueKey" : "F23",
@@ -1756,8 +1772,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 302,
-        "layoutY" : 1092
+        "layoutX" : 304,
+        "layoutY" : 1136
       },
       "configuration" : {
         "inputValueKey" : "turno1",
@@ -1797,8 +1813,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 302,
-        "layoutY" : 1135
+        "layoutX" : 304,
+        "layoutY" : 1179
       },
       "configuration" : {
         "inputValueKey" : "turno1cost",
@@ -1838,8 +1854,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 301,
-        "layoutY" : 1178
+        "layoutX" : 303,
+        "layoutY" : 1222
       },
       "configuration" : {
         "inputValueKey" : "turno2",
@@ -1879,8 +1895,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 301,
-        "layoutY" : 1221
+        "layoutX" : 303,
+        "layoutY" : 1265
       },
       "configuration" : {
         "inputValueKey" : "turno2cost",
@@ -1920,8 +1936,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 301,
-        "layoutY" : 1266
+        "layoutX" : 303,
+        "layoutY" : 1310
       },
       "configuration" : {
         "inputValueKey" : "turno3",
@@ -1961,8 +1977,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 301,
-        "layoutY" : 1310
+        "layoutX" : 303,
+        "layoutY" : 1354
       },
       "configuration" : {
         "inputValueKey" : "turno3cost",
@@ -1996,6 +2012,88 @@
         "id" : "63f07240-046e-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "Turno3cost",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 301,
+        "layoutY" : 918
+      },
+      "configuration" : {
+        "inputValueKey" : "generaleUffici",
+        "outputValueKey" : "generaleUffici",
+        "mathFunction" : "SUM",
+        "aggIntervalType" : "CUSTOM",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 5,
+        "aggIntervalTimeUnit" : "MINUTES",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "bbdf0eb0-0470-11ee-9a4b-a56c330ec2ff"
+      },
+      "name" : "GeneraleUffici",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 301,
+        "layoutY" : 962
+      },
+      "configuration" : {
+        "inputValueKey" : "generaleUfficiCost",
+        "outputValueKey" : "generaleUfficiCost",
+        "mathFunction" : "SUM",
+        "aggIntervalType" : "CUSTOM",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 5,
+        "aggIntervalTimeUnit" : "MINUTES",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "bbdf5cd0-0470-11ee-9a4b-a56c330ec2ff"
+      },
+      "name" : "GeneraleUfficiCost",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"

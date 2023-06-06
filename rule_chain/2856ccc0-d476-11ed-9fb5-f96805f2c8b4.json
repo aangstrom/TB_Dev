@@ -109,22 +109,6 @@
       "type" : "Success"
     }, {
       "fromIndex" : 16,
-      "toIndex" : 2,
-      "type" : "Failed"
-    }, {
-      "fromIndex" : 16,
-      "toIndex" : 2,
-      "type" : "phaseA"
-    }, {
-      "fromIndex" : 16,
-      "toIndex" : 2,
-      "type" : "phaseB"
-    }, {
-      "fromIndex" : 16,
-      "toIndex" : 2,
-      "type" : "phaseC"
-    }, {
-      "fromIndex" : 16,
       "toIndex" : 17,
       "type" : "phaseA"
     }, {
@@ -135,6 +119,22 @@
       "fromIndex" : 16,
       "toIndex" : 19,
       "type" : "phaseB"
+    }, {
+      "fromIndex" : 16,
+      "toIndex" : 57,
+      "type" : "Failed"
+    }, {
+      "fromIndex" : 16,
+      "toIndex" : 57,
+      "type" : "phaseA"
+    }, {
+      "fromIndex" : 16,
+      "toIndex" : 57,
+      "type" : "phaseB"
+    }, {
+      "fromIndex" : 16,
+      "toIndex" : 57,
+      "type" : "phaseC"
     }, {
       "fromIndex" : 17,
       "toIndex" : 21,
@@ -418,6 +418,10 @@
     }, {
       "fromIndex" : 56,
       "toIndex" : 27,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 57,
+      "toIndex" : 2,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 0,
@@ -2293,6 +2297,28 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 684,
+        "layoutY" : 342
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "msg.produzione=null;\nmsg.produzioneCost=null;\nmsg.illuminazione=null;\nmsg.illuminazioneCost=null;\nmsg.clima=null;\nmsg.climaCost=null;\nmsg.generale=null;\nmsg.generaleCost=null;\nmsg.produzioneUffici=null;\nmsg.produzioneUfficiCost=null;\nmsg.illuminazioneUffici=null;\nmsg.illuminazioneUfficiCost=null;\nmsg.climaUffici=null;\nmsg.climaUfficiCost=null;\nmsg.generaleUffici=null;\nmsg.generaleUfficiCost=null;\n\n/*\nif(msg.non_operativo!=null){message.non_operativo=msg.non_operativo;}\nif(msg.operativo!=null){message.operativo=msg.operativo;}\nif(msg.pranzo!=null){message.pranzo=msg.pranzo;}\nif(msg.F1!=null){message.F1=msg.F1;}\nif(msg.F2!=null){message.F2=msg.F2;}\nif(msg.F3!=null){message.F3=msg.F3;}\nif(msg.F23!=null){message.F23=msg.F23;}\n*/\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "7de023b0-0475-11ee-9a4b-a56c330ec2ff"
+      },
+      "name" : "uffici/produzione",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

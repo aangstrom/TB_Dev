@@ -798,7 +798,13 @@
                 "label" : "temp",
                 "color" : "#2196f3",
                 "settings" : { },
-                "_hash" : 0.4225370410889244
+                "_hash" : 0.4225370410889244,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : 1,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -834,7 +840,7 @@
             "padding" : "8px",
             "settings" : {
               "colorScheme" : "blue",
-              "maxValue" : 200,
+              "maxValue" : 20,
               "unit" : "l",
               "backgroundColor" : "#eaeaea"
             },
@@ -844,6 +850,88 @@
           "row" : 0,
           "col" : 0,
           "id" : "10749952-bb91-b485-49c0-1de795602212"
+        },
+        "0e8c57dd-5d1b-abd5-fd98-01c7a46ceaee" : {
+          "isSystemType" : true,
+          "bundleAlias" : "devaskim",
+          "typeAlias" : "fluid_level_2",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 6.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "d25e91aa-2950-eaa1-eb8d-9a1109b9fdd1",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "temp",
+                "type" : "timeseries",
+                "label" : "temp",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.09757405512282413
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1685972280167,
+                  "endTimeMs" : 1686058680167
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "maxValue" : 20,
+              "minValue" : 0,
+              "numberOfTicks" : 0
+            },
+            "title" : "New fluid level 2",
+            "useDashboardTimewindow" : true,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "enableDataExport" : false,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showLegend" : false
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "0e8c57dd-5d1b-abd5-fd98-01c7a46ceaee"
         }
       },
       "states" : {
@@ -878,10 +966,16 @@
                   "col" : 9
                 },
                 "10749952-bb91-b485-49c0-1de795602212" : {
-                  "sizeX" : 10,
-                  "sizeY" : 9,
+                  "sizeX" : 9,
+                  "sizeY" : 12,
                   "row" : 34,
                   "col" : 0
+                },
+                "0e8c57dd-5d1b-abd5-fd98-01c7a46ceaee" : {
+                  "sizeX" : 9,
+                  "sizeY" : 12,
+                  "row" : 34,
+                  "col" : 9
                 }
               },
               "gridSettings" : {

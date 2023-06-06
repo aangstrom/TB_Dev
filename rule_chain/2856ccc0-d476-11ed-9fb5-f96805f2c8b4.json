@@ -209,7 +209,7 @@
       "type" : "Success"
     }, {
       "fromIndex" : 29,
-      "toIndex" : 36,
+      "toIndex" : 38,
       "type" : "Success"
     }, {
       "fromIndex" : 30,
@@ -257,7 +257,7 @@
       "type" : "Success"
     }, {
       "fromIndex" : 36,
-      "toIndex" : 38,
+      "toIndex" : 37,
       "type" : "Success"
     }, {
       "fromIndex" : 37,
@@ -265,7 +265,7 @@
       "type" : "Success"
     }, {
       "fromIndex" : 38,
-      "toIndex" : 37,
+      "toIndex" : 43,
       "type" : "Success"
     }, {
       "fromIndex" : 39,
@@ -282,6 +282,14 @@
     }, {
       "fromIndex" : 42,
       "toIndex" : 27,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 43,
+      "toIndex" : 44,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 44,
+      "toIndex" : 36,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 0,
@@ -935,8 +943,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 212,
-        "layoutY" : 729
+        "layoutX" : 310,
+        "layoutY" : 553
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -1128,8 +1136,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 464,
-        "layoutY" : 841
+        "layoutX" : 55,
+        "layoutY" : 850
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -1150,8 +1158,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 463,
-        "layoutY" : 769
+        "layoutX" : 54,
+        "layoutY" : 778
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -1176,8 +1184,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 467,
-        "layoutY" : 696
+        "layoutX" : 58,
+        "layoutY" : 705
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -1299,8 +1307,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 718,
-        "layoutY" : 693
+        "layoutX" : 488,
+        "layoutY" : 695
       },
       "configuration" : {
         "inputValueKey" : "produzioneUffici",
@@ -1340,8 +1348,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 718,
-        "layoutY" : 832
+        "layoutX" : 485,
+        "layoutY" : 756
       },
       "configuration" : {
         "inputValueKey" : "produzioneUfficiCost",
@@ -1381,8 +1389,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 719,
-        "layoutY" : 755
+        "layoutX" : 273,
+        "layoutY" : 699
       },
       "configuration" : {
         "inputValueKey" : "operativo",
@@ -1580,6 +1588,88 @@
         "id" : "89f71ff0-046b-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "F23",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 274,
+        "layoutY" : 765
+      },
+      "configuration" : {
+        "inputValueKey" : "non_operativo",
+        "outputValueKey" : "non_operativo",
+        "mathFunction" : "SUM",
+        "aggIntervalType" : "CUSTOM",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 5,
+        "aggIntervalTimeUnit" : "MINUTES",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d724f7c0-046b-11ee-9a4b-a56c330ec2ff"
+      },
+      "name" : "Non_operativo",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 280,
+        "layoutY" : 832
+      },
+      "configuration" : {
+        "inputValueKey" : "pranzo",
+        "outputValueKey" : "pranzo",
+        "mathFunction" : "SUM",
+        "aggIntervalType" : "CUSTOM",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 5,
+        "aggIntervalTimeUnit" : "MINUTES",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d7256cf0-046b-11ee-9a4b-a56c330ec2ff"
+      },
+      "name" : "Pranzo",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"

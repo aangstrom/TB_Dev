@@ -5015,12 +5015,40 @@
                 "postFuncBody" : null,
                 "comparisonEnabled" : null
               }, {
-                "name" : "power",
+                "name" : "F1cost",
                 "type" : "timeseries",
-                "label" : "power",
+                "label" : "F1cost",
                 "color" : "#ffc107",
                 "settings" : { },
-                "_hash" : 0.25081563757598224,
+                "_hash" : 0.45914503883533,
+                "aggregationType" : "SUM",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
+              }, {
+                "name" : "F2cost",
+                "type" : "timeseries",
+                "label" : "F2cost",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.4260827207547493,
+                "aggregationType" : "SUM",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
+              }, {
+                "name" : "F3cost",
+                "type" : "timeseries",
+                "label" : "F3cost",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.16612460562906928,
                 "aggregationType" : "SUM",
                 "units" : null,
                 "decimals" : null,
@@ -5062,7 +5090,7 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "cardHtml" : "<div class='card'>\n    <h1>Totale operativo</h1>\n    <table>\n        <tr>\n            <th>Fascia</th>\n            <th>Consumo</th>\n            <th>Prezzo</th>\n        </tr>\n        <tr>\n            <td>F1</td>\n            <td>${power} Kwh</td>\n            <td>${F1} €</td>\n        </tr>\n        <tr>\n            <td>F2</td>\n            <td>${power} Kwh</td>\n            <td>${F2} €</td>\n        </tr>\n        <tr>\n            <td>F3</td>\n            <td>${power} Kwh</td>\n            <td>${F3} €</td>\n        </tr>\n    </table>\n</div>",
+              "cardHtml" : "<div class='card'>\n    <h1>Totale operativo</h1>\n    <table>\n        <tr>\n            <th>Fascia</th>\n            <th>Consumo</th>\n            <th>Prezzo</th>\n        </tr>\n        <tr>\n            <td>F1</td>\n            <td>${F1} Kwh</td>\n            <td>${F1cost} €</td>\n        </tr>\n        <tr>\n            <td>F2</td>\n            <td>${F2} Kwh</td>\n            <td>${F2cost} €</td>\n        </tr>\n        <tr>\n            <td>F3</td>\n            <td>${F3} Kwh</td>\n            <td>${F3cost} €</td>\n        </tr>\n    </table>\n</div>",
               "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   align-items: center;\n   justify-content: center;\n}\ntable {\n    margin: 0px 10%;\n    width: 80%;\n}\nth,td,tr {\n    padding: 10px 0px;\n    text-align: center;\n    justify-content: space-between;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 20px;\n    font-weight: bold;\n    margin: 0;\n    padding-bottom: 10px;\n    line-height: 32px;\n    text-align: center;\n}"
             },
             "title" : "New HTML Value Card",

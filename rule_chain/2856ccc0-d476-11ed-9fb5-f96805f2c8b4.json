@@ -1306,7 +1306,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var message={};\nvar tipologia=metadata.ss_tipologia;\nvar location=metadata.ss_location;\nvar energy=msg.energy;\nif(tipologia!=null && energy!=null){\n    if(location!=null && location==\"produzione\"){\n        if(tipologia==\"produzione\"){\n            message.produzione=energy;\n            if(cost()!=null){message.produzioneCost=cost();}\n        }else if(tipologia==\"illuminazione\"){\n            message.illuminazione=energy;\n            if(cost()!=null){message.illuminazioneCost=cost();}\n        }else if(tipologia==\"clima\"){\n            message.clima=energy;\n            if(cost()!=null){message.climaCost=cost();}\n        }else if(tipologia==\"generale\"){\n            message.generale=energy;\n            if(cost()!=null){message.generaleCost=cost();}\n        }\n    }else if(location!=null && location==\"uffici\"){\n        if(tipologia==\"produzione\"){\n            message.produzioneUffici=energy;\n            if(cost()!=null){message.produzioneUfficiCost=cost();}\n        }else if(tipologia==\"illuminazione\"){\n            message.illuminazioneUffici=energy;\n            if(cost()!=null){message.illuminazioneUfficiCost=cost();}\n        }else if(tipologia==\"clima\"){\n            message.climaUffici=energy;\n            if(cost()!=null){message.climaUfficiCost=cost();}\n        }else if(tipologia==\"generale\"){\n            message.generaleUffici=energy;\n            if(cost()!=null){message.generaleUfficiCost=cost();}\n        }\n    }\n}\nif(msg.non_operativo!=null){message.non_operativo=msg.non_operativo;}\nif(msg.operativo!=null){message.operativo=msg.operativo;}\nif(msg.pranzo!=null){message.pranzo=msg.pranzo;}\nif(msg.F1!=null){message.F1=msg.F1;}\nif(msg.F2!=null){message.F2=msg.F2;}\nif(msg.F3!=null){message.F3=msg.F3;}\nif(msg.F23!=null){message.F23=msg.F23;}\n\nreturn {msg: message, metadata: metadata, msgType: msgType};\n\nfunction cost(){\n    if(msg.F1!=null){\n        return msg.F1;\n    }else if(msg.F2!=null){\n        return msg.F2;\n    }else if(msg.F3!=null){\n        return msg.F3;\n    }else if(msg.F23!=null){\n        return msg.F23\n    }\n}"
+        "tbelScript" : "var message={};\nvar tipologia=metadata.ss_tipologia;\nvar location=metadata.ss_location;\nvar energy=msg.energy;\nif(tipologia!=null && energy!=null){\n    if(tipologia==\"produzione\"){\n        message.produzione=energy;\n        if(cost()!=null){message.produzioneCost=cost();}\n    }else if(tipologia==\"illuminazione\"){\n        message.illuminazione=energy;\n        if(cost()!=null){message.illuminazioneCost=cost();}\n    }else if(tipologia==\"clima\"){\n        message.clima=energy;\n        if(cost()!=null){message.climaCost=cost();}\n    }else if(tipologia==\"generale\"){\n        message.generale=energy;\n        if(cost()!=null){message.generaleCost=cost();}\n    }\n}\nif(msg.non_operativo!=null){message.non_operativo=msg.non_operativo;}\nif(msg.operativo!=null){message.operativo=msg.operativo;}\nif(msg.pranzo!=null){message.pranzo=msg.pranzo;}\nif(msg.F1!=null){message.F1=msg.F1;}\nif(msg.F1cost!=null){message.F1cost=msg.F1cost;}\nif(msg.F2!=null){message.F2=msg.F2;}\nif(msg.F2cost!=null){message.F2cost=msg.F2cost;}\nif(msg.F3!=null){message.F3=msg.F3;}\nif(msg.F3cost!=null){message.F3cost=msg.F3cost;}\nif(msg.F23!=null){message.F23=msg.F23;}\nif(msg.F23cost!=null){message.F23cost=msg.F23cost;}\n\nreturn {msg: message, metadata: metadata, msgType: msgType};\n\nfunction cost(){\n    if(msg.F1cost!=null){\n        return msg.F1cost;\n    }else if(msg.F2cost!=null){\n        return msg.F2cost;\n    }else if(msg.F3cost!=null){\n        return msg.F3cost;\n    }else if(msg.F23cost!=null){\n        return msg.F23cost;\n    }\n}"
       },
       "createdTime" : 0,
       "debugMode" : false,
@@ -1330,7 +1330,7 @@
         "fetchToData" : false,
         "clientAttributeNames" : [ ],
         "sharedAttributeNames" : [ ],
-        "serverAttributeNames" : [ "location", "tipologia" ],
+        "serverAttributeNames" : [ "tipologia" ],
         "latestTsKeyNames" : [ ],
         "getLatestValueWithTs" : false
       },
@@ -1341,7 +1341,7 @@
         "entityType" : "RULE_NODE",
         "id" : "3ceb54d0-f622-11ed-9a4b-e3fd271b8b84"
       },
-      "name" : "Get Device Type",
+      "name" : "Get tipologia",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
@@ -1475,8 +1475,8 @@
         "layoutY" : 830
       },
       "configuration" : {
-        "inputValueKey" : "produzioneUffici",
-        "outputValueKey" : "produzioneUffici",
+        "inputValueKey" : "produzione",
+        "outputValueKey" : "produzione",
         "mathFunction" : "SUM",
         "aggIntervalType" : "CUSTOM",
         "timeZoneId" : "Europe/Rome",
@@ -1505,7 +1505,7 @@
         "entityType" : "RULE_NODE",
         "id" : "3085e5b0-046a-11ee-9a4b-a56c330ec2ff"
       },
-      "name" : "ProduzioneUffici",
+      "name" : "Produzione",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -1516,8 +1516,8 @@
         "layoutY" : 874
       },
       "configuration" : {
-        "inputValueKey" : "produzioneUfficiCost",
-        "outputValueKey" : "produzioneUfficiCost",
+        "inputValueKey" : "produzioneCost",
+        "outputValueKey" : "produzioneCost",
         "mathFunction" : "SUM",
         "aggIntervalType" : "CUSTOM",
         "timeZoneId" : "Europe/Rome",
@@ -1546,7 +1546,7 @@
         "entityType" : "RULE_NODE",
         "id" : "30876c50-046a-11ee-9a4b-a56c330ec2ff"
       },
-      "name" : "ProduzioneUfficiCost",
+      "name" : "ProduzioneCost",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -2090,8 +2090,8 @@
         "layoutY" : 918
       },
       "configuration" : {
-        "inputValueKey" : "generaleUffici",
-        "outputValueKey" : "generaleUffici",
+        "inputValueKey" : "generale",
+        "outputValueKey" : "generale",
         "mathFunction" : "SUM",
         "aggIntervalType" : "CUSTOM",
         "timeZoneId" : "Europe/Rome",
@@ -2120,7 +2120,7 @@
         "entityType" : "RULE_NODE",
         "id" : "bbdf0eb0-0470-11ee-9a4b-a56c330ec2ff"
       },
-      "name" : "GeneraleUffici",
+      "name" : "Generale",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -2131,8 +2131,8 @@
         "layoutY" : 962
       },
       "configuration" : {
-        "inputValueKey" : "generaleUfficiCost",
-        "outputValueKey" : "generaleUfficiCost",
+        "inputValueKey" : "generaleCost",
+        "outputValueKey" : "generaleCost",
         "mathFunction" : "SUM",
         "aggIntervalType" : "CUSTOM",
         "timeZoneId" : "Europe/Rome",
@@ -2161,7 +2161,7 @@
         "entityType" : "RULE_NODE",
         "id" : "bbdf5cd0-0470-11ee-9a4b-a56c330ec2ff"
       },
-      "name" : "GeneraleUfficiCost",
+      "name" : "GeneraleCost",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -2172,8 +2172,8 @@
         "layoutY" : 1004
       },
       "configuration" : {
-        "inputValueKey" : "illuminazioneUffici",
-        "outputValueKey" : "illuminazioneUffici",
+        "inputValueKey" : "illuminazione",
+        "outputValueKey" : "illuminazione",
         "mathFunction" : "SUM",
         "aggIntervalType" : "CUSTOM",
         "timeZoneId" : "Europe/Rome",
@@ -2202,7 +2202,7 @@
         "entityType" : "RULE_NODE",
         "id" : "3d331ec0-0471-11ee-9a4b-a56c330ec2ff"
       },
-      "name" : "IlluminazioneUffici",
+      "name" : "Illuminazione",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -2213,8 +2213,8 @@
         "layoutY" : 1048
       },
       "configuration" : {
-        "inputValueKey" : "illuminazioneUfficiCost",
-        "outputValueKey" : "illuminazioneUfficiCost",
+        "inputValueKey" : "illuminazioneCost",
+        "outputValueKey" : "illuminazioneCost",
         "mathFunction" : "SUM",
         "aggIntervalType" : "CUSTOM",
         "timeZoneId" : "Europe/Rome",
@@ -2243,7 +2243,7 @@
         "entityType" : "RULE_NODE",
         "id" : "3d33bb00-0471-11ee-9a4b-a56c330ec2ff"
       },
-      "name" : "IlluminazioneUfficiCost",
+      "name" : "IlluminazioneCost",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -2254,8 +2254,8 @@
         "layoutY" : 1092
       },
       "configuration" : {
-        "inputValueKey" : "climaUffici",
-        "outputValueKey" : "climaUffici",
+        "inputValueKey" : "clima",
+        "outputValueKey" : "clima",
         "mathFunction" : "SUM",
         "aggIntervalType" : "CUSTOM",
         "timeZoneId" : "Europe/Rome",
@@ -2284,7 +2284,7 @@
         "entityType" : "RULE_NODE",
         "id" : "3d343030-0471-11ee-9a4b-a56c330ec2ff"
       },
-      "name" : "ClimaUffici",
+      "name" : "Clima",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -2295,8 +2295,8 @@
         "layoutY" : 1136
       },
       "configuration" : {
-        "inputValueKey" : "climaUfficiCost",
-        "outputValueKey" : "climaUfficiCost",
+        "inputValueKey" : "climaCost",
+        "outputValueKey" : "climaCost",
         "mathFunction" : "SUM",
         "aggIntervalType" : "CUSTOM",
         "timeZoneId" : "Europe/Rome",
@@ -2325,7 +2325,7 @@
         "entityType" : "RULE_NODE",
         "id" : "3d347e50-0471-11ee-9a4b-a56c330ec2ff"
       },
-      "name" : "ClimaUfficiCost",
+      "name" : "ClimaCost",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -2354,8 +2354,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 328,
-        "layoutY" : 1848
+        "layoutX" : 327,
+        "layoutY" : 1817
       },
       "configuration" : {
         "inputValueKey" : "F2cost",
@@ -2395,8 +2395,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 329,
-        "layoutY" : 1804
+        "layoutX" : 328,
+        "layoutY" : 1773
       },
       "configuration" : {
         "inputValueKey" : "F1cost",
@@ -2436,8 +2436,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 329,
-        "layoutY" : 1892
+        "layoutX" : 328,
+        "layoutY" : 1861
       },
       "configuration" : {
         "inputValueKey" : "F3cost",
@@ -2477,8 +2477,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 328,
-        "layoutY" : 1936
+        "layoutX" : 327,
+        "layoutY" : 1905
       },
       "configuration" : {
         "inputValueKey" : "F23cost",

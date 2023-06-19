@@ -9367,113 +9367,6 @@
           "col" : 0,
           "id" : "f9a82869-8f34-aba9-0bc7-d436bd22fa0d"
         },
-        "6a58d58d-76ec-4dd8-7bb9-20628aa5026d" : {
-          "isSystemType" : true,
-          "bundleAlias" : "cards",
-          "typeAlias" : "entities_hierarchy",
-          "type" : "latest",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
-          "sizeX" : 7.5,
-          "sizeY" : 3.5,
-          "config" : {
-            "timewindow" : {
-              "displayValue" : "",
-              "selectedTab" : 0,
-              "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 86400000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1686044261363,
-                  "endTimeMs" : 1686130661363
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "NONE",
-                "limit" : 200
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "rgb(255, 255, 255)",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "4px",
-            "settings" : {
-              "nodeRelationQueryFunction" : "var entity = nodeCtx.entity;\nvar query = {\n    parameters: {\n        rootId: entity.id.id,\n        rootType: entity.id.entityType,\n        direction: \"FROM\",\n        maxLevel: 1\n    },\n    filters: [{\n        relationType: \"Contains\",\n        entityTypes: []\n    }]\n};\nreturn query;\n\n/*\n\n// Function should return relations query object for current node used to fetch entity children.\n// Function can return 'default' string value. In this case default relations query will be used.\n\n// The following example code will construct simple relations query that will fetch relations of type 'Contains'\n// from the current entity.\n\nvar entity = nodeCtx.entity;\nvar query = {\n    parameters: {\n        rootId: entity.id.id,\n        rootType: entity.id.entityType,\n        direction: \"FROM\",\n        maxLevel: 1\n    },\n    filters: [{\n        relationType: \"Contains\",\n        entityTypes: []\n    }]\n};\nreturn query;\n\n*/",
-              "nodeHasChildrenFunction" : "/**\n\n// Function should return boolean value indicating whether current node has children (whether it can be expanded).\n\n// The following example code will restrict entities hierarchy expansion up to third level.\n\nreturn nodeCtx.level <= 2;\n\n// The next example code will restrict entities expansion according to the value of example 'nodeHasChildren' attribute.\n\nvar data = nodeCtx.data;\nif (data.hasOwnProperty('nodeHasChildren') && data['nodeHasChildren'] !== null) {\n    return data['nodeHasChildren'] === 'true';\n} else {\n    return true;\n}\n  \n**/\n ",
-              "nodeOpenedFunction" : "/**\n\n// Function should return boolean value indicating whether current node should be opened (expanded) when it first loaded.\n\n// The following example code will open by default nodes up to third level.\n\nreturn nodeCtx.level <= 2;\n\n**/\n ",
-              "nodeDisabledFunction" : "/**\n\n// Function should return boolean value indicating whether current node should be disabled (not selectable).\n\n// The following example code will disable current node according to the value of example 'nodeDisabled' attribute.\n\nvar data = nodeCtx.data;\nif (data.hasOwnProperty('nodeDisabled') && data['nodeDisabled'] !== null) {\n    return data['nodeDisabled'] === 'true';\n} else {\n    return false;\n}\n  \n**/\n",
-              "nodeIconFunction" : "/** \n\n// Function should return node icon info object.\n// Resulting object should contain either 'materialIcon' or 'iconUrl' property. \n// Where:\n    - 'materialIcon' - name of the material icon to be used from the Material Icons Library (https://material.io/tools/icons);\n    - 'iconUrl' - url of the external image to be used as node icon.\n// Function can return 'default' string value. In this case default icons according to entity type will be used.\n\n// The following example code shows how to use external image for devices which name starts with 'Test' and use \n// default icons for the rest of entities.\n\nvar entity = nodeCtx.entity;\nif (entity.id.entityType === 'DEVICE' && entity.name.startsWith('Test')) {\n    return {iconUrl: 'https://avatars1.githubusercontent.com/u/14793288?v=4&s=117'};\n} else {\n    return 'default';\n}\n \n**/\n//var entity = nodeCtx.entity;\nif (nodeCtx.data.Type==='AA Energy') {\n    return {materialIcon: 'bolt'};\n} else {\n    return 'default';\n}",
-              "nodeTextFunction" : "/**\n\n// Function should return text (can be HTML code) for the current node.\n\n// The following example code will generate node text consisting of entity name and temperature if temperature value is present in entity attributes/timeseries.\n\nvar data =  nodeCtx.data;\nvar entity = nodeCtx.entity;\nvar text = entity.name;\nif (data.hasOwnProperty('temperature') && data['temperature'] !== null) {\n    text += \" <b>\"+ data['temperature'] +\" °C</b>\";\n}\nreturn text;\n\n**/",
-              "nodesSortFunction" : "/**\n\n// This function is used to sort nodes of the same level. Function should compare two nodes and return \n// integer value: \n//     - less than 0 - sort nodeCtx1 to an index lower than nodeCtx2\n//     - 0 - leave nodeCtx1 and nodeCtx2 unchanged with respect to each other\n//     - greater than 0 - sort nodeCtx2 to an index lower than nodeCtx1\n\n// The following example code will sort entities first by entity type in alphabetical order then\n// by entity name in alphabetical order.\n\nvar result = nodeCtx1.entity.id.entityType.localeCompare(nodeCtx2.entity.id.entityType);\nif (result === 0) {\n    result = nodeCtx1.entity.name.localeCompare(nodeCtx2.entity.name);\n}\nreturn result;\n  \n**/"
-            },
-            "title" : "New Entities hierarchy",
-            "dropShadow" : false,
-            "enableFullscreen" : false,
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400,
-              "padding" : "5px 10px 5px 10px"
-            },
-            "useDashboardTimewindow" : false,
-            "showLegend" : false,
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "c17b148f-2907-bddb-622b-30cd3811830a",
-              "filterId" : "7b7eac8e-d776-6387-5aec-20cd0537e27e",
-              "dataKeys" : [ {
-                "name" : "name",
-                "type" : "attribute",
-                "label" : "name",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.7759382432563295
-              }, {
-                "name" : "type",
-                "type" : "entityField",
-                "label" : "Type",
-                "color" : "#4caf50",
-                "settings" : { },
-                "_hash" : 0.5014941860461879
-              } ],
-              "alarmFilterConfig" : {
-                "statusList" : [ "ACTIVE" ]
-              }
-            } ],
-            "widgetStyle" : { },
-            "actions" : {
-              "nodeSelected" : [ {
-                "name" : "Dettagli",
-                "icon" : "more_horiz",
-                "useShowWidgetActionFunction" : null,
-                "showWidgetActionFunction" : "return true;",
-                "type" : "custom",
-                "customFunction" : "var deviceService = widgetContext.assetService;\n\ndeviceService.getAsset(entityId.id, {ignoreLoading: true}).subscribe(\n    function (device) {\n        var deviceType = device.type;\n        var params = {\n            entityId: entityId,\n            entityName: entityName\n        };\n        var targetDashboardStateId;\n        switch (deviceType) {\n          case \"AA Energy\":\n              targetDashboardStateId = \"sensore\";\n              params.device_selezionato= {\n                entityId: entityId,\n                entityName: entityName\n              };\n              break;\n          case \"Sede\":\n              targetDashboardStateId = \"sede\";\n              params.sede_selezionata= {\n                entityId: entityId,\n                entityName: entityName\n              };\n              break;\n          case \"Ufficio\":\n              targetDashboardStateId = \"reparto\";\n              params.reparto_selezionato= {\n                entityId: entityId,\n                entityName: entityName\n              };\n              break;\n        }\n        if (targetDashboardStateId) {\n              widgetContext.stateController.updateState(targetDashboardStateId, params, false);\n        }\n    }\n);\n",
-                "openInSeparateDialog" : false,
-                "openInPopover" : false,
-                "id" : "4321f3a2-2614-d32c-6c54-440f3e96c8a2"
-              } ]
-            },
-            "displayTimewindow" : true,
-            "showTitleIcon" : false,
-            "enableDataExport" : false,
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : ""
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "6a58d58d-76ec-4dd8-7bb9-20628aa5026d"
-        },
         "7898d5c7-65f3-4144-bae7-705acb3af185" : {
           "isSystemType" : true,
           "bundleAlias" : "maps_v2",
@@ -11196,15 +11089,15 @@
                 },
                 "566f6ee4-2b51-5e10-cf61-49803694a4b8" : {
                   "sizeX" : 4,
-                  "sizeY" : 3,
-                  "row" : 7,
+                  "sizeY" : 5,
+                  "row" : 8,
                   "col" : 16
                 },
                 "abdd6fd8-0916-8e45-c4b9-d06a6c04a61e" : {
                   "sizeX" : 4,
-                  "sizeY" : 3,
-                  "row" : 10,
-                  "col" : 16
+                  "sizeY" : 5,
+                  "row" : 8,
+                  "col" : 20
                 },
                 "d29f25e0-d7be-5857-d863-2b4a88cd13ce" : {
                   "sizeX" : 4,
@@ -11218,15 +11111,9 @@
                   "row" : 0,
                   "col" : 0
                 },
-                "6a58d58d-76ec-4dd8-7bb9-20628aa5026d" : {
-                  "sizeX" : 4,
-                  "sizeY" : 6,
-                  "row" : 7,
-                  "col" : 20
-                },
                 "7d11cd89-a0e1-0466-4bf6-31a601220a49" : {
                   "sizeX" : 8,
-                  "sizeY" : 6,
+                  "sizeY" : 7,
                   "row" : 1,
                   "col" : 16
                 },

@@ -3,7 +3,345 @@
   "entity" : {
     "assignedCustomers" : null,
     "configuration" : {
-      "description" : ""
+      "description" : "",
+      "widgets" : {
+        "5d45ed81-0b21-0cf4-11af-9d3bcf954912" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "timeseries_bars_flot",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "f7a2e986-c7b1-874e-0149-aaa56b80c5b4",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "value",
+                "type" : "timeseries",
+                "label" : "${name}",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.9750877286794681,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ {
+                "name" : "name",
+                "type" : "attribute",
+                "label" : "name",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.24857947021605153
+              } ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              },
+              "aggregation" : {
+                "limit" : 200,
+                "type" : "AVG"
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "shadowSize" : 4,
+              "fontColor" : "#545454",
+              "fontSize" : 10,
+              "xaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "grid" : {
+                "color" : "#545454",
+                "tickColor" : "#DDDDDD",
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1
+              },
+              "stack" : true,
+              "tooltipIndividual" : false,
+              "defaultBarWidth" : 600
+            },
+            "title" : "Grafico Temporale",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "widgetStyle" : { },
+            "useDashboardTimewindow" : true,
+            "showLegend" : true,
+            "actions" : { },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "legendConfig" : {
+              "direction" : "row",
+              "position" : "bottom",
+              "sortDataKeys" : false,
+              "showMin" : false,
+              "showMax" : false,
+              "showAvg" : false,
+              "showTotal" : false,
+              "showLatest" : false
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "5d45ed81-0b21-0cf4-11af-9d3bcf954912"
+        },
+        "1f3a4912-5c5b-eb3c-fff2-283fcdfef1e0" : {
+          "isSystemType" : true,
+          "bundleAlias" : "devaskim",
+          "typeAlias" : "fluid_level_12",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 9,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "f7a2e986-c7b1-874e-0149-aaa56b80c5b4",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "value",
+                "type" : "timeseries",
+                "label" : "value",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.807826946929471
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1687165873925,
+                  "endTimeMs" : 1687252273925
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "colorScheme" : "blue",
+              "maxValue" : 200,
+              "unit" : "l",
+              "backgroundColor" : "#eaeaea"
+            },
+            "title" : "New fluid level 1",
+            "useDashboardTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "1f3a4912-5c5b-eb3c-fff2-283fcdfef1e0"
+        },
+        "338a92a1-4f28-0cdb-567f-b7f6e6a3ac35" : {
+          "isSystemType" : true,
+          "bundleAlias" : "devaskim",
+          "typeAlias" : "fluid_level_2",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 6.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "f7a2e986-c7b1-874e-0149-aaa56b80c5b4",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "value",
+                "type" : "timeseries",
+                "label" : "value",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.6923310128702749
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1687165921187,
+                  "endTimeMs" : 1687252321187
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "maxValue" : 100,
+              "minValue" : 0,
+              "numberOfTicks" : 0
+            },
+            "title" : "New fluid level 2",
+            "useDashboardTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "338a92a1-4f28-0cdb-567f-b7f6e6a3ac35"
+        }
+      },
+      "states" : {
+        "default" : {
+          "name" : "Carburante",
+          "root" : true,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "5d45ed81-0b21-0cf4-11af-9d3bcf954912" : {
+                  "sizeX" : 24,
+                  "sizeY" : 5,
+                  "row" : 6,
+                  "col" : 0
+                },
+                "1f3a4912-5c5b-eb3c-fff2-283fcdfef1e0" : {
+                  "sizeX" : 6,
+                  "sizeY" : 5,
+                  "row" : 1,
+                  "col" : 0
+                },
+                "338a92a1-4f28-0cdb-567f-b7f6e6a3ac35" : {
+                  "sizeX" : 7,
+                  "sizeY" : 5,
+                  "row" : 1,
+                  "col" : 6
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        }
+      },
+      "entityAliases" : {
+        "f7a2e986-c7b1-874e-0149-aaa56b80c5b4" : {
+          "id" : "f7a2e986-c7b1-874e-0149-aaa56b80c5b4",
+          "alias" : "Carburanti",
+          "filter" : {
+            "type" : "assetType",
+            "resolveMultiple" : true,
+            "assetTypes" : [ "carburante" ],
+            "assetNameFilter" : ""
+          }
+        }
+      },
+      "filters" : { },
+      "timewindow" : {
+        "displayValue" : "",
+        "hideInterval" : false,
+        "hideLastInterval" : false,
+        "hideQuickInterval" : false,
+        "hideAggregation" : false,
+        "hideAggInterval" : false,
+        "hideTimezone" : false,
+        "selectedTab" : 0,
+        "realtime" : {
+          "realtimeType" : 0,
+          "interval" : 1000,
+          "timewindowMs" : 60000,
+          "quickInterval" : "CURRENT_DAY"
+        },
+        "history" : {
+          "historyType" : 0,
+          "interval" : 1000,
+          "timewindowMs" : 60000,
+          "fixedTimewindow" : {
+            "startTimeMs" : 1687165750103,
+            "endTimeMs" : 1687252150103
+          },
+          "quickInterval" : "CURRENT_DAY"
+        },
+        "aggregation" : {
+          "type" : "AVG",
+          "limit" : 25000
+        }
+      },
+      "settings" : {
+        "stateControllerId" : "entity",
+        "showTitle" : false,
+        "showDashboardsSelect" : true,
+        "showEntitiesSelect" : true,
+        "showDashboardTimewindow" : true,
+        "showDashboardExport" : true,
+        "toolbarAlwaysOpen" : true
+      }
     },
     "customerId" : null,
     "externalId" : null,

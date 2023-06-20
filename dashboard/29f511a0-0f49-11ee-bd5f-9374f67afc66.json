@@ -762,12 +762,12 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "27b8c8d2-9736-202d-e3d9-2b4950ac9668",
+              "entityAliasId" : "b6feb0f5-a9af-ffda-9c16-003188ec969c",
               "filterId" : null,
               "dataKeys" : [ {
                 "name" : "value",
                 "type" : "timeseries",
-                "label" : "Carburante 1",
+                "label" : "Livello",
                 "color" : "var(--tb-accent-A400)",
                 "settings" : { },
                 "_hash" : 0.8992026678956153,
@@ -962,11 +962,158 @@
             "widgetCss" : "",
             "pageSize" : 1024,
             "noDataDisplayMessage" : "",
-            "titleTooltip" : ""
+            "titleTooltip" : "",
+            "actions" : {
+              "rowClick" : [ {
+                "name" : "Dettagli",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "updateDashboardState",
+                "targetDashboardStateId" : "",
+                "setEntityId" : true,
+                "stateEntityParamName" : "carburante_selezionato",
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "f6e807cc-b87b-688c-cb75-a85026cbdd3d"
+              } ]
+            }
           },
           "row" : 0,
           "col" : 0,
           "id" : "b452463d-d914-7438-da0f-36289e5db9fb"
+        },
+        "051ef5c1-1d6c-a166-8f55-afdb8ecf3641" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "timeseries_bars_flot",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "b6feb0f5-a9af-ffda-9c16-003188ec969c",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "value",
+                "type" : "timeseries",
+                "label" : "${name}",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.9750877286794681,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ {
+                "name" : "name",
+                "type" : "attribute",
+                "label" : "name",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.24857947021605153
+              } ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              },
+              "aggregation" : {
+                "limit" : 200,
+                "type" : "AVG"
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "stack" : true,
+              "fontSize" : 10,
+              "fontColor" : "#545454",
+              "showTooltip" : true,
+              "tooltipIndividual" : false,
+              "tooltipCumulative" : false,
+              "hideZeros" : false,
+              "grid" : {
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1,
+                "color" : "#545454",
+                "backgroundColor" : null,
+                "tickColor" : "#DDDDDD"
+              },
+              "xaxis" : {
+                "title" : null,
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "min" : 0,
+                "max" : 100,
+                "title" : null,
+                "showLabels" : true,
+                "color" : "#545454",
+                "tickSize" : null,
+                "tickDecimals" : 0,
+                "ticksFormatter" : ""
+              },
+              "defaultBarWidth" : 600,
+              "barAlignment" : "left",
+              "comparisonEnabled" : false,
+              "timeForComparison" : "previousInterval",
+              "comparisonCustomIntervalValue" : 7200000,
+              "xaxisSecond" : {
+                "axisPosition" : "top",
+                "title" : null,
+                "showLabels" : true
+              },
+              "customLegendEnabled" : false,
+              "dataKeysListForLabels" : [ ]
+            },
+            "title" : "Grafico Temporale",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "widgetStyle" : { },
+            "useDashboardTimewindow" : true,
+            "showLegend" : true,
+            "actions" : { },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "legendConfig" : {
+              "direction" : "row",
+              "position" : "bottom",
+              "sortDataKeys" : false,
+              "showMin" : false,
+              "showMax" : false,
+              "showAvg" : false,
+              "showTotal" : false,
+              "showLatest" : true
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "051ef5c1-1d6c-a166-8f55-afdb8ecf3641"
         }
       },
       "states" : {
@@ -1065,10 +1212,16 @@
             "right" : {
               "widgets" : {
                 "07bef23b-ec22-fc90-8d10-4425b8d94b0f" : {
-                  "sizeX" : 8,
-                  "sizeY" : 5,
-                  "row" : 2,
-                  "col" : 4
+                  "sizeX" : 10,
+                  "sizeY" : 8,
+                  "row" : 7,
+                  "col" : 14
+                },
+                "051ef5c1-1d6c-a166-8f55-afdb8ecf3641" : {
+                  "sizeX" : 14,
+                  "sizeY" : 8,
+                  "row" : 7,
+                  "col" : 0
                 }
               },
               "gridSettings" : {
@@ -1127,6 +1280,16 @@
               "entityType" : "ASSET",
               "id" : "1a0cff40-0f4a-11ee-bd5f-9374f67afc66"
             }
+          }
+        },
+        "b6feb0f5-a9af-ffda-9c16-003188ec969c" : {
+          "id" : "b6feb0f5-a9af-ffda-9c16-003188ec969c",
+          "alias" : "carburante selezionato",
+          "filter" : {
+            "type" : "stateEntity",
+            "resolveMultiple" : false,
+            "stateEntityParamName" : "carburante_selezionato",
+            "defaultStateEntity" : null
           }
         }
       },

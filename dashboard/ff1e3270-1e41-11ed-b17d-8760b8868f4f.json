@@ -9601,6 +9601,70 @@
           "row" : 0,
           "col" : 0,
           "id" : "b659d27d-052d-6470-2db9-932c74ee6315"
+        },
+        "e65e3ab7-e4b9-f736-402b-bfdb29b19e22" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_card",
+          "type" : "static",
+          "title" : "New widget",
+          "sizeX" : 4,
+          "sizeY" : 1,
+          "config" : {
+            "datasources" : [ ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0",
+            "settings" : {
+              "cardHtml" : "<div class='card'>\n    <div class='content' id='riepilogo'>\n        <div class='description' id='riepilogo'>\n            Riepilogo\n        </div>\n    </div>\n</div>",
+              "cardCss" : ".card {\n   width: 100%;\n   height: 100%;\n   box-sizing: border-box;\n}\n\n.card .content {\n   padding: 5px;\n   display: flex;\n   flex-direction: column;\n   align-items: center;\n   justify-content: center;\n   height: 100%;\n   box-sizing: border-box;\n   transition: background-color 0.5s;\n}\n\n.card .content:hover {\n    background-color: #ddd;\n    cursor: pointer;\n}\n\n.card .description {\n    font-size: 20px;\n    font-weight: bold;\n    line-height: 2;\n    color: #333333;\n    text-transform: uppercase;\n}\n"
+            },
+            "title" : "Navigation:  Riepilogo",
+            "dropShadow" : false,
+            "showTitleIcon" : false,
+            "titleIcon" : null,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "Navigate to the list of customers",
+            "enableFullscreen" : false,
+            "enableDataExport" : true,
+            "widgetStyle" : {
+              "border" : "1px solid #E0E0E0"
+            },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "displayTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "riepilogo",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "riepilogo",
+                "setEntityId" : false,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "b5eba137-4ca4-ec3d-f9a0-8b59e2d98207"
+              } ]
+            },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "id" : "e65e3ab7-e4b9-f736-402b-bfdb29b19e22"
         }
       },
       "states" : {
@@ -9681,7 +9745,8 @@
                 "backgroundColor" : "#eeeeee",
                 "columns" : 24,
                 "margin" : 10,
-                "backgroundSizeMode" : "100%"
+                "backgroundSizeMode" : "100%",
+                "outerMargin" : true
               }
             }
           }
@@ -9769,7 +9834,8 @@
                 "backgroundColor" : "#eeeeee",
                 "columns" : 24,
                 "margin" : 10,
-                "backgroundSizeMode" : "100%"
+                "backgroundSizeMode" : "100%",
+                "outerMargin" : true
               }
             }
           }
@@ -9869,7 +9935,8 @@
                 "backgroundColor" : "#eeeeee",
                 "columns" : 24,
                 "margin" : 10,
-                "backgroundSizeMode" : "100%"
+                "backgroundSizeMode" : "100%",
+                "outerMargin" : true
               }
             }
           }
@@ -9939,7 +10006,8 @@
                 "backgroundColor" : "#eeeeee",
                 "columns" : 24,
                 "margin" : 10,
-                "backgroundSizeMode" : "100%"
+                "backgroundSizeMode" : "100%",
+                "outerMargin" : true
               }
             }
           }
@@ -10025,7 +10093,8 @@
                 "autoFillHeight" : false,
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70
+                "mobileRowHeight" : 70,
+                "outerMargin" : true
               }
             }
           }
@@ -10071,6 +10140,12 @@
                   "sizeY" : 1,
                   "row" : 0,
                   "col" : 0
+                },
+                "e65e3ab7-e4b9-f736-402b-bfdb29b19e22" : {
+                  "sizeX" : 5,
+                  "sizeY" : 1,
+                  "row" : 4,
+                  "col" : 20
                 }
               },
               "gridSettings" : {
@@ -10081,7 +10156,8 @@
                 "autoFillHeight" : true,
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70
+                "mobileRowHeight" : 70,
+                "outerMargin" : true
               }
             }
           }
@@ -10133,6 +10209,23 @@
                 "backgroundColor" : "#eeeeee",
                 "columns" : 24,
                 "margin" : 10,
+                "backgroundSizeMode" : "100%",
+                "outerMargin" : true
+              }
+            }
+          }
+        },
+        "riepilogo" : {
+          "name" : "Riepilogo",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : { },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
                 "backgroundSizeMode" : "100%"
               }
             }

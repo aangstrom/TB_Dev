@@ -133,9 +133,17 @@
       "toIndex" : 0,
       "type" : "Success"
     }, {
+      "fromIndex" : 15,
+      "toIndex" : 17,
+      "type" : "Success"
+    }, {
       "fromIndex" : 16,
       "toIndex" : 15,
       "type" : "True"
+    }, {
+      "fromIndex" : 17,
+      "toIndex" : 18,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 8,
     "nodes" : [ {
@@ -574,7 +582,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "if(metadata.ss_TonOra!=null){\n    var quantita=metadata.ss_TonOra;\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var message={};\nif(metadata.ss_TonOra!=null){\n    var quantita=metadata.ss_TonOra;\n    var temp=msg.Tonnellate_Totali;\n    message.Tonnellate_Totali=temp*quantita;\n}\n\nreturn {msg: message, metadata: metadata, msgType: msgType};"
       },
       "createdTime" : 0,
       "debugMode" : false,

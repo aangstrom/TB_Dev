@@ -487,7 +487,7 @@
         "fetchToData" : false,
         "clientAttributeNames" : [ ],
         "sharedAttributeNames" : [ ],
-        "serverAttributeNames" : [ "Ton-Ora" ],
+        "serverAttributeNames" : [ "TonOra" ],
         "latestTsKeyNames" : [ ],
         "getLatestValueWithTs" : false
       },
@@ -498,7 +498,7 @@
         "entityType" : "RULE_NODE",
         "id" : "4d35c6c0-10e1-11ee-bd5f-9374f67afc66"
       },
-      "name" : "Get Ton-Ora",
+      "name" : "Get TonOra",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
@@ -574,7 +574,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "if(metadata.ss_TonOra!=null){\n    var quantita=metadata.ss_TonOra;\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "createdTime" : 0,
       "debugMode" : false,

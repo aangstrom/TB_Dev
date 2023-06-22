@@ -9814,303 +9814,6 @@
           "col" : 0,
           "id" : "1d304544-30ea-4dfc-6332-27a6a3337778"
         },
-        "18567542-b68b-8c6a-3aea-d18b2042c8f0" : {
-          "isSystemType" : true,
-          "bundleAlias" : "charts",
-          "typeAlias" : "timeseries_bars_flot",
-          "type" : "timeseries",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
-          "sizeX" : 8,
-          "sizeY" : 5,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "f060b3ae-3208-2e84-4e77-8d4b4a495c5f",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "Ore_ITR",
-                "type" : "timeseries",
-                "label" : "Tonnellate Lavorate",
-                "color" : "#2196f3",
-                "settings" : {
-                  "excludeFromStacking" : false,
-                  "hideDataByDefault" : false,
-                  "disableDataHiding" : false,
-                  "removeFromLegend" : false,
-                  "showLines" : false,
-                  "fillLines" : false,
-                  "showPoints" : false,
-                  "showPointShape" : "circle",
-                  "pointShapeFormatter" : "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
-                  "showPointsLineWidth" : 5,
-                  "showPointsRadius" : 3,
-                  "showSeparateAxis" : false,
-                  "axisPosition" : "left",
-                  "thresholds" : [ {
-                    "thresholdValueSource" : "predefinedValue"
-                  } ],
-                  "comparisonSettings" : {
-                    "showValuesForComparison" : true
-                  }
-                },
-                "_hash" : 0.6997129813682408,
-                "units" : "Ton",
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "var totalSeconds = parseFloat(value/1000);\nvar totalMinutes = parseFloat(totalSeconds / 60);\nvar totalHours = parseFloat(totalMinutes / 60);\nvar seconds = parseFloat(totalSeconds % 60, 10);\nvar minutes = parseFloat(totalMinutes % 60, 10);\nvar hours = parseFloat(totalHours % 24, 10);\nreturn hours*2.5;",
-                "aggregationType" : null
-              } ],
-              "alarmFilterConfig" : {
-                "statusList" : [ "ACTIVE" ]
-              },
-              "latestDataKeys" : null
-            } ],
-            "timewindow" : {
-              "hideInterval" : false,
-              "hideLastInterval" : false,
-              "hideQuickInterval" : false,
-              "hideAggregation" : false,
-              "hideAggInterval" : false,
-              "hideTimezone" : false,
-              "selectedTab" : 1,
-              "history" : {
-                "historyType" : 0,
-                "timewindowMs" : 604800000,
-                "interval" : 86400000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1673455398430,
-                  "endTimeMs" : 1673541798430
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "SUM",
-                "limit" : 200
-              }
-            },
-            "showTitle" : true,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "8px",
-            "settings" : {
-              "shadowSize" : 4,
-              "fontColor" : "#545454",
-              "fontSize" : 10,
-              "xaxis" : {
-                "showLabels" : true,
-                "color" : "#545454"
-              },
-              "yaxis" : {
-                "showLabels" : true,
-                "color" : "#545454",
-                "tickDecimals" : 0
-              },
-              "grid" : {
-                "color" : "#545454",
-                "tickColor" : "#DDDDDD",
-                "verticalLines" : true,
-                "horizontalLines" : true,
-                "outlineWidth" : 1
-              },
-              "stack" : true,
-              "tooltipIndividual" : false,
-              "defaultBarWidth" : 1000,
-              "barAlignment" : "left",
-              "tooltipCumulative" : false,
-              "hideZeros" : false,
-              "showTooltip" : true,
-              "comparisonEnabled" : false,
-              "timeForComparison" : "previousInterval",
-              "xaxisSecond" : {
-                "axisPosition" : "top",
-                "showLabels" : true
-              },
-              "customLegendEnabled" : false
-            },
-            "title" : "Produttività Mulino Fossò",
-            "dropShadow" : false,
-            "enableFullscreen" : true,
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "widgetStyle" : { },
-            "useDashboardTimewindow" : true,
-            "showLegend" : true,
-            "actions" : { },
-            "showTitleIcon" : false,
-            "titleTooltip" : "",
-            "enableDataExport" : true,
-            "widgetCss" : "",
-            "units" : "",
-            "noDataDisplayMessage" : "",
-            "legendConfig" : {
-              "direction" : "column",
-              "position" : "bottom",
-              "sortDataKeys" : false,
-              "showMin" : false,
-              "showMax" : false,
-              "showAvg" : false,
-              "showTotal" : true
-            },
-            "displayTimewindow" : true,
-            "pageSize" : 1024
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "18567542-b68b-8c6a-3aea-d18b2042c8f0"
-        },
-        "bbf94179-7996-a002-4598-5186a7751706" : {
-          "isSystemType" : true,
-          "bundleAlias" : "charts",
-          "typeAlias" : "timeseries_bars_flot",
-          "type" : "timeseries",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
-          "sizeX" : 8,
-          "sizeY" : 5,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "e9038228-f3be-0fc7-df35-5fcd214f46ef",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "delta_ore_totali",
-                "type" : "timeseries",
-                "label" : "Tonnellate Lavorate",
-                "color" : "#2196f3",
-                "settings" : {
-                  "excludeFromStacking" : false,
-                  "hideDataByDefault" : false,
-                  "disableDataHiding" : false,
-                  "removeFromLegend" : false,
-                  "showLines" : false,
-                  "fillLines" : false,
-                  "showPoints" : false,
-                  "showPointShape" : "circle",
-                  "pointShapeFormatter" : "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
-                  "showPointsLineWidth" : 5,
-                  "showPointsRadius" : 3,
-                  "showSeparateAxis" : false,
-                  "axisPosition" : "left",
-                  "thresholds" : [ {
-                    "thresholdValueSource" : "predefinedValue"
-                  } ],
-                  "comparisonSettings" : {
-                    "showValuesForComparison" : true
-                  }
-                },
-                "_hash" : 0.6997129813682408,
-                "units" : "Ton",
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "return value*0.8;"
-              } ],
-              "alarmFilterConfig" : {
-                "statusList" : [ "ACTIVE" ]
-              },
-              "latestDataKeys" : null
-            } ],
-            "timewindow" : {
-              "hideInterval" : false,
-              "hideAggregation" : false,
-              "hideAggInterval" : false,
-              "hideTimezone" : false,
-              "selectedTab" : 1,
-              "history" : {
-                "historyType" : 0,
-                "timewindowMs" : 604800000,
-                "interval" : 86400000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1660643081222,
-                  "endTimeMs" : 1660729481222
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "SUM",
-                "limit" : 200
-              }
-            },
-            "showTitle" : true,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "8px",
-            "settings" : {
-              "shadowSize" : 4,
-              "fontColor" : "#545454",
-              "fontSize" : 10,
-              "xaxis" : {
-                "showLabels" : true,
-                "color" : "#545454"
-              },
-              "yaxis" : {
-                "showLabels" : true,
-                "color" : "#545454",
-                "tickDecimals" : 0
-              },
-              "grid" : {
-                "color" : "#545454",
-                "tickColor" : "#DDDDDD",
-                "verticalLines" : true,
-                "horizontalLines" : true,
-                "outlineWidth" : 1
-              },
-              "stack" : true,
-              "tooltipIndividual" : false,
-              "defaultBarWidth" : 1000,
-              "barAlignment" : "left",
-              "tooltipCumulative" : false,
-              "hideZeros" : false,
-              "showTooltip" : true,
-              "comparisonEnabled" : false,
-              "timeForComparison" : "previousInterval",
-              "xaxisSecond" : {
-                "axisPosition" : "top",
-                "showLabels" : true
-              },
-              "customLegendEnabled" : false
-            },
-            "title" : "Produttività Raffinazione Fossò",
-            "dropShadow" : false,
-            "enableFullscreen" : true,
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "widgetStyle" : { },
-            "useDashboardTimewindow" : true,
-            "showLegend" : true,
-            "actions" : { },
-            "showTitleIcon" : false,
-            "titleTooltip" : "",
-            "enableDataExport" : true,
-            "widgetCss" : "",
-            "units" : "",
-            "noDataDisplayMessage" : "",
-            "legendConfig" : {
-              "direction" : "column",
-              "position" : "bottom",
-              "sortDataKeys" : false,
-              "showMin" : false,
-              "showMax" : false,
-              "showAvg" : false,
-              "showTotal" : true
-            },
-            "displayTimewindow" : true,
-            "pageSize" : 1024
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "bbf94179-7996-a002-4598-5186a7751706"
-        },
         "9592b263-7a6b-e17c-3b09-874d3bba442a" : {
           "isSystemType" : true,
           "bundleAlias" : "charts",
@@ -10365,7 +10068,7 @@
               "dataKeys" : [ {
                 "name" : "delta_Ore_Totali_Calcolato",
                 "type" : "timeseries",
-                "label" : "Somma delta_Ore_Totali_Calcolato",
+                "label" : "Ore Totali",
                 "color" : "#2196f3",
                 "settings" : { },
                 "_hash" : 0.3729456275362715,
@@ -10379,7 +10082,7 @@
               }, {
                 "name" : "Tonnellate_Totali",
                 "type" : "timeseries",
-                "label" : "Somma Tonnellate_Totali",
+                "label" : "Tonnellate Totali",
                 "color" : "#4caf50",
                 "settings" : { },
                 "_hash" : 0.8865919660910262,
@@ -10395,7 +10098,15 @@
                 "statusList" : [ "ACTIVE" ]
               }
             } ],
-            "displayTimewindow" : true
+            "displayTimewindow" : true,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "decimals" : 2,
+            "noDataDisplayMessage" : ""
           },
           "row" : 0,
           "col" : 0,
@@ -10962,18 +10673,6 @@
                   "row" : 8,
                   "col" : 0
                 },
-                "18567542-b68b-8c6a-3aea-d18b2042c8f0" : {
-                  "sizeX" : 12,
-                  "sizeY" : 4,
-                  "row" : 4,
-                  "col" : 12
-                },
-                "bbf94179-7996-a002-4598-5186a7751706" : {
-                  "sizeX" : 12,
-                  "sizeY" : 4,
-                  "row" : 0,
-                  "col" : 12
-                },
                 "9592b263-7a6b-e17c-3b09-874d3bba442a" : {
                   "sizeX" : 12,
                   "sizeY" : 4,
@@ -11095,8 +10794,8 @@
         "selectedTab" : 1,
         "history" : {
           "historyType" : 0,
-          "timewindowMs" : 2592000000,
-          "interval" : 7200000,
+          "timewindowMs" : 604800000,
+          "interval" : 1800000,
           "fixedTimewindow" : {
             "startTimeMs" : 1673452417294,
             "endTimeMs" : 1673538817294

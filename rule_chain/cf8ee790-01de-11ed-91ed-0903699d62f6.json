@@ -142,7 +142,7 @@
         "tbelScript" : "var confronto=msg.Stato;\nif(confronto!=\"True\"){\n    msg.delta_Ore_Totali_Calcolato=0;\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "createdTime" : 0,
-      "debugMode" : false,
+      "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -150,6 +150,7 @@
       },
       "name" : "Delta ore Totali",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
@@ -175,6 +176,7 @@
       },
       "name" : "Delta Ore Totali",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.CalculateDeltaNode"
     }, {
       "additionalInfo" : {
@@ -196,6 +198,7 @@
       },
       "name" : "attr2tele",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
@@ -215,6 +218,7 @@
       },
       "name" : "Save Timeseries",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
     }, {
       "additionalInfo" : {
@@ -233,6 +237,7 @@
       },
       "name" : "Message Type Switch",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
     }, {
       "additionalInfo" : {
@@ -251,6 +256,7 @@
       },
       "name" : "Log RPC from Device",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.action.TbLogNode"
     }, {
       "additionalInfo" : {
@@ -269,6 +275,7 @@
       },
       "name" : "Log Other",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.action.TbLogNode"
     }, {
       "additionalInfo" : {
@@ -287,6 +294,7 @@
       },
       "name" : "RPC Call Request",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.rpc.TbSendRPCRequestNode"
     }, {
       "additionalInfo" : {
@@ -307,6 +315,7 @@
       },
       "name" : "Device Profile Node",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.profile.TbDeviceProfileNode"
     }, {
       "additionalInfo" : {
@@ -327,6 +336,7 @@
       },
       "name" : "Save Attribute",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
     }, {
       "additionalInfo" : {
@@ -352,6 +362,7 @@
       },
       "name" : "Delta Ore Totali Calcolato",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.CalculateDeltaNode"
     }, {
       "additionalInfo" : {
@@ -377,6 +388,7 @@
       },
       "name" : "Delta Inv R2",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.CalculateDeltaNode"
     }, {
       "additionalInfo" : {
@@ -402,6 +414,7 @@
       },
       "name" : "Delta Inv R1",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.CalculateDeltaNode"
     }, {
       "additionalInfo" : {
@@ -427,6 +440,7 @@
       },
       "name" : "Delta ms totali R3 Montalto",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.CalculateDeltaNode"
     }, {
       "additionalInfo" : {
@@ -452,6 +466,7 @@
       },
       "name" : "Delta ms totali Mulino Fossò",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.CalculateDeltaNode"
     } ],
     "ruleChainConnections" : null

@@ -9683,7 +9683,7 @@
               "entityAliasId" : "30417156-ff55-07cc-c96e-57b93c595d88",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "Ton/Ora",
+                "name" : "TonOra",
                 "type" : "attribute",
                 "label" : "R4 Rho",
                 "color" : "#2196f3",
@@ -9705,7 +9705,7 @@
               "entityAliasId" : "5f2f8b78-1935-85c8-48af-530790d09415",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "Ton/Ora",
+                "name" : "TonOra",
                 "type" : "attribute",
                 "label" : "R2 Rho",
                 "color" : "#4caf50",
@@ -9727,7 +9727,7 @@
               "entityAliasId" : "866ef2eb-4cb8-818b-5647-3e215200d180",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "Ton/Ora",
+                "name" : "TonOra",
                 "type" : "attribute",
                 "label" : "R3 Montalto",
                 "color" : "#f44336",
@@ -9749,7 +9749,7 @@
               "entityAliasId" : "f060b3ae-3208-2e84-4e77-8d4b4a495c5f",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "Ton/Ora",
+                "name" : "TonOra",
                 "type" : "attribute",
                 "label" : "Mulino Fossò",
                 "color" : "#ffc107",
@@ -9771,7 +9771,7 @@
               "entityAliasId" : "e9038228-f3be-0fc7-df35-5fcd214f46ef",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "Ton/Ora",
+                "name" : "TonOra",
                 "type" : "attribute",
                 "label" : "Raffinazione Fossò",
                 "color" : "#607d8b",
@@ -9976,6 +9976,100 @@
           "row" : 0,
           "col" : 0,
           "id" : "b6885f67-3c77-9fbc-f46d-10a16f074f4b"
+        },
+        "4689081f-3407-656c-eb74-f824359a66b9" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "basic_timeseries",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "d37402de-b02a-e58b-82d7-d688644fa6e6",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "Allarme_Abilitazione_Cofano",
+                "type" : "timeseries",
+                "label" : "${Name}",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.5152161173554004,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Name",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.19010312508113403
+              } ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "shadowSize" : 4,
+              "fontColor" : "#545454",
+              "fontSize" : 10,
+              "xaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "grid" : {
+                "color" : "#545454",
+                "tickColor" : "#DDDDDD",
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1
+              },
+              "legend" : {
+                "show" : true,
+                "position" : "nw",
+                "backgroundColor" : "#f0f0f0",
+                "backgroundOpacity" : 0.85,
+                "labelBoxBorderColor" : "rgba(1, 1, 1, 0.45)"
+              },
+              "decimals" : 1,
+              "stack" : false,
+              "tooltipIndividual" : false
+            },
+            "title" : "New Timeseries Line Chart",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "4689081f-3407-656c-eb74-f824359a66b9"
         }
       },
       "states" : {
@@ -10533,15 +10627,21 @@
             "main" : {
               "widgets" : {
                 "9592b263-7a6b-e17c-3b09-874d3bba442a" : {
-                  "sizeX" : 12,
-                  "sizeY" : 2,
-                  "row" : 6,
-                  "col" : 12
+                  "sizeX" : 14,
+                  "sizeY" : 4,
+                  "row" : 7,
+                  "col" : 10
                 },
                 "b6885f67-3c77-9fbc-f46d-10a16f074f4b" : {
-                  "sizeX" : 12,
-                  "sizeY" : 10,
+                  "sizeX" : 10,
+                  "sizeY" : 11,
                   "row" : 0,
+                  "col" : 0
+                },
+                "4689081f-3407-656c-eb74-f824359a66b9" : {
+                  "sizeX" : 8,
+                  "sizeY" : 5,
+                  "row" : 11,
                   "col" : 0
                 }
               },

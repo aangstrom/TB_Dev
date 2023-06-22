@@ -29,6 +29,10 @@
       "toIndex" : 3,
       "type" : "Success"
     }, {
+      "fromIndex" : 0,
+      "toIndex" : 16,
+      "type" : "Success"
+    }, {
       "fromIndex" : 1,
       "toIndex" : 10,
       "type" : "Failure"
@@ -128,13 +132,17 @@
       "fromIndex" : 14,
       "toIndex" : 0,
       "type" : "Success"
+    }, {
+      "fromIndex" : 16,
+      "toIndex" : 15,
+      "type" : "True"
     } ],
     "firstNodeIndex" : 8,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1277,
-        "layoutY" : 451
+        "layoutX" : 777,
+        "layoutY" : 811
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -155,8 +163,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 958,
-        "layoutY" : 490
+        "layoutX" : 677,
+        "layoutY" : 503
       },
       "configuration" : {
         "inputValueKey" : "Ore_Totale_Impianto",
@@ -203,8 +211,8 @@
     }, {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 1254,
-        "layoutY" : 298
+        "layoutX" : 932,
+        "layoutY" : 272
       },
       "configuration" : {
         "defaultTTL" : 0
@@ -241,8 +249,8 @@
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 752,
-        "layoutY" : 564
+        "layoutX" : 280,
+        "layoutY" : 531
       },
       "configuration" : {
         "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
@@ -260,8 +268,8 @@
       "type" : "org.thingsboard.rule.engine.action.TbLogNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 752,
-        "layoutY" : 677
+        "layoutX" : 179,
+        "layoutY" : 578
       },
       "configuration" : {
         "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
@@ -279,8 +287,8 @@
       "type" : "org.thingsboard.rule.engine.action.TbLogNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 752,
-        "layoutY" : 766
+        "layoutX" : 56,
+        "layoutY" : 625
       },
       "configuration" : {
         "timeoutInSeconds" : 60
@@ -341,8 +349,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1025,
-        "layoutY" : 564
+        "layoutX" : 675,
+        "layoutY" : 579
       },
       "configuration" : {
         "inputValueKey" : "Conteggio_inversioni_Rotore_2",
@@ -367,8 +375,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 858,
-        "layoutY" : 416
+        "layoutX" : 676,
+        "layoutY" : 430
       },
       "configuration" : {
         "inputValueKey" : "Conteggio_inversioni_Rotore_2",
@@ -393,8 +401,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 781,
-        "layoutY" : 342
+        "layoutX" : 677,
+        "layoutY" : 356
       },
       "configuration" : {
         "inputValueKey" : "Conteggio_inversioni_Rotore_1",
@@ -419,8 +427,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1099,
-        "layoutY" : 639
+        "layoutX" : 677,
+        "layoutY" : 654
       },
       "configuration" : {
         "inputValueKey" : "I6000_Rotor01CurrentRe",
@@ -445,8 +453,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1177,
-        "layoutY" : 712
+        "layoutX" : 676,
+        "layoutY" : 731
       },
       "configuration" : {
         "inputValueKey" : "I1M03currentMillRe",
@@ -468,6 +476,54 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.CalculateDeltaNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1029,
+        "layoutY" : 726
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchToData" : false,
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "Ton/Ora" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4d35c6c0-10e1-11ee-bd5f-9374f67afc66"
+      },
+      "name" : "Get Ton/Ora",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1028,
+        "layoutY" : 803
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return msg.temperature > 20;",
+        "tbelScript" : "return msg.delta_Ore_Totali_Calcolato > 0;"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4d36b120-10e1-11ee-bd5f-9374f67afc66"
+      },
+      "name" : "IF Delta >0",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
     } ],
     "ruleChainConnections" : null
   },

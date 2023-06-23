@@ -195,7 +195,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "var confronto=msg.Stato;\nif(confronto!=\"True\"){\n    msg.delta_Ore_Totali_Calcolato=0;\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "/*var confronto=msg.Stato;\nif(confronto!=\"True\"){\n    msg.delta_Ore_Totali_Calcolato=0;\n}*/\nmsg.delta_Ore_Totali_Calcolat=null;\nmsg.delta_valore_ore_calcolato=null;\nif(msg.delta_Ore_Totali_Calcolato>0){\n    var value=msg.delta_Ore_Totali_Calcolato;\n    var totalSeconds = parseFloat(value/1000);\n    var totalMinutes = parseFloat(totalSeconds/60);\n    var totalHours = parseFloat(totalMinutes/60);\n    /*var seconds = parseFloat(totalSeconds % 60);\n    var minutes = parseFloat(totalMinutes % 60);*/\n    var hours = parseFloat(totalHours % 24);\n    msg.delta_Ore_Totali_Calcolato=toFixed(hours,10);\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "/*var confronto=msg.Stato;\nif(confronto!=\"True\"){\n    msg.delta_Ore_Totali_Calcolato=0;\n}*/\nmsg.delta_Ore_Totali_Calcolat=null;\nmsg.delta_valore_ore_calcolato=null;\nmsg.delta_corrente_calcolo_ore=null;\nmsg.deltaRotor1=null;\nif(msg.delta_Ore_Totali_Calcolato>0){\n    var value=msg.delta_Ore_Totali_Calcolato;\n    var totalSeconds = parseFloat(value/1000);\n    var totalMinutes = parseFloat(totalSeconds/60);\n    var totalHours = parseFloat(totalMinutes/60);\n    /*var seconds = parseFloat(totalSeconds % 60);\n    var minutes = parseFloat(totalMinutes % 60);*/\n    var hours = parseFloat(totalHours % 24);\n    msg.delta_Ore_Totali_Calcolato=toFixed(hours,10);\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "createdTime" : 0,
       "debugMode" : false,

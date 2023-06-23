@@ -134,15 +134,27 @@
       "type" : "Success"
     }, {
       "fromIndex" : 14,
-      "toIndex" : 19,
+      "toIndex" : 3,
       "type" : "Failure"
     }, {
       "fromIndex" : 14,
-      "toIndex" : 19,
+      "toIndex" : 3,
       "type" : "Other"
     }, {
       "fromIndex" : 14,
-      "toIndex" : 19,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 14,
+      "toIndex" : 21,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 14,
+      "toIndex" : 21,
+      "type" : "Other"
+    }, {
+      "fromIndex" : 14,
+      "toIndex" : 21,
       "type" : "Success"
     }, {
       "fromIndex" : 15,
@@ -171,6 +183,10 @@
     }, {
       "fromIndex" : 20,
       "toIndex" : 1,
+      "type" : "True"
+    }, {
+      "fromIndex" : 21,
+      "toIndex" : 19,
       "type" : "True"
     } ],
     "firstNodeIndex" : 8,
@@ -626,8 +642,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 671,
-        "layoutY" : 734
+        "layoutX" : 324,
+        "layoutY" : 802
       },
       "configuration" : {
         "inputValueKey" : "delta_Ore_Totali_Calcolat",
@@ -683,6 +699,28 @@
         "id" : "b9515f40-11b3-11ee-bfed-7b341f16e6be"
       },
       "name" : "if oretot",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 334,
+        "layoutY" : 729
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return msg.temperature > 20;",
+        "tbelScript" : "return msg.delta_Ore_Totali_Calcolat > 0;"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "1060aa20-11b4-11ee-bfed-7b341f16e6be"
+      },
+      "name" : "If delta_Ore_Totali_Calcolat>0",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"

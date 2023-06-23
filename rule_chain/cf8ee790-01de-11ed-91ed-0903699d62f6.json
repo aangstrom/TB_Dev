@@ -184,10 +184,6 @@
       "fromIndex" : 21,
       "toIndex" : 0,
       "type" : "Success"
-    }, {
-      "fromIndex" : 22,
-      "toIndex" : 15,
-      "type" : "Success"
     } ],
     "firstNodeIndex" : 8,
     "nodes" : [ {
@@ -544,7 +540,7 @@
         "getLatestValueWithTs" : false
       },
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -724,33 +720,6 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 871,
-        "layoutY" : 414
-      },
-      "configuration" : {
-        "msgCount" : 0,
-        "periodInSeconds" : 1,
-        "scriptLang" : "TBEL",
-        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "queueName" : null,
-        "originatorId" : "ddaa6af0-0e4c-11ed-91ed-0903699d62f6",
-        "originatorType" : "DEVICE"
-      },
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "9bf17760-11da-11ee-bfed-7b341f16e6be"
-      },
-      "name" : "Test",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     } ],
     "ruleChainConnections" : null
   },

@@ -22,11 +22,27 @@
   "metaData" : {
     "connections" : [ {
       "fromIndex" : 0,
-      "toIndex" : 1,
+      "toIndex" : 3,
       "type" : "Failure"
     }, {
       "fromIndex" : 0,
-      "toIndex" : 1,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 16,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 16,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 20,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 20,
       "type" : "Success"
     }, {
       "fromIndex" : 1,
@@ -39,18 +55,6 @@
     }, {
       "fromIndex" : 1,
       "toIndex" : 3,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 1,
-      "toIndex" : 16,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 1,
-      "toIndex" : 16,
-      "type" : "Other"
-    }, {
-      "fromIndex" : 1,
-      "toIndex" : 16,
       "type" : "Success"
     }, {
       "fromIndex" : 2,
@@ -164,13 +168,17 @@
       "fromIndex" : 19,
       "toIndex" : 0,
       "type" : "Success"
+    }, {
+      "fromIndex" : 20,
+      "toIndex" : 1,
+      "type" : "True"
     } ],
     "firstNodeIndex" : 8,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 468,
-        "layoutY" : 823
+        "layoutX" : 675,
+        "layoutY" : 806
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -178,7 +186,7 @@
         "tbelScript" : "/*var confronto=msg.Stato;\nif(confronto!=\"True\"){\n    msg.delta_Ore_Totali_Calcolato=0;\n}*/\nif(msg.delta_Ore_Totali_Calcolato>0){\n    var value=msg.delta_Ore_Totali_Calcolato;\n    var totalSeconds = parseFloat(value/1000);\n    var totalMinutes = parseFloat(totalSeconds/60);\n    var totalHours = parseFloat(totalMinutes/60);\n    /*var seconds = parseFloat(totalSeconds % 60);\n    var minutes = parseFloat(totalMinutes % 60);*/\n    var hours = parseFloat(totalHours % 24);\n    msg.delta_Ore_Totali_Calcolato=toFixed(hours,10);\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -191,8 +199,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 853,
-        "layoutY" : 819
+        "layoutX" : 960,
+        "layoutY" : 629
       },
       "configuration" : {
         "inputValueKey" : "Ore_Totale_Impianto",
@@ -656,6 +664,28 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 950,
+        "layoutY" : 702
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return msg.temperature > 20;",
+        "tbelScript" : "return msg.Ore_Totale_Impianto > 0;"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b9515f40-11b3-11ee-bfed-7b341f16e6be"
+      },
+      "name" : "if oretot",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
     } ],
     "ruleChainConnections" : null
   },

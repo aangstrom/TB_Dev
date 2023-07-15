@@ -19,7 +19,7 @@
   "metaData" : {
     "connections" : [ {
       "fromIndex" : 0,
-      "toIndex" : 6,
+      "toIndex" : 7,
       "type" : "Success"
     }, {
       "fromIndex" : 2,
@@ -208,6 +208,46 @@
         "id" : "62f6e370-22e0-11ee-b37b-9bab5886de87"
       },
       "name" : "kafka_test",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 545,
+        "layoutY" : 501
+      },
+      "configuration" : {
+        "topicPattern" : "my-topic",
+        "keyPattern" : null,
+        "bootstrapServers" : "165.22.67.32:9093",
+        "retries" : 0,
+        "batchSize" : 102400,
+        "linger" : 0,
+        "bufferMemory" : 352518912,
+        "acks" : "-1",
+        "keySerializer" : "org.apache.kafka.common.serialization.StringSerializer",
+        "valueSerializer" : "org.apache.kafka.common.serialization.StringSerializer",
+        "otherProperties" : {
+          "security.protocol" : "SASL_SSL",
+          "sasl.username" : "esfrrAA6JK+4esxmhFw6ypMasO0/n+0oHR3QDIWKSsf4/Qz6e0Zv/UWCCl+k",
+          "sasl.password" : "eer3pOCRwmTKrRA0W/HuBTrKgT8IOq3omtHdwWBMRVB3ycAbv3q5nVrYuRaF",
+          "sasl.mechanisms" : "SCRAM-SHA-256",
+          "bootstrap.servers" : "165.22.67.32:9093",
+          "KafkaClient" : "{ org.apache.kafka.common.security.plain.PlainLoginModule required serviceName=\"Kafkatest1\" username=\"esfrrAA6JK+4esxmhFw6ypMasO0/n+0oHR3QDIWKSsf4/Qz6e0Zv/UWCCl+k\" password=\"eer3pOCRwmTKrRA0W/HuBTrKgT8IOq3omtHdwWBMRVB3ycAbv3q5nVrYuRaF\"; };",
+          "sasl.jaas.config" : "org.apache.kafka.common.security.plain.PlainLoginModule required serviceName=\"Kafkatest1\" username=\"esfrrAA6JK+4esxmhFw6ypMasO0/n+0oHR3QDIWKSsf4/Qz6e0Zv/UWCCl+k\" password=\"eer3pOCRwmTKrRA0W/HuBTrKgT8IOq3omtHdwWBMRVB3ycAbv3q5nVrYuRaF\";"
+        },
+        "addMetadataKeyValuesAsKafkaHeaders" : false,
+        "kafkaHeadersCharset" : "UTF-8"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c6273d40-2345-11ee-bb94-e90efb8ecc83"
+      },
+      "name" : "Kafka",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"

@@ -225,10 +225,12 @@
         "batchSize" : 102400,
         "linger" : 0,
         "bufferMemory" : 352518912,
-        "acks" : "all",
+        "acks" : "0",
         "keySerializer" : "org.apache.kafka.common.serialization.StringSerializer",
         "valueSerializer" : "org.apache.kafka.common.serialization.StringSerializer",
-        "otherProperties" : { },
+        "otherProperties" : {
+          "sasl.endpoint.identification.algorithm" : "https"
+        },
         "addMetadataKeyValuesAsKafkaHeaders" : false,
         "kafkaHeadersCharset" : "UTF-8"
       },

@@ -230,6 +230,43 @@
         "valueSerializer" : "org.apache.kafka.common.serialization.StringSerializer",
         "otherProperties" : {
           "sasl.endpoint.identification.algorithm" : "https",
+          "sasl.mechanism" : "SCRAM-SHA-256",
+          "sasl.jaas.config" : "org.apache.kafka.common.security.scram.ScramLoginModule required \\",
+          "security.protocol" : "SASL_SSL"
+        },
+        "addMetadataKeyValuesAsKafkaHeaders" : false,
+        "kafkaHeadersCharset" : "UTF-8"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c6273d40-2345-11ee-bb94-e90efb8ecc83"
+      },
+      "name" : "Kafka",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 519,
+        "layoutY" : 721
+      },
+      "configuration" : {
+        "topicPattern" : "my-topic",
+        "keyPattern" : null,
+        "bootstrapServers" : "165.22.67.32:9093",
+        "retries" : 0,
+        "batchSize" : 102400,
+        "linger" : 0,
+        "bufferMemory" : 352518912,
+        "acks" : "0",
+        "keySerializer" : "org.apache.kafka.common.serialization.StringSerializer",
+        "valueSerializer" : "org.apache.kafka.common.serialization.StringSerializer",
+        "otherProperties" : {
+          "sasl.endpoint.identification.algorithm" : "https",
           "sasl.mechanism" : "PLAIN",
           "sasl.jaas.config" : "org.apache.kafka.common.security.plain.PlainLoginModule required /",
           "security.protocol" : "PLAINTEXT"
@@ -242,7 +279,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "c6273d40-2345-11ee-bb94-e90efb8ecc83"
+        "id" : "286a9610-234a-11ee-bb94-e90efb8ecc83"
       },
       "name" : "Kafka",
       "ruleChainId" : null,

@@ -18,6 +18,10 @@
   },
   "metaData" : {
     "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 6,
+      "type" : "Success"
+    }, {
       "fromIndex" : 2,
       "toIndex" : 5,
       "type" : "Success"
@@ -34,7 +38,7 @@
         "periodInSeconds" : 5,
         "scriptLang" : "TBEL",
         "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var msg = { \n            temp: (10 * Math.random())\n};\nvar metadata = { topic: \"quickstart\" };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { \n            temp: (10 * Math.random())\n};\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "queueName" : null,
         "originatorId" : "b62866a0-00ac-11ee-9a4b-a56c330ec2ff",
         "originatorType" : "DEVICE"

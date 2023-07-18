@@ -7,7 +7,10 @@
     "configuration" : null,
     "debugMode" : false,
     "externalId" : null,
-    "firstRuleNodeId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "b3b64770-2546-11ee-bb94-e90efb8ecc83"
+    },
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "9ceaf8c0-2545-11ee-bb94-e90efb8ecc83"
@@ -18,7 +21,7 @@
   },
   "metaData" : {
     "connections" : null,
-    "firstNodeIndex" : null,
+    "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
@@ -31,7 +34,7 @@
         "tbelScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType == 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);"
       },
       "createdTime" : 0,
-      "debugMode" : false,
+      "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",

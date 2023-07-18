@@ -24,13 +24,17 @@
       "fromIndex" : 0,
       "toIndex" : 1,
       "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 2,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 268,
-        "layoutY" : 247
+        "layoutX" : 301,
+        "layoutY" : 152
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -51,8 +55,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 499,
-        "layoutY" : 343
+        "layoutX" : 300,
+        "layoutY" : 255
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -70,6 +74,40 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 302,
+        "layoutY" : 354
+      },
+      "configuration" : {
+        "topicPattern" : "energyprod",
+        "keyPattern" : null,
+        "bootstrapServers" : "159.65.122.4:9093",
+        "retries" : 0,
+        "batchSize" : 16384,
+        "linger" : 27,
+        "bufferMemory" : 104857600,
+        "acks" : "0",
+        "keySerializer" : "org.apache.kafka.common.serialization.StringSerializer",
+        "valueSerializer" : "org.apache.kafka.common.serialization.StringSerializer",
+        "otherProperties" : {
+          "security.protocol" : "PLAINTEXT"
+        },
+        "addMetadataKeyValuesAsKafkaHeaders" : false,
+        "kafkaHeadersCharset" : "UTF-8"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a4a58240-2547-11ee-bb94-e90efb8ecc83"
+      },
+      "name" : "Kafka energyprod",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
     } ],
     "ruleChainConnections" : null
   },

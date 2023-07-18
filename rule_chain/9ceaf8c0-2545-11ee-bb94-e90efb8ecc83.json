@@ -61,7 +61,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var Phase_B_power=msg.Phase_B_power;\nvar deviceName=metadata.deviceName;\n\nvar message=[\n    deviceName=deviceName,\n    Phase_B_power=Phase_B_power\n];\n\n\nreturn {msg: message, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var Phase_B_power=msg.Phase_B_power;\nvar deviceName=metadata.deviceName;\n\nvar message={\n    deviceName:deviceName,\n    Phase_B_power:Phase_B_power\n};\n\n\nreturn {msg: message, metadata: metadata, msgType: msgType};"
       },
       "createdTime" : 0,
       "debugMode" : true,

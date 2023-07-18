@@ -35,10 +35,10 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType == 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);"
+        "tbelScript" : "if(msg.Phase_B_power!=null) {\n    return ['Success'];\n}else{\n    return ['Failed'];\n}\nreturn nextRelation(metadata, msg);"
       },
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",

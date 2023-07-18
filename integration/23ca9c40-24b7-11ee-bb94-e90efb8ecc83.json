@@ -9,7 +9,7 @@
       "clientConfiguration" : {
         "groupId" : "test",
         "clientId" : "test",
-        "topics" : "sentinel",
+        "topics" : "sentinel,energyc",
         "bootstrapServers" : "159.65.122.4:9093",
         "pollInterval" : 5000,
         "autoCreateTopics" : false,
@@ -36,14 +36,26 @@
     "secret" : "wtrfv1iuzprk2japsn6e",
     "type" : "KAFKA"
   },
-  "relations" : [ ],
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "23ca9c40-24b7-11ee-bb94-e90efb8ecc83"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "28a3ece0-24bb-11ee-bb94-e90efb8ecc83"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  } ],
   "attributes" : {
     "SERVER_SCOPE" : [ {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : "{\"success\":true}",
       "key" : "integration_status_aa8-v3-5-0-12",
-      "lastUpdateTs" : 1689608055994,
+      "lastUpdateTs" : 1689609675359,
       "longValue" : null,
       "strValue" : null
     } ]

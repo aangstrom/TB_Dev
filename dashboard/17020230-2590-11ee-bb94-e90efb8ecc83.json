@@ -90,6 +90,89 @@
           "row" : 0,
           "col" : 0,
           "id" : "e720c5c9-4457-cd0b-6b04-28e19af1e46e"
+        },
+        "4b5d39fd-db48-bbc8-369b-a530557ec681" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "timeseries_table",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 6.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "e887fdde-d409-6108-dc72-5b3c36b14531",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "ang",
+                "type" : "timeseries",
+                "label" : "ang",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.2721525803860039
+              }, {
+                "name" : "latlng",
+                "type" : "timeseries",
+                "label" : "latlng",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.68021330752322
+              }, {
+                "name" : "rawData",
+                "type" : "timeseries",
+                "label" : "rawData",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.040439710871475354
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "interval" : 1000,
+                "timewindowMs" : 60000
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "showTimestamp" : true,
+              "displayPagination" : true,
+              "defaultPageSize" : 10
+            },
+            "title" : "New Timeseries table",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "displayTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "4b5d39fd-db48-bbc8-369b-a530557ec681"
         }
       },
       "states" : {
@@ -100,9 +183,15 @@
             "main" : {
               "widgets" : {
                 "e720c5c9-4457-cd0b-6b04-28e19af1e46e" : {
-                  "sizeX" : 20,
-                  "sizeY" : 8,
+                  "sizeX" : 21,
+                  "sizeY" : 6,
                   "row" : 0,
+                  "col" : 0
+                },
+                "4b5d39fd-db48-bbc8-369b-a530557ec681" : {
+                  "sizeX" : 21,
+                  "sizeY" : 6,
+                  "row" : 6,
                   "col" : 0
                 }
               },
@@ -127,6 +216,18 @@
             "singleEntity" : {
               "entityType" : "DEVICE",
               "id" : "28a3ece0-24bb-11ee-bb94-e90efb8ecc83"
+            }
+          }
+        },
+        "e887fdde-d409-6108-dc72-5b3c36b14531" : {
+          "id" : "e887fdde-d409-6108-dc72-5b3c36b14531",
+          "alias" : "tracker",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "ed508290-271f-11ee-bb94-e90efb8ecc83"
             }
           }
         }

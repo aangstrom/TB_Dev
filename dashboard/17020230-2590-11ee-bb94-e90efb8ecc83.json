@@ -48,36 +48,6 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "Battery_Level",
-                "type" : "timeseries",
-                "label" : "Battery",
-                "color" : "#f44336",
-                "settings" : { },
-                "_hash" : 0.266156960039152,
-                "aggregationType" : null,
-                "units" : "%",
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "GSM_Signal",
-                "type" : "timeseries",
-                "label" : "GSM Signal",
-                "color" : "#ffc107",
-                "settings" : {
-                  "useCellStyleFunction" : true,
-                  "cellStyleFunction" : "var color = 'black';\r\nif (value) {\r\n    if (value>=0 && value<1){\r\n        color = '#991b1b';\r\n    }else if (value>=1 && value<2) {\r\n        color = '#ef4444';\r\n    } else if (value>=2 && value<3) {\r\n        color = '#f97316';\r\n    } else if (value>=3 && value<4) {\r\n        color = '#facc15';\r\n    } else {\r\n        color = 'green';\r\n    }\r\n}\r\nreturn {\r\n  fontWeight: 'bold',\r\n  color: color\r\n};\r\n",
-                  "useCellContentFunction" : false
-                },
-                "_hash" : 0.41961544999713496,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : 1,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
                 "name" : "GNSS_Status",
                 "type" : "timeseries",
                 "label" : "GNSS Status",
@@ -90,6 +60,20 @@
                 "funcBody" : null,
                 "usePostProcessing" : true,
                 "postFuncBody" : "if(value==0){\n    return \"GNSS OFF\";\n}else if(value==1){\n    return \"GNSS ON + fix\";\n}else if(value==2){\n    return \"GNSS ON, NO fix\";\n}else if(value==3){\n    return \"GNSS sleep\";\n}"
+              }, {
+                "name" : "ICCID1",
+                "type" : "timeseries",
+                "label" : "ICCID1",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.16907285280675022
+              }, {
+                "name" : "ICCID2",
+                "type" : "timeseries",
+                "label" : "ICCID2",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.027414080574955868
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -367,7 +351,7 @@
         "selectedTab" : 0,
         "realtime" : {
           "realtimeType" : 0,
-          "timewindowMs" : 43200000,
+          "timewindowMs" : 7200000,
           "quickInterval" : "CURRENT_DAY",
           "interval" : 1800000
         },

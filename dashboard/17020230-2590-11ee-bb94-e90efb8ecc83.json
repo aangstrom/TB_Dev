@@ -252,7 +252,8 @@
               "mapPageSize" : 16384,
               "markerOffsetX" : 0.5,
               "markerOffsetY" : 1,
-              "draggableMarker" : false,
+              "posFunction" : "return {x: origXPos, y: origYPos};",
+              "draggableMarker" : true,
               "showLabel" : true,
               "useLabelFunction" : false,
               "label" : "${entityName}",
@@ -268,6 +269,7 @@
               "colorFunction" : "var speed = dsData[dsIndex]['Speed'];\nif (typeof speed !== undefined) {\n    var percent = (speed - 45)/85;\n    if (percent < 0.5) {\n        percent *=2*100; \n        return tinycolor.mix('green', 'yellow', percent).toHexString();\n    } else {\n        percent = (percent - 0.5)*2*100;\n        return tinycolor.mix('yellow', 'red', percent).toHexString();\n    }\n}",
               "useMarkerImageFunction" : false,
               "markerImageSize" : 34,
+              "markerImages" : [ ],
               "showPolygon" : false,
               "polygonKeyName" : "perimeter",
               "editablePolygon" : false,
@@ -304,6 +306,12 @@
               "circleStrokeOpacity" : 1,
               "circleStrokeWeight" : 3,
               "useCircleStrokeColorFunction" : false,
+              "snappable" : false,
+              "initDragMode" : false,
+              "hideAllControlButton" : false,
+              "hideDrawControlButton" : false,
+              "hideEditControlButton" : false,
+              "hideRemoveControlButton" : false,
               "strokeWeight" : 4,
               "strokeOpacity" : 0.65
             },
@@ -401,12 +409,12 @@
         "selectedTab" : 0,
         "realtime" : {
           "realtimeType" : 0,
-          "timewindowMs" : 3600000,
+          "timewindowMs" : 43200000,
           "quickInterval" : "CURRENT_DAY",
-          "interval" : 10000
+          "interval" : 1800000
         },
         "aggregation" : {
-          "type" : "AVG",
+          "type" : "NONE",
           "limit" : 25000
         },
         "timezone" : null

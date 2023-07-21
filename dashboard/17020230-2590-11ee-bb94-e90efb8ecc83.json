@@ -270,6 +270,145 @@
           "row" : 0,
           "col" : 0,
           "id" : "d634aea7-1ce5-a221-025a-a217de78a6e2"
+        },
+        "2409f08a-cb93-d02e-24dc-c89829487124" : {
+          "isSystemType" : true,
+          "bundleAlias" : "maps_v2",
+          "typeAlias" : "test",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "sizeX" : 10,
+          "sizeY" : 6.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "e887fdde-d409-6108-dc72-5b3c36b14531",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "latitude",
+                "type" : "timeseries",
+                "label" : "latitude",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.06793773041319717
+              }, {
+                "name" : "longitude",
+                "type" : "timeseries",
+                "label" : "longitude",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.8871338336221102
+              }, {
+                "name" : "fuel",
+                "type" : "timeseries",
+                "label" : "fuel",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.2694884196428573
+              }, {
+                "name" : "speed",
+                "type" : "timeseries",
+                "label" : "speed",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.06663986617262241
+              }, {
+                "name" : "status",
+                "type" : "timeseries",
+                "label" : "status",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.3258434564780752
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : null
+            } ],
+            "timewindow" : {
+              "hideInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "selectedTab" : 1,
+              "history" : {
+                "historyType" : 0,
+                "timewindowMs" : 86400000,
+                "interval" : 1000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1611238039849,
+                  "endTimeMs" : 1611324439849
+                }
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 5000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "mapProvider" : "CartoDB.Positron",
+              "latKeyName" : "latitude",
+              "lngKeyName" : "longitude",
+              "showLabel" : true,
+              "label" : "${entityName}",
+              "showTooltip" : true,
+              "tooltipColor" : "#fff",
+              "tooltipFontColor" : "#000000",
+              "tooltipOpacity" : 1,
+              "strokeWeight" : 2,
+              "strokeOpacity" : 1,
+              "pointSize" : 10,
+              "markerImageSize" : 34,
+              "rotationAngle" : 180,
+              "provider" : "openstreet-map",
+              "normalizationStep" : 1000,
+              "decoratorSymbol" : "arrowHead",
+              "decoratorSymbolSize" : 10,
+              "decoratorCustomColor" : "#000",
+              "decoratorOffset" : "20px",
+              "endDecoratorOffset" : "20px",
+              "decoratorRepeat" : "20px",
+              "polygonTooltipPattern" : "<b>${entityName}</b><br/><br/><b>TimeStamp:</b> ${ts:7}",
+              "polygonOpacity" : 0.5,
+              "polygonStrokeOpacity" : 1,
+              "polygonStrokeWeight" : 1,
+              "pointTooltipOnRightPanel" : true,
+              "autocloseTooltip" : true,
+              "tooltipPattern" : "<b>${entityName}</b><br/><br/><b>Latitude:</b> ${latitude:7}<br/><b>Longitude:</b> ${longitude:7}<br/><b>Speed:</b> ${speed:0} MPH<br/><b>Fuel level:</b> ${fuel:0} %<br/><b>Status:</b> ${status}"
+            },
+            "title" : "Route history",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 600,
+              "color" : "rgba(0,0,0,.47)"
+            },
+            "widgetStyle" : { },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "actions" : { },
+            "legendConfig" : {
+              "position" : "bottom",
+              "showMin" : false,
+              "showMax" : false,
+              "showAvg" : false,
+              "showTotal" : false
+            },
+            "displayTimewindow" : true,
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "enableDataExport" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "2409f08a-cb93-d02e-24dc-c89829487124"
         }
       },
       "states" : {
@@ -290,6 +429,12 @@
                   "sizeY" : 11,
                   "row" : 0,
                   "col" : 11
+                },
+                "2409f08a-cb93-d02e-24dc-c89829487124" : {
+                  "sizeX" : 24,
+                  "sizeY" : 11,
+                  "row" : 11,
+                  "col" : 0
                 }
               },
               "gridSettings" : {
@@ -328,6 +473,16 @@
             "resolveMultiple" : true,
             "deviceTypes" : [ "tracker" ],
             "deviceNameFilter" : ""
+          }
+        },
+        "2520b2cf-c7cc-89eb-ff5b-f33d7eb4dc08" : {
+          "id" : "2520b2cf-c7cc-89eb-ff5b-f33d7eb4dc08",
+          "alias" : "Current Bus",
+          "filter" : {
+            "type" : "stateEntity",
+            "resolveMultiple" : false,
+            "stateEntityParamName" : null,
+            "defaultStateEntity" : null
           }
         }
       },

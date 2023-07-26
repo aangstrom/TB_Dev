@@ -61,26 +61,39 @@
                 "usePostProcessing" : true,
                 "postFuncBody" : "if(value==0){\n    return \"GNSS OFF\";\n}else if(value==1){\n    return \"GNSS ON + fix\";\n}else if(value==2){\n    return \"GNSS ON, NO fix\";\n}else if(value==3){\n    return \"GNSS sleep\";\n}"
               }, {
+                "name" : "Green_driving_type",
+                "type" : "timeseries",
+                "label" : "Green_driving_type",
+                "color" : "#8bc34a",
+                "settings" : { },
+                "_hash" : 0.9757746130609088,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==1){\n    var valore=\"Brusca Accelerazione\";\n}\nif(value==2){\n    var valore=\"Brusca Frenata\";\n}\nif(value==3){\n    var valore=\"Curva Brusca\";\n}\nreturn value;"
+              }, {
+                "name" : "Green_Driving_Value",
+                "type" : "timeseries",
+                "label" : "Green_Driving_Value",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.7687519160337635
+              }, {
+                "name" : "Eco_Score",
+                "type" : "timeseries",
+                "label" : "Eco_Score",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.6967150640471413
+              }, {
                 "name" : "rawData",
                 "type" : "timeseries",
                 "label" : "rawData",
-                "color" : "#9c27b0",
+                "color" : "#8bc34a",
                 "settings" : { },
-                "_hash" : 0.10497939723806327
-              }, {
-                "name" : "latitude",
-                "type" : "timeseries",
-                "label" : "latitude",
-                "color" : "#607d8b",
-                "settings" : { },
-                "_hash" : 0.29064110583245606
-              }, {
-                "name" : "longitude",
-                "type" : "timeseries",
-                "label" : "longitude",
-                "color" : "#9c27b0",
-                "settings" : { },
-                "_hash" : 0.6242092867413662
+                "_hash" : 0.06633369923658172
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]

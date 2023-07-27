@@ -1,0 +1,729 @@
+{
+  "entityType" : "DASHBOARD",
+  "entity" : {
+    "assignedCustomers" : null,
+    "configuration" : {
+      "description" : "",
+      "widgets" : {
+        "4b5d39fd-db48-bbc8-369b-a530557ec681" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "timeseries_table",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 6.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "e887fdde-d409-6108-dc72-5b3c36b14531",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "Speed",
+                "type" : "timeseries",
+                "label" : "Speed",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.7097533550951025,
+                "aggregationType" : null,
+                "units" : "Km/h",
+                "decimals" : 2,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "Fuel_Used_GPS",
+                "type" : "timeseries",
+                "label" : "Fuel Used",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.43209688262418,
+                "aggregationType" : null,
+                "units" : "L",
+                "decimals" : 2,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "GNSS_Status",
+                "type" : "timeseries",
+                "label" : "GNSS Status",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.7664267894182333,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==0){\n    return \"GNSS OFF\";\n}else if(value==1){\n    return \"GNSS ON + fix\";\n}else if(value==2){\n    return \"GNSS ON, NO fix\";\n}else if(value==3){\n    return \"GNSS sleep\";\n}"
+              }, {
+                "name" : "Green_driving_type",
+                "type" : "timeseries",
+                "label" : "Alert",
+                "color" : "#8bc34a",
+                "settings" : { },
+                "_hash" : 0.9757746130609088,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==1){\n    var valore=\"Brusca Accelerazione\";\n}\nif(value==2){\n    var valore=\"Brusca Frenata\";\n}\nif(value==3){\n    var valore=\"Curva Brusca\";\n}\nreturn valore;"
+              }, {
+                "name" : "Green_Driving_Value",
+                "type" : "timeseries",
+                "label" : "Green_Driving_Value",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.7687519160337635
+              }, {
+                "name" : "Eco_Score",
+                "type" : "timeseries",
+                "label" : "Eco Score",
+                "color" : "#9c27b0",
+                "settings" : {
+                  "useCellStyleFunction" : false,
+                  "useCellContentFunction" : false
+                },
+                "_hash" : 0.6967150640471413,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "rawData",
+                "type" : "timeseries",
+                "label" : "rawData",
+                "color" : "#8bc34a",
+                "settings" : { },
+                "_hash" : 0.06633369923658172
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "interval" : 1000,
+                "timewindowMs" : 60000
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "enableSearch" : true,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "reserveSpaceForHiddenAction" : "true",
+              "showTimestamp" : true,
+              "showMilliseconds" : false,
+              "displayPagination" : true,
+              "useEntityLabel" : true,
+              "defaultPageSize" : 18,
+              "hideEmptyLines" : false,
+              "disableStickyHeader" : false,
+              "useRowStyleFunction" : false
+            },
+            "title" : "Status",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "displayTimewindow" : true,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "4b5d39fd-db48-bbc8-369b-a530557ec681"
+        },
+        "d634aea7-1ce5-a221-025a-a217de78a6e2" : {
+          "isSystemType" : true,
+          "bundleAlias" : "maps_v2",
+          "typeAlias" : "route_map_openstreetmap",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8.5,
+          "sizeY" : 6,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "e887fdde-d409-6108-dc72-5b3c36b14531",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "latitude",
+                "type" : "timeseries",
+                "label" : "latitude",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.36068683257263423
+              }, {
+                "name" : "longitude",
+                "type" : "timeseries",
+                "label" : "longitude",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.562854386017237
+              }, {
+                "name" : "Fuel_Used_GPS",
+                "type" : "timeseries",
+                "label" : "Fuel_used",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.4008750860053838,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "Speed",
+                "type" : "timeseries",
+                "label" : "Speed",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.3873342599254954
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : null
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "provider" : "openstreet-map",
+              "gmApiKey" : "AIzaSyDoEx2kaGz3PxwbI9T7ccTSg5xjdw8Nw8Q",
+              "gmDefaultMapType" : "roadmap",
+              "mapProvider" : "OpenStreetMap.Mapnik",
+              "useCustomProvider" : false,
+              "customProviderTileUrl" : "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+              "mapProviderHere" : "HERE.normalDay",
+              "credentials" : {
+                "useV3" : true,
+                "app_id" : "AhM6TzD9ThyK78CT3ptx",
+                "app_code" : "p6NPiITB3Vv0GMUFnkLOOg",
+                "apiKey" : "kVXykxAfZ6LS4EbCTO02soFVfjA7HoBzNVVH9u7nzoE"
+              },
+              "mapImageUrl" : "data:image/svg+xml;base64,PHN2ZyBpZD0ic3ZnMiIgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTAwIiB3aWR0aD0iMTAwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zOmNjPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgdmlld0JveD0iMCAwIDEwMCAxMDAiPgogPGcgaWQ9ImxheWVyMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAtOTUyLjM2KSI+CiAgPHJlY3QgaWQ9InJlY3Q0Njg0IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBoZWlnaHQ9Ijk5LjAxIiB3aWR0aD0iOTkuMDEiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiB5PSI5NTIuODYiIHg9Ii40OTUwNSIgc3Ryb2tlLXdpZHRoPSIuOTkwMTAiIGZpbGw9IiNlZWUiLz4KICA8dGV4dCBpZD0idGV4dDQ2ODYiIHN0eWxlPSJ3b3JkLXNwYWNpbmc6MHB4O2xldHRlci1zcGFjaW5nOjBweDt0ZXh0LWFuY2hvcjptaWRkbGU7dGV4dC1hbGlnbjpjZW50ZXIiIGZvbnQtd2VpZ2h0PSJib2xkIiB4bWw6c3BhY2U9InByZXNlcnZlIiBmb250LXNpemU9IjEwcHgiIGxpbmUtaGVpZ2h0PSIxMjUlIiB5PSI5NzAuNzI4MDkiIHg9IjQ5LjM5NjQ3NyIgZm9udC1mYW1pbHk9IlJvYm90byIgZmlsbD0iIzY2NjY2NiI+PHRzcGFuIGlkPSJ0c3BhbjQ2OTAiIHg9IjUwLjY0NjQ3NyIgeT0iOTcwLjcyODA5Ij5JbWFnZSBiYWNrZ3JvdW5kIDwvdHNwYW4+PHRzcGFuIGlkPSJ0c3BhbjQ2OTIiIHg9IjQ5LjM5NjQ3NyIgeT0iOTgzLjIyODA5Ij5pcyBub3QgY29uZmlndXJlZDwvdHNwYW4+PC90ZXh0PgogIDxyZWN0IGlkPSJyZWN0NDY5NCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgaGVpZ2h0PSIxOS4zNiIgd2lkdGg9IjY5LjM2IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgeT0iOTkyLjY4IiB4PSIxNS4zMiIgc3Ryb2tlLXdpZHRoPSIuNjM5ODYiIGZpbGw9Im5vbmUiLz4KIDwvZz4KPC9zdmc+Cg==",
+              "tmApiKey" : "84d6d83e0e51e481e50454ccbe8986b",
+              "tmDefaultMapType" : "roadmap",
+              "latKeyName" : "latitude",
+              "lngKeyName" : "longitude",
+              "xPosKeyName" : "xPos",
+              "yPosKeyName" : "yPos",
+              "defaultCenterPosition" : "0,0",
+              "disableScrollZooming" : false,
+              "disableDoubleClickZooming" : false,
+              "disableZoomControl" : false,
+              "fitMapBounds" : true,
+              "useDefaultCenterPosition" : false,
+              "mapPageSize" : 16384,
+              "markerOffsetX" : 0.5,
+              "markerOffsetY" : 1,
+              "posFunction" : "return {x: origXPos, y: origYPos};",
+              "draggableMarker" : false,
+              "showLabel" : true,
+              "useLabelFunction" : false,
+              "label" : "${entityName}",
+              "showTooltip" : true,
+              "showTooltipAction" : "click",
+              "autocloseTooltip" : true,
+              "useTooltipFunction" : false,
+              "tooltipPattern" : "<b>${entityName}</b><br/><br/><b>Latitude:</b> ${latitude:7}<br/><b>Longitude:</b> ${longitude:7}<br/><b>Speed:</b> ${Speed} Km/h<br/><b>Fuel Used:</b> ${Fuel_used} l",
+              "tooltipOffsetX" : 0,
+              "tooltipOffsetY" : -1,
+              "color" : "#1976d3",
+              "useColorFunction" : true,
+              "colorFunction" : "var speed = dsData[dsIndex]['Speed'];\nif (typeof speed !== undefined) {\n    var percent = (speed - 45)/85;\n    if (percent < 0.5) {\n        percent *=2*100; \n        return tinycolor.mix('green', 'yellow', percent).toHexString();\n    } else {\n        percent = (percent - 0.5)*2*100;\n        return tinycolor.mix('yellow', 'red', percent).toHexString();\n    }\n}",
+              "useMarkerImageFunction" : false,
+              "markerImageSize" : 34,
+              "markerImages" : [ ],
+              "showPolygon" : false,
+              "polygonKeyName" : "perimeter",
+              "editablePolygon" : false,
+              "showPolygonLabel" : false,
+              "usePolygonLabelFunction" : false,
+              "polygonLabel" : "${entityName}",
+              "showPolygonTooltip" : false,
+              "showPolygonTooltipAction" : "click",
+              "autoClosePolygonTooltip" : true,
+              "usePolygonTooltipFunction" : false,
+              "polygonTooltipPattern" : "<b>${entityName}</b><br/><br/><b>TimeStamp:</b> ${ts:7}",
+              "polygonColor" : "#3388ff",
+              "polygonOpacity" : 0.2,
+              "usePolygonColorFunction" : false,
+              "polygonStrokeColor" : "#3388ff",
+              "polygonStrokeOpacity" : 1,
+              "polygonStrokeWeight" : 3,
+              "usePolygonStrokeColorFunction" : false,
+              "showCircle" : false,
+              "circleKeyName" : "perimeter",
+              "editableCircle" : false,
+              "showCircleLabel" : false,
+              "useCircleLabelFunction" : false,
+              "circleLabel" : "${entityName}",
+              "showCircleTooltip" : false,
+              "showCircleTooltipAction" : "click",
+              "autoCloseCircleTooltip" : true,
+              "useCircleTooltipFunction" : false,
+              "circleTooltipPattern" : "<b>${entityName}</b><br/><br/><b>TimeStamp:</b> ${ts:7}",
+              "circleFillColor" : "#3388ff",
+              "circleFillColorOpacity" : 0.2,
+              "useCircleFillColorFunction" : false,
+              "circleStrokeColor" : "#3388ff",
+              "circleStrokeOpacity" : 1,
+              "circleStrokeWeight" : 3,
+              "useCircleStrokeColorFunction" : false,
+              "strokeWeight" : 4,
+              "strokeOpacity" : 0.65
+            },
+            "title" : "New Route Map - OpenStreetMap",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "showTitleIcon" : false,
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "d634aea7-1ce5-a221-025a-a217de78a6e2"
+        },
+        "2409f08a-cb93-d02e-24dc-c89829487124" : {
+          "isSystemType" : true,
+          "bundleAlias" : "maps_v2",
+          "typeAlias" : "test",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "sizeX" : 10,
+          "sizeY" : 6.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "e887fdde-d409-6108-dc72-5b3c36b14531",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "latitude",
+                "type" : "timeseries",
+                "label" : "latitude",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.06793773041319717
+              }, {
+                "name" : "longitude",
+                "type" : "timeseries",
+                "label" : "longitude",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.8871338336221102
+              }, {
+                "name" : "fuel",
+                "type" : "timeseries",
+                "label" : "fuel",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.2694884196428573
+              }, {
+                "name" : "speed",
+                "type" : "timeseries",
+                "label" : "speed",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.06663986617262241
+              }, {
+                "name" : "status",
+                "type" : "timeseries",
+                "label" : "status",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.3258434564780752
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : null
+            } ],
+            "timewindow" : {
+              "hideInterval" : false,
+              "hideLastInterval" : false,
+              "hideQuickInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 1,
+              "history" : {
+                "historyType" : 0,
+                "timewindowMs" : 18000000,
+                "interval" : 1000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1611238039849,
+                  "endTimeMs" : 1611324439849
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 5000
+              },
+              "timezone" : null
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "mapProvider" : "CartoDB.Positron",
+              "latKeyName" : "latitude",
+              "lngKeyName" : "longitude",
+              "showLabel" : true,
+              "label" : "${entityName}",
+              "showTooltip" : true,
+              "tooltipColor" : "#fff",
+              "tooltipFontColor" : "#000000",
+              "tooltipOpacity" : 1,
+              "strokeWeight" : 2,
+              "strokeOpacity" : 1,
+              "pointSize" : 10,
+              "markerImageSize" : 34,
+              "rotationAngle" : 180,
+              "provider" : "openstreet-map",
+              "normalizationStep" : 1000,
+              "decoratorSymbol" : "arrowHead",
+              "decoratorSymbolSize" : 10,
+              "decoratorCustomColor" : "#000",
+              "decoratorOffset" : "20px",
+              "endDecoratorOffset" : "20px",
+              "decoratorRepeat" : "20px",
+              "polygonTooltipPattern" : "<b>${entityName}</b><br/><br/><b>TimeStamp:</b> ${ts:7}",
+              "polygonOpacity" : 0.5,
+              "polygonStrokeOpacity" : 1,
+              "polygonStrokeWeight" : 1,
+              "pointTooltipOnRightPanel" : true,
+              "autocloseTooltip" : true,
+              "tooltipPattern" : "<b>${entityName}</b><br/><br/><b>Latitude:</b> ${latitude:7}<br/><b>Longitude:</b> ${longitude:7}<br/><b>Speed:</b> ${speed:0} MPH<br/><b>Fuel level:</b> ${fuel:0} %<br/><b>Status:</b> ${status}"
+            },
+            "title" : "Route history",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 600,
+              "color" : "rgba(0,0,0,.47)"
+            },
+            "widgetStyle" : { },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "actions" : { },
+            "legendConfig" : {
+              "position" : "bottom",
+              "showMin" : false,
+              "showMax" : false,
+              "showAvg" : false,
+              "showTotal" : false
+            },
+            "displayTimewindow" : true,
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "enableDataExport" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "2409f08a-cb93-d02e-24dc-c89829487124"
+        },
+        "49d77091-fcc1-b892-a62a-542655bfc94f" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "basic_timeseries",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "e887fdde-d409-6108-dc72-5b3c36b14531",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "Speed",
+                "type" : "timeseries",
+                "label" : "Speed",
+                "color" : "#2196f3",
+                "settings" : {
+                  "hideDataByDefault" : false,
+                  "disableDataHiding" : false,
+                  "removeFromLegend" : false,
+                  "excludeFromStacking" : false,
+                  "showLines" : true,
+                  "lineWidth" : 1,
+                  "fillLines" : false,
+                  "fillLinesOpacity" : 0.4,
+                  "showPoints" : false,
+                  "showPointsLineWidth" : 5,
+                  "showPointsRadius" : 3,
+                  "showPointShape" : "circle",
+                  "pointShapeFormatter" : "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
+                  "showSeparateAxis" : true,
+                  "axisPosition" : "left",
+                  "comparisonSettings" : {
+                    "showValuesForComparison" : true,
+                    "comparisonValuesLabel" : "",
+                    "color" : ""
+                  },
+                  "thresholds" : [ ]
+                },
+                "_hash" : 0.27406762452431743,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "alt",
+                "type" : "timeseries",
+                "label" : "alt",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.9511836857964187
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "shadowSize" : 4,
+              "fontColor" : "#545454",
+              "fontSize" : 10,
+              "xaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "grid" : {
+                "color" : "#545454",
+                "tickColor" : "#DDDDDD",
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1
+              },
+              "legend" : {
+                "show" : true,
+                "position" : "nw",
+                "backgroundColor" : "#f0f0f0",
+                "backgroundOpacity" : 0.85,
+                "labelBoxBorderColor" : "rgba(1, 1, 1, 0.45)"
+              },
+              "decimals" : 1,
+              "stack" : false,
+              "tooltipIndividual" : false
+            },
+            "title" : "New Timeseries Line Chart",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "49d77091-fcc1-b892-a62a-542655bfc94f"
+        }
+      },
+      "states" : {
+        "default" : {
+          "name" : "xx",
+          "root" : true,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "4b5d39fd-db48-bbc8-369b-a530557ec681" : {
+                  "sizeX" : 11,
+                  "sizeY" : 11,
+                  "row" : 0,
+                  "col" : 0
+                },
+                "d634aea7-1ce5-a221-025a-a217de78a6e2" : {
+                  "sizeX" : 13,
+                  "sizeY" : 11,
+                  "row" : 0,
+                  "col" : 11
+                },
+                "2409f08a-cb93-d02e-24dc-c89829487124" : {
+                  "sizeX" : 24,
+                  "sizeY" : 11,
+                  "row" : 11,
+                  "col" : 0
+                },
+                "49d77091-fcc1-b892-a62a-542655bfc94f" : {
+                  "sizeX" : 11,
+                  "sizeY" : 5,
+                  "row" : 22,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : false,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70
+              }
+            }
+          }
+        }
+      },
+      "entityAliases" : {
+        "2bc10c1b-d438-be77-7052-d45ae0f224df" : {
+          "id" : "2bc10c1b-d438-be77-7052-d45ae0f224df",
+          "alias" : "d",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "28a3ece0-24bb-11ee-bb94-e90efb8ecc83"
+            }
+          }
+        },
+        "e887fdde-d409-6108-dc72-5b3c36b14531" : {
+          "id" : "e887fdde-d409-6108-dc72-5b3c36b14531",
+          "alias" : "tracker",
+          "filter" : {
+            "type" : "deviceType",
+            "resolveMultiple" : true,
+            "deviceTypes" : [ "tracker" ],
+            "deviceNameFilter" : ""
+          }
+        },
+        "2520b2cf-c7cc-89eb-ff5b-f33d7eb4dc08" : {
+          "id" : "2520b2cf-c7cc-89eb-ff5b-f33d7eb4dc08",
+          "alias" : "Current Bus",
+          "filter" : {
+            "type" : "stateEntity",
+            "resolveMultiple" : false,
+            "stateEntityParamName" : null,
+            "defaultStateEntity" : null
+          }
+        }
+      },
+      "filters" : { },
+      "timewindow" : {
+        "hideInterval" : false,
+        "hideLastInterval" : false,
+        "hideQuickInterval" : false,
+        "hideAggregation" : false,
+        "hideAggInterval" : false,
+        "hideTimezone" : false,
+        "selectedTab" : 0,
+        "realtime" : {
+          "realtimeType" : 0,
+          "timewindowMs" : 86400000,
+          "quickInterval" : "CURRENT_DAY",
+          "interval" : 1800000
+        },
+        "aggregation" : {
+          "type" : "NONE",
+          "limit" : 25000
+        },
+        "timezone" : null
+      },
+      "settings" : {
+        "stateControllerId" : "entity",
+        "showTitle" : false,
+        "showDashboardsSelect" : true,
+        "showEntitiesSelect" : true,
+        "showDashboardTimewindow" : true,
+        "showDashboardExport" : true,
+        "toolbarAlwaysOpen" : true
+      }
+    },
+    "customerId" : null,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "DASHBOARD",
+      "id" : "88e9b110-2c4b-11ee-bb94-e90efb8ecc83"
+    },
+    "image" : null,
+    "mobileHide" : false,
+    "mobileOrder" : null,
+    "name" : "xx",
+    "ownerId" : null,
+    "title" : "xx"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

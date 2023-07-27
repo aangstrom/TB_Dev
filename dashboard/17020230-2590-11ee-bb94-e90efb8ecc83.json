@@ -50,7 +50,7 @@
               }, {
                 "name" : "GNSS_Status",
                 "type" : "timeseries",
-                "label" : "GNSS Status",
+                "label" : "GPS",
                 "color" : "#607d8b",
                 "settings" : { },
                 "_hash" : 0.7664267894182333,
@@ -59,7 +59,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if(value==0){\n    return \"GNSS OFF\";\n}else if(value==1){\n    return \"GNSS ON + fix\";\n}else if(value==2){\n    return \"GNSS ON, NO fix\";\n}else if(value==3){\n    return \"GNSS sleep\";\n}"
+                "postFuncBody" : "if(value==0){\n    return \"OFF\";\n}else if(value==1){\n    return \"Con fix\";\n}else if(value==2){\n    return \"NO fix\";\n}else if(value==3){\n    return \"sleep\";\n}"
               }, {
                 "name" : "Green_driving_type",
                 "type" : "timeseries",

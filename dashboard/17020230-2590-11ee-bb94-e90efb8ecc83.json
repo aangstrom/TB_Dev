@@ -103,9 +103,39 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
+                "name" : "Battery_Level",
+                "type" : "timeseries",
+                "label" : "Battery",
+                "color" : "#3f51b5",
+                "settings" : { },
+                "_hash" : 0.11968720591226845,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "GSM_Signal",
+                "type" : "timeseries",
+                "label" : "GSM_Signal",
+                "color" : "#e91e63",
+                "settings" : {
+                  "useCellStyleFunction" : true,
+                  "cellStyleFunction" : "var color = 'black';\r\nif (value) {\r\n    if (value>=0 && value<3) {\r\n      color = 'red';\r\n    } else if (value>=3 && value<4) {\r\n      color = 'orange';\r\n    } else if (value>=4 && value<5) {\r\n      color = 'yellow';\r\n    } else {\r\n      color = 'green';\r\n    }\r\n}\r\nreturn {\r\n  fontWeight: 'bold',\r\n  color: color\r\n};\r\n",
+                  "useCellContentFunction" : false
+                },
+                "_hash" : 0.09889362993449224,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
                 "name" : "rawData",
                 "type" : "timeseries",
-                "label" : "Dati non codificati",
+                "label" : "Debug",
                 "color" : "#8bc34a",
                 "settings" : { },
                 "_hash" : 0.06633369923658172,
@@ -115,20 +145,6 @@
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
-              }, {
-                "name" : "Battery_Level",
-                "type" : "timeseries",
-                "label" : "Battery_Level",
-                "color" : "#3f51b5",
-                "settings" : { },
-                "_hash" : 0.11968720591226845
-              }, {
-                "name" : "GSM_Signal",
-                "type" : "timeseries",
-                "label" : "GSM_Signal",
-                "color" : "#e91e63",
-                "settings" : { },
-                "_hash" : 0.09889362993449224
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]

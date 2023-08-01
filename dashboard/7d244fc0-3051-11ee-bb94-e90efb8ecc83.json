@@ -211,33 +211,48 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "8px",
             "settings" : {
-              "shadowSize" : 4,
-              "fontColor" : "#545454",
+              "stack" : false,
               "fontSize" : 10,
+              "fontColor" : "#545454",
+              "showTooltip" : true,
+              "tooltipIndividual" : false,
+              "tooltipCumulative" : false,
+              "hideZeros" : false,
+              "grid" : {
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1,
+                "color" : "#545454",
+                "backgroundColor" : "#ffffff",
+                "tickColor" : "#DDDDDD"
+              },
               "xaxis" : {
+                "title" : null,
                 "showLabels" : true,
                 "color" : "#545454"
               },
               "yaxis" : {
+                "min" : null,
+                "max" : null,
+                "title" : "Speed, Kmh",
                 "showLabels" : true,
                 "color" : "#545454",
-                "title" : "Speed, MPH",
-                "titleAngle" : 90
+                "tickSize" : null,
+                "tickDecimals" : 0,
+                "ticksFormatter" : ""
               },
-              "grid" : {
-                "color" : "#545454",
-                "tickColor" : "#DDDDDD",
-                "verticalLines" : true,
-                "horizontalLines" : true,
-                "backgroundColor" : "#ffffff",
-                "outlineWidth" : 1
-              },
+              "shadowSize" : 4,
               "smoothLines" : true,
+              "comparisonEnabled" : false,
               "timeForComparison" : "months",
+              "comparisonCustomIntervalValue" : 7200000,
               "xaxisSecond" : {
                 "axisPosition" : "top",
+                "title" : null,
                 "showLabels" : true
-              }
+              },
+              "customLegendEnabled" : false,
+              "dataKeysListForLabels" : [ ]
             },
             "title" : "Speed tracking",
             "dropShadow" : true,
@@ -766,22 +781,27 @@
             } ],
             "timewindow" : {
               "hideInterval" : false,
+              "hideLastInterval" : false,
+              "hideQuickInterval" : false,
               "hideAggregation" : false,
               "hideAggInterval" : false,
+              "hideTimezone" : false,
               "selectedTab" : 1,
               "history" : {
                 "historyType" : 0,
-                "timewindowMs" : 86400000,
+                "timewindowMs" : 7200000,
                 "interval" : 1000,
                 "fixedTimewindow" : {
                   "startTimeMs" : 1611238039849,
                   "endTimeMs" : 1611324439849
-                }
+                },
+                "quickInterval" : "CURRENT_DAY"
               },
               "aggregation" : {
                 "type" : "NONE",
                 "limit" : 5000
-              }
+              },
+              "timezone" : null
             },
             "showTitle" : true,
             "backgroundColor" : "#fff",

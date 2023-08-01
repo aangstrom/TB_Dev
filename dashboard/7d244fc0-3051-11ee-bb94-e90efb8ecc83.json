@@ -194,7 +194,11 @@
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
-              } ]
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : null
             } ],
             "timewindow" : {
               "realtime" : {
@@ -284,7 +288,7 @@
               "entityAliasId" : "302cf6c2-0d32-95ff-63f3-1bfa43b3b75e",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "fuel",
+                "name" : "Fuel_Level",
                 "type" : "timeseries",
                 "label" : "Fuel",
                 "color" : "#9500ff",
@@ -306,8 +310,13 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : null,
-                "postFuncBody" : null
-              } ]
+                "postFuncBody" : null,
+                "aggregationType" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : null
             } ],
             "timewindow" : {
               "realtime" : {
@@ -538,13 +547,22 @@
               "entityAliasId" : "302cf6c2-0d32-95ff-63f3-1bfa43b3b75e",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "fuel",
+                "name" : "Fuel_Level",
                 "type" : "timeseries",
                 "label" : "fuel",
                 "color" : "#2196f3",
                 "settings" : { },
-                "_hash" : 0.8320493007835159
-              } ]
+                "_hash" : 0.8320493007835159,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
             } ],
             "timewindow" : {
               "displayValue" : "",
@@ -1432,6 +1450,75 @@
           "row" : 0,
           "col" : 0,
           "id" : "0f9ee25b-08a4-f16e-d0fe-0f7641af877a"
+        },
+        "1d25208d-2a6e-0c56-cb72-cedc6f101b12" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "timeseries_table",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 6.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "0d54b239-c13d-b9ca-a71d-2e8af860d803",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "Fuel_Level",
+                "type" : "timeseries",
+                "label" : "Fuel_Level",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.7545386490773052
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "interval" : 1000,
+                "timewindowMs" : 60000
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "showTimestamp" : true,
+              "displayPagination" : true,
+              "defaultPageSize" : 10
+            },
+            "title" : "New Timeseries table",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "displayTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "1d25208d-2a6e-0c56-cb72-cedc6f101b12"
         }
       },
       "timewindow" : {
@@ -1533,6 +1620,12 @@
                   "sizeX" : 24,
                   "sizeY" : 6,
                   "row" : 6,
+                  "col" : 0
+                },
+                "1d25208d-2a6e-0c56-cb72-cedc6f101b12" : {
+                  "sizeX" : 8,
+                  "sizeY" : 6,
+                  "row" : 12,
                   "col" : 0
                 }
               },

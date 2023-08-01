@@ -1176,8 +1176,22 @@
                 "type" : "timeseries",
                 "label" : "Ignition",
                 "color" : "#ffc107",
-                "settings" : { },
-                "_hash" : 0.19158512749392442
+                "settings" : {
+                  "columnWidth" : "0px",
+                  "useCellStyleFunction" : true,
+                  "cellStyleFunction" : "var color;\nif (value === 1) {\n    color = 'rgb(39, 134, 34)';\n} else {\n    color = 'rgb(255, 0, 0)';\n}\nreturn {\n    color: color,\n    fontSize: '18px'\n};",
+                  "useCellContentFunction" : false,
+                  "defaultColumnVisibility" : "visible",
+                  "columnSelectionToDisplay" : "enabled",
+                  "columnExportOption" : "onlyVisible"
+                },
+                "_hash" : 0.19158512749392442,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]

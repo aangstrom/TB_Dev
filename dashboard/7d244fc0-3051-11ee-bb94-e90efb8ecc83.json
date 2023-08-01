@@ -1113,7 +1113,7 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "speed",
+                "name" : "Speed",
                 "type" : "timeseries",
                 "label" : "Speed",
                 "color" : "#4caf50",
@@ -1123,13 +1123,14 @@
                   "useCellContentFunction" : false
                 },
                 "_hash" : 0.04419334338671943,
-                "units" : "MPH",
+                "units" : "Km/h",
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : null,
-                "postFuncBody" : null
+                "postFuncBody" : null,
+                "aggregationType" : "NONE"
               }, {
-                "name" : "fuel",
+                "name" : "Fuel_Level",
                 "type" : "timeseries",
                 "label" : "Fuel level",
                 "color" : "#f44336",
@@ -1143,8 +1144,12 @@
                 "decimals" : 0,
                 "funcBody" : null,
                 "usePostProcessing" : null,
-                "postFuncBody" : null
-              } ]
+                "postFuncBody" : null,
+                "aggregationType" : "NONE"
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
             } ],
             "showTitleIcon" : false,
             "iconColor" : "rgba(0, 0, 0, 0.87)",
@@ -1198,7 +1203,8 @@
                 "id" : "bc275306-b61c-c9e1-d83e-8e332f021865"
               } ],
               "rowDoubleClick" : [ ]
-            }
+            },
+            "displayTimewindow" : true
           },
           "row" : 0,
           "col" : 0,

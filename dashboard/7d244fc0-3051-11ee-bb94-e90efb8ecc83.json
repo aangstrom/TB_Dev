@@ -95,6 +95,7 @@
               "gmDefaultMapType" : "roadmap",
               "mapProvider" : "OpenStreetMap.Mapnik",
               "useCustomProvider" : false,
+              "customProviderTileUrl" : "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
               "mapProviderHere" : "HERE.normalDay",
               "credentials" : {
                 "useV3" : true,
@@ -114,7 +115,7 @@
               "disableScrollZooming" : false,
               "disableDoubleClickZooming" : false,
               "disableZoomControl" : false,
-              "fitMapBounds" : true,
+              "fitMapBounds" : false,
               "useDefaultCenterPosition" : false,
               "mapPageSize" : 16384,
               "markerOffsetX" : 0.5,
@@ -176,6 +177,12 @@
               "circleStrokeOpacity" : 1,
               "circleStrokeWeight" : 3,
               "useCircleStrokeColorFunction" : false,
+              "snappable" : false,
+              "initDragMode" : false,
+              "hideAllControlButton" : false,
+              "hideDrawControlButton" : false,
+              "hideEditControlButton" : false,
+              "hideRemoveControlButton" : false,
               "useClusterMarkers" : true,
               "zoomOnClick" : true,
               "maxClusterRadius" : 80,
@@ -2008,17 +2015,23 @@
       },
       "timewindow" : {
         "hideInterval" : false,
+        "hideLastInterval" : false,
+        "hideQuickInterval" : false,
         "hideAggregation" : false,
         "hideAggInterval" : false,
+        "hideTimezone" : false,
         "selectedTab" : 0,
         "realtime" : {
-          "timewindowMs" : 86400000,
-          "interval" : 900000
+          "realtimeType" : 0,
+          "timewindowMs" : 1800000,
+          "quickInterval" : "CURRENT_DAY",
+          "interval" : 120000
         },
         "aggregation" : {
           "type" : "AVG",
           "limit" : 200
-        }
+        },
+        "timezone" : null
       },
       "states" : {
         "default" : {

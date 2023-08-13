@@ -1,10 +1,11 @@
 {
   "entityType" : "INTEGRATION",
   "entity" : {
-    "additionalInfo" : null,
+    "additionalInfo" : {
+      "description" : ""
+    },
     "allowCreateDevicesOrAssets" : true,
     "configuration" : {
-      "metadata" : { },
       "clientConfiguration" : {
         "host" : "aa8.aangstrom.it",
         "port" : 1885,
@@ -19,10 +20,11 @@
         }
       },
       "topicFilters" : [ {
-        "filter" : "owntracks/aangstrom/#",
+        "filter" : "owntracks/aangstrom/+/#",
         "qos" : 0
       } ],
-      "downlinkTopicPattern" : "${topic}"
+      "downlinkTopicPattern" : "${topic}",
+      "metadata" : { }
     },
     "debugMode" : true,
     "defaultConverterId" : {
@@ -43,8 +45,28 @@
     "secret" : "mo9ppaonikncgprs3wqi",
     "type" : "MQTT"
   },
-  "relations" : [ ],
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "3e28eeb0-399e-11ee-bb94-e90efb8ecc83"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "3e4aa780-399e-11ee-bb94-e90efb8ecc83"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  } ],
   "attributes" : {
-    "SERVER_SCOPE" : [ ]
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"success\":true}",
+      "key" : "integration_status_aa8-v3-5-0-12",
+      "lastUpdateTs" : 1691906230676,
+      "longValue" : null,
+      "strValue" : null
+    } ]
   }
 }

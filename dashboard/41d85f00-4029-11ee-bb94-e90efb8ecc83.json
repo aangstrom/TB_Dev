@@ -81,7 +81,19 @@
               }
             } ],
             "widgetStyle" : { },
-            "actions" : { },
+            "actions" : {
+              "nodeSelected" : [ {
+                "name" : "Apri Dettagli",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "var stateIndex = widgetContext.stateController.getStateIndex();\r\nopenDashboardState('devices');\r\n\r\nfunction backToPrevState(stateIndex) {\r\n  widgetContext.stateController.navigatePrevState(stateIndex);\r\n}\r\n\r\nfunction openDashboardState(statedId) {\r\n  var currentState = widgetContext.stateController.getStateId();\r\n  if (currentState !== statedId) {\r\n    var params = {};\r\n    widgetContext.stateController.updateState(statedId, params, false);\r\n  }\r\n}\r\n",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "d78bc6d1-0385-9476-eb43-d3e6b8a611b6"
+              } ]
+            },
             "displayTimewindow" : true,
             "showTitleIcon" : false,
             "titleTooltip" : "",

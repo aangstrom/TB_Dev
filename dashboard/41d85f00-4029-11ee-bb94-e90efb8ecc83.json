@@ -223,6 +223,79 @@
           "row" : 0,
           "col" : 0,
           "id" : "ff491704-9269-8cef-9524-b42cb9608d25"
+        },
+        "1a78a18b-ca9b-1215-930d-3e238adb8699" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "markdown_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 5,
+          "sizeY" : 3.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "84bbd97c-7ca1-8d73-58e0-ef2201796cb2",
+              "filterId" : null,
+              "dataKeys" : [ ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1692539734376,
+                  "endTimeMs" : 1692626134376
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "useMarkdownTextFunction" : true,
+              "markdownTextFunction" : "var state;\nif (data && data.length && data[0]['automezzo_selezionato']) {\n    state = true;\n} else {\n    state = false;\n}\n\n/*var header = '<div class=\"header\" fxLayout=\"row\" fxLayoutAlign=\"start stretch\" fxLayoutGap=\"8px\">' +\n                '<div fxLayout=\"column\" fxLayoutAlign=\"center\"><button id=\"go-back\" matTooltip=\"Go back\" type=\"button\" mat-icon-button><mat-icon>arrow_back</mat-icon></button></div>' +\n                '<div fxLayout=\"column\" fxLayoutAlign=\"center\"><img style=\"vertical-align: middle;\" class=\"title-icon mat-icon\" src=\"'+ typeSvgUrl +'\"></div>' +\n                '<div fxFlex fxLayout=\"column\" fxLayoutAlign=\"center\">' +\n                   '<div class=\"title\">{{ ctx.stateController.getStateParams().selectedSupermarket?.entityName }}</div>' +\n                '</div>' +\n             '</div>';\n*/\n             \nreturn '<div class=\"main-layout\" style=\"width: 100%; height: 100%;\" fxLayout=\"column\">' +\n          (state \n            ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"details\"></tb-dashboard-state>') \n            : '<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"maps\"></tb-dashboard-state>')+\n       '</div>';",
+              "applyDefaultMarkdownStyle" : true
+            },
+            "title" : "New Markdown/HTML Card",
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "showLegend" : false,
+            "useDashboardTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "1a78a18b-ca9b-1215-930d-3e238adb8699"
         }
       },
       "states" : {
@@ -233,7 +306,7 @@
             "main" : {
               "widgets" : {
                 "33278063-63d3-ff8b-62dc-935d9777abed" : {
-                  "sizeX" : 12,
+                  "sizeX" : 14,
                   "sizeY" : 29,
                   "row" : 0,
                   "col" : 0
@@ -256,7 +329,14 @@
               }
             },
             "right" : {
-              "widgets" : { },
+              "widgets" : {
+                "1a78a18b-ca9b-1215-930d-3e238adb8699" : {
+                  "sizeX" : 12,
+                  "sizeY" : 7,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
               "gridSettings" : {
                 "backgroundColor" : "#eeeeee",
                 "columns" : 12,
@@ -324,6 +404,16 @@
             "resolveMultiple" : true,
             "deviceTypes" : [ "tracker" ],
             "deviceNameFilter" : ""
+          }
+        },
+        "84bbd97c-7ca1-8d73-58e0-ef2201796cb2" : {
+          "id" : "84bbd97c-7ca1-8d73-58e0-ef2201796cb2",
+          "alias" : "Automezzo Selezionato",
+          "filter" : {
+            "type" : "stateEntity",
+            "resolveMultiple" : false,
+            "stateEntityParamName" : "automezzo_selezionato",
+            "defaultStateEntity" : null
           }
         }
       },

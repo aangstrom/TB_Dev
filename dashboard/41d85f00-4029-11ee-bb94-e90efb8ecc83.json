@@ -160,9 +160,9 @@
             "padding" : "0px",
             "settings" : {
               "useMarkdownTextFunction" : true,
-              "markdownTextFunction" : "var state;\nif (data && data.length && data[0]['entityId']) {\n    state = true;\n} else {\n    state = false;\n}\nreturn '<div class=\"main-layout\" style=\"width: 100%; height:100%;\" fxLayout=\"column\">' +\n          (state \n            ? ('<div class=\"header\" fxLayout=\"row\" fxLayoutAlign=\"start stretch\" fxLayoutGap=\"0px\">' +'<div fxLayout=\"column\" fxLayoutAlign=\"center\"><button id=\"indietro\" matTooltip=\"indietro\" type=\"button\" mat-icon-button><mat-icon>arrow_back</mat-icon></button></div>' +\n                '<div class=\"title\" fxLayout=\"column\" fxLayoutAlign=\"center\">Dettagli Automezzo: '+ data[0]['entityName']+ '</div></div>' + \n                '<tb-dashboard-state fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"details\"></tb-dashboard-state>') \n            : '<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"maps\"></tb-dashboard-state>')+\n       '</div>';",
+              "markdownTextFunction" : "var state;\nif (data && data.length && data[0]['entityId']) {\n    state = true;\n} else {\n    state = false;\n}\nreturn '<div class=\"main-layout\" style=\"width: 100%; height:100%;\" fxLayout=\"column\">' +\n          (state \n            ? ('<div class=\"header\" fxLayout=\"row\" fxLayoutAlign=\"start stretch\" fxLayoutGap=\"0px\">' +'<div fxLayout=\"column\" fxLayoutAlign=\"center\"><button id=\"indietro\" matTooltip=\"Indietro\" type=\"button\" mat-icon-button><mat-icon>arrow_back</mat-icon></button></div>' +\n                '<div fxLayout=\"column\" fxLayoutAlign=\"center\"><button id=\"edit\" matTooltip=\"Modifica\" type=\"button\" mat-icon-button><mat-icon>edit</mat-icon></button></div>' +\n                '<div class=\"title\" fxLayout=\"column\" fxLayoutAlign=\"center\">Dettagli Automezzo: '+ data[0]['entityName']+ '</div></div>' + \n                '<tb-dashboard-state fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"details\"></tb-dashboard-state>') \n            : '<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"maps\"></tb-dashboard-state>')+\n       '</div>';",
               "applyDefaultMarkdownStyle" : true,
-              "markdownCss" : ".tb-markdown-view > div {\n    padding: 0;\n}\n.header{\n    margin: 10px;\n    height: 35px;\n}\n.title {\n    font-size: 18px;\n    font-weight: 500;\n    color: #28232D;\n}\n#indietro{\n    margin-right:10px;\n}"
+              "markdownCss" : ".tb-markdown-view > div {\n    padding: 0;\n}\n.header{\n    margin: 10px;\n    height: 35px;\n}\n.title {\n    font-size: 18px;\n    font-weight: 500;\n    color: #28232D;\n}\n#edit{\n    margin-right:10px;\n}"
             },
             "title" : "New Markdown/HTML Card",
             "showTitleIcon" : false,
@@ -194,6 +194,25 @@
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
                 "id" : "be856d68-ba4a-202f-5fe1-28fe668838f8"
+              }, {
+                "name" : "edit",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "edit",
+                "setEntityId" : true,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "popoverPreferredPlacement" : "top",
+                "popoverHideOnClickOutside" : true,
+                "popoverHideDashboardToolbar" : true,
+                "popoverWidth" : "25vw",
+                "popoverHeight" : "25vh",
+                "popoverStyle" : { },
+                "openInSeparateDialog" : false,
+                "openInPopover" : true,
+                "id" : "c5a6ce57-f9bd-749f-fdd3-2f0412fe2b53"
               } ]
             }
           },
@@ -1198,6 +1217,110 @@
           "row" : 0,
           "col" : 0,
           "id" : "2e51aa5b-f5b5-ba3b-53ed-136dd7c41f52"
+        },
+        "5a6b201e-aa76-e9ec-c48c-0a1ffa878da5" : {
+          "isSystemType" : true,
+          "bundleAlias" : "input_widgets",
+          "typeAlias" : "update_multiple_attributes",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "84bbd97c-7ca1-8d73-58e0-ef2201796cb2",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "name",
+                "type" : "attribute",
+                "label" : "Nome Sensore",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.3040749023684792,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Id",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.2914832940942085,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1692625188151,
+                  "endTimeMs" : 1692711588151
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "showResultMessage" : true,
+              "showActionButtons" : false,
+              "showGroupTitle" : false,
+              "fieldsAlignment" : "row",
+              "fieldsInRow" : 2,
+              "groupTitle" : "${entityName}"
+            },
+            "title" : "New Update Multiple Attributes",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "enableDataExport" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "showTitleIcon" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "5a6b201e-aa76-e9ec-c48c-0a1ffa878da5"
         }
       },
       "states" : {
@@ -1347,6 +1470,33 @@
                 "margin" : 10,
                 "outerMargin" : true,
                 "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        },
+        "edit" : {
+          "name" : "Modifica Sensore",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "5a6b201e-aa76-e9ec-c48c-0a1ffa878da5" : {
+                  "sizeX" : 24,
+                  "sizeY" : 3,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 0,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : true,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70
               }
             }
           }

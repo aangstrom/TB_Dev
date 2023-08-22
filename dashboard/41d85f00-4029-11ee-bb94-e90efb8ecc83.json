@@ -1390,16 +1390,16 @@
           "col" : 0,
           "id" : "5a6b201e-aa76-e9ec-c48c-0a1ffa878da5"
         },
-        "0b1908e6-bb68-a88f-cc92-6a9c5f152e51" : {
+        "656ab93c-0768-8089-06b8-9854e35df083" : {
           "isSystemType" : true,
-          "bundleAlias" : "charts",
-          "typeAlias" : "bars",
-          "type" : "latest",
+          "bundleAlias" : "cards",
+          "typeAlias" : "timeseries_table",
+          "type" : "timeseries",
           "title" : "New widget",
           "image" : null,
           "description" : null,
-          "sizeX" : 7,
-          "sizeY" : 5,
+          "sizeX" : 8,
+          "sizeY" : 6.5,
           "config" : {
             "datasources" : [ {
               "type" : "entity",
@@ -1410,61 +1410,78 @@
                 "name" : "Green_driving_type",
                 "type" : "timeseries",
                 "label" : "Green_driving_type",
-                "color" : "#2196f3",
+                "color" : "#4caf50",
                 "settings" : { },
-                "_hash" : 0.8174718881599017,
-                "aggregationType" : "NONE",
+                "_hash" : 0.47744622385950963,
+                "aggregationType" : null,
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
                 "postFuncBody" : "if(value==0){\n    var valore=\"Valore 0\";\n}\nif(value==1){\n    var valore=\"Accelerazione Brusca\";\n}\nif(value==2){\n    var valore=\"Frenata Brusca\";\n}\nif(value==3){\n    var valore=\"Curva Brusca\";\n}\nreturn valore;"
+              }, {
+                "name" : "Green_Driving_Value",
+                "type" : "timeseries",
+                "label" : "Green_Driving_Value",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.8267864624977852
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
-              }
+              },
+              "latestDataKeys" : [ ]
             } ],
             "timewindow" : {
-              "displayValue" : "",
-              "selectedTab" : 0,
               "realtime" : {
-                "realtimeType" : 1,
                 "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1692633434891,
-                  "endTimeMs" : 1692719834891
-                },
-                "quickInterval" : "CURRENT_DAY"
+                "timewindowMs" : 60000
               },
               "aggregation" : {
-                "type" : "AVG",
-                "limit" : 25000
+                "type" : "NONE",
+                "limit" : 200
               }
             },
             "showTitle" : true,
-            "backgroundColor" : "#fff",
+            "backgroundColor" : "rgb(255, 255, 255)",
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "8px",
-            "settings" : { },
-            "title" : "New Bars",
-            "useDashboardTimewindow" : true
+            "settings" : {
+              "showTimestamp" : true,
+              "displayPagination" : true,
+              "defaultPageSize" : 10
+            },
+            "title" : "Eco Score",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "displayTimewindow" : true,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
           },
           "row" : 0,
           "col" : 0,
-          "id" : "0b1908e6-bb68-a88f-cc92-6a9c5f152e51"
+          "id" : "656ab93c-0768-8089-06b8-9854e35df083"
         },
-        "f197d0f3-510b-ce5b-f182-e873fa8cc7c2" : {
+        "4c603e35-3af1-cd9a-091b-bfcd74f88a50" : {
           "isSystemType" : true,
           "bundleAlias" : "charts",
-          "typeAlias" : "pie",
-          "type" : "latest",
+          "typeAlias" : "basic_timeseries",
+          "type" : "timeseries",
           "title" : "New widget",
           "image" : null,
           "description" : null,
@@ -1477,45 +1494,27 @@
               "entityAliasId" : "84bbd97c-7ca1-8d73-58e0-ef2201796cb2",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "Green_driving_type",
+                "name" : "Eco_Score",
                 "type" : "timeseries",
-                "label" : "Green_driving_type",
-                "color" : "#2196f3",
+                "label" : "Eco Score",
+                "color" : "#4CAF50",
                 "settings" : { },
-                "_hash" : 0.9201873136088137,
-                "aggregationType" : "NONE",
+                "_hash" : 0.19784641155289706,
+                "aggregationType" : null,
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "if(value==0){\n    var valore=\"Valore 0\";\n}\nif(value==1){\n    var valore=\"Accelerazione Brusca\";\n}\nif(value==2){\n    var valore=\"Frenata Brusca\";\n}\nif(value==3){\n    var valore=\"Curva Brusca\";\n}\nreturn valore;"
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
-              }
+              },
+              "latestDataKeys" : [ ]
             } ],
             "timewindow" : {
-              "displayValue" : "",
-              "selectedTab" : 0,
               "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1692633462610,
-                  "endTimeMs" : 1692719862610
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "limit" : 25000
+                "timewindowMs" : 60000
               }
             },
             "showTitle" : true,
@@ -1523,38 +1522,65 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "8px",
             "settings" : {
-              "radius" : 1,
+              "shadowSize" : 4,
               "fontColor" : "#545454",
               "fontSize" : 10,
-              "decimals" : 1,
+              "xaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "grid" : {
+                "color" : "#545454",
+                "tickColor" : "#DDDDDD",
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1
+              },
               "legend" : {
                 "show" : true,
                 "position" : "nw",
-                "labelBoxBorderColor" : "#CCCCCC",
-                "backgroundColor" : "#F0F0F0",
-                "backgroundOpacity" : 0.85
+                "backgroundColor" : "#f0f0f0",
+                "backgroundOpacity" : 0.85,
+                "labelBoxBorderColor" : "rgba(1, 1, 1, 0.45)"
               },
-              "innerRadius" : 0,
-              "showLabels" : true,
-              "showPercentages" : true,
-              "stroke" : {
-                "width" : 5
-              },
-              "tilt" : 1,
-              "animatedPie" : false
+              "decimals" : 1,
+              "stack" : false,
+              "tooltipIndividual" : false
             },
-            "title" : "New Pie - Flot",
+            "title" : "Eco Score",
             "dropShadow" : true,
             "enableFullscreen" : true,
             "titleStyle" : {
               "fontSize" : "16px",
               "fontWeight" : 400
             },
-            "useDashboardTimewindow" : true
+            "useDashboardTimewindow" : true,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showLegend" : true,
+            "legendConfig" : {
+              "direction" : "column",
+              "position" : "bottom",
+              "sortDataKeys" : false,
+              "showMin" : false,
+              "showMax" : false,
+              "showAvg" : true,
+              "showTotal" : false,
+              "showLatest" : false
+            }
           },
           "row" : 0,
           "col" : 0,
-          "id" : "f197d0f3-510b-ce5b-f182-e873fa8cc7c2"
+          "id" : "4c603e35-3af1-cd9a-091b-bfcd74f88a50"
         }
       },
       "states" : {
@@ -1687,7 +1713,7 @@
                 },
                 "d4557612-ca79-364b-2cb8-0cc01aa3c118" : {
                   "sizeX" : 8,
-                  "sizeY" : 5,
+                  "sizeY" : 7,
                   "row" : 7,
                   "col" : 0
                 },
@@ -1697,15 +1723,15 @@
                   "row" : 0,
                   "col" : 16
                 },
-                "0b1908e6-bb68-a88f-cc92-6a9c5f152e51" : {
+                "656ab93c-0768-8089-06b8-9854e35df083" : {
                   "sizeX" : 8,
-                  "sizeY" : 5,
+                  "sizeY" : 7,
                   "row" : 7,
                   "col" : 8
                 },
-                "f197d0f3-510b-ce5b-f182-e873fa8cc7c2" : {
+                "4c603e35-3af1-cd9a-091b-bfcd74f88a50" : {
                   "sizeX" : 8,
-                  "sizeY" : 5,
+                  "sizeY" : 7,
                   "row" : 7,
                   "col" : 16
                 }

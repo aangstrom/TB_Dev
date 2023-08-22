@@ -695,10 +695,16 @@
               "dataKeys" : [ {
                 "name" : "GSM_Signal",
                 "type" : "timeseries",
-                "label" : "GSM_Signal",
+                "label" : "Copertura Sim",
                 "color" : "#2196f3",
                 "settings" : { },
-                "_hash" : 0.563516854419754
+                "_hash" : 0.563516854419754,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if (value>=0 && value<3) {\n    return 'Scarsa';\n} else if (value>=3 && value<4) {\n    return 'Normale';\n} else if (value>=4 && value<5) {\n    return 'Buona';\n} else {\n    return 'Ottima';\n}"
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -729,7 +735,7 @@
               }
             },
             "showTitle" : false,
-            "backgroundColor" : "#ff5722",
+            "backgroundColor" : "#7F22FF",
             "color" : "rgba(255, 255, 255, 0.87)",
             "padding" : "16px",
             "settings" : {
@@ -816,7 +822,7 @@
               }
             },
             "showTitle" : false,
-            "backgroundColor" : "#ff5722",
+            "backgroundColor" : "#FF226F",
             "color" : "rgba(255, 255, 255, 0.87)",
             "padding" : "16px",
             "settings" : {
@@ -1212,10 +1218,16 @@
               "dataKeys" : [ {
                 "name" : "GNSS_Status",
                 "type" : "timeseries",
-                "label" : "GNSS_Status",
+                "label" : "Stato GPS",
                 "color" : "#2196f3",
                 "settings" : { },
-                "_hash" : 0.9288119363599421
+                "_hash" : 0.9288119363599421,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==0){\n    return \"OFF\";\n}else if(value==1){\n    return \"Con fix\";\n}else if(value==2){\n    return \"NO fix\";\n}else if(value==3){\n    return \"sleep\";\n}"
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -1246,7 +1258,7 @@
               }
             },
             "showTitle" : false,
-            "backgroundColor" : "#ff5722",
+            "backgroundColor" : "#2265FF",
             "color" : "rgba(255, 255, 255, 0.87)",
             "padding" : "16px",
             "settings" : {
@@ -1259,7 +1271,7 @@
               "fontSize" : "16px",
               "fontWeight" : 400
             },
-            "units" : "/ 5",
+            "units" : "",
             "decimals" : 0,
             "useDashboardTimewindow" : true,
             "showLegend" : false,

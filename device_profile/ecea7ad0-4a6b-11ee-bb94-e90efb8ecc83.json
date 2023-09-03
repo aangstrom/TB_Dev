@@ -25,13 +25,22 @@
         "provisionDeviceSecret" : null
       },
       "transportConfiguration" : {
-        "type" : "DEFAULT"
+        "type" : "MQTT",
+        "deviceAttributesSubscribeTopic" : "v1/devices/me/attributes",
+        "deviceAttributesTopic" : "v1/devices/me/attributes",
+        "deviceTelemetryTopic" : "v1/devices/me/telemetry",
+        "sendAckOnValidationException" : false,
+        "sparkplug" : false,
+        "sparkplugAttributesMetricNames" : [ "Properties/*", "Device Control/*", "Node Control/*" ],
+        "transportPayloadTypeConfiguration" : {
+          "transportPayloadType" : "JSON"
+        }
       }
     },
     "provisionDeviceKey" : null,
     "provisionType" : "DISABLED",
     "softwareId" : null,
-    "transportType" : "DEFAULT",
+    "transportType" : "MQTT",
     "type" : "DEFAULT"
   },
   "relations" : [ ],

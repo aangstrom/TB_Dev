@@ -56,7 +56,7 @@
             "useDashboardTimewindow" : true,
             "showLegend" : false,
             "alarmSource" : {
-              "type" : "function",
+              "type" : "entity",
               "name" : null,
               "entityAliasId" : "ed533897-a32e-0080-c6aa-052ba6630e75",
               "filterId" : null,
@@ -114,7 +114,8 @@
               "statusList" : [ "ACTIVE" ],
               "severityList" : [ "CRITICAL", "MAJOR", "MINOR", "WARNING", "INDETERMINATE" ],
               "typeList" : [ ],
-              "searchPropagatedAlarms" : true
+              "searchPropagatedAlarms" : true,
+              "assignedToCurrentUser" : false
             },
             "enableDataExport" : false,
             "widgetCss" : "",
@@ -166,7 +167,7 @@
             "stateEntityParamName" : null,
             "defaultStateEntity" : null,
             "rootEntity" : {
-              "entityType" : "CURRENT_CUSTOMER",
+              "entityType" : "CURRENT_USER",
               "id" : "13814000-1dd2-11b2-8080-808080808080"
             },
             "direction" : "TO",
@@ -174,10 +175,7 @@
             "fetchLastLevelOnly" : false,
             "filters" : [ {
               "relationType" : null,
-              "entityTypes" : [ "DEVICE" ]
-            }, {
-              "relationType" : null,
-              "entityTypes" : [ "ASSET" ]
+              "entityTypes" : [ "DEVICE", "ASSET" ]
             } ]
           }
         }

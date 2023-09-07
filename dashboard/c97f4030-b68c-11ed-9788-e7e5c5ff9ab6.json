@@ -6319,9 +6319,9 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "markdownTextPattern" : "### Markdown/HTML card\n - **Current entity**: ${entityName}.\n - **Current value**: ${Random}.",
-              "markdownTextFunction" : "var criticalCount = data[0]['criticalAlarmsCount'];\nvar majorCount = data[0]['majorAlarmsCount'];\n\nvar criticalClass = criticalCount && Number(criticalCount) > 0 ? 'critical' : 'inactive';\n\nvar majorClass = majorCount && Number(majorCount) > 0 ? 'major' : 'inactive';\n\nreturn '<div style=\"width: 100%; height: 100%; padding: 0;\" fxLayoutGap=\"16px\" fxLayout=\"row\" fxLayoutAlign=\"end center\" fxLayoutAlign.gt-md=\"center center\">'+\n       '<div id=\"critical-alarms\" class=\"alarm-badge '+ criticalClass +'\"><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i><span class=\"alarm-count\">'+ criticalCount +'</span> Critical</div>' +\n       '<div id=\"major-alarms\" class=\"alarm-badge '+ majorClass +'\"><i class=\"fa fa-exclamation-circle\" aria-hidden=\"true\"></i><span class=\"alarm-count\">'+ majorCount +'</span> Major</div>' +\n       '<div>';",
               "useMarkdownTextFunction" : true,
+              "markdownTextFunction" : "var criticalCount = data[0]['criticalAlarmsCount'];\nvar majorCount = data[0]['majorAlarmsCount'];\n\nvar criticalClass = criticalCount && Number(criticalCount) > 0 ? 'critical' : 'inactive';\n\nvar majorClass = majorCount && Number(majorCount) > 0 ? 'major' : 'inactive';\n\nreturn '<div style=\"width: 100%; height: 100%; padding: 0;\" fxLayoutGap=\"16px\" fxLayout=\"row\" fxLayoutAlign=\"end center\" fxLayoutAlign.gt-md=\"center center\">'+\n       '<div id=\"all-alarms\" class=\"alarm-badge '+ criticalClass +'\"><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i><span class=\"alarm-count\">'+ criticalCount +'</span> Critical</div>' +\n       '<div id=\"all-alarms\" class=\"alarm-badge '+ majorClass +'\"><i class=\"fa fa-exclamation-circle\" aria-hidden=\"true\"></i><span class=\"alarm-count\">'+ majorCount +'</span> Major</div>' +\n       '<div>';",
+              "applyDefaultMarkdownStyle" : true,
               "markdownCss" : ".alarm-badge {\n    cursor: pointer;\n    border-radius: 22px;\n    padding: 8px 20px;\n    color: #fff;\n    font-size: 18px;\n    transition: background-color 0.5s;\n}\n\n.alarm-badge.critical {\n    background-color: #E64A19;\n}\n\n.alarm-badge.major {\n    background-color: #D4C21B;\n}\n\n.alarm-badge.critical:hover {\n    background-color: #a13d1e;\n}\n\n.alarm-badge.major:hover {\n    background-color: #b7a715;\n}\n\n.alarm-badge.inactive {\n    pointer-events: none;\n    color: #CAC1D2;\n    background-color: rgba(202, 193, 210, 0.05);\n    border: 1px solid rgba(202, 193, 210, 0.15);\n}\n\n.alarm-badge i.fa {\n    padding-right: 8px;\n}\n\n.alarm-badge .alarm-count {\n    font-weight: 700;    \n}\n"
             },
             "title" : "New Markdown/HTML Card",
@@ -6342,12 +6342,12 @@
             "noDataDisplayMessage" : "",
             "actions" : {
               "elementClick" : [ {
-                "name" : "critical-alarms",
+                "name" : "all-alarms",
                 "icon" : "more_horiz",
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
                 "type" : "openDashboardState",
-                "targetDashboardStateId" : "all_critical_alarms",
+                "targetDashboardStateId" : "all_alarms",
                 "setEntityId" : false,
                 "stateEntityParamName" : null,
                 "openRightLayout" : false,
@@ -6360,25 +6360,6 @@
                 "openInSeparateDialog" : false,
                 "openInPopover" : true,
                 "id" : "2255454c-8c83-dfae-2e0b-8d0df6db6a70"
-              }, {
-                "name" : "major-alarms",
-                "icon" : "more_horiz",
-                "useShowWidgetActionFunction" : null,
-                "showWidgetActionFunction" : "return true;",
-                "type" : "openDashboardState",
-                "targetDashboardStateId" : "all_major_alarms",
-                "setEntityId" : false,
-                "stateEntityParamName" : null,
-                "openRightLayout" : false,
-                "popoverPreferredPlacement" : "bottom",
-                "popoverHideOnClickOutside" : true,
-                "popoverHideDashboardToolbar" : true,
-                "popoverWidth" : "800px",
-                "popoverHeight" : "600px",
-                "popoverStyle" : { },
-                "openInSeparateDialog" : false,
-                "openInPopover" : true,
-                "id" : "e52ae76c-959f-f84e-c6b7-3e49c242e70e"
               } ]
             },
             "pageSize" : 1024

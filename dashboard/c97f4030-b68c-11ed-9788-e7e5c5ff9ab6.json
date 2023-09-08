@@ -6294,17 +6294,7 @@
             "showLegend" : false,
             "widgetStyle" : { },
             "actions" : {
-              "markerClick" : [ {
-                "name" : "dettagli_sede",
-                "icon" : "more_horiz",
-                "useShowWidgetActionFunction" : null,
-                "showWidgetActionFunction" : "return true;",
-                "type" : "custom",
-                "customFunction" : "var params = JSON.parse(JSON.stringify(widgetContext.stateController.getStateParams()));\nparams['sede_selezionata'] = {\n        entityId: entityId,\n        entityName: entityName,\n        entityLabel: entityLabel,\n};\nparams['targetEntityParamName'] = 'sede_selezionata';\nparams['selectedDevice'] = null;\n\nwidgetContext.stateController.openState('dettagli_sede', params);\t",
-                "openInSeparateDialog" : false,
-                "openInPopover" : false,
-                "id" : "4de7962b-a1de-5cb1-cd78-993dc7863614"
-              } ],
+              "markerClick" : [ ],
               "tooltipAction" : [ {
                 "name" : "supermarket-details",
                 "icon" : "more_horiz",
@@ -6315,6 +6305,16 @@
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
                 "id" : "1ca54350-817a-27b3-26a7-3572544d8523"
+              }, {
+                "name" : "dettagli_sede",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "var params = JSON.parse(JSON.stringify(widgetContext.stateController.getStateParams()));\nparams['sede_selezionata'] = {\n        entityId: entityId,\n        entityName: entityName,\n        entityLabel: entityLabel,\n};\nparams['targetEntityParamName'] = 'sede_selezionata';\nparams['selectedDevice'] = null;\n\nwidgetContext.stateController.openState('dettagli_sede', params);\t",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "4de7962b-a1de-5cb1-cd78-993dc7863614"
               } ]
             },
             "showTitleIcon" : false,

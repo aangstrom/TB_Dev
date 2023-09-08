@@ -73,10 +73,6 @@
       "toIndex" : 17,
       "type" : "Success"
     }, {
-      "fromIndex" : 15,
-      "toIndex" : 9,
-      "type" : "Success"
-    }, {
       "fromIndex" : 16,
       "toIndex" : 6,
       "type" : "Success"
@@ -88,14 +84,6 @@
       "fromIndex" : 17,
       "toIndex" : 16,
       "type" : "vero"
-    }, {
-      "fromIndex" : 18,
-      "toIndex" : 9,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 19,
-      "toIndex" : 9,
-      "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -118,6 +106,7 @@
       },
       "name" : "Save Timeseries",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
     }, {
       "additionalInfo" : {
@@ -137,6 +126,7 @@
       },
       "name" : "Save Attributes",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
     }, {
       "additionalInfo" : {
@@ -156,6 +146,7 @@
       },
       "name" : "Message Type Switch",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
     }, {
       "additionalInfo" : {
@@ -174,6 +165,7 @@
       },
       "name" : "Log RPC from Device",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.action.TbLogNode"
     }, {
       "additionalInfo" : {
@@ -192,6 +184,7 @@
       },
       "name" : "Log Other",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.action.TbLogNode"
     }, {
       "additionalInfo" : {
@@ -211,6 +204,7 @@
       },
       "name" : "RPC Call Request",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.rpc.TbSendRPCRequestNode"
     }, {
       "additionalInfo" : {
@@ -229,6 +223,7 @@
       },
       "name" : "Is Entity Group",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbOriginatorTypeFilterNode"
     }, {
       "additionalInfo" : {
@@ -247,6 +242,7 @@
       },
       "name" : "Post attributes or RPC request",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeFilterNode"
     }, {
       "additionalInfo" : {
@@ -266,6 +262,7 @@
       },
       "name" : "Duplicate To Group Entities",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbDuplicateMsgToGroupNode"
     }, {
       "additionalInfo" : {
@@ -286,6 +283,7 @@
       },
       "name" : "Device Profile Node",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.profile.TbDeviceProfileNode"
     }, {
       "additionalInfo" : {
@@ -305,6 +303,7 @@
       },
       "name" : "Generate Report",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
     }, {
       "additionalInfo" : {
@@ -324,6 +323,7 @@
       },
       "name" : "Process RPC Reply",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
     }, {
       "additionalInfo" : {
@@ -349,6 +349,7 @@
       },
       "name" : "Smart sensor",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
@@ -374,6 +375,7 @@
       },
       "name" : "HVAC",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
@@ -399,6 +401,7 @@
       },
       "name" : "Water meter",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
@@ -424,6 +427,7 @@
       },
       "name" : "Energy meter",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
@@ -445,6 +449,7 @@
       },
       "name" : "Script rpc",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
@@ -466,6 +471,7 @@
       },
       "name" : "Is RPC",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     }, {
       "additionalInfo" : {
@@ -491,6 +497,7 @@
       },
       "name" : "Energy meter 2",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
@@ -516,6 +523,7 @@
       },
       "name" : "Energy meter 3",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     } ],
     "ruleChainConnections" : null

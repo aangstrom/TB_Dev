@@ -6076,7 +6076,17 @@
                 "color" : "#f44336",
                 "settings" : { },
                 "_hash" : 0.652632058135977
-              } ]
+              }, {
+                "name" : "address",
+                "type" : "attribute",
+                "label" : "address",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.24236848324697546
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
             }, {
               "type" : "entity",
               "name" : null,
@@ -6094,7 +6104,10 @@
                 "funcBody" : null,
                 "usePostProcessing" : true,
                 "postFuncBody" : "if (value) {\n    return true;\n} else {\n    return false;\n}"
-              } ]
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
             } ],
             "timewindow" : {
               "displayValue" : "",
@@ -6134,7 +6147,8 @@
               "mapProviderHere" : "HERE.normalDay",
               "credentials" : {
                 "app_id" : "AhM6TzD9ThyK78CT3ptx",
-                "app_code" : "p6NPiITB3Vv0GMUFnkLOOg"
+                "app_code" : "p6NPiITB3Vv0GMUFnkLOOg",
+                "useV3" : false
               },
               "mapImageUrl" : "data:image/svg+xml;base64,PHN2ZyBpZD0ic3ZnMiIgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTAwIiB3aWR0aD0iMTAwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zOmNjPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgdmlld0JveD0iMCAwIDEwMCAxMDAiPgogPGcgaWQ9ImxheWVyMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAtOTUyLjM2KSI+CiAgPHJlY3QgaWQ9InJlY3Q0Njg0IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBoZWlnaHQ9Ijk5LjAxIiB3aWR0aD0iOTkuMDEiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiB5PSI5NTIuODYiIHg9Ii40OTUwNSIgc3Ryb2tlLXdpZHRoPSIuOTkwMTAiIGZpbGw9IiNlZWUiLz4KICA8dGV4dCBpZD0idGV4dDQ2ODYiIHN0eWxlPSJ3b3JkLXNwYWNpbmc6MHB4O2xldHRlci1zcGFjaW5nOjBweDt0ZXh0LWFuY2hvcjptaWRkbGU7dGV4dC1hbGlnbjpjZW50ZXIiIGZvbnQtd2VpZ2h0PSJib2xkIiB4bWw6c3BhY2U9InByZXNlcnZlIiBmb250LXNpemU9IjEwcHgiIGxpbmUtaGVpZ2h0PSIxMjUlIiB5PSI5NzAuNzI4MDkiIHg9IjQ5LjM5NjQ3NyIgZm9udC1mYW1pbHk9IlJvYm90byIgZmlsbD0iIzY2NjY2NiI+PHRzcGFuIGlkPSJ0c3BhbjQ2OTAiIHg9IjUwLjY0NjQ3NyIgeT0iOTcwLjcyODA5Ij5JbWFnZSBiYWNrZ3JvdW5kIDwvdHNwYW4+PHRzcGFuIGlkPSJ0c3BhbjQ2OTIiIHg9IjQ5LjM5NjQ3NyIgeT0iOTgzLjIyODA5Ij5pcyBub3QgY29uZmlndXJlZDwvdHNwYW4+PC90ZXh0PgogIDxyZWN0IGlkPSJyZWN0NDY5NCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgaGVpZ2h0PSIxOS4zNiIgd2lkdGg9IjY5LjM2IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgeT0iOTkyLjY4IiB4PSIxNS4zMiIgc3Ryb2tlLXdpZHRoPSIuNjM5ODYiIGZpbGw9Im5vbmUiLz4KIDwvZz4KPC9zdmc+Cg==",
               "tmApiKey" : "84d6d83e0e51e481e50454ccbe8986b",
@@ -6153,6 +6167,7 @@
               "mapPageSize" : 16384,
               "markerOffsetX" : 0.5,
               "markerOffsetY" : 1,
+              "posFunction" : "return {x: origXPos, y: origYPos};",
               "draggableMarker" : false,
               "showLabel" : true,
               "useLabelFunction" : false,
@@ -6161,12 +6176,13 @@
               "showTooltipAction" : "click",
               "autocloseTooltip" : true,
               "useTooltipFunction" : false,
-              "tooltipPattern" : "<div class=\"text\"><b>${entityName}</b></div><br/><link-act name='supermarket-details'>Details</link-act>",
+              "tooltipPattern" : "<div class=\"text\"><b>${entityName}</b></div><br/><div class=\"text\">Indirizzo: ${address}</div><br/><link-act name='dettagli_sede'>Dettagli Sede</link-act>",
               "tooltipOffsetX" : 0,
               "tooltipOffsetY" : -1,
               "color" : "#fe7569",
               "useColorFunction" : false,
               "useMarkerImageFunction" : true,
+              "markerImageSize" : 34,
               "markerImageFunction" : "var state = data['state'];\nvar selectedSupermarket = data['selectedSupermarket'] === true;\nvar selectedMode = dsData.filter(function (data) { return data['selectedSupermarket'] === true; }).length > 0;\nconsole.log(data);\nvar status = state;\nvar width = 30;\nvar svgStr = getSupermarketSvg(status, width, selectedSupermarket);\nvar encodedSvg = encodeURIComponent(svgStr);\nvar svgUrl = 'data:image/svg+xml,' + encodedSvg;\n\nif (selectedSupermarket) {\n    width += 8;\n}\n\nreturn {\n    url: svgUrl,\n    size: width,\n    markerOffset: [width / 2, width / 2],\n    tooltipOffset: [width * 0.5 - width / 2, - (width / 2)]\n};\n\nfunction getSupermarketSvg(status, width, isSelected) {\n    var shape = '<svg viewBox=\"0 0 640 512\" fill=\"white\" height=\"20px\" width=\"20px\" x=\"5\" y=\"5\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M640 240v240c0 17.67-14.33 32-32 32H32c-17.67 0-32-14.33-32-32L0 144c0-26.51 21.49-48 48-48H64V24.01c0-13.25 10.75-23.1 24-23.1S112 10.75 112 24.01v72h64V24.01c0-13.25 10.75-23.1 24-23.1S224 10.75 224 24.01v71.1h64V48.01c0-26.51 21.49-48 48-48l96 .0049c26.51 0 48 21.49 48 48v143.1h112C618.5 192 640 213.5 640 240zM128 172c0-6.625-5.375-12-12-12h-40c-6.625 0-12 5.375-12 12v40c0 6.625 5.375 12 12 12h40c6.625 0 12-5.375 12-12V172zM128 268c0-6.625-5.375-12-12-12h-40c-6.625 0-12 5.375-12 12v40c0 6.625 5.375 12 12 12h40c6.625 0 12-5.375 12-12V268zM128 364c0-6.625-5.375-12-12-12h-40c-6.625 0-12 5.375-12 12v40c0 6.625 5.375 12 12 12h40c6.625 0 12-5.375 12-12V364zM256 172c0-6.625-5.375-12-12-12h-40c-6.625 0-12 5.375-12 12v40c0 6.625 5.375 12 12 12h40c6.625 0 12-5.375 12-12V172zM256 268c0-6.625-5.375-12-12-12h-40C197.4 256 192 261.4 192 268v40c0 6.625 5.375 12 12 12h40c6.625 0 12-5.375 12-12V268zM256 364c0-6.625-5.375-12-12-12h-40c-6.625 0-12 5.38-12 12v40c0 6.625 5.375 12 12 12h40c6.625 0 12-5.375 12-12V364zM416 76.01c0-6.625-5.375-12-12-12h-40c-6.625 0-12 5.375-12 12v40c0 6.625 5.375 12 12 12h40c6.625 0 12-5.375 12-12V76.01zM416 172c0-6.625-5.375-12-12-12h-40c-6.625 0-12 5.38-12 12v40c0 6.625 5.375 12 12 12h40c6.625 0 12-5.375 12-12V172zM416 268c0-6.625-5.375-12-12-12h-40c-6.625 0-12 5.38-12 12v40c0 6.625 5.375 12 12 12h40c6.625 0 12-5.375 12-12V268zM576 268c0-6.625-5.375-12-12-12h-40c-6.625 0-12 5.375-12 12v40c0 6.625 5.375 12 12 12h40c6.625 0 12-5.375 12-12V268zM576 364c0-6.625-5.375-12-12-12h-40c-6.625 0-12 5.375-12 12v40c0 6.625 5.375 12 12 12h40c6.625 0 12-5.375 12-12V364z\"/></svg>';\n    var color = getBackgroundColor(status);\n    var background = getBackground(color);\n    var svgWidth = isSelected ? (width + 8) : width;\n    var svgHeight = isSelected ? 38 : 30;\n    \n    var opacity = selectedMode && !isSelected ? 0.4 : 1;\n    \n    var supermarketSvg = '<svg opacity=\"' + opacity + '\" width=\"' + svgWidth + '\" height=\"' + svgHeight + '\" viewBox=\"0 0 ' + svgWidth + ' ' + svgHeight + '\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                    wrapIfSelected(background + shape, isSelected);\n    if (isSelected) {\n        supermarketSvg += getSupermarketSelectionStroke();\n    }\n    supermarketSvg += '</svg>';\n    return supermarketSvg;    \n}\n\nfunction wrapIfSelected(svg, isSelected) {\n    if (isSelected) {\n        return '<g transform=\"translate(4 4)\">' + svg + '</g>';\n    } else {\n        return svg;\n    }\n}\n\nfunction getBackground(color) {\n     return '<circle cx=\"15\" cy=\"15\" r=\"15\" fill=\"'+ color +'\"/>';\n}\n\nfunction getSupermarketSelectionStroke() {\n     return '<circle cx=\"19\" cy=\"19\" r=\"18\" stroke=\"#D5C21B\" stroke-width=\"2\"/>';\n}\n\nfunction getBackgroundColor(status) {\n    switch(status) {\n        case 'major':\n            return '#D5C21B';\n        case 'critical':   \n            return '#E64A19';\n        case 'normal':\n        default:    \n            return '#1F8B4D';\n    }\n}\n",
               "markerImages" : [ ],
               "showPolygon" : false,
@@ -6553,7 +6569,23 @@
           "sizeX" : 5,
           "sizeY" : 3.5,
           "config" : {
-            "datasources" : [ ],
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "55f23be2-d63e-ce45-b3f5-d05604647f2a",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "Name",
+                "type" : "entityField",
+                "label" : "Name",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.7206638188424095
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
             "timewindow" : {
               "displayValue" : "",
               "selectedTab" : 0,
@@ -6584,7 +6616,8 @@
             "padding" : "8px",
             "settings" : {
               "useMarkdownTextFunction" : false,
-              "markdownTextPattern" : "<div class=\"market-layout\" style=\"width: 100%; height: 100%; padding: 0;\" fxLayout=\"column\">\n     <div class=\"alarm-badges-layout\">\n         <tb-dashboard-state class=\"alarm-badges\" *ngIf=\"!ctx.stateController.getStateParams().selectedSupermarket\" [ctx]=\"ctx\" stateId=\"all_alarm_badges\"></tb-dashboard-state>\n         <tb-dashboard-state class=\"alarm-badges\" *ngIf=\"ctx.stateController.getStateParams().selectedSupermarket\" [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"alarm_badges_without_report\"></tb-dashboard-state>\n     </div>\n     <!--<div *ngIf=\"!ctx.stateController.getStateParams().selectedSupermarket\" fxLayout=\"column\" style=\"width: 100%; height: 170px;\">-->\n    <div *ngIf=\"!ctx.stateController.getStateParams().selectedSupermarket\" fxLayout=\"column\" style=\"width: 100%; height: 60px;\">\n        <h5 class=\"market-title\">HSE</h5>\n        <!--<h5 class=\"state-filter-title\">State filter</h5>\n        <tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"supermarket-state-filter\"></tb-dashboard-state>-->\n        <mat-divider style=\"margin-top: 5px; margin-bottom: 18px;\"></mat-divider>\n     </div>\n     <tb-dashboard-state *ngIf=\"ctx.stateController.getStateParams().selectedSupermarket\" style=\"height: 170px;\" [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"supermarket_card_header\"></tb-dashboard-state>\n    <div fxFlex fxLayout=\"column\" style=\"position: relative;\">\n        <tb-dashboard-state fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"supermarkets_map\"></tb-dashboard-state>\n    </div>\n</div>",
+              "markdownTextPattern" : "<div class=\"market-layout\" style=\"width: 100%; height: 100%; padding: 0;\" fxLayout=\"column\">\n     <div class=\"alarm-badges-layout\">\n         <tb-dashboard-state class=\"alarm-badges\" *ngIf=\"!ctx.stateController.getStateParams().sede_selezionata\" [ctx]=\"ctx\" stateId=\"all_alarm_badges\"></tb-dashboard-state>\n         <tb-dashboard-state class=\"alarm-badges\" *ngIf=\"ctx.stateController.getStateParams().sede_selezionata\" [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"alarm_badges_without_report\"></tb-dashboard-state>\n     </div>\n     <!--<div *ngIf=\"!ctx.stateController.getStateParams().sede_selezionata\" fxLayout=\"column\" style=\"width: 100%; height: 170px;\">-->\n    <div *ngIf=\"!ctx.stateController.getStateParams().sede_selezionata\" fxLayout=\"column\" style=\"width: 100%; height: 60px;\">\n        <h5 class=\"market-title\">HSE</h5>\n        <!--<h5 class=\"state-filter-title\">State filter</h5>\n        <tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"supermarket-state-filter\"></tb-dashboard-state>-->\n        <mat-divider style=\"margin-top: 5px; margin-bottom: 18px;\"></mat-divider>\n     </div>\n     <tb-dashboard-state *ngIf=\"ctx.stateController.getStateParams().sede_selezionata\" style=\"height: 170px;\" [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"supermarket_card_header\"></tb-dashboard-state>\n    <div fxFlex fxLayout=\"column\" style=\"position: relative;\">\n        <tb-dashboard-state fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"mappa_sedi\"></tb-dashboard-state>\n    </div>\n</div>",
+              "applyDefaultMarkdownStyle" : true,
               "markdownCss" : ".tb-markdown-view .tb-progress-cover, .tb-markdown-view .mat-drawer-container {\n    background-color: #fff;\n}\n\n.tb-markdown-view div, .tb-markdown-view p {\n    line-height: normal;\n}\n\n.tb-markdown-view > div {\n    padding: 0;\n}\n\n.market-layout {\n    position: relative;\n}\n\n.market-title {\n    font-size: 26px;\n    padding-bottom: 16px;\n    padding-left: 10px;\n    padding-top: 5px;\n}\n\n.state-filter-title {\n    padding-bottom: 15px;\n    padding-left: 10px;\n}\n\n.market-layout .alarm-badges-layout {\n    position: absolute;\n    height: 50px;\n    top: 0;\n    left: 0;\n    right: 0;\n    z-index: 2;\n    display: flex;\n    justify-content: center;\n    pointer-events: none;\n}\n\n.market-layout .alarm-badges-layout .alarm-badges {\n    height: 50px;\n    width: 420px;\n    pointer-events: all;\n}"
             },
             "title" : "New Markdown/HTML Card",
@@ -6603,7 +6636,8 @@
             "enableDataExport" : false,
             "widgetCss" : ".tb-widget-container .tb-widget .tb-multiple-input {\n    background-color: #FAFAFA;\n    border-radius: 4px;\n}\n\n.tb-widget-container .tb-widget .tb-multiple-input .input-field {\n    padding-right: 30px;\n}\n\n.tb-widget-container .tb-widget .tb-multiple-input mat-slide-toggle {\n    margin-top: 15px !important;\n    margin-bottom: 0 !important;\n}\n\n.tb-widget-container .tb-widget .tb-multiple-input .mat-slide-toggle-content {\n    width: 120px;\n}\n\n.tb-widget-container .tb-widget .mat-slide-toggle-bar {\n    width: 42px;\n    height: 24px;\n    border-radius: 16px;\n}\n\n.tb-widget-container .tb-widget .mat-slide-toggle-thumb-container {\n    top: 2px;\n    left: 2px;\n}\n\n.tb-widget-container .tb-widget .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb-container {\n    transform: translate3d(18px, 0, 0);\n}\n\n\n.tb-widget-container .tb-widget .mat-slide-toggle-thumb {\n    background-color: #fafafa;\n}\n\n.tb-widget-container .tb-widget .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {\n    background-color: #F2994A;\n}\n",
             "noDataDisplayMessage" : "",
-            "pageSize" : 1024
+            "pageSize" : 1024,
+            "useDashboardTimewindow" : true
           },
           "row" : 0,
           "col" : 0,
@@ -13833,33 +13867,6 @@
             }
           }
         },
-        "supermarkets_map" : {
-          "name" : "Supermarkets map",
-          "root" : false,
-          "layouts" : {
-            "main" : {
-              "widgets" : {
-                "2e25ed99-052e-acfa-f348-6ca2433647dd" : {
-                  "sizeX" : 24,
-                  "sizeY" : 12,
-                  "row" : 0,
-                  "col" : 0
-                }
-              },
-              "gridSettings" : {
-                "backgroundColor" : "#ffffff",
-                "columns" : 24,
-                "margin" : 0,
-                "backgroundSizeMode" : "100%",
-                "autoFillHeight" : true,
-                "backgroundImageUrl" : null,
-                "mobileAutoFillHeight" : true,
-                "mobileRowHeight" : 70,
-                "outerMargin" : true
-              }
-            }
-          }
-        },
         "supermarket-state-filter" : {
           "name" : "Supermarket state filter",
           "root" : false,
@@ -14694,6 +14701,33 @@
               }
             }
           }
+        },
+        "mappa_sedi" : {
+          "name" : "Mappa Sedi",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "2e25ed99-052e-acfa-f348-6ca2433647dd" : {
+                  "sizeX" : 24,
+                  "sizeY" : 12,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#ffffff",
+                "columns" : 24,
+                "margin" : 0,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : true,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : true,
+                "mobileRowHeight" : 70,
+                "outerMargin" : true
+              }
+            }
+          }
         }
       },
       "entityAliases" : {
@@ -14920,6 +14954,18 @@
             "resolveMultiple" : false,
             "stateEntityParamName" : null,
             "defaultStateEntity" : null
+          }
+        },
+        "55f23be2-d63e-ce45-b3f5-d05604647f2a" : {
+          "id" : "55f23be2-d63e-ce45-b3f5-d05604647f2a",
+          "alias" : "current_customer",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "CURRENT_CUSTOMER",
+              "id" : "13814000-1dd2-11b2-8080-808080808080"
+            }
           }
         }
       },

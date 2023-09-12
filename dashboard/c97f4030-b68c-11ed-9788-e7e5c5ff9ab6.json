@@ -12589,6 +12589,100 @@
           "row" : 0,
           "col" : 0,
           "id" : "f1b453f0-dd30-4d10-1000-9a01b8dfc5ae"
+        },
+        "5aa86801-21a8-c298-ddd1-8ddc23f46ff1" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "dashboard_state_widget",
+          "type" : "static",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "stateId" : "alarm_all",
+              "defaultAutofillLayout" : true,
+              "defaultMargin" : 0,
+              "defaultBackgroundColor" : "#fff",
+              "syncParentStateParams" : true
+            },
+            "title" : "New Dashboard state widget",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "showLegend" : false,
+            "enableDataExport" : true,
+            "pageSize" : 1024
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "5aa86801-21a8-c298-ddd1-8ddc23f46ff1"
+        },
+        "770319e3-2acb-6808-788a-370553b4bf9a" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_card",
+          "type" : "static",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "cardHtml" : "<div id=\"indietro\" class='card'>\n    <i class=\"fa fa-arrow-left\"></i>\n</div>",
+              "cardCss" : ".card {\n    font-weight: bold;\n    font-size: 32px;\n    color: black;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n}"
+            },
+            "title" : "New HTML Card",
+            "dropShadow" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "Indietro",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "var stateIndex = widgetContext.stateController.getStateIndex();\nwhile (stateIndex > 0) {\n    stateIndex -= 1;\n    backToPrevState(stateIndex);\n}\nopenDashboardState('devices');\n\nfunction backToPrevState(stateIndex) {\n    widgetContext.stateController.navigatePrevState(stateIndex);\n}\n\nfunction openDashboardState(statedId) {\n    var params = widgetContext.stateController.getStateParams();\n    params['selectedSupermarket'] = null;\n    widgetContext.stateController.updateState(null, params);\n}",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "d2f3abf5-41c5-264e-00bd-f58102239e91"
+              } ]
+            },
+            "enableFullscreen" : false,
+            "enableDataExport" : true,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showLegend" : false
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "770319e3-2acb-6808-788a-370553b4bf9a"
         }
       },
       "states" : {
@@ -14275,6 +14369,39 @@
                 "mobileAutoFillHeight" : true,
                 "mobileRowHeight" : 70,
                 "outerMargin" : true
+              }
+            }
+          }
+        },
+        "alarm_page" : {
+          "name" : "Pagina Allarmi",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "5aa86801-21a8-c298-ddd1-8ddc23f46ff1" : {
+                  "sizeX" : 24,
+                  "sizeY" : 10,
+                  "row" : 1,
+                  "col" : 0
+                },
+                "770319e3-2acb-6808-788a-370553b4bf9a" : {
+                  "sizeX" : 24,
+                  "sizeY" : 1,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#FFFFFF",
+                "columns" : 24,
+                "margin" : 0,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : true,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70
               }
             }
           }

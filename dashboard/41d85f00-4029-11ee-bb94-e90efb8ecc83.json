@@ -120,7 +120,7 @@
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
                 "type" : "custom",
-                "customFunction" : "var deviceService = widgetContext.deviceService;\r\ndeviceService.getDevice(entityId.id, {ignoreLoading: true}).subscribe(\r\n    function (device) {\r\n        var deviceType = device.id.entityType;\r\n        if(deviceType==\"DEVICE\"){\r\n            var params = widgetContext.stateController.getStateParams();\r\n            params['automezzo_selezionato'] = {\r\n                entityId: entityId,\r\n                entityName: entityName\r\n            };\r\n            widgetContext.stateController.updateState('default', params);\r\n        }\r\n});",
+                "customFunction" : "var $injector = widgetContext.$scope.$injector;\r\n$injector.get(widgetContext.servicesMap.get('entityService')).getEntity(entityId.entityType, entityId.id)\r\n  .subscribe(function(data) {\r\n        var deviceType = data.id.entityType;\r\n        if(deviceType==\"DEVICE\"){\r\n            var params = widgetContext.stateController.getStateParams();\r\n            params['automezzo_selezionato'] = {\r\n                entityId: entityId,\r\n                entityName: entityName\r\n            };\r\n            widgetContext.stateController.updateState('default', params);\r\n        }\r\n});",
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
                 "id" : "d78bc6d1-0385-9476-eb43-d3e6b8a611b6"

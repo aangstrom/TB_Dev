@@ -1331,7 +1331,7 @@
               "dataKeys" : [ {
                 "name" : "Green_driving_type",
                 "type" : "timeseries",
-                "label" : "Green_driving_type",
+                "label" : "Guida Pericolosa",
                 "color" : "#4caf50",
                 "settings" : { },
                 "_hash" : 0.47744622385950963,
@@ -2478,6 +2478,19 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
+                "name" : "Green_driving_type",
+                "type" : "timeseries",
+                "label" : "Guida Pericolosa",
+                "color" : "#673ab7",
+                "settings" : { },
+                "_hash" : 0.3543019840325885,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==0){\n    var valore=\"Valore 0\";\n}\nif(value==1){\n    var valore=\"Accelerazione Brusca\";\n}\nif(value==2){\n    var valore=\"Frenata Brusca\";\n}\nif(value==3){\n    var valore=\"Curva Brusca\";\n}\nreturn valore;"
+              }, {
                 "name" : "Door_Status",
                 "type" : "timeseries",
                 "label" : "Stato Portiere",
@@ -2543,13 +2556,6 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "Green_driving_type",
-                "type" : "timeseries",
-                "label" : "Green_driving_type",
-                "color" : "#673ab7",
-                "settings" : { },
-                "_hash" : 0.3543019840325885
-              }, {
                 "name" : "Ignition",
                 "type" : "timeseries",
                 "label" : "Motore",
@@ -2604,7 +2610,7 @@
               }, {
                 "name" : "Towing",
                 "type" : "timeseries",
-                "label" : "Towing",
+                "label" : "Traino",
                 "color" : "#00bcd4",
                 "settings" : { },
                 "_hash" : 0.3471223779539234,
@@ -2626,7 +2632,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if(value==0){\n    return \"In movimento\";\n}else{\n    return \"Fermo\";\n}"
+                "postFuncBody" : "if(value==1){\n    return \"Fermo\";\n}else{\n    return \"In movimento\";\n}"
               }, {
                 "name" : "Fuel_Consumed",
                 "type" : "timeseries",
@@ -2646,7 +2652,13 @@
                 "label" : "Trip",
                 "color" : "#00c853",
                 "settings" : { },
-                "_hash" : 0.8670562045193333
+                "_hash" : 0.8670562045193333,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==0){\n    return \"Fine viaggio\";\n}else if(value==1){\n    return \"Inizio viaggio\";\n}else{\n    return \"Errore\";\n}"
               }, {
                 "name" : "rawData",
                 "type" : "timeseries",

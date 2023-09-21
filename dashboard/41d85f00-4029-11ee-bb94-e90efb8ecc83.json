@@ -2075,6 +2075,13 @@
                 "color" : "#607d8b",
                 "settings" : { },
                 "_hash" : 0.08317065098034981
+              }, {
+                "name" : "name",
+                "type" : "attribute",
+                "label" : "name",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.649652202766078
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -2142,12 +2149,12 @@
               "draggableMarker" : false,
               "showLabel" : true,
               "useLabelFunction" : false,
-              "label" : "${entityName}",
+              "label" : "${name}",
               "showTooltip" : true,
               "showTooltipAction" : "click",
               "autocloseTooltip" : true,
               "useTooltipFunction" : false,
-              "tooltipPattern" : "<b>${entityName}</b><br/><br/><b>Latitude:</b> ${latitude:7}<br><b>Longitude:</b> ${longitude:7}<br><b>Speed:</b> ${Speed} Km/h<br/><b>Fuel Used:</b> ${Fuel_level_percentage} l<br><br><link-act name='details'>Apri Dettagli</link-act>",
+              "tooltipPattern" : "<b>${name} (${EntityName})</b><br/><br/><b>Latitude:</b> ${latitude:7}<br><b>Longitude:</b> ${longitude:7}<br><b>Speed:</b> ${Speed} Km/h<br/><b>Fuel Used:</b> ${Fuel_level_percentage} l<br><br><link-act name='details'>Apri Dettagli</link-act>",
               "tooltipOffsetX" : 0,
               "tooltipOffsetY" : -1,
               "color" : "#000000",
@@ -2695,7 +2702,7 @@
             "valueType" : "STRING",
             "predicates" : [ {
               "keyFilterPredicate" : {
-                "operation" : "CONTAINS",
+                "operation" : "EQUAL",
                 "value" : {
                   "defaultValue" : "tracker",
                   "dynamicValue" : null
@@ -2711,7 +2718,7 @@
               }
             } ]
           } ],
-          "editable" : true
+          "editable" : false
         }
       },
       "timewindow" : {

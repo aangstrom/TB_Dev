@@ -77,29 +77,21 @@
       "toIndex" : 13,
       "type" : "Success"
     }, {
-      "fromIndex" : 9,
-      "toIndex" : 14,
-      "type" : "Success"
-    }, {
       "fromIndex" : 13,
       "toIndex" : 17,
       "type" : "Success"
     }, {
       "fromIndex" : 14,
-      "toIndex" : 15,
+      "toIndex" : 16,
       "type" : "Success"
     }, {
-      "fromIndex" : 14,
-      "toIndex" : 18,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 17,
-      "toIndex" : 19,
-      "type" : "True"
-    }, {
-      "fromIndex" : 18,
+      "fromIndex" : 16,
       "toIndex" : 12,
       "type" : "alert"
+    }, {
+      "fromIndex" : 17,
+      "toIndex" : 12,
+      "type" : "True"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -426,30 +418,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 673,
-        "layoutY" : 600
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
-      },
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "973682d0-5864-11ee-bb94-e90efb8ecc83"
-      },
-      "name" : "Calculate",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 745,
-        "layoutY" : 736
+        "layoutX" : 571,
+        "layoutY" : 778
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -470,30 +440,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 178,
-        "layoutY" : 647
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "jsScript" : "return msg.temperature > 20;",
-        "tbelScript" : "return msg.fuel_delta!=0;"
-      },
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "97374620-5864-11ee-bb94-e90efb8ecc83"
-      },
-      "name" : "Alarm?",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 427,
-        "layoutY" : 658
+        "layoutX" : 441,
+        "layoutY" : 592
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -514,13 +462,13 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 73,
-        "layoutY" : 770
+        "layoutX" : 169,
+        "layoutY" : 650
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return msg.temperature > 20;",
-        "tbelScript" : "return msg.fuel_delta >= 1;"
+        "tbelScript" : "return msg.fuel_delta <= -2;"
       },
       "createdTime" : 0,
       "debugMode" : true,

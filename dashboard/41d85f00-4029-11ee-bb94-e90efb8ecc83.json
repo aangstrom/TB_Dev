@@ -2488,8 +2488,8 @@
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==256){\n    return \"Porta Anteriore Sinistra aperta\";\n}else if(value==512){\n    return \"Porta Anteriore Destra aperta\";\n}else if(value==1024){\n    return \"Porta Posteriore Sinistra aperta\";\n}else if(value==2048){\n    return \"Porta Posteriore Destra aperta\";\n}else if(value==4096){\n    return \"Hood aperta\";\n}else if(value==8192){\n    return \"Trunk aperta\";\n}else if(value==16128){\n    return \"2 o più porte aperte\";\n}else{\n    return \"Errore\";\n}"
               }, {
                 "name" : "Engine_Load",
                 "type" : "timeseries",

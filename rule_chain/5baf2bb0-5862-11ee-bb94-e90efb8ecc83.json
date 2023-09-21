@@ -49,14 +49,6 @@
       "toIndex" : 11,
       "type" : "RPC Request to Device"
     }, {
-      "fromIndex" : 2,
-      "toIndex" : 12,
-      "type" : "RPC Request to Device"
-    }, {
-      "fromIndex" : 2,
-      "toIndex" : 13,
-      "type" : "RPC Request to Device"
-    }, {
       "fromIndex" : 6,
       "toIndex" : 2,
       "type" : "False"
@@ -79,6 +71,18 @@
     }, {
       "fromIndex" : 9,
       "toIndex" : 6,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 13,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 14,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 14,
+      "toIndex" : 15,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
@@ -322,43 +326,153 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 890,
-        "layoutY" : 814
+        "layoutX" : 284,
+        "layoutY" : 780
       },
       "configuration" : {
-        "integrationId" : "f874bdb0-560c-11ed-9133-91f5585bc6c3"
+        "scriptLang" : "TBEL",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "useMessageAlarmData" : false,
+        "overwriteAlarmDetails" : false,
+        "alarmType" : "Anomalia Carburante",
+        "severity" : "CRITICAL",
+        "propagate" : true,
+        "relationTypes" : [ ],
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : true,
+        "propagateToTenant" : false,
+        "dynamicSeverity" : false
       },
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "5bc3ec30-5862-11ee-bb94-e90efb8ecc83"
+        "id" : "9734d520-5864-11ee-bb94-e90efb8ecc83"
       },
-      "name" : "MQTT integration downlink",
+      "name" : "Allarme carburante",
       "ruleChainId" : null,
       "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.integration.TbIntegrationDownlinkNode"
+      "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 467,
-        "layoutY" : 725
+        "layoutX" : 190,
+        "layoutY" : 569
       },
       "configuration" : {
-        "integrationId" : "516d3c00-6655-11ed-9133-91f5585bc6c3"
+        "inputValueKey" : "Fuel_level_percentage",
+        "outputValueKey" : "fuel_delta",
+        "useCache" : true,
+        "addPeriodBetweenMsgs" : false,
+        "periodValueKey" : "periodInMs",
+        "round" : null,
+        "tellFailureIfDeltaIsNegative" : true
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9735bf80-5864-11ee-bb94-e90efb8ecc83"
+      },
+      "name" : "Controllo carburante",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.CalculateDeltaNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 449,
+        "layoutY" : 488
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchToData" : false,
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ ],
+        "latestTsKeyNames" : [ "Fuel_level_percentage" ],
+        "getLatestValueWithTs" : false
       },
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "5bc41340-5862-11ee-bb94-e90efb8ecc83"
+        "id" : "973634b0-5864-11ee-bb94-e90efb8ecc83"
       },
-      "name" : "Pato MQTT",
+      "name" : "Get latest fuel leval",
       "ruleChainId" : null,
       "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.integration.TbIntegrationDownlinkNode"
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 489,
+        "layoutY" : 585
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "973682d0-5864-11ee-bb94-e90efb8ecc83"
+      },
+      "name" : "Calculate",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 591,
+        "layoutY" : 687
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9736f800-5864-11ee-bb94-e90efb8ecc83"
+      },
+      "name" : "Calculate",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 160,
+        "layoutY" : 643
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return msg.temperature > 20;",
+        "tbelScript" : "return msg.fuel_delta > 2;"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "97374620-5864-11ee-bb94-e90efb8ecc83"
+      },
+      "name" : "Alarm?",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
     } ],
     "ruleChainConnections" : null
   },

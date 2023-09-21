@@ -93,6 +93,10 @@
       "toIndex" : 18,
       "type" : "Success"
     }, {
+      "fromIndex" : 17,
+      "toIndex" : 19,
+      "type" : "True"
+    }, {
       "fromIndex" : 18,
       "toIndex" : 12,
       "type" : "alert"
@@ -472,7 +476,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return msg.temperature > 20;",
-        "tbelScript" : "return msg.fuel_delta >= 1;"
+        "tbelScript" : "return msg.fuel_delta!=0;"
       },
       "createdTime" : 0,
       "debugMode" : true,
@@ -507,6 +511,28 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 73,
+        "layoutY" : 770
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return msg.temperature > 20;",
+        "tbelScript" : "return msg.fuel_delta >= 1;"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "1ea5f910-586c-11ee-bb94-e90efb8ecc83"
+      },
+      "name" : "Alarm?",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
     } ],
     "ruleChainConnections" : null
   },

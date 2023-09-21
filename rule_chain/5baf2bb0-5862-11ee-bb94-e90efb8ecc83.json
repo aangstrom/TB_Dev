@@ -88,6 +88,14 @@
       "fromIndex" : 14,
       "toIndex" : 15,
       "type" : "Success"
+    }, {
+      "fromIndex" : 14,
+      "toIndex" : 18,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 18,
+      "toIndex" : 12,
+      "type" : "alert"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -329,7 +337,7 @@
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
     }, {
       "additionalInfo" : {
-        "description" : "",
+        "description" : "Anomalia Carburante",
         "layoutX" : 284,
         "layoutY" : 780
       },
@@ -362,8 +370,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 190,
-        "layoutY" : 569
+        "layoutX" : 172,
+        "layoutY" : 541
       },
       "configuration" : {
         "inputValueKey" : "Fuel_level_percentage",
@@ -414,8 +422,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 489,
-        "layoutY" : 585
+        "layoutX" : 673,
+        "layoutY" : 600
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -436,8 +444,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 591,
-        "layoutY" : 687
+        "layoutX" : 745,
+        "layoutY" : 736
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -458,8 +466,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 160,
-        "layoutY" : 643
+        "layoutX" : 178,
+        "layoutY" : 647
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -477,6 +485,28 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 427,
+        "layoutY" : 658
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "var message=msg.Fuel_level_percentage;\nvar meta=metadata.Fuel_level_percentage;\nif(message!=null && meta!=null){\n    if((meta-message)>=2){\n        return ['alert'];\n    }else{\n        return ['OK'];\n    }\n}"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "5adc8350-586b-11ee-bb94-e90efb8ecc83"
+      },
+      "name" : "Calculate",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     } ],
     "ruleChainConnections" : null
   },

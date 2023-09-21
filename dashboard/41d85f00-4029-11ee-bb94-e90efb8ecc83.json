@@ -2270,17 +2270,19 @@
             "settings" : {
               "enableSelection" : true,
               "enableSearch" : true,
+              "enableSelectColumnDisplay" : true,
+              "enableFilter" : true,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : false,
+              "reserveSpaceForHiddenAction" : "true",
               "displayDetails" : true,
               "allowAcknowledgment" : true,
               "allowClear" : true,
               "allowAssign" : true,
               "displayActivity" : true,
-              "displayPagination" : true,
-              "defaultPageSize" : 10,
+              "displayPagination" : false,
               "defaultSortOrder" : "-createdTime",
-              "enableSelectColumnDisplay" : true,
-              "enableStickyAction" : false,
-              "enableFilter" : true
+              "useRowStyleFunction" : false
             },
             "title" : "New Alarms table",
             "dropShadow" : true,
@@ -2355,13 +2357,6 @@
                   "cellContentFunction" : ""
                 },
                 "_hash" : 0.6588418951443418
-              }, {
-                "name" : "assignee",
-                "type" : "alarm",
-                "label" : "Assignee",
-                "color" : "#9c27b0",
-                "settings" : { },
-                "_hash" : 0.5008441077416634
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -2381,7 +2376,7 @@
               "statusList" : [ ],
               "severityList" : [ ],
               "typeList" : [ ],
-              "searchPropagatedAlarms" : false
+              "searchPropagatedAlarms" : true
             }
           },
           "row" : 0,

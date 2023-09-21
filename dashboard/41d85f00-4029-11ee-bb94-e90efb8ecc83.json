@@ -2601,6 +2601,45 @@
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
+              }, {
+                "name" : "Towing",
+                "type" : "timeseries",
+                "label" : "Towing",
+                "color" : "#00bcd4",
+                "settings" : { },
+                "_hash" : 0.3471223779539234,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==1){\n    return \"Trainato\";\n}else{\n    return \"Normale\";\n}"
+              }, {
+                "name" : "Idling",
+                "type" : "timeseries",
+                "label" : "Idling",
+                "color" : "#ff5722",
+                "settings" : { },
+                "_hash" : 0.5736902102418997,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==0){\n    return \"In movimento\";\n}else{\n    return \"Fermo\";\n}"
+              }, {
+                "name" : "rawData",
+                "type" : "timeseries",
+                "label" : "Debug",
+                "color" : "#9e9e9e",
+                "settings" : { },
+                "_hash" : 0.9911674075501877,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]

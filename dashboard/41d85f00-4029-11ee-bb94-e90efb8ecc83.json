@@ -2076,7 +2076,15 @@
                 "type" : "attribute",
                 "label" : "Automezzo",
                 "color" : "#f44336",
-                "settings" : { },
+                "settings" : {
+                  "columnWidth" : "0px",
+                  "useCellStyleFunction" : true,
+                  "cellStyleFunction" : "var severity = alarm.severity;\r\nvar color = 'black';\r\nswitch (severity) {\r\n  case 'CRITICAL':\r\n    color = 'red';\r\n    break;\r\n  case 'MAJOR':\r\n    color = 'orange';\r\n    break;\r\n  case 'MINOR':\r\n    color = '#ffca3d';\r\n    break;\r\n  case 'WARNING':\r\n    color = '#abab00';\r\n    break;\r\n  case 'INDETERMINATE':\r\n    color = 'green';\r\n    break;\r\n}\r\nreturn {\r\n  fontWeight: 'bold',\r\n  color: color\r\n};\r\n",
+                  "useCellContentFunction" : false,
+                  "defaultColumnVisibility" : "visible",
+                  "columnSelectionToDisplay" : "enabled",
+                  "columnExportOption" : "onlyVisible"
+                },
                 "_hash" : 0.21363372038362227,
                 "aggregationType" : null,
                 "units" : null,

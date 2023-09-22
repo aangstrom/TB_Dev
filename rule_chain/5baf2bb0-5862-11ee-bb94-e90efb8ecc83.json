@@ -96,6 +96,14 @@
       "fromIndex" : 16,
       "toIndex" : 17,
       "type" : "True"
+    }, {
+      "fromIndex" : 17,
+      "toIndex" : 18,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 18,
+      "toIndex" : 19,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -453,7 +461,7 @@
         "tbelScript" : "return msg.Trip==1;"
       },
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -504,6 +512,50 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 403,
+        "layoutY" : 613
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var message={\"Trip_Time\":msg.Trip_Time};\nreturn {msg: message, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "aa852ba0-591a-11ee-bb94-e90efb8ecc83"
+      },
+      "name" : "Remove unusefull",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 407,
+        "layoutY" : 679
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "aa85a0d0-591a-11ee-bb94-e90efb8ecc83"
+      },
+      "name" : "Save Timeseries",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
     } ],
     "ruleChainConnections" : null
   },

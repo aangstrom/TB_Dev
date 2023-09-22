@@ -244,7 +244,7 @@
                 "popoverHideOnClickOutside" : true,
                 "popoverHideDashboardToolbar" : true,
                 "popoverWidth" : "25vw",
-                "popoverHeight" : "45vh",
+                "popoverHeight" : "50vh",
                 "popoverStyle" : { },
                 "openInSeparateDialog" : false,
                 "openInPopover" : true,
@@ -1251,11 +1251,44 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
+                "name" : "enable_max_speed",
+                "type" : "attribute",
+                "label" : "Abilita controllo velocità massima consentita",
+                "color" : "#9c27b0",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "booleanSwitch",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "slideToggleLabelPosition" : "after",
+                  "useCustomIcon" : false,
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.852966562556408,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
                 "name" : "max_speed",
                 "type" : "attribute",
-                "label" : "Velocità Massima",
+                "label" : "Velocità Massima Consentita",
                 "color" : "#607d8b",
-                "settings" : { },
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "string",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "disabledOnDataKey" : "enable_max_speed",
+                  "useCustomIcon" : false,
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
                 "_hash" : 0.5781450966479489,
                 "aggregationType" : null,
                 "units" : "Km/h",
@@ -3271,7 +3304,7 @@
               "widgets" : {
                 "5a6b201e-aa76-e9ec-c48c-0a1ffa878da5" : {
                   "sizeX" : 24,
-                  "sizeY" : 3,
+                  "sizeY" : 5,
                   "row" : 0,
                   "col" : 0
                 }

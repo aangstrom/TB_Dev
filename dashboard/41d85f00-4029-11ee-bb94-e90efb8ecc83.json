@@ -220,7 +220,7 @@
             "widgetCss" : "",
             "pageSize" : 1024,
             "noDataDisplayMessage" : "",
-            "margin" : "10px"
+            "margin" : ""
           },
           "row" : 0,
           "col" : 0,
@@ -308,7 +308,7 @@
             "widgetCss" : "",
             "pageSize" : 1024,
             "noDataDisplayMessage" : "",
-            "margin" : "10px"
+            "margin" : ""
           },
           "row" : 0,
           "col" : 0,
@@ -419,7 +419,7 @@
             "widgetCss" : "",
             "pageSize" : 1024,
             "noDataDisplayMessage" : "",
-            "margin" : "10px"
+            "margin" : ""
           },
           "row" : 0,
           "col" : 0,
@@ -507,7 +507,7 @@
             "widgetCss" : "",
             "pageSize" : 1024,
             "noDataDisplayMessage" : "",
-            "margin" : "10px"
+            "margin" : ""
           },
           "row" : 0,
           "col" : 0,
@@ -595,7 +595,7 @@
             "widgetCss" : "",
             "pageSize" : 1024,
             "noDataDisplayMessage" : "",
-            "margin" : "10px"
+            "margin" : ""
           },
           "row" : 0,
           "col" : 0,
@@ -701,7 +701,7 @@
               "showTotal" : false,
               "showLatest" : false
             },
-            "margin" : "10px",
+            "margin" : "",
             "actions" : {
               "headerButton" : [ {
                 "name" : "Dettagli",
@@ -827,7 +827,7 @@
               "showTotal" : false,
               "showLatest" : false
             },
-            "margin" : "10px"
+            "margin" : ""
           },
           "row" : 0,
           "col" : 0,
@@ -1007,7 +1007,7 @@
             "widgetCss" : "",
             "pageSize" : 1024,
             "noDataDisplayMessage" : "",
-            "margin" : "10px"
+            "margin" : ""
           },
           "row" : 0,
           "col" : 0,
@@ -1281,7 +1281,7 @@
             "widgetCss" : "",
             "pageSize" : 1024,
             "noDataDisplayMessage" : "",
-            "margin" : "10px"
+            "margin" : ""
           },
           "row" : 0,
           "col" : 0,
@@ -1473,7 +1473,7 @@
             "displayTimewindow" : true,
             "showTitleIcon" : false,
             "enableDataExport" : false,
-            "margin" : "10px",
+            "margin" : "",
             "widgetCss" : "",
             "pageSize" : 1024,
             "noDataDisplayMessage" : ""
@@ -1564,7 +1564,7 @@
             "widgetCss" : "",
             "pageSize" : 1024,
             "noDataDisplayMessage" : "",
-            "margin" : "10px"
+            "margin" : ""
           },
           "row" : 0,
           "col" : 0,
@@ -1660,7 +1660,7 @@
             "pageSize" : 1024,
             "units" : "Km",
             "noDataDisplayMessage" : "",
-            "margin" : "10px",
+            "margin" : "",
             "decimals" : 2
           },
           "row" : 0,
@@ -1769,7 +1769,7 @@
             "widgetCss" : "",
             "pageSize" : 1024,
             "noDataDisplayMessage" : "",
-            "margin" : "10px"
+            "margin" : ""
           },
           "row" : 0,
           "col" : 0,
@@ -3114,7 +3114,7 @@
               "searchPropagatedAlarms" : true
             },
             "enableDataExport" : false,
-            "margin" : "10px",
+            "margin" : "",
             "widgetCss" : "",
             "pageSize" : 1024,
             "noDataDisplayMessage" : ""
@@ -3241,7 +3241,7 @@
               "showTotal" : false,
               "showLatest" : false
             },
-            "margin" : "10px"
+            "margin" : ""
           },
           "row" : 0,
           "col" : 0,
@@ -3739,15 +3739,51 @@
             "iconColor" : "rgba(0, 0, 0, 0.87)",
             "iconSize" : "24px",
             "titleTooltip" : "",
-            "dropShadow" : true,
-            "enableFullscreen" : true,
+            "dropShadow" : false,
+            "enableFullscreen" : false,
             "widgetStyle" : { },
             "titleStyle" : {
               "fontSize" : "16px",
               "fontWeight" : 400
             },
             "showLegend" : false,
-            "useDashboardTimewindow" : true
+            "useDashboardTimewindow" : true,
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "indietro",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "var params = widgetContext.stateController.getStateParams();\nparams['automezzo_selezionato'] = null;\nwidgetContext.stateController.updateState(null, params);",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "c87fbad4-0278-34c1-70d7-66011c78eb3f"
+              }, {
+                "name" : "edit",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "edit",
+                "setEntityId" : true,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "popoverPreferredPlacement" : "top",
+                "popoverHideOnClickOutside" : true,
+                "popoverHideDashboardToolbar" : true,
+                "popoverWidth" : "40vw",
+                "popoverHeight" : "55vh",
+                "popoverStyle" : { },
+                "openInSeparateDialog" : false,
+                "openInPopover" : true,
+                "id" : "a540fa3c-bd8c-57df-ac49-40aad85ede57"
+              } ]
+            }
           },
           "row" : 0,
           "col" : 0,
@@ -3942,8 +3978,8 @@
               "gridSettings" : {
                 "backgroundColor" : "#eeeeee",
                 "columns" : 24,
-                "margin" : 0,
-                "outerMargin" : true,
+                "margin" : 10,
+                "outerMargin" : false,
                 "backgroundSizeMode" : "100%",
                 "autoFillHeight" : false,
                 "backgroundImageUrl" : null,

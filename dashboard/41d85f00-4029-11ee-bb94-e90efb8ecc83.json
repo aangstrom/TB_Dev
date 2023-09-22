@@ -672,7 +672,7 @@
             },
             "title" : "Velocità",
             "dropShadow" : true,
-            "enableFullscreen" : true,
+            "enableFullscreen" : false,
             "titleStyle" : {
               "fontSize" : "16px",
               "fontWeight" : 400
@@ -680,7 +680,7 @@
             "useDashboardTimewindow" : true,
             "showTitleIcon" : false,
             "titleTooltip" : "",
-            "enableDataExport" : true,
+            "enableDataExport" : false,
             "widgetStyle" : { },
             "widgetCss" : "",
             "pageSize" : 1024,
@@ -696,7 +696,27 @@
               "showTotal" : false,
               "showLatest" : false
             },
-            "margin" : "0px"
+            "margin" : "0px",
+            "actions" : {
+              "headerButton" : [ {
+                "name" : "Dettagli",
+                "icon" : "show_chart",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "grafico_carburante",
+                "setEntityId" : true,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "dialogTitle" : "",
+                "dialogHideDashboardToolbar" : true,
+                "dialogWidth" : 80,
+                "dialogHeight" : 80,
+                "openInSeparateDialog" : true,
+                "openInPopover" : false,
+                "id" : "ea30934a-d2ef-395d-0ea8-143f092fa492"
+              } ]
+            }
           },
           "row" : 0,
           "col" : 0,
@@ -1667,7 +1687,8 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : null,
-                "postFuncBody" : null
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]

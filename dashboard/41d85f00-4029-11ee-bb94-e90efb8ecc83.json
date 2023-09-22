@@ -3499,6 +3499,139 @@
           "row" : 0,
           "col" : 0,
           "id" : "d43ae214-ecfe-0e70-6492-c1887bcd1eb4"
+        },
+        "03fe5fa3-eded-bddb-f06d-60d5cbf8e37e" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "entities_hierarchy",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3.5,
+          "config" : {
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 86400000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1692539282466,
+                  "endTimeMs" : 1692625682466
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "4px",
+            "settings" : {
+              "nodeRelationQueryFunction" : "var entity = nodeCtx.entity;\nvar query = {\n    parameters: {\n        rootId: entity.id.id,\n        rootType: entity.id.entityType,\n        direction: \"FROM\",\n        maxLevel: 1\n    },\n    filters: [{\n        relationType: \"Contains\",\n        entityTypes: []\n    }]\n};\nreturn query;\n\n/**\n\n// Function should return relations query object for current node used to fetch entity children.\n// Function can return 'default' string value. In this case default relations query will be used.\n\n// The following example code will construct simple relations query that will fetch relations of type 'Contains'\n// from the current entity.\n\nvar entity = nodeCtx.entity;\nvar query = {\n    parameters: {\n        rootId: entity.id.id,\n        rootType: entity.id.entityType,\n        direction: \"FROM\",\n        maxLevel: 1\n    },\n    filters: [{\n        relationType: \"Contains\",\n        entityTypes: []\n    }]\n};\nreturn query;\n\n**/\n",
+              "nodeHasChildrenFunction" : "/**\n\n// Function should return boolean value indicating whether current node has children (whether it can be expanded).\n\n// The following example code will restrict entities hierarchy expansion up to third level.\n\nreturn nodeCtx.level <= 2;\n\n// The next example code will restrict entities expansion according to the value of example 'nodeHasChildren' attribute.\n\nvar data = nodeCtx.data;\nif (data.hasOwnProperty('nodeHasChildren') && data['nodeHasChildren'] !== null) {\n    return data['nodeHasChildren'] === 'true';\n} else {\n    return true;\n}\n  \n**/\n ",
+              "nodeOpenedFunction" : "/**\n\n// Function should return boolean value indicating whether current node should be opened (expanded) when it first loaded.\n\n// The following example code will open by default nodes up to third level.\n\nreturn nodeCtx.level <= 2;\n\n**/\n ",
+              "nodeDisabledFunction" : "/**\n\n// Function should return boolean value indicating whether current node should be disabled (not selectable).\n\n// The following example code will disable current node according to the value of example 'nodeDisabled' attribute.\n\nvar data = nodeCtx.data;\nif (data.hasOwnProperty('nodeDisabled') && data['nodeDisabled'] !== null) {\n    return data['nodeDisabled'] === 'true';\n} else {\n    return false;\n}\n  \n**/\n",
+              "nodeIconFunction" : "/**\n// Function should return node icon info object.\n// Resulting object should contain either 'materialIcon' or 'iconUrl' property. \n// Function can return 'default' string value. In this case default icons according to entity type will be used.\n\n// The following example code shows how to use external image for devices which name starts with 'Test' and use \n// default icons for the rest of entities.\n\nvar entity = nodeCtx.entity;\nif (entity.id.entityType === 'DEVICE' && entity.name.startsWith('35')) {\n    return {iconUrl: 'https://avatars1.githubusercontent.com/u/14793288?v=4&s=117'};\n} else {\n    return 'default';\n}\n**/",
+              "nodeTextFunction" : "\n\n// Function should return text (can be HTML code) for the current node.\n\n// The following example code will generate node text consisting of entity name and temperature if temperature value is present in entity attributes/timeseries.\n\nvar data =  nodeCtx.data;\nvar entity = nodeCtx.entity;\nvar text = entity.name;\nconsole.log(entity.id)\nif (data.hasOwnProperty('name') && data['name'] !== null) {\n    if(entity.id.entityType==\"DEVICE\"){\n        text=data['Ignition']+\" <b>\"+data['name']+\"</b> (\"+data['Movement']+\")\";\n    }else{\n        text=entity.name;\n    }\n}\nreturn text;",
+              "nodesSortFunction" : "/**\n\n// This function is used to sort nodes of the same level. Function should compare two nodes and return \n// integer value: \n//     - less than 0 - sort nodeCtx1 to an index lower than nodeCtx2\n//     - 0 - leave nodeCtx1 and nodeCtx2 unchanged with respect to each other\n//     - greater than 0 - sort nodeCtx2 to an index lower than nodeCtx1\n\n// The following example code will sort entities first by entity type in alphabetical order then\n// by entity name in alphabetical order.\n\nvar result = nodeCtx1.entity.id.entityType.localeCompare(nodeCtx2.entity.id.entityType);\nif (result === 0) {\n    result = nodeCtx1.entity.name.localeCompare(nodeCtx2.entity.name);\n}\nreturn result;\n  \n**/"
+            },
+            "title" : "Automezzi",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "2f1efd07-3e5a-d727-2354-a151b2f61f3b",
+              "filterId" : "7505e418-dc63-61da-4ec0-e0ee90d8cc96",
+              "dataKeys" : [ {
+                "name" : "name",
+                "type" : "attribute",
+                "label" : "name",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.7626662935339583,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "Ignition",
+                "type" : "timeseries",
+                "label" : "Ignition",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.9692144745320055,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==1){\n    return \"<span style='color:green;'>\"+\"&#11044;\"+\"</span>\";\n}\nelse{\n    return \"<span style='color:red;'>\"+\"&#11044;\"+\"</span>\";\n}\n"
+              }, {
+                "name" : "Movement",
+                "type" : "timeseries",
+                "label" : "Movement",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.5835718057417296,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==1){\n    return \"In movimento\";\n}else{\n    return \"Fermo\";\n}\n"
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "widgetStyle" : { },
+            "actions" : {
+              "nodeSelected" : [ {
+                "name" : "Apri Dettagli",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "var $injector = widgetContext.$scope.$injector;\r\nvar params = widgetContext.stateController.getStateParams();\r\n$injector.get(widgetContext.servicesMap.get('entityService')).getEntity(entityId.entityType, entityId.id)\r\n  .subscribe(function(data) {\r\n        var deviceType = data.id.entityType;\r\n        if(deviceType==\"DEVICE\"){\r\n            params['automezzo_selezionato'] = {\r\n                entityId: entityId,\r\n                entityName: entityName\r\n            };\r\n            widgetContext.stateController.openState('details', params);\r\n        }\r\n        else if(deviceType==\"CUSTOMER\"){\r\n            params['automezzo_selezionato'] = null;\r\n            widgetContext.stateController.openState(null, params);\r\n        }\r\n});",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "d78bc6d1-0385-9476-eb43-d3e6b8a611b6"
+              } ]
+            },
+            "displayTimewindow" : true,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "03fe5fa3-eded-bddb-f06d-60d5cbf8e37e"
         }
       },
       "states" : {
@@ -3510,15 +3643,23 @@
               "widgets" : {
                 "33278063-63d3-ff8b-62dc-935d9777abed" : {
                   "sizeX" : 5,
-                  "sizeY" : 12,
+                  "sizeY" : 6,
                   "row" : 0,
-                  "col" : 0
+                  "col" : 0,
+                  "mobileHide" : true
                 },
                 "d43ae214-ecfe-0e70-6492-c1887bcd1eb4" : {
                   "sizeX" : 21,
                   "sizeY" : 12,
                   "row" : 0,
                   "col" : 5
+                },
+                "03fe5fa3-eded-bddb-f06d-60d5cbf8e37e" : {
+                  "sizeX" : 5,
+                  "sizeY" : 6,
+                  "desktopHide" : true,
+                  "row" : 6,
+                  "col" : 0
                 }
               },
               "gridSettings" : {

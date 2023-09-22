@@ -3707,6 +3707,19 @@
                 "funcBody" : null,
                 "usePostProcessing" : true,
                 "postFuncBody" : "if(value==1){\n    return \"<span style='color:green;'>\"+\"&#11044;\"+\"</span>\";\n}\nelse{\n    return \"<span style='color:red;'>\"+\"&#11044;\"+\"</span>\";\n}\n"
+              }, {
+                "name" : "Movement",
+                "type" : "timeseries",
+                "label" : "Movement",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.3479692805305308,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==1){\n    return \"Veicolo in movimento\";\n}else{\n    return \"Veicolo fermo\";\n}"
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -3742,9 +3755,9 @@
             "padding" : "0px",
             "settings" : {
               "useMarkdownTextFunction" : true,
-              "markdownTextFunction" : "return '<div class=\"header\" fxLayout=\"row\" fxLayoutAlign=\"start center\" fxLayoutGap=\"0px\">' +\r\n            '<div fxLayout=\"column\" fxLayoutAlign=\"center\"><button id=\"indietro\" matTooltip=\"Indietro\" type=\"button\" mat-icon-button><mat-icon>arrow_back</mat-icon></button></div>' +\r\n            '<div fxLayout=\"column\" fxLayoutAlign=\"center\"><button id=\"edit\" matTooltip=\"Modifica\" type=\"button\" mat-icon-button><mat-icon>edit</mat-icon></button></div>'+\r\n            '<div class=\"title\" fxLayout=\"row\" fxLayoutAlign=\"center\">'+data[0]['Ignition']+'&nbsp;&nbsp;'+data[0]['name'] +' ('+data[0]['entityName']+ ')</div>'+\r\n        '</div>';",
+              "markdownTextFunction" : "return '<div class=\"header\" fxLayout=\"row\" fxLayoutAlign=\"start center\" fxLayoutGap=\"0px\">' +\r\n            '<div fxLayout=\"column\" fxLayoutAlign=\"center\"><button id=\"indietro\" matTooltip=\"Indietro\" type=\"button\" mat-icon-button><mat-icon>arrow_back</mat-icon></button></div>' +\r\n            '<div fxLayout=\"column\" fxLayoutAlign=\"center\"><button id=\"edit\" matTooltip=\"Modifica\" type=\"button\" mat-icon-button><mat-icon>edit</mat-icon></button></div>'+\r\n            '<div class=\"title\" fxLayout=\"row\" fxLayoutAlign=\"center\"><b>'+data[0]['Ignition']+'&nbsp;&nbsp;'+data[0]['name'] +' ('+data[0]['Movement']+ ')</b>&nbsp;&nbsp;&nbsp;ID sensore: '+data[0]['entityName']+'</div>'+\r\n        '</div>';",
               "applyDefaultMarkdownStyle" : true,
-              "markdownCss" : ".tb-markdown-view > div {\n    padding: 0;\n}\n.header{\n    margin-left: 10px;\n    height: 100%;\n}\n.title {\n    font-size: 18px;\n    font-weight: 500;\n    color: #28232D;\n}\n#edit{\n    margin-right:10px;\n}"
+              "markdownCss" : ".tb-markdown-view > div {\n    padding: 0;\n}\n.header{\n    margin-left: 10px;\n    height: 100%;\n}\n.title {\n    font-size: 18px;\n    color: #28232D;\n}\n#edit{\n    margin-right:10px;\n}"
             },
             "title" : "New Markdown/HTML Card",
             "showTitleIcon" : false,

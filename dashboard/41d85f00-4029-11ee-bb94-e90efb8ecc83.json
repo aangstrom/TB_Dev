@@ -2318,7 +2318,7 @@
             },
             "title" : "New Alarms table",
             "dropShadow" : true,
-            "enableFullscreen" : true,
+            "enableFullscreen" : false,
             "titleStyle" : {
               "fontSize" : "16px",
               "fontWeight" : 400,
@@ -2378,14 +2378,37 @@
             "titleTooltip" : "",
             "widgetStyle" : { },
             "displayTimewindow" : true,
-            "actions" : { },
+            "actions" : {
+              "rowClick" : [ {
+                "name" : "Tutti gli allarmi",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "allarmi",
+                "setEntityId" : false,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "dialogTitle" : "Allarmi",
+                "dialogHideDashboardToolbar" : true,
+                "dialogWidth" : 80,
+                "dialogHeight" : 80,
+                "openInSeparateDialog" : true,
+                "openInPopover" : false,
+                "id" : "c71d8fa3-976a-9861-e7c8-c3d01ba35c75"
+              } ]
+            },
             "datasources" : [ ],
             "alarmFilterConfig" : {
               "statusList" : [ "ACTIVE" ],
               "severityList" : [ ],
               "typeList" : [ ],
               "searchPropagatedAlarms" : true
-            }
+            },
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
           },
           "row" : 0,
           "col" : 0,
@@ -3084,6 +3107,22 @@
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
                 "mobileRowHeight" : 70
+              }
+            }
+          }
+        },
+        "allarmi" : {
+          "name" : "Allarmi",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : { },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%"
               }
             }
           }

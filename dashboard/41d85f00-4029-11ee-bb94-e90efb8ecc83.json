@@ -50,7 +50,7 @@
               "nodeOpenedFunction" : "/**\n\n// Function should return boolean value indicating whether current node should be opened (expanded) when it first loaded.\n\n// The following example code will open by default nodes up to third level.\n\nreturn nodeCtx.level <= 2;\n\n**/\n ",
               "nodeDisabledFunction" : "/**\n\n// Function should return boolean value indicating whether current node should be disabled (not selectable).\n\n// The following example code will disable current node according to the value of example 'nodeDisabled' attribute.\n\nvar data = nodeCtx.data;\nif (data.hasOwnProperty('nodeDisabled') && data['nodeDisabled'] !== null) {\n    return data['nodeDisabled'] === 'true';\n} else {\n    return false;\n}\n  \n**/\n",
               "nodeIconFunction" : "/**\n// Function should return node icon info object.\n// Resulting object should contain either 'materialIcon' or 'iconUrl' property. \n// Function can return 'default' string value. In this case default icons according to entity type will be used.\n\n// The following example code shows how to use external image for devices which name starts with 'Test' and use \n// default icons for the rest of entities.\n\nvar entity = nodeCtx.entity;\nif (entity.id.entityType === 'DEVICE' && entity.name.startsWith('35')) {\n    return {iconUrl: 'https://avatars1.githubusercontent.com/u/14793288?v=4&s=117'};\n} else {\n    return 'default';\n}\n**/",
-              "nodeTextFunction" : "\n\n// Function should return text (can be HTML code) for the current node.\n\n// The following example code will generate node text consisting of entity name and temperature if temperature value is present in entity attributes/timeseries.\n\nvar data =  nodeCtx.data;\nvar entity = nodeCtx.entity;\nvar text = entity.name;\nif (data.hasOwnProperty('name') && data['name'] !== null) {\n    if(entity.id.entityType==\"DEVICE\"){\n        text=data['Ignition']+\" <b>\"+data['name']+\"</b> (\"+data['Movement']+\")\";\n    }else if(entity.id.entityType==\"CUSTOMER\"){\n        text=data['title'];\n    }else{\n        text=entity.name;\n    }\n}\nreturn text;",
+              "nodeTextFunction" : "\n\n// Function should return text (can be HTML code) for the current node.\n\n// The following example code will generate node text consisting of entity name and temperature if temperature value is present in entity attributes/timeseries.\n\nvar data =  nodeCtx.data;\nvar entity = nodeCtx.entity;\nvar text = entity.name;\nif (data.hasOwnProperty('name') && data['name'] !== null) {\n    if(entity.id.entityType==\"DEVICE\"){\n        text=data['Ignition']+\" <b>\"+data['name']+\"</b> (\"+data['Movement']+\")\";\n    }else{\n        text=entity.name;\n    }\n}\nreturn text;",
               "nodesSortFunction" : "/**\n\n// This function is used to sort nodes of the same level. Function should compare two nodes and return \n// integer value: \n//     - less than 0 - sort nodeCtx1 to an index lower than nodeCtx2\n//     - 0 - leave nodeCtx1 and nodeCtx2 unchanged with respect to each other\n//     - greater than 0 - sort nodeCtx2 to an index lower than nodeCtx1\n\n// The following example code will sort entities first by entity type in alphabetical order then\n// by entity name in alphabetical order.\n\nvar result = nodeCtx1.entity.id.entityType.localeCompare(nodeCtx2.entity.id.entityType);\nif (result === 0) {\n    result = nodeCtx1.entity.name.localeCompare(nodeCtx2.entity.name);\n}\nreturn result;\n  \n**/"
             },
             "title" : "Automezzi",
@@ -69,19 +69,6 @@
               "entityAliasId" : "2f1efd07-3e5a-d727-2354-a151b2f61f3b",
               "filterId" : "7505e418-dc63-61da-4ec0-e0ee90d8cc96",
               "dataKeys" : [ {
-                "name" : "title",
-                "type" : "entityField",
-                "label" : "title",
-                "color" : "#ffc107",
-                "settings" : { },
-                "_hash" : 0.28791299920162916,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
                 "name" : "name",
                 "type" : "attribute",
                 "label" : "name",
@@ -4406,14 +4393,7 @@
               "name" : null,
               "entityAliasId" : "2713c9dd-363c-9e35-859c-6c2fc652f5d2",
               "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "title",
-                "type" : "attribute",
-                "label" : "title",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.9864552027575946
-              } ],
+              "dataKeys" : null,
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
               }
@@ -4448,7 +4428,7 @@
             "padding" : "0px",
             "settings" : {
               "useMarkdownTextFunction" : true,
-              "markdownTextFunction" : "return '<div class=\"header\" fxLayout=\"row\" fxLayoutAlign=\"start center\" fxLayoutGap=\"0px\">' +\r\n            '<div fxLayout=\"column\" fxLayoutAlign=\"center\"><button id=\"indietro\" matTooltip=\"Indietro\" type=\"button\" mat-icon-button><mat-icon>arrow_back</mat-icon></button></div>' +\r\n            '<div fxLayout=\"column\" fxLayoutAlign=\"center\"><button id=\"edit\" matTooltip=\"Modifica\" type=\"button\" mat-icon-button><mat-icon>edit</mat-icon></button></div>'+\r\n            '<div class=\"title\" fxLayout=\"row\" fxLayoutAlign=\"center\"><b>Cliente:</b>&nbsp;'+data[0]['title']+'</div>'+\r\n        '</div>';",
+              "markdownTextFunction" : "return '<div class=\"header\" fxLayout=\"row\" fxLayoutAlign=\"start center\" fxLayoutGap=\"0px\">' +\r\n            '<div fxLayout=\"column\" fxLayoutAlign=\"center\"><button id=\"indietro\" matTooltip=\"Indietro\" type=\"button\" mat-icon-button><mat-icon>arrow_back</mat-icon></button></div>' +\r\n            '<div class=\"title\" fxLayout=\"row\" fxLayoutAlign=\"center\"><b>Cliente:</b>&nbsp;'+data[0]['entityLabel']+'</div>'+\r\n        '</div>';",
               "applyDefaultMarkdownStyle" : true,
               "markdownCss" : ".tb-markdown-view > div {\n    padding: 0;\n}\n.header{\n    margin-left: 10px;\n    height: 100%;\n}\n.title {\n    font-size: 18px;\n    color: #28232D;\n}\n#edit{\n    margin-right:10px;\n}"
             },
@@ -4523,14 +4503,7 @@
               "name" : null,
               "entityAliasId" : "2713c9dd-363c-9e35-859c-6c2fc652f5d2",
               "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "title",
-                "type" : "attribute",
-                "label" : "title",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.8130685641980899
-              } ],
+              "dataKeys" : null,
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
               }
@@ -4565,7 +4538,7 @@
             "padding" : "0px",
             "settings" : {
               "useMarkdownTextFunction" : true,
-              "markdownTextFunction" : "return '<div class=\"header\" fxLayout=\"row\" fxLayoutAlign=\"start center\" fxLayoutGap=\"0px\">' +\r\n            '<div fxLayout=\"column\" fxLayoutAlign=\"center\"><button id=\"indietro\" matTooltip=\"Indietro\" type=\"button\" mat-icon-button><mat-icon>arrow_back</mat-icon></button></div>' +\r\n            '<div fxLayout=\"column\" fxLayoutAlign=\"center\"><button id=\"edit\" matTooltip=\"Modifica\" type=\"button\" mat-icon-button><mat-icon>edit</mat-icon></button></div>'+\r\n            '<div class=\"title\" fxLayout=\"row\" fxLayoutAlign=\"center\"><b>Cliente:</b>&nbsp;'+data[0]['title']+'</div>'+\r\n        '</div>';",
+              "markdownTextFunction" : "return '<div class=\"header\" fxLayout=\"row\" fxLayoutAlign=\"start center\" fxLayoutGap=\"0px\">' +\r\n            '<div fxLayout=\"column\" fxLayoutAlign=\"center\"><button id=\"indietro\" matTooltip=\"Indietro\" type=\"button\" mat-icon-button><mat-icon>arrow_back</mat-icon></button></div>' +\r\n            '<div class=\"title\" fxLayout=\"row\" fxLayoutAlign=\"center\"><b>Cliente:</b>&nbsp;'+data[0]['entityLabel']+'</div>'+\r\n        '</div>';",
               "applyDefaultMarkdownStyle" : true,
               "markdownCss" : ".tb-markdown-view > div {\n    padding: 0;\n}\n.header{\n    margin-left: 10px;\n    height: 100%;\n}\n.title {\n    font-size: 18px;\n    color: #28232D;\n}\n#edit{\n    margin-right:10px;\n}"
             },
@@ -4621,110 +4594,6 @@
           "row" : 0,
           "col" : 0,
           "id" : "447694e5-73a4-e50e-01f3-f0e0397d0ae8"
-        },
-        "c7d86e6b-2e83-636d-cd11-4d0b21912dc7" : {
-          "isSystemType" : true,
-          "bundleAlias" : "input_widgets",
-          "typeAlias" : "update_multiple_attributes",
-          "type" : "latest",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
-          "sizeX" : 7.5,
-          "sizeY" : 3,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "2713c9dd-363c-9e35-859c-6c2fc652f5d2",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "name",
-                "type" : "attribute",
-                "label" : "Nome Cliente",
-                "color" : "#607d8b",
-                "settings" : { },
-                "_hash" : 0.6658651700684453,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "title",
-                "type" : "entityField",
-                "label" : "Nome Cliente (Title)",
-                "color" : "#f44336",
-                "settings" : { },
-                "_hash" : 0.454515695714536,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              } ],
-              "alarmFilterConfig" : {
-                "statusList" : [ "ACTIVE" ]
-              }
-            } ],
-            "timewindow" : {
-              "displayValue" : "",
-              "selectedTab" : 0,
-              "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1692625188151,
-                  "endTimeMs" : 1692711588151
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "limit" : 25000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "8px",
-            "settings" : {
-              "showResultMessage" : true,
-              "showActionButtons" : false,
-              "showGroupTitle" : false,
-              "fieldsAlignment" : "row",
-              "fieldsInRow" : 2,
-              "groupTitle" : "${entityName}"
-            },
-            "title" : "New Update Multiple Attributes",
-            "dropShadow" : true,
-            "enableFullscreen" : false,
-            "enableDataExport" : false,
-            "widgetStyle" : { },
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "useDashboardTimewindow" : true,
-            "showLegend" : false,
-            "actions" : { },
-            "showTitleIcon" : false,
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : ""
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "c7d86e6b-2e83-636d-cd11-4d0b21912dc7"
         }
       },
       "states" : {
@@ -5099,22 +4968,6 @@
             }
           }
         },
-        "details_mobile" : {
-          "name" : "Dettagli ${entityName}",
-          "root" : false,
-          "layouts" : {
-            "main" : {
-              "widgets" : { },
-              "gridSettings" : {
-                "backgroundColor" : "#eeeeee",
-                "columns" : 24,
-                "margin" : 10,
-                "outerMargin" : true,
-                "backgroundSizeMode" : "100%"
-              }
-            }
-          }
-        },
         "maps_cliente" : {
           "name" : "Maps Cliente",
           "root" : false,
@@ -5153,33 +5006,6 @@
                 "columns" : 24,
                 "margin" : 0,
                 "outerMargin" : false,
-                "backgroundSizeMode" : "100%",
-                "autoFillHeight" : true,
-                "backgroundImageUrl" : null,
-                "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70
-              }
-            }
-          }
-        },
-        "edit_cliente" : {
-          "name" : "Edit Cliente",
-          "root" : false,
-          "layouts" : {
-            "main" : {
-              "widgets" : {
-                "c7d86e6b-2e83-636d-cd11-4d0b21912dc7" : {
-                  "sizeX" : 24,
-                  "sizeY" : 5,
-                  "row" : 0,
-                  "col" : 0
-                }
-              },
-              "gridSettings" : {
-                "backgroundColor" : "#FFFFFF",
-                "columns" : 24,
-                "margin" : 0,
-                "outerMargin" : true,
                 "backgroundSizeMode" : "100%",
                 "autoFillHeight" : true,
                 "backgroundImageUrl" : null,

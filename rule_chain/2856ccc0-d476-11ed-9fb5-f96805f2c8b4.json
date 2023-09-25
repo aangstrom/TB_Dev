@@ -415,6 +415,10 @@
       "fromIndex" : 54,
       "toIndex" : 14,
       "type" : "Success"
+    }, {
+      "fromIndex" : 55,
+      "toIndex" : 56,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 0,
     "nodes" : [ {
@@ -2316,8 +2320,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 52,
-        "layoutY" : 1399
+        "layoutX" : 77,
+        "layoutY" : 1872
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -2329,7 +2333,7 @@
         "getLatestValueWithTs" : false
       },
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -2339,6 +2343,28 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 64,
+        "layoutY" : 1988
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f919f560-5baa-11ee-bb94-e90efb8ecc83"
+      },
+      "name" : "Calculate sovraccarico/normale/scarico",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

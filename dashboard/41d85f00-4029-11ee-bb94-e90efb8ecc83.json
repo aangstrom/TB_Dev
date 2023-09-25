@@ -3517,7 +3517,7 @@
             "padding" : "0px",
             "settings" : {
               "useMarkdownTextFunction" : true,
-              "markdownTextFunction" : "var device,customer;\nconsole.log(data);\nif (data && data.length && data[0]['entityId']) {\n    if(data[0]['entityType']=='CUSTOMER'){\n        customer = true;\n    }\n    if(data[0]['entityType']=='DEVICE'){\n        device = true;\n    }\n} else {\n    device = false;\n    customer = false;\n}\nconsole.log(data);\nreturn '<div class=\"main-layout\" style=\"width: 100%; height:100%;\" fxLayout=\"column\">' +\n    (device==true ? ('<div style=\"height:100%;\">'+\n                '<tb-dashboard-state style=\"height:1300px\" fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"details\"></tb-dashboard-state>' +\n                '</div>') \n            : (customer ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"maps_cliente\"></tb-dashboard-state>') \n            : '<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"maps\"></tb-dashboard-state>'))+\n       '</div>';\n    /*if(device==true){\n        '<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"maps\"></tb-dashboard-state>')+\n        '</div>';\n    }else if(customer==true){\n        '<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"maps_cliente\"></tb-dashboard-state>')+\n        '</div>';\n    }\n    else{\n        '<div style=\"height:100%;\">'+\n        '<tb-dashboard-state style=\"height:1300px\" fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"details\"></tb-dashboard-state>' +\n        '</div>';\n    }*/",
+              "markdownTextFunction" : "var device,customer;\nif (data && data.length && data[0]['entityId']) {\n    if(data[0]['entityType']=='CUSTOMER'){\n        customer = true;\n    }\n    if(data[0]['entityType']=='DEVICE'){\n        device = true;\n    }\n} else {\n    device = false;\n    customer = false;\n}\nconsole.log(data);\nreturn '<div class=\"main-layout\" style=\"width: 100%; height:100%;\" fxLayout=\"column\">' +\n    (device==true ? ('<div style=\"height:100%;\">'+\n                '<tb-dashboard-state style=\"height:1300px\" fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"details\"></tb-dashboard-state>' +\n                '</div>') \n            : (customer ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"maps_cliente\"></tb-dashboard-state>') \n            : '<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"maps\"></tb-dashboard-state>'))+\n       '</div>';",
               "applyDefaultMarkdownStyle" : true,
               "markdownCss" : ".tb-markdown-view > div {\n    padding: 0;\n}\n.header{\n    margin: 10px;\n    height: 35px;\n}\n.title {\n    font-size: 18px;\n    font-weight: 500;\n    color: #28232D;\n}\n#edit{\n    margin-right:10px;\n}"
             },
@@ -4391,7 +4391,7 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "84bbd97c-7ca1-8d73-58e0-ef2201796cb2",
+              "entityAliasId" : "2713c9dd-363c-9e35-859c-6c2fc652f5d2",
               "filterId" : null,
               "dataKeys" : [ {
                 "name" : "name",
@@ -4400,32 +4400,6 @@
                 "color" : "#2196f3",
                 "settings" : { },
                 "_hash" : 0.9351992477626996
-              }, {
-                "name" : "Ignition",
-                "type" : "timeseries",
-                "label" : "Ignition",
-                "color" : "#4caf50",
-                "settings" : { },
-                "_hash" : 0.6768474206103428,
-                "aggregationType" : "NONE",
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "if(value==1){\n    return \"<span style='color:green;'>\"+\"&#11044;\"+\"</span>\";\n}\nelse{\n    return \"<span style='color:red;'>\"+\"&#11044;\"+\"</span>\";\n}\n"
-              }, {
-                "name" : "Movement",
-                "type" : "timeseries",
-                "label" : "Movement",
-                "color" : "#f44336",
-                "settings" : { },
-                "_hash" : 0.3479692805305308,
-                "aggregationType" : "NONE",
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "if(value==1){\n    return \"Veicolo in movimento\";\n}else{\n    return \"Veicolo fermo\";\n}"
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -4461,7 +4435,7 @@
             "padding" : "0px",
             "settings" : {
               "useMarkdownTextFunction" : true,
-              "markdownTextFunction" : "return '<div class=\"header\" fxLayout=\"row\" fxLayoutAlign=\"start center\" fxLayoutGap=\"0px\">' +\r\n            '<div fxLayout=\"column\" fxLayoutAlign=\"center\"><button id=\"indietro\" matTooltip=\"Indietro\" type=\"button\" mat-icon-button><mat-icon>arrow_back</mat-icon></button></div>' +\r\n            '<div fxLayout=\"column\" fxLayoutAlign=\"center\"><button id=\"edit\" matTooltip=\"Modifica\" type=\"button\" mat-icon-button><mat-icon>edit</mat-icon></button></div>'+\r\n            '<div class=\"title\" fxLayout=\"row\" fxLayoutAlign=\"center\"><b>'+data[0]['Ignition']+'&nbsp;&nbsp;'+data[0]['name'] +'</b>&nbsp;('+data[0]['Movement']+ ')&nbsp;&nbsp;&nbsp;ID sensore: '+data[0]['entityName']+'</div>'+\r\n        '</div>';",
+              "markdownTextFunction" : "console.log(data);\r\nreturn '<div class=\"header\" fxLayout=\"row\" fxLayoutAlign=\"start center\" fxLayoutGap=\"0px\">' +\r\n            '<div fxLayout=\"column\" fxLayoutAlign=\"center\"><button id=\"indietro\" matTooltip=\"Indietro\" type=\"button\" mat-icon-button><mat-icon>arrow_back</mat-icon></button></div>' +\r\n            '<div fxLayout=\"column\" fxLayoutAlign=\"center\"><button id=\"edit\" matTooltip=\"Modifica\" type=\"button\" mat-icon-button><mat-icon>edit</mat-icon></button></div>'+\r\n            '<div class=\"title\" fxLayout=\"row\" fxLayoutAlign=\"center\"><b>Cliente:</b>&nbsp;'+data[0]['entityName']+data[0]['name']+'</div>'+\r\n        '</div>';",
               "applyDefaultMarkdownStyle" : true,
               "markdownCss" : ".tb-markdown-view > div {\n    padding: 0;\n}\n.header{\n    margin-left: 10px;\n    height: 100%;\n}\n.title {\n    font-size: 18px;\n    color: #28232D;\n}\n#edit{\n    margin-right:10px;\n}"
             },
@@ -4534,7 +4508,7 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "84bbd97c-7ca1-8d73-58e0-ef2201796cb2",
+              "entityAliasId" : "2713c9dd-363c-9e35-859c-6c2fc652f5d2",
               "filterId" : null,
               "dataKeys" : [ {
                 "name" : "name",
@@ -4604,7 +4578,7 @@
             "padding" : "0px",
             "settings" : {
               "useMarkdownTextFunction" : true,
-              "markdownTextFunction" : "return '<div class=\"header\" fxLayout=\"row\" fxLayoutAlign=\"start center\" fxLayoutGap=\"0px\">' +\r\n            '<div fxLayout=\"column\" fxLayoutAlign=\"center\"><button id=\"indietro\" matTooltip=\"Indietro\" type=\"button\" mat-icon-button><mat-icon>arrow_back</mat-icon></button></div>' +\r\n            '<div fxLayout=\"column\" fxLayoutAlign=\"center\"><button id=\"edit\" matTooltip=\"Modifica\" type=\"button\" mat-icon-button><mat-icon>edit</mat-icon></button></div>'+\r\n            '<div class=\"title\" fxLayout=\"row\" fxLayoutAlign=\"center\"><b>'+data[0]['Ignition']+'&nbsp;&nbsp;'+data[0]['name'] +'</b>&nbsp;('+data[0]['Movement']+ ')&nbsp;&nbsp;&nbsp;ID sensore: '+data[0]['entityName']+'</div>'+\r\n        '</div>';",
+              "markdownTextFunction" : "return '<div class=\"header\" fxLayout=\"row\" fxLayoutAlign=\"start center\" fxLayoutGap=\"0px\">' +\r\n            '<div fxLayout=\"column\" fxLayoutAlign=\"center\"><button id=\"indietro\" matTooltip=\"Indietro\" type=\"button\" mat-icon-button><mat-icon>arrow_back</mat-icon></button></div>' +\r\n            '<div fxLayout=\"column\" fxLayoutAlign=\"center\"><button id=\"edit\" matTooltip=\"Modifica\" type=\"button\" mat-icon-button><mat-icon>edit</mat-icon></button></div>'+\r\n            '<div class=\"title\" fxLayout=\"row\" fxLayoutAlign=\"center\"><b>'+data[0]['name'] +'</b>&nbsp;&nbsp;&nbsp;&nbsp;ID sensore: '+data[0]['entityName']+'</div>'+\r\n        '</div>';",
               "applyDefaultMarkdownStyle" : true,
               "markdownCss" : ".tb-markdown-view > div {\n    padding: 0;\n}\n.header{\n    margin-left: 10px;\n    height: 100%;\n}\n.title {\n    font-size: 18px;\n    color: #28232D;\n}\n#edit{\n    margin-right:10px;\n}"
             },
@@ -5071,6 +5045,7 @@
                 "70227a95-def7-8393-3ba2-eff2be7c7038" : {
                   "sizeX" : 24,
                   "sizeY" : 1,
+                  "mobileHide" : true,
                   "row" : 0,
                   "col" : 0
                 },

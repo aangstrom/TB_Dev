@@ -11057,8 +11057,8 @@
               "nodesSortFunction" : "/**\n\n// This function is used to sort nodes of the same level. Function should compare two nodes and return \n// integer value: \n//     - less than 0 - sort nodeCtx1 to an index lower than nodeCtx2\n//     - 0 - leave nodeCtx1 and nodeCtx2 unchanged with respect to each other\n//     - greater than 0 - sort nodeCtx2 to an index lower than nodeCtx1\n\n// The following example code will sort entities first by entity type in alphabetical order then\n// by entity name in alphabetical order.\n\nvar result = nodeCtx1.entity.id.entityType.localeCompare(nodeCtx2.entity.id.entityType);\nif (result === 0) {\n    result = nodeCtx1.entity.name.localeCompare(nodeCtx2.entity.name);\n}\nreturn result;\n  \n**/"
             },
             "title" : "New Entities hierarchy",
-            "dropShadow" : true,
-            "enableFullscreen" : true,
+            "dropShadow" : false,
+            "enableFullscreen" : false,
             "titleStyle" : {
               "fontSize" : "16px",
               "fontWeight" : 400,
@@ -11104,7 +11104,13 @@
             } ],
             "widgetStyle" : { },
             "actions" : { },
-            "displayTimewindow" : true
+            "displayTimewindow" : true,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
           },
           "row" : 0,
           "col" : 0,
@@ -11214,7 +11220,7 @@
                   "col" : 0
                 },
                 "7d11cd89-a0e1-0466-4bf6-31a601220a49" : {
-                  "sizeX" : 3,
+                  "sizeX" : 4,
                   "sizeY" : 7,
                   "row" : 1,
                   "col" : 16
@@ -11226,10 +11232,10 @@
                   "col" : 0
                 },
                 "cd5bdd55-80fe-13ee-4dc0-39c237ecfcf6" : {
-                  "sizeX" : 5,
+                  "sizeX" : 4,
                   "sizeY" : 7,
                   "row" : 1,
-                  "col" : 19
+                  "col" : 20
                 }
               },
               "gridSettings" : {

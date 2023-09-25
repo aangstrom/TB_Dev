@@ -455,6 +455,30 @@
       "fromIndex" : 61,
       "toIndex" : 27,
       "type" : "Success"
+    }, {
+      "fromIndex" : 62,
+      "toIndex" : 27,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 63,
+      "toIndex" : 27,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 64,
+      "toIndex" : 27,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 65,
+      "toIndex" : 27,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 66,
+      "toIndex" : 27,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 67,
+      "toIndex" : 27,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 0,
     "nodes" : [ {
@@ -1306,16 +1330,16 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var message={};\nvar tipologia=metadata.ss_tipologia;\nvar location=metadata.ss_location;\nvar energy=msg.energy;\nif(tipologia!=null && energy!=null){\n    if(tipologia==\"produzione\"){\n        message.produzione=energy;\n        if(cost()!=null){message.produzioneCost=cost();}\n    }else if(tipologia==\"illuminazione\"){\n        message.illuminazione=energy;\n        if(cost()!=null){message.illuminazioneCost=cost();}\n    }else if(tipologia==\"clima\"){\n        message.clima=energy;\n        if(cost()!=null){message.climaCost=cost();}\n    }else if(tipologia==\"generale\"){\n        message.generale=energy;\n        if(cost()!=null){message.generaleCost=cost();}\n    }\n}\nif(msg.non_operativo!=null){message.non_operativo=msg.non_operativo;}\nif(msg.operativo!=null){message.operativo=msg.operativo;}\nif(msg.pranzo!=null){message.pranzo=msg.pranzo;}\nif(msg.F1!=null){message.F1=msg.F1;}\nif(msg.F1cost!=null){message.F1cost=msg.F1cost;}\nif(msg.F2!=null){message.F2=msg.F2;}\nif(msg.F2cost!=null){message.F2cost=msg.F2cost;}\nif(msg.F3!=null){message.F3=msg.F3;}\nif(msg.F3cost!=null){message.F3cost=msg.F3cost;}\nif(msg.F23!=null){message.F23=msg.F23;}\nif(msg.F23cost!=null){message.F23cost=msg.F23cost;}\n\nreturn {msg: message, metadata: metadata, msgType: msgType};\n\nfunction cost(){\n    if(msg.F1cost!=null){\n        return msg.F1cost;\n    }else if(msg.F2cost!=null){\n        return msg.F2cost;\n    }else if(msg.F3cost!=null){\n        return msg.F3cost;\n    }else if(msg.F23cost!=null){\n        return msg.F23cost;\n    }\n}"
+        "tbelScript" : "var message={};\nvar tipologia=metadata.ss_tipologia;\nvar energy=msg.energy;\nif(tipologia!=null && energy!=null){\n    if(tipologia==\"produzione\"){\n        message.produzione=energy;\n        if(cost()!=null){message.produzioneCost=cost();}\n    }else if(tipologia==\"illuminazione\"){\n        message.illuminazione=energy;\n        if(cost()!=null){message.illuminazioneCost=cost();}\n    }else if(tipologia==\"clima\"){\n        message.clima=energy;\n        if(cost()!=null){message.climaCost=cost();}\n    }else if(tipologia==\"generale\"){\n        message.generale=energy;\n        if(cost()!=null){message.generaleCost=cost();}\n    }\n}\nif(msg.non_operativo!=null){message.non_operativo=msg.non_operativo;}\nif(msg.operativo!=null){message.operativo=msg.operativo;}\nif(msg.pranzo!=null){message.pranzo=msg.pranzo;}\nif(msg.F1!=null){message.F1=msg.F1;}\nif(msg.F1cost!=null){message.F1cost=msg.F1cost;}\nif(msg.F2!=null){message.F2=msg.F2;}\nif(msg.F2cost!=null){message.F2cost=msg.F2cost;}\nif(msg.F3!=null){message.F3=msg.F3;}\nif(msg.F3cost!=null){message.F3cost=msg.F3cost;}\nif(msg.F23!=null){message.F23=msg.F23;}\nif(msg.F23cost!=null){message.F23cost=msg.F23cost;}\n\nreturn {msg: message, metadata: metadata, msgType: msgType};\n\nfunction cost(){\n    if(msg.F1cost!=null){\n        return msg.F1cost;\n    }else if(msg.F2cost!=null){\n        return msg.F2cost;\n    }else if(msg.F3cost!=null){\n        return msg.F3cost;\n    }else if(msg.F23cost!=null){\n        return msg.F23cost;\n    }\n}"
       },
       "createdTime" : 0,
-      "debugMode" : false,
+      "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
         "id" : "3cea9180-f622-11ed-9a4b-e3fd271b8b84"
       },
-      "name" : "uffici/produzione",
+      "name" : "uffici/produzione + F1/F2/F3/F23",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
@@ -1594,8 +1618,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 327,
-        "layoutY" : 1642
+        "layoutX" : 331,
+        "layoutY" : 1545
       },
       "configuration" : {
         "inputValueKey" : "F2",
@@ -1635,8 +1659,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 328,
-        "layoutY" : 1598
+        "layoutX" : 332,
+        "layoutY" : 1501
       },
       "configuration" : {
         "inputValueKey" : "F1",
@@ -1676,8 +1700,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 328,
-        "layoutY" : 1686
+        "layoutX" : 332,
+        "layoutY" : 1589
       },
       "configuration" : {
         "inputValueKey" : "F3",
@@ -1717,8 +1741,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 327,
-        "layoutY" : 1730
+        "layoutX" : 331,
+        "layoutY" : 1633
       },
       "configuration" : {
         "inputValueKey" : "F23",
@@ -1840,8 +1864,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 326,
-        "layoutY" : 1302
+        "layoutX" : 330,
+        "layoutY" : 1205
       },
       "configuration" : {
         "inputValueKey" : "turno1",
@@ -1881,8 +1905,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 326,
-        "layoutY" : 1345
+        "layoutX" : 330,
+        "layoutY" : 1248
       },
       "configuration" : {
         "inputValueKey" : "turno1cost",
@@ -1922,8 +1946,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 325,
-        "layoutY" : 1388
+        "layoutX" : 329,
+        "layoutY" : 1291
       },
       "configuration" : {
         "inputValueKey" : "turno2",
@@ -1963,8 +1987,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 325,
-        "layoutY" : 1431
+        "layoutX" : 329,
+        "layoutY" : 1334
       },
       "configuration" : {
         "inputValueKey" : "turno2cost",
@@ -2004,8 +2028,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 325,
-        "layoutY" : 1475
+        "layoutX" : 329,
+        "layoutY" : 1378
       },
       "configuration" : {
         "inputValueKey" : "turno3",
@@ -2045,8 +2069,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 325,
-        "layoutY" : 1519
+        "layoutX" : 329,
+        "layoutY" : 1422
       },
       "configuration" : {
         "inputValueKey" : "turno3cost",
@@ -2354,8 +2378,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 327,
-        "layoutY" : 1817
+        "layoutX" : 331,
+        "layoutY" : 1720
       },
       "configuration" : {
         "inputValueKey" : "F2cost",
@@ -2395,8 +2419,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 328,
-        "layoutY" : 1773
+        "layoutX" : 332,
+        "layoutY" : 1676
       },
       "configuration" : {
         "inputValueKey" : "F1cost",
@@ -2436,8 +2460,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 328,
-        "layoutY" : 1861
+        "layoutX" : 332,
+        "layoutY" : 1764
       },
       "configuration" : {
         "inputValueKey" : "F3cost",
@@ -2477,8 +2501,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 327,
-        "layoutY" : 1905
+        "layoutX" : 331,
+        "layoutY" : 1808
       },
       "configuration" : {
         "inputValueKey" : "F23cost",
@@ -2512,6 +2536,252 @@
         "id" : "660d9130-0503-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "F23cost",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 331,
+        "layoutY" : 2016
+      },
+      "configuration" : {
+        "inputValueKey" : "sovraccaricoCost",
+        "outputValueKey" : "sovraccaricoCost",
+        "mathFunction" : "SUM",
+        "aggIntervalType" : "CUSTOM",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 5,
+        "aggIntervalTimeUnit" : "MINUTES",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c76fcb90-5ba8-11ee-bb94-e90efb8ecc83"
+      },
+      "name" : "SovraccaricoCost",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 331,
+        "layoutY" : 1887
+      },
+      "configuration" : {
+        "inputValueKey" : "sovraccarico",
+        "outputValueKey" : "sovraccarico",
+        "mathFunction" : "SUM",
+        "aggIntervalType" : "CUSTOM",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 5,
+        "aggIntervalTimeUnit" : "MINUTES",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c7712b20-5ba8-11ee-bb94-e90efb8ecc83"
+      },
+      "name" : "Sovraccarico",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 331,
+        "layoutY" : 1930
+      },
+      "configuration" : {
+        "inputValueKey" : "normale",
+        "outputValueKey" : "normale",
+        "mathFunction" : "SUM",
+        "aggIntervalType" : "CUSTOM",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 5,
+        "aggIntervalTimeUnit" : "MINUTES",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c771a050-5ba8-11ee-bb94-e90efb8ecc83"
+      },
+      "name" : "Normale",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 331,
+        "layoutY" : 1972
+      },
+      "configuration" : {
+        "inputValueKey" : "scarico",
+        "outputValueKey" : "scarico",
+        "mathFunction" : "SUM",
+        "aggIntervalType" : "CUSTOM",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 5,
+        "aggIntervalTimeUnit" : "MINUTES",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c771ee70-5ba8-11ee-bb94-e90efb8ecc83"
+      },
+      "name" : "Scarico",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 332,
+        "layoutY" : 2059
+      },
+      "configuration" : {
+        "inputValueKey" : " normaleCost",
+        "outputValueKey" : "normaleCost",
+        "mathFunction" : "SUM",
+        "aggIntervalType" : "CUSTOM",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 5,
+        "aggIntervalTimeUnit" : "MINUTES",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c77263a0-5ba8-11ee-bb94-e90efb8ecc83"
+      },
+      "name" : "NormaleCost",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 332,
+        "layoutY" : 2102
+      },
+      "configuration" : {
+        "inputValueKey" : "scaricoCost",
+        "outputValueKey" : "scaricoCost",
+        "mathFunction" : "SUM",
+        "aggIntervalType" : "CUSTOM",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 5,
+        "aggIntervalTimeUnit" : "MINUTES",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c772ffe0-5ba8-11ee-bb94-e90efb8ecc83"
+      },
+      "name" : "ScaricoCost",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"

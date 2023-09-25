@@ -2346,16 +2346,16 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 64,
-        "layoutY" : 1988
+        "layoutX" : 76,
+        "layoutY" : 1974
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var message={};\nif(metadata.ss_scarico>0){\n    if(msg.energy<metadata.ss_scarico){\n        message.scarico=msg.energy;\n    }\n}\nif(metadata.ss_normale>0){\n    if(metadata.ss_scarico>0 && msg.energy>=metadata.ss_scarico && msg.energy<metadata.ss_normale){\n        message.normale=msg.energy;\n    }else if(msg.energy>=metadata.ss_normale){\n        message.sovraccarico=msg.energy;\n    }\n}\nreturn {msg: message, metadata: metadata, msgType: msgType};"
       },
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",

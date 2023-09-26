@@ -1906,7 +1906,7 @@
               "tooltipOffsetY" : -1,
               "color" : "#000000",
               "useColorFunction" : true,
-              "colorFunction" : "var type = dsData[dsIndex]['Type'];\nif (type == 'colorpin') {\n\tvar temperature = dsData[dsIndex]['temperature'];\n\tif (typeof temperature !== undefined) {\n\t    var percent = (temperature + 60)/120 * 100;\n\t    return tinycolor.mix('blue', 'red', percent).toHexString();\n\t}\n\treturn 'blue';\n}\n",
+              "colorFunction" : "var speed = dsData[dsIndex]['Speed'];\nif (typeof speed !== undefined) {\n    var percent = (speed - 45)/85;\n    if (percent < 0.5) {\n        percent *=2*100; \n        return tinycolor.mix('green', 'yellow', percent).toHexString();\n    } else {\n        percent = (percent - 0.5)*2*100;\n        return tinycolor.mix('yellow', 'red', percent).toHexString();\n    }\n}",
               "useMarkerImageFunction" : true,
               "markerImageSize" : 34,
               "markerImageFunction" : "var type = dsData[dsIndex]['Type'];\nif (type == 'thermometer') {\n\tvar res = {\n\t    url: images[0],\n\t    size: 40\n\t}\n\tvar temperature = dsData[dsIndex]['temperature'];\n\tif (typeof temperature !== undefined) {\n\t    var percent = (temperature + 60)/120;\n\t    var index = Math.min(3, Math.floor(4 * percent));\n\t    res.url = images[index];\n\t}\n\treturn res;\n}",

@@ -16,8 +16,8 @@
         "cacheSize" : 1000,
         "timeToLiveInMinutes" : 1440,
         "handlerConfiguration" : {
-          "handlerType" : "TEXT",
-          "byteOrder" : "LITTLE_ENDIAN",
+          "handlerType" : "BINARY",
+          "byteOrder" : "BIG_ENDIAN",
           "maxFrameLength" : 128,
           "lengthFieldOffset" : 0,
           "lengthFieldLength" : 2,
@@ -49,14 +49,26 @@
     "secret" : "tl1agaswoaddvqkzbxak",
     "type" : "TCP"
   },
-  "relations" : [ ],
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "e7806ee0-5d1e-11ee-bb94-e90efb8ecc83"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "47244830-5d24-11ee-bb94-e90efb8ecc83"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  } ],
   "attributes" : {
     "SERVER_SCOPE" : [ {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : "{\"success\":true}",
       "key" : "integration_status_[remote:8082]",
-      "lastUpdateTs" : 1695811533586,
+      "lastUpdateTs" : 1695812080740,
       "longValue" : null,
       "strValue" : null
     } ]

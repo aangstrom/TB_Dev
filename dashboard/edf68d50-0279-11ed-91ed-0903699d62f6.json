@@ -304,7 +304,7 @@
               "entityAliasId" : "62fac1ba-42a3-6dc7-c445-e42adcce1233",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "user_latitude",
+                "name" : "latitude",
                 "type" : "timeseries",
                 "label" : "latitudine",
                 "color" : "#2196f3",
@@ -314,9 +314,10 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : null,
-                "postFuncBody" : null
+                "postFuncBody" : null,
+                "aggregationType" : "NONE"
               }, {
-                "name" : "user_longitude",
+                "name" : "longitude",
                 "type" : "timeseries",
                 "label" : "longitudine",
                 "color" : "#4caf50",
@@ -326,7 +327,8 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : null,
-                "postFuncBody" : null
+                "postFuncBody" : null,
+                "aggregationType" : "NONE"
               }, {
                 "name" : "active",
                 "type" : "attribute",
@@ -365,7 +367,10 @@
                 "color" : "#9c27b0",
                 "settings" : { },
                 "_hash" : 0.9140183993755868
-              } ]
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
             } ],
             "timewindow" : {
               "displayValue" : "",
@@ -405,7 +410,8 @@
               "mapProviderHere" : "HERE.normalDay",
               "credentials" : {
                 "app_id" : "AhM6TzD9ThyK78CT3ptx",
-                "app_code" : "p6NPiITB3Vv0GMUFnkLOOg"
+                "app_code" : "p6NPiITB3Vv0GMUFnkLOOg",
+                "useV3" : false
               },
               "mapImageUrl" : "data:image/svg+xml;base64,PHN2ZyBpZD0ic3ZnMiIgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTAwIiB3aWR0aD0iMTAwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zOmNjPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgdmlld0JveD0iMCAwIDEwMCAxMDAiPgogPGcgaWQ9ImxheWVyMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAtOTUyLjM2KSI+CiAgPHJlY3QgaWQ9InJlY3Q0Njg0IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBoZWlnaHQ9Ijk5LjAxIiB3aWR0aD0iOTkuMDEiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiB5PSI5NTIuODYiIHg9Ii40OTUwNSIgc3Ryb2tlLXdpZHRoPSIuOTkwMTAiIGZpbGw9IiNlZWUiLz4KICA8dGV4dCBpZD0idGV4dDQ2ODYiIHN0eWxlPSJ3b3JkLXNwYWNpbmc6MHB4O2xldHRlci1zcGFjaW5nOjBweDt0ZXh0LWFuY2hvcjptaWRkbGU7dGV4dC1hbGlnbjpjZW50ZXIiIGZvbnQtd2VpZ2h0PSJib2xkIiB4bWw6c3BhY2U9InByZXNlcnZlIiBmb250LXNpemU9IjEwcHgiIGxpbmUtaGVpZ2h0PSIxMjUlIiB5PSI5NzAuNzI4MDkiIHg9IjQ5LjM5NjQ3NyIgZm9udC1mYW1pbHk9IlJvYm90byIgZmlsbD0iIzY2NjY2NiI+PHRzcGFuIGlkPSJ0c3BhbjQ2OTAiIHg9IjUwLjY0NjQ3NyIgeT0iOTcwLjcyODA5Ij5JbWFnZSBiYWNrZ3JvdW5kIDwvdHNwYW4+PHRzcGFuIGlkPSJ0c3BhbjQ2OTIiIHg9IjQ5LjM5NjQ3NyIgeT0iOTgzLjIyODA5Ij5pcyBub3QgY29uZmlndXJlZDwvdHNwYW4+PC90ZXh0PgogIDxyZWN0IGlkPSJyZWN0NDY5NCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgaGVpZ2h0PSIxOS4zNiIgd2lkdGg9IjY5LjM2IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgeT0iOTkyLjY4IiB4PSIxNS4zMiIgc3Ryb2tlLXdpZHRoPSIuNjM5ODYiIGZpbGw9Im5vbmUiLz4KIDwvZz4KPC9zdmc+Cg==",
               "tmApiKey" : "84d6d83e0e51e481e50454ccbe8986b",
@@ -2738,7 +2744,6 @@
                 "postFuncBody" : null
               } ]
             },
-            "alarmSearchStatus" : "ANY",
             "alarmsPollingInterval" : 5,
             "showTitleIcon" : false,
             "titleIcon" : "more_horiz",
@@ -2750,15 +2755,17 @@
             },
             "displayTimewindow" : true,
             "actions" : { },
-            "alarmStatusList" : [ "ACTIVE", "CLEARED", "ACK", "UNACK" ],
-            "alarmSeverityList" : [ ],
-            "alarmTypeList" : [ ],
-            "searchPropagatedAlarms" : false,
             "datasources" : [ ],
             "enableDataExport" : true,
             "widgetCss" : "",
             "noDataDisplayMessage" : "",
-            "pageSize" : 1024
+            "pageSize" : 1024,
+            "alarmFilterConfig" : {
+              "statusList" : [ "ACTIVE", "CLEARED", "ACK", "UNACK" ],
+              "severityList" : [ ],
+              "typeList" : [ ],
+              "searchPropagatedAlarms" : false
+            }
           },
           "row" : 0,
           "col" : 0,
@@ -2990,7 +2997,6 @@
                 "postFuncBody" : null
               } ]
             },
-            "alarmSearchStatus" : "ANY",
             "alarmsPollingInterval" : 5,
             "showTitleIcon" : false,
             "titleIcon" : "more_horiz",
@@ -3002,15 +3008,17 @@
             },
             "displayTimewindow" : true,
             "actions" : { },
-            "alarmStatusList" : [ "ACTIVE", "CLEARED" ],
-            "alarmSeverityList" : [ ],
-            "alarmTypeList" : [ ],
-            "searchPropagatedAlarms" : false,
             "datasources" : [ ],
             "enableDataExport" : true,
             "widgetCss" : "",
             "noDataDisplayMessage" : "",
-            "pageSize" : 1024
+            "pageSize" : 1024,
+            "alarmFilterConfig" : {
+              "statusList" : [ "ACTIVE", "CLEARED" ],
+              "severityList" : [ ],
+              "typeList" : [ ],
+              "searchPropagatedAlarms" : false
+            }
           },
           "row" : 0,
           "col" : 0,
@@ -3242,7 +3250,6 @@
                 "postFuncBody" : null
               } ]
             },
-            "alarmSearchStatus" : "ANY",
             "alarmsPollingInterval" : 5,
             "showTitleIcon" : false,
             "titleIcon" : "more_horiz",
@@ -3254,15 +3261,17 @@
             },
             "displayTimewindow" : true,
             "actions" : { },
-            "alarmStatusList" : [ "ACTIVE", "CLEARED", "ACK", "UNACK" ],
-            "alarmSeverityList" : [ ],
-            "alarmTypeList" : [ ],
-            "searchPropagatedAlarms" : false,
             "datasources" : [ ],
             "enableDataExport" : true,
             "widgetCss" : "",
             "noDataDisplayMessage" : "",
-            "pageSize" : 1024
+            "pageSize" : 1024,
+            "alarmFilterConfig" : {
+              "statusList" : [ "ACTIVE", "CLEARED", "ACK", "UNACK" ],
+              "severityList" : [ ],
+              "typeList" : [ ],
+              "searchPropagatedAlarms" : false
+            }
           },
           "row" : 0,
           "col" : 0,
@@ -3440,7 +3449,6 @@
                 "postFuncBody" : null
               } ]
             },
-            "alarmSearchStatus" : "ANY",
             "alarmsPollingInterval" : 5,
             "showTitleIcon" : false,
             "titleIcon" : "more_horiz",
@@ -3452,15 +3460,17 @@
             },
             "displayTimewindow" : true,
             "actions" : { },
-            "alarmStatusList" : [ "ACTIVE", "CLEARED", "ACK", "UNACK" ],
-            "alarmSeverityList" : [ "CRITICAL", "MAJOR", "MINOR", "WARNING", "INDETERMINATE" ],
-            "alarmTypeList" : [ ],
-            "searchPropagatedAlarms" : false,
             "datasources" : [ ],
             "enableDataExport" : true,
             "widgetCss" : "",
             "noDataDisplayMessage" : "",
-            "pageSize" : 1024
+            "pageSize" : 1024,
+            "alarmFilterConfig" : {
+              "statusList" : [ "ACTIVE", "CLEARED", "ACK", "UNACK" ],
+              "severityList" : [ "CRITICAL", "MAJOR", "MINOR", "WARNING", "INDETERMINATE" ],
+              "typeList" : [ ],
+              "searchPropagatedAlarms" : false
+            }
           },
           "row" : 0,
           "col" : 0,
@@ -4765,7 +4775,6 @@
                 "postFuncBody" : null
               } ]
             },
-            "alarmSearchStatus" : "ANY",
             "alarmsPollingInterval" : 5,
             "showTitleIcon" : false,
             "titleIcon" : "more_horiz",
@@ -4777,15 +4786,17 @@
             },
             "displayTimewindow" : true,
             "actions" : { },
-            "alarmStatusList" : [ "ACTIVE", "CLEARED", "ACK", "UNACK" ],
-            "alarmSeverityList" : [ "CRITICAL", "MAJOR", "MINOR", "WARNING", "INDETERMINATE" ],
-            "alarmTypeList" : [ ],
-            "searchPropagatedAlarms" : false,
             "datasources" : [ ],
             "enableDataExport" : true,
             "widgetCss" : "",
             "noDataDisplayMessage" : "",
-            "pageSize" : 1024
+            "pageSize" : 1024,
+            "alarmFilterConfig" : {
+              "statusList" : [ "ACTIVE", "CLEARED", "ACK", "UNACK" ],
+              "severityList" : [ "CRITICAL", "MAJOR", "MINOR", "WARNING", "INDETERMINATE" ],
+              "typeList" : [ ],
+              "searchPropagatedAlarms" : false
+            }
           },
           "row" : 0,
           "col" : 0,
@@ -6443,7 +6454,8 @@
                 "backgroundColor" : "#eeeeee",
                 "columns" : 24,
                 "margin" : 10,
-                "backgroundSizeMode" : "100%"
+                "backgroundSizeMode" : "100%",
+                "outerMargin" : true
               }
             }
           }
@@ -6475,7 +6487,8 @@
                 "autoFillHeight" : true,
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70
+                "mobileRowHeight" : 70,
+                "outerMargin" : true
               }
             }
           }
@@ -6507,7 +6520,8 @@
                 "autoFillHeight" : true,
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70
+                "mobileRowHeight" : 70,
+                "outerMargin" : true
               }
             }
           }
@@ -6533,7 +6547,8 @@
                 "autoFillHeight" : true,
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70
+                "mobileRowHeight" : 70,
+                "outerMargin" : true
               }
             }
           }
@@ -6565,7 +6580,8 @@
                 "autoFillHeight" : true,
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70
+                "mobileRowHeight" : 70,
+                "outerMargin" : true
               }
             }
           }
@@ -6603,7 +6619,8 @@
                 "autoFillHeight" : true,
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70
+                "mobileRowHeight" : 70,
+                "outerMargin" : true
               }
             }
           }
@@ -6635,7 +6652,8 @@
                 "autoFillHeight" : true,
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70
+                "mobileRowHeight" : 70,
+                "outerMargin" : true
               }
             }
           }
@@ -6661,7 +6679,8 @@
                 "autoFillHeight" : true,
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70
+                "mobileRowHeight" : 70,
+                "outerMargin" : true
               }
             }
           }
@@ -6693,7 +6712,8 @@
                 "autoFillHeight" : true,
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70
+                "mobileRowHeight" : 70,
+                "outerMargin" : true
               }
             }
           }
@@ -6715,7 +6735,8 @@
                 "backgroundColor" : "#eeeeee",
                 "columns" : 24,
                 "margin" : 10,
-                "backgroundSizeMode" : "100%"
+                "backgroundSizeMode" : "100%",
+                "outerMargin" : true
               }
             }
           }
@@ -6747,7 +6768,8 @@
                 "autoFillHeight" : true,
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70
+                "mobileRowHeight" : 70,
+                "outerMargin" : true
               }
             }
           }
@@ -6769,7 +6791,8 @@
                 "backgroundColor" : "#eeeeee",
                 "columns" : 24,
                 "margin" : 10,
-                "backgroundSizeMode" : "100%"
+                "backgroundSizeMode" : "100%",
+                "outerMargin" : true
               }
             }
           }
@@ -6801,7 +6824,8 @@
                 "autoFillHeight" : true,
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70
+                "mobileRowHeight" : 70,
+                "outerMargin" : true
               }
             }
           }
@@ -6839,7 +6863,8 @@
                 "autoFillHeight" : true,
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70
+                "mobileRowHeight" : 70,
+                "outerMargin" : true
               }
             }
           }
@@ -6871,7 +6896,8 @@
                 "autoFillHeight" : true,
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70
+                "mobileRowHeight" : 70,
+                "outerMargin" : true
               }
             }
           }
@@ -6899,7 +6925,8 @@
                 "backgroundColor" : "#eeeeee",
                 "columns" : 24,
                 "margin" : 10,
-                "backgroundSizeMode" : "100%"
+                "backgroundSizeMode" : "100%",
+                "outerMargin" : true
               }
             }
           }
@@ -6985,7 +7012,8 @@
                 "autoFillHeight" : true,
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70
+                "mobileRowHeight" : 70,
+                "outerMargin" : true
               }
             }
           }
@@ -7061,8 +7089,8 @@
           "filter" : {
             "type" : "deviceType",
             "resolveMultiple" : true,
-            "deviceType" : "aawg-myfirstapp",
-            "deviceNameFilter" : ""
+            "deviceNameFilter" : "",
+            "deviceTypes" : [ "aawg-myfirstapp" ]
           }
         }
       },
@@ -7105,7 +7133,10 @@
         "dashboardCss" : ""
       }
     },
-    "customerId" : null,
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "13814000-1dd2-11b2-8080-808080808080"
+    },
     "externalId" : null,
     "id" : {
       "entityType" : "DASHBOARD",

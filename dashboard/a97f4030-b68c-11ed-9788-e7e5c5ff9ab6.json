@@ -6177,7 +6177,7 @@
             "padding" : "8px",
             "settings" : {
               "useMarkdownTextFunction" : false,
-              "markdownTextPattern" : "<div class=\"market-layout\" style=\"width: 100%; height: 100%; padding: 0;\" fxLayout=\"column\">\n    <div class=\"alarm-badges-layout\">\n        <tb-dashboard-state class=\"alarm-badges\" [ctx]=\"ctx\" stateId=\"all_alarm_badges\"></tb-dashboard-state>\n    </div>\n    <div fxLayout=\"column\" style=\"width: 100%; height: 60px;\">\n        <h5 class=\"market-title\">HSE</h5>\n        <mat-divider style=\"margin-top: 5px; margin-bottom: 18px;\"></mat-divider>\n    </div>\n    <div fxFlex fxLayout=\"column\" style=\"position: relative;\">\n        <tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"mappa_sedi\"></tb-dashboard-state>\n    </div>\n</div>",
+              "markdownTextPattern" : "<div class=\"market-layout\" style=\"width: 100%; height: 100%; padding: 0;\" fxLayout=\"column\">\n    <div class=\"alarm-badges-layout\">\n        <tb-dashboard-state class=\"alarm-badges\" [ctx]=\"ctx\" stateId=\"all_alarm_badges\"></tb-dashboard-state>\n    </div>\n    <div fxLayout=\"column\" style=\"width: 100%; height: 60px;\">\n        <h5 class=\"market-title\">Campeggio</h5>\n        <mat-divider style=\"margin-top: 5px; margin-bottom: 18px;\"></mat-divider>\n    </div>\n    <div fxFlex fxLayout=\"column\" style=\"position: relative;\">\n        <tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"mappa_sedi\"></tb-dashboard-state>\n    </div>\n</div>",
               "applyDefaultMarkdownStyle" : true,
               "markdownCss" : ".tb-markdown-view .tb-progress-cover, .tb-markdown-view .mat-drawer-container {\n    background-color: #fff;\n}\n\n.tb-markdown-view div, .tb-markdown-view p {\n    line-height: normal;\n}\n\n.tb-markdown-view > div {\n    padding: 0;\n}\n\n.market-layout {\n    position: relative;\n}\n\n.market-title {\n    font-size: 26px;\n    padding-bottom: 16px;\n    padding-left: 10px;\n    padding-top: 5px;\n}\n\n.state-filter-title {\n    padding-bottom: 15px;\n    padding-left: 10px;\n}\n\n.market-layout .alarm-badges-layout {\n    position: absolute;\n    height: 50px;\n    top: 0;\n    left: 0;\n    right: 0;\n    z-index: 2;\n    display: flex;\n    justify-content: center;\n    pointer-events: none;\n}\n\n.market-layout .alarm-badges-layout .alarm-badges {\n    height: 50px;\n    width: 420px;\n    pointer-events: all;\n}"
             },
@@ -6239,11 +6239,12 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "entitiesTitle" : "Sedi",
+              "entitiesTitle" : "Bungalow",
               "enableSearch" : true,
               "enableSelectColumnDisplay" : true,
               "enableStickyHeader" : true,
               "enableStickyAction" : true,
+              "showCellActionsMenu" : true,
               "reserveSpaceForHiddenAction" : "true",
               "displayEntityName" : false,
               "displayEntityLabel" : false,
@@ -6252,7 +6253,7 @@
               "defaultSortOrder" : "Name",
               "useRowStyleFunction" : false
             },
-            "title" : "Sedi",
+            "title" : "Bungalow",
             "dropShadow" : false,
             "enableFullscreen" : false,
             "titleStyle" : {
@@ -6306,27 +6307,6 @@
                   "columnExportOption" : "onlyVisible"
                 },
                 "_hash" : 0.5439377495268714,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null,
-                "aggregationType" : null
-              }, {
-                "name" : "state",
-                "type" : "attribute",
-                "label" : "Stato",
-                "color" : "#ffc107",
-                "settings" : {
-                  "columnWidth" : "0px",
-                  "useCellStyleFunction" : false,
-                  "useCellContentFunction" : true,
-                  "cellContentFunction" : "var state = value;\n\nvar stateSvg = getStateSvg(state);\nvar encodedStateSvg = encodeURIComponent(stateSvg);\nvar stateSvgUrl = 'data:image/svg+xml,' + encodedStateSvg;\nvar stateLabel = getStateLabel(state);\n\nreturn '<span>'+\n           '<img style=\"vertical-align: middle;\" class=\"mat-icon\" src=\"'+ stateSvgUrl +'\">' +\n           '<span style=\"vertical-align: middle; padding-left: 8px;\">'+ stateLabel +'</span>' +\n       '</span>';\n            \nfunction getStateSvg(state) {\n    switch (state) {\n        case 'critical':\n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#E64A19\"/>' +\n                   '</svg>';\n        case 'major':            \n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#D5C21B\"/>' +\n                   '</svg>';\n        case 'normal':            \n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#1F8B4D\"/>' +\n                   '</svg>';\n        default:\n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#AAAAAA\"/>' +\n                   '</svg>';\n    }\n}\n\nfunction getStateLabel(state) {\n    switch(state) {\n        case 'critical':\n            return 'Critico';\n        case 'major':\n            return 'Alto';\n        case 'normal':\n            return 'Normale';\n        default:\n            return state;\n    }\n}\n",
-                  "defaultColumnVisibility" : "visible",
-                  "columnSelectionToDisplay" : "enabled",
-                  "columnExportOption" : "onlyVisible"
-                },
-                "_hash" : 0.2718881518921066,
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
@@ -14555,9 +14535,9 @@
     "image" : null,
     "mobileHide" : false,
     "mobileOrder" : null,
-    "name" : "Campeggi",
+    "name" : "Campeggio",
     "ownerId" : null,
-    "title" : "Campeggi"
+    "title" : "Campeggio"
   },
   "relations" : [ ],
   "attributes" : {

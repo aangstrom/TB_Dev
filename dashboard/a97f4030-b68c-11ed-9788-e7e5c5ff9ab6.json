@@ -6032,6 +6032,19 @@
                 "postFuncBody" : null,
                 "aggregationType" : null
               }, {
+                "name" : "presenza",
+                "type" : "timeseries",
+                "label" : "Presenza",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.41555310541809387,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value===1){\n    return \"Occupato\";\n}else{\n    return \"Libero\";\n}"
+              }, {
                 "name" : "address",
                 "type" : "attribute",
                 "label" : "Indirizzo",
@@ -6053,19 +6066,6 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null,
                 "aggregationType" : null
-              }, {
-                "name" : "presenza",
-                "type" : "timeseries",
-                "label" : "Presenza",
-                "color" : "#f44336",
-                "settings" : { },
-                "_hash" : 0.41555310541809387,
-                "aggregationType" : "NONE",
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "if(value===1){\n    return \"Occupato\";\n}else{\n    return \"Libero\";\n}"
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]

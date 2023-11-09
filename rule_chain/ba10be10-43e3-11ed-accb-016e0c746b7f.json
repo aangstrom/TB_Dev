@@ -179,6 +179,10 @@
       "fromIndex" : 40,
       "toIndex" : 39,
       "type" : "Success"
+    }, {
+      "fromIndex" : 43,
+      "toIndex" : 27,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -190,6 +194,7 @@
       "configuration" : {
         "defaultTTL" : 0
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -208,8 +213,10 @@
       },
       "configuration" : {
         "scope" : "CLIENT_SCOPE",
-        "notifyDevice" : "false"
+        "notifyDevice" : "false",
+        "updateAttributesOnlyOnValueChange" : "false"
       },
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -230,6 +237,7 @@
       "configuration" : {
         "version" : 0
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -250,6 +258,7 @@
       "configuration" : {
         "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -269,6 +278,7 @@
       "configuration" : {
         "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -289,6 +299,7 @@
       "configuration" : {
         "timeoutInSeconds" : 60
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -308,6 +319,7 @@
       "configuration" : {
         "originatorTypes" : [ "ENTITY_GROUP" ]
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -327,6 +339,7 @@
       "configuration" : {
         "messageTypes" : [ "POST_ATTRIBUTES_REQUEST", "RPC_CALL_FROM_SERVER_TO_DEVICE" ]
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -347,6 +360,7 @@
         "entityGroupId" : null,
         "entityGroupIsMessageOriginator" : true
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -368,6 +382,7 @@
         "persistAlarmRulesState" : false,
         "fetchAlarmRulesStateOnStart" : false
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -388,6 +403,7 @@
       "configuration" : {
         "ruleChainId" : "7c655170-01d5-11ed-8014-35af6f7ed6b6"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -408,6 +424,7 @@
       "configuration" : {
         "ruleChainId" : "fa3689a0-3f5d-11ed-accb-016e0c746b7f"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -435,6 +452,7 @@
         "originatorId" : "e6238730-430c-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -462,6 +480,7 @@
         "originatorId" : "edae6010-430c-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -488,6 +507,7 @@
         "originatorId" : null,
         "originatorType" : null
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -514,6 +534,7 @@
         "originatorId" : "7c15f8f0-01d5-11ed-8014-35af6f7ed6b6",
         "originatorType" : "DEVICE"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -540,6 +561,7 @@
         "originatorId" : "eccb2a30-9649-11ed-a0f1-b51a14fb887c",
         "originatorType" : "ASSET"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -559,13 +581,14 @@
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
-        "fetchToData" : false,
         "clientAttributeNames" : [ ],
         "sharedAttributeNames" : [ ],
         "serverAttributeNames" : [ "latitude", "longitude" ],
         "latestTsKeyNames" : [ ],
-        "getLatestValueWithTs" : false
+        "getLatestValueWithTs" : false,
+        "fetchTo" : "METADATA"
       },
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -607,6 +630,7 @@
           "type" : "anonymous"
         }
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -629,6 +653,7 @@
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
         "tbelScript" : "var newMsg = {\r\n    \"weather_icon\": msg.weather[0].icon,\r\n    \"outsideTemp\": msg.main.temp,\r\n    \"outsideMaxTemp\": msg.main.temp_max,\r\n    \"outsideMinTemp\": msg.main.temp_min,\r\n    \"outsideHumidity\": msg.main.humidity,\r\n};\r\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -655,6 +680,7 @@
         "originatorId" : "7c15f8f0-01d5-11ed-8014-35af6f7ed6b6",
         "originatorType" : "DEVICE"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -674,13 +700,14 @@
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
-        "fetchToData" : true,
         "clientAttributeNames" : [ ],
         "sharedAttributeNames" : [ ],
         "serverAttributeNames" : [ "setNewTemperature" ],
         "latestTsKeyNames" : [ ],
-        "getLatestValueWithTs" : false
+        "getLatestValueWithTs" : false,
+        "fetchTo" : "DATA"
       },
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -703,6 +730,7 @@
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: \"POST_TELEMETRY_REQUEST\"};",
         "tbelScript" : "var status;\nif(msg.temperature>=msg.ss_setNewTemperature){\n    status=0;\n}else{\n    status=1;\n}\nvar newMsg={\n    status: status,\n    temperature: msg.temperature,\n    setTemperature: msg.ss_setNewTemperature\n};\nreturn {msg: newMsg, metadata: metadata, msgType: \"POST_TELEMETRY_REQUEST\"};"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -725,6 +753,7 @@
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
         "tbelScript" : "var newMsg = {};\nif (metadata.deviceType == 'shelly3em') \n{ \n    newMsg.deviceName = metadata.deviceName;\n    newMsg.Phase_B_power = msg.Phase_B_power;\n    msg = newMsg;\n    return ['energymeter'];\n}\nelse {\n    return ['Other'];\n}\n"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -759,6 +788,7 @@
         "addMetadataKeyValuesAsKafkaHeaders" : null,
         "kafkaHeadersCharset" : null
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -781,6 +811,7 @@
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
         "tbelScript" : "var newMsg = {};\n    newMsg.deviceName = metadata.deviceName;\n    newMsg.Phase_B_power = msg.Phase_B_power;\n\n\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -815,6 +846,7 @@
         "addMetadataKeyValuesAsKafkaHeaders" : null,
         "kafkaHeadersCharset" : null
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -836,6 +868,7 @@
         "persistAlarmRulesState" : false,
         "fetchAlarmRulesStateOnStart" : false
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -858,6 +891,7 @@
         "skipLatestPersistence" : null,
         "useServerTs" : null
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -878,6 +912,7 @@
       "configuration" : {
         "version" : 0
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -900,6 +935,7 @@
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
         "tbelScript" : "if((JSON.stringify(msg) === '{}')==true) {\n    return ['Failed'];\n}else{\n    return ['Success'];\n}\nreturn nextRelation(metadata, msg);"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -920,6 +956,7 @@
       "configuration" : {
         "ruleChainId" : "2856ccc0-d476-11ed-9fb5-f96805f2c8b4"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -942,6 +979,7 @@
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
         "tbelScript" : "var newMsg = {};\nif (msg.power!=null || msg.Phase_A_power!=null || msg.Phase_B_power!=null || msg.Phase_C_power!=null || msg.Phase_A_pf!=null || msg.Phase_B_pf!=null || msg.Phase_C_pf!=null || msg.Phase_A_total!=null || msg.Phase_B_total!=null || msg.Phase_C_total!=null){\n    return ['Energy'];\n}\nelse {\n    return ['Other'];\n}\n"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -962,6 +1000,7 @@
       "configuration" : {
         "ruleChainId" : "64eaf570-d477-11ed-9fb5-f96805f2c8b4"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -982,8 +1021,10 @@
       "configuration" : {
         "scope" : "CLIENT_SCOPE",
         "notifyDevice" : false,
-        "sendAttributesUpdatedNotification" : false
+        "sendAttributesUpdatedNotification" : false,
+        "updateAttributesOnlyOnValueChange" : "false"
       },
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1004,6 +1045,7 @@
       "configuration" : {
         "integrationId" : "8ab421c0-a87e-11ed-bcb8-7f48a6e846b2"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1026,6 +1068,7 @@
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
         "tbelScript" : "if(msg.method==\"relay\"){\n    return ['Relay'];\n}else if(msg.method==\"getRelay\"){\n    return ['getRelay'];\n}else{\n    return ['Other'];\n}\nreturn nextRelation(metadata, msg);"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1046,6 +1089,7 @@
       "configuration" : {
         "ruleChainId" : "af235ad0-ef2d-11ed-9fb5-f96805f2c8b4"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1073,6 +1117,7 @@
         "originatorId" : "2347daf0-f0b2-11ed-9fb5-f96805f2c8b4",
         "originatorType" : "DEVICE"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1093,6 +1138,7 @@
       "configuration" : {
         "requestIdMetaDataAttribute" : "relay"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1112,13 +1158,14 @@
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
-        "fetchToData" : false,
         "clientAttributeNames" : [ ],
         "sharedAttributeNames" : [ "relay" ],
         "serverAttributeNames" : [ ],
         "latestTsKeyNames" : [ ],
-        "getLatestValueWithTs" : false
+        "getLatestValueWithTs" : false,
+        "fetchTo" : "METADATA"
       },
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1139,6 +1186,7 @@
       "configuration" : {
         "ruleChainId" : "4f08d9a0-f675-11ed-9a4b-e3fd271b8b84"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1159,6 +1207,7 @@
       "configuration" : {
         "ruleChainId" : "9ceaf8c0-2545-11ee-bb94-e90efb8ecc83"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1170,6 +1219,34 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 251,
+        "layoutY" : 920
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 60,
+        "scriptLang" : "TBEL",
+        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var hour = new Date().getHours();\nvar open;\nif(hour>=23){\n    open = true;\n}else if(hour<=8){\n    open = true;\n}else if(hour>=12){\n    open = true;\n}else if(hour<=14){\n    open = true;\n}else if(hour>=19){\n    open = true;\n}else if(hour<21){\n    open = true;\n}else{\n    open = false;\n}\nvar msg = { presenza: open };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "queueName" : null,
+        "originatorId" : "5011a7d0-7f11-11ee-ad91-9bb47870629b",
+        "originatorType" : "ASSET"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "40580d90-7f14-11ee-ad91-9bb47870629b"
+      },
+      "name" : "Presenza Campeggi",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     } ],
     "ruleChainConnections" : null
   },

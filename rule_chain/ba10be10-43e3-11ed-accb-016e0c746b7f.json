@@ -183,6 +183,14 @@
       "fromIndex" : 43,
       "toIndex" : 27,
       "type" : "Success"
+    }, {
+      "fromIndex" : 43,
+      "toIndex" : 44,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 44,
+      "toIndex" : 27,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -439,8 +447,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 326,
-        "layoutY" : 802
+        "layoutX" : 420,
+        "layoutY" : 869
       },
       "configuration" : {
         "msgCount" : 0,
@@ -1222,8 +1230,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 251,
-        "layoutY" : 920
+        "layoutX" : 116,
+        "layoutY" : 936
       },
       "configuration" : {
         "msgCount" : 0,
@@ -1247,6 +1255,35 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 297,
+        "layoutY" : 1014
+      },
+      "configuration" : {
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "TO",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "ASSET" ]
+          } ]
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0e9f1280-7f19-11ee-ad91-9bb47870629b"
+      },
+      "name" : "To Bungalow",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbDuplicateMsgToRelatedNode"
     } ],
     "ruleChainConnections" : null
   },

@@ -11538,8 +11538,8 @@
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "return value === true ? 1 : 0;"
+                "usePostProcessing" : false,
+                "postFuncBody" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -11578,6 +11578,7 @@
               "tooltipIndividual" : false,
               "tooltipCumulative" : false,
               "hideZeros" : false,
+              "tooltipValueFormatter" : "if(value==='true'){\n    return \"Occupato\";\n}else{\n    return \"Libero\";\n}",
               "grid" : {
                 "verticalLines" : true,
                 "horizontalLines" : true,
@@ -11599,7 +11600,7 @@
                 "color" : "#545454",
                 "tickSize" : null,
                 "tickDecimals" : 0,
-                "ticksFormatter" : "return value;"
+                "ticksFormatter" : "if(value==='true'){\n    return \"Occupato\";\n}else{\n    return \"Libero\";\n}"
               },
               "shadowSize" : 4,
               "smoothLines" : false,

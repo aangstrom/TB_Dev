@@ -5684,7 +5684,7 @@
             "padding" : "8px",
             "settings" : {
               "useMarkdownTextFunction" : false,
-              "markdownTextPattern" : "<div class=\"market-layout\" style=\"width: 100%; height: 100%; padding: 0;\" fxLayout=\"column\">\n    <div class=\"alarm-badges-layout\">\n        <tb-dashboard-state class=\"alarm-badges\" [ctx]=\"ctx\" stateId=\"all_alarm_badges\"></tb-dashboard-state>\n    </div>\n    <div fxLayout=\"column\" style=\"width: 100%; height: 60px;\">\n        <h5 class=\"market-title\">Campeggio</h5>\n        <mat-divider style=\"margin-top: 5px; margin-bottom: 18px;\"></mat-divider>\n    </div>\n    <div fxFlex fxLayout=\"column\" style=\"position: relative;\">\n        <tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"mappa_sedi\"></tb-dashboard-state>\n    </div>\n</div>",
+              "markdownTextPattern" : "<div class=\"market-layout\" style=\"width: 100%; height: 100%; padding: 0;\" fxLayout=\"column\">\n    <div class=\"alarm-badges-layout\">\n        <tb-dashboard-state class=\"alarm-badges\" [ctx]=\"ctx\" stateId=\"all_alarm_badges\"></tb-dashboard-state>\n    </div>\n    <div fxLayout=\"column\" style=\"width: 100%; height: 60px;\">\n        <h5 class=\"market-title\">Campeggio</h5>\n        <mat-divider style=\"margin-top: 5px; margin-bottom: 18px;\"></mat-divider>\n    </div>\n    <div fxFlex fxLayout=\"column\" style=\"position: relative;\">\n        <tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"mappa\"></tb-dashboard-state>\n    </div>\n</div>",
               "applyDefaultMarkdownStyle" : true,
               "markdownCss" : ".tb-markdown-view .tb-progress-cover, .tb-markdown-view .mat-drawer-container {\n    background-color: #fff;\n}\n\n.tb-markdown-view div, .tb-markdown-view p {\n    line-height: normal;\n}\n\n.tb-markdown-view > div {\n    padding: 0;\n}\n\n.market-layout {\n    position: relative;\n}\n\n.market-title {\n    font-size: 26px;\n    padding-bottom: 16px;\n    padding-left: 10px;\n    padding-top: 5px;\n}\n\n.state-filter-title {\n    padding-bottom: 15px;\n    padding-left: 10px;\n}\n\n.market-layout .alarm-badges-layout {\n    position: absolute;\n    height: 50px;\n    top: 0;\n    left: 0;\n    right: 0;\n    z-index: 2;\n    display: flex;\n    justify-content: center;\n    pointer-events: none;\n}\n\n.market-layout .alarm-badges-layout .alarm-badges {\n    height: 50px;\n    width: 420px;\n    pointer-events: all;\n}"
             },
@@ -11650,7 +11650,7 @@
               "entityAliasId" : "783dd5f0-d34d-946d-a82f-95d3a6eaadd1",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "xPosCampeggi",
+                "name" : "xPos",
                 "type" : "attribute",
                 "label" : "xPos",
                 "color" : "#afb42b",
@@ -11663,7 +11663,7 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "yPosCampeggi",
+                "name" : "yPos",
                 "type" : "attribute",
                 "label" : "yPos",
                 "color" : "#00796b",
@@ -11833,8 +11833,11 @@
                 "icon" : "more_horiz",
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
-                "type" : "custom",
-                "customFunction" : "var params = JSON.parse(JSON.stringify(widgetContext.stateController.getStateParams()));\nvar selectedDevice = params['selectedDevice'];\nif (selectedDevice && selectedDevice.entityId.id === entityId.id) {\n    params['selectedDevice'] = null;\n} else {\n    params['selectedDevice'] = { entityId: entityId };\n}\nwidgetContext.stateController.updateState(null, params);",
+                "type" : "updateDashboardState",
+                "targetDashboardStateId" : "dettagli_bungalow",
+                "setEntityId" : true,
+                "stateEntityParamName" : "bungalow_selezionato",
+                "openRightLayout" : false,
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
                 "id" : "c33ff837-63f4-df99-87f2-f2f409b5c997"
@@ -13424,33 +13427,6 @@
             }
           }
         },
-        "mappa_sedi" : {
-          "name" : "Mappa Sedi",
-          "root" : false,
-          "layouts" : {
-            "main" : {
-              "widgets" : {
-                "6021e4dc-1cd4-606a-62c4-d7f080a7e93a" : {
-                  "sizeX" : 24,
-                  "sizeY" : 11,
-                  "row" : 0,
-                  "col" : 0
-                }
-              },
-              "gridSettings" : {
-                "backgroundColor" : "#ffffff",
-                "columns" : 24,
-                "margin" : 0,
-                "backgroundSizeMode" : "100%",
-                "autoFillHeight" : true,
-                "backgroundImageUrl" : null,
-                "mobileAutoFillHeight" : true,
-                "mobileRowHeight" : 70,
-                "outerMargin" : true
-              }
-            }
-          }
-        },
         "header_device" : {
           "name" : "Header Device",
           "root" : false,
@@ -13807,6 +13783,33 @@
                 "margin" : 10,
                 "outerMargin" : true,
                 "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        },
+        "mappa" : {
+          "name" : "Mappa Campeggio",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "6021e4dc-1cd4-606a-62c4-d7f080a7e93a" : {
+                  "sizeX" : 24,
+                  "sizeY" : 11,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#ffffff",
+                "columns" : 24,
+                "margin" : 0,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : true,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : true,
+                "mobileRowHeight" : 70,
+                "outerMargin" : true
               }
             }
           }

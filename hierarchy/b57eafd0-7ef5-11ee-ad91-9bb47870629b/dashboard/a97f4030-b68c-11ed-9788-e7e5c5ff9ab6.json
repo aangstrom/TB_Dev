@@ -11538,8 +11538,8 @@
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : false,
-                "postFuncBody" : null
+                "usePostProcessing" : true,
+                "postFuncBody" : "return value === true ? 1 : 0;"
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -11599,7 +11599,7 @@
                 "color" : "#545454",
                 "tickSize" : null,
                 "tickDecimals" : 0,
-                "ticksFormatter" : "if (value === true) {\r\n  return 'Occupato';\r\n} else{\r\n  return 'Libero';\r\n}"
+                "ticksFormatter" : "return value;"
               },
               "shadowSize" : 4,
               "smoothLines" : false,

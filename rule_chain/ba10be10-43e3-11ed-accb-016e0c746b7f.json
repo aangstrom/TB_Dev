@@ -1235,10 +1235,10 @@
       },
       "configuration" : {
         "msgCount" : 0,
-        "periodInSeconds" : 300,
+        "periodInSeconds" : 60,
         "scriptLang" : "TBEL",
         "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var hour = new Date().getHours();\nvar open;\nif(hour==23 || hour==24){\n    open = true;\n}else if(hour==0 || hour==1 || hour==2 || hour==3 || hour==4 || hour==5 || hour==6 || hour==7 || hour==8){\n    open = true;\n}else if(hour==12 || hour==13){\n    open = true;\n}else if(hour==19 || hour==20 || hour==21){\n    open = true;\n}else{\n    open = false;\n}\nvar msg = { presenza: open };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var hour = new Date().getHours();\nvar open;\nif(hour==23 || hour==24){\n    open = true;\n}else if(hour==0 || hour==1 || hour==2 || hour==3 || hour==4 || hour==5 || hour==6 || hour==7 || hour==8 || hour==10){\n    open = true;\n}else if(hour==12 || hour==13){\n    open = true;\n}else if(hour==19 || hour==20 || hour==21){\n    open = true;\n}else{\n    open = false;\n}\nvar msg = { presenza: open };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "queueName" : null,
         "originatorId" : "5011a7d0-7f11-11ee-ad91-9bb47870629b",
         "originatorType" : "ASSET"

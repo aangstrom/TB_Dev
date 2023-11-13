@@ -11647,7 +11647,7 @@
               "dataKeys" : [ {
                 "name" : "presenza",
                 "type" : "timeseries",
-                "label" : "Presenza",
+                "label" : "presenza",
                 "color" : "#2196f3",
                 "settings" : {
                   "hideDataByDefault" : false,
@@ -11668,13 +11668,13 @@
                   },
                   "thresholds" : [ ]
                 },
-                "_hash" : 0.8356206308473006,
+                "_hash" : 0.9404927490983099,
                 "aggregationType" : null,
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if(value===true){\n    return 0;\n}else{\n    return 1;\n}"
+                "postFuncBody" : "if(value=='true'){\n    return 1;\n}else{\n    return 0;\n}"
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -11693,7 +11693,7 @@
                 "realtimeType" : 0,
                 "timewindowMs" : 86400000,
                 "quickInterval" : "CURRENT_DAY",
-                "interval" : 300000
+                "interval" : 120000
               },
               "aggregation" : {
                 "type" : "AVG",

@@ -1112,12 +1112,12 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 376,
-        "layoutY" : 559
+        "layoutX" : 342,
+        "layoutY" : 536
       },
       "configuration" : {
         "msgCount" : 0,
-        "periodInSeconds" : 30,
+        "periodInSeconds" : 300,
         "scriptLang" : "TBEL",
         "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var soundAvg = 10 + Math.random() * (120 - 10);\nsoundAvg = Math.round( soundAvg * 100 ) / 100;\nvar soundPeak = 30 + Math.random() * (120 - 10);\nsoundPeak = Math.round( soundPeak * 100 ) / 100;\nvar vdd = 3994;\n\nvar msg = {\n            soundAvg: soundAvg,\n            soundPeak: soundPeak,\n            vdd: vdd,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",

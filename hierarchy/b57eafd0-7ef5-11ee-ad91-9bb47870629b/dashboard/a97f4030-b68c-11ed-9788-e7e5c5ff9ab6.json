@@ -11673,8 +11673,8 @@
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : false,
-                "postFuncBody" : null
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value===true){\n    return 0;\n}else{\n    return 1;\n}"
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -11735,7 +11735,7 @@
                 "color" : "#545454",
                 "tickSize" : null,
                 "tickDecimals" : 0,
-                "ticksFormatter" : "if(value==='true'){\n    return \"Occupato\";\n}else{\n    return \"Libero\";\n}"
+                "ticksFormatter" : "if(value===1){\n    return \"Occupato\";\n}else{\n    return \"Libero\";\n}"
               },
               "shadowSize" : 4,
               "smoothLines" : false,
@@ -12200,92 +12200,6 @@
           "row" : 0,
           "col" : 0,
           "id" : "78b1ab8f-9569-26f1-89d4-64692445b8d7"
-        },
-        "fe63d244-c628-1ebf-d646-dda3d66f66ba" : {
-          "typeFullFqn" : "system.cards.timeseries_table",
-          "type" : "timeseries",
-          "sizeX" : 8,
-          "sizeY" : 6.5,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : "",
-              "entityAliasId" : "b755362a-b545-8ee6-a67b-df2c9e39d6e5",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "presenza",
-                "type" : "timeseries",
-                "label" : "presenza",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.23023213781406904,
-                "units" : null,
-                "decimals" : 0,
-                "aggregationType" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              } ],
-              "alarmFilterConfig" : {
-                "statusList" : [ "ACTIVE" ]
-              },
-              "latestDataKeys" : [ ]
-            } ],
-            "timewindow" : {
-              "hideInterval" : false,
-              "hideLastInterval" : false,
-              "hideQuickInterval" : false,
-              "hideAggregation" : false,
-              "hideAggInterval" : false,
-              "hideTimezone" : false,
-              "selectedTab" : 0,
-              "realtime" : {
-                "realtimeType" : 0,
-                "timewindowMs" : 3600000,
-                "quickInterval" : "CURRENT_DAY",
-                "interval" : 300000
-              },
-              "aggregation" : {
-                "type" : "NONE",
-                "limit" : 200
-              }
-            },
-            "showTitle" : true,
-            "backgroundColor" : "rgb(255, 255, 255)",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "8px",
-            "settings" : {
-              "showTimestamp" : true,
-              "displayPagination" : true,
-              "defaultPageSize" : 10,
-              "enableSearch" : true,
-              "enableSelectColumnDisplay" : true
-            },
-            "title" : "Timeseries table",
-            "dropShadow" : true,
-            "enableFullscreen" : true,
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400,
-              "padding" : "5px 10px 5px 10px"
-            },
-            "useDashboardTimewindow" : false,
-            "showLegend" : false,
-            "widgetStyle" : { },
-            "actions" : { },
-            "showTitleIcon" : false,
-            "iconColor" : "rgba(0, 0, 0, 0.87)",
-            "iconSize" : "24px",
-            "displayTimewindow" : true,
-            "configMode" : "basic",
-            "titleFont" : null,
-            "titleColor" : null,
-            "titleIcon" : null,
-            "enableDataExport" : true
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "fe63d244-c628-1ebf-d646-dda3d66f66ba"
         }
       },
       "states" : {
@@ -13993,12 +13907,6 @@
                   "sizeX" : 24,
                   "sizeY" : 6,
                   "row" : 0,
-                  "col" : 0
-                },
-                "fe63d244-c628-1ebf-d646-dda3d66f66ba" : {
-                  "sizeX" : 24,
-                  "sizeY" : 6,
-                  "row" : 6,
                   "col" : 0
                 }
               },

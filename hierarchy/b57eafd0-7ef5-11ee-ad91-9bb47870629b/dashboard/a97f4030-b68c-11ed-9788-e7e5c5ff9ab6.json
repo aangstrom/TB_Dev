@@ -12445,6 +12445,318 @@
           "col" : 0,
           "id" : "b9683a3b-4790-89f2-6e98-1a580d9fc0fc",
           "typeFullFqn" : "system.charts.basic_timeseries"
+        },
+        "51c22b8b-2bd8-8358-108e-a05567eededa" : {
+          "type" : "latest",
+          "sizeX" : 7.5,
+          "sizeY" : 6.5,
+          "config" : {
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1683549171831,
+                  "endTimeMs" : 1683635571831
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "entitiesTitle" : "Bungalow",
+              "enableSearch" : true,
+              "enableSelectColumnDisplay" : true,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "showCellActionsMenu" : true,
+              "reserveSpaceForHiddenAction" : "true",
+              "displayEntityName" : false,
+              "displayEntityLabel" : false,
+              "displayEntityType" : false,
+              "displayPagination" : false,
+              "defaultSortOrder" : "name",
+              "useRowStyleFunction" : false
+            },
+            "title" : "Bungalow",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "24px",
+              "fontWeight" : 700,
+              "padding" : "5px 10px 5px 10px",
+              "height" : "60px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "783dd5f0-d34d-946d-a82f-95d3a6eaadd1",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Nome",
+                "color" : "#2196f3",
+                "settings" : {
+                  "columnWidth" : "20%",
+                  "useCellStyleFunction" : false,
+                  "cellStyleFunction" : "",
+                  "useCellContentFunction" : false,
+                  "cellContentFunction" : "",
+                  "defaultColumnVisibility" : "visible",
+                  "columnSelectionToDisplay" : "enabled",
+                  "columnExportOption" : "onlyVisible"
+                },
+                "_hash" : 0.46096251592014714,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null,
+                "aggregationType" : null
+              }, {
+                "name" : "stato",
+                "type" : "attribute",
+                "label" : "Stato",
+                "color" : "#ffc107",
+                "settings" : {
+                  "columnWidth" : "0px",
+                  "useCellStyleFunction" : false,
+                  "useCellContentFunction" : true,
+                  "cellContentFunction" : "var state = value;\nvar active = entity.active;\nif (active === 'false') {\n    state = 'disconnected';\n}\n\nvar stateSvg = getStateSvg(state);\nvar encodedStateSvg = encodeURIComponent(stateSvg);\nvar stateSvgUrl = 'data:image/svg+xml,' + encodedStateSvg;\nvar stateLabel = getStateLabel(state);\n\nreturn '<span>'+\n           '<img style=\"vertical-align: middle;\" class=\"mat-icon\" src=\"'+ stateSvgUrl +'\">' +\n           '<span style=\"vertical-align: middle; padding-left: 8px;\">'+ stateLabel +'</span>' +\n       '</span>';\n            \nfunction getStateSvg(state) {\n    switch (state) {\n        case 'inagibile':\n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#E64A19\"/>' +\n                   '</svg>';\n        case 'manutenzione':            \n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#D5C21B\"/>' +\n                   '</svg>';\n        case 'normale':            \n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#1F8B4D\"/>' +\n                   '</svg>';\n        default:\n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#AAAAAA\"/>' +\n                   '</svg>';\n    }\n}\n\nfunction getStateLabel(state) {\n    switch(state) {\n        case 'manutenzione':\n            return 'Manutenzione';\n        case 'inagibile':\n            return 'Inagibile';\n        case 'normale':\n            return 'Normale';\n        default:\n            return state;\n    }\n}\n",
+                  "defaultColumnVisibility" : "visible",
+                  "columnSelectionToDisplay" : "enabled",
+                  "columnExportOption" : "onlyVisible"
+                },
+                "_hash" : 0.006431299368144128,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "presenza",
+                "type" : "timeseries",
+                "label" : "Presenza",
+                "color" : "#f44336",
+                "settings" : {
+                  "columnWidth" : "0px",
+                  "useCellStyleFunction" : false,
+                  "useCellContentFunction" : true,
+                  "cellContentFunction" : "var state = value;\n\nvar stateSvg = getStateSvg(state);\nvar encodedStateSvg = encodeURIComponent(stateSvg);\nvar stateSvgUrl = 'data:image/svg+xml,' + encodedStateSvg;\nvar stateLabel = getStateLabel(state);\n\nreturn '<span>'+\n           '<img style=\"vertical-align: middle;\" class=\"mat-icon\" src=\"'+ stateSvgUrl +'\">' +\n           '<span style=\"vertical-align: middle; padding-left: 8px;\">'+ stateLabel +'</span>' +\n       '</span>';\n            \nfunction getStateSvg(state) {\n    switch (state) {\n        case 'true':\n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#E64A19\"/>' +\n                   '</svg>';\n        case 'false':            \n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#1F8B4D\"/>' +\n                   '</svg>';\n        default:\n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#AAAAAA\"/>' +\n                   '</svg>';\n    }\n}\n\nfunction getStateLabel(state) {\n    switch(state) {\n        case 'false':\n            return 'Libero';\n        case 'true':\n            return 'Occupato';\n        default:\n            return state;\n    }\n}\n",
+                  "defaultColumnVisibility" : "visible",
+                  "columnSelectionToDisplay" : "enabled",
+                  "columnExportOption" : "onlyVisible"
+                },
+                "_hash" : 0.41555310541809387,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : false,
+                "postFuncBody" : null
+              }, {
+                "name" : "temperature",
+                "type" : "attribute",
+                "label" : "Temperatura",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.38112908383012645,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "humidity",
+                "type" : "attribute",
+                "label" : "Umidità",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.6006452123024142,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "mc",
+                "type" : "attribute",
+                "label" : "Acqua",
+                "color" : "#8bc34a",
+                "settings" : { },
+                "_hash" : 0.011905363067595598,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "power",
+                "type" : "attribute",
+                "label" : "power",
+                "color" : "#3f51b5",
+                "settings" : { },
+                "_hash" : 0.2596106843840744
+              }, {
+                "name" : "note",
+                "type" : "attribute",
+                "label" : "Note",
+                "color" : "#ffc107",
+                "settings" : {
+                  "columnWidth" : "0px",
+                  "useCellStyleFunction" : false,
+                  "cellStyleFunction" : "",
+                  "useCellContentFunction" : false,
+                  "cellContentFunction" : "",
+                  "defaultColumnVisibility" : "visible",
+                  "columnSelectionToDisplay" : "enabled",
+                  "columnExportOption" : "onlyVisible"
+                },
+                "_hash" : 0.5439377495268714,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null,
+                "aggregationType" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetStyle" : { },
+            "widgetCss" : "div.tb-widget .tb-widget-title {\n    max-height: 100px !important;\n}",
+            "noDataDisplayMessage" : "",
+            "actions" : {
+              "rowClick" : [ {
+                "name" : "Apri Dettagli",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "dettagli_bungalow",
+                "setEntityId" : true,
+                "stateEntityParamName" : "bungalow_selezionato",
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "27b78a0c-3e2d-8d90-72dd-10f9f80351b5"
+              } ],
+              "actionCellButton" : [ {
+                "name" : "Impostazioni Bungalow",
+                "icon" : "settings",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "bungalow_settings",
+                "setEntityId" : true,
+                "stateEntityParamName" : "bungalow_selezionato",
+                "openRightLayout" : false,
+                "dialogTitle" : "",
+                "dialogHideDashboardToolbar" : true,
+                "dialogWidth" : 40,
+                "dialogHeight" : 90,
+                "openInSeparateDialog" : true,
+                "openInPopover" : false,
+                "id" : "5f3f6154-68b7-a757-cb3e-bf09edc8bb65"
+              }, {
+                "name" : "Apri Dettagli",
+                "icon" : "arrow_forward",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "dettagli_bungalow",
+                "setEntityId" : true,
+                "stateEntityParamName" : "bungalow_selezionato",
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "9e3b9891-b984-4475-345e-b738850e1fda"
+              } ]
+            },
+            "titleIcon" : "devices_other",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "28px",
+            "displayTimewindow" : true,
+            "pageSize" : 1024
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "51c22b8b-2bd8-8358-108e-a05567eededa",
+          "typeFullFqn" : "system.cards.entities_table"
+        },
+        "4389668c-3fc2-7817-c912-5262ff46fb02" : {
+          "type" : "static",
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "cardHtml" : "<div class='card'>\n    <i id=\"Indietro\" class=\"fa fa-arrow-left\"></i>\n</div>",
+              "cardCss" : ".card {\n    font-weight: bold;\n    font-size: 32px;\n    color: black;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n}\n#Indietro{\n    cursor: pointer;\n    margin-left: 20px;\n}"
+            },
+            "title" : "New HTML Card",
+            "dropShadow" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "Indietro",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "var stateIndex = widgetContext.stateController.getStateIndex();\nwhile (stateIndex > 0) {\n    stateIndex -= 1;\n    backToPrevState(stateIndex);\n}\nopenDashboardState('devices');\n\nfunction backToPrevState(stateIndex) {\n    widgetContext.stateController.navigatePrevState(stateIndex);\n}\n\nfunction openDashboardState(statedId) {\n    var params = widgetContext.stateController.getStateParams();\n    params['selectedSupermarket'] = null;\n    widgetContext.stateController.updateState(null, params);\n}",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "d2f3abf5-41c5-264e-00bd-f58102239e91"
+              } ]
+            },
+            "enableFullscreen" : false,
+            "enableDataExport" : true,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showLegend" : false
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "4389668c-3fc2-7817-c912-5262ff46fb02",
+          "typeFullFqn" : "system.cards.html_card"
         }
       },
       "states" : {
@@ -14248,6 +14560,39 @@
                 "6b0daf2e-c3e9-c83c-1c59-a3fbdcb9231e" : {
                   "sizeX" : 24,
                   "sizeY" : 18,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#FFFFFF",
+                "columns" : 24,
+                "margin" : 0,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : true,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70
+              }
+            }
+          }
+        },
+        "all_bungalow" : {
+          "name" : "all_bungalow",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "51c22b8b-2bd8-8358-108e-a05567eededa" : {
+                  "sizeX" : 24,
+                  "sizeY" : 11,
+                  "row" : 1,
+                  "col" : 0
+                },
+                "4389668c-3fc2-7817-c912-5262ff46fb02" : {
+                  "sizeX" : 24,
+                  "sizeY" : 1,
                   "row" : 0,
                   "col" : 0
                 }

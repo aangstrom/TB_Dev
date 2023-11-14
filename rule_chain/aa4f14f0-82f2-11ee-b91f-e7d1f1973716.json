@@ -137,9 +137,17 @@
       "toIndex" : 24,
       "type" : "Success"
     }, {
+      "fromIndex" : 27,
+      "toIndex" : 30,
+      "type" : "Success"
+    }, {
       "fromIndex" : 28,
       "toIndex" : 27,
       "type" : "Success"
+    }, {
+      "fromIndex" : 30,
+      "toIndex" : 29,
+      "type" : "True"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -599,8 +607,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 345,
-        "layoutY" : 560
+        "layoutX" : 261,
+        "layoutY" : 464
       },
       "configuration" : {
         "msgCount" : 0,
@@ -627,8 +635,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 376,
-        "layoutY" : 409
+        "layoutX" : 610,
+        "layoutY" : 497
       },
       "configuration" : {
         "relationsQuery" : {
@@ -716,7 +724,7 @@
         "alarmDetailsBuildTbel" : "var details = {\"data\": \"L'acqua è accesa da più di un'ora\"};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\nreturn details;",
         "useMessageAlarmData" : false,
         "overwriteAlarmDetails" : false,
-        "alarmType" : "General Alarm",
+        "alarmType" : "Acqua",
         "severity" : "CRITICAL",
         "propagate" : false,
         "relationTypes" : [ ],
@@ -810,6 +818,53 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 279,
+        "layoutY" : 678
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmType" : "Acqua"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a10f2a50-82f8-11ee-b91f-e7d1f1973716"
+      },
+      "name" : "Clear Alarm",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbClearAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 279,
+        "layoutY" : 601
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return msg.temperature > 20;",
+        "tbelScript" : "return msg.messageCountAcqua==1;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a11089e0-82f8-11ee-b91f-e7d1f1973716"
+      },
+      "name" : "if = 1",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
     } ],
     "ruleChainConnections" : null
   },

@@ -5766,7 +5766,7 @@
                 "limit" : 200
               }
             },
-            "showTitle" : true,
+            "showTitle" : false,
             "backgroundColor" : "rgb(255, 255, 255)",
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
@@ -5774,7 +5774,7 @@
               "entitiesTitle" : "Bungalow",
               "enableSearch" : true,
               "enableSelectColumnDisplay" : true,
-              "enableStickyHeader" : true,
+              "enableStickyHeader" : false,
               "enableStickyAction" : true,
               "showCellActionsMenu" : true,
               "reserveSpaceForHiddenAction" : "true",
@@ -12757,6 +12757,61 @@
           "col" : 0,
           "id" : "4389668c-3fc2-7817-c912-5262ff46fb02",
           "typeFullFqn" : "system.cards.html_card"
+        },
+        "24a8773a-eb64-7ede-0cb5-603d4504c0c6" : {
+          "typeFullFqn" : "system.cards.html_card",
+          "type" : "static",
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "static",
+              "name" : "function",
+              "dataKeys" : [ {
+                "name" : "f(x)",
+                "type" : "function",
+                "label" : "Random",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.15479322438769105,
+                "funcBody" : "var value = prevValue + Math.random() * 100 - 50;\nvar multiplier = Math.pow(10, 2 || 0);\nvar value = Math.round(value * multiplier) / multiplier;\nif (value < -1000) {\n\tvalue = -1000;\n} else if (value > 1000) {\n\tvalue = 1000;\n}\nreturn value;"
+              } ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "cardHtml" : "<h1 id=\"bungalow\">Bungalow</h1>",
+              "cardCss" : ".card {\n    font-weight: bold;\n    font-size: 32px;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}"
+            },
+            "title" : "HTML Card",
+            "dropShadow" : true,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "bungalow",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "all_bungalow",
+                "setEntityId" : false,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "8442e140-f941-1dd7-f867-4e77c188109f"
+              } ]
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "24a8773a-eb64-7ede-0cb5-603d4504c0c6"
         }
       },
       "states" : {
@@ -14340,10 +14395,16 @@
               "widgets" : {
                 "6e0676c2-49cd-846e-9c94-80c6b2c0218c" : {
                   "sizeX" : 24,
-                  "sizeY" : 11,
-                  "row" : 0,
+                  "sizeY" : 10,
+                  "row" : 1,
                   "col" : 0,
                   "mobileOrder" : 0
+                },
+                "24a8773a-eb64-7ede-0cb5-603d4504c0c6" : {
+                  "sizeX" : 7,
+                  "sizeY" : 1,
+                  "row" : 0,
+                  "col" : 0
                 }
               },
               "gridSettings" : {

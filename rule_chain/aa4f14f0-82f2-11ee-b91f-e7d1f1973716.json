@@ -769,11 +769,11 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var message={};\nvar temp=parseInt(metadata.MsgCount);\nif(temp>=1 && msg.mc>0){\n    message.MsgCount=temp+1;\n}else{\n    message.MsgCount=1;\n}\nreturn {msg: message, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var message={};\nvar temp=parseInt(metadata.MsgCount);\nif(temp>=1 && msg.mc>0){\n    message.MsgCount=temp+1;\n}else{\n    message.MsgCount=1;\n}\nreturn {msg: message, metadata: metadata, msgType: \"POST_ATTRIBUTES_REQUEST\"};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : false,
+      "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",

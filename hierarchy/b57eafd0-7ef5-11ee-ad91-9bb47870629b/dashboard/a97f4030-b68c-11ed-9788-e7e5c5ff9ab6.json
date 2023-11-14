@@ -12213,6 +12213,102 @@
           "row" : 0,
           "col" : 0,
           "id" : "78b1ab8f-9569-26f1-89d4-64692445b8d7"
+        },
+        "6b0daf2e-c3e9-c83c-1c59-a3fbdcb9231e" : {
+          "type" : "latest",
+          "sizeX" : 11,
+          "sizeY" : 16,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "b755362a-b545-8ee6-a67b-df2c9e39d6e5",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "label",
+                "type" : "entityField",
+                "label" : "Nome sensore",
+                "color" : "#aa00ff",
+                "settings" : { },
+                "_hash" : 0.1685165400028874,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1683549171832,
+                  "endTimeMs" : 1683635571832
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "widgetTitle" : "Soglie Allarmi",
+              "showResultMessage" : false,
+              "showActionButtons" : true,
+              "updateAllValues" : false,
+              "showGroupTitle" : false,
+              "fieldsAlignment" : "column",
+              "groupTitle" : "${entityName}",
+              "fieldsInRow" : 2,
+              "columnGap" : 10,
+              "rowGap" : 5
+            },
+            "title" : "Soglie allarmi",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "enableDataExport" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "18px",
+              "fontWeight" : 600,
+              "padding" : "5px 10px 5px 5px",
+              "textTransform" : "capitalize"
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "showTitleIcon" : false,
+            "titleIcon" : null,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "displayTimewindow" : true,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "Nessun sensore presente",
+            "margin" : "0px"
+          },
+          "id" : "6b0daf2e-c3e9-c83c-1c59-a3fbdcb9231e",
+          "typeFullFqn" : "system.input_widgets.update_multiple_attributes"
         }
       },
       "states" : {
@@ -13976,6 +14072,45 @@
                 "mobileAutoFillHeight" : true,
                 "mobileRowHeight" : 70,
                 "outerMargin" : true
+              }
+            }
+          }
+        },
+        "acqua_details" : {
+          "name" : "acqua_details",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : { },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        },
+        "acqua_settings" : {
+          "name" : "acqua_settings",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "6b0daf2e-c3e9-c83c-1c59-a3fbdcb9231e" : {
+                  "sizeX" : 24,
+                  "sizeY" : 18,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%"
               }
             }
           }

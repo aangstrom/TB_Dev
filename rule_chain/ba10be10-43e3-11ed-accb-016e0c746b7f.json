@@ -175,22 +175,6 @@
       "fromIndex" : 40,
       "toIndex" : 39,
       "type" : "Success"
-    }, {
-      "fromIndex" : 43,
-      "toIndex" : 27,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 43,
-      "toIndex" : 44,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 44,
-      "toIndex" : 27,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 45,
-      "toIndex" : 27,
-      "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -1227,91 +1211,6 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 58,
-        "layoutY" : 922
-      },
-      "configuration" : {
-        "msgCount" : 0,
-        "periodInSeconds" : 300,
-        "scriptLang" : "TBEL",
-        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var hour = new Date().getHours();\nvar open;\nif(hour==23 || hour==24){\n    open = true;\n}else if(hour==0 || hour==1 || hour==2 || hour==3 || hour==4 || hour==5 || hour==6 || hour==7 || hour==8){\n    open = true;\n}else if(hour==12 || hour==13){\n    open = true;\n}else if(hour==19 || hour==20 || hour==21){\n    open = true;\n}else{\n    open = false;\n}\nvar msg = { presenza: open };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "queueName" : null,
-        "originatorId" : "5011a7d0-7f11-11ee-ad91-9bb47870629b",
-        "originatorType" : "ASSET"
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "4596ac80-7f14-11ee-ad91-9bb47870629b"
-      },
-      "name" : "Presenza Campeggi",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 326,
-        "layoutY" : 899
-      },
-      "configuration" : {
-        "relationsQuery" : {
-          "fetchLastLevelOnly" : false,
-          "direction" : "TO",
-          "maxLevel" : 1,
-          "filters" : [ {
-            "relationType" : "Contains",
-            "entityTypes" : [ "ASSET" ]
-          } ]
-        }
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "0e9f1280-7f19-11ee-ad91-9bb47870629b"
-      },
-      "name" : "To Bungalow",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.transform.TbDuplicateMsgToRelatedNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 56,
-        "layoutY" : 783
-      },
-      "configuration" : {
-        "msgCount" : 0,
-        "periodInSeconds" : 300,
-        "scriptLang" : "TBEL",
-        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var hour = new Date().getHours();\nvar mc;\n//mc = Math.round( mc * 100 ) / 100;\nif(hour==23 || hour==24){\n        mc=Math.random() * (1 - 0);\n}else if(hour==0 || hour==1 || hour==2 || hour==3 || hour==4 || hour==5 || hour==6 || hour==7 || hour==8){\n    mc=0;\n}else if(hour==12 || hour==13){\n    mc = Math.random() * (1 - 0);\n}else if(hour==19 || hour==20 || hour==21){\n    mc = Math.random() * (1 - 0);\n}else{\n    mc=0;\n}\nvar msg = { mc: mc };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "queueName" : null,
-        "originatorId" : "2cb752f0-82d9-11ee-b91f-e7d1f1973716",
-        "originatorType" : "ASSET"
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "3fe00a00-82db-11ee-b91f-e7d1f1973716"
-      },
-      "name" : "Acqua Campeggi",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     } ],
     "ruleChainConnections" : null
   },

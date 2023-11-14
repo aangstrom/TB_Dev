@@ -120,6 +120,26 @@
       "fromIndex" : 23,
       "toIndex" : 9,
       "type" : "Success"
+    }, {
+      "fromIndex" : 23,
+      "toIndex" : 26,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 24,
+      "toIndex" : 25,
+      "type" : "True"
+    }, {
+      "fromIndex" : 26,
+      "toIndex" : 28,
+      "type" : "True"
+    }, {
+      "fromIndex" : 27,
+      "toIndex" : 24,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 27,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -579,8 +599,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 50,
-        "layoutY" : 428
+        "layoutX" : 364,
+        "layoutY" : 525
       },
       "configuration" : {
         "msgCount" : 0,
@@ -607,8 +627,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 277,
-        "layoutY" : 561
+        "layoutX" : 376,
+        "layoutY" : 409
       },
       "configuration" : {
         "relationsQuery" : {
@@ -664,13 +684,13 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 266,
-        "layoutY" : 851
+        "layoutX" : 53,
+        "layoutY" : 601
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return msg.temperature > 20;",
-        "tbelScript" : "return msg.temperature > 20;"
+        "tbelScript" : "return msg.messageCountAcqua>=12;"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -678,12 +698,118 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "a3b891b0-82f3-11ee-b91f-e7d1f1973716"
+        "id" : "61a3ecd0-82f7-11ee-b91f-e7d1f1973716"
       },
-      "name" : "if true more than 3h",
+      "name" : "if >=12",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 54,
+        "layoutY" : 676
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {\"data\": \"L'acqua è accesa da più di un'ora\"};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\nreturn details;",
+        "useMessageAlarmData" : false,
+        "overwriteAlarmDetails" : false,
+        "alarmType" : "General Alarm",
+        "severity" : "CRITICAL",
+        "propagate" : false,
+        "relationTypes" : [ ],
+        "propagateToOwner" : false,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false,
+        "dynamicSeverity" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "61a48910-82f7-11ee-b91f-e7d1f1973716"
+      },
+      "name" : "Allarme Acqua",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 53,
+        "layoutY" : 377
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return msg.temperature > 20;",
+        "tbelScript" : "return msg.mc==true;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "61a4d730-82f7-11ee-b91f-e7d1f1973716"
+      },
+      "name" : "if true",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 52,
+        "layoutY" : 526
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var message={};\nvar temp=parseInt(metadata.MsgCount);\nif(temp>=1 && msg.mc>0){\n    message.MsgCount=temp+1;\n}else{\n    message.MsgCount=1;\n}\nreturn {msg: message, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "61a54c60-82f7-11ee-b91f-e7d1f1973716"
+      },
+      "name" : "Set Acqua.MsgCount",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 54,
+        "layoutY" : 453
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchTo" : "METADATA",
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "MsgCount" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : false
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "61a59a80-82f7-11ee-b91f-e7d1f1973716"
+      },
+      "name" : "Get MsgCount",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
     } ],
     "ruleChainConnections" : null
   },

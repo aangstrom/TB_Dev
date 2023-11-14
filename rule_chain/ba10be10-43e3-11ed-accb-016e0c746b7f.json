@@ -1280,6 +1280,34 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbDuplicateMsgToRelatedNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 74,
+        "layoutY" : 1020
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 300,
+        "scriptLang" : "TBEL",
+        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var hour = new Date().getHours();\nvar mc;\n//mc = Math.round( mc * 100 ) / 100;\nif(hour==23 || hour==24){\n        mc=Math.random() * (1 - 0);\n}else if(hour==0 || hour==1 || hour==2 || hour==3 || hour==4 || hour==5 || hour==6 || hour==7 || hour==8){\n    mc=0;\n}else if(hour==12 || hour==13){\n    mc = Math.random() * (1 - 0);\n}else if(hour==19 || hour==20 || hour==21){\n    mc = Math.random() * (1 - 0);\n}else{\n    mc=0;\n}\nvar msg = { mc: mc };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "queueName" : null,
+        "originatorId" : "2cb752f0-82d9-11ee-b91f-e7d1f1973716",
+        "originatorType" : "ASSET"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "3fe00a00-82db-11ee-b91f-e7d1f1973716"
+      },
+      "name" : "Presenza Campeggi",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     } ],
     "ruleChainConnections" : null
   },

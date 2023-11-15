@@ -12708,53 +12708,6 @@
           "id" : "51c22b8b-2bd8-8358-108e-a05567eededa",
           "typeFullFqn" : "system.cards.entities_table"
         },
-        "4389668c-3fc2-7817-c912-5262ff46fb02" : {
-          "type" : "static",
-          "sizeX" : 7.5,
-          "sizeY" : 3,
-          "config" : {
-            "datasources" : [ ],
-            "timewindow" : {
-              "realtime" : {
-                "timewindowMs" : 60000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "rgb(255, 255, 255)",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "8px",
-            "settings" : {
-              "cardHtml" : "<div class='card'>\n    <i id=\"Indietro\" class=\"fa fa-arrow-left\"></i>\n</div>",
-              "cardCss" : ".card {\n    font-weight: bold;\n    font-size: 32px;\n    color: black;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n}\n#Indietro{\n    cursor: pointer;\n    margin-left: 20px;\n}"
-            },
-            "title" : "New HTML Card",
-            "dropShadow" : false,
-            "actions" : {
-              "elementClick" : [ {
-                "name" : "Indietro",
-                "icon" : "more_horiz",
-                "useShowWidgetActionFunction" : null,
-                "showWidgetActionFunction" : "return true;",
-                "type" : "custom",
-                "customFunction" : "var stateIndex = widgetContext.stateController.getStateIndex();\nwhile (stateIndex > 0) {\n    stateIndex -= 1;\n    backToPrevState(stateIndex);\n}\nopenDashboardState('devices');\n\nfunction backToPrevState(stateIndex) {\n    widgetContext.stateController.navigatePrevState(stateIndex);\n}\n\nfunction openDashboardState(statedId) {\n    var params = widgetContext.stateController.getStateParams();\n    params['selectedSupermarket'] = null;\n    widgetContext.stateController.updateState(null, params);\n}",
-                "openInSeparateDialog" : false,
-                "openInPopover" : false,
-                "id" : "d2f3abf5-41c5-264e-00bd-f58102239e91"
-              } ]
-            },
-            "enableFullscreen" : false,
-            "enableDataExport" : true,
-            "widgetStyle" : { },
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : "",
-            "showLegend" : false
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "4389668c-3fc2-7817-c912-5262ff46fb02",
-          "typeFullFqn" : "system.cards.html_card"
-        },
         "24a8773a-eb64-7ede-0cb5-603d4504c0c6" : {
           "typeFullFqn" : "system.cards.html_card",
           "type" : "static",
@@ -15059,12 +15012,6 @@
                   "sizeX" : 24,
                   "sizeY" : 11,
                   "row" : 1,
-                  "col" : 0
-                },
-                "4389668c-3fc2-7817-c912-5262ff46fb02" : {
-                  "sizeX" : 24,
-                  "sizeY" : 1,
-                  "row" : 0,
                   "col" : 0
                 }
               },

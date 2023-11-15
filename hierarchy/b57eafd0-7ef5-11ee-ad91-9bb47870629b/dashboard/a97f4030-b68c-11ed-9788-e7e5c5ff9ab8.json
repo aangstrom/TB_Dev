@@ -12928,7 +12928,7 @@
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
                 "type" : "custom",
-                "customFunction" : "var $injector = widgetContext.$scope.$injector;\r\nvar params = widgetContext.stateController.getStateParams();\r\n$injector.get(widgetContext.servicesMap.get('entityService')).getEntity(entityId.entityType, entityId.id)\r\n  .subscribe(function(data) {\r\n      console.log(data);\r\n        var deviceType = data.id.entityType;\r\n        if(deviceType==\"DEVICE\"){\r\n            params['automezzo_selezionato'] = {\r\n                entityId: entityId,\r\n                entityName: entityName\r\n            };\r\n            widgetContext.stateController.updateState('default', params);\r\n        }else if(deviceType==\"CUSTOMER\"){\r\n            params['bungalow_selezionato'] = null;\r\n            widgetContext.stateController.updateState(null, params);\r\n            params['bungalow_selezionato'] = {\r\n                entityId: entityId,\r\n                entityName: entityName\r\n            };\r\n            params['automezzo_selezionato'] = null;\r\n            widgetContext.stateController.updateState('default', params);\r\n        }else{\r\n            params['automezzo_selezionato'] = null;\r\n            widgetContext.stateController.updateState(null, params);\r\n        }\r\n});",
+                "customFunction" : "var $injector = widgetContext.$scope.$injector;\r\nvar params = widgetContext.stateController.getStateParams();\r\n$injector.get(widgetContext.servicesMap.get('entityService')).getEntity(entityId.entityType, entityId.id)\r\n  .subscribe(function(data) {\r\n      console.log(data);\r\n        var deviceType = data.id.entityType;\r\n        var Type=data.type;\r\n        if(Type==\"bungalow\"){\r\n            params['bungalow_selezionato'] = {\r\n                entityId: entityId,\r\n                entityName: entityName\r\n            };\r\n            widgetContext.stateController.updateState('dettagli_bungalow', params);\r\n            /*params['automezzo_selezionato'] = {\r\n                entityId: entityId,\r\n                entityName: entityName\r\n            };*/\r\n            widgetContext.stateController.updateState('default', params);\r\n        }else if(deviceType==\"CUSTOMER\"){\r\n            params['automezzo_selezionato'] = null;\r\n            widgetContext.stateController.updateState(null, params);\r\n            params['automezzo_selezionato'] = {\r\n                entityId: entityId,\r\n                entityName: entityName\r\n            };\r\n            params['automezzo_selezionato'] = null;\r\n            widgetContext.stateController.updateState('default', params);\r\n        }else{\r\n            params['automezzo_selezionato'] = null;\r\n            widgetContext.stateController.updateState(null, params);\r\n        }\r\n});",
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
                 "id" : "d78bc6d1-0385-9476-eb43-d3e6b8a611b6"
@@ -12946,6 +12946,136 @@
           "col" : 0,
           "id" : "f771dade-9766-f963-5c55-5822f384f027",
           "typeFullFqn" : "system.cards.entities_hierarchy"
+        },
+        "bde31308-35fa-04dd-a4d8-957ebca2d747" : {
+          "type" : "latest",
+          "sizeX" : 5,
+          "sizeY" : 3.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "1d799daf-1882-7a76-938b-c97e8c08ff11",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "name",
+                "type" : "attribute",
+                "label" : "name",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.5854642774360208
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            }, {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "1d799daf-1882-7a76-938b-c97e8c08ff11",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "name",
+                "type" : "attribute",
+                "label" : "name 2",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.19756328546126634
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1692539734376,
+                  "endTimeMs" : 1692626134376
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "useMarkdownTextFunction" : true,
+              "markdownTextFunction" : "var device,customer;\nconsole.log(data);\nif (data && data.length && data[0]['entityId']) {\n    if(data[0]['entityType']=='CUSTOMER'){\n        customer = true;\n    }\n    if(data[0]['entityType']=='DEVICE'){\n        device = true;\n    }\n} else {\n    device = false;\n    customer = false;\n}\nreturn '<div class=\"main-layout\" style=\"width: 100%; height:100%;\" fxLayout=\"column\">' +\n    (device==true ? ('<div style=\"height:100%;\">'+\n        '<tb-dashboard-state style=\"height:1300px\" fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"details\"></tb-dashboard-state>' +\n                '</div>') \n        : (customer ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"maps_cliente\"></tb-dashboard-state>')\n        : '<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"dettagli_bungalow\"></tb-dashboard-state>'))+\n       '</div>';",
+              "applyDefaultMarkdownStyle" : true,
+              "markdownCss" : ".tb-markdown-view > div {\n    padding: 0;\n}\n.header{\n    margin: 10px;\n    height: 35px;\n}\n.title {\n    font-size: 18px;\n    font-weight: 500;\n    color: #28232D;\n}\n#edit{\n    margin-right:10px;\n}"
+            },
+            "title" : "New Markdown/HTML Card",
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "showLegend" : false,
+            "useDashboardTimewindow" : true,
+            "enableDataExport" : false,
+            "margin" : "0px",
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "indietro",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "var params = widgetContext.stateController.getStateParams();\nparams['automezzo_selezionato'] = null;\nwidgetContext.stateController.updateState(null, params);",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "be856d68-ba4a-202f-5fe1-28fe668838f8"
+              }, {
+                "name" : "edit",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "edit",
+                "setEntityId" : true,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "popoverPreferredPlacement" : "top",
+                "popoverHideOnClickOutside" : true,
+                "popoverHideDashboardToolbar" : true,
+                "popoverWidth" : "25vw",
+                "popoverHeight" : "55vh",
+                "popoverStyle" : { },
+                "openInSeparateDialog" : false,
+                "openInPopover" : true,
+                "id" : "c5a6ce57-f9bd-749f-fdd3-2f0412fe2b53"
+              } ]
+            },
+            "displayTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "bde31308-35fa-04dd-a4d8-957ebca2d747",
+          "typeFullFqn" : "system.cards.markdown_card"
         }
       },
       "states" : {
@@ -14813,29 +14943,21 @@
             "main" : {
               "widgets" : {
                 "f771dade-9766-f963-5c55-5822f384f027" : {
-                  "sizeX" : 12,
-                  "sizeY" : 18,
+                  "sizeX" : 7,
+                  "sizeY" : 12,
                   "row" : 0,
                   "col" : 0
+                },
+                "bde31308-35fa-04dd-a4d8-957ebca2d747" : {
+                  "sizeX" : 23,
+                  "sizeY" : 12,
+                  "row" : 0,
+                  "col" : 7
                 }
               },
               "gridSettings" : {
                 "backgroundColor" : "#eeeeee",
-                "columns" : 12,
-                "margin" : 10,
-                "outerMargin" : true,
-                "backgroundSizeMode" : "100%",
-                "layoutDimension" : {
-                  "type" : "percentage",
-                  "leftWidthPercentage" : 30
-                }
-              }
-            },
-            "right" : {
-              "widgets" : { },
-              "gridSettings" : {
-                "backgroundColor" : "#eeeeee",
-                "columns" : 12,
+                "columns" : 24,
                 "margin" : 10,
                 "outerMargin" : true,
                 "backgroundSizeMode" : "100%"
@@ -15073,6 +15195,26 @@
               "entityType" : "CUSTOMER",
               "id" : "b57eafd0-7ef5-11ee-ad91-9bb47870629b"
             }
+          }
+        },
+        "58816d42-5d16-591d-205a-d85c302930d8" : {
+          "id" : "58816d42-5d16-591d-205a-d85c302930d8",
+          "alias" : "Automezzo Selezionato",
+          "filter" : {
+            "type" : "stateEntity",
+            "resolveMultiple" : false,
+            "stateEntityParamName" : "automezzo_selezionato",
+            "defaultStateEntity" : null
+          }
+        },
+        "33ca6212-9fd3-2436-d7c9-63525102db47" : {
+          "id" : "33ca6212-9fd3-2436-d7c9-63525102db47",
+          "alias" : "Cliente Selezionato",
+          "filter" : {
+            "type" : "stateEntity",
+            "resolveMultiple" : false,
+            "stateEntityParamName" : "cliente_selezionato",
+            "defaultStateEntity" : null
           }
         }
       },

@@ -12020,11 +12020,8 @@
                 "icon" : "more_horiz",
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
-                "type" : "openDashboardState",
-                "targetDashboardStateId" : "dettagli_bungalow",
-                "setEntityId" : true,
-                "stateEntityParamName" : "bungalow_selezionato",
-                "openRightLayout" : false,
+                "type" : "custom",
+                "customFunction" : "var $injector = widgetContext.$scope.$injector;\r\nvar params = widgetContext.stateController.getStateParams();\r\n$injector.get(widgetContext.servicesMap.get('entityService')).getEntity(entityId.entityType, entityId.id).subscribe(function(data) {\r\n    params['bungalow_selezionato'] = {\r\n        entityId: entityId\r\n        //entityName: entityName\r\n    };\r\n    params['visualizzazione'] = {\r\n        entityId: entityId\r\n        //entityName: entityName\r\n    };\r\n    widgetContext.stateController.updateState(null, params);\r\n });",
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
                 "id" : "c33ff837-63f4-df99-87f2-f2f409b5c997"

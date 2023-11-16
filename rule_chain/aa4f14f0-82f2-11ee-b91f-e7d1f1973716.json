@@ -170,12 +170,12 @@
       "type" : "Success"
     }, {
       "fromIndex" : 34,
-      "toIndex" : 9,
-      "type" : "False"
-    }, {
-      "fromIndex" : 34,
       "toIndex" : 37,
       "type" : "True"
+    }, {
+      "fromIndex" : 34,
+      "toIndex" : 47,
+      "type" : "False"
     }, {
       "fromIndex" : 35,
       "toIndex" : 22,
@@ -260,6 +260,10 @@
       "fromIndex" : 46,
       "toIndex" : 33,
       "type" : "Success"
+    }, {
+      "fromIndex" : 47,
+      "toIndex" : 9,
+      "type" : "False"
     } ],
     "firstNodeIndex" : 34,
     "nodes" : [ {
@@ -1054,8 +1058,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 82,
-        "layoutY" : 242
+        "layoutX" : 48,
+        "layoutY" : 199
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -1540,6 +1544,29 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 50,
+        "layoutY" : 256
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return msg.temperature > 20;",
+        "tbelScript" : "return msg.temperature!=null;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "2d15dbd0-8488-11ee-b91f-e7d1f1973716"
+      },
+      "name" : "if Temperature",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
     } ],
     "ruleChainConnections" : null
   },

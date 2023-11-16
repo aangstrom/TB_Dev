@@ -113,6 +113,10 @@
       "toIndex" : 22,
       "type" : "Success"
     }, {
+      "fromIndex" : 21,
+      "toIndex" : 32,
+      "type" : "Success"
+    }, {
       "fromIndex" : 22,
       "toIndex" : 9,
       "type" : "Success"
@@ -123,6 +127,10 @@
     }, {
       "fromIndex" : 23,
       "toIndex" : 26,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 23,
+      "toIndex" : 32,
       "type" : "Success"
     }, {
       "fromIndex" : 24,
@@ -148,6 +156,14 @@
       "fromIndex" : 30,
       "toIndex" : 29,
       "type" : "True"
+    }, {
+      "fromIndex" : 31,
+      "toIndex" : 9,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 32,
+      "toIndex" : 31,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -865,6 +881,58 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 506,
+        "layoutY" : 664
+      },
+      "configuration" : {
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "TO",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "ASSET" ]
+          } ]
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "108b9310-8465-11ee-b91f-e7d1f1973716"
+      },
+      "name" : "To Bungalow",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbDuplicateMsgToRelatedNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 507,
+        "layoutY" : 597
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: 'POST_ATTRIBUTES_REQUEST'};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "108d67d0-8465-11ee-b91f-e7d1f1973716"
+      },
+      "name" : "Transform to attribute",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

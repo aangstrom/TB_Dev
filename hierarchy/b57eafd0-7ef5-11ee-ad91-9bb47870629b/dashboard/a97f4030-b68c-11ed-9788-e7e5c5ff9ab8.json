@@ -918,7 +918,7 @@
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
                 "type" : "custom",
-                "customFunction" : "var $injector = widgetContext.$scope.$injector;\nvar params = widgetContext.stateController.getStateParams();\n$injector.get(widgetContext.servicesMap.get('entityService')).getEntity(entityId.entityType, entityId.id).subscribe(function(data) {\n    console.log(data);\n    params=null;\n    widgetContext.stateController.updateState(null, params);\n    params.selectedDevice = {\n        entityId: entityId\n        //entityName: entityName\n    };\n    params.visualizzazione = {\n        entityId: entityId\n        //entityName: entityName\n    };\n    console.log(data);\n    widgetContext.stateController.updateState(null, params);\n});",
+                "customFunction" : "var $injector = widgetContext.$scope.$injector;\nvar params = widgetContext.stateController.getStateParams();\n$injector.get(widgetContext.servicesMap.get('entityService')).getEntity(entityId.entityType, entityId.id).subscribe(function(data) {\n    params.visualizzazione=null;\n    //widgetContext.stateController.updateState(null, params);\n    params.selectedDevice = {\n        entityId: entityId\n    };\n    params.visualizzazione = {\n        entityId: entityId\n    };\n    widgetContext.stateController.updateState(null, params);\n});",
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
                 "id" : "27b78a0c-3e2d-8d90-72dd-10f9f80351b5"

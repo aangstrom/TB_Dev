@@ -160,9 +160,21 @@
               "iconSizeUnit" : "px",
               "icon" : "electric_bolt",
               "iconColor" : {
-                "type" : "constant",
+                "type" : "range",
                 "color" : "#F5DD00",
-                "rangeList" : [ ],
+                "rangeList" : [ {
+                  "from" : 30,
+                  "to" : 38,
+                  "color" : "rgb(76, 175, 80)"
+                }, {
+                  "from" : 40,
+                  "to" : 50,
+                  "color" : "rgb(244, 67, 54)"
+                }, {
+                  "from" : 38,
+                  "to" : 40,
+                  "color" : "rgb(245, 221, 0)"
+                } ],
                 "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
               },
               "valueFont" : {

@@ -264,6 +264,14 @@
       "fromIndex" : 47,
       "toIndex" : 9,
       "type" : "False"
+    }, {
+      "fromIndex" : 47,
+      "toIndex" : 48,
+      "type" : "True"
+    }, {
+      "fromIndex" : 48,
+      "toIndex" : 22,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 34,
     "nodes" : [ {
@@ -723,8 +731,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 142,
-        "layoutY" : 480
+        "layoutX" : 52,
+        "layoutY" : 468
       },
       "configuration" : {
         "msgCount" : 0,
@@ -751,8 +759,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 610,
-        "layoutY" : 497
+        "layoutX" : 700,
+        "layoutY" : 513
       },
       "configuration" : {
         "relationsQuery" : {
@@ -780,8 +788,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 49,
-        "layoutY" : 360
+        "layoutX" : 56,
+        "layoutY" : 550
       },
       "configuration" : {
         "msgCount" : 0,
@@ -808,8 +816,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 47,
-        "layoutY" : 798
+        "layoutX" : 68,
+        "layoutY" : 878
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -831,8 +839,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 48,
-        "layoutY" : 873
+        "layoutX" : 69,
+        "layoutY" : 953
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -864,8 +872,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 47,
-        "layoutY" : 574
+        "layoutX" : 68,
+        "layoutY" : 654
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -887,8 +895,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 46,
-        "layoutY" : 723
+        "layoutX" : 67,
+        "layoutY" : 803
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -910,8 +918,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 48,
-        "layoutY" : 650
+        "layoutX" : 69,
+        "layoutY" : 730
       },
       "configuration" : {
         "tellFailureIfAbsent" : false,
@@ -937,8 +945,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 273,
-        "layoutY" : 875
+        "layoutX" : 294,
+        "layoutY" : 955
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -961,8 +969,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 273,
-        "layoutY" : 798
+        "layoutX" : 294,
+        "layoutY" : 878
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -984,8 +992,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 507,
-        "layoutY" : 597
+        "layoutX" : 340,
+        "layoutY" : 508
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -1006,8 +1014,8 @@
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 277,
-        "layoutY" : 638
+        "layoutX" : 298,
+        "layoutY" : 718
       },
       "configuration" : {
         "scope" : "CLIENT_SCOPE",
@@ -1081,8 +1089,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 341,
-        "layoutY" : 419
+        "layoutX" : 358,
+        "layoutY" : 599
       },
       "configuration" : {
         "inputValueKey" : "mc",
@@ -1547,8 +1555,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 50,
-        "layoutY" : 256
+        "layoutX" : 51,
+        "layoutY" : 275
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -1567,6 +1575,29 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 52,
+        "layoutY" : 355
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var message={};\nmessage.temperature=msg.temperature;\nmessage.humidity=msg.humidity;\nreturn {msg: message, metadata: metadata, msgType: 'POST_ATTRIBUTES_REQUEST'};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c8f45ae0-8488-11ee-b91f-e7d1f1973716"
+      },
+      "name" : "Transform temp/hum to attribute",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

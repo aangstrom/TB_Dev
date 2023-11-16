@@ -12821,7 +12821,7 @@
             "padding" : "0px",
             "settings" : {
               "useMarkdownTextFunction" : true,
-              "markdownTextFunction" : "var device,bungalow,all_bungalow;\nif (data && data.length && data[0].entityId) {\n    \n    console.log(data[0]);\n    \n    if(data[0].Type==\"Acqua\" || data[0].Type==\"AA Sensor\" || data[0].Type==\"Energy\" || data[0].Type==\"AA Energy\" || data[0].Type==\"Presenza\"){\n        device=true;\n    }\n    if(data[0].Type=='bungalow'){\n        bungalow=true;\n    }\n    if(data[0].deviceType==\"Categoria\" && data[0].entityName==\"Bungalow\"){\n        all_bungalow=true;\n    }\n} else {\n    device = false;\n    bungalow = false;\n}\nreturn '<div class=\"main-layout\" style=\"width: 100%; height:100%;\" fxLayout=\"column\">' +\n    (\n        bungalow==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"dettagli_bungalow\"></tb-dashboard-state></div>') :\n        all_bungalow==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"all_bungalow\"></tb-dashboard-state></div>') :\n        device==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"device_details\"></tb-dashboard-state></div>') :\n        ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"mappa\"></tb-dashboard-state></div>')\n    );\n    /*if(bungalow==true){\n        '<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"dettagli_bungalow\"></tb-dashboard-state></div>';\n    }else{\n        '<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"plan\"></tb-dashboard-state></div>';\n    }*/\n    /*(device==true ? ('<div style=\"height:100%;\">'+\n        '<tb-dashboard-state style=\"height:1300px\" fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"details\"></tb-dashboard-state>' +\n                '</div>') \n        : (customer ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"maps_cliente\"></tb-dashboard-state>')\n        : '<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"dettagli_bungalow\"></tb-dashboard-state>'))+\n       '</div>';*/",
+              "markdownTextFunction" : "var device,bungalow,all_bungalow;\nif (data && data.length && data[0].entityId) {\n    if(data[0].Type==\"Acqua\" || data[0].Type==\"AA Sensor\" || data[0].Type==\"Energy\" || data[0].Type==\"AA Energy\" || data[0].Type==\"Presenza\"){\n        device=true;\n    }\n    if(data[0].Type=='bungalow'){\n        bungalow=true;\n    }\n    if(data[0].deviceType==\"Categoria\" && data[0].entityName==\"Bungalow\"){\n        all_bungalow=true;\n    }\n} else {\n    device = false;\n    bungalow = false;\n}\nreturn '<div class=\"main-layout\" style=\"width: 100%; height:100%;\" fxLayout=\"column\">' +\n    (\n        bungalow==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli_bungalow\"></tb-dashboard-state></div>') :\n        all_bungalow==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_bungalow\"></tb-dashboard-state></div>') :\n        device==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_device\"></tb-dashboard-state></div>') :\n        ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_mappa\"></tb-dashboard-state></div>')\n    );",
               "applyDefaultMarkdownStyle" : true,
               "markdownCss" : ".tb-markdown-view > div {\n    padding: 0;\n}\n.header{\n    margin: 10px;\n    height: 35px;\n}\n.title {\n    font-size: 18px;\n    font-weight: 500;\n    color: #28232D;\n}\n#edit{\n    margin-right:10px;\n}"
             },
@@ -15859,51 +15859,6 @@
             }
           }
         },
-        "dettagli_bungalow" : {
-          "name" : "${bungalow_selezionato:entityName}",
-          "root" : false,
-          "layouts" : {
-            "main" : {
-              "widgets" : {
-                "f6353931-4a44-cdf1-f337-e95187506bfe" : {
-                  "sizeX" : 14,
-                  "sizeY" : 2,
-                  "row" : 0,
-                  "col" : 0
-                },
-                "6feb925c-280e-7ce0-24df-6776634f549b" : {
-                  "sizeX" : 14,
-                  "sizeY" : 11,
-                  "row" : 2,
-                  "col" : 0
-                },
-                "93d66445-90ce-964d-3153-d0b88adf6323" : {
-                  "sizeX" : 10,
-                  "sizeY" : 7,
-                  "row" : 0,
-                  "col" : 14
-                },
-                "79ccdb36-cb0e-de67-bbfe-de012f35da31" : {
-                  "sizeX" : 10,
-                  "sizeY" : 6,
-                  "row" : 7,
-                  "col" : 14
-                }
-              },
-              "gridSettings" : {
-                "backgroundColor" : "#eeeeee",
-                "columns" : 24,
-                "margin" : 10,
-                "backgroundSizeMode" : "100%",
-                "autoFillHeight" : true,
-                "backgroundImageUrl" : null,
-                "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70,
-                "outerMargin" : true
-              }
-            }
-          }
-        },
         "presenza_details" : {
           "name" : "presenza_details",
           "root" : false,
@@ -15943,33 +15898,6 @@
                 "margin" : 10,
                 "outerMargin" : true,
                 "backgroundSizeMode" : "100%"
-              }
-            }
-          }
-        },
-        "mappa" : {
-          "name" : "Mappa Campeggio",
-          "root" : false,
-          "layouts" : {
-            "main" : {
-              "widgets" : {
-                "6021e4dc-1cd4-606a-62c4-d7f080a7e93a" : {
-                  "sizeX" : 24,
-                  "sizeY" : 11,
-                  "row" : 0,
-                  "col" : 0
-                }
-              },
-              "gridSettings" : {
-                "backgroundColor" : "#ffffff",
-                "columns" : 24,
-                "margin" : 0,
-                "backgroundSizeMode" : "100%",
-                "autoFillHeight" : true,
-                "backgroundImageUrl" : null,
-                "mobileAutoFillHeight" : true,
-                "mobileRowHeight" : 70,
-                "outerMargin" : true
               }
             }
           }
@@ -16028,33 +15956,6 @@
             }
           }
         },
-        "all_bungalow" : {
-          "name" : "all_bungalow",
-          "root" : false,
-          "layouts" : {
-            "main" : {
-              "widgets" : {
-                "51c22b8b-2bd8-8358-108e-a05567eededa" : {
-                  "sizeX" : 24,
-                  "sizeY" : 11,
-                  "row" : 0,
-                  "col" : 0
-                }
-              },
-              "gridSettings" : {
-                "backgroundColor" : "#EEEEEE",
-                "columns" : 24,
-                "margin" : 10,
-                "outerMargin" : true,
-                "backgroundSizeMode" : "100%",
-                "autoFillHeight" : true,
-                "backgroundImageUrl" : null,
-                "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70
-              }
-            }
-          }
-        },
         "default_2" : {
           "name" : "Campeggio Demo",
           "root" : true,
@@ -16088,8 +15989,35 @@
             }
           }
         },
-        "device_details" : {
-          "name" : "device_details",
+        "page_bungalow" : {
+          "name" : "page_bungalow",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "51c22b8b-2bd8-8358-108e-a05567eededa" : {
+                  "sizeX" : 24,
+                  "sizeY" : 11,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#EEEEEE",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : true,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70
+              }
+            }
+          }
+        },
+        "page_device" : {
+          "name" : "page_device",
           "root" : false,
           "layouts" : {
             "main" : {
@@ -16119,6 +16047,78 @@
                 "margin" : 10,
                 "outerMargin" : true,
                 "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        },
+        "page_mappa" : {
+          "name" : "Mappa Campeggio",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "6021e4dc-1cd4-606a-62c4-d7f080a7e93a" : {
+                  "sizeX" : 24,
+                  "sizeY" : 11,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#ffffff",
+                "columns" : 24,
+                "margin" : 0,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : true,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : true,
+                "mobileRowHeight" : 70,
+                "outerMargin" : true
+              }
+            }
+          }
+        },
+        "page_dettagli_bungalow" : {
+          "name" : "${bungalow_selezionato:entityName}",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "f6353931-4a44-cdf1-f337-e95187506bfe" : {
+                  "sizeX" : 14,
+                  "sizeY" : 2,
+                  "row" : 0,
+                  "col" : 0
+                },
+                "6feb925c-280e-7ce0-24df-6776634f549b" : {
+                  "sizeX" : 14,
+                  "sizeY" : 11,
+                  "row" : 2,
+                  "col" : 0
+                },
+                "93d66445-90ce-964d-3153-d0b88adf6323" : {
+                  "sizeX" : 10,
+                  "sizeY" : 7,
+                  "row" : 0,
+                  "col" : 14
+                },
+                "79ccdb36-cb0e-de67-bbfe-de012f35da31" : {
+                  "sizeX" : 10,
+                  "sizeY" : 6,
+                  "row" : 7,
+                  "col" : 14
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : true,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70,
+                "outerMargin" : true
               }
             }
           }

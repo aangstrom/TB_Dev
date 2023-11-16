@@ -443,7 +443,7 @@
                 "label" : "Phase_B_power",
                 "color" : "rgba(0, 0, 0, 0.87)",
                 "settings" : { },
-                "_hash" : 0.102666458203305,
+                "_hash" : 0.6992616590216436,
                 "units" : "kW",
                 "decimals" : 0
               } ],
@@ -539,27 +539,69 @@
                   "showArrow" : false
                 },
                 "_hash" : 0.8109197951445968,
-                "units" : "Wh",
+                "units" : "W",
                 "decimals" : 1,
                 "aggregationType" : "AVG",
                 "comparisonEnabled" : true,
                 "timeForComparison" : "previousInterval",
                 "comparisonResultType" : "DELTA_ABSOLUTE"
+              }, {
+                "name" : "Phase_B_power",
+                "type" : "timeseries",
+                "label" : "Media Phase_B_power",
+                "color" : "#607d8b",
+                "settings" : {
+                  "position" : "leftTop",
+                  "font" : {
+                    "family" : "Roboto",
+                    "size" : 14,
+                    "sizeUnit" : "px",
+                    "style" : "normal",
+                    "weight" : "500",
+                    "lineHeight" : "1"
+                  },
+                  "color" : {
+                    "type" : "constant",
+                    "color" : "rgba(0, 0, 0, 0.87)",
+                    "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+                  },
+                  "showArrow" : true
+                },
+                "_hash" : 0.2540626118108007,
+                "decimals" : 0,
+                "aggregationType" : "AVG",
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null,
+                "comparisonEnabled" : false,
+                "timeForComparison" : "previousInterval",
+                "comparisonResultType" : "DELTA_ABSOLUTE"
               } ]
             } ],
             "timewindow" : {
+              "hideInterval" : false,
+              "hideLastInterval" : false,
+              "hideQuickInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
               "selectedTab" : 1,
               "history" : {
                 "historyType" : 2,
-                "quickInterval" : "CURRENT_MONTH_SO_FAR"
+                "timewindowMs" : 60000,
+                "interval" : 1800000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1700069823432,
+                  "endTimeMs" : 1700156223432
+                },
+                "quickInterval" : "CURRENT_WEEK_SO_FAR"
               },
               "aggregation" : {
                 "type" : "AVG",
-                "interval" : 43200000,
                 "limit" : 5000
               }
             },
-            "showTitle" : false,
+            "showTitle" : true,
             "backgroundColor" : "rgba(0, 0, 0, 0)",
             "color" : null,
             "padding" : "0",
@@ -614,7 +656,7 @@
                 "showLatest" : false
               },
               "customLegendEnabled" : false,
-              "showSubtitle" : true,
+              "showSubtitle" : false,
               "subtitle" : "${entityName}",
               "subtitleFont" : {
                 "family" : "Roboto",
@@ -652,7 +694,7 @@
                 }
               }
             },
-            "title" : "Value and chart card",
+            "title" : "Consumo Energia",
             "dropShadow" : true,
             "enableFullscreen" : false,
             "titleStyle" : {
@@ -695,7 +737,7 @@
                 "lineHeight" : "16px"
               },
               "color" : "rgba(0, 0, 0, 0.38)",
-              "displayTypePrefix" : false
+              "displayTypePrefix" : true
             },
             "titleColor" : "rgba(0, 0, 0, 0.87)",
             "borderRadius" : null,

@@ -170,7 +170,7 @@
       "type" : "False"
     }, {
       "fromIndex" : 34,
-      "toIndex" : 35,
+      "toIndex" : 38,
       "type" : "True"
     }, {
       "fromIndex" : 35,
@@ -183,6 +183,10 @@
     }, {
       "fromIndex" : 37,
       "toIndex" : 33,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 38,
+      "toIndex" : 35,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 34,
@@ -949,8 +953,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 563,
-        "layoutY" : 56
+        "layoutX" : 605,
+        "layoutY" : 53
       },
       "configuration" : {
         "relationsQuery" : {
@@ -1001,8 +1005,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 308,
-        "layoutY" : 183
+        "layoutX" : 304,
+        "layoutY" : 136
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -1066,8 +1070,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 293,
-        "layoutY" : 54
+        "layoutX" : 304,
+        "layoutY" : 57
       },
       "configuration" : {
         "inputValueKey" : "power",
@@ -1105,6 +1109,29 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 304,
+        "layoutY" : 226
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if((JSON.stringify(msg) === '{}')==true) {\n    return ['Failed'];\n}else{\n    return ['Success'];\n}\nreturn nextRelation(metadata, msg);"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d7d80fe0-8477-11ee-b91f-e7d1f1973716"
+      },
+      "name" : "Discard empty",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     } ],
     "ruleChainConnections" : null
   },

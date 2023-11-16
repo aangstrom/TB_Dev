@@ -13,24 +13,6 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "b755362a-b545-8ee6-a67b-df2c9e39d6e5",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "active",
-                "type" : "attribute",
-                "label" : "selectedDevice",
-                "color" : "#c51162",
-                "settings" : { },
-                "_hash" : 0.7145163667848988,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "if (value === 'true' || value === 'false') {\n    return true;\n} else {\n    return false;\n}"
-              } ]
-            }, {
-              "type" : "entity",
-              "name" : null,
               "entityAliasId" : "129977b6-de2f-546b-7df8-2040f39f8732",
               "filterId" : null,
               "dataKeys" : [ {
@@ -238,7 +220,7 @@
               "autocloseTooltip" : true,
               "useTooltipFunction" : true,
               "tooltipPattern" : "<b>${entityName}</b><br/><br/><b>Latitude:</b> ${latitude:7}<br/><b>Longitude:</b> ${longitude:7}",
-              "tooltipFunction" : "var darkMode = $('.tb-dashboard-page').hasClass('dark');\r\nvar content = (darkMode ? ('<div style=\"font-family: Roboto;\">' +\r\n                 '<div style=\"font-size: 14px; font-weight: 500; padding-bottom: 8px; color:#212121;\">${Name}</div>') : ('<div style=\"font-family: Roboto;\">' +\r\n                 '<div style=\"font-size: 14px; font-weight: 500; padding-bottom: 8px;\">${Name}</div>'));\r\n\r\nvar deviceType = data['Type'];\r\nif(darkMode==true){\r\n    if (typeof deviceType !== undefined) {\r\n        content += '<div style=\"font-size: 12px; font-weight: normal; color:#212121;\">' + getInfoByDeviceType(deviceType) + '</div>';\r\n    }\r\n}else{\r\n    if (typeof deviceType !== undefined) {\r\n        content += '<div style=\"font-size: 12px; font-weight: normal; color:#212121;\">' + getInfoByDeviceType(deviceType) + '</div>';\r\n    }\r\n}\r\n\r\ncontent += '</div>';\r\nreturn content;\r\n\r\nfunction getInfoByDeviceType(type) {\r\n    switch (type) {\r\n        case 'AA Sensor':\r\n            return 'Temperatura: ${temperature:1} °C<br>Umidità: ${humidity:1} %';\r\n        case 'AA Energy':\r\n            return 'Power: ${Power} W';\r\n        case 'Caldaia':\r\n            return 'Temperatura: ${temperature:1} °C<br>Temperatura Impostata: ${setTemperature:1} °C<br>Stato: ${status}';\r\n        case 'Chiller':\r\n        case 'Freezer':    \r\n            return 'Temperature: ${temperature:1} °C';\r\n        case 'Smart Bin':\r\n            return 'Fullness: ${level:0}%';\r\n        case 'Liquid Level Sensor':\r\n            return 'Liquid level: ${level:0}%';\r\n        case 'Door Sensor':\r\n            var open = data['open'] === 'true';\r\n            return 'State: ' + (open ? 'Open' : 'Closed');\r\n        case 'Motion Sensor':\r\n            var movement = data['movement'] === 'true';\r\n            return 'Movement detection: ' + (movement ? 'Detected' : 'None');\r\n        case 'Occupancy Sensor':\r\n            var occupied = data['occupied'] === 'true';\r\n            return 'State: ' + (occupied ? 'Occupied' : 'Vacant');\r\n        case 'Smoke Sensor':\r\n            var alarm = data['alarm'] === 'true';\r\n            return 'Fire alarm: ' + (alarm ? 'Alarm' : 'None');\r\n        case 'Camera':\r\n            return 'Persone: ${person}';\r\n        case 'Presenza':\r\n            return '${presenza}';\r\n        case 'Acqua':\r\n            return 'Litri: ${mc} l';\r\n        default:\r\n            return 'TODO';\r\n    }\r\n}\r\n",
+              "tooltipFunction" : "var darkMode = $('.tb-dashboard-page').hasClass('dark');\r\nvar content = (darkMode ? ('<div style=\"font-family: Roboto;\">' +\r\n                 '<div style=\"font-size: 14px; font-weight: 500; padding-bottom: 8px; color:#212121;\">${Name}</div>') : ('<div style=\"font-family: Roboto;\">' +\r\n                 '<div style=\"font-size: 14px; font-weight: 500; padding-bottom: 8px;\">${Name}</div>'));\r\n\r\nvar deviceType = data.Type;\r\nif(darkMode==true){\r\n    if (typeof deviceType !== undefined) {\r\n        content += '<div style=\"font-size: 12px; font-weight: normal; color:#212121;\">' + getInfoByDeviceType(deviceType) + '</div>';\r\n    }\r\n}else{\r\n    if (typeof deviceType !== undefined) {\r\n        content += '<div style=\"font-size: 12px; font-weight: normal; color:#212121;\">' + getInfoByDeviceType(deviceType) + '</div>';\r\n    }\r\n}\r\n\r\ncontent += '</div>';\r\nreturn content;\r\n\r\nfunction getInfoByDeviceType(type) {\r\n    switch (type) {\r\n        case 'AA Sensor':\r\n            return 'Temperatura: ${temperature:1} °C<br>Umidità: ${humidity:1} %';\r\n        case 'AA Energy':\r\n            return 'Power: ${Power} W';\r\n        case 'Camera':\r\n            return 'Persone: ${person}';\r\n        case 'Presenza':\r\n            return '${presenza}';\r\n        case 'Acqua':\r\n            return 'Litri: ${mc} l';\r\n        default:\r\n            return 'TODO';\r\n    }\r\n}\r\n",
               "tooltipOffsetX" : 0.5,
               "tooltipOffsetY" : -0.5,
               "color" : "#FE7569",

@@ -276,7 +276,10 @@
                 "_hash" : 0.10541191010025264
               } ],
               "alarmFilterConfig" : {
-                "statusList" : [ "ACTIVE" ]
+                "statusList" : [ "ACTIVE" ],
+                "typeList" : [ "Folla Critica" ],
+                "assignedToCurrentUser" : false,
+                "assigneeId" : null
               }
             } ],
             "timewindow" : {
@@ -362,11 +365,11 @@
                 "color" : "rgba(0, 0, 0, 0.87)",
                 "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
               },
-              "showChevron" : false,
+              "showChevron" : true,
               "chevronSize" : 24,
               "chevronSizeUnit" : "px",
               "chevronColor" : "rgba(0, 0, 0, 0.38)",
-              "layout" : "column"
+              "layout" : "row"
             },
             "title" : "Alarm count",
             "dropShadow" : true,
@@ -444,7 +447,7 @@
                   "col" : 8
                 },
                 "2c62663b-0bcf-0d56-7c53-5a26d1e6c9e4" : {
-                  "sizeX" : 3,
+                  "sizeX" : 7,
                   "sizeY" : 1,
                   "row" : 1,
                   "col" : 8

@@ -859,64 +859,52 @@
           "col" : 0,
           "id" : "97675b82-6c89-b6f2-5f79-306a444a4270"
         },
-        "3a5e5b27-da3c-e7ba-3fa2-5423a13d5bb1" : {
-          "typeFullFqn" : "system.cards.attributes_card",
-          "type" : "latest",
+        "939a57f1-8b11-aec8-121d-ffcc3b7204b5" : {
+          "typeFullFqn" : "system.cards.dashboard_state_widget",
+          "type" : "static",
           "sizeX" : 7.5,
           "sizeY" : 3,
           "config" : {
             "datasources" : [ {
-              "type" : "entity",
-              "name" : "",
-              "entityAliasId" : "9dec794a-4c5e-cea2-0f62-8ea854ec0182",
+              "type" : "static",
+              "name" : "function",
               "dataKeys" : [ {
-                "name" : "name",
-                "type" : "attribute",
-                "label" : "name",
+                "name" : "f(x)",
+                "type" : "function",
+                "label" : "Random",
                 "color" : "#2196f3",
                 "settings" : { },
-                "_hash" : 0.35326034036159437
-              } ],
-              "alarmFilterConfig" : {
-                "statusList" : [ "ACTIVE" ]
-              }
+                "_hash" : 0.15479322438769105,
+                "funcBody" : "var value = prevValue + Math.random() * 100 - 50;\nvar multiplier = Math.pow(10, 2 || 0);\nvar value = Math.round(value * multiplier) / multiplier;\nif (value < -1000) {\n\tvalue = -1000;\n} else if (value > 1000) {\n\tvalue = 1000;\n}\nreturn value;"
+              } ]
             } ],
             "timewindow" : {
-              "displayValue" : "",
-              "selectedTab" : 0,
               "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1700080851174,
-                  "endTimeMs" : 1700167251174
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "limit" : 25000
+                "timewindowMs" : 60000
               }
             },
-            "showTitle" : true,
-            "backgroundColor" : "#fff",
+            "showTitle" : false,
+            "backgroundColor" : "rgb(255, 255, 255)",
             "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "8px",
-            "settings" : { },
-            "title" : "Attributes card",
-            "useDashboardTimewindow" : true,
-            "displayTimewindow" : true
+            "padding" : "0px",
+            "settings" : {
+              "stateId" : "default",
+              "defaultAutofillLayout" : true,
+              "defaultMargin" : 0,
+              "defaultBackgroundColor" : "#fff",
+              "syncParentStateParams" : true
+            },
+            "title" : "Dashboard state widget",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "showLegend" : false
           },
           "row" : 0,
           "col" : 0,
-          "id" : "3a5e5b27-da3c-e7ba-3fa2-5423a13d5bb1"
+          "id" : "939a57f1-8b11-aec8-121d-ffcc3b7204b5"
         }
       },
       "states" : {
@@ -956,9 +944,9 @@
                   "row" : 7,
                   "col" : 0
                 },
-                "3a5e5b27-da3c-e7ba-3fa2-5423a13d5bb1" : {
-                  "sizeX" : 7,
-                  "sizeY" : 3,
+                "939a57f1-8b11-aec8-121d-ffcc3b7204b5" : {
+                  "sizeX" : 13,
+                  "sizeY" : 7,
                   "row" : 6,
                   "col" : 8
                 }

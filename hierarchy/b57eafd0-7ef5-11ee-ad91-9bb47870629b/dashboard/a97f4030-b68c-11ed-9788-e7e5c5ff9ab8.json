@@ -9907,6 +9907,68 @@
           "col" : 0,
           "id" : "c3153eaa-d73b-7ccf-09df-8bc80ad6d49f",
           "typeFullFqn" : "system.charts.basic_timeseries"
+        },
+        "c828c921-73f4-def5-7701-7f593689688a" : {
+          "typeFullFqn" : "system.cards.html_card",
+          "type" : "static",
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "static",
+              "name" : "function",
+              "dataKeys" : [ {
+                "name" : "f(x)",
+                "type" : "function",
+                "label" : "Random",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.15479322438769105,
+                "funcBody" : "var value = prevValue + Math.random() * 100 - 50;\nvar multiplier = Math.pow(10, 2 || 0);\nvar value = Math.round(value * multiplier) / multiplier;\nif (value < -1000) {\n\tvalue = -1000;\n} else if (value > 1000) {\n\tvalue = 1000;\n}\nreturn value;"
+              } ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "cardHtml" : "<div class='card'>\n    <div id=\"report\">Report</div>\n</div>\n",
+              "cardCss" : ".card {\n    font-weight: bold;\n    font-size: 32px;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}"
+            },
+            "title" : "HTML Card",
+            "dropShadow" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "report",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "report_bungalow",
+                "setEntityId" : false,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "ee269862-47f5-7e78-a93e-7d5413570bd5"
+              } ]
+            },
+            "enableFullscreen" : false,
+            "enableDataExport" : false,
+            "borderRadius" : "0",
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "c828c921-73f4-def5-7701-7f593689688a"
         }
       },
       "states" : {
@@ -10974,26 +11036,32 @@
                 "f6353931-4a44-cdf1-f337-e95187506bfe" : {
                   "sizeX" : 14,
                   "sizeY" : 2,
-                  "row" : 0,
+                  "row" : 1,
                   "col" : 0
                 },
                 "6feb925c-280e-7ce0-24df-6776634f549b" : {
                   "sizeX" : 14,
                   "sizeY" : 11,
-                  "row" : 2,
+                  "row" : 3,
                   "col" : 0
                 },
                 "93d66445-90ce-964d-3153-d0b88adf6323" : {
                   "sizeX" : 10,
                   "sizeY" : 7,
-                  "row" : 0,
+                  "row" : 1,
                   "col" : 14
                 },
                 "79ccdb36-cb0e-de67-bbfe-de012f35da31" : {
                   "sizeX" : 10,
                   "sizeY" : 6,
-                  "row" : 7,
+                  "row" : 8,
                   "col" : 14
+                },
+                "c828c921-73f4-def5-7701-7f593689688a" : {
+                  "sizeX" : 24,
+                  "sizeY" : 1,
+                  "row" : 0,
+                  "col" : 0
                 }
               },
               "gridSettings" : {

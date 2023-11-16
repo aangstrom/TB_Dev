@@ -9995,26 +9995,32 @@
               "entityAliasId" : "55f23be2-d63e-ce45-b3f5-d05604647f2a",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "address",
-                "type" : "attribute",
-                "label" : "address",
-                "color" : "#9c27b0",
-                "settings" : { },
-                "_hash" : 0.216283526581728
-              }, {
-                "name" : "state",
-                "type" : "attribute",
-                "label" : "state",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.8057369620518648
-              }, {
-                "name" : "type",
+                "name" : "name",
                 "type" : "entityField",
-                "label" : "Type",
+                "label" : "Name_client",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.2860582185919256,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            }, {
+              "type" : "entity",
+              "entityAliasId" : "1d799daf-1882-7a76-938b-c97e8c08ff11",
+              "dataKeys" : [ {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Name",
                 "color" : "#ffc107",
                 "settings" : { },
-                "_hash" : 0.5157976480659352
+                "_hash" : 0.3830792135846053
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -10050,9 +10056,9 @@
             "padding" : "0px",
             "settings" : {
               "useMarkdownTextFunction" : true,
-              "markdownTextFunction" : "var name, address, state;\nif (data && data.length) {\n    name = data[0].entityName;\n    address = data[0].address;\n    state = data[0].state;\n} else {\n    name = 'N/A';\n    address = 'N/A';\n    state = 'N/A';\n}\n\nreturn '<div class=\"main-layout\" style=\"width: 100%; height: 100%;\" fxLayout=\"row\">' +\n            '<div fxLayout=\"column\" fxLayoutAlign=\"center\"><button id=\"go-back\" matTooltip=\"Go back\" type=\"button\" mat-icon-button><mat-icon>arrow_back</mat-icon></button></div>' +\n            '<div fxFlex fxLayout=\"column\" fxLayoutAlign=\"center\">' +\n               '<div class=\"title\">Report per: ' + name + '</div>' +\n            '</div>'+\n       '<div>';",
+              "markdownTextFunction" : "return '<div class=\"main-layout\" style=\"width: 100%; height: 100%;\" fxLayout=\"row\">' +\n            '<div fxLayout=\"column\" fxLayoutAlign=\"center\"><button id=\"go-back\" matTooltip=\"Go back\" type=\"button\" mat-icon-button><mat-icon>arrow_back</mat-icon></button></div>' +\n            '<div fxFlex fxLayout=\"column\" fxLayoutAlign=\"center\">' +\n               '<div class=\"title\">Report per: ${Name_client} > ${Name}</div>' +\n            '</div>'+\n       '<div>';",
               "applyDefaultMarkdownStyle" : true,
-              "markdownCss" : ".main-layout .header {\n    height: 60px;\n} \n\n.main-layout .header .mat-icon.title-icon {\n    width: 40px;\n    height: 40px;\n}\n\n.main-layout .title {\n    font-size: 24px;\n    font-weight: 500;\n    color: #28232D;\n}\n\n.main-layout .header .subtitle {\n    font-size: 13px;\n    font-weight: normal;\n    color: #757575;\n}\n\n.tb-markdown-view .params {\n    background-color: #FAFAFA;\n    border-radius: 4px;\n    padding: 10px;\n    margin-bottom: 10px;\n}\n\n.tb-markdown-view .param-title {\n    font-size: 12px;\n    font-weight: normal;\n    color: #757575;\n}\n\n.tb-markdown-view .param {\n    font-size: 12px;\n    font-weight: 500;\n    color: #212121;\n    line-height: 24px;\n    height: 24px;\n}\n\n.tb-markdown-view .param #battery-level {\n    width: 24px;\n    height: 24px;\n    line-height: 24px;\n    padding: 0 2px;\n    min-width: 28px;\n}\n"
+              "markdownCss" : ".main-layout {\n    height: 60px;\n} \n\n.main-layout .header .mat-icon.title-icon {\n    width: 40px;\n    height: 40px;\n}\n\n.main-layout .title {\n    font-size: 24px;\n    font-weight: 500;\n    color: #28232D;\n}\n\n.tb-markdown-view .params {\n    background-color: #FAFAFA;\n    border-radius: 4px;\n    padding: 10px;\n    margin-bottom: 10px;\n}\n\n.tb-markdown-view .param-title {\n    font-size: 12px;\n    font-weight: normal;\n    color: #757575;\n}\n\n.tb-markdown-view .param {\n    font-size: 12px;\n    font-weight: 500;\n    color: #212121;\n    line-height: 24px;\n    height: 24px;\n}\n\n.tb-markdown-view .param #battery-level {\n    width: 24px;\n    height: 24px;\n    line-height: 24px;\n    padding: 0 2px;\n    min-width: 28px;\n}\n"
             },
             "title" : "New Markdown/HTML Card",
             "showTitleIcon" : false,

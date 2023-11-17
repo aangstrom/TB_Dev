@@ -5572,90 +5572,6 @@
           "id" : "f1b453f0-dd30-4d10-1000-9a01b8dfc5ae",
           "typeFullFqn" : "system.charts.basic_timeseries"
         },
-        "5aa86801-21a8-c298-ddd1-8ddc23f46ff1" : {
-          "type" : "static",
-          "sizeX" : 7.5,
-          "sizeY" : 3,
-          "config" : {
-            "datasources" : [ ],
-            "timewindow" : {
-              "realtime" : {
-                "timewindowMs" : 60000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "rgb(255, 255, 255)",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "stateId" : "alarm_all",
-              "defaultAutofillLayout" : true,
-              "defaultMargin" : 0,
-              "defaultBackgroundColor" : "#fff",
-              "syncParentStateParams" : true
-            },
-            "title" : "New Dashboard state widget",
-            "dropShadow" : false,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "widgetCss" : "",
-            "noDataDisplayMessage" : "",
-            "showLegend" : false,
-            "enableDataExport" : true,
-            "pageSize" : 1024
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "5aa86801-21a8-c298-ddd1-8ddc23f46ff1",
-          "typeFullFqn" : "system.cards.dashboard_state_widget"
-        },
-        "770319e3-2acb-6808-788a-370553b4bf9a" : {
-          "type" : "static",
-          "sizeX" : 7.5,
-          "sizeY" : 3,
-          "config" : {
-            "datasources" : [ ],
-            "timewindow" : {
-              "realtime" : {
-                "timewindowMs" : 60000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "rgb(255, 255, 255)",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "8px",
-            "settings" : {
-              "cardHtml" : "<div class='card'>\n    <i id=\"Indietro\" class=\"fa fa-arrow-left\"></i>\n</div>",
-              "cardCss" : ".card {\n    font-weight: bold;\n    font-size: 32px;\n    color: black;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n}\n#Indietro{\n    cursor: pointer;\n    margin-left: 20px;\n}"
-            },
-            "title" : "New HTML Card",
-            "dropShadow" : false,
-            "actions" : {
-              "elementClick" : [ {
-                "name" : "Indietro",
-                "icon" : "more_horiz",
-                "useShowWidgetActionFunction" : null,
-                "showWidgetActionFunction" : "return true;",
-                "type" : "custom",
-                "customFunction" : "var stateIndex = widgetContext.stateController.getStateIndex();\nwhile (stateIndex > 0) {\n    stateIndex -= 1;\n    backToPrevState(stateIndex);\n}\nopenDashboardState('devices');\n\nfunction backToPrevState(stateIndex) {\n    widgetContext.stateController.navigatePrevState(stateIndex);\n}\n\nfunction openDashboardState(statedId) {\n    var params = widgetContext.stateController.getStateParams();\n    params['selectedSupermarket'] = null;\n    widgetContext.stateController.updateState(null, params);\n}",
-                "openInSeparateDialog" : false,
-                "openInPopover" : false,
-                "id" : "d2f3abf5-41c5-264e-00bd-f58102239e91"
-              } ]
-            },
-            "enableFullscreen" : false,
-            "enableDataExport" : true,
-            "widgetStyle" : { },
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : "",
-            "showLegend" : false
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "770319e3-2acb-6808-788a-370553b4bf9a",
-          "typeFullFqn" : "system.cards.html_card"
-        },
         "7fd30f66-9f7c-6d97-4818-c983c54d3456" : {
           "type" : "timeseries",
           "sizeX" : 8,
@@ -7184,7 +7100,7 @@
             "padding" : "0px",
             "settings" : {
               "useMarkdownTextFunction" : true,
-              "markdownTextFunction" : "var device,bungalow,all_bungalow,bagni,supermercato,colonnine,piazzole,piscina,ristorante,allarmi;\nif (data && data.length && data[0].entityId) {\n    if(data[0].Type==\"Acqua\" || data[0].Type==\"AA Sensor\" || data[0].Type==\"Energy\" || data[0].Type==\"AA Energy\" || data[0].Type==\"Presenza\"){\n        device=true;\n    }\n    if(data[0].Type=='bungalow'){\n        bungalow=true;\n    }\n    if(data[0].deviceType==\"Categoria\"){\n        if(data[0].entityName==\"Bungalow\"){\n            all_bungalow=true;\n        }\n        if(data[0].entityName==\"Servizi Igienici\"){\n            bagni=true;\n        }\n        if(data[0].entityName==\"Piscina\"){\n            piscina=true;\n        }\n        if(data[0].entityName==\"Piazzole\"){\n            piazzole=true;\n        }\n        if(data[0].entityName==\"Colonnine\"){\n            colonnine=true;\n        }\n        if(data[0].entityName==\"Supermercato\"){\n            supermercato=true;\n        }\n        if(data[0].entityName==\"Ristorante\"){\n            supermercato=true;\n        }\n        if(data[0].entityName==\"Allarmi\"){\n            allarmi=true;\n        }\n    }\n} else {\n    device = false;\n    bungalow = false;\n    bagni = false;\n    supermercato = false;\n    colonnine = false;\n    piazzole = false;\n    piscina = false;\n    ristorante = false;\n    allarmi = false;\n}\nreturn '<div class=\"main-layout\" style=\"width: 100%; height:100%;\" fxLayout=\"column\">' +\n    (\n        bungalow==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli_bungalow\"></tb-dashboard-state></div>') :\n        all_bungalow==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_bungalow\"></tb-dashboard-state></div>') :\n        bagni==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_bagni\"></tb-dashboard-state></div>') :\n        supermercato==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_supermercato\"></tb-dashboard-state></div>') :\n        ristorante==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_ristorante\"></tb-dashboard-state></div>') :\n        colonnine==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_colonnine\"></tb-dashboard-state></div>') :\n        piazzole==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_piazzole\"></tb-dashboard-state></div>') :\n        piscina==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_piscina\"></tb-dashboard-state></div>') :\n        device==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_device\"></tb-dashboard-state></div>') :\n        allarmi==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"alarm_all\"></tb-dashboard-state></div>') :\n        ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_mappa\"></tb-dashboard-state></div>')\n    );",
+              "markdownTextFunction" : "var device,bungalow,all_bungalow,bagni,supermercato,colonnine,piazzole,piscina,ristorante,allarmi;\nif (data && data.length && data[0].entityId) {\n    if(data[0].Type==\"Acqua\" || data[0].Type==\"AA Sensor\" || data[0].Type==\"Energy\" || data[0].Type==\"AA Energy\" || data[0].Type==\"Presenza\"){\n        device=true;\n    }\n    if(data[0].Type=='bungalow'){\n        bungalow=true;\n    }\n    if(data[0].deviceType==\"Categoria\"){\n        if(data[0].entityName==\"Bungalow\"){\n            all_bungalow=true;\n        }\n        if(data[0].entityName==\"Servizi Igienici\"){\n            bagni=true;\n        }\n        if(data[0].entityName==\"Piscina\"){\n            piscina=true;\n        }\n        if(data[0].entityName==\"Piazzole\"){\n            piazzole=true;\n        }\n        if(data[0].entityName==\"Colonnine\"){\n            colonnine=true;\n        }\n        if(data[0].entityName==\"Supermercato\"){\n            supermercato=true;\n        }\n        if(data[0].entityName==\"Ristorante\"){\n            supermercato=true;\n        }\n        if(data[0].entityName==\"Allarmi\"){\n            allarmi=true;\n        }\n    }\n} else {\n    device = false;\n    bungalow = false;\n    bagni = false;\n    supermercato = false;\n    colonnine = false;\n    piazzole = false;\n    piscina = false;\n    ristorante = false;\n    allarmi = false;\n}\nreturn '<div class=\"main-layout\" style=\"width: 100%; height:100%;\" fxLayout=\"column\">' +\n    (\n        bungalow==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli_bungalow\"></tb-dashboard-state></div>') :\n        all_bungalow==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        bagni==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_bagni\"></tb-dashboard-state></div>') :\n        supermercato==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_supermercato\"></tb-dashboard-state></div>') :\n        ristorante==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        colonnine==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        piazzole==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        piscina==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        device==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_device\"></tb-dashboard-state></div>') :\n        allarmi==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"alarm_all\"></tb-dashboard-state></div>') :\n        ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_mappa\"></tb-dashboard-state></div>')\n    );",
               "applyDefaultMarkdownStyle" : true,
               "markdownCss" : ".tb-markdown-view > div {\n    padding: 0;\n}\n.header{\n    margin: 10px;\n    height: 35px;\n}\n.title {\n    font-size: 18px;\n    font-weight: 500;\n    color: #28232D;\n}\n#edit{\n    margin-right:10px;\n}"
             },
@@ -15231,57 +15147,6 @@
             }
           }
         },
-        "page_dettagli_bungalow" : {
-          "name" : "${bungalow_selezionato:entityName}",
-          "root" : false,
-          "layouts" : {
-            "main" : {
-              "widgets" : {
-                "f6353931-4a44-cdf1-f337-e95187506bfe" : {
-                  "sizeX" : 14,
-                  "sizeY" : 2,
-                  "row" : 1,
-                  "col" : 0
-                },
-                "6feb925c-280e-7ce0-24df-6776634f549b" : {
-                  "sizeX" : 14,
-                  "sizeY" : 11,
-                  "row" : 3,
-                  "col" : 0
-                },
-                "93d66445-90ce-964d-3153-d0b88adf6323" : {
-                  "sizeX" : 10,
-                  "sizeY" : 7,
-                  "row" : 1,
-                  "col" : 14
-                },
-                "79ccdb36-cb0e-de67-bbfe-de012f35da31" : {
-                  "sizeX" : 10,
-                  "sizeY" : 6,
-                  "row" : 8,
-                  "col" : 14
-                },
-                "c828c921-73f4-def5-7701-7f593689688a" : {
-                  "sizeX" : 24,
-                  "sizeY" : 1,
-                  "row" : 0,
-                  "col" : 0
-                }
-              },
-              "gridSettings" : {
-                "backgroundColor" : "#eeeeee",
-                "columns" : 24,
-                "margin" : 10,
-                "backgroundSizeMode" : "100%",
-                "autoFillHeight" : true,
-                "backgroundImageUrl" : null,
-                "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70,
-                "outerMargin" : true
-              }
-            }
-          }
-        },
         "page_bagni" : {
           "name" : "page_bagni",
           "root" : false,
@@ -15725,19 +15590,37 @@
             }
           }
         },
-        "page_allarmi" : {
-          "name" : "Pagina Allarmi",
+        "page_dettagli" : {
+          "name" : "Page Dettagli",
           "root" : false,
           "layouts" : {
             "main" : {
               "widgets" : {
-                "5aa86801-21a8-c298-ddd1-8ddc23f46ff1" : {
-                  "sizeX" : 24,
-                  "sizeY" : 12,
+                "f6353931-4a44-cdf1-f337-e95187506bfe" : {
+                  "sizeX" : 14,
+                  "sizeY" : 2,
                   "row" : 1,
                   "col" : 0
                 },
-                "770319e3-2acb-6808-788a-370553b4bf9a" : {
+                "6feb925c-280e-7ce0-24df-6776634f549b" : {
+                  "sizeX" : 14,
+                  "sizeY" : 11,
+                  "row" : 3,
+                  "col" : 0
+                },
+                "93d66445-90ce-964d-3153-d0b88adf6323" : {
+                  "sizeX" : 10,
+                  "sizeY" : 7,
+                  "row" : 1,
+                  "col" : 14
+                },
+                "79ccdb36-cb0e-de67-bbfe-de012f35da31" : {
+                  "sizeX" : 10,
+                  "sizeY" : 6,
+                  "row" : 8,
+                  "col" : 14
+                },
+                "c828c921-73f4-def5-7701-7f593689688a" : {
                   "sizeX" : 24,
                   "sizeY" : 1,
                   "row" : 0,
@@ -15745,15 +15628,15 @@
                 }
               },
               "gridSettings" : {
-                "backgroundColor" : "#FFFFFF",
+                "backgroundColor" : "#eeeeee",
                 "columns" : 24,
-                "margin" : 0,
-                "outerMargin" : true,
+                "margin" : 10,
                 "backgroundSizeMode" : "100%",
                 "autoFillHeight" : true,
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70
+                "mobileRowHeight" : 70,
+                "outerMargin" : true
               }
             }
           }

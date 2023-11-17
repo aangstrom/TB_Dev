@@ -12644,6 +12644,246 @@
           "col" : 0,
           "id" : "16eddb70-37d8-62bb-c560-104e56ad7332",
           "typeFullFqn" : "system.cards.markdown_card"
+        },
+        "c0bdd1d3-3932-e1ab-36e1-9b65f22511ee" : {
+          "type" : "latest",
+          "sizeX" : 7.5,
+          "sizeY" : 6.5,
+          "config" : {
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1683549171831,
+                  "endTimeMs" : 1683635571831
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "entitiesTitle" : "Piazzole",
+              "enableSearch" : true,
+              "enableSelectColumnDisplay" : true,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "showCellActionsMenu" : true,
+              "reserveSpaceForHiddenAction" : "true",
+              "displayEntityName" : false,
+              "displayEntityLabel" : false,
+              "displayEntityType" : false,
+              "displayPagination" : false,
+              "defaultSortOrder" : "name",
+              "useRowStyleFunction" : false
+            },
+            "title" : "Bungalow",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "24px",
+              "fontWeight" : 700,
+              "padding" : "5px 10px 5px 10px",
+              "height" : "60px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "e94b2807-f0ce-f097-53f9-a514ed8c9444",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Nome",
+                "color" : "#2196f3",
+                "settings" : {
+                  "columnWidth" : "20%",
+                  "useCellStyleFunction" : false,
+                  "cellStyleFunction" : "",
+                  "useCellContentFunction" : false,
+                  "cellContentFunction" : "",
+                  "defaultColumnVisibility" : "visible",
+                  "columnSelectionToDisplay" : "enabled",
+                  "columnExportOption" : "onlyVisible"
+                },
+                "_hash" : 0.46096251592014714,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null,
+                "aggregationType" : null
+              }, {
+                "name" : "stato",
+                "type" : "attribute",
+                "label" : "Stato",
+                "color" : "#ffc107",
+                "settings" : {
+                  "columnWidth" : "0px",
+                  "useCellStyleFunction" : false,
+                  "useCellContentFunction" : true,
+                  "cellContentFunction" : "var state = value;\nvar active = entity.active;\nif (active === 'false') {\n    state = 'disconnected';\n}\n\nvar stateSvg = getStateSvg(state);\nvar encodedStateSvg = encodeURIComponent(stateSvg);\nvar stateSvgUrl = 'data:image/svg+xml,' + encodedStateSvg;\nvar stateLabel = getStateLabel(state);\n\nreturn '<span>'+\n           '<img style=\"vertical-align: middle;\" class=\"mat-icon\" src=\"'+ stateSvgUrl +'\">' +\n           '<span style=\"vertical-align: middle; padding-left: 8px;\">'+ stateLabel +'</span>' +\n       '</span>';\n            \nfunction getStateSvg(state) {\n    switch (state) {\n        case 'inagibile':\n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#E64A19\"/>' +\n                   '</svg>';\n        case 'manutenzione':            \n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#D5C21B\"/>' +\n                   '</svg>';\n        case 'normale':            \n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#1F8B4D\"/>' +\n                   '</svg>';\n        default:\n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#AAAAAA\"/>' +\n                   '</svg>';\n    }\n}\n\nfunction getStateLabel(state) {\n    switch(state) {\n        case 'manutenzione':\n            return 'Manutenzione';\n        case 'inagibile':\n            return 'Inagibile';\n        case 'normale':\n            return 'Normale';\n        default:\n            return state;\n    }\n}\n",
+                  "defaultColumnVisibility" : "visible",
+                  "columnSelectionToDisplay" : "enabled",
+                  "columnExportOption" : "onlyVisible"
+                },
+                "_hash" : 0.006431299368144128,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "presenza",
+                "type" : "attribute",
+                "label" : "Presenza",
+                "color" : "#e91e63",
+                "settings" : {
+                  "columnWidth" : "0px",
+                  "useCellStyleFunction" : false,
+                  "useCellContentFunction" : true,
+                  "cellContentFunction" : "var state = value;\n\nvar stateSvg = getStateSvg(state);\nvar encodedStateSvg = encodeURIComponent(stateSvg);\nvar stateSvgUrl = 'data:image/svg+xml,' + encodedStateSvg;\nvar stateLabel = getStateLabel(state);\n\nreturn '<span>'+\n           '<img style=\"vertical-align: middle;\" class=\"mat-icon\" src=\"'+ stateSvgUrl +'\">' +\n           '<span style=\"vertical-align: middle; padding-left: 8px;\">'+ stateLabel +'</span>' +\n       '</span>';\n            \nfunction getStateSvg(state) {\n    switch (state) {\n        case 'true':\n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#E64A19\"/>' +\n                   '</svg>';\n        case 'false':            \n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#1F8B4D\"/>' +\n                   '</svg>';\n        default:\n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#AAAAAA\"/>' +\n                   '</svg>';\n    }\n}\n\nfunction getStateLabel(state) {\n    switch(state) {\n        case 'false':\n            return 'Libero';\n        case 'true':\n            return 'Occupato';\n        default:\n            return state;\n    }\n}\n",
+                  "defaultColumnVisibility" : "visible",
+                  "columnSelectionToDisplay" : "enabled",
+                  "columnExportOption" : "onlyVisible"
+                },
+                "_hash" : 0.4979122281854942,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "mc",
+                "type" : "attribute",
+                "label" : "Acqua",
+                "color" : "#8bc34a",
+                "settings" : { },
+                "_hash" : 0.011905363067595598,
+                "aggregationType" : null,
+                "units" : "l",
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "power",
+                "type" : "attribute",
+                "label" : "Energia",
+                "color" : "#3f51b5",
+                "settings" : { },
+                "_hash" : 0.2596106843840744,
+                "aggregationType" : null,
+                "units" : "W",
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "note",
+                "type" : "attribute",
+                "label" : "Note",
+                "color" : "#ffc107",
+                "settings" : {
+                  "columnWidth" : "0px",
+                  "useCellStyleFunction" : false,
+                  "cellStyleFunction" : "",
+                  "useCellContentFunction" : false,
+                  "cellContentFunction" : "",
+                  "defaultColumnVisibility" : "visible",
+                  "columnSelectionToDisplay" : "enabled",
+                  "columnExportOption" : "onlyVisible"
+                },
+                "_hash" : 0.5439377495268714,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null,
+                "aggregationType" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "widgetStyle" : { },
+            "widgetCss" : "div.tb-widget .tb-widget-title {\n    max-height: 100px !important;\n}",
+            "noDataDisplayMessage" : "",
+            "actions" : {
+              "rowClick" : [ {
+                "name" : "Apri Dettagli",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "var $injector = widgetContext.$scope.$injector;\nvar params = widgetContext.stateController.getStateParams();\n$injector.get(widgetContext.servicesMap.get('entityService')).getEntity(entityId.entityType, entityId.id).subscribe(function(data) {\n    params.selectedDevice = {\n        entityId: entityId\n        //entityName: entityName\n    };\n    params.visualizzazione = {\n        entityId: entityId\n        //entityName: entityName\n    };\n    widgetContext.stateController.updateState(null, params);\n });",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "27b78a0c-3e2d-8d90-72dd-10f9f80351b5"
+              } ],
+              "actionCellButton" : [ {
+                "name" : "Impostazioni Piazzola",
+                "icon" : "settings",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "bungalow_settings",
+                "setEntityId" : true,
+                "stateEntityParamName" : "piazzola_selezionata",
+                "openRightLayout" : false,
+                "dialogTitle" : "",
+                "dialogHideDashboardToolbar" : true,
+                "dialogWidth" : 40,
+                "dialogHeight" : 90,
+                "openInSeparateDialog" : true,
+                "openInPopover" : false,
+                "id" : "5f3f6154-68b7-a757-cb3e-bf09edc8bb65"
+              }, {
+                "name" : "Apri Dettagli",
+                "icon" : "arrow_forward",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "var $injector = widgetContext.$scope.$injector;\nvar params = widgetContext.stateController.getStateParams();\n$injector.get(widgetContext.servicesMap.get('entityService')).getEntity(entityId.entityType, entityId.id).subscribe(function(data) {\n    params.selectedDevice = {\n        entityId: entityId\n        //entityName: entityName\n    };\n    params.visualizzazione = {\n        entityId: entityId\n        //entityName: entityName\n    };\n    widgetContext.stateController.updateState(null, params);\n });",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "9e3b9891-b984-4475-345e-b738850e1fda"
+              } ]
+            },
+            "titleIcon" : "devices_other",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "28px",
+            "displayTimewindow" : true,
+            "pageSize" : 1024,
+            "borderRadius" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "c0bdd1d3-3932-e1ab-36e1-9b65f22511ee",
+          "typeFullFqn" : "system.cards.entities_table"
         }
       },
       "states" : {
@@ -13999,7 +14239,14 @@
           "root" : false,
           "layouts" : {
             "main" : {
-              "widgets" : { },
+              "widgets" : {
+                "c0bdd1d3-3932-e1ab-36e1-9b65f22511ee" : {
+                  "sizeX" : 24,
+                  "sizeY" : 11,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
               "gridSettings" : {
                 "backgroundColor" : "#eeeeee",
                 "columns" : 24,
@@ -14170,6 +14417,26 @@
             "resolveMultiple" : false,
             "stateEntityParamName" : "colonnina_selezionata",
             "defaultStateEntity" : null
+          }
+        },
+        "e94b2807-f0ce-f097-53f9-a514ed8c9444" : {
+          "id" : "e94b2807-f0ce-f097-53f9-a514ed8c9444",
+          "alias" : "Piazzole",
+          "filter" : {
+            "type" : "assetSearchQuery",
+            "resolveMultiple" : true,
+            "rootStateEntity" : false,
+            "stateEntityParamName" : null,
+            "defaultStateEntity" : null,
+            "rootEntity" : {
+              "entityType" : "CUSTOMER",
+              "id" : "b57eafd0-7ef5-11ee-ad91-9bb47870629b"
+            },
+            "direction" : "FROM",
+            "maxLevel" : null,
+            "fetchLastLevelOnly" : false,
+            "relationType" : "Contains",
+            "assetTypes" : [ "Piazzola" ]
           }
         }
       },

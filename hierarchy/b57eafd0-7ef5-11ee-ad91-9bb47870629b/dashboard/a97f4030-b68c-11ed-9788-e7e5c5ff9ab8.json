@@ -6858,7 +6858,7 @@
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
                 "type" : "custom",
-                "customFunction" : "var $injector = widgetContext.$scope.$injector;\r\nvar params = widgetContext.stateController.getStateParams();\r\n$injector.get(widgetContext.servicesMap.get('entityService')).getEntity(entityId.entityType, entityId.id)\r\n  .subscribe(function(data) {\r\n        var deviceType = data.id.entityType;\r\n        params.visualizzazione = null;\r\n        widgetContext.stateController.updateState(null, params);\r\n        if(deviceType==\"DEVICE\" || deviceType==\"ASSET\"){\r\n            var Type=data.type;\r\n            if(Type==\"bungalow\"){\r\n                params.bungalow_selezionato = {\r\n                    entityId: entityId\r\n                    //entityName: entityName\r\n                };\r\n                params.visualizzazione = {\r\n                    entityId: entityId\r\n                    //entityName: entityName\r\n                };\r\n                widgetContext.stateController.updateState(null, params);\r\n                /*params['automezzo_selezionato'] = {\r\n                    entityId: entityId,\r\n                    entityName: entityName\r\n                };*/\r\n            }\r\n            if(Type==\"Categoria\"){\r\n                params.visualizzazione = {\r\n                    entityId: entityId\r\n                    //entityName: entityName\r\n                };\r\n                widgetContext.stateController.updateState(null, params);\r\n            }\r\n            if(Type==\"Acqua\" || Type==\"AA Sensor\" || Type==\"Energy\" || Type==\"AA Energy\" || Type==\"Presenza\"){\r\n                params.selectedDevice = {\r\n                    entityId: entityId\r\n                    //entityName: entityName\r\n                };\r\n                params.visualizzazione = {\r\n                    entityId: entityId\r\n                    //entityName: entityName\r\n                };\r\n                widgetContext.stateController.updateState(null, params);\r\n                /*params['automezzo_selezionato'] = {\r\n                    entityId: entityId,\r\n                    entityName: entityName\r\n                };*/\r\n            }\r\n        }else if(deviceType==\"CUSTOMER\"){\r\n            params.visualizzazione = null;\r\n            widgetContext.stateController.updateState(null, params);\r\n        }else{\r\n            params.visualizzazione = null;\r\n            widgetContext.stateController.updateState(null, params);\r\n        }\r\n});",
+                "customFunction" : "var $injector = widgetContext.$scope.$injector;\r\nvar params = widgetContext.stateController.getStateParams();\r\n$injector.get(widgetContext.servicesMap.get('entityService')).getEntity(entityId.entityType, entityId.id)\r\n  .subscribe(function(data) {\r\n        var deviceType = data.id.entityType;\r\n        params.visualizzazione = null;\r\n        widgetContext.stateController.updateState(null, params);\r\n        if(deviceType==\"DEVICE\" || deviceType==\"ASSET\"){\r\n            var Type=data.type;\r\n            if(Type==\"bungalow\"){\r\n                params.bungalow_selezionato = {\r\n                    entityId: entityId\r\n                    //entityName: entityName\r\n                };\r\n                params.visualizzazione = {\r\n                    entityId: entityId\r\n                    //entityName: entityName\r\n                };\r\n                widgetContext.stateController.updateState(null, params);\r\n            }\r\n            if(Type==\"Servizio Igienico\"){\r\n                params.wc_selezionato = {\r\n                    entityId: entityId\r\n                    //entityName: entityName\r\n                };\r\n                params.visualizzazione = {\r\n                    entityId: entityId\r\n                    //entityName: entityName\r\n                };\r\n                widgetContext.stateController.updateState(null, params);\r\n            }\r\n             if(Type==\"Colonnina\"){\r\n                params.colonnina_selezionata = {\r\n                    entityId: entityId\r\n                    //entityName: entityName\r\n                };\r\n                params.visualizzazione = {\r\n                    entityId: entityId\r\n                    //entityName: entityName\r\n                };\r\n                widgetContext.stateController.updateState(null, params);\r\n            }\r\n            if(Type==\"Categoria\"){\r\n                params.visualizzazione = {\r\n                    entityId: entityId\r\n                    //entityName: entityName\r\n                };\r\n                widgetContext.stateController.updateState(null, params);\r\n            }\r\n            if(Type==\"Acqua\" || Type==\"AA Sensor\" || Type==\"Energy\" || Type==\"AA Energy\" || Type==\"Presenza\"){\r\n                params.selectedDevice = {\r\n                    entityId: entityId\r\n                    //entityName: entityName\r\n                };\r\n                params.visualizzazione = {\r\n                    entityId: entityId\r\n                    //entityName: entityName\r\n                };\r\n                widgetContext.stateController.updateState(null, params);\r\n                /*params['automezzo_selezionato'] = {\r\n                    entityId: entityId,\r\n                    entityName: entityName\r\n                };*/\r\n            }\r\n        }else if(deviceType==\"CUSTOMER\"){\r\n            params.visualizzazione = null;\r\n            widgetContext.stateController.updateState(null, params);\r\n        }else{\r\n            params.visualizzazione = null;\r\n            widgetContext.stateController.updateState(null, params);\r\n        }\r\n});",
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
                 "id" : "d78bc6d1-0385-9476-eb43-d3e6b8a611b6"
@@ -12774,6 +12774,26 @@
             "relationType" : null,
             "assetTypes" : [ "Servizi Igienici" ]
           }
+        },
+        "a8ee84f1-b18e-5360-e979-aa4f851f56c2" : {
+          "id" : "a8ee84f1-b18e-5360-e979-aa4f851f56c2",
+          "alias" : "Wc Selezionato",
+          "filter" : {
+            "type" : "stateEntity",
+            "resolveMultiple" : false,
+            "stateEntityParamName" : "wc_selezionato",
+            "defaultStateEntity" : null
+          }
+        },
+        "9621ea17-a81b-d892-d76d-dcc66264c992" : {
+          "id" : "9621ea17-a81b-d892-d76d-dcc66264c992",
+          "alias" : "Colonnina Selezionata",
+          "filter" : {
+            "type" : "stateEntity",
+            "resolveMultiple" : false,
+            "stateEntityParamName" : "colonnina_selezionata",
+            "defaultStateEntity" : null
+          }
         }
       },
       "filters" : {
@@ -12874,6 +12894,38 @@
                     "operation" : "EQUAL",
                     "value" : {
                       "defaultValue" : "Categoria",
+                      "dynamicValue" : null
+                    },
+                    "ignoreCase" : false,
+                    "type" : "STRING"
+                  },
+                  "userInfo" : {
+                    "editable" : true,
+                    "label" : "",
+                    "autogeneratedLabel" : true,
+                    "order" : 0
+                  }
+                }, {
+                  "keyFilterPredicate" : {
+                    "operation" : "EQUAL",
+                    "value" : {
+                      "defaultValue" : "Servizio Igienico",
+                      "dynamicValue" : null
+                    },
+                    "ignoreCase" : false,
+                    "type" : "STRING"
+                  },
+                  "userInfo" : {
+                    "editable" : true,
+                    "label" : "",
+                    "autogeneratedLabel" : true,
+                    "order" : 0
+                  }
+                }, {
+                  "keyFilterPredicate" : {
+                    "operation" : "EQUAL",
+                    "value" : {
+                      "defaultValue" : "Piazzola",
                       "dynamicValue" : null
                     },
                     "ignoreCase" : false,

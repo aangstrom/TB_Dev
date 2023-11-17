@@ -7278,24 +7278,6 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "b755362a-b545-8ee6-a67b-df2c9e39d6e5",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "active",
-                "type" : "attribute",
-                "label" : "selectedDevice",
-                "color" : "#c51162",
-                "settings" : { },
-                "_hash" : 0.7145163667848988,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "if (value === 'true' || value === 'false') {\n    return true;\n} else {\n    return false;\n}"
-              } ]
-            }, {
-              "type" : "entity",
-              "name" : null,
               "entityAliasId" : "129977b6-de2f-546b-7df8-2040f39f8732",
               "filterId" : null,
               "dataKeys" : [ {
@@ -7764,7 +7746,7 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "alarmsTitle" : "Allarmi del bungalow",
+              "alarmsTitle" : "Allarmi ${entityName}",
               "enableSelection" : true,
               "enableSearch" : true,
               "enableSelectColumnDisplay" : true,
@@ -7796,7 +7778,7 @@
             "alarmSource" : {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "129977b6-de2f-546b-7df8-2040f39f8732",
+              "entityAliasId" : "58816d42-5d16-591d-205a-d85c302930d8",
               "filterId" : null,
               "dataKeys" : [ {
                 "name" : "startTime",
@@ -15675,12 +15657,12 @@
         },
         "129977b6-de2f-546b-7df8-2040f39f8732" : {
           "id" : "129977b6-de2f-546b-7df8-2040f39f8732",
-          "alias" : "Devices del bungalow",
+          "alias" : "Devices della selezione",
           "filter" : {
             "type" : "relationsQuery",
             "resolveMultiple" : true,
             "rootStateEntity" : true,
-            "stateEntityParamName" : "bungalow_selezionato",
+            "stateEntityParamName" : "visualizzazione",
             "defaultStateEntity" : null,
             "rootEntity" : null,
             "direction" : "FROM",

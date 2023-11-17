@@ -1338,6 +1338,226 @@
           "row" : 0,
           "col" : 0,
           "id" : "805158d9-a7b6-5abd-c6b4-709700c6874f"
+        },
+        "d5ef80d7-bd0e-4cbd-a162-d658b6e54b01" : {
+          "typeFullFqn" : "system.horizontal_2_1_elliptical_tank",
+          "type" : "latest",
+          "sizeX" : 4,
+          "sizeY" : 4,
+          "config" : {
+            "datasources" : [ {
+              "type" : "device",
+              "name" : "",
+              "deviceId" : "684afe70-a887-11ed-bcb8-7f48a6e846b2",
+              "dataKeys" : [ {
+                "name" : "Phase_B_power",
+                "type" : "timeseries",
+                "label" : "Phase_B_power",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.8110245448532396
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1700167552011,
+                  "endTimeMs" : 1700253952011
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "tankSelectionType" : "static",
+              "selectedShape" : "Vertical Cylinder",
+              "shapeAttributeName" : "tankShape",
+              "tankColor" : {
+                "type" : "range",
+                "color" : "#242770",
+                "rangeList" : [ {
+                  "from" : null,
+                  "to" : 20,
+                  "color" : "#E73535DE"
+                }, {
+                  "from" : 20,
+                  "to" : null,
+                  "color" : "#000000"
+                } ],
+                "colorFunction" : "var percent = value;\nif (typeof percent !== undefined) {\n  if (percent < 20) {\n      return '#E73535DE';\n  }\n}\nreturn '#242770';"
+              },
+              "datasourceUnits" : "%",
+              "layout" : "percentage",
+              "volumeSource" : "static",
+              "volumeConstant" : 500,
+              "volumeAttributeName" : "volume",
+              "volumeUnits" : "L",
+              "volumeFont" : {
+                "family" : "Roboto",
+                "size" : 14,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "500",
+                "lineHeight" : "100%"
+              },
+              "volumeColor" : "rgba(0, 0, 0, 0.18)",
+              "units" : "%",
+              "widgetUnitsSource" : "static",
+              "widgetUnitsAttributeName" : "units",
+              "liquidColor" : {
+                "type" : "range",
+                "color" : "#7A8BFF",
+                "rangeList" : [ {
+                  "from" : null,
+                  "to" : 39,
+                  "color" : "#E27C7CDE"
+                }, {
+                  "from" : 39,
+                  "to" : null,
+                  "color" : "#E91E63"
+                } ],
+                "colorFunction" : "var percent = value;\nif (typeof percent !== undefined) {\n  if (percent < 20) {\n      return '#E27C7CDE';\n  }\n}\nreturn '#7A8BFF';"
+              },
+              "valueFont" : {
+                "family" : "Roboto",
+                "size" : 24,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "500",
+                "lineHeight" : "100%"
+              },
+              "valueColor" : {
+                "type" : "range",
+                "color" : "#000000DE",
+                "rangeList" : [ {
+                  "from" : null,
+                  "to" : 20,
+                  "color" : "#FF0000DE"
+                }, {
+                  "from" : 20,
+                  "to" : null,
+                  "color" : "rgb(0, 0, 0)"
+                } ],
+                "colorFunction" : "var percent = value;\nif (typeof percent !== undefined) {\n  if (percent < 20) {\n      return '#FF0000DE';\n  }\n}\nreturn '#000000DE';"
+              },
+              "showBackgroundOverlay" : true,
+              "backgroundOverlayColor" : {
+                "type" : "range",
+                "color" : "rgba(255, 255, 255, 0.76)",
+                "rangeList" : [ {
+                  "from" : null,
+                  "to" : 20,
+                  "color" : "#FFEFEFDE"
+                }, {
+                  "from" : 20,
+                  "to" : null,
+                  "color" : "#FFFFFFC2"
+                } ],
+                "colorFunction" : "var percent = value;\nif (typeof percent !== undefined) {\n  if (percent < 20) {\n      return '#FFEFEFDE';\n  }\n}\nreturn '#FFFFFFC2';"
+              },
+              "showTooltip" : true,
+              "showTooltipLevel" : true,
+              "tooltipUnits" : "%",
+              "tooltipLevelDecimals" : 0,
+              "tooltipLevelFont" : {
+                "family" : "Roboto",
+                "size" : 13,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "500",
+                "lineHeight" : "100%"
+              },
+              "tooltipLevelColor" : {
+                "type" : "constant",
+                "color" : "rgba(0, 0, 0, 0.76)",
+                "rangeList" : [ ],
+                "colorFunction" : "var percent = value;\nif (typeof percent !== undefined) {\n  if (percent < 20) {\n      return '#E27C7CDE';\n  }\n}\nreturn '#7A8BFF';"
+              },
+              "showTooltipDate" : true,
+              "tooltipDateFormat" : {
+                "format" : null,
+                "lastUpdateAgo" : true,
+                "custom" : false
+              },
+              "tooltipDateFont" : {
+                "family" : "Roboto",
+                "size" : 13,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "500",
+                "lineHeight" : "100%"
+              },
+              "tooltipDateColor" : "rgba(0, 0, 0, 0.76)",
+              "tooltipBackgroundColor" : "rgba(255, 255, 255, 0.76)",
+              "tooltipBackgroundBlur" : 3,
+              "background" : {
+                "type" : "color",
+                "color" : "#fff",
+                "overlay" : {
+                  "enabled" : false,
+                  "color" : "rgba(255,255,255,0.72)",
+                  "blur" : 3
+                }
+              }
+            },
+            "title" : "Liquid level",
+            "useDashboardTimewindow" : true,
+            "displayTimewindow" : true,
+            "configMode" : "basic",
+            "titleFont" : {
+              "family" : "Roboto",
+              "size" : 16,
+              "sizeUnit" : "px",
+              "style" : "normal",
+              "weight" : "500",
+              "lineHeight" : "1.5"
+            },
+            "titleColor" : "rgba(0, 0, 0, 0.87)",
+            "showTitleIcon" : true,
+            "titleIcon" : "water_drop",
+            "iconColor" : "#5469FF",
+            "decimals" : 0,
+            "enableDataExport" : false,
+            "enableFullscreen" : false,
+            "borderRadius" : "0px",
+            "actions" : { },
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "dropShadow" : true,
+            "margin" : "0px",
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "d5ef80d7-bd0e-4cbd-a162-d658b6e54b01"
         }
       },
       "states" : {
@@ -1404,7 +1624,7 @@
                 "0b94b8e3-e4f5-e47d-5bda-86684f5a9f07" : {
                   "sizeX" : 5,
                   "sizeY" : 4,
-                  "row" : 13,
+                  "row" : 12,
                   "col" : 8
                 },
                 "805158d9-a7b6-5abd-c6b4-709700c6874f" : {
@@ -1412,6 +1632,12 @@
                   "sizeY" : 6,
                   "row" : 10,
                   "col" : 13
+                },
+                "d5ef80d7-bd0e-4cbd-a162-d658b6e54b01" : {
+                  "sizeX" : 4,
+                  "sizeY" : 4,
+                  "row" : 16,
+                  "col" : 8
                 }
               },
               "gridSettings" : {

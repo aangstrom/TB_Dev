@@ -6228,10 +6228,21 @@
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
                 "type" : "custom",
-                "customFunction" : "var $injector = widgetContext.$scope.$injector;\r\nvar params = widgetContext.stateController.getStateParams();\r\n$injector.get(widgetContext.servicesMap.get('entityService')).getEntity(entityId.entityType, entityId.id).subscribe(function(data) {\r\n    params['bungalow_selezionato'] = {\r\n        entityId: entityId\r\n        //entityName: entityName\r\n    };\r\n    params['visualizzazione'] = {\r\n        entityId: entityId\r\n        //entityName: entityName\r\n    };\r\n    widgetContext.stateController.updateState(null, params);\r\n });",
+                "customFunction" : "var $injector = widgetContext.$scope.$injector;\r\nvar params = widgetContext.stateController.getStateParams();\r\n$injector.get(widgetContext.servicesMap.get('entityService')).getEntity(entityId.entityType, entityId.id).subscribe(function(data) {\r\n    console.log(data);\r\n    params.bungalow_selezionato = {\r\n        entityId: entityId\r\n        //entityName: entityName\r\n    };\r\n    params.visualizzazione = {\r\n        entityId: entityId\r\n        //entityName: entityName\r\n    };\r\n    widgetContext.stateController.updateState(null, params);\r\n });",
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
                 "id" : "c33ff837-63f4-df99-87f2-f2f409b5c997"
+              } ],
+              "polygonClick" : [ {
+                "name" : "Dettagli",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "var $injector = widgetContext.$scope.$injector;\r\nvar params = widgetContext.stateController.getStateParams();\r\n$injector.get(widgetContext.servicesMap.get('entityService')).getEntity(entityId.entityType, entityId.id).subscribe(function(data) {\r\n    console.log(data);\r\n    params.bungalow_selezionato = {\r\n        entityId: entityId\r\n        //entityName: entityName\r\n    };\r\n    params.visualizzazione = {\r\n        entityId: entityId\r\n        //entityName: entityName\r\n    };\r\n    widgetContext.stateController.updateState(null, params);\r\n });",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "e34ceea1-f69f-157a-bf99-164ea4ae03ac"
               } ]
             },
             "showTitleIcon" : false,

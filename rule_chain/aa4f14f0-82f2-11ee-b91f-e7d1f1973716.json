@@ -285,6 +285,22 @@
       "toIndex" : 9,
       "type" : "Success"
     }, {
+      "fromIndex" : 61,
+      "toIndex" : 9,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 61,
+      "toIndex" : 25,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 61,
+      "toIndex" : 30,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 61,
+      "toIndex" : 34,
+      "type" : "Success"
+    }, {
       "fromIndex" : 62,
       "toIndex" : 9,
       "type" : "Success"
@@ -307,6 +323,22 @@
     }, {
       "fromIndex" : 64,
       "toIndex" : 30,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 65,
+      "toIndex" : 9,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 65,
+      "toIndex" : 25,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 65,
+      "toIndex" : 30,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 65,
+      "toIndex" : 34,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 33,
@@ -824,7 +856,7 @@
         "entityType" : "RULE_NODE",
         "id" : "fbe501d0-82f2-11ee-b91f-e7d1f1973716"
       },
-      "name" : "Acqua Campeggi",
+      "name" : "Acqua Bungalow 1",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -2126,8 +2158,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 58,
-        "layoutY" : 1245
+        "layoutX" : 52,
+        "layoutY" : 1175
       },
       "configuration" : {
         "msgCount" : 0,
@@ -2136,7 +2168,7 @@
         "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var hour = new Date().getHours();\nvar mc;\n//mc = Math.round( mc * 100 ) / 100;\nif(hour==23 || hour==24){\n        mc=Math.random() * (1 - 0);\n}else if(hour==0 || hour==1 || hour==2 || hour==3 || hour==4 || hour==5 || hour==6 || hour==7 || hour==8){\n    mc=0;\n}else if(hour==12 || hour==13){\n    mc = Math.random() * (1 - 0);\n}else if(hour==19 || hour==20 || hour==21){\n    mc = Math.random() * (1 - 0);\n}else{\n    mc=0;\n}\nvar msg = { mc: mc };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "queueName" : null,
-        "originatorId" : "2cb752f0-82d9-11ee-b91f-e7d1f1973716",
+        "originatorId" : "91c98ff0-855e-11ee-b91f-e7d1f1973716",
         "originatorType" : "ASSET"
       },
       "configurationVersion" : 0,
@@ -2147,7 +2179,7 @@
         "entityType" : "RULE_NODE",
         "id" : "3e85efe0-855a-11ee-b91f-e7d1f1973716"
       },
-      "name" : "Acqua Campeggi",
+      "name" : "Acqua WC1",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -2232,6 +2264,62 @@
         "id" : "a0fdea10-855a-11ee-b91f-e7d1f1973716"
       },
       "name" : "Presenza Piazzola B1",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 52,
+        "layoutY" : 1101
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 300,
+        "scriptLang" : "TBEL",
+        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var hour = new Date().getHours();\nvar mc=0;\nif(hour==9 || hour==10 || hour==11 || hour==12 || hour==15 || hour==16 || hour==17 || hour==18){\n    mc=Math.random() * (1 - 0);\n}else{\n    mc=0;\n}\nvar msg = { mc: mc };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "queueName" : null,
+        "originatorId" : "38b557e0-855f-11ee-b91f-e7d1f1973716",
+        "originatorType" : "ASSET"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "7aa009c0-855f-11ee-b91f-e7d1f1973716"
+      },
+      "name" : "Acqua Piscina",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 52,
+        "layoutY" : 1248
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 300,
+        "scriptLang" : "TBEL",
+        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var hour = new Date().getHours();\nvar mc;\n//mc = Math.round( mc * 100 ) / 100;\nif(hour==23 || hour==24){\n        mc=Math.random() * (1 - 0);\n}else if(hour==0 || hour==1 || hour==2 || hour==3 || hour==4 || hour==5 || hour==6 || hour==7 || hour==8){\n    mc=0;\n}else if(hour==12 || hour==13){\n    mc = Math.random() * (1 - 0);\n}else if(hour==19 || hour==20 || hour==21){\n    mc = Math.random() * (1 - 0);\n}else{\n    mc=0;\n}\nvar msg = { mc: mc };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "queueName" : null,
+        "originatorId" : "2cb752f0-82d9-11ee-b91f-e7d1f1973716",
+        "originatorType" : "ASSET"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "7aa14240-855f-11ee-b91f-e7d1f1973716"
+      },
+      "name" : "Acqua Piazzola",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"

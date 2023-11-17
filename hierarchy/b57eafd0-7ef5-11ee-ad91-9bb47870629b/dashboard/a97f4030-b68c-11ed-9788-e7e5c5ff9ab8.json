@@ -5955,6 +5955,150 @@
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
               }
+            }, {
+              "type" : "entity",
+              "entityAliasId" : "9489d8f2-f665-fe11-5af8-04bfe32d6acc",
+              "dataKeys" : [ {
+                "name" : "xPos",
+                "type" : "attribute",
+                "label" : "xPos",
+                "color" : "#ff9800",
+                "settings" : { },
+                "_hash" : 0.6146183056565686,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "yPos",
+                "type" : "attribute",
+                "label" : "yPos",
+                "color" : "#cddc39",
+                "settings" : { },
+                "_hash" : 0.7760367711335423,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Name",
+                "color" : "#795548",
+                "settings" : { },
+                "_hash" : 0.2127462370808877,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "coordinates",
+                "type" : "attribute",
+                "label" : "coordinates",
+                "color" : "#ff5722",
+                "settings" : { },
+                "_hash" : 0.2900969641178719,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            }, {
+              "type" : "entity",
+              "entityAliasId" : "e94b2807-f0ce-f097-53f9-a514ed8c9444",
+              "dataKeys" : [ {
+                "name" : "xPos",
+                "type" : "attribute",
+                "label" : "xPos",
+                "color" : "#673ab7",
+                "settings" : { },
+                "_hash" : 0.12396530253645843,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "yPos",
+                "type" : "attribute",
+                "label" : "yPos",
+                "color" : "#009688",
+                "settings" : { },
+                "_hash" : 0.22489438975146459,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Name",
+                "color" : "#00bcd4",
+                "settings" : { },
+                "_hash" : 0.7927581989607697,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "coordinates",
+                "type" : "attribute",
+                "label" : "coordinates",
+                "color" : "#9e9e9e",
+                "settings" : { },
+                "_hash" : 0.29943404164451115,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "presenza",
+                "type" : "timeseries",
+                "label" : "presenza",
+                "color" : "#2962ff",
+                "settings" : { },
+                "_hash" : 0.7256232998525378,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==='true'){\n    return \"Occupato\";\n}else{\n    return \"Libero\";\n}\n"
+              }, {
+                "name" : "stato",
+                "type" : "attribute",
+                "label" : "stato",
+                "color" : "#00c853",
+                "settings" : { },
+                "_hash" : 0.9137686218391428,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==\"manutenzione\"){\n    return \"Manutenzione\";\n}else if(value==\"inagibile\"){\n    return \"Inagibile\";\n}else if(value==\"normale\"){\n    return \"Normale\";\n}else{\n    return value;\n}"
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
             } ],
             "timewindow" : {
               "displayValue" : "",
@@ -15323,6 +15467,18 @@
             "fetchLastLevelOnly" : false,
             "relationType" : "Contains",
             "assetTypes" : [ "Piazzola" ]
+          }
+        },
+        "9489d8f2-f665-fe11-5af8-04bfe32d6acc" : {
+          "id" : "9489d8f2-f665-fe11-5af8-04bfe32d6acc",
+          "alias" : "Piscina",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "ASSET",
+              "id" : "3a40f630-8539-11ee-b91f-e7d1f1973716"
+            }
           }
         }
       },

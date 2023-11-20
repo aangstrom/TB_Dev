@@ -8994,12 +8994,18 @@
               "name" : "",
               "entityAliasId" : "55f23be2-d63e-ce45-b3f5-d05604647f2a",
               "dataKeys" : [ {
-                "name" : "mc",
+                "name" : "mc_totali",
                 "type" : "attribute",
                 "label" : "Acqua Totale",
                 "color" : "#2196f3",
                 "settings" : { },
-                "_hash" : 0.6643058517781573
+                "_hash" : 0.6643058517781573,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -9164,17 +9170,17 @@
               "entityAliasId" : "55f23be2-d63e-ce45-b3f5-d05604647f2a",
               "dataKeys" : [ {
                 "name" : "power",
-                "type" : "attribute",
+                "type" : "timeseries",
                 "label" : "Energia Totale",
                 "color" : "#2196f3",
                 "settings" : { },
-                "_hash" : 0.794567092177211,
-                "aggregationType" : null,
+                "_hash" : 0.6355855553607992,
+                "aggregationType" : "NONE",
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "return value/1000;"
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -9508,12 +9514,18 @@
               "name" : "",
               "entityAliasId" : "55f23be2-d63e-ce45-b3f5-d05604647f2a",
               "dataKeys" : [ {
-                "name" : "mc",
-                "type" : "attribute",
-                "label" : "Costo Energia Totale",
+                "name" : "PowerCost",
+                "type" : "timeseries",
+                "label" : "Costo Energia",
                 "color" : "#2196f3",
                 "settings" : { },
-                "_hash" : 0.6643058517781573
+                "_hash" : 0.5190516169605346,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -16814,8 +16826,8 @@
         "history" : {
           "historyType" : 1,
           "fixedTimewindow" : {
-            "startTimeMs" : 1699657200000,
-            "endTimeMs" : 1700261999999
+            "startTimeMs" : 1699916400000,
+            "endTimeMs" : 1700521199999
           },
           "interval" : 1210000
         },

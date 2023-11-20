@@ -14374,6 +14374,102 @@
           },
           "id" : "e2f9a9e5-6a2e-a46e-7fda-a1751c1be6d9",
           "typeFullFqn" : "system.input_widgets.update_multiple_attributes"
+        },
+        "d33c8773-978b-82d0-30a8-0ba6cd03dace" : {
+          "type" : "latest",
+          "sizeX" : 11,
+          "sizeY" : 16,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "b755362a-b545-8ee6-a67b-df2c9e39d6e5",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "campeggi_name",
+                "type" : "attribute",
+                "label" : "Nome Sensore",
+                "color" : "#455a64",
+                "settings" : { },
+                "_hash" : 0.3981133098618288,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1683549171832,
+                  "endTimeMs" : 1683635571832
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "widgetTitle" : "Soglie Allarmi",
+              "showResultMessage" : false,
+              "showActionButtons" : true,
+              "updateAllValues" : false,
+              "showGroupTitle" : false,
+              "fieldsAlignment" : "column",
+              "groupTitle" : "${entityName}",
+              "fieldsInRow" : 2,
+              "columnGap" : 10,
+              "rowGap" : 5
+            },
+            "title" : "Soglie allarmi",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "enableDataExport" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "18px",
+              "fontWeight" : 600,
+              "padding" : "5px 10px 5px 5px",
+              "textTransform" : "capitalize"
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "showTitleIcon" : false,
+            "titleIcon" : null,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "displayTimewindow" : true,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "Nessun sensore presente",
+            "margin" : "0px"
+          },
+          "id" : "d33c8773-978b-82d0-30a8-0ba6cd03dace",
+          "typeFullFqn" : "system.input_widgets.update_multiple_attributes"
         }
       },
       "states" : {
@@ -15857,13 +15953,24 @@
           "root" : false,
           "layouts" : {
             "main" : {
-              "widgets" : { },
+              "widgets" : {
+                "d33c8773-978b-82d0-30a8-0ba6cd03dace" : {
+                  "sizeX" : 24,
+                  "sizeY" : 18,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
               "gridSettings" : {
-                "backgroundColor" : "#eeeeee",
+                "backgroundColor" : "#FFFFFF",
                 "columns" : 24,
-                "margin" : 10,
+                "margin" : 0,
                 "outerMargin" : true,
-                "backgroundSizeMode" : "100%"
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : true,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70
               }
             }
           }

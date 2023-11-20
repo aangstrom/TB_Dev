@@ -931,125 +931,6 @@
           "id" : "4c8da7a1-659f-e2e5-220c-4128a217e872",
           "typeFullFqn" : "system.alarm_widgets.alarms_table"
         },
-        "aa7ff32f-7ec6-0a0a-4f83-8903765633e1" : {
-          "type" : "latest",
-          "sizeX" : 5,
-          "sizeY" : 3.5,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "b755362a-b545-8ee6-a67b-df2c9e39d6e5",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "type",
-                "type" : "entityField",
-                "label" : "Type",
-                "color" : "#ffc107",
-                "settings" : { },
-                "_hash" : 0.5157976480659352
-              } ]
-            } ],
-            "timewindow" : {
-              "displayValue" : "",
-              "selectedTab" : 0,
-              "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1683549171831,
-                  "endTimeMs" : 1683635571831
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "limit" : 25000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "useMarkdownTextFunction" : true,
-              "markdownTextPattern" : "# Markdown/HTML card \\n - **Current entity**: **${entityName}**. \\n - **Current value**: **${Random}**.",
-              "markdownTextFunction" : "var type,entityType;\nif (data && data.length) {\n    type = data[0]['Type'];\n    entityType=data[0]['entityType'];\n} else {\n    type = 'N/A';\n    entityType = 'N/A';\n}\n\nvar detailsStateName = getDetailsStateName(type,entityType);\n\nreturn '<div style=\"width: 100%; height: 100%;\" fxLayout=\"column\">' + \n           '<tb-dashboard-state fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"' + detailsStateName + '\"></tb-dashboard-state>' +\n       '</div>';\n\nfunction getDetailsStateName(deviceType,entityType) {\n    if(entityType==\"ASSET\"){\n        switch(deviceType) {\n            case 'AA Energy':\n                return 'energy_sensor_details';\n            case 'Presenza':\n                return 'presenza_details';\n            case 'Affluenza':\n                return 'affluenza_details';\n            case 'Stato Bagno':\n                return 'stato_bagno_details';\n            case 'Acqua':\n                return 'acqua_details';\n            default:\n                return 'unknown_details';\n        }\n    }else{\n        switch(deviceType) {\n        case 'Energy':\n            return 'energy_multiple_sensor_details';\n        case 'AA Sensor':\n            return 'aa_sensor_details';\n        case 'Acqua':\n            return 'acqua_details';\n        case 'Affluenza':\n                return 'affluenza_details';\n        case 'Stato Bagno':\n            return 'stato_bagno_details';\n        case 'AA Energy':\n            return 'energy_multiple_sensor_details';\n        case 'Camera':\n            return 'camera_sensor_details';\n        case 'Presenza':\n            return 'presenza_details';\n        default:\n            return 'unknown_details';\n        }\n    }\n}      ",
-              "applyDefaultMarkdownStyle" : true,
-              "markdownCss" : ""
-            },
-            "title" : "New Markdown/HTML Card",
-            "showTitleIcon" : false,
-            "iconColor" : "rgba(0, 0, 0, 0.87)",
-            "iconSize" : "24px",
-            "titleTooltip" : "",
-            "dropShadow" : false,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "showLegend" : false,
-            "enableDataExport" : false,
-            "widgetCss" : "",
-            "noDataDisplayMessage" : "",
-            "actions" : {
-              "elementClick" : [ {
-                "name" : "go-back",
-                "icon" : "more_horiz",
-                "useShowWidgetActionFunction" : null,
-                "showWidgetActionFunction" : "return true;",
-                "type" : "custom",
-                "customFunction" : "var params = widgetContext.stateController.getStateParams();\nparams['selectedDevice'] = null;\nwidgetContext.stateController.updateState(null, params);",
-                "openInSeparateDialog" : false,
-                "openInPopover" : false,
-                "id" : "37e5e007-da10-e64c-be1e-899094481e42"
-              }, {
-                "name" : "settings",
-                "icon" : "more_horiz",
-                "useShowWidgetActionFunction" : null,
-                "showWidgetActionFunction" : "return true;",
-                "type" : "custom",
-                "customFunction" : "const targetElement = $($event.target).closest('#settings', widgetContext.$container[0]);\n\nvar type = decodeURIComponent($(targetElement).attr('data-device-type'));\n\nvar stateId = getSettingsState(type);\n\nvar params = {\n    selectedDevice: {\n        entityId: entityId,\n        entityName: entityName,\n        entityLabel: entityLabel,\n    },\n    targetEntityParamName: 'selectedDevice'\n};\n\nwidgetContext.actionsApi.openDashboardStateInPopover($event, stateId, params, true, 'bottomRight', true, '400px', getSettingsHeight(type));\n\nfunction getSettingsState(type) {\n    switch (type) {\n        case 'Smart Shelf':\n            return 'smart_shelf_settings';\n        case 'Freezer':            \n            return 'freezer_settings';\n        case 'Chiller':            \n            return 'chiller_settings';                      \n        case 'Smart Bin':\n            return 'smart_bin_settings';          \n        case 'Door Sensor':\n            return 'door_settings';\n        case 'Liquid Level Sensor':\n            return 'liquid_sensor_settings';\n        case 'Motion Sensor':\n            return 'motion_sensor_settings';\n        case 'Occupancy Sensor':\n            return 'occupancy_sensor_settings';\n        case 'Smoke Sensor':\n            return 'smoke_sensor_settings';\n        default:\n            return 'unknown_settings';\n    }\n}\n\nfunction getSettingsHeight(type) {\n    switch (type) {\n        case 'Smart Shelf':\n            return '280px';\n        case 'Freezer':            \n            return '420px';\n        case 'Chiller':            \n            return '420px';                  \n        case 'Smart Bin':\n            return '420px';                  \n        case 'Door Sensor':\n            return '420px';\n        case 'Liquid Level Sensor':\n            return '420px';\n        case 'Motion Sensor':\n            return '280px';\n        case 'Occupancy Sensor':\n            return '420px';\n        case 'Smoke Sensor':\n            return '280px';\n        default:\n            return '35vh';\n    }\n}\n",
-                "openInSeparateDialog" : false,
-                "openInPopover" : false,
-                "id" : "076da598-f2dc-6fda-6744-db268a4c6df7"
-              }, {
-                "name" : "battery-level",
-                "icon" : "more_horiz",
-                "useShowWidgetActionFunction" : null,
-                "showWidgetActionFunction" : "return true;",
-                "type" : "openDashboardState",
-                "targetDashboardStateId" : "battery_level_details",
-                "setEntityId" : true,
-                "stateEntityParamName" : "selectedDevice",
-                "openRightLayout" : false,
-                "popoverPreferredPlacement" : "bottomRight",
-                "popoverHideOnClickOutside" : true,
-                "popoverHideDashboardToolbar" : true,
-                "popoverWidth" : "25vw",
-                "popoverHeight" : "25vh",
-                "popoverStyle" : { },
-                "openInSeparateDialog" : false,
-                "openInPopover" : true,
-                "id" : "44417062-4a4f-0479-0042-93952e15436a"
-              } ]
-            },
-            "pageSize" : 1024
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "aa7ff32f-7ec6-0a0a-4f83-8903765633e1",
-          "typeFullFqn" : "system.cards.markdown_card"
-        },
         "8805b23e-efea-86a7-d754-9fdfe37acbaa" : {
           "type" : "latest",
           "sizeX" : 5,
@@ -7810,8 +7691,10 @@
             "padding" : "0px",
             "settings" : {
               "useMarkdownTextFunction" : true,
-              "markdownTextFunction" : "var type,entityType;\nif (data && data.length) {\n    type = data[0]['Type'];\n    entityType=data[0]['entityType'];\n} else {\n    type = 'N/A';\n    entityType = 'N/A';\n}\n\nvar detailsStateName = getDetailsStateName(type,entityType);\n\nreturn '<div style=\"width: 100%; height: 100%;\" fxLayout=\"column\">' + \n           '<tb-dashboard-state fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"' + detailsStateName + '\"></tb-dashboard-state>' +\n       '</div>';\n\nfunction getDetailsStateName(deviceType,entityType) {\n    if(entityType==\"ASSET\"){\n        switch(deviceType) {\n            case 'AA Energy':\n                return 'energy_sensor_details';\n            case 'Presenza':\n                return 'presenza_details';\n            case 'Acqua':\n                return 'acqua_details';\n            default:\n                return 'unknown_details';\n        }\n    }else{\n        switch(deviceType) {\n        case 'Energy':\n            return 'energy_multiple_sensor_details';\n        case 'AA Sensor':\n            return 'aa_sensor_details';\n        case 'Acqua':\n            return 'acqua_details';\n        case 'AA Energy':\n            return 'energy_multiple_sensor_details';\n        case 'Camera':\n            return 'camera_sensor_details';\n        case 'Presenza':\n            return 'presenza_details';\n        default:\n            return 'unknown_details';\n        }\n    }\n}      ",
-              "applyDefaultMarkdownStyle" : true
+              "markdownTextPattern" : "# Markdown/HTML card \\n - **Current entity**: **${entityName}**. \\n - **Current value**: **${Random}**.",
+              "markdownTextFunction" : "var type,entityType;\nif (data && data.length) {\n    type = data[0]['Type'];\n    entityType=data[0]['entityType'];\n} else {\n    type = 'N/A';\n    entityType = 'N/A';\n}\n\nvar detailsStateName = getDetailsStateName(type,entityType);\n\nreturn '<div style=\"width: 100%; height: 100%;\" fxLayout=\"column\">' + \n           '<tb-dashboard-state fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"' + detailsStateName + '\"></tb-dashboard-state>' +\n       '</div>';\n\nfunction getDetailsStateName(deviceType,entityType) {\n    if(entityType==\"ASSET\"){\n        switch(deviceType) {\n            case 'AA Energy':\n                return 'energy_sensor_details';\n            case 'Presenza':\n                return 'presenza_details';\n            case 'Affluenza':\n                return 'affluenza_details';\n            case 'Stato Bagno':\n                return 'stato_bagno_details';\n            case 'Acqua':\n                return 'acqua_details';\n            default:\n                return 'unknown_details';\n        }\n    }else{\n        switch(deviceType) {\n        case 'Energy':\n            return 'energy_multiple_sensor_details';\n        case 'AA Sensor':\n            return 'aa_sensor_details';\n        case 'Acqua':\n            return 'acqua_details';\n        case 'Affluenza':\n                return 'affluenza_details';\n        case 'Stato Bagno':\n            return 'stato_bagno_details';\n        case 'AA Energy':\n            return 'energy_multiple_sensor_details';\n        case 'Camera':\n            return 'camera_sensor_details';\n        case 'Presenza':\n            return 'presenza_details';\n        default:\n            return 'unknown_details';\n        }\n    }\n}      ",
+              "applyDefaultMarkdownStyle" : true,
+              "markdownCss" : ""
             },
             "title" : "New Markdown/HTML Card",
             "showTitleIcon" : false,
@@ -14479,33 +14362,6 @@
                 "columns" : 24,
                 "margin" : 10,
                 "backgroundSizeMode" : "100%",
-                "outerMargin" : true
-              }
-            }
-          }
-        },
-        "device_card_details" : {
-          "name" : "Device card details",
-          "root" : false,
-          "layouts" : {
-            "main" : {
-              "widgets" : {
-                "aa7ff32f-7ec6-0a0a-4f83-8903765633e1" : {
-                  "sizeX" : 24,
-                  "sizeY" : 11,
-                  "row" : 0,
-                  "col" : 0
-                }
-              },
-              "gridSettings" : {
-                "backgroundColor" : "#ffffff",
-                "columns" : 24,
-                "margin" : 0,
-                "backgroundSizeMode" : "100%",
-                "autoFillHeight" : true,
-                "backgroundImageUrl" : null,
-                "mobileAutoFillHeight" : true,
-                "mobileRowHeight" : 70,
                 "outerMargin" : true
               }
             }

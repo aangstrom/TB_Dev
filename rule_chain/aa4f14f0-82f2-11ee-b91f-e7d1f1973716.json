@@ -1263,7 +1263,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return msg.temperature > 20;",
-        "tbelScript" : "return metadata.originatorName==\"Destra Logistica\";"
+        "tbelScript" : "if(metadata.originatorName==\"Energia Colonnina\"){\n    return true;\n}else if(metadata.originatorName==\"Energia Piazzola\"){\n    return true;\n}else if(metadata.originatorName==\"Energia Servizi Igienici\"){\n    return true;\n}else if(metadata.originatorName==\"Destra Logistica\"){\n    return true;\n}else{\n    return false;\n}"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -2616,7 +2616,7 @@
         "jsScript" : "var temperature = 18 + Math.random() * (32 - 18);\ntemperature = Math.round( temperature * 100 ) / 100;\nvar humidity = 10 + Math.random() * (90 - 10);\nhumidity = Math.round( humidity * 100 ) / 100;\nvar soundAvg = 30 + Math.random() * (90 - 10);\nsoundAvg = Math.round( soundAvg * 100 ) / 100;\nvar soundPeak = 50 + Math.random() * (90 - 10);\nsoundPeak = Math.round( soundPeak * 100 ) / 100;\nvar light = 100 + Math.random() * (500 - 20);\nlight = Math.round( light * 100 ) / 100;\nvar user_latitude = 44.8923521;\nvar user_longitude = 11.6176377;\nvar vdd = 3718;\nvar msg = { \n            temperature: temperature,\n            humidity: humidity,\n            soundAvg: soundAvg,\n            soundPeak: soundPeak,\n            light: light,\n            user_latitude: user_latitude,\n            user_longitude: user_longitude,\n            vdd: vdd,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
         "tbelScript" : "var hour = new Date().getHours();\nvar power;\nif(hour==12 || hour==13 || hour==14 || hour==19 || hour==20){\n    power=3300+Math.random()*(500-0);\n}else{\n    power=0;\n}\npower=toFixed(power,2);\n//power=Math.round(power*100)/100;\nvar msg = { \n            power: power,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };",
         "queueName" : null,
-        "originatorId" : "3671e5a0-8561-11ee-b91f-e7d1f1973716",
+        "originatorId" : "3a301b20-884b-11ee-842a-55fec3ab5bf6",
         "originatorType" : "ASSET"
       },
       "configurationVersion" : 0,
@@ -2627,7 +2627,7 @@
         "entityType" : "RULE_NODE",
         "id" : "35f62ce0-8849-11ee-842a-55fec3ab5bf6"
       },
-      "name" : "Generator Energia colonnina",
+      "name" : "Generator Energia Colonnina",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -2644,7 +2644,7 @@
         "jsScript" : "var temperature = 18 + Math.random() * (32 - 18);\ntemperature = Math.round( temperature * 100 ) / 100;\nvar humidity = 10 + Math.random() * (90 - 10);\nhumidity = Math.round( humidity * 100 ) / 100;\nvar soundAvg = 30 + Math.random() * (90 - 10);\nsoundAvg = Math.round( soundAvg * 100 ) / 100;\nvar soundPeak = 50 + Math.random() * (90 - 10);\nsoundPeak = Math.round( soundPeak * 100 ) / 100;\nvar light = 100 + Math.random() * (500 - 20);\nlight = Math.round( light * 100 ) / 100;\nvar user_latitude = 44.8923521;\nvar user_longitude = 11.6176377;\nvar vdd = 3718;\nvar msg = { \n            temperature: temperature,\n            humidity: humidity,\n            soundAvg: soundAvg,\n            soundPeak: soundPeak,\n            light: light,\n            user_latitude: user_latitude,\n            user_longitude: user_longitude,\n            vdd: vdd,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
         "tbelScript" : "var hour = new Date().getHours();\nvar power;\nif(hour==8 || hour==9 || hour==10 || hour==11){\n    power=10+Math.random()*(25-0);\n}else if(hour==12 || hour==13 || hour==14 || hour==19 || hour==20){\n    power=20+Math.random()*(50-0);\n}else if(hour==21 || hour==22 || hour==23){\n    power=30+Math.random()*(50-0);\n}else{\n    power=0+Math.random()*(20-0);\n}\npower=toFixed(power,2);\n//power=Math.round(power*100)/100;\nvar msg = { \n            power: power,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };",
         "queueName" : null,
-        "originatorId" : "3671e5a0-8561-11ee-b91f-e7d1f1973716",
+        "originatorId" : "55d6a880-884b-11ee-842a-55fec3ab5bf6",
         "originatorType" : "ASSET"
       },
       "configurationVersion" : 0,
@@ -2683,7 +2683,7 @@
         "entityType" : "RULE_NODE",
         "id" : "35f8ec00-8849-11ee-842a-55fec3ab5bf6"
       },
-      "name" : "Generator Servizi Igienici",
+      "name" : "Generator Energia Servizi Igienici",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -2700,7 +2700,7 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : false,
+      "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",

@@ -466,20 +466,24 @@
       "type" : "Success"
     }, {
       "fromIndex" : 72,
-      "toIndex" : 75,
+      "toIndex" : 77,
       "type" : "Success"
     }, {
       "fromIndex" : 73,
-      "toIndex" : 75,
+      "toIndex" : 77,
       "type" : "Success"
     }, {
       "fromIndex" : 74,
-      "toIndex" : 75,
+      "toIndex" : 77,
       "type" : "Success"
     }, {
       "fromIndex" : 76,
       "toIndex" : 33,
       "type" : "False"
+    }, {
+      "fromIndex" : 77,
+      "toIndex" : 75,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 33,
     "nodes" : [ {
@@ -2686,8 +2690,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1336,
-        "layoutY" : 1495
+        "layoutX" : 1393,
+        "layoutY" : 1393
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -2709,8 +2713,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1635,
-        "layoutY" : 1382
+        "layoutX" : 1741,
+        "layoutY" : 1351
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -2729,6 +2733,43 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1344,
+        "layoutY" : 1513
+      },
+      "configuration" : {
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "TO",
+          "maxLevel" : null,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "CUSTOMER" ]
+          } ]
+        },
+        "dataToFetch" : "ATTRIBUTES",
+        "fetchTo" : "METADATA",
+        "dataMapping" : {
+          "F1" : "F1",
+          "F2" : "F2",
+          "F3" : "F3",
+          "F23" : "F23"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "fc68f0b0-8849-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "Get F1/F2/F3/F23",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
     } ],
     "ruleChainConnections" : null
   },

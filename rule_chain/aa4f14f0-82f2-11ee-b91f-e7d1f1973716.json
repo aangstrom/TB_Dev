@@ -113,8 +113,8 @@
       "toIndex" : 54,
       "type" : "Success"
     }, {
-      "fromIndex" : 21,
-      "toIndex" : 9,
+      "fromIndex" : 20,
+      "toIndex" : 82,
       "type" : "Success"
     }, {
       "fromIndex" : 21,
@@ -127,6 +127,10 @@
     }, {
       "fromIndex" : 21,
       "toIndex" : 33,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 21,
+      "toIndex" : 80,
       "type" : "Success"
     }, {
       "fromIndex" : 22,
@@ -342,10 +346,6 @@
       "type" : "Success"
     }, {
       "fromIndex" : 56,
-      "toIndex" : 9,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 56,
       "toIndex" : 24,
       "type" : "Success"
     }, {
@@ -355,6 +355,10 @@
     }, {
       "fromIndex" : 56,
       "toIndex" : 33,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 56,
+      "toIndex" : 80,
       "type" : "Success"
     }, {
       "fromIndex" : 57,
@@ -382,10 +386,6 @@
       "type" : "Success"
     }, {
       "fromIndex" : 60,
-      "toIndex" : 9,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 60,
       "toIndex" : 24,
       "type" : "Success"
     }, {
@@ -397,8 +397,8 @@
       "toIndex" : 33,
       "type" : "Success"
     }, {
-      "fromIndex" : 61,
-      "toIndex" : 9,
+      "fromIndex" : 60,
+      "toIndex" : 80,
       "type" : "Success"
     }, {
       "fromIndex" : 61,
@@ -411,6 +411,10 @@
     }, {
       "fromIndex" : 61,
       "toIndex" : 33,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 61,
+      "toIndex" : 80,
       "type" : "Success"
     }, {
       "fromIndex" : 62,
@@ -495,6 +499,22 @@
     }, {
       "fromIndex" : 78,
       "toIndex" : 74,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 79,
+      "toIndex" : 9,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 80,
+      "toIndex" : 79,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 81,
+      "toIndex" : 20,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 82,
+      "toIndex" : 55,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 32,
@@ -2812,6 +2832,147 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetOriginatorFieldsNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 462,
+        "layoutY" : 862
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "msg.mcCost=msg.mc*metadata.Acqua;\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4d633f60-8882-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "Costo per Fascia",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 482,
+        "layoutY" : 941
+      },
+      "configuration" : {
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "TO",
+          "maxLevel" : null,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "CUSTOMER" ]
+          } ]
+        },
+        "dataToFetch" : "ATTRIBUTES",
+        "fetchTo" : "METADATA",
+        "dataMapping" : {
+          "Acqua" : "Acqua"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4d651420-8882-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "Get Acqua",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 807,
+        "layoutY" : 1085
+      },
+      "configuration" : {
+        "inputValueKey" : "mcCost",
+        "outputValueKey" : "mcCost_totali",
+        "mathFunction" : "SUM",
+        "aggIntervalType" : "HOUR",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 5,
+        "periodTimeUnit" : "MINUTES",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : null
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4d65b060-8882-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "Somma Costo Acqua",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1163,
+        "layoutY" : 763
+      },
+      "configuration" : {
+        "inputValueKey" : "mcCost",
+        "outputValueKey" : "mcCost_totali",
+        "mathFunction" : "SUM",
+        "aggIntervalType" : "HOUR",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 5,
+        "periodTimeUnit" : "MINUTES",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : null
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4d662590-8882-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "Somma Costo Acqua",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
     } ],
     "ruleChainConnections" : null
   },

@@ -13827,8 +13827,8 @@
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
+                "usePostProcessing" : true,
+                "postFuncBody" : "if (value==true) {\n    return 1;\n} else {\n    return 0;\n}"
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -13859,34 +13859,42 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "8px",
             "settings" : {
-              "shadowSize" : 4,
-              "fontColor" : "#545454",
+              "stack" : false,
+              "enableSelection" : true,
               "fontSize" : 10,
+              "fontColor" : "#545454",
+              "showTooltip" : true,
+              "tooltipIndividual" : false,
+              "tooltipCumulative" : false,
+              "hideZeros" : false,
+              "tooltipValueFormatter" : "",
+              "grid" : {
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1,
+                "color" : "#545454",
+                "backgroundColor" : null,
+                "tickColor" : "#DDDDDD"
+              },
               "xaxis" : {
+                "title" : null,
                 "showLabels" : true,
                 "color" : "#545454"
               },
               "yaxis" : {
+                "min" : 0,
+                "max" : 1,
+                "title" : null,
                 "showLabels" : true,
-                "color" : "#545454"
-              },
-              "grid" : {
                 "color" : "#545454",
-                "tickColor" : "#DDDDDD",
-                "verticalLines" : true,
-                "horizontalLines" : true,
-                "outlineWidth" : 1
+                "tickSize" : null,
+                "tickDecimals" : 0,
+                "ticksFormatter" : ""
               },
-              "legend" : {
-                "show" : true,
-                "position" : "nw",
-                "backgroundColor" : "#f0f0f0",
-                "backgroundOpacity" : 0.85,
-                "labelBoxBorderColor" : "rgba(1, 1, 1, 0.45)"
-              },
-              "decimals" : 1,
-              "stack" : false,
-              "tooltipIndividual" : false,
+              "shadowSize" : 4,
+              "smoothLines" : false,
+              "thresholdsLineWidth" : null,
+              "comparisonEnabled" : false,
               "showLegend" : true,
               "legendConfig" : {
                 "direction" : "row",
@@ -13897,7 +13905,8 @@
                 "showAvg" : false,
                 "showTotal" : false,
                 "showLatest" : false
-              }
+              },
+              "customLegendEnabled" : false
             },
             "title" : "Grafico",
             "dropShadow" : false,

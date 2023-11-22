@@ -8917,16 +8917,17 @@
               "dataKeys" : [ {
                 "name" : "power",
                 "type" : "timeseries",
-                "label" : "Energia Totale",
+                "label" : "Somma power",
                 "color" : "#2196f3",
                 "settings" : { },
                 "_hash" : 0.6355855553607992,
-                "aggregationType" : "NONE",
+                "aggregationType" : "SUM",
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
+                "usePostProcessing" : true,
+                "postFuncBody" : "return value/1000;",
+                "comparisonEnabled" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -9262,16 +9263,17 @@
               "dataKeys" : [ {
                 "name" : "PowerCost",
                 "type" : "timeseries",
-                "label" : "Costo Energia",
+                "label" : "Somma PowerCost 2",
                 "color" : "#2196f3",
                 "settings" : { },
                 "_hash" : 0.5190516169605346,
-                "aggregationType" : "NONE",
+                "aggregationType" : "SUM",
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
+                "usePostProcessing" : false,
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]

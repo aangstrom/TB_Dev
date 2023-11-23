@@ -9738,68 +9738,6 @@
           "id" : "c3153eaa-d73b-7ccf-09df-8bc80ad6d49f",
           "typeFullFqn" : "system.charts.basic_timeseries"
         },
-        "c828c921-73f4-def5-7701-7f593689688a" : {
-          "typeFullFqn" : "system.cards.html_card",
-          "type" : "static",
-          "sizeX" : 7.5,
-          "sizeY" : 3,
-          "config" : {
-            "datasources" : [ {
-              "type" : "static",
-              "name" : "function",
-              "dataKeys" : [ {
-                "name" : "f(x)",
-                "type" : "function",
-                "label" : "Random",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.15479322438769105,
-                "funcBody" : "var value = prevValue + Math.random() * 100 - 50;\nvar multiplier = Math.pow(10, 2 || 0);\nvar value = Math.round(value * multiplier) / multiplier;\nif (value < -1000) {\n\tvalue = -1000;\n} else if (value > 1000) {\n\tvalue = 1000;\n}\nreturn value;"
-              } ]
-            } ],
-            "timewindow" : {
-              "realtime" : {
-                "timewindowMs" : 60000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "rgb(255, 255, 255)",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "8px",
-            "settings" : {
-              "cardHtml" : "<div class='card'>\n    <div id=\"report\">Report</div>\n    <div id=\"allarmi\">Allarmi</div>\n</div>\n",
-              "cardCss" : ".card {\n    font-weight: bold;\n    font-size: 32px;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: space-around;\n}"
-            },
-            "title" : "HTML Card",
-            "dropShadow" : false,
-            "actions" : {
-              "elementClick" : [ {
-                "name" : "report",
-                "icon" : "more_horiz",
-                "useShowWidgetActionFunction" : null,
-                "showWidgetActionFunction" : "return true;",
-                "type" : "openDashboardState",
-                "targetDashboardStateId" : "report_bungalow",
-                "setEntityId" : false,
-                "stateEntityParamName" : null,
-                "openRightLayout" : false,
-                "openInSeparateDialog" : false,
-                "openInPopover" : false,
-                "id" : "ee269862-47f5-7e78-a93e-7d5413570bd5"
-              } ]
-            },
-            "enableFullscreen" : false,
-            "enableDataExport" : false,
-            "borderRadius" : "",
-            "widgetStyle" : { },
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : ""
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "c828c921-73f4-def5-7701-7f593689688a"
-        },
         "9ae0c34e-1bb0-532a-bf8b-2a1ae5b3d04e" : {
           "type" : "latest",
           "sizeX" : 5,
@@ -15710,6 +15648,74 @@
           "row" : 0,
           "col" : 0,
           "id" : "629b8bab-606f-7d01-2a32-b95ff8448286"
+        },
+        "53f38c86-2bec-27a0-aab1-241f98f02d4c" : {
+          "typeFullFqn" : "system.cards.html_value_card",
+          "type" : "latest",
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "58816d42-5d16-591d-205a-d85c302930d8",
+              "dataKeys" : [ ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1700662695164,
+                  "endTimeMs" : 1700749095164
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div class='card'>\n    <div id=\"report\">Report</div>\n    <div id=\"allarmi\">Allarmi</div>\n</div>\n",
+              "cardCss" : ".card {\n    font-weight: bold;\n    font-size: 32px;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: space-around;\n}"
+            },
+            "title" : "HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "displayTimewindow" : true,
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "53f38c86-2bec-27a0-aab1-241f98f02d4c"
         }
       },
       "states" : {
@@ -17081,7 +17087,7 @@
                   "row" : 8,
                   "col" : 14
                 },
-                "c828c921-73f4-def5-7701-7f593689688a" : {
+                "53f38c86-2bec-27a0-aab1-241f98f02d4c" : {
                   "sizeX" : 24,
                   "sizeY" : 1,
                   "row" : 0,

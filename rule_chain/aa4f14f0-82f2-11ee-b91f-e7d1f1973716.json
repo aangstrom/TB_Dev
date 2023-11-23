@@ -1054,7 +1054,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return msg.temperature > 20;",
-        "tbelScript" : "return msg.messageCountAcqua>=12;"
+        "tbelScript" : "return msg.messageCountAcqua>=36;"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -1064,7 +1064,7 @@
         "entityType" : "RULE_NODE",
         "id" : "61a3ecd0-82f7-11ee-b91f-e7d1f1973716"
       },
-      "name" : "if >=12",
+      "name" : "if >=36",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
@@ -1077,11 +1077,11 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
-        "alarmDetailsBuildTbel" : "var details = {\"data\": \"L'acqua è accesa da più di un'ora\"};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {\"data\": \"L'acqua è accesa da più di 3 ore\"};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\nreturn details;",
         "useMessageAlarmData" : false,
         "overwriteAlarmDetails" : false,
         "alarmType" : "Acqua",
-        "severity" : "CRITICAL",
+        "severity" : "MINOR",
         "propagate" : false,
         "relationTypes" : [ ],
         "propagateToOwner" : false,

@@ -598,12 +598,20 @@
       "type" : "Success"
     }, {
       "fromIndex" : 103,
-      "toIndex" : 102,
+      "toIndex" : 105,
       "type" : "Success"
     }, {
       "fromIndex" : 104,
       "toIndex" : 103,
       "type" : "Success"
+    }, {
+      "fromIndex" : 105,
+      "toIndex" : 102,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 105,
+      "toIndex" : 106,
+      "type" : "Post attributes"
     } ],
     "firstNodeIndex" : 32,
     "nodes" : [ {
@@ -3300,8 +3308,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 2023,
-        "layoutY" : 1370
+        "layoutX" : 2054,
+        "layoutY" : 1384
       },
       "configuration" : {
         "relationsQuery" : {
@@ -3753,8 +3761,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 2066,
-        "layoutY" : 1060
+        "layoutX" : 1929,
+        "layoutY" : 1163
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -3776,8 +3784,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1862,
-        "layoutY" : 1149
+        "layoutX" : 1686,
+        "layoutY" : 1238
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -3796,6 +3804,49 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 2184,
+        "layoutY" : 1170
+      },
+      "configuration" : {
+        "version" : 0
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "330a0ee0-8a09-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "Message Type Switch",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 2337,
+        "layoutY" : 1259
+      },
+      "configuration" : {
+        "scope" : "CLIENT_SCOPE",
+        "notifyDevice" : "false",
+        "updateAttributesOnlyOnValueChange" : "false"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "330ad230-8a09-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "Save Attributes",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
     } ],
     "ruleChainConnections" : null
   },

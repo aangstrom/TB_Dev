@@ -413,6 +413,14 @@
       "toIndex" : 56,
       "type" : "False"
     }, {
+      "fromIndex" : 66,
+      "toIndex" : 94,
+      "type" : "True"
+    }, {
+      "fromIndex" : 66,
+      "toIndex" : 96,
+      "type" : "True"
+    }, {
       "fromIndex" : 67,
       "toIndex" : 69,
       "type" : "Success"
@@ -520,6 +528,46 @@
       "fromIndex" : 90,
       "toIndex" : 91,
       "type" : "True"
+    }, {
+      "fromIndex" : 93,
+      "toIndex" : 92,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 94,
+      "toIndex" : 92,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 95,
+      "toIndex" : 92,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 96,
+      "toIndex" : 92,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 97,
+      "toIndex" : 92,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 98,
+      "toIndex" : 92,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 99,
+      "toIndex" : 92,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 100,
+      "toIndex" : 92,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 101,
+      "toIndex" : 92,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 102,
+      "toIndex" : 92,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 32,
     "nodes" : [ {
@@ -2331,7 +2379,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var weekday=[\"domenica\",\"lunedi\",\"martedi\",\"mercoledi\",\"giovedi\",\"venerdi\",\"sabato\"];\nvar data=new Date();\n//var minute=new Date().getMinutes();\nvar ora=data.getHours()*100+data.getMinutes();\nvar day=weekday[new Date().getDay()];\n//prezzo per fasce;\nvar F1=parseFloat(metadata.F1);\nvar F2=parseFloat(metadata.F2);\nvar F3=parseFloat(metadata.F3);\nvar F23=parseFloat(metadata.F23);\n//orari F1\nvar inizioFascia1=800; //8:00\nvar fineFascia1=1900; //19:00\n//orari F2\nvar inizioFascia2_1=700; //7:00\nvar fineFascia2_1=800; //8:00\nvar inizioFascia2_2=1900; //19:00\nvar fineFascia2_2=2300; //23:00\n//orari F3\nvar inizioFascia3=2300; //00:00\nvar fineFascia3=700; //7:00\n//orari F23\nvar inizioFascia23=1900; //19:00\nvar fineFascia23=800; //8:00\n\n/** Calcoli **/\n//F1\nif((day!=\"domenica\" || day!=\"sabato\") && (ora>=inizioFascia1 && ora<fineFascia1)){\n    calcoloCosto(F1,\"F1\");\n}\n//Se F23 non è nullo\nif(F23!=null){\n    //Se corrisponde a F23\n    if(day==\"domenica\" || day==\"sabato\" || ((day!=\"domenica\" || day!=\"sabato\") && (ora>=inizioFascia23 || ora<fineFascia23))){\n        calcoloCosto(F23,\"F23\");\n    }\n}else{\n    //Se F2 non è nullo\n    if(F2!=null && ((day==\"sabato\" && (ora>=inizioFascia2_1 && ora<fineFascia2_2)) || ((day!=\"domenica\" || day!=\"sabato\") && ((ora>=inizioFascia2_1 && ora<fineFascia2_1) || (ora>=inizioFascia2_2 && ora<fineFascia2_2))))){\n        calcoloCosto(F2,\"F2\");\n    }\n    //Se F3 non è nullo\n    if(F3!=null && (day==\"domenica\" || (day!=\"domenica\" && ((ora>=inizioFascia3 || ora<fineFascia3))))){\n        calcoloCosto(F3,\"F3\");\n    }\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};\n\nfunction calcoloCosto(fascia,nomeFascia){\n    if(nomeFascia==\"F1\"){\n        if(msg.power>0){\n            msg.F1=msg.power;\n            msg.F1cost=(msg.power)*fascia;\n        }else if(msg.Phase_A_energy>0){\n            msg.Phase_A_F1=msg.Phase_A_energy;\n            msg.Phase_A_F1cost=(msg.Phase_A_energy)*fascia;\n        }else if(msg.Phase_B_energy>0){\n            msg.Phase_B_F1=msg.Phase_B_energy;\n            msg.Phase_B_F1cost=(msg.Phase_B_energy)*fascia;\n        }else if(msg.Phase_C_energy>0){\n            msg.Phase_C_F1=msg.Phase_C_energy;\n            msg.Phase_C_F1cost=(msg.Phase_C_energy)*fascia;\n        }\n    }else if(nomeFascia==\"F2\"){\n        if(msg.power>0){\n            msg.F2=msg.power;\n            msg.F2cost=(msg.power)*fascia;\n        }else if(msg.Phase_A_energy>0){\n            msg.Phase_A_F2=msg.Phase_A_energy;\n            msg.Phase_A_F2cost=(msg.Phase_A_energy)*fascia;\n        }else if(msg.Phase_B_energy>0){\n            msg.Phase_B_F2=msg.Phase_B_energy;\n            msg.Phase_B_F2cost=(msg.Phase_B_energy)*fascia;\n        }else if(msg.Phase_C_energy>0){\n            msg.Phase_C_F2=msg.Phase_C_energy;\n            msg.Phase_C_F2cost=(msg.Phase_C_energy)*fascia;\n        }\n    }else if(nomeFascia==\"F3\"){\n        if(msg.power>0){\n            msg.F3=msg.power;\n            msg.F3=(msg.power)*fascia;\n        }else if(msg.Phase_A_energy>0){\n            msg.Phase_A_F3=msg.Phase_A_energy;\n            msg.Phase_A_F3cost=(msg.Phase_A_energy)*fascia;\n        }else if(msg.Phase_B_energy>0){\n            msg.Phase_B_F3=msg.Phase_B_energy;\n            msg.Phase_B_F3cost=(msg.Phase_B_energy)*fascia;\n        }else if(msg.Phase_C_energy>0){\n            msg.Phase_C_F3=msg.Phase_C_energy;\n            msg.Phase_C_F3cost=(msg.Phase_C_energy)*fascia;\n        }\n    }else if(nomeFascia==\"F23\"){\n        if(msg.power>0){\n            msg.F23=msg.power;\n            msg.F23cost=(msg.power)*fascia;\n        }else if(msg.Phase_A_energy>0){\n            msg.Phase_A_F23=msg.Phase_A_energy;\n            msg.Phase_A_F23cost=(msg.Phase_A_energy)*fascia;\n        }else if(msg.Phase_B_energy>0){\n            msg.Phase_B_F23=msg.Phase_B_energy;\n            msg.Phase_B_F23cost=(msg.Phase_B_energy)*fascia;\n        }else if(msg.Phase_C_energy>0){\n            msg.Phase_C_F23=msg.Phase_C_energy;\n            msg.Phase_C_F23cost=(msg.Phase_C_energy)*fascia;\n        }\n    }\n}"
+        "tbelScript" : "var weekday=[\"domenica\",\"lunedi\",\"martedi\",\"mercoledi\",\"giovedi\",\"venerdi\",\"sabato\"];\nvar data=new Date();\n//var minute=new Date().getMinutes();\nvar ora=data.getHours()*100+data.getMinutes();\nvar day=weekday[new Date().getDay()];\n//prezzo per fasce;\nvar F1=parseFloat(metadata.F1);\nvar F2=parseFloat(metadata.F2);\nvar F3=parseFloat(metadata.F3);\nvar F23=parseFloat(metadata.F23);\n//orari F1\nvar inizioFascia1=800; //8:00\nvar fineFascia1=1900; //19:00\n//orari F2\nvar inizioFascia2_1=700; //7:00\nvar fineFascia2_1=800; //8:00\nvar inizioFascia2_2=1900; //19:00\nvar fineFascia2_2=2300; //23:00\n//orari F3\nvar inizioFascia3=2300; //00:00\nvar fineFascia3=700; //7:00\n//orari F23\nvar inizioFascia23=1900; //19:00\nvar fineFascia23=800; //8:00\n\n/** Calcoli **/\n//F1\nif((day!=\"domenica\" || day!=\"sabato\") && (ora>=inizioFascia1 && ora<fineFascia1)){\n    calcoloCosto(F1,\"F1\");\n}\n//Se F23 non è nullo\nif(F23!=null){\n    //Se corrisponde a F23\n    if(day==\"domenica\" || day==\"sabato\" || ((day!=\"domenica\" || day!=\"sabato\") && (ora>=inizioFascia23 || ora<fineFascia23))){\n        calcoloCosto(F23,\"F23\");\n    }\n}else{\n    //Se F2 non è nullo\n    if(F2!=null && ((day==\"sabato\" && (ora>=inizioFascia2_1 && ora<fineFascia2_2)) || ((day!=\"domenica\" || day!=\"sabato\") && ((ora>=inizioFascia2_1 && ora<fineFascia2_1) || (ora>=inizioFascia2_2 && ora<fineFascia2_2))))){\n        calcoloCosto(F2,\"F2\");\n    }\n    //Se F3 non è nullo\n    if(F3!=null && (day==\"domenica\" || (day!=\"domenica\" && ((ora>=inizioFascia3 || ora<fineFascia3))))){\n        calcoloCosto(F3,\"F3\");\n    }\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};\n\nfunction calcoloCosto(fascia,nomeFascia){\n    var power=msg.power;\n    if(nomeFascia==\"F1\"){\n        if(power>0){\n            msg.F1=power;\n            msg.F1cost=(power)*fascia;\n        }else if(msg.Phase_A_energy>0){\n            msg.Phase_A_F1=msg.Phase_A_energy;\n            msg.Phase_A_F1cost=(msg.Phase_A_energy)*fascia;\n        }else if(msg.Phase_B_energy>0){\n            msg.Phase_B_F1=msg.Phase_B_energy;\n            msg.Phase_B_F1cost=(msg.Phase_B_energy)*fascia;\n        }else if(msg.Phase_C_energy>0){\n            msg.Phase_C_F1=msg.Phase_C_energy;\n            msg.Phase_C_F1cost=(msg.Phase_C_energy)*fascia;\n        }\n    }else if(nomeFascia==\"F2\"){\n        if(power>0){\n            msg.F2=power;\n            msg.F2cost=(power)*fascia;\n        }else if(msg.Phase_A_energy>0){\n            msg.Phase_A_F2=msg.Phase_A_energy;\n            msg.Phase_A_F2cost=(msg.Phase_A_energy)*fascia;\n        }else if(msg.Phase_B_energy>0){\n            msg.Phase_B_F2=msg.Phase_B_energy;\n            msg.Phase_B_F2cost=(msg.Phase_B_energy)*fascia;\n        }else if(msg.Phase_C_energy>0){\n            msg.Phase_C_F2=msg.Phase_C_energy;\n            msg.Phase_C_F2cost=(msg.Phase_C_energy)*fascia;\n        }\n    }else if(nomeFascia==\"F3\"){\n        if(power>0){\n            msg.F3=power;\n            msg.F3=(power)*fascia;\n        }else if(msg.Phase_A_energy>0){\n            msg.Phase_A_F3=msg.Phase_A_energy;\n            msg.Phase_A_F3cost=(msg.Phase_A_energy)*fascia;\n        }else if(msg.Phase_B_energy>0){\n            msg.Phase_B_F3=msg.Phase_B_energy;\n            msg.Phase_B_F3cost=(msg.Phase_B_energy)*fascia;\n        }else if(msg.Phase_C_energy>0){\n            msg.Phase_C_F3=msg.Phase_C_energy;\n            msg.Phase_C_F3cost=(msg.Phase_C_energy)*fascia;\n        }\n    }else if(nomeFascia==\"F23\"){\n        if(power>0){\n            msg.F23=power;\n            msg.F23cost=(power)*fascia;\n        }else if(msg.Phase_A_energy>0){\n            msg.Phase_A_F23=msg.Phase_A_energy;\n            msg.Phase_A_F23cost=(msg.Phase_A_energy)*fascia;\n        }else if(msg.Phase_B_energy>0){\n            msg.Phase_B_F23=msg.Phase_B_energy;\n            msg.Phase_B_F23cost=(msg.Phase_B_energy)*fascia;\n        }else if(msg.Phase_C_energy>0){\n            msg.Phase_C_F23=msg.Phase_C_energy;\n            msg.Phase_C_F23cost=(msg.Phase_C_energy)*fascia;\n        }\n    }\n}"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -3236,6 +3284,436 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2431,
+        "layoutY" : 1212
+      },
+      "configuration" : {
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "TO",
+          "maxLevel" : null,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "ASSET" ]
+          } ]
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ba7889d0-8a07-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "To Bungalow",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbDuplicateMsgToRelatedNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2059,
+        "layoutY" : 1673
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var message={};\nmessage.power=msg.power;\nreturn {msg: message, metadata: metadata, msgType: 'POST_ATTRIBUTES_REQUEST'};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ba797430-8a07-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "Transform energy to attribute",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2062,
+        "layoutY" : 1262
+      },
+      "configuration" : {
+        "inputValueKey" : "power",
+        "outputValueKey" : "power",
+        "mathFunction" : "AVG",
+        "aggIntervalType" : "HOUR",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 5,
+        "periodTimeUnit" : "MINUTES",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : null
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ba79e960-8a07-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "Somma Energia",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2061,
+        "layoutY" : 1349
+      },
+      "configuration" : {
+        "inputValueKey" : "F2",
+        "outputValueKey" : "F2",
+        "mathFunction" : "AVG",
+        "aggIntervalType" : "CUSTOM",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ba7aacb0-8a07-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "F2",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2062,
+        "layoutY" : 1306
+      },
+      "configuration" : {
+        "inputValueKey" : "F1",
+        "outputValueKey" : "F1",
+        "mathFunction" : "AVG",
+        "aggIntervalType" : "CUSTOM",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ba7b7000-8a07-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "F1",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2062,
+        "layoutY" : 1393
+      },
+      "configuration" : {
+        "inputValueKey" : "F3",
+        "outputValueKey" : "F3",
+        "mathFunction" : "AVG",
+        "aggIntervalType" : "CUSTOM",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ba7be530-8a07-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "F3",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2061,
+        "layoutY" : 1437
+      },
+      "configuration" : {
+        "inputValueKey" : "F23",
+        "outputValueKey" : "F23",
+        "mathFunction" : "AVG",
+        "aggIntervalType" : "CUSTOM",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ba7c5a60-8a07-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "F23",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2062,
+        "layoutY" : 1629
+      },
+      "configuration" : {
+        "inputValueKey" : "F23cost",
+        "outputValueKey" : "F23cost",
+        "mathFunction" : "AVG",
+        "aggIntervalType" : "CUSTOM",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ba7ccf90-8a07-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "F23cost",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2063,
+        "layoutY" : 1586
+      },
+      "configuration" : {
+        "inputValueKey" : "F3cost",
+        "outputValueKey" : "F3cost",
+        "mathFunction" : "AVG",
+        "aggIntervalType" : "CUSTOM",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ba7d44c0-8a07-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "F3cost",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2064,
+        "layoutY" : 1543
+      },
+      "configuration" : {
+        "inputValueKey" : "F2cost",
+        "outputValueKey" : "F2cost",
+        "mathFunction" : "AVG",
+        "aggIntervalType" : "CUSTOM",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ba7db9f0-8a07-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "F2cost",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2062,
+        "layoutY" : 1499
+      },
+      "configuration" : {
+        "inputValueKey" : "F1cost",
+        "outputValueKey" : "F1cost",
+        "mathFunction" : "AVG",
+        "aggIntervalType" : "CUSTOM",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ba7e2f20-8a07-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "F1cost",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
     } ],
     "ruleChainConnections" : null
   },

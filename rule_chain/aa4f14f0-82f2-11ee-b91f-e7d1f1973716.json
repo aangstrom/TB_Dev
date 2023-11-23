@@ -141,6 +141,10 @@
       "toIndex" : 30,
       "type" : "Success"
     }, {
+      "fromIndex" : 25,
+      "toIndex" : 92,
+      "type" : "Success"
+    }, {
       "fromIndex" : 26,
       "toIndex" : 25,
       "type" : "Success"
@@ -548,6 +552,10 @@
       "fromIndex" : 90,
       "toIndex" : 91,
       "type" : "Success"
+    }, {
+      "fromIndex" : 92,
+      "toIndex" : 93,
+      "type" : "True"
     } ],
     "firstNodeIndex" : 32,
     "nodes" : [ {
@@ -1048,8 +1056,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 562,
-        "layoutY" : 1498
+        "layoutX" : 555,
+        "layoutY" : 1502
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -1071,8 +1079,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 563,
-        "layoutY" : 1573
+        "layoutX" : 556,
+        "layoutY" : 1577
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -1104,8 +1112,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 562,
-        "layoutY" : 1274
+        "layoutX" : 514,
+        "layoutY" : 1252
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -1127,8 +1135,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 561,
-        "layoutY" : 1423
+        "layoutX" : 513,
+        "layoutY" : 1401
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -1150,8 +1158,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 563,
-        "layoutY" : 1350
+        "layoutX" : 515,
+        "layoutY" : 1328
       },
       "configuration" : {
         "tellFailureIfAbsent" : false,
@@ -1177,8 +1185,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 788,
-        "layoutY" : 1575
+        "layoutX" : 781,
+        "layoutY" : 1579
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -1201,8 +1209,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 788,
-        "layoutY" : 1498
+        "layoutX" : 781,
+        "layoutY" : 1502
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -1246,8 +1254,8 @@
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 792,
-        "layoutY" : 1338
+        "layoutX" : 840,
+        "layoutY" : 1340
       },
       "configuration" : {
         "scope" : "CLIENT_SCOPE",
@@ -3008,8 +3016,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 101,
-        "layoutY" : 1827
+        "layoutX" : 83,
+        "layoutY" : 1924
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -3041,8 +3049,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 644,
-        "layoutY" : 1667
+        "layoutX" : 634,
+        "layoutY" : 1785
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -3065,8 +3073,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 124,
-        "layoutY" : 1565
+        "layoutX" : 106,
+        "layoutY" : 1662
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -3088,8 +3096,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 103,
-        "layoutY" : 1751
+        "layoutX" : 85,
+        "layoutY" : 1848
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -3121,8 +3129,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 646,
-        "layoutY" : 1745
+        "layoutX" : 636,
+        "layoutY" : 1863
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -3145,8 +3153,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 326,
-        "layoutY" : 1825
+        "layoutX" : 328,
+        "layoutY" : 1902
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -3178,8 +3186,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 326,
-        "layoutY" : 1750
+        "layoutX" : 328,
+        "layoutY" : 1827
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -3266,6 +3274,62 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbDuplicateMsgToRelatedNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 346,
+        "layoutY" : 1502
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return msg.temperature > 20;",
+        "tbelScript" : "return msg.messageCountAcqua>=72;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a45ede10-89e9-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "if >=72",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 347,
+        "layoutY" : 1577
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {\"data\": \"L'acqua è accesa da più di 6 ore\"};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\nreturn details;",
+        "useMessageAlarmData" : false,
+        "overwriteAlarmDetails" : false,
+        "alarmType" : "Acqua",
+        "severity" : "CRITICAL",
+        "propagate" : false,
+        "relationTypes" : [ ],
+        "propagateToOwner" : false,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false,
+        "dynamicSeverity" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a45f7a50-89e9-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "Allarme Acqua",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
     } ],
     "ruleChainConnections" : null
   },

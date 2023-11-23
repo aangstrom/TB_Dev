@@ -489,6 +489,10 @@
       "toIndex" : 31,
       "type" : "Success"
     }, {
+      "fromIndex" : 83,
+      "toIndex" : 90,
+      "type" : "Created"
+    }, {
       "fromIndex" : 84,
       "toIndex" : 87,
       "type" : "Cleared"
@@ -500,6 +504,10 @@
       "fromIndex" : 84,
       "toIndex" : 87,
       "type" : "False"
+    }, {
+      "fromIndex" : 84,
+      "toIndex" : 90,
+      "type" : "Cleared"
     }, {
       "fromIndex" : 85,
       "toIndex" : 83,
@@ -520,6 +528,26 @@
       "fromIndex" : 85,
       "toIndex" : 89,
       "type" : "Umidita_alta"
+    }, {
+      "fromIndex" : 86,
+      "toIndex" : 90,
+      "type" : "Created"
+    }, {
+      "fromIndex" : 87,
+      "toIndex" : 90,
+      "type" : "Cleared"
+    }, {
+      "fromIndex" : 88,
+      "toIndex" : 90,
+      "type" : "Created"
+    }, {
+      "fromIndex" : 89,
+      "toIndex" : 90,
+      "type" : "Created"
+    }, {
+      "fromIndex" : 90,
+      "toIndex" : 91,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 32,
     "nodes" : [ {
@@ -3038,7 +3066,7 @@
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 124,
-        "layoutY" : 1557
+        "layoutY" : 1565
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -3180,6 +3208,64 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 497,
+        "layoutY" : 2054
+      },
+      "configuration" : {
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "TO",
+          "maxLevel" : null,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "ASSET" ]
+          } ]
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "81690c20-89e7-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "To Bungalow/Colonnina/Piazzola/Servizio Igienico",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbDuplicateMsgToRelatedNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 817,
+        "layoutY" : 1972
+      },
+      "configuration" : {
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "TO",
+          "maxLevel" : null,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "CUSTOMER" ]
+          } ]
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "816a44a0-89e7-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "To Cliente",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbDuplicateMsgToRelatedNode"
     } ],
     "ruleChainConnections" : null
   },

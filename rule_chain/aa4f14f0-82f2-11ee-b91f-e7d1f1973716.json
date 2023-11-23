@@ -125,10 +125,6 @@
       "toIndex" : 23,
       "type" : "True"
     }, {
-      "fromIndex" : 23,
-      "toIndex" : 90,
-      "type" : "Created"
-    }, {
       "fromIndex" : 24,
       "toIndex" : 26,
       "type" : "True"
@@ -146,16 +142,12 @@
       "type" : "Success"
     }, {
       "fromIndex" : 25,
-      "toIndex" : 92,
+      "toIndex" : 90,
       "type" : "Success"
     }, {
       "fromIndex" : 26,
       "toIndex" : 25,
       "type" : "Success"
-    }, {
-      "fromIndex" : 27,
-      "toIndex" : 90,
-      "type" : "Cleared"
     }, {
       "fromIndex" : 28,
       "toIndex" : 27,
@@ -501,26 +493,6 @@
       "toIndex" : 31,
       "type" : "Success"
     }, {
-      "fromIndex" : 83,
-      "toIndex" : 90,
-      "type" : "Created"
-    }, {
-      "fromIndex" : 84,
-      "toIndex" : 87,
-      "type" : "Cleared"
-    }, {
-      "fromIndex" : 84,
-      "toIndex" : 87,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 84,
-      "toIndex" : 87,
-      "type" : "False"
-    }, {
-      "fromIndex" : 84,
-      "toIndex" : 90,
-      "type" : "Cleared"
-    }, {
       "fromIndex" : 85,
       "toIndex" : 83,
       "type" : "Temperatura_bassa"
@@ -534,6 +506,10 @@
       "type" : "Temperatura_alta"
     }, {
       "fromIndex" : 85,
+      "toIndex" : 87,
+      "type" : "ok"
+    }, {
+      "fromIndex" : 85,
       "toIndex" : 88,
       "type" : "Umidita_bassa"
     }, {
@@ -541,33 +517,9 @@
       "toIndex" : 89,
       "type" : "Umidita_alta"
     }, {
-      "fromIndex" : 86,
-      "toIndex" : 90,
-      "type" : "Created"
-    }, {
-      "fromIndex" : 87,
-      "toIndex" : 90,
-      "type" : "Cleared"
-    }, {
-      "fromIndex" : 88,
-      "toIndex" : 90,
-      "type" : "Created"
-    }, {
-      "fromIndex" : 89,
-      "toIndex" : 90,
-      "type" : "Created"
-    }, {
       "fromIndex" : 90,
       "toIndex" : 91,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 92,
-      "toIndex" : 93,
       "type" : "True"
-    }, {
-      "fromIndex" : 93,
-      "toIndex" : 90,
-      "type" : "Created"
     } ],
     "firstNodeIndex" : 32,
     "nodes" : [ {
@@ -1102,9 +1054,9 @@
         "overwriteAlarmDetails" : false,
         "alarmType" : "Acqua",
         "severity" : "MINOR",
-        "propagate" : false,
+        "propagate" : true,
         "relationTypes" : [ ],
-        "propagateToOwner" : false,
+        "propagateToOwner" : true,
         "propagateToOwnerHierarchy" : false,
         "propagateToTenant" : false,
         "dynamicSeverity" : false
@@ -1227,7 +1179,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return msg.temperature > 20;",
-        "tbelScript" : "return msg.messageCountAcqua==1;"
+        "tbelScript" : "return msg.messageCountAcqua<=1;"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -1237,7 +1189,7 @@
         "entityType" : "RULE_NODE",
         "id" : "a11089e0-82f8-11ee-b91f-e7d1f1973716"
       },
-      "name" : "if = 1",
+      "name" : "if <= 1",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
@@ -3039,9 +2991,9 @@
         "overwriteAlarmDetails" : false,
         "alarmType" : "Temperatura",
         "severity" : "CRITICAL",
-        "propagate" : false,
+        "propagate" : true,
         "relationTypes" : [ ],
-        "propagateToOwner" : false,
+        "propagateToOwner" : true,
         "propagateToOwnerHierarchy" : false,
         "propagateToTenant" : false,
         "dynamicSeverity" : false
@@ -3061,8 +3013,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 551,
-        "layoutY" : 1747
+        "layoutX" : 571,
+        "layoutY" : 1683
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -3119,9 +3071,9 @@
         "overwriteAlarmDetails" : false,
         "alarmType" : "Temperatura",
         "severity" : "CRITICAL",
-        "propagate" : false,
+        "propagate" : true,
         "relationTypes" : [ ],
-        "propagateToOwner" : false,
+        "propagateToOwner" : true,
         "propagateToOwnerHierarchy" : false,
         "propagateToTenant" : false,
         "dynamicSeverity" : false
@@ -3141,8 +3093,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 973,
-        "layoutY" : 1807
+        "layoutX" : 573,
+        "layoutY" : 1726
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -3176,9 +3128,9 @@
         "overwriteAlarmDetails" : false,
         "alarmType" : "Temperatura",
         "severity" : "CRITICAL",
-        "propagate" : false,
+        "propagate" : true,
         "relationTypes" : [ ],
-        "propagateToOwner" : false,
+        "propagateToOwner" : true,
         "propagateToOwnerHierarchy" : false,
         "propagateToTenant" : false,
         "dynamicSeverity" : false
@@ -3209,9 +3161,9 @@
         "overwriteAlarmDetails" : false,
         "alarmType" : "Temperatura",
         "severity" : "CRITICAL",
-        "propagate" : false,
+        "propagate" : true,
         "relationTypes" : [ ],
-        "propagateToOwner" : false,
+        "propagateToOwner" : true,
         "propagateToOwnerHierarchy" : false,
         "propagateToTenant" : false,
         "dynamicSeverity" : false
@@ -3228,64 +3180,6 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 623,
-        "layoutY" : 1976
-      },
-      "configuration" : {
-        "relationsQuery" : {
-          "fetchLastLevelOnly" : false,
-          "direction" : "TO",
-          "maxLevel" : null,
-          "filters" : [ {
-            "relationType" : "Contains",
-            "entityTypes" : [ "ASSET" ]
-          } ]
-        }
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "81690c20-89e7-11ee-842a-55fec3ab5bf6"
-      },
-      "name" : "To Bungalow/Colonnina/Piazzola/Servizio Igienico",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.transform.TbDuplicateMsgToRelatedNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 925,
-        "layoutY" : 1975
-      },
-      "configuration" : {
-        "relationsQuery" : {
-          "fetchLastLevelOnly" : false,
-          "direction" : "TO",
-          "maxLevel" : null,
-          "filters" : [ {
-            "relationType" : "Contains",
-            "entityTypes" : [ "CUSTOMER" ]
-          } ]
-        }
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "816a44a0-89e7-11ee-842a-55fec3ab5bf6"
-      },
-      "name" : "To Cliente",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.transform.TbDuplicateMsgToRelatedNode"
     }, {
       "additionalInfo" : {
         "description" : "",
@@ -3323,9 +3217,9 @@
         "overwriteAlarmDetails" : false,
         "alarmType" : "Acqua",
         "severity" : "CRITICAL",
-        "propagate" : false,
+        "propagate" : true,
         "relationTypes" : [ ],
-        "propagateToOwner" : false,
+        "propagateToOwner" : true,
         "propagateToOwnerHierarchy" : false,
         "propagateToTenant" : false,
         "dynamicSeverity" : false

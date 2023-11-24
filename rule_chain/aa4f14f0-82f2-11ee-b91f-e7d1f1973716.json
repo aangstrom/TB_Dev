@@ -538,35 +538,35 @@
       "type" : "Success"
     }, {
       "fromIndex" : 90,
-      "toIndex" : 83,
+      "toIndex" : 95,
       "type" : "Success"
     }, {
       "fromIndex" : 90,
-      "toIndex" : 95,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 91,
-      "toIndex" : 83,
+      "toIndex" : 116,
       "type" : "Success"
     }, {
       "fromIndex" : 91,
       "toIndex" : 95,
       "type" : "Success"
     }, {
-      "fromIndex" : 92,
-      "toIndex" : 83,
+      "fromIndex" : 91,
+      "toIndex" : 116,
       "type" : "Success"
     }, {
       "fromIndex" : 92,
       "toIndex" : 95,
       "type" : "Success"
     }, {
-      "fromIndex" : 93,
-      "toIndex" : 83,
+      "fromIndex" : 92,
+      "toIndex" : 116,
       "type" : "Success"
     }, {
       "fromIndex" : 93,
       "toIndex" : 95,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 93,
+      "toIndex" : 116,
       "type" : "Success"
     }, {
       "fromIndex" : 95,
@@ -664,6 +664,14 @@
       "fromIndex" : 114,
       "toIndex" : 115,
       "type" : "True"
+    }, {
+      "fromIndex" : 116,
+      "toIndex" : 117,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 117,
+      "toIndex" : 83,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 32,
     "nodes" : [ {
@@ -3112,8 +3120,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1682,
-        "layoutY" : 1842
+        "layoutX" : 1680,
+        "layoutY" : 1650
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -3345,8 +3353,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1681,
-        "layoutY" : 1798
+        "layoutX" : 1685,
+        "layoutY" : 1845
       },
       "configuration" : {
         "inputValueKey" : "F23cost",
@@ -3387,8 +3395,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1682,
-        "layoutY" : 1755
+        "layoutX" : 1686,
+        "layoutY" : 1802
       },
       "configuration" : {
         "inputValueKey" : "F3cost",
@@ -3429,8 +3437,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1683,
-        "layoutY" : 1712
+        "layoutX" : 1687,
+        "layoutY" : 1759
       },
       "configuration" : {
         "inputValueKey" : "F2cost",
@@ -3471,8 +3479,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1681,
-        "layoutY" : 1668
+        "layoutX" : 1685,
+        "layoutY" : 1715
       },
       "configuration" : {
         "inputValueKey" : "F1cost",
@@ -4114,13 +4122,13 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1338,
-        "layoutY" : 1746
+        "layoutX" : 2032,
+        "layoutY" : 1797
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "msg.powerCost=(power)*fascia;\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var message={};\nif(msg.F1cost!=null){message.PowerCost=msg.F1cost;}\nif(msg.F2cost!=null){message.PowerCost=msg.F2cost;}\nif(msg.F3cost!=null){message.PowerCost=msg.F3cost;}\nif(msg.F23cost!=null){message.PowerCost=msg.F23cost;}\nreturn {msg: message, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -4134,6 +4142,48 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2068,
+        "layoutY" : 1720
+      },
+      "configuration" : {
+        "inputValueKey" : "powerCost",
+        "outputValueKey" : "powerCost",
+        "mathFunction" : "SUM",
+        "aggIntervalType" : "CUSTOM",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0fe0eb50-8ae0-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "powerCost",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
     } ],
     "ruleChainConnections" : null
   },

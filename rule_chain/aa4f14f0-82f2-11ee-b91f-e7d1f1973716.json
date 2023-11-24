@@ -101,6 +101,10 @@
       "toIndex" : 105,
       "type" : "Success"
     }, {
+      "fromIndex" : 19,
+      "toIndex" : 106,
+      "type" : "Success"
+    }, {
       "fromIndex" : 20,
       "toIndex" : 9,
       "type" : "Success"
@@ -624,6 +628,10 @@
       "fromIndex" : 105,
       "toIndex" : 52,
       "type" : "False"
+    }, {
+      "fromIndex" : 106,
+      "toIndex" : 107,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 32,
     "nodes" : [ {
@@ -3795,6 +3803,63 @@
         "id" : "147b9fa0-8a10-11ee-842a-55fec3ab5bf6"
       },
       "name" : "Raggruppamento Presenze",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1425,
+        "layoutY" : 954
+      },
+      "configuration" : {
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "TO",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "ASSET" ]
+          } ]
+        },
+        "dataToFetch" : "ATTRIBUTES",
+        "fetchTo" : "METADATA",
+        "dataMapping" : {
+          "stato_assegnazione" : "assegnazione"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f5053bc0-8aa2-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "Get bungalow occupation",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1673,
+        "layoutY" : 951
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return msg.temperature > 20;",
+        "tbelScript" : "if(msg.presenza===1 && metadata.assegnazione==\"assegnato\"){\n    return true;\n}else{\n    return false;\n}"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f505ff10-8aa2-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "Intrusione",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"

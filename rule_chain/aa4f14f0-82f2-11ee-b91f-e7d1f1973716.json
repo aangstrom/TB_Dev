@@ -4128,7 +4128,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var message={};\nif(msg.F1cost!=null){message.PowerCost=msg.F1cost;}\nif(msg.F2cost!=null){message.PowerCost=msg.F2cost;}\nif(msg.F3cost!=null){message.PowerCost=msg.F3cost;}\nif(msg.F23cost!=null){message.PowerCost=msg.F23cost;}\nreturn {msg: message, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var message={};\nif(msg.F1cost!=null){message.powerCost=msg.F1cost;}\nif(msg.F2cost!=null){message.powerCost=msg.F2cost;}\nif(msg.F3cost!=null){message.powerCost=msg.F3cost;}\nif(msg.F23cost!=null){message.powerCost=msg.F23cost;}\nreturn {msg: message, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -4138,7 +4138,7 @@
         "entityType" : "RULE_NODE",
         "id" : "fb98ec20-8ade-11ee-842a-55fec3ab5bf6"
       },
-      "name" : "Test",
+      "name" : "Transform to powerCost",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"

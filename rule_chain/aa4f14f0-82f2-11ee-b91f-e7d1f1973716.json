@@ -632,6 +632,14 @@
       "fromIndex" : 106,
       "toIndex" : 107,
       "type" : "Success"
+    }, {
+      "fromIndex" : 107,
+      "toIndex" : 108,
+      "type" : "True"
+    }, {
+      "fromIndex" : 107,
+      "toIndex" : 109,
+      "type" : "False"
     } ],
     "firstNodeIndex" : 32,
     "nodes" : [ {
@@ -3481,8 +3489,8 @@
     }, {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 2026,
-        "layoutY" : 951
+        "layoutX" : 2034,
+        "layoutY" : 1036
       },
       "configuration" : {
         "defaultTTL" : 604800,
@@ -3550,8 +3558,8 @@
     }, {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 1985,
-        "layoutY" : 1035
+        "layoutX" : 1993,
+        "layoutY" : 1120
       },
       "configuration" : {
         "version" : 0
@@ -3570,8 +3578,8 @@
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 2028,
-        "layoutY" : 1127
+        "layoutX" : 2036,
+        "layoutY" : 1212
       },
       "configuration" : {
         "scope" : "CLIENT_SCOPE",
@@ -3863,6 +3871,63 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1923,
+        "layoutY" : 950
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {\"data\": \"C'è qualcuno all'interno del bungalow NON assegnato\"};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\nreturn details;",
+        "useMessageAlarmData" : false,
+        "overwriteAlarmDetails" : false,
+        "alarmType" : "Intrusione",
+        "severity" : "CRITICAL",
+        "propagate" : true,
+        "relationTypes" : [ ],
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false,
+        "dynamicSeverity" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "50a55960-8aa3-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "Allarme Intrusione",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1926,
+        "layoutY" : 880
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {\"data\": \"Il sensore non rileva più nessuno!\"};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmType" : "Intrusione"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "50a5ce90-8aa3-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "Clear Alarm",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbClearAlarmNode"
     } ],
     "ruleChainConnections" : null
   },

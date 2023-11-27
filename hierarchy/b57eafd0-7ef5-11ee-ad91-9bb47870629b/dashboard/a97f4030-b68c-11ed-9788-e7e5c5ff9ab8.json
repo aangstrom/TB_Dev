@@ -11617,7 +11617,7 @@
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
                 "type" : "openDashboardState",
-                "targetDashboardStateId" : "settings_piazzola",
+                "targetDashboardStateId" : "settings_colonnina",
                 "setEntityId" : true,
                 "stateEntityParamName" : "selectedDevice",
                 "openRightLayout" : false,
@@ -15321,6 +15321,171 @@
           "row" : 0,
           "col" : 0,
           "id" : "88e99393-4afd-7324-5536-3406984058f7"
+        },
+        "d1a2f3d4-5c4f-3852-9b0a-0ae4c2504d81" : {
+          "type" : "latest",
+          "sizeX" : 11,
+          "sizeY" : 16,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "b755362a-b545-8ee6-a67b-df2c9e39d6e5",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Nome",
+                "color" : "#ffc107",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "string",
+                  "required" : false,
+                  "isEditable" : "readonly",
+                  "appearance" : "outline",
+                  "subscriptSizing" : "fixed",
+                  "useCustomIcon" : false,
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.06574133384226966,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "stato",
+                "type" : "attribute",
+                "label" : "Stato",
+                "color" : "#ffc107",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "select",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "appearance" : "outline",
+                  "subscriptSizing" : "fixed",
+                  "selectOptions" : [ {
+                    "value" : "normale",
+                    "label" : "Normale"
+                  }, {
+                    "value" : "manutenzione",
+                    "label" : "Manutenzione"
+                  }, {
+                    "value" : "inagibile",
+                    "label" : "Inagibile"
+                  } ],
+                  "useCustomIcon" : false,
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.8515408417618529,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "note",
+                "type" : "attribute",
+                "label" : "Note",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.34492126292398884,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "floorplan",
+                "type" : "attribute",
+                "label" : "Piantina (formato Base64)",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.20965411481646834,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1683549171832,
+                  "endTimeMs" : 1683635571832
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "showResultMessage" : true,
+              "showActionButtons" : false,
+              "showGroupTitle" : false,
+              "fieldsAlignment" : "column",
+              "groupTitle" : "${entityName}",
+              "fieldsInRow" : 2,
+              "columnGap" : 10,
+              "rowGap" : 5
+            },
+            "title" : "Soglie allarmi",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "enableDataExport" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "18px",
+              "fontWeight" : 600,
+              "padding" : "5px 10px 5px 5px",
+              "textTransform" : "capitalize"
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "showTitleIcon" : false,
+            "titleIcon" : null,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "displayTimewindow" : true,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "Nessuna Colonnina Selezionata",
+            "margin" : "0px"
+          },
+          "id" : "d1a2f3d4-5c4f-3852-9b0a-0ae4c2504d81",
+          "typeFullFqn" : "system.input_widgets.update_multiple_attributes"
         }
       },
       "states" : {
@@ -16784,6 +16949,29 @@
                 "45a52b90-ca3a-a18f-45e1-d40eccdf5765" : {
                   "sizeX" : 24,
                   "sizeY" : 1,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        },
+        "settings_colonnina" : {
+          "name" : "Settings Colonnina",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "d1a2f3d4-5c4f-3852-9b0a-0ae4c2504d81" : {
+                  "sizeX" : 24,
+                  "sizeY" : 12,
                   "row" : 0,
                   "col" : 0
                 }

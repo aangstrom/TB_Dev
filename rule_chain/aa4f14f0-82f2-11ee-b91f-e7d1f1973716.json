@@ -425,6 +425,10 @@
       "toIndex" : 61,
       "type" : "Success"
     }, {
+      "fromIndex" : 64,
+      "toIndex" : 118,
+      "type" : "Success"
+    }, {
       "fromIndex" : 65,
       "toIndex" : 31,
       "type" : "Success"
@@ -687,6 +691,30 @@
     }, {
       "fromIndex" : 117,
       "toIndex" : 83,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 118,
+      "toIndex" : 119,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 119,
+      "toIndex" : 120,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 119,
+      "toIndex" : 121,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 120,
+      "toIndex" : 122,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 121,
+      "toIndex" : 122,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 122,
+      "toIndex" : 95,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 32,
@@ -4200,6 +4228,169 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1276,
+        "layoutY" : 1927
+      },
+      "configuration" : {
+        "inputValueKey" : "power",
+        "outputValueKey" : "powerDelta",
+        "useCache" : true,
+        "addPeriodBetweenMsgs" : true,
+        "periodValueKey" : "periodInMs",
+        "round" : null,
+        "tellFailureIfDeltaIsNegative" : true
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "affe47f0-8dd2-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "Calculate power",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.CalculateDeltaNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1278,
+        "layoutY" : 2000
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var weekday=[\"domenica\",\"lunedi\",\"martedi\",\"mercoledi\",\"giovedi\",\"venerdi\",\"sabato\"];\nvar secondi=parseFloat((msg.periodInMs/1000)/3600);\nmsg.periodInMs=null;\nmsg.powerDelta=null;\nvar data=new Date();\n//var minute=new Date().getMinutes();\nvar ora=data.getHours()*100+data.getMinutes();\nvar day=weekday[new Date().getDay()];\n//prezzo per fasce;\nvar F1=parseFloat(metadata.F1);\nvar F2=parseFloat(metadata.F2);\nvar F3=parseFloat(metadata.F3);\nvar F23=parseFloat(metadata.F23);\n//orari F1\nvar inizioFascia1=800; //8:00\nvar fineFascia1=1900; //19:00\n//orari F2\nvar inizioFascia2_1=700; //7:00\nvar fineFascia2_1=800; //8:00\nvar inizioFascia2_2=1900; //19:00\nvar fineFascia2_2=2300; //23:00\n//orari F3\nvar inizioFascia3=2300; //00:00\nvar fineFascia3=700; //7:00\n//orari F23\nvar inizioFascia23=1900; //19:00\nvar fineFascia23=800; //8:00\n\n/** Calcoli **/\n//F1\nif((day!=\"domenica\" || day!=\"sabato\") && (ora>=inizioFascia1 && ora<fineFascia1)){\n    calcoloCosto(F1,\"F1\");\n}\n//Se F23 non è nullo\nif(F23!=null){\n    //Se corrisponde a F23\n    if(day==\"domenica\" || day==\"sabato\" || ((day!=\"domenica\" || day!=\"sabato\") && (ora>=inizioFascia23 || ora<fineFascia23))){\n        calcoloCosto(F23,\"F23\");\n    }\n}else{\n    //Se F2 non è nullo\n    if(F2!=null && ((day==\"sabato\" && (ora>=inizioFascia2_1 && ora<fineFascia2_2)) || ((day!=\"domenica\" || day!=\"sabato\") && ((ora>=inizioFascia2_1 && ora<fineFascia2_1) || (ora>=inizioFascia2_2 && ora<fineFascia2_2))))){\n        calcoloCosto(F2,\"F2\");\n    }\n    //Se F3 non è nullo\n    if(F3!=null && (day==\"domenica\" || (day!=\"domenica\" && ((ora>=inizioFascia3 || ora<fineFascia3))))){\n        calcoloCosto(F3,\"F3\");\n    }\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};\n\nfunction calcoloCosto(fascia,nomeFascia){\n    var power=msg.power/1000;\n    if(nomeFascia==\"F1\"){\n        if(power>0){\n            msg.powerCostTest=(power*secondi)*fascia;\n            msg.powerTest=power*secondi;\n        }\n    }else if(nomeFascia==\"F2\"){\n        if(power>0){\n            msg.powerCostTest=(power*secondi)*fascia;\n            msg.powerTest=power*secondi;\n        }\n    }else if(nomeFascia==\"F3\"){\n        if(power>0){\n            msg.powerCostTest=(power*secondi)*fascia;\n            msg.powerTest=power*secondi;\n        }\n    }else if(nomeFascia==\"F23\"){\n        if(power>0){\n            msg.powerCostTest=(power*secondi)*fascia;\n            msg.powerTest=power*secondi;\n        }\n    }\n}"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "afff5960-8dd2-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "Costo per Fascia Test",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1577,
+        "layoutY" : 2021
+      },
+      "configuration" : {
+        "inputValueKey" : "powerCostTest",
+        "outputValueKey" : "powerCostTest",
+        "mathFunction" : "SUM",
+        "aggIntervalType" : "HOUR",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 5,
+        "periodTimeUnit" : "MINUTES",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : null
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "afffce90-8dd2-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "Test powerCostTest",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1577,
+        "layoutY" : 1977
+      },
+      "configuration" : {
+        "inputValueKey" : "powerTest",
+        "outputValueKey" : "powerTest",
+        "mathFunction" : "SUM",
+        "aggIntervalType" : "HOUR",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 5,
+        "periodTimeUnit" : "MINUTES",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : null
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b00043c0-8dd2-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "Test powerTest",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1858,
+        "layoutY" : 2002
+      },
+      "configuration" : {
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "TO",
+          "maxLevel" : null,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "ASSET" ]
+          } ]
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b00091e0-8dd2-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "To Bungalow",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbDuplicateMsgToRelatedNode"
     } ],
     "ruleChainConnections" : null
   },

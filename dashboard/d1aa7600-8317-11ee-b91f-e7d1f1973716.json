@@ -1929,15 +1929,6 @@
               "entityAliasId" : "512896fd-2f4f-1975-2922-e77802ec8fcc",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "power",
-                "type" : "timeseries",
-                "label" : "power",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.4425551436983344,
-                "units" : "W",
-                "decimals" : 0
-              }, {
                 "name" : "powerCost",
                 "type" : "timeseries",
                 "label" : "powerCost",
@@ -1997,7 +1988,16 @@
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
               },
-              "latestDataKeys" : [ ]
+              "latestDataKeys" : [ {
+                "name" : "power",
+                "type" : "timeseries",
+                "label" : "power",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.4425551436983344,
+                "units" : "W",
+                "decimals" : 0
+              } ]
             } ],
             "timewindow" : {
               "hideInterval" : false,
@@ -2006,19 +2006,15 @@
               "hideAggregation" : false,
               "hideAggInterval" : false,
               "hideTimezone" : false,
-              "selectedTab" : 1,
-              "history" : {
-                "historyType" : 2,
-                "timewindowMs" : 86400000,
-                "interval" : 1800000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1701250259219,
-                  "endTimeMs" : 1701266400000
-                },
-                "quickInterval" : "CURRENT_DAY"
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 0,
+                "timewindowMs" : 43200000,
+                "quickInterval" : "CURRENT_DAY",
+                "interval" : 3600000
               },
               "aggregation" : {
-                "type" : "NONE",
+                "type" : "SUM",
                 "limit" : 7474
               },
               "timezone" : null
@@ -2354,24 +2350,20 @@
               "name" : "",
               "entityAliasId" : "512896fd-2f4f-1975-2922-e77802ec8fcc",
               "dataKeys" : [ {
-                "name" : "powerCost",
+                "name" : "powerCostTest",
                 "type" : "timeseries",
-                "label" : "powerCost",
+                "label" : "powerCostTest",
                 "color" : "rgba(0, 0, 0, 0.87)",
                 "settings" : { },
-                "_hash" : 0.9263303692848088,
+                "_hash" : 0.3558134206937804,
                 "units" : "m³",
-                "decimals" : 8,
-                "aggregationType" : null,
-                "funcBody" : null,
-                "usePostProcessing" : false,
-                "postFuncBody" : null
+                "decimals" : 15
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
               },
               "latestDataKeys" : [ {
-                "name" : "powerCost",
+                "name" : "powerCostTest",
                 "type" : "timeseries",
                 "label" : "Somma powerCostTest",
                 "color" : "#4caf50",
@@ -2395,84 +2387,12 @@
                 },
                 "_hash" : 0.11576911708774729,
                 "units" : "$",
-                "decimals" : 8,
+                "decimals" : 15,
                 "aggregationType" : "SUM",
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null,
                 "comparisonEnabled" : null
-              }, {
-                "name" : "powerCost",
-                "type" : "timeseries",
-                "label" : "Delta percent",
-                "color" : "#f44336",
-                "settings" : {
-                  "position" : "rightTop",
-                  "font" : {
-                    "size" : 14,
-                    "sizeUnit" : "px",
-                    "family" : "Roboto",
-                    "weight" : "500",
-                    "style" : "normal",
-                    "lineHeight" : "20px"
-                  },
-                  "color" : {
-                    "type" : "range",
-                    "color" : "rgba(0, 0, 0, 0.38)",
-                    "rangeList" : [ {
-                      "from" : null,
-                      "to" : 0,
-                      "color" : "#198038"
-                    }, {
-                      "from" : 0,
-                      "to" : 0,
-                      "color" : "rgba(0, 0, 0, 0.87)"
-                    }, {
-                      "from" : 0,
-                      "to" : null,
-                      "color" : "#D12730"
-                    } ],
-                    "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
-                  },
-                  "showArrow" : true
-                },
-                "_hash" : 0.22944730698571614,
-                "units" : "%",
-                "decimals" : 0,
-                "aggregationType" : "AVG",
-                "comparisonEnabled" : true,
-                "timeForComparison" : "previousInterval",
-                "comparisonResultType" : "DELTA_PERCENT"
-              }, {
-                "name" : "powerCost",
-                "type" : "timeseries",
-                "label" : "Delta absolute",
-                "color" : "#ffc107",
-                "settings" : {
-                  "position" : "rightBottom",
-                  "font" : {
-                    "size" : 11,
-                    "sizeUnit" : "px",
-                    "family" : "Roboto",
-                    "weight" : "400",
-                    "style" : "normal",
-                    "lineHeight" : "16px"
-                  },
-                  "color" : {
-                    "type" : "constant",
-                    "color" : "rgba(0, 0, 0, 0.38)",
-                    "rangeList" : [ ],
-                    "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
-                  },
-                  "showArrow" : false
-                },
-                "_hash" : 0.8917077497333314,
-                "units" : "m³",
-                "decimals" : 1,
-                "aggregationType" : "AVG",
-                "comparisonEnabled" : true,
-                "timeForComparison" : "previousInterval",
-                "comparisonResultType" : "DELTA_ABSOLUTE"
               } ]
             } ],
             "timewindow" : {
@@ -2491,7 +2411,7 @@
               },
               "aggregation" : {
                 "type" : "SUM",
-                "limit" : 5000
+                "limit" : 10911
               }
             },
             "showTitle" : true,
@@ -2652,12 +2572,12 @@
               "name" : "",
               "entityAliasId" : "512896fd-2f4f-1975-2922-e77802ec8fcc",
               "dataKeys" : [ {
-                "name" : "powerTest",
+                "name" : "powerCost",
                 "type" : "timeseries",
-                "label" : "powerTest",
+                "label" : "powerCost",
                 "color" : "rgba(0, 0, 0, 0.87)",
                 "settings" : { },
-                "_hash" : 0.5771108794803286,
+                "_hash" : 0.1383993701798394,
                 "units" : "m³",
                 "decimals" : 8
               } ],
@@ -2665,7 +2585,7 @@
                 "statusList" : [ "ACTIVE" ]
               },
               "latestDataKeys" : [ {
-                "name" : "powerTest",
+                "name" : "powerCost",
                 "type" : "timeseries",
                 "label" : "Somma powerCostTest",
                 "color" : "#4caf50",
@@ -2696,7 +2616,7 @@
                 "postFuncBody" : null,
                 "comparisonEnabled" : null
               }, {
-                "name" : "powerTest",
+                "name" : "powerCost",
                 "type" : "timeseries",
                 "label" : "Delta percent",
                 "color" : "#f44336",
@@ -2738,7 +2658,7 @@
                 "timeForComparison" : "previousInterval",
                 "comparisonResultType" : "DELTA_PERCENT"
               }, {
-                "name" : "powerTest",
+                "name" : "powerCost",
                 "type" : "timeseries",
                 "label" : "Delta absolute",
                 "color" : "#ffc107",
@@ -2784,7 +2704,7 @@
                 "interval" : 3600000
               },
               "aggregation" : {
-                "type" : "NONE",
+                "type" : "AVG",
                 "limit" : 10818
               }
             },
@@ -3028,16 +2948,16 @@
                   "col" : 0
                 },
                 "9f9cf0f2-1a1e-6865-ae15-df2476911139" : {
-                  "sizeX" : 7,
+                  "sizeX" : 10,
                   "sizeY" : 6,
                   "row" : 28,
                   "col" : 0
                 },
                 "6d944eb6-c1f2-35c3-5ad8-77214df37989" : {
-                  "sizeX" : 7,
+                  "sizeX" : 10,
                   "sizeY" : 6,
                   "row" : 28,
-                  "col" : 7
+                  "col" : 10
                 }
               },
               "gridSettings" : {

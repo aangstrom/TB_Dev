@@ -6339,8 +6339,8 @@
               }
             },
             "showTitle" : false,
-            "backgroundColor" : "rgb(252, 211, 77)",
-            "color" : "rgba(0, 0, 0, 0.87)",
+            "backgroundColor" : "rgb(63, 81, 188)",
+            "color" : "rgb(255, 255, 255)",
             "padding" : "4px",
             "settings" : {
               "nodeRelationQueryFunction" : "var entity = nodeCtx.entity;\nvar query = {\n    parameters: {\n        rootId: entity.id.id,\n        rootType: entity.id.entityType,\n        direction: \"FROM\",\n        maxLevel: 1\n    },\n    filters: [{\n        relationType: \"Contains\",\n        entityTypes: []\n    }]\n};\nreturn query;\n\n/**\n\n// Function should return relations query object for current node used to fetch entity children.\n// Function can return 'default' string value. In this case default relations query will be used.\n\n// The following example code will construct simple relations query that will fetch relations of type 'Contains'\n// from the current entity.\n\nvar entity = nodeCtx.entity;\nvar query = {\n    parameters: {\n        rootId: entity.id.id,\n        rootType: entity.id.entityType,\n        direction: \"FROM\",\n        maxLevel: 1\n    },\n    filters: [{\n        relationType: \"Contains\",\n        entityTypes: []\n    }]\n};\nreturn query;\n\n**/\n",

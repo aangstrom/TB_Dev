@@ -6,13 +6,7 @@
       "description" : "",
       "widgets" : {
         "6e869dd0-9cd9-1971-aa58-0e847683bb89" : {
-          "isSystemType" : true,
-          "bundleAlias" : "cards",
-          "typeAlias" : "timeseries_table",
           "type" : "timeseries",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
           "sizeX" : 8,
           "sizeY" : 6.5,
           "config" : {
@@ -148,16 +142,11 @@
           },
           "row" : 0,
           "col" : 0,
-          "id" : "6e869dd0-9cd9-1971-aa58-0e847683bb89"
+          "id" : "6e869dd0-9cd9-1971-aa58-0e847683bb89",
+          "typeFullFqn" : "system.cards.timeseries_table"
         },
         "b5f57ed2-87a4-353c-fda9-72a84bc21229" : {
-          "isSystemType" : true,
-          "bundleAlias" : "charts",
-          "typeAlias" : "basic_timeseries",
           "type" : "timeseries",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
           "sizeX" : 8,
           "sizeY" : 5,
           "config" : {
@@ -170,7 +159,7 @@
                 "name" : "a_export_energy",
                 "type" : "timeseries",
                 "label" : "Sell",
-                "color" : "#2196f3",
+                "color" : "#6DF317",
                 "settings" : {
                   "hideDataByDefault" : false,
                   "disableDataHiding" : false,
@@ -210,7 +199,7 @@
                 "name" : "a_import_energy",
                 "type" : "timeseries",
                 "label" : "Buy",
-                "color" : "#4caf50",
+                "color" : "#ED1F1F",
                 "settings" : {
                   "excludeFromStacking" : false,
                   "hideDataByDefault" : false,
@@ -243,7 +232,7 @@
                 "name" : "a_power_produced",
                 "type" : "timeseries",
                 "label" : "Prodotta",
-                "color" : "#f44336",
+                "color" : "#4B82D3",
                 "settings" : {
                   "excludeFromStacking" : false,
                   "hideDataByDefault" : false,
@@ -306,6 +295,9 @@
                 "postFuncBody" : null,
                 "aggregationType" : null
               } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
               "latestDataKeys" : null
             } ],
             "timewindow" : {
@@ -349,7 +341,17 @@
                 "axisPosition" : "top",
                 "showLabels" : true
               },
-              "customLegendEnabled" : false
+              "customLegendEnabled" : false,
+              "showLegend" : true,
+              "legendConfig" : {
+                "direction" : "column",
+                "position" : "bottom",
+                "sortDataKeys" : false,
+                "showMin" : false,
+                "showMax" : false,
+                "showAvg" : true,
+                "showTotal" : false
+              }
             },
             "title" : "Andamento Energetico",
             "dropShadow" : false,
@@ -365,31 +367,16 @@
             "widgetStyle" : { },
             "widgetCss" : "",
             "noDataDisplayMessage" : "",
-            "showLegend" : true,
-            "legendConfig" : {
-              "direction" : "column",
-              "position" : "bottom",
-              "sortDataKeys" : false,
-              "showMin" : false,
-              "showMax" : false,
-              "showAvg" : true,
-              "showTotal" : false
-            },
             "displayTimewindow" : false,
             "pageSize" : 1024
           },
           "row" : 0,
           "col" : 0,
-          "id" : "b5f57ed2-87a4-353c-fda9-72a84bc21229"
+          "id" : "b5f57ed2-87a4-353c-fda9-72a84bc21229",
+          "typeFullFqn" : "system.charts.basic_timeseries"
         },
         "efff3fb6-8594-1fcf-20d1-5cb1306cf5d3" : {
-          "isSystemType" : true,
-          "bundleAlias" : "charts",
-          "typeAlias" : "timeseries_bars_flot",
           "type" : "timeseries",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
           "sizeX" : 8,
           "sizeY" : 5,
           "config" : {
@@ -575,7 +562,17 @@
                 "axisPosition" : "top",
                 "showLabels" : true
               },
-              "customLegendEnabled" : false
+              "customLegendEnabled" : false,
+              "showLegend" : true,
+              "legendConfig" : {
+                "direction" : "column",
+                "position" : "bottom",
+                "sortDataKeys" : false,
+                "showMin" : false,
+                "showMax" : false,
+                "showAvg" : true,
+                "showTotal" : false
+              }
             },
             "title" : "Bilancio Progressivo",
             "dropShadow" : false,
@@ -586,37 +583,22 @@
             },
             "widgetStyle" : { },
             "useDashboardTimewindow" : true,
-            "showLegend" : true,
             "actions" : { },
             "showTitleIcon" : false,
             "titleTooltip" : "",
             "enableDataExport" : false,
             "widgetCss" : "",
             "noDataDisplayMessage" : "",
-            "legendConfig" : {
-              "direction" : "column",
-              "position" : "bottom",
-              "sortDataKeys" : false,
-              "showMin" : false,
-              "showMax" : false,
-              "showAvg" : true,
-              "showTotal" : false
-            },
             "pageSize" : 1024,
             "displayTimewindow" : false
           },
           "row" : 0,
           "col" : 0,
-          "id" : "efff3fb6-8594-1fcf-20d1-5cb1306cf5d3"
+          "id" : "efff3fb6-8594-1fcf-20d1-5cb1306cf5d3",
+          "typeFullFqn" : "system.charts.timeseries_bars_flot"
         },
         "96b35fad-07df-a595-e144-655e26cfc946" : {
-          "isSystemType" : true,
-          "bundleAlias" : "digital_gauges",
-          "typeAlias" : "gauge_justgage",
           "type" : "latest",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
           "sizeX" : 4,
           "sizeY" : 3,
           "config" : {
@@ -734,16 +716,11 @@
           },
           "row" : 0,
           "col" : 0,
-          "id" : "96b35fad-07df-a595-e144-655e26cfc946"
+          "id" : "96b35fad-07df-a595-e144-655e26cfc946",
+          "typeFullFqn" : "system.digital_gauges.gauge_justgage"
         },
         "1068119a-ef35-ab16-3ebb-e1e036604306" : {
-          "isSystemType" : true,
-          "bundleAlias" : "charts",
-          "typeAlias" : "pie",
           "type" : "latest",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
           "sizeX" : 8,
           "sizeY" : 5,
           "config" : {
@@ -848,16 +825,11 @@
           },
           "row" : 0,
           "col" : 0,
-          "id" : "1068119a-ef35-ab16-3ebb-e1e036604306"
+          "id" : "1068119a-ef35-ab16-3ebb-e1e036604306",
+          "typeFullFqn" : "system.charts.pie"
         },
         "dfca27c7-e863-38e0-806a-4e763290e055" : {
-          "isSystemType" : true,
-          "bundleAlias" : "digital_gauges",
-          "typeAlias" : "gauge_justgage",
           "type" : "latest",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
           "sizeX" : 4,
           "sizeY" : 3,
           "config" : {
@@ -968,16 +940,11 @@
           },
           "row" : 0,
           "col" : 0,
-          "id" : "dfca27c7-e863-38e0-806a-4e763290e055"
+          "id" : "dfca27c7-e863-38e0-806a-4e763290e055",
+          "typeFullFqn" : "system.digital_gauges.gauge_justgage"
         },
         "b4479916-a732-2662-45f1-5080ef86c9f7" : {
-          "isSystemType" : true,
-          "bundleAlias" : "charts",
-          "typeAlias" : "timeseries_bars_flot",
           "type" : "timeseries",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
           "sizeX" : 8,
           "sizeY" : 5,
           "config" : {
@@ -1108,7 +1075,17 @@
                 "axisPosition" : "top",
                 "showLabels" : true
               },
-              "customLegendEnabled" : false
+              "customLegendEnabled" : false,
+              "showLegend" : true,
+              "legendConfig" : {
+                "direction" : "column",
+                "position" : "bottom",
+                "sortDataKeys" : false,
+                "showMin" : false,
+                "showMax" : false,
+                "showAvg" : true,
+                "showTotal" : false
+              }
             },
             "title" : "Sell & Buy",
             "dropShadow" : false,
@@ -1119,7 +1096,6 @@
             },
             "widgetStyle" : { },
             "useDashboardTimewindow" : false,
-            "showLegend" : true,
             "actions" : { },
             "displayTimewindow" : true,
             "showTitleIcon" : false,
@@ -1127,29 +1103,15 @@
             "enableDataExport" : false,
             "widgetCss" : "",
             "noDataDisplayMessage" : "",
-            "legendConfig" : {
-              "direction" : "column",
-              "position" : "bottom",
-              "sortDataKeys" : false,
-              "showMin" : false,
-              "showMax" : false,
-              "showAvg" : true,
-              "showTotal" : false
-            },
             "pageSize" : 1024
           },
           "row" : 0,
           "col" : 0,
-          "id" : "b4479916-a732-2662-45f1-5080ef86c9f7"
+          "id" : "b4479916-a732-2662-45f1-5080ef86c9f7",
+          "typeFullFqn" : "system.charts.timeseries_bars_flot"
         },
         "ad15cfa7-abc7-9640-78ac-a0c9460b01ab" : {
-          "isSystemType" : true,
-          "bundleAlias" : "charts",
-          "typeAlias" : "pie",
           "type" : "latest",
-          "title" : "New widget",
-          "image" : null,
-          "description" : null,
           "sizeX" : 8,
           "sizeY" : 5,
           "config" : {
@@ -1233,7 +1195,8 @@
           },
           "row" : 0,
           "col" : 0,
-          "id" : "ad15cfa7-abc7-9640-78ac-a0c9460b01ab"
+          "id" : "ad15cfa7-abc7-9640-78ac-a0c9460b01ab",
+          "typeFullFqn" : "system.charts.pie"
         }
       },
       "states" : {
@@ -1300,7 +1263,8 @@
                 "autoFillHeight" : true,
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70
+                "mobileRowHeight" : 70,
+                "outerMargin" : true
               }
             }
           }

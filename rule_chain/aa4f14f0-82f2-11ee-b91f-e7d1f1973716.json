@@ -170,10 +170,6 @@
       "type" : "Success"
     }, {
       "fromIndex" : 32,
-      "toIndex" : 33,
-      "type" : "True"
-    }, {
-      "fromIndex" : 32,
       "toIndex" : 35,
       "type" : "False"
     }, {
@@ -699,6 +695,10 @@
     }, {
       "fromIndex" : 123,
       "toIndex" : 95,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 124,
+      "toIndex" : 52,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 32,
@@ -4342,6 +4342,34 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1102,
+        "layoutY" : 1483
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 60,
+        "scriptLang" : "TBEL",
+        "jsScript" : "var temperature = 18 + Math.random() * (32 - 18);\ntemperature = Math.round( temperature * 100 ) / 100;\nvar humidity = 10 + Math.random() * (90 - 10);\nhumidity = Math.round( humidity * 100 ) / 100;\nvar soundAvg = 30 + Math.random() * (90 - 10);\nsoundAvg = Math.round( soundAvg * 100 ) / 100;\nvar soundPeak = 50 + Math.random() * (90 - 10);\nsoundPeak = Math.round( soundPeak * 100 ) / 100;\nvar light = 100 + Math.random() * (500 - 20);\nlight = Math.round( light * 100 ) / 100;\nvar user_latitude = 44.8923521;\nvar user_longitude = 11.6176377;\nvar vdd = 3718;\nvar msg = { \n            temperature: temperature,\n            humidity: humidity,\n            soundAvg: soundAvg,\n            soundPeak: soundPeak,\n            light: light,\n            user_latitude: user_latitude,\n            user_longitude: user_longitude,\n            vdd: vdd,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
+        "tbelScript" : "var hour = new Date().getHours();\nvar power;\nif(hour==8){\n    power=800+Math.random()*(100-0);\n}if(hour==9 || hour==10 || hour==11){\n    power=500+Math.random()*(200-0);\n}else if(hour==12 || hour==13 || hour==14 || hour==19 || hour==20){\n    power=600+Math.random()*(300-0);\n}else if(hour==21 || hour==22 || hour==23){\n    power=500+Math.random()*(200-0);\n}else{\n    power=0+Math.random()*(20-0);\n}\npower=toFixed(power,2);\n//power=Math.round(power*100)/100;\nvar msg = { \n            power: power,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };",
+        "queueName" : null,
+        "originatorId" : "e89ed730-9063-11ee-842a-55fec3ab5bf6",
+        "originatorType" : "ASSET"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ff6cb360-9063-11ee-842a-55fec3ab5bf6"
+      },
+      "name" : "Generator Energia Bungalow 1",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     } ],
     "ruleChainConnections" : null
   },

@@ -14274,258 +14274,6 @@
           "col" : 0,
           "id" : "afde50e7-8b65-6cec-eb07-db377696a77b"
         },
-        "505224f1-6dd8-5cba-8935-897e1be163a4" : {
-          "typeFullFqn" : "system.cards.aggregated_value_card",
-          "type" : "timeseries",
-          "sizeX" : 4.5,
-          "sizeY" : 3.5,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : "",
-              "entityAliasId" : "1d799daf-1882-7a76-938b-c97e8c08ff11",
-              "dataKeys" : [ {
-                "name" : "power",
-                "type" : "timeseries",
-                "label" : "power",
-                "color" : "rgba(0, 0, 0, 0.87)",
-                "settings" : { },
-                "_hash" : 0.7988044062478454,
-                "units" : "kW",
-                "decimals" : 2,
-                "aggregationType" : null,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "return value/1000;"
-              } ],
-              "alarmFilterConfig" : {
-                "statusList" : [ "ACTIVE" ]
-              },
-              "latestDataKeys" : [ {
-                "name" : "power",
-                "type" : "timeseries",
-                "label" : "Somma power 2",
-                "color" : "#4caf50",
-                "settings" : {
-                  "position" : "center",
-                  "font" : {
-                    "size" : 52,
-                    "sizeUnit" : "px",
-                    "family" : "Roboto",
-                    "weight" : "500",
-                    "style" : "normal",
-                    "lineHeight" : "1"
-                  },
-                  "color" : {
-                    "type" : "constant",
-                    "color" : "rgba(0, 0, 0, 0.87)",
-                    "rangeList" : [ ],
-                    "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
-                  },
-                  "showArrow" : false
-                },
-                "_hash" : 0.8022784241892096,
-                "units" : "kW",
-                "decimals" : 2,
-                "aggregationType" : "SUM",
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "return value/1000;",
-                "comparisonEnabled" : null
-              }, {
-                "name" : "power",
-                "type" : "timeseries",
-                "label" : "Somma power",
-                "color" : "#ffc107",
-                "settings" : {
-                  "position" : "rightBottom",
-                  "font" : {
-                    "size" : 11,
-                    "sizeUnit" : "px",
-                    "family" : "Roboto",
-                    "weight" : "400",
-                    "style" : "normal",
-                    "lineHeight" : "16px"
-                  },
-                  "color" : {
-                    "type" : "constant",
-                    "color" : "rgba(0, 0, 0, 0.38)",
-                    "rangeList" : [ ],
-                    "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
-                  },
-                  "showArrow" : false
-                },
-                "_hash" : 0.3880978658451766,
-                "units" : "kW",
-                "decimals" : 2,
-                "aggregationType" : "SUM",
-                "comparisonEnabled" : false,
-                "timeForComparison" : "previousInterval",
-                "comparisonResultType" : "DELTA_ABSOLUTE",
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "return value/1000;"
-              } ]
-            } ],
-            "timewindow" : {
-              "selectedTab" : 1,
-              "history" : {
-                "historyType" : 2,
-                "quickInterval" : "CURRENT_MONTH_SO_FAR"
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "interval" : 43200000,
-                "limit" : 5000
-              }
-            },
-            "showTitle" : true,
-            "backgroundColor" : "rgba(0, 0, 0, 0)",
-            "color" : null,
-            "padding" : "0",
-            "settings" : {
-              "stack" : false,
-              "fontSize" : 10,
-              "fontColor" : "#545454",
-              "showTooltip" : true,
-              "tooltipIndividual" : false,
-              "tooltipCumulative" : false,
-              "hideZeros" : false,
-              "grid" : {
-                "verticalLines" : true,
-                "horizontalLines" : true,
-                "outlineWidth" : 1,
-                "color" : "#545454",
-                "backgroundColor" : null,
-                "tickColor" : "#DDDDDD"
-              },
-              "xaxis" : {
-                "title" : null,
-                "showLabels" : true,
-                "color" : "#545454"
-              },
-              "yaxis" : {
-                "min" : null,
-                "max" : null,
-                "title" : null,
-                "showLabels" : true,
-                "color" : "#545454",
-                "tickSize" : null,
-                "tickDecimals" : 0,
-                "ticksFormatter" : ""
-              },
-              "shadowSize" : 4,
-              "smoothLines" : false,
-              "comparisonEnabled" : false,
-              "xaxisSecond" : {
-                "axisPosition" : "top",
-                "title" : null,
-                "showLabels" : true
-              },
-              "showLegend" : true,
-              "legendConfig" : {
-                "direction" : "column",
-                "position" : "bottom",
-                "sortDataKeys" : false,
-                "showMin" : false,
-                "showMax" : false,
-                "showAvg" : true,
-                "showTotal" : false,
-                "showLatest" : false
-              },
-              "customLegendEnabled" : false,
-              "showSubtitle" : true,
-              "subtitle" : "${entityName}",
-              "subtitleFont" : {
-                "family" : "Roboto",
-                "size" : 12,
-                "sizeUnit" : "px",
-                "style" : "normal",
-                "weight" : "400",
-                "lineHeight" : "16px"
-              },
-              "subtitleColor" : "rgba(0, 0, 0, 0.38)",
-              "showDate" : true,
-              "dateFormat" : {
-                "format" : null,
-                "lastUpdateAgo" : true,
-                "custom" : false
-              },
-              "dateFont" : {
-                "family" : "Roboto",
-                "size" : 12,
-                "sizeUnit" : "px",
-                "style" : "normal",
-                "weight" : "400",
-                "lineHeight" : "16px"
-              },
-              "dateColor" : "rgba(0, 0, 0, 0.38)",
-              "showChart" : true,
-              "chartColor" : "rgba(0, 0, 0, 0.87)",
-              "background" : {
-                "type" : "color",
-                "color" : "#fff",
-                "overlay" : {
-                  "enabled" : false,
-                  "color" : "rgba(255,255,255,0.72)",
-                  "blur" : 3
-                }
-              },
-              "autoScale" : true
-            },
-            "title" : "Energia Totale per il tempo selezionato ",
-            "dropShadow" : false,
-            "enableFullscreen" : false,
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "configMode" : "advanced",
-            "actions" : { },
-            "showTitleIcon" : true,
-            "titleIcon" : "bolt",
-            "iconColor" : "rgb(245, 221, 0)",
-            "titleFont" : {
-              "size" : 16,
-              "sizeUnit" : "px",
-              "family" : "Roboto",
-              "weight" : "500",
-              "style" : "normal",
-              "lineHeight" : "24px"
-            },
-            "iconSize" : "24px",
-            "titleTooltip" : "",
-            "widgetStyle" : { },
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : "",
-            "useDashboardTimewindow" : true,
-            "displayTimewindow" : false,
-            "decimals" : 0,
-            "timewindowStyle" : {
-              "showIcon" : true,
-              "iconSize" : "24px",
-              "icon" : null,
-              "iconPosition" : "left",
-              "font" : {
-                "size" : 12,
-                "sizeUnit" : "px",
-                "family" : "Roboto",
-                "weight" : "400",
-                "style" : "normal",
-                "lineHeight" : "16px"
-              },
-              "color" : "rgba(0, 0, 0, 0.38)",
-              "displayTypePrefix" : false
-            },
-            "titleColor" : "rgba(0, 0, 0, 0.87)",
-            "borderRadius" : null,
-            "enableDataExport" : false
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "505224f1-6dd8-5cba-8935-897e1be163a4"
-        },
         "1a6cffc6-0ff9-825f-7d65-8448d51ad2db" : {
           "typeFullFqn" : "system.charts.pie",
           "type" : "latest",
@@ -14653,7 +14401,7 @@
           "col" : 0,
           "id" : "1a6cffc6-0ff9-825f-7d65-8448d51ad2db"
         },
-        "2016c850-634f-42f5-6a38-c0caa95f165e" : {
+        "48818025-cf4a-b6e5-c124-97041cf7411f" : {
           "typeFullFqn" : "system.cards.aggregated_value_card",
           "type" : "timeseries",
           "sizeX" : 4.5,
@@ -14669,9 +14417,9 @@
                 "label" : "power",
                 "color" : "rgba(0, 0, 0, 0.87)",
                 "settings" : { },
-                "_hash" : 0.7988044062478454,
-                "units" : "kW",
-                "decimals" : 2,
+                "_hash" : 0.05307097800314642,
+                "units" : "m³",
+                "decimals" : 0,
                 "aggregationType" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
@@ -14683,7 +14431,7 @@
               "latestDataKeys" : [ {
                 "name" : "power",
                 "type" : "timeseries",
-                "label" : "Somma power 2",
+                "label" : "Somma power",
                 "color" : "#4caf50",
                 "settings" : {
                   "position" : "center",
@@ -14703,7 +14451,7 @@
                   },
                   "showArrow" : false
                 },
-                "_hash" : 0.8022784241892096,
+                "_hash" : 0.08149131772038354,
                 "units" : "kW",
                 "decimals" : 2,
                 "aggregationType" : "SUM",
@@ -14714,7 +14462,49 @@
               }, {
                 "name" : "power",
                 "type" : "timeseries",
-                "label" : "Somma power",
+                "label" : "Delta percent",
+                "color" : "#f44336",
+                "settings" : {
+                  "position" : "rightTop",
+                  "font" : {
+                    "size" : 14,
+                    "sizeUnit" : "px",
+                    "family" : "Roboto",
+                    "weight" : "500",
+                    "style" : "normal",
+                    "lineHeight" : "20px"
+                  },
+                  "color" : {
+                    "type" : "range",
+                    "color" : "rgba(0, 0, 0, 0.38)",
+                    "rangeList" : [ {
+                      "from" : null,
+                      "to" : 0,
+                      "color" : "#198038"
+                    }, {
+                      "from" : 0,
+                      "to" : 0,
+                      "color" : "rgba(0, 0, 0, 0.87)"
+                    }, {
+                      "from" : 0,
+                      "to" : null,
+                      "color" : "#D12730"
+                    } ],
+                    "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+                  },
+                  "showArrow" : true
+                },
+                "_hash" : 0.7446276339325786,
+                "units" : "%",
+                "decimals" : 0,
+                "aggregationType" : "AVG",
+                "comparisonEnabled" : true,
+                "timeForComparison" : "previousInterval",
+                "comparisonResultType" : "DELTA_PERCENT"
+              }, {
+                "name" : "power",
+                "type" : "timeseries",
+                "label" : "Delta absolute",
                 "color" : "#ffc107",
                 "settings" : {
                   "position" : "rightBottom",
@@ -14734,11 +14524,11 @@
                   },
                   "showArrow" : false
                 },
-                "_hash" : 0.3880978658451766,
+                "_hash" : 0.07896813299866423,
                 "units" : "kW",
-                "decimals" : 2,
-                "aggregationType" : "SUM",
-                "comparisonEnabled" : false,
+                "decimals" : 1,
+                "aggregationType" : "AVG",
+                "comparisonEnabled" : true,
                 "timeForComparison" : "previousInterval",
                 "comparisonResultType" : "DELTA_ABSOLUTE",
                 "funcBody" : null,
@@ -14759,13 +14549,13 @@
                 "timewindowMs" : 604800000,
                 "interval" : 1800000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1701621758158,
-                  "endTimeMs" : 1701708158158
+                  "startTimeMs" : 1701622460393,
+                  "endTimeMs" : 1701708860393
                 },
                 "quickInterval" : "CURRENT_MONTH_SO_FAR"
               },
               "aggregation" : {
-                "type" : "SUM",
+                "type" : "NONE",
                 "limit" : 5000
               }
             },
@@ -14863,14 +14653,14 @@
               },
               "autoScale" : true
             },
-            "title" : "Energia Totale Ultima Settimana",
-            "dropShadow" : false,
+            "title" : "Energia Totale ultima Settimana",
+            "dropShadow" : true,
             "enableFullscreen" : false,
             "titleStyle" : {
               "fontSize" : "16px",
               "fontWeight" : 400
             },
-            "configMode" : "advanced",
+            "configMode" : "basic",
             "actions" : { },
             "showTitleIcon" : true,
             "titleIcon" : "bolt",
@@ -14914,7 +14704,312 @@
           },
           "row" : 0,
           "col" : 0,
-          "id" : "2016c850-634f-42f5-6a38-c0caa95f165e"
+          "id" : "48818025-cf4a-b6e5-c124-97041cf7411f"
+        },
+        "ad31fa41-84d1-5a27-94ba-a0a00ed50cfc" : {
+          "typeFullFqn" : "system.cards.aggregated_value_card",
+          "type" : "timeseries",
+          "sizeX" : 4.5,
+          "sizeY" : 3.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "1d799daf-1882-7a76-938b-c97e8c08ff11",
+              "dataKeys" : [ {
+                "name" : "power",
+                "type" : "timeseries",
+                "label" : "power",
+                "color" : "rgba(0, 0, 0, 0.87)",
+                "settings" : { },
+                "_hash" : 0.05307097800314642,
+                "units" : "m³",
+                "decimals" : 0,
+                "aggregationType" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "return value/1000;"
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ {
+                "name" : "power",
+                "type" : "timeseries",
+                "label" : "Somma power",
+                "color" : "#4caf50",
+                "settings" : {
+                  "position" : "center",
+                  "font" : {
+                    "size" : 52,
+                    "sizeUnit" : "px",
+                    "family" : "Roboto",
+                    "weight" : "500",
+                    "style" : "normal",
+                    "lineHeight" : "1"
+                  },
+                  "color" : {
+                    "type" : "constant",
+                    "color" : "rgba(0, 0, 0, 0.87)",
+                    "rangeList" : [ ],
+                    "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+                  },
+                  "showArrow" : false
+                },
+                "_hash" : 0.08149131772038354,
+                "units" : "kW",
+                "decimals" : 2,
+                "aggregationType" : "SUM",
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "return value/1000;",
+                "comparisonEnabled" : null
+              }, {
+                "name" : "power",
+                "type" : "timeseries",
+                "label" : "Delta percent",
+                "color" : "#f44336",
+                "settings" : {
+                  "position" : "rightTop",
+                  "font" : {
+                    "size" : 14,
+                    "sizeUnit" : "px",
+                    "family" : "Roboto",
+                    "weight" : "500",
+                    "style" : "normal",
+                    "lineHeight" : "20px"
+                  },
+                  "color" : {
+                    "type" : "range",
+                    "color" : "rgba(0, 0, 0, 0.38)",
+                    "rangeList" : [ {
+                      "from" : null,
+                      "to" : 0,
+                      "color" : "#198038"
+                    }, {
+                      "from" : 0,
+                      "to" : 0,
+                      "color" : "rgba(0, 0, 0, 0.87)"
+                    }, {
+                      "from" : 0,
+                      "to" : null,
+                      "color" : "#D12730"
+                    } ],
+                    "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+                  },
+                  "showArrow" : true
+                },
+                "_hash" : 0.7446276339325786,
+                "units" : "%",
+                "decimals" : 0,
+                "aggregationType" : "AVG",
+                "comparisonEnabled" : true,
+                "timeForComparison" : "previousInterval",
+                "comparisonResultType" : "DELTA_PERCENT"
+              }, {
+                "name" : "power",
+                "type" : "timeseries",
+                "label" : "Delta absolute",
+                "color" : "#ffc107",
+                "settings" : {
+                  "position" : "rightBottom",
+                  "font" : {
+                    "size" : 11,
+                    "sizeUnit" : "px",
+                    "family" : "Roboto",
+                    "weight" : "400",
+                    "style" : "normal",
+                    "lineHeight" : "16px"
+                  },
+                  "color" : {
+                    "type" : "constant",
+                    "color" : "rgba(0, 0, 0, 0.38)",
+                    "rangeList" : [ ],
+                    "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+                  },
+                  "showArrow" : false
+                },
+                "_hash" : 0.07896813299866423,
+                "units" : "kW",
+                "decimals" : 1,
+                "aggregationType" : "AVG",
+                "comparisonEnabled" : true,
+                "timeForComparison" : "previousInterval",
+                "comparisonResultType" : "DELTA_ABSOLUTE",
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "return value/1000;"
+              } ]
+            } ],
+            "timewindow" : {
+              "hideInterval" : false,
+              "hideLastInterval" : false,
+              "hideQuickInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 1,
+              "history" : {
+                "historyType" : 0,
+                "timewindowMs" : 604800000,
+                "interval" : 1800000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1701622460393,
+                  "endTimeMs" : 1701708860393
+                },
+                "quickInterval" : "CURRENT_MONTH_SO_FAR"
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 5000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgba(0, 0, 0, 0)",
+            "color" : null,
+            "padding" : "0",
+            "settings" : {
+              "stack" : false,
+              "fontSize" : 10,
+              "fontColor" : "#545454",
+              "showTooltip" : true,
+              "tooltipIndividual" : false,
+              "tooltipCumulative" : false,
+              "hideZeros" : false,
+              "grid" : {
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1,
+                "color" : "#545454",
+                "backgroundColor" : null,
+                "tickColor" : "#DDDDDD"
+              },
+              "xaxis" : {
+                "title" : null,
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "min" : null,
+                "max" : null,
+                "title" : null,
+                "showLabels" : true,
+                "color" : "#545454",
+                "tickSize" : null,
+                "tickDecimals" : 0,
+                "ticksFormatter" : ""
+              },
+              "shadowSize" : 4,
+              "smoothLines" : false,
+              "comparisonEnabled" : false,
+              "xaxisSecond" : {
+                "axisPosition" : "top",
+                "title" : null,
+                "showLabels" : true
+              },
+              "showLegend" : true,
+              "legendConfig" : {
+                "direction" : "column",
+                "position" : "bottom",
+                "sortDataKeys" : false,
+                "showMin" : false,
+                "showMax" : false,
+                "showAvg" : true,
+                "showTotal" : false,
+                "showLatest" : false
+              },
+              "customLegendEnabled" : false,
+              "showSubtitle" : true,
+              "subtitle" : "${entityName}",
+              "subtitleFont" : {
+                "family" : "Roboto",
+                "size" : 12,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "16px"
+              },
+              "subtitleColor" : "rgba(0, 0, 0, 0.38)",
+              "showDate" : true,
+              "dateFormat" : {
+                "format" : null,
+                "lastUpdateAgo" : true,
+                "custom" : false
+              },
+              "dateFont" : {
+                "family" : "Roboto",
+                "size" : 12,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "16px"
+              },
+              "dateColor" : "rgba(0, 0, 0, 0.38)",
+              "showChart" : true,
+              "chartColor" : "rgba(0, 0, 0, 0.87)",
+              "background" : {
+                "type" : "color",
+                "color" : "#fff",
+                "overlay" : {
+                  "enabled" : false,
+                  "color" : "rgba(255,255,255,0.72)",
+                  "blur" : 3
+                }
+              },
+              "autoScale" : true
+            },
+            "title" : "Energia Totale per il tempo selezionato",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "configMode" : "basic",
+            "actions" : { },
+            "showTitleIcon" : true,
+            "titleIcon" : "bolt",
+            "iconColor" : "rgb(245, 221, 0)",
+            "titleFont" : {
+              "size" : 16,
+              "sizeUnit" : "px",
+              "family" : "Roboto",
+              "weight" : "500",
+              "style" : "normal",
+              "lineHeight" : "24px"
+            },
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "useDashboardTimewindow" : true,
+            "displayTimewindow" : false,
+            "decimals" : 0,
+            "timewindowStyle" : {
+              "showIcon" : true,
+              "iconSize" : "24px",
+              "icon" : null,
+              "iconPosition" : "left",
+              "font" : {
+                "size" : 12,
+                "sizeUnit" : "px",
+                "family" : "Roboto",
+                "weight" : "400",
+                "style" : "normal",
+                "lineHeight" : "16px"
+              },
+              "color" : "rgba(0, 0, 0, 0.38)",
+              "displayTypePrefix" : false
+            },
+            "titleColor" : "rgba(0, 0, 0, 0.87)",
+            "borderRadius" : null,
+            "enableDataExport" : false
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "ad31fa41-84d1-5a27-94ba-a0a00ed50cfc"
         }
       },
       "states" : {
@@ -16327,23 +16422,23 @@
                   "row" : 2,
                   "col" : 12
                 },
-                "505224f1-6dd8-5cba-8935-897e1be163a4" : {
-                  "sizeX" : 8,
-                  "sizeY" : 6,
-                  "row" : 16,
-                  "col" : 8
-                },
                 "1a6cffc6-0ff9-825f-7d65-8448d51ad2db" : {
                   "sizeX" : 8,
-                  "sizeY" : 6,
+                  "sizeY" : 5,
                   "row" : 16,
                   "col" : 16
                 },
-                "2016c850-634f-42f5-6a38-c0caa95f165e" : {
+                "48818025-cf4a-b6e5-c124-97041cf7411f" : {
                   "sizeX" : 8,
-                  "sizeY" : 6,
+                  "sizeY" : 5,
                   "row" : 16,
                   "col" : 0
+                },
+                "ad31fa41-84d1-5a27-94ba-a0a00ed50cfc" : {
+                  "sizeX" : 8,
+                  "sizeY" : 5,
+                  "row" : 16,
+                  "col" : 8
                 }
               },
               "gridSettings" : {

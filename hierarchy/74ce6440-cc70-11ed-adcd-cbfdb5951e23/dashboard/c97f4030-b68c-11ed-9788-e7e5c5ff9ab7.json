@@ -8704,7 +8704,9 @@
               "showGroupTitle" : false,
               "fieldsAlignment" : "column",
               "groupTitle" : "${entityName}",
-              "fieldsInRow" : 2
+              "fieldsInRow" : 2,
+              "columnGap" : 10,
+              "rowGap" : 5
             },
             "title" : "Soglie allarmi",
             "dropShadow" : false,
@@ -12825,6 +12827,443 @@
           "col" : 0,
           "id" : "fd1138bf-7f66-b280-eef4-eec15030c622",
           "typeFullFqn" : "system.charts.basic_timeseries"
+        },
+        "d564935a-49d8-c559-9cc8-b341fe0e3611" : {
+          "type" : "latest",
+          "sizeX" : 11,
+          "sizeY" : 16,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "b755362a-b545-8ee6-a67b-df2c9e39d6e5",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "name",
+                "type" : "attribute",
+                "label" : "Nome sensore",
+                "color" : "#e91e63",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "string",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "useCustomIcon" : false,
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.19353574854107936,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "EmailEnabled",
+                "type" : "attribute",
+                "label" : "Abilita invio mail",
+                "color" : "#795548",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "booleanSwitch",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "disabledOnDataKey" : "EmailEnabled",
+                  "slideToggleLabelPosition" : "after",
+                  "useCustomIcon" : false,
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.5525634641787676,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "Email",
+                "type" : "attribute",
+                "label" : "Indirizzo email",
+                "color" : "#00bcd4",
+                "settings" : { },
+                "_hash" : 0.6801098506259771,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "TeamsEnabled",
+                "type" : "attribute",
+                "label" : "TeamsEnabled",
+                "color" : "#ff5722",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "booleanSwitch",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "disabledOnDataKey" : "TeamsUrl",
+                  "slideToggleLabelPosition" : "after",
+                  "useCustomIcon" : false,
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.9729417464355963,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "TeamsUrl",
+                "type" : "attribute",
+                "label" : "TeamsUrl",
+                "color" : "#9e9e9e",
+                "settings" : { },
+                "_hash" : 0.12908630162887857
+              }, {
+                "name" : "batteryAlarmFlag",
+                "type" : "attribute",
+                "label" : "Abilita soglia Batteria",
+                "color" : "#cddc39",
+                "settings" : {
+                  "dataKeyHidden" : true
+                },
+                "_hash" : 0.2685880551523465,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "perditaAlarmFlag",
+                "type" : "attribute",
+                "label" : "Abilita notifiche Perdita",
+                "color" : "#ffeb3b",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "booleanSwitch",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "disabledOnDataKey" : "",
+                  "appearance" : "outline",
+                  "subscriptSizing" : "fixed",
+                  "slideToggleLabelPosition" : "after",
+                  "selectOptions" : [ ],
+                  "step" : 1,
+                  "minValue" : null,
+                  "maxValue" : null,
+                  "requiredErrorMessage" : "",
+                  "minValueErrorMessage" : "",
+                  "maxValueErrorMessage" : "",
+                  "invalidDateErrorMessage" : "",
+                  "invalidJsonErrorMessage" : "",
+                  "dialogTitle" : "",
+                  "saveButtonLabel" : "",
+                  "cancelButtonLabel" : "",
+                  "useCustomIcon" : false,
+                  "icon" : "",
+                  "customIcon" : "",
+                  "useGetValueFunction" : false,
+                  "getValueFunctionBody" : "",
+                  "useSetValueFunction" : false,
+                  "setValueFunctionBody" : ""
+                },
+                "_hash" : 0.4940386003371151,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "batteryAlarmThreshold",
+                "type" : "attribute",
+                "label" : "Soglia Batteria",
+                "color" : "#009688",
+                "settings" : {
+                  "dataKeyHidden" : true
+                },
+                "_hash" : 0.7408268525860016,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "temperatureAlarmFlag",
+                "type" : "attribute",
+                "label" : "Abilita soglie Temperatura",
+                "color" : "#2196f3",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "booleanSwitch",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "disabledOnDataKey" : "temperatureAlarmThreshold",
+                  "slideToggleLabelPosition" : "after",
+                  "useCustomIcon" : false,
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.14515297098960733,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "temperatureAlarmThreshold",
+                "type" : "attribute",
+                "label" : "Soglia 1, °C (Gravità: Critica)",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.079571550252999,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "temperatureAlarmThresholdMedium",
+                "type" : "attribute",
+                "label" : "Soglia 2, °C (Gravità: Media)",
+                "color" : "#f44336",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "string",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "disabledOnDataKey" : "temperatureAlarmThreshold",
+                  "useCustomIcon" : false,
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.33897766122454787,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "temperatureAlarmThresholdLow",
+                "type" : "attribute",
+                "label" : "Soglia 3, °C (Gravità: Bassa)",
+                "color" : "#ffc107",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "string",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "disabledOnDataKey" : "temperatureAlarmThreshold",
+                  "useCustomIcon" : false,
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.7443815451517306,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "humidityAlarmFlag",
+                "type" : "attribute",
+                "label" : "Abilita soglie Umidità",
+                "color" : "#3f51b5",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "booleanSwitch",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "disabledOnDataKey" : "humidityAlarmThreshold",
+                  "slideToggleLabelPosition" : "after",
+                  "useCustomIcon" : false,
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.5238305725203223,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "humidityAlarmThreshold",
+                "type" : "attribute",
+                "label" : "Soglia 1, % (Gravità: Critica)",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.25333590115709903,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "humidityAlarmThresholdMedium",
+                "type" : "attribute",
+                "label" : "Soglia 2, % (Gravità: Media)",
+                "color" : "#9c27b0",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "string",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "disabledOnDataKey" : "humidityAlarmThreshold",
+                  "useCustomIcon" : false,
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.7745723052800844,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "humidityAlarmThresholdLow",
+                "type" : "attribute",
+                "label" : "Soglia 3, % (Gravità: Bassa)",
+                "color" : "#8bc34a",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "string",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "disabledOnDataKey" : "humidityAlarmThreshold",
+                  "useCustomIcon" : false,
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.9375434473956432,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "xPos",
+                "type" : "attribute",
+                "label" : "Posizione X nella piantina (0.0-1.0)",
+                "color" : "#455a64",
+                "settings" : { },
+                "_hash" : 0.296836707930922,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "yPos",
+                "type" : "attribute",
+                "label" : "Posizione Y nella piantina (0.0-1.0)",
+                "color" : "#aa00ff",
+                "settings" : { },
+                "_hash" : 0.7099937267034062,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1682513492328,
+                  "endTimeMs" : 1682599892328
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "widgetTitle" : "Soglie Allarmi",
+              "showResultMessage" : false,
+              "showActionButtons" : true,
+              "updateAllValues" : false,
+              "showGroupTitle" : false,
+              "fieldsAlignment" : "column",
+              "groupTitle" : "${entityName}",
+              "fieldsInRow" : 2,
+              "columnGap" : 10,
+              "rowGap" : 5
+            },
+            "title" : "Soglie allarmi",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "enableDataExport" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "18px",
+              "fontWeight" : 600,
+              "padding" : "5px 10px 5px 5px",
+              "textTransform" : "capitalize"
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "showTitleIcon" : false,
+            "titleIcon" : null,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "displayTimewindow" : true,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "Nessun sensore presente",
+            "margin" : "0px"
+          },
+          "id" : "d564935a-49d8-c559-9cc8-b341fe0e3611",
+          "typeFullFqn" : "system.input_widgets.update_multiple_attributes"
         }
       },
       "states" : {
@@ -14524,7 +14963,14 @@
           "root" : false,
           "layouts" : {
             "main" : {
-              "widgets" : { },
+              "widgets" : {
+                "d564935a-49d8-c559-9cc8-b341fe0e3611" : {
+                  "sizeX" : 24,
+                  "sizeY" : 18,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
               "gridSettings" : {
                 "backgroundColor" : "#eeeeee",
                 "columns" : 24,

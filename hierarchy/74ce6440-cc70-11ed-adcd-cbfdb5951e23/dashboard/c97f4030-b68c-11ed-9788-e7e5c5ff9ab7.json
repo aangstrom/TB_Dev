@@ -5476,7 +5476,10 @@
             "padding" : "0px",
             "settings" : {
               "useMarkdownTextFunction" : true,
-              "markdownTextFunction" : "var type;      \nif (data && data.length) {\n    type = data[0]['Type'];\n} else {\n    type = 'N/A';\n}\n\nvar model;      \nif (data && data.length) {\n    model = data[0]['model'];\n} else {\n    model = 'N/A';\n}\n             \nvar detailsStateName = getDetailsStateName(model);\n\nreturn '<div style=\"width: 100%; height: 100%;\" fxLayout=\"column\">' + \n           '<tb-dashboard-state fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"' + detailsStateName + '\"></tb-dashboard-state>' +\n       '</div>';\n\nfunction getDetailsStateName(deviceType) {\n    switch(deviceType) {\n        case 'Energy':\n            return 'energy_sensor_details';\n        case 'aa_co2':\n            return 'aa_co2_details';\n        case 'aa_multisensor':\n            return 'aa_multisensor_details';\n        case 'AA Sensor':\n            return 'aa_sensor_details';\n        case 'shelly3em':\n            return 'energy_sensor_details';\n        case 'Camera':\n            return 'camera_sensor_details';\n        case 'Caldaia':\n            return 'caldaia_details';\n        default:\n            return 'unknown_details';\n    }\n}      "
+              "markdownTextPattern" : "# Markdown/HTML card \\n - **Current entity**: **${entityName}**. \\n - **Current value**: **${Random}**.",
+              "markdownTextFunction" : "var type;      \nif (data && data.length) {\n    type = data[0]['Type'];\n} else {\n    type = 'N/A';\n}\n\nvar model;      \nif (data && data.length) {\n    model = data[0]['model'];\n} else {\n    model = 'N/A';\n}\n             \nvar detailsStateName = getDetailsStateName(model);\n\nreturn '<div style=\"width: 100%; height: 100%;\" fxLayout=\"column\">' + \n           '<tb-dashboard-state fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"' + detailsStateName + '\"></tb-dashboard-state>' +\n       '</div>';\n\nfunction getDetailsStateName(deviceType) {\n    switch(deviceType) {\n        case 'Energy':\n            return 'energy_sensor_details';\n        case 'aa_co2':\n            return 'aa_co2_details';\n        case 'aa_multisensor':\n            return 'aa_multisensor_details';\n        case 'AA Sensor':\n            return 'aa_sensor_details';\n        case 'shelly3em':\n            return 'energy_sensor_details';\n        case 'Acqua':\n            return 'acqua_details';\n        case 'Camera':\n            return 'camera_sensor_details';\n        case 'Caldaia':\n            return 'caldaia_details';\n        default:\n            return 'unknown_details';\n    }\n}      ",
+              "applyDefaultMarkdownStyle" : true,
+              "markdownCss" : ""
             },
             "title" : "New Markdown/HTML Card",
             "showTitleIcon" : false,
@@ -5511,7 +5514,7 @@
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
                 "type" : "custom",
-                "customFunction" : "const targetElement = $($event.target).closest('#settings', widgetContext.$container[0]);\n\nvar type = decodeURIComponent($(targetElement).attr('data-device-type'));\n\nvar stateId = getSettingsState(type);\n\nvar params = {\n    selectedDevice: {\n        entityId: entityId,\n        entityName: entityName,\n        entityLabel: entityLabel,\n    },\n    targetEntityParamName: 'selectedDevice'\n};\n\nwidgetContext.actionsApi.openDashboardStateInPopover($event, stateId, params, true, 'bottomRight', true, '400px', getSettingsHeight(type));\n\nfunction getSettingsState(type) {\n    switch (type) {\n        case 'Smart Shelf':\n            return 'smart_shelf_settings';\n        case 'Freezer':            \n            return 'freezer_settings';\n        case 'Chiller':            \n            return 'chiller_settings';                      \n        case 'Smart Bin':\n            return 'smart_bin_settings';          \n        case 'Door Sensor':\n            return 'door_settings';\n        case 'Liquid Level Sensor':\n            return 'liquid_sensor_settings';\n        case 'Motion Sensor':\n            return 'motion_sensor_settings';\n        case 'Occupancy Sensor':\n            return 'occupancy_sensor_settings';\n        case 'Smoke Sensor':\n            return 'smoke_sensor_settings';\n        default:\n            return 'unknown_settings';\n    }\n}\n\nfunction getSettingsHeight(type) {\n    switch (type) {\n        case 'Smart Shelf':\n            return '280px';\n        case 'Freezer':            \n            return '420px';\n        case 'Chiller':            \n            return '420px';                  \n        case 'Smart Bin':\n            return '420px';                  \n        case 'Door Sensor':\n            return '420px';\n        case 'Liquid Level Sensor':\n            return '420px';\n        case 'Motion Sensor':\n            return '280px';\n        case 'Occupancy Sensor':\n            return '420px';\n        case 'Smoke Sensor':\n            return '280px';\n        default:\n            return '35vh';\n    }\n}\n",
+                "customFunction" : "const targetElement = $($event.target).closest('#settings', widgetContext.$container[0]);\n\nvar type = decodeURIComponent($(targetElement).attr('data-device-type'));\n\nvar stateId = getSettingsState(type);\n\nvar params = {\n    selectedDevice: {\n        entityId: entityId,\n        entityName: entityName,\n        entityLabel: entityLabel,\n    },\n    targetEntityParamName: 'selectedDevice'\n};\n\nwidgetContext.actionsApi.openDashboardStateInPopover($event, stateId, params, true, 'bottomRight', true, '400px', getSettingsHeight(type));\n\nfunction getSettingsState(type) {\n    switch (type) {\n        case 'Smart Shelf':\n            return 'smart_shelf_settings';\n        case 'Acqua':\n            return 'acqua_settings';\n        case 'Freezer':            \n            return 'freezer_settings';\n        case 'Chiller':            \n            return 'chiller_settings';                      \n        case 'Smart Bin':\n            return 'smart_bin_settings';          \n        case 'Door Sensor':\n            return 'door_settings';\n        case 'Liquid Level Sensor':\n            return 'liquid_sensor_settings';\n        case 'Motion Sensor':\n            return 'motion_sensor_settings';\n        case 'Occupancy Sensor':\n            return 'occupancy_sensor_settings';\n        case 'Smoke Sensor':\n            return 'smoke_sensor_settings';\n        default:\n            return 'unknown_settings';\n    }\n}\n\nfunction getSettingsHeight(type) {\n    switch (type) {\n        case 'Smart Shelf':\n            return '280px';\n        case 'Freezer':            \n            return '420px';\n        case 'Chiller':            \n            return '420px';                  \n        case 'Smart Bin':\n            return '420px';                  \n        case 'Door Sensor':\n            return '420px';\n        case 'Liquid Level Sensor':\n            return '420px';\n        case 'Motion Sensor':\n            return '280px';\n        case 'Occupancy Sensor':\n            return '420px';\n        case 'Smoke Sensor':\n            return '280px';\n        default:\n            return '35vh';\n    }\n}\n",
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
                 "id" : "076da598-f2dc-6fda-6744-db268a4c6df7"
@@ -12582,6 +12585,246 @@
           },
           "id" : "2e44171e-07aa-3676-7168-3020bc8cb394",
           "typeFullFqn" : "system.input_widgets.update_multiple_attributes"
+        },
+        "1a4bb53d-ba23-0617-a001-531e1a1228df" : {
+          "type" : "timeseries",
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "b755362a-b545-8ee6-a67b-df2c9e39d6e5",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "water",
+                "type" : "timeseries",
+                "label" : "Perdita",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.8356206308473006,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==\"normal\"){\r\n    return 0;\r\n}\r\nelse{\r\n    return 1;\r\n}"
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : null
+            } ],
+            "timewindow" : {
+              "hideInterval" : false,
+              "hideLastInterval" : false,
+              "hideQuickInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 0,
+                "timewindowMs" : 86400000,
+                "quickInterval" : "CURRENT_DAY",
+                "interval" : 300000
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "shadowSize" : 4,
+              "fontColor" : "#545454",
+              "fontSize" : 10,
+              "xaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "grid" : {
+                "color" : "#545454",
+                "tickColor" : "#DDDDDD",
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1
+              },
+              "legend" : {
+                "show" : true,
+                "position" : "nw",
+                "backgroundColor" : "#f0f0f0",
+                "backgroundOpacity" : 0.85,
+                "labelBoxBorderColor" : "rgba(1, 1, 1, 0.45)"
+              },
+              "decimals" : 1,
+              "stack" : false,
+              "tooltipIndividual" : false,
+              "showLegend" : true,
+              "legendConfig" : {
+                "direction" : "row",
+                "position" : "bottom",
+                "sortDataKeys" : false,
+                "showMin" : false,
+                "showMax" : false,
+                "showAvg" : false,
+                "showTotal" : false,
+                "showLatest" : false
+              }
+            },
+            "title" : "Grafico",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : false,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : false,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "displayTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "1a4bb53d-ba23-0617-a001-531e1a1228df",
+          "typeFullFqn" : "system.charts.basic_timeseries"
+        },
+        "fd1138bf-7f66-b280-eef4-eec15030c622" : {
+          "type" : "timeseries",
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "b755362a-b545-8ee6-a67b-df2c9e39d6e5",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "temperature",
+                "type" : "timeseries",
+                "label" : "Temperatura °C",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.8356206308473006,
+                "aggregationType" : null,
+                "units" : "°C",
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "humidity",
+                "type" : "timeseries",
+                "label" : "Umidità %",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.4951267969613997,
+                "aggregationType" : null,
+                "units" : "%",
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "latestDataKeys" : null
+            } ],
+            "timewindow" : {
+              "hideInterval" : false,
+              "hideLastInterval" : false,
+              "hideQuickInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 0,
+                "timewindowMs" : 86400000,
+                "quickInterval" : "CURRENT_DAY",
+                "interval" : 300000
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "shadowSize" : 4,
+              "fontColor" : "#545454",
+              "fontSize" : 10,
+              "xaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "grid" : {
+                "color" : "#545454",
+                "tickColor" : "#DDDDDD",
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1
+              },
+              "legend" : {
+                "show" : true,
+                "position" : "nw",
+                "backgroundColor" : "#f0f0f0",
+                "backgroundOpacity" : 0.85,
+                "labelBoxBorderColor" : "rgba(1, 1, 1, 0.45)"
+              },
+              "decimals" : 1,
+              "stack" : false,
+              "tooltipIndividual" : false,
+              "showLegend" : true,
+              "legendConfig" : {
+                "direction" : "row",
+                "position" : "bottom",
+                "sortDataKeys" : false,
+                "showMin" : false,
+                "showMax" : false,
+                "showAvg" : false,
+                "showTotal" : false,
+                "showLatest" : false
+              }
+            },
+            "title" : "Grafico",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : false,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : false,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "displayTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "fd1138bf-7f66-b280-eef4-eec15030c622",
+          "typeFullFqn" : "system.charts.basic_timeseries"
         }
       },
       "states" : {
@@ -14272,6 +14515,55 @@
                 "mobileAutoFillHeight" : false,
                 "mobileRowHeight" : 70,
                 "outerMargin" : true
+              }
+            }
+          }
+        },
+        "acqua_settings" : {
+          "name" : "acqua_settings",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : { },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        },
+        "acqua_details" : {
+          "name" : "acqua_details",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "1a4bb53d-ba23-0617-a001-531e1a1228df" : {
+                  "sizeX" : 24,
+                  "sizeY" : 6,
+                  "row" : 0,
+                  "col" : 0
+                },
+                "fd1138bf-7f66-b280-eef4-eec15030c622" : {
+                  "sizeX" : 24,
+                  "sizeY" : 6,
+                  "row" : 6,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#FFFFFF",
+                "columns" : 24,
+                "margin" : 0,
+                "outerMargin" : false,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : false,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70
               }
             }
           }

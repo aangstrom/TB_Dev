@@ -229,6 +229,10 @@
       "toIndex" : 55,
       "type" : "Success"
     }, {
+      "fromIndex" : 30,
+      "toIndex" : 91,
+      "type" : "Success"
+    }, {
       "fromIndex" : 31,
       "toIndex" : 32,
       "type" : "Success"
@@ -494,6 +498,10 @@
       "type" : "Success"
     }, {
       "fromIndex" : 90,
+      "toIndex" : 93,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 90,
       "toIndex" : 95,
       "type" : "Success"
     }, {
@@ -515,10 +523,6 @@
     }, {
       "fromIndex" : 94,
       "toIndex" : 31,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 94,
-      "toIndex" : 91,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 22,
@@ -2780,8 +2784,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 563,
-        "layoutY" : 1315
+        "layoutX" : 657,
+        "layoutY" : 1385
       },
       "configuration" : {
         "inputValueKey" : "produzione",
@@ -2822,8 +2826,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 563,
-        "layoutY" : 1359
+        "layoutX" : 657,
+        "layoutY" : 1429
       },
       "configuration" : {
         "inputValueKey" : "produzioneCost",
@@ -3242,8 +3246,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 564,
-        "layoutY" : 1403
+        "layoutX" : 658,
+        "layoutY" : 1473
       },
       "configuration" : {
         "inputValueKey" : "generale",
@@ -3284,8 +3288,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 564,
-        "layoutY" : 1447
+        "layoutX" : 658,
+        "layoutY" : 1517
       },
       "configuration" : {
         "inputValueKey" : "generaleCost",
@@ -3326,8 +3330,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 565,
-        "layoutY" : 1489
+        "layoutX" : 659,
+        "layoutY" : 1559
       },
       "configuration" : {
         "inputValueKey" : "illuminazione",
@@ -3368,8 +3372,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 565,
-        "layoutY" : 1533
+        "layoutX" : 659,
+        "layoutY" : 1603
       },
       "configuration" : {
         "inputValueKey" : "illuminazioneCost",
@@ -3410,8 +3414,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 566,
-        "layoutY" : 1577
+        "layoutX" : 660,
+        "layoutY" : 1647
       },
       "configuration" : {
         "inputValueKey" : "clima",
@@ -3452,8 +3456,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 566,
-        "layoutY" : 1621
+        "layoutX" : 660,
+        "layoutY" : 1691
       },
       "configuration" : {
         "inputValueKey" : "climaCost",
@@ -3494,13 +3498,13 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 195,
-        "layoutY" : 1782
+        "layoutX" : 128,
+        "layoutY" : 1801
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var weekday=[\"domenica\",\"lunedi\",\"martedi\",\"mercoledi\",\"giovedi\",\"venerdi\",\"sabato\"];\nvar hour=new Date().getHours();\nvar minute=new Date().getMinutes();\nvar currtime = hour * 100 + minute;\nvar day=weekday[new Date().getDay()];\n\nif(days()>0){\n    if(currtime>=mstotime(metadata.turno1inizio) && currtime<mstotime(metadata.turno1fine)){\n        msg.turno1=valore();\n        msg.turno1cost=valorecost();\n        msg.operativo=valore();\n        msg.operativoCost=valorecost();\n    }else if(currtime>=mstotime(metadata.turno2inizio) && currtime<mstotime(metadata.turno2fine)){\n        msg.turno2=valore();\n        msg.turno2cost=valorecost();\n        msg.operativo=valore();\n        msg.operativoCost=valorecost();\n    }else if(currtime>=mstotime(metadata.turno3inizio) && currtime<mstotime(metadata.turno3fine)){\n        msg.turno3=valore();\n        msg.turno3cost=valorecost();\n        msg.operativo=valore();\n        msg.operativoCost=valorecost();\n    }else{\n        msg.non_operativo=valore();\n        msg.non_operativoCost=valorecost();\n    }\n}else{\n    msg.non_operativo=valore();\n    msg.non_operativoCost=valorecost();\n}\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};\n\n\nfunction valore(){\n    if(msg.Phase_A_energy!=null){\n        result=msg.Phase_A_energy;\n    }else if(msg.Phase_B_energy!=null){\n        result=msg.Phase_B_energy;\n    }else if(msg.Phase_C_energy!=null){\n        result=msg.Phase_C_energy;\n    }else if(msg.power!=null){\n        result=msg.power;\n    }else{\n        result=null;\n    }\n    return result;\n}\n\nfunction valorecost(){\n    if(msg.Phase_A_F1!=null){\n        result=msg.Phase_A_F1;\n    }else if(msg.Phase_A_F2!=null){\n        result=msg.Phase_A_F2;\n    }else if(msg.Phase_A_F3!=null){\n        result=msg.Phase_A_F3;\n    }else if(msg.Phase_A_F23!=null){\n        result=msg.Phase_A_F23;\n    }else if(msg.Phase_B_F1!=null){\n        result=msg.Phase_B_F1;\n    }else if(msg.Phase_B_F2!=null){\n        result=msg.Phase_B_F2;\n    }else if(msg.Phase_B_F3!=null){\n        result=msg.Phase_B_F3;\n    }else if(msg.Phase_B_F23!=null){\n        result=msg.Phase_B_F23;\n    }else if(msg.Phase_C_F1!=null){\n        result=msg.Phase_C_F1;\n    }else if(msg.Phase_C_F2!=null){\n        result=msg.Phase_C_F2;\n    }else if(msg.Phase_C_F3!=null){\n        result=msg.Phase_C_F3;\n    }else if(msg.Phase_C_F23!=null){\n        result=msg.Phase_C_F23;\n    }else if(msg.F1!=null){\n        result=msg.F1;\n    }else if(msg.F2!=null){\n        result=msg.F2;\n    }else if(msg.F3!=null){\n        result=msg.F3;\n    }else if(msg.F23!=null){\n        result=msg.F23;\n    }else{\n        result=null;\n    }\n    return result;\n}\n\nfunction mstotime(durata){\n    var ore = durata / (1000 * 60 * 60);\n    durata -= (ore * 1000 * 60 * 60);\n    var minuti = (int)(durata / (1000 * 60));\n    durata -= (minuti * 1000 * 60 );\n    if(minuti<10){\n        return (ore+\"\"+minuti)*10;\n    }else{\n        return (ore+\"\"+minuti)*1;\n    }\n}\n\nfunction days(){\n    if(metadata.turnoLunedi==true && day==\"lunedi\"){\n        return 1;\n    }else if(metadata.turnoMartedi==true && day==\"martedi\"){\n        return 2;\n    }else if(metadata.turnoMercoledi==true && day==\"mercoledi\"){\n        return 3;\n    }else if(metadata.turnoGiovedi==true && day==\"giovedi\"){\n        return 4;\n    }else if(metadata.turnoVenerdi==true && day==\"venerdi\"){\n        return 5;\n    }else if(metadata.turnoSabato==true && day==\"sabato\"){\n        return 6;\n    }else if(metadata.turnoDomenica==true && day==\"domenica\"){\n        return 7;\n    }else{\n        return 0;\n    }\n}"
+        "tbelScript" : "var weekday=[\"domenica\",\"lunedi\",\"martedi\",\"mercoledi\",\"giovedi\",\"venerdi\",\"sabato\"];\nvar hour=new Date().getHours();\nvar minute=new Date().getMinutes();\nvar currtime = hour * 100 + minute;\nvar day=weekday[new Date().getDay()];\n\nif(days()>0){\n    if(currtime>=mstotime(metadata.turno1inizio) && currtime<mstotime(metadata.turno1fine)){\n        msg.turno1=valore();\n        msg.turno1cost=valorecost();\n        msg.operativo=valore();\n        msg.operativoCost=valorecost();\n    }else if(currtime>=mstotime(metadata.turno2inizio) && currtime<mstotime(metadata.turno2fine)){\n        msg.turno2=valore();\n        msg.turno2cost=valorecost();\n        msg.operativo=valore();\n        msg.operativoCost=valorecost();\n    }else if(currtime>=mstotime(metadata.turno3inizio) && currtime<mstotime(metadata.turno3fine)){\n        msg.turno3=valore();\n        msg.turno3cost=valorecost();\n        msg.operativo=valore();\n        msg.operativoCost=valorecost();\n    }else{\n        msg.non_operativo=valore();\n        msg.non_operativoCost=valorecost();\n    }\n}else{\n    msg.non_operativo=valore();\n    msg.non_operativoCost=valorecost();\n}\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};\n\n\nfunction valore(){\n    if(msg.Phase_A_energy!=null){\n        result=msg.Phase_A_energy;\n    }else if(msg.Phase_B_energy!=null){\n        result=msg.Phase_B_energy;\n    }else if(msg.Phase_C_energy!=null){\n        result=msg.Phase_C_energy;\n    }else if(msg.power!=null){\n        result=msg.power;\n    }else{\n        result=null;\n    }\n    return result;\n}\n\nfunction valorecost(){\n    if(msg.Phase_A_F1cost!=null){\n        result=msg.Phase_A_F1cost;\n    }else if(msg.Phase_A_F2cost!=null){\n        result=msg.Phase_A_F2cost;\n    }else if(msg.Phase_A_F3cost!=null){\n        result=msg.Phase_A_F3cost;\n    }else if(msg.Phase_A_F23cost!=null){\n        result=msg.Phase_A_F23cost;\n    }else if(msg.Phase_B_F1cost!=null){\n        result=msg.Phase_B_F1cost;\n    }else if(msg.Phase_B_F2cost!=null){\n        result=msg.Phase_B_F2cost;\n    }else if(msg.Phase_B_F3cost!=null){\n        result=msg.Phase_B_F3cost;\n    }else if(msg.Phase_B_F23cost!=null){\n        result=msg.Phase_B_F23cost;\n    }else if(msg.Phase_C_F1cost!=null){\n        result=msg.Phase_C_F1cost;\n    }else if(msg.Phase_C_F2cost!=null){\n        result=msg.Phase_C_F2cost;\n    }else if(msg.Phase_C_F3cost!=null){\n        result=msg.Phase_C_F3cost;\n    }else if(msg.Phase_C_F23cost!=null){\n        result=msg.Phase_C_F23cost;\n    }else if(msg.F1cost!=null){\n        result=msg.F1cost;\n    }else if(msg.F2cost!=null){\n        result=msg.F2cost;\n    }else if(msg.F3cost!=null){\n        result=msg.F3cost;\n    }else if(msg.F23cost!=null){\n        result=msg.F23cost;\n    }else{\n        result=null;\n    }\n    return result;\n}\n\nfunction mstotime(durata){\n    var ore = durata / (1000 * 60 * 60);\n    durata -= (ore * 1000 * 60 * 60);\n    var minuti = (int)(durata / (1000 * 60));\n    durata -= (minuti * 1000 * 60 );\n    if(minuti<10){\n        return (ore+\"\"+minuti)*10;\n    }else{\n        return (ore+\"\"+minuti)*1;\n    }\n}\n\nfunction days(){\n    if(metadata.turnoLunedi==true && day==\"lunedi\"){\n        return 1;\n    }else if(metadata.turnoMartedi==true && day==\"martedi\"){\n        return 2;\n    }else if(metadata.turnoMercoledi==true && day==\"mercoledi\"){\n        return 3;\n    }else if(metadata.turnoGiovedi==true && day==\"giovedi\"){\n        return 4;\n    }else if(metadata.turnoVenerdi==true && day==\"venerdi\"){\n        return 5;\n    }else if(metadata.turnoSabato==true && day==\"sabato\"){\n        return 6;\n    }else if(metadata.turnoDomenica==true && day==\"domenica\"){\n        return 7;\n    }else{\n        return 0;\n    }\n}"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -3517,8 +3521,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 238,
-        "layoutY" : 1441
+        "layoutX" : 72,
+        "layoutY" : 1394
       },
       "configuration" : {
         "relationsQuery" : {
@@ -3563,13 +3567,13 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 967,
-        "layoutY" : 1867
+        "layoutX" : 382,
+        "layoutY" : 1553
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var message={};\nvar tipologia=metadata.ss_tipologia;\nvar power=msg.power;\nif(tipologia!=null && power!=null){\n    if(tipologia==\"produzione\"){\n        message.produzione=power;\n        if(cost()!=null){message.produzioneCost=cost();}\n    }else if(tipologia==\"illuminazione\"){\n        message.illuminazione=power;\n        if(cost()!=null){message.illuminazioneCost=cost();}\n    }else if(tipologia==\"clima\"){\n        message.clima=power;\n        if(cost()!=null){message.climaCost=cost();}\n    }else if(tipologia==\"generale\"){\n        message.generale=power;\n        if(cost()!=null){message.generaleCost=cost();}\n    }\n}\n/*if(msg.non_operativo!=null){message.non_operativo=msg.non_operativo;}\nif(msg.operativo!=null){message.operativo=msg.operativo;}\nif(msg.pranzo!=null){message.pranzo=msg.pranzo;}\nif(msg.F1!=null){message.F1=msg.F1;}\nif(msg.F1cost!=null){message.F1cost=msg.F1cost;}\nif(msg.F2!=null){message.F2=msg.F2;}\nif(msg.F2cost!=null){message.F2cost=msg.F2cost;}\nif(msg.F3!=null){message.F3=msg.F3;}\nif(msg.F3cost!=null){message.F3cost=msg.F3cost;}\nif(msg.F23!=null){message.F23=msg.F23;}\nif(msg.F23cost!=null){message.F23cost=msg.F23cost;}*/\n\nreturn {msg: message, metadata: metadata, msgType: msgType};\n\nfunction cost(){\n    if(msg.F1cost!=null){\n        return msg.F1cost;\n    }else if(msg.F2cost!=null){\n        return msg.F2cost;\n    }else if(msg.F3cost!=null){\n        return msg.F3cost;\n    }else if(msg.F23cost!=null){\n        return msg.F23cost;\n    }\n}"
+        "tbelScript" : "var message={};\nvar tipologia=metadata.ss_tipologia;\nif(tipologia!=null){\n    if(tipologia==\"produzione\"){\n        message.produzione=valore();\n        message.produzioneCost=valorecost();\n    }else if(tipologia==\"illuminazione\"){\n        message.illuminazione=valore();\n        message.illuminazioneCost=valorecost();\n    }else if(tipologia==\"clima\"){\n        message.clima=valore();\n        message.climaCost=valorecost();\n    }else if(tipologia==\"generale\"){\n        message.generale=valore();\n        message.generaleCost=valorecost();\n    }\n}\n\nreturn {msg: message, metadata: metadata, msgType: msgType};\n\nfunction valore(){\n    if(msg.Phase_A_energy!=null){\n        result=msg.Phase_A_energy;\n    }else if(msg.Phase_B_energy!=null){\n        result=msg.Phase_B_energy;\n    }else if(msg.Phase_C_energy!=null){\n        result=msg.Phase_C_energy;\n    }else if(msg.power!=null){\n        result=msg.power;\n    }else{\n        result=null;\n    }\n    return result;\n}\n\nfunction valorecost(){\n    if(msg.Phase_A_F1cost!=null){\n        result=msg.Phase_A_F1cost;\n    }else if(msg.Phase_A_F2cost!=null){\n        result=msg.Phase_A_F2cost;\n    }else if(msg.Phase_A_F3cost!=null){\n        result=msg.Phase_A_F3cost;\n    }else if(msg.Phase_A_F23cost!=null){\n        result=msg.Phase_A_F23cost;\n    }else if(msg.Phase_B_F1cost!=null){\n        result=msg.Phase_B_F1cost;\n    }else if(msg.Phase_B_F2cost!=null){\n        result=msg.Phase_B_F2cost;\n    }else if(msg.Phase_B_F3cost!=null){\n        result=msg.Phase_B_F3cost;\n    }else if(msg.Phase_B_F23cost!=null){\n        result=msg.Phase_B_F23cost;\n    }else if(msg.Phase_C_F1cost!=null){\n        result=msg.Phase_C_F1cost;\n    }else if(msg.Phase_C_F2cost!=null){\n        result=msg.Phase_C_F2cost;\n    }else if(msg.Phase_C_F3cost!=null){\n        result=msg.Phase_C_F3cost;\n    }else if(msg.Phase_C_F23cost!=null){\n        result=msg.Phase_C_F23cost;\n    }else if(msg.F1cost!=null){\n        result=msg.F1cost;\n    }else if(msg.F2cost!=null){\n        result=msg.F2cost;\n    }else if(msg.F3cost!=null){\n        result=msg.F3cost;\n    }else if(msg.F23cost!=null){\n        result=msg.F23cost;\n    }else{\n        result=null;\n    }\n    return result;\n}"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -3579,15 +3583,15 @@
         "entityType" : "RULE_NODE",
         "id" : "214c4420-bb78-11ee-9101-d71950cabe39"
       },
-      "name" : "uffici/produzione + F1/F2/F3/F23",
+      "name" : "uffici/produzione",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 960,
-        "layoutY" : 1597
+        "layoutX" : 274,
+        "layoutY" : 1648
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,

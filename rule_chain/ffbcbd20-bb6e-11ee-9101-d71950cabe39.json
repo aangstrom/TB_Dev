@@ -457,6 +457,54 @@
       "toIndex" : 61,
       "type" : "Success"
     }, {
+      "fromIndex" : 90,
+      "toIndex" : 75,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 90,
+      "toIndex" : 76,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 90,
+      "toIndex" : 77,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 90,
+      "toIndex" : 78,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 90,
+      "toIndex" : 79,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 90,
+      "toIndex" : 80,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 90,
+      "toIndex" : 81,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 90,
+      "toIndex" : 82,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 90,
+      "toIndex" : 83,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 90,
+      "toIndex" : 95,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 90,
+      "toIndex" : 96,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 90,
+      "toIndex" : 97,
+      "type" : "Success"
+    }, {
       "fromIndex" : 91,
       "toIndex" : 90,
       "type" : "Success"
@@ -2732,8 +2780,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 551,
-        "layoutY" : 1511
+        "layoutX" : 563,
+        "layoutY" : 1315
       },
       "configuration" : {
         "inputValueKey" : "produzione",
@@ -2774,8 +2822,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 551,
-        "layoutY" : 1555
+        "layoutX" : 563,
+        "layoutY" : 1359
       },
       "configuration" : {
         "inputValueKey" : "produzioneCost",
@@ -2816,17 +2864,17 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 551,
-        "layoutY" : 1383
+        "layoutX" : 552,
+        "layoutY" : 2080
       },
       "configuration" : {
-        "inputValueKey" : "operativo",
-        "outputValueKey" : "operativo",
+        "inputValueKey" : "operativoCost",
+        "outputValueKey" : "operativoCost",
         "mathFunction" : "SUM",
         "aggIntervalType" : "CUSTOM",
         "timeZoneId" : "Europe/Rome",
-        "aggIntervalValue" : 30,
-        "aggIntervalTimeUnit" : "MINUTES",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
         "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
         "outMsgType" : "POST_TELEMETRY_REQUEST",
         "intervalCheckValue" : 1,
@@ -2851,15 +2899,15 @@
         "entityType" : "RULE_NODE",
         "id" : "21428020-bb78-11ee-9101-d71950cabe39"
       },
-      "name" : "Operativo",
+      "name" : "operativoCost",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 551,
-        "layoutY" : 1426
+        "layoutX" : 552,
+        "layoutY" : 2123
       },
       "configuration" : {
         "inputValueKey" : "non_operativo",
@@ -2867,8 +2915,8 @@
         "mathFunction" : "SUM",
         "aggIntervalType" : "CUSTOM",
         "timeZoneId" : "Europe/Rome",
-        "aggIntervalValue" : 30,
-        "aggIntervalTimeUnit" : "MINUTES",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
         "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
         "outMsgType" : "POST_TELEMETRY_REQUEST",
         "intervalCheckValue" : 1,
@@ -2893,15 +2941,15 @@
         "entityType" : "RULE_NODE",
         "id" : "21434370-bb78-11ee-9101-d71950cabe39"
       },
-      "name" : "Non_operativo",
+      "name" : "non_operativo",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 551,
-        "layoutY" : 1468
+        "layoutX" : 552,
+        "layoutY" : 2165
       },
       "configuration" : {
         "inputValueKey" : "pranzo",
@@ -2909,8 +2957,8 @@
         "mathFunction" : "SUM",
         "aggIntervalType" : "CUSTOM",
         "timeZoneId" : "Europe/Rome",
-        "aggIntervalValue" : 30,
-        "aggIntervalTimeUnit" : "MINUTES",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
         "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
         "outMsgType" : "POST_TELEMETRY_REQUEST",
         "intervalCheckValue" : 1,
@@ -2935,7 +2983,7 @@
         "entityType" : "RULE_NODE",
         "id" : "2143dfb0-bb78-11ee-9101-d71950cabe39"
       },
-      "name" : "Pranzo",
+      "name" : "pranzo",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -2943,7 +2991,7 @@
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 553,
-        "layoutY" : 1886
+        "layoutY" : 1778
       },
       "configuration" : {
         "inputValueKey" : "turno1",
@@ -2951,8 +2999,8 @@
         "mathFunction" : "SUM",
         "aggIntervalType" : "CUSTOM",
         "timeZoneId" : "Europe/Rome",
-        "aggIntervalValue" : 30,
-        "aggIntervalTimeUnit" : "MINUTES",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
         "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
         "outMsgType" : "POST_TELEMETRY_REQUEST",
         "intervalCheckValue" : 1,
@@ -2977,7 +3025,7 @@
         "entityType" : "RULE_NODE",
         "id" : "214454e0-bb78-11ee-9101-d71950cabe39"
       },
-      "name" : "Turno1",
+      "name" : "turno1",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -2985,7 +3033,7 @@
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 553,
-        "layoutY" : 1929
+        "layoutY" : 1821
       },
       "configuration" : {
         "inputValueKey" : "turno1cost",
@@ -2993,8 +3041,8 @@
         "mathFunction" : "SUM",
         "aggIntervalType" : "CUSTOM",
         "timeZoneId" : "Europe/Rome",
-        "aggIntervalValue" : 30,
-        "aggIntervalTimeUnit" : "MINUTES",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
         "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
         "outMsgType" : "POST_TELEMETRY_REQUEST",
         "intervalCheckValue" : 1,
@@ -3019,7 +3067,7 @@
         "entityType" : "RULE_NODE",
         "id" : "2144f120-bb78-11ee-9101-d71950cabe39"
       },
-      "name" : "Turno1cost",
+      "name" : "turno1cost",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -3027,7 +3075,7 @@
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 552,
-        "layoutY" : 1972
+        "layoutY" : 1864
       },
       "configuration" : {
         "inputValueKey" : "turno2",
@@ -3035,8 +3083,8 @@
         "mathFunction" : "SUM",
         "aggIntervalType" : "CUSTOM",
         "timeZoneId" : "Europe/Rome",
-        "aggIntervalValue" : 30,
-        "aggIntervalTimeUnit" : "MINUTES",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
         "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
         "outMsgType" : "POST_TELEMETRY_REQUEST",
         "intervalCheckValue" : 1,
@@ -3061,7 +3109,7 @@
         "entityType" : "RULE_NODE",
         "id" : "21458d60-bb78-11ee-9101-d71950cabe39"
       },
-      "name" : "Turno2",
+      "name" : "turno2",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -3069,7 +3117,7 @@
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 552,
-        "layoutY" : 2015
+        "layoutY" : 1907
       },
       "configuration" : {
         "inputValueKey" : "turno2cost",
@@ -3077,8 +3125,8 @@
         "mathFunction" : "SUM",
         "aggIntervalType" : "CUSTOM",
         "timeZoneId" : "Europe/Rome",
-        "aggIntervalValue" : 30,
-        "aggIntervalTimeUnit" : "MINUTES",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
         "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
         "outMsgType" : "POST_TELEMETRY_REQUEST",
         "intervalCheckValue" : 1,
@@ -3103,7 +3151,7 @@
         "entityType" : "RULE_NODE",
         "id" : "2145db80-bb78-11ee-9101-d71950cabe39"
       },
-      "name" : "Turno2cost",
+      "name" : "turno2cost",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -3111,7 +3159,7 @@
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 552,
-        "layoutY" : 2059
+        "layoutY" : 1951
       },
       "configuration" : {
         "inputValueKey" : "turno3",
@@ -3119,8 +3167,8 @@
         "mathFunction" : "SUM",
         "aggIntervalType" : "CUSTOM",
         "timeZoneId" : "Europe/Rome",
-        "aggIntervalValue" : 30,
-        "aggIntervalTimeUnit" : "MINUTES",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
         "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
         "outMsgType" : "POST_TELEMETRY_REQUEST",
         "intervalCheckValue" : 1,
@@ -3145,7 +3193,7 @@
         "entityType" : "RULE_NODE",
         "id" : "214650b0-bb78-11ee-9101-d71950cabe39"
       },
-      "name" : "Turno3",
+      "name" : "turno3",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -3153,7 +3201,7 @@
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 552,
-        "layoutY" : 2103
+        "layoutY" : 1995
       },
       "configuration" : {
         "inputValueKey" : "turno3cost",
@@ -3161,8 +3209,8 @@
         "mathFunction" : "SUM",
         "aggIntervalType" : "CUSTOM",
         "timeZoneId" : "Europe/Rome",
-        "aggIntervalValue" : 30,
-        "aggIntervalTimeUnit" : "MINUTES",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
         "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
         "outMsgType" : "POST_TELEMETRY_REQUEST",
         "intervalCheckValue" : 1,
@@ -3187,15 +3235,15 @@
         "entityType" : "RULE_NODE",
         "id" : "2146c5e0-bb78-11ee-9101-d71950cabe39"
       },
-      "name" : "Turno3cost",
+      "name" : "turno3cost",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 552,
-        "layoutY" : 1599
+        "layoutX" : 564,
+        "layoutY" : 1403
       },
       "configuration" : {
         "inputValueKey" : "generale",
@@ -3236,8 +3284,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 552,
-        "layoutY" : 1643
+        "layoutX" : 564,
+        "layoutY" : 1447
       },
       "configuration" : {
         "inputValueKey" : "generaleCost",
@@ -3278,8 +3326,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 553,
-        "layoutY" : 1685
+        "layoutX" : 565,
+        "layoutY" : 1489
       },
       "configuration" : {
         "inputValueKey" : "illuminazione",
@@ -3320,8 +3368,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 553,
-        "layoutY" : 1729
+        "layoutX" : 565,
+        "layoutY" : 1533
       },
       "configuration" : {
         "inputValueKey" : "illuminazioneCost",
@@ -3362,8 +3410,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 554,
-        "layoutY" : 1773
+        "layoutX" : 566,
+        "layoutY" : 1577
       },
       "configuration" : {
         "inputValueKey" : "clima",
@@ -3404,8 +3452,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 554,
-        "layoutY" : 1817
+        "layoutX" : 566,
+        "layoutY" : 1621
       },
       "configuration" : {
         "inputValueKey" : "climaCost",
@@ -3446,8 +3494,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 266,
-        "layoutY" : 1863
+        "layoutX" : 195,
+        "layoutY" : 1782
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -3585,6 +3633,132 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 555,
+        "layoutY" : 2228
+      },
+      "configuration" : {
+        "inputValueKey" : "operativoCost",
+        "outputValueKey" : "operativoCost",
+        "mathFunction" : "SUM",
+        "aggIntervalType" : "CUSTOM",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e0f316a0-bb96-11ee-9101-d71950cabe39"
+      },
+      "name" : "operativoCost",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 555,
+        "layoutY" : 2271
+      },
+      "configuration" : {
+        "inputValueKey" : "non_operativoCost",
+        "outputValueKey" : "non_operativoCost",
+        "mathFunction" : "SUM",
+        "aggIntervalType" : "CUSTOM",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e0f3d9f0-bb96-11ee-9101-d71950cabe39"
+      },
+      "name" : "non_operativoCost",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 555,
+        "layoutY" : 2313
+      },
+      "configuration" : {
+        "inputValueKey" : "pranzoCost",
+        "outputValueKey" : "pranzoCost",
+        "mathFunction" : "SUM",
+        "aggIntervalType" : "CUSTOM",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e0f47630-bb96-11ee-9101-d71950cabe39"
+      },
+      "name" : "pranzoCost",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
     } ],
     "ruleChainConnections" : null
   },

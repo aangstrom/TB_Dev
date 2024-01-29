@@ -4464,7 +4464,7 @@
             "settings" : {
               "useMarkdownTextFunction" : true,
               "markdownTextPattern" : "# Markdown/HTML card \\n - **Current entity**: **${entityName}**. \\n - **Current value**: **${Random}**.",
-              "markdownTextFunction" : "var device,device1,reparto,bagni,supermercato,colonnine,colonnina,piazzole,piazzola,piscina,ristorante,allarmi,wc,stato_bagno,affluenza;\nif (data && data.length && data[0].entityId) {\n    if(data[0].Type==\"Acqua\" || data[0].Type==\"AA Sensor\" || data[0].Type==\"Energy\" || data[0].Type==\"AA Energy\" || data[0].Type==\"Presenza\" || data[0].Type==\"Condizionatore\" || data[0].Type==\"Macchina Utensile\"){\n        if(data[0].entityName==\"Tornio 1\"){\n            device1=true;\n        }else{\n            device=true;\n        }\n    }\n    if(data[0].Type=='Reparto'){\n        reparto=true;\n    }\n    if(data[0].Type=='Colonnina'){\n        colonnina=true;\n    }\n    if(data[0].Type=='Piazzola'){\n        piazzola=true;\n    }\n    if(data[0].Type=='Servizio Igienico'){\n        wc=true;\n    }\n    if(data[0].Type=='Stato Bagno'){\n        stato_bagno=true;\n    }\n    if(data[0].Type=='Affluenza'){\n        affluenza=true;\n    }\n    if(data[0].deviceType==\"Categoria\"){\n        /*if(data[0].entityName==\"Reparto 1\"){\n            all_reparti=true;\n        }*/\n        if(data[0].entityName==\"Servizi Igienici\"){\n            bagni=true;\n        }\n        if(data[0].entityName==\"Piscina\"){\n            piscina=true;\n        }\n        if(data[0].entityName==\"Piazzole\"){\n            piazzole=true;\n        }\n        if(data[0].entityName==\"Colonnine Ricarica\"){\n            colonnine=true;\n        }\n        if(data[0].entityName==\"Supermercato\"){\n            supermercato=true;\n        }\n        if(data[0].entityName==\"Ristorante\"){\n            supermercato=true;\n        }\n        if(data[0].entityName==\"Allarmi\"){\n            allarmi=true;\n        }\n    }\n} else {\n    device = false;\n    reparto = false;\n    bagni = false;\n    wc = false;\n    supermercato = false;\n    colonnine = false;\n    colonnina = false;\n    piazzole = false;\n    piazzola = false;\n    piscina = false;\n    ristorante = false;\n    allarmi = false;\n    stato_bagno = false;\n    affluenza = false;\n}\nreturn '<div class=\"main-layout\" style=\"width: 100%; height:100%;\" fxLayout=\"column\">' +\n    (\n        reparto==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        //reparto==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_reparto\"></tb-dashboard-state></div>') :\n        bagni==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_bagni\"></tb-dashboard-state></div>') :\n        wc==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        supermercato==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        ristorante==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        colonnine==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_colonnine\"></tb-dashboard-state></div>') :\n        colonnina==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        piazzole==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_piazzole\"></tb-dashboard-state></div>') :\n        piazzola==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        piscina==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        device==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_device\"></tb-dashboard-state></div>') :\n        device1==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_device_1\"></tb-dashboard-state></div>') :\n        allarmi==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"alarm_all\"></tb-dashboard-state></div>') :\n        affluenza==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_device\"></tb-dashboard-state></div>') :\n        stato_bagno==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_device\"></tb-dashboard-state></div>') :\n        ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_mappa\"></tb-dashboard-state></div>')\n    );",
+              "markdownTextFunction" : "var device,device1,reparto,bagni,supermercato,colonnine,colonnina,piazzole,piazzola,piscina,ristorante,allarmi,wc,stato_bagno,affluenza,floorplan;\nif (data && data.length && data[0].entityId) {\n    if(data[0].Type=='Customer' || data[0].Type==\"Reparto\"){\n        floorplan=true;\n    }\n    if(data[0].Type==\"Acqua\" || data[0].Type==\"AA Sensor\" || data[0].Type==\"Energy\" || data[0].Type==\"AA Energy\" || data[0].Type==\"Presenza\" || data[0].Type==\"Condizionatore\" || data[0].Type==\"Macchina Utensile\"){\n        if(data[0].entityName==\"Tornio 1\"){\n            device1=true;\n        }else{\n            device=true;\n        }\n    }\n    if(data[0].Type=='Reparto'){\n        reparto=true;\n    }\n    if(data[0].Type=='Colonnina'){\n        colonnina=true;\n    }\n    if(data[0].Type=='Piazzola'){\n        piazzola=true;\n    }\n    if(data[0].Type=='Servizio Igienico'){\n        wc=true;\n    }\n    if(data[0].Type=='Stato Bagno'){\n        stato_bagno=true;\n    }\n    if(data[0].Type=='Affluenza'){\n        affluenza=true;\n    }\n    if(data[0].deviceType==\"Categoria\"){\n        /*if(data[0].entityName==\"Reparto 1\"){\n            all_reparti=true;\n        }*/\n        if(data[0].entityName==\"Servizi Igienici\"){\n            bagni=true;\n        }\n        if(data[0].entityName==\"Piscina\"){\n            piscina=true;\n        }\n        if(data[0].entityName==\"Piazzole\"){\n            piazzole=true;\n        }\n        if(data[0].entityName==\"Colonnine Ricarica\"){\n            colonnine=true;\n        }\n        if(data[0].entityName==\"Supermercato\"){\n            supermercato=true;\n        }\n        if(data[0].entityName==\"Ristorante\"){\n            supermercato=true;\n        }\n        if(data[0].entityName==\"Allarmi\"){\n            allarmi=true;\n        }\n    }\n} else {\n    device = false;\n    reparto = false;\n    bagni = false;\n    wc = false;\n    supermercato = false;\n    colonnine = false;\n    colonnina = false;\n    piazzole = false;\n    piazzola = false;\n    piscina = false;\n    ristorante = false;\n    allarmi = false;\n    stato_bagno = false;\n    affluenza = false;\n    floorplan = false;\n}\nreturn '<div class=\"main-layout\" style=\"width: 100%; height:100%;\" fxLayout=\"column\">' +\n    (\n        reparto==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        //reparto==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_reparto\"></tb-dashboard-state></div>') :\n        bagni==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_bagni\"></tb-dashboard-state></div>') :\n        wc==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        supermercato==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        ristorante==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        colonnine==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_colonnine\"></tb-dashboard-state></div>') :\n        colonnina==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        piazzole==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_piazzole\"></tb-dashboard-state></div>') :\n        piazzola==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        piscina==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        device==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_device\"></tb-dashboard-state></div>') :\n        device1==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_device_1\"></tb-dashboard-state></div>') :\n        allarmi==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"alarm_all\"></tb-dashboard-state></div>') :\n        affluenza==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_device\"></tb-dashboard-state></div>') :\n        stato_bagno==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_device\"></tb-dashboard-state></div>') :\n        floorplan==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_floorplan\"></tb-dashboard-state></div>') :\n        ()\n    );",
               "applyDefaultMarkdownStyle" : true,
               "markdownCss" : ".tb-markdown-view > div {\n    padding: 0;\n}\n.header{\n    margin: 10px;\n    height: 35px;\n}\n.title {\n    font-size: 18px;\n    font-weight: 500;\n    color: #28232D;\n}\n#edit{\n    margin-right:10px;\n}"
             },
@@ -10813,6 +10813,307 @@
           "row" : 0,
           "col" : 0,
           "id" : "2d409446-3de5-dad9-ff64-ff9e6d8bcbe3"
+        },
+        "4fb2e6e8-6ae7-68f0-9cd6-2461373c4e12" : {
+          "typeFullFqn" : "system.cards.html_value_card",
+          "type" : "latest",
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "55f23be2-d63e-ce45-b3f5-d05604647f2a",
+              "dataKeys" : [ ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1700662695164,
+                  "endTimeMs" : 1700749095164
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div class='card'>\n    <div id=\"report\">Report</div>\n    <div id=\"allarmi\">Allarmi</div>\n    <div id=\"eventi\">Eventi</div>\n</div>",
+              "cardCss" : ".card {\n    font-weight: bold;\n    font-size: 32px;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: space-around;\n}"
+            },
+            "title" : "HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "report",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "report",
+                "setEntityId" : true,
+                "stateEntityParamName" : "reparto_selezionato",
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "90d96311-25bf-33ce-435e-b4a94437c44a"
+              }, {
+                "name" : "allarmi",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "page_allarmi_selezionati",
+                "setEntityId" : true,
+                "stateEntityParamName" : "bungalow_selezionato",
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "1f4ef349-3152-8241-701f-0ac62b8f586f"
+              }, {
+                "name" : "eventi",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "page_eventi_selezionati",
+                "setEntityId" : true,
+                "stateEntityParamName" : "bungalow_selezionato",
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "e190ccc6-e437-9587-8193-ba4ae1fc96f0"
+              } ]
+            },
+            "displayTimewindow" : true,
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "4fb2e6e8-6ae7-68f0-9cd6-2461373c4e12"
+        },
+        "5dd27b40-a001-2d27-dbef-eaae078f862f" : {
+          "typeFullFqn" : "system.maps_v2.openstreetmap",
+          "type" : "latest",
+          "sizeX" : 8.5,
+          "sizeY" : 6,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "58816d42-5d16-591d-205a-d85c302930d8",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "latitude",
+                "type" : "attribute",
+                "label" : "latitude",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.12428908629594004
+              }, {
+                "name" : "longitude",
+                "type" : "attribute",
+                "label" : "longitude",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.36264712023290846
+              }, {
+                "name" : "name",
+                "type" : "attribute",
+                "label" : "name",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.3675296441967104
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1706459264234,
+                  "endTimeMs" : 1706545664234
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "provider" : "openstreet-map",
+              "gmApiKey" : "AIzaSyDoEx2kaGz3PxwbI9T7ccTSg5xjdw8Nw8Q",
+              "gmDefaultMapType" : "roadmap",
+              "mapProvider" : "OpenStreetMap.Mapnik",
+              "useCustomProvider" : false,
+              "customProviderTileUrl" : "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+              "mapProviderHere" : "HERE.normalDay",
+              "credentials" : {
+                "useV3" : true,
+                "app_id" : "AhM6TzD9ThyK78CT3ptx",
+                "app_code" : "p6NPiITB3Vv0GMUFnkLOOg",
+                "apiKey" : "kVXykxAfZ6LS4EbCTO02soFVfjA7HoBzNVVH9u7nzoE"
+              },
+              "mapImageUrl" : "tb-image:aGVyZV9tYXBfc3lzdGVtX3dpZGdldF9tYXBfaW1hZ2Uuc3Zn:IkhFUkUgTWFwIiBzeXN0ZW0gd2lkZ2V0IG1hcCBpbWFnZQ==;data:image/svg+xml;base64,PHN2ZyBpZD0ic3ZnMiIgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTAwIiB3aWR0aD0iMTAwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zOmNjPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgdmlld0JveD0iMCAwIDEwMCAxMDAiPgogPGcgaWQ9ImxheWVyMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAtOTUyLjM2KSI+CiAgPHJlY3QgaWQ9InJlY3Q0Njg0IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBoZWlnaHQ9Ijk5LjAxIiB3aWR0aD0iOTkuMDEiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiB5PSI5NTIuODYiIHg9Ii40OTUwNSIgc3Ryb2tlLXdpZHRoPSIuOTkwMTAiIGZpbGw9IiNlZWUiLz4KICA8dGV4dCBpZD0idGV4dDQ2ODYiIHN0eWxlPSJ3b3JkLXNwYWNpbmc6MHB4O2xldHRlci1zcGFjaW5nOjBweDt0ZXh0LWFuY2hvcjptaWRkbGU7dGV4dC1hbGlnbjpjZW50ZXIiIGZvbnQtd2VpZ2h0PSJib2xkIiB4bWw6c3BhY2U9InByZXNlcnZlIiBmb250LXNpemU9IjEwcHgiIGxpbmUtaGVpZ2h0PSIxMjUlIiB5PSI5NzAuNzI4MDkiIHg9IjQ5LjM5NjQ3NyIgZm9udC1mYW1pbHk9IlJvYm90byIgZmlsbD0iIzY2NjY2NiI+PHRzcGFuIGlkPSJ0c3BhbjQ2OTAiIHg9IjUwLjY0NjQ3NyIgeT0iOTcwLjcyODA5Ij5JbWFnZSBiYWNrZ3JvdW5kIDwvdHNwYW4+PHRzcGFuIGlkPSJ0c3BhbjQ2OTIiIHg9IjQ5LjM5NjQ3NyIgeT0iOTgzLjIyODA5Ij5pcyBub3QgY29uZmlndXJlZDwvdHNwYW4+PC90ZXh0PgogIDxyZWN0IGlkPSJyZWN0NDY5NCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgaGVpZ2h0PSIxOS4zNiIgd2lkdGg9IjY5LjM2IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgeT0iOTkyLjY4IiB4PSIxNS4zMiIgc3Ryb2tlLXdpZHRoPSIuNjM5ODYiIGZpbGw9Im5vbmUiLz4KIDwvZz4KPC9zdmc+Cg==",
+              "imageEntityAlias" : "",
+              "imageUrlAttribute" : "",
+              "tmApiKey" : "84d6d83e0e51e481e50454ccbe8986b",
+              "tmDefaultMapType" : "roadmap",
+              "latKeyName" : "latitude",
+              "lngKeyName" : "longitude",
+              "xPosKeyName" : "xPos",
+              "yPosKeyName" : "yPos",
+              "defaultZoomLevel" : null,
+              "defaultCenterPosition" : "0,0",
+              "disableScrollZooming" : false,
+              "disableDoubleClickZooming" : false,
+              "disableZoomControl" : false,
+              "fitMapBounds" : true,
+              "useDefaultCenterPosition" : false,
+              "mapPageSize" : 16384,
+              "markerOffsetX" : 0.5,
+              "markerOffsetY" : 1,
+              "draggableMarker" : false,
+              "showLabel" : true,
+              "useLabelFunction" : false,
+              "label" : "${entityName}",
+              "showTooltip" : true,
+              "showTooltipAction" : "click",
+              "autocloseTooltip" : true,
+              "useTooltipFunction" : false,
+              "tooltipPattern" : "<b>${entityName}</b><br/><br/><b>Latitude:</b> ${latitude:7}<br/><b>Longitude:</b> ${longitude:7}<br/><b>Temperature:</b> ${temperature} °C<br/><small>See advanced settings for details</small>",
+              "tooltipOffsetX" : 0,
+              "tooltipOffsetY" : -1,
+              "color" : "#fe7569",
+              "useColorFunction" : true,
+              "colorFunction" : "var type = dsData[dsIndex]['Type'];\nif (type == 'colorpin') {\n\tvar temperature = dsData[dsIndex]['temperature'];\n\tif (typeof temperature !== undefined) {\n\t    var percent = (temperature + 60)/120 * 100;\n\t    return tinycolor.mix('blue', 'red', percent).toHexString();\n\t}\n\treturn 'blue';\n}\n",
+              "useMarkerImageFunction" : false,
+              "markerImage" : null,
+              "markerImageSize" : 34,
+              "showPolygon" : false,
+              "polygonKeyName" : "perimeter",
+              "editablePolygon" : false,
+              "showPolygonLabel" : false,
+              "usePolygonLabelFunction" : false,
+              "polygonLabel" : "${entityName}",
+              "polygonLabelFunction" : null,
+              "showPolygonTooltip" : false,
+              "showPolygonTooltipAction" : "click",
+              "autoClosePolygonTooltip" : true,
+              "usePolygonTooltipFunction" : false,
+              "polygonTooltipPattern" : "<b>${entityName}</b><br/><br/><b>TimeStamp:</b> ${ts:7}",
+              "polygonTooltipFunction" : null,
+              "polygonColor" : "#3388ff",
+              "polygonOpacity" : 0.2,
+              "usePolygonColorFunction" : false,
+              "polygonColorFunction" : null,
+              "polygonStrokeColor" : "#3388ff",
+              "polygonStrokeOpacity" : 1,
+              "polygonStrokeWeight" : 3,
+              "usePolygonStrokeColorFunction" : false,
+              "polygonStrokeColorFunction" : null,
+              "showCircle" : false,
+              "circleKeyName" : "perimeter",
+              "editableCircle" : false,
+              "showCircleLabel" : false,
+              "useCircleLabelFunction" : false,
+              "circleLabel" : "${entityName}",
+              "circleLabelFunction" : null,
+              "showCircleTooltip" : false,
+              "showCircleTooltipAction" : "click",
+              "autoCloseCircleTooltip" : true,
+              "useCircleTooltipFunction" : false,
+              "circleTooltipPattern" : "<b>${entityName}</b><br/><br/><b>TimeStamp:</b> ${ts:7}",
+              "circleTooltipFunction" : null,
+              "circleFillColor" : "#3388ff",
+              "circleFillColorOpacity" : 0.2,
+              "useCircleFillColorFunction" : false,
+              "circleFillColorFunction" : null,
+              "circleStrokeColor" : "#3388ff",
+              "circleStrokeOpacity" : 1,
+              "circleStrokeWeight" : 3,
+              "useCircleStrokeColorFunction" : false,
+              "circleStrokeColorFunction" : null,
+              "useClusterMarkers" : false,
+              "zoomOnClick" : true,
+              "maxZoom" : null,
+              "maxClusterRadius" : 80,
+              "animate" : true,
+              "spiderfyOnMaxZoom" : false,
+              "showCoverageOnHover" : true,
+              "chunkedLoading" : false,
+              "removeOutsideVisibleBounds" : true,
+              "useIconCreateFunction" : false,
+              "clusterMarkerFunction" : null
+            },
+            "title" : "OpenStreet Map",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "displayTimewindow" : true,
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "5dd27b40-a001-2d27-dbef-eaae078f862f"
         }
       },
       "states" : {
@@ -11342,39 +11643,6 @@
             }
           }
         },
-        "page_mappa" : {
-          "name" : "Mappa Campeggio",
-          "root" : false,
-          "layouts" : {
-            "main" : {
-              "widgets" : {
-                "6021e4dc-1cd4-606a-62c4-d7f080a7e93a" : {
-                  "sizeX" : 24,
-                  "sizeY" : 10,
-                  "row" : 1,
-                  "col" : 0
-                },
-                "afde50e7-8b65-6cec-eb07-db377696a77b" : {
-                  "sizeX" : 24,
-                  "sizeY" : 1,
-                  "row" : 0,
-                  "col" : 0
-                }
-              },
-              "gridSettings" : {
-                "backgroundColor" : "#ffffff",
-                "columns" : 24,
-                "margin" : 0,
-                "backgroundSizeMode" : "100%",
-                "autoFillHeight" : true,
-                "backgroundImageUrl" : null,
-                "mobileAutoFillHeight" : true,
-                "mobileRowHeight" : 70,
-                "outerMargin" : true
-              }
-            }
-          }
-        },
         "default" : {
           "name" : "Campeggio Demo",
           "root" : true,
@@ -11741,6 +12009,72 @@
                   "sizeX" : 24,
                   "sizeY" : 1,
                   "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#FFFFFF",
+                "columns" : 24,
+                "margin" : 0,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : true,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70
+              }
+            }
+          }
+        },
+        "page_floorplan" : {
+          "name" : "Piantina",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "6021e4dc-1cd4-606a-62c4-d7f080a7e93a" : {
+                  "sizeX" : 24,
+                  "sizeY" : 10,
+                  "row" : 1,
+                  "col" : 0
+                },
+                "afde50e7-8b65-6cec-eb07-db377696a77b" : {
+                  "sizeX" : 24,
+                  "sizeY" : 1,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#ffffff",
+                "columns" : 24,
+                "margin" : 0,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : true,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : true,
+                "mobileRowHeight" : 70,
+                "outerMargin" : true
+              }
+            }
+          }
+        },
+        "page_maps" : {
+          "name" : "Mappa Sedi",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "4fb2e6e8-6ae7-68f0-9cd6-2461373c4e12" : {
+                  "sizeX" : 24,
+                  "sizeY" : 1,
+                  "row" : 0,
+                  "col" : 0
+                },
+                "5dd27b40-a001-2d27-dbef-eaae078f862f" : {
+                  "sizeX" : 24,
+                  "sizeY" : 10,
+                  "row" : 1,
                   "col" : 0
                 }
               },

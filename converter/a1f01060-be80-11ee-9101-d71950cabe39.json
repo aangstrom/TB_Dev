@@ -1,0 +1,29 @@
+{
+  "entityType" : "CONVERTER",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : {
+      "scriptLang" : "TBEL",
+      "decoder" : "// Decode an uplink message from a buffer\n// payload - array of bytes\n// metadata - key/value object\n\n/** Decoder **/\n\n// decode payload to string\nvar payloadStr = decodeToString(payload);\n\n// decode payload to JSON\n// var data = decodeToJson(payload);\n\nvar deviceName = 'Device A';\nvar deviceType = 'thermostat';\nvar customerName = 'Customer C';\nvar groupName = 'thermostat devices';\nvar manufacturer = 'Example corporation';\n// use assetName and assetType instead of deviceName and deviceType\n// to automatically create assets instead of devices.\n// var assetName = 'Asset A';\n// var assetType = 'building';\n\n// Result object with device/asset attributes/telemetry data\nvar result = {\n// Use deviceName and deviceType or assetName and assetType, but not both.\n   deviceName: deviceName,\n   deviceType: deviceType,\n// assetName: assetName,\n// assetType: assetType,\n// customerName: customerName,\n   groupName: groupName,\n   attributes: {\n       model: 'Model A',\n       serialNumber: 'SN111',\n       integrationName: metadata['integrationName'],\n       manufacturer: manufacturer\n   },\n   telemetry: {\n       temperature: 42,\n       humidity: 80,\n       rawData: payloadStr\n   }\n};\n\n/** Helper functions **/\n\nfunction decodeToString(payload) {\n   return String.fromCharCode.apply(String, payload);\n}\n\nfunction decodeToJson(payload) {\n   // covert payload to string.\n   var str = decodeToString(payload);\n\n   // parse string to JSON\n   var data = JSON.parse(str);\n   return data;\n}\n\nreturn result;",
+      "tbelDecoder" : "// Decode an uplink message from a buffer\r\n// payload - array of bytes\r\n// metadata - key/value object\r\n\r\n/** Decoder **/\r\n\r\n// decode payload to string\r\nvar payloadStr = decodeToString(payload);\r\n\r\n// decode payload to JSON\r\nvar data = decodeToJson(payload);\r\n\r\nvar deviceName = data.deviceName;\r\nvar deviceType = data.applicationName;\r\n\r\nvar incomingHexData = base64ToHex(data.data);\r\nvar flags = parseInt(incomingHexData.substring(0, 2), 16);\r\nvar battery = parseInt(incomingHexData.substring(2, 4), 16);\r\nvar light = parseInt(incomingHexData.substring(4, 6), 16);\r\n\r\nvar result = {\r\n   deviceName: deviceName,\r\n   deviceType: deviceType,\r\n   attributes: {\r\n       applicationId: data.applicationId,\r\n       DevEUI: base64ToHex(data.devEUI),\r\n       integrationName: metadata['integrationName'],\r\n       txInfo: data.txInfo,\r\n       fPort: data.fPort,\r\n       devAddr: base64ToHex(data.devAddr),\r\n       dr: data.dr\r\n   },\r\n   telemetry: {\r\n       flags: flags,\r\n       battery: battery,\r\n       light: light\r\n   }\r\n};\r\n\r\n/** Helper functions **/\r\n\r\nfunction decodeToString(payload) {\r\n   return String.fromCharCode.apply(String, payload);\r\n}\r\n\r\nfunction decodeToJson(payload) {\r\n   // covert payload to string.\r\n   var str = decodeToString(payload);\r\n\r\n   // parse string to JSON\r\n   var data = JSON.parse(str);\r\n   return data;\r\n}\r\n\r\nfunction base64ToHex(str) {\r\n  var raw = atob(str);\r\n  var res = \"\";\r\n  for (var i = 0; i < raw.length; i++) {\r\n    var hex = raw.charCodeAt(i).toString(16);\r\n    res += (hex.length === 2 ? hex : '0' + hex);\r\n  }\r\n  return res.toUpperCase();\r\n}\r\n\r\nreturn result;",
+      "encoder" : null,
+      "tbelEncoder" : null,
+      "updateOnlyKeys" : [ "manufacturer" ]
+    },
+    "debugMode" : true,
+    "edgeTemplate" : false,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CONVERTER",
+      "id" : "a1f01060-be80-11ee-9101-d71950cabe39"
+    },
+    "name" : "Chirpstack Uplink",
+    "type" : "UPLINK"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

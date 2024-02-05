@@ -1687,6 +1687,19 @@
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
+              }, {
+                "name" : "humidity",
+                "type" : "timeseries",
+                "label" : "Umidità",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.7458825908010835,
+                "aggregationType" : null,
+                "units" : "%",
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -2217,18 +2230,18 @@
               "entityAliasId" : "b755362a-b545-8ee6-a67b-df2c9e39d6e5",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "humidity",
+                "name" : "occupancy",
                 "type" : "timeseries",
-                "label" : "Umidità",
-                "color" : "#8BC34A",
+                "label" : "Presenza",
+                "color" : "#F44336",
                 "settings" : { },
-                "_hash" : 0.4235779663804764,
+                "_hash" : 0.5635691755153123,
                 "aggregationType" : null,
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==0 || value==0.0){\n    return 0;\n}else if(value==1 || value==1.0){\n    return 1;\n}else if(value==2 || value==2.0){\n    return 1;\n}"
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]

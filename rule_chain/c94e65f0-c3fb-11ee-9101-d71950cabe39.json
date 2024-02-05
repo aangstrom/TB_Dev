@@ -294,7 +294,7 @@
       "type" : "Success"
     }, {
       "fromIndex" : 47,
-      "toIndex" : 92,
+      "toIndex" : 97,
       "type" : "Success"
     }, {
       "fromIndex" : 48,
@@ -535,6 +535,10 @@
     }, {
       "fromIndex" : 96,
       "toIndex" : 79,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 97,
+      "toIndex" : 92,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 91,
@@ -3166,7 +3170,7 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1817,
+        "layoutX" : 1820,
         "layoutY" : 1574
       },
       "configuration" : {
@@ -3354,6 +3358,43 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1799,
+        "layoutY" : 1497
+      },
+      "configuration" : {
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "TO",
+          "maxLevel" : null,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "CUSTOMER" ]
+          } ]
+        },
+        "dataToFetch" : "ATTRIBUTES",
+        "fetchTo" : "METADATA",
+        "dataMapping" : {
+          "F1" : "F1",
+          "F2" : "F2",
+          "F3" : "F3",
+          "F23" : "F23"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "3ced8490-c42f-11ee-9101-d71950cabe39"
+      },
+      "name" : "Get F1/F2/F3/F23",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
     } ],
     "ruleChainConnections" : null
   },

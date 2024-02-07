@@ -33,6 +33,10 @@
       "toIndex" : 11,
       "type" : "Send Whatsapp"
     }, {
+      "fromIndex" : 0,
+      "toIndex" : 18,
+      "type" : "Send Telegram"
+    }, {
       "fromIndex" : 1,
       "toIndex" : 2,
       "type" : "Failure"
@@ -94,11 +98,11 @@
       "type" : "Success"
     }, {
       "fromIndex" : 12,
-      "toIndex" : 6,
+      "toIndex" : 19,
       "type" : "Failure"
     }, {
       "fromIndex" : 12,
-      "toIndex" : 6,
+      "toIndex" : 19,
       "type" : "Success"
     }, {
       "fromIndex" : 14,
@@ -112,6 +116,14 @@
       "fromIndex" : 18,
       "toIndex" : 16,
       "type" : "Success"
+    }, {
+      "fromIndex" : 19,
+      "toIndex" : 6,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 19,
+      "toIndex" : 6,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 10,
     "nodes" : [ {
@@ -123,7 +135,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "var relations = [];\nif(metadata.ss_TeamsEnabled==true){\n    relations.push('Send Teams');\n}\nif(metadata.ss_EmailEnabled==true){\n    relations.push('Send Email');\n}\nif(metadata.ss_WhatsappEnabled==true){\n    relations.push('Send Whatsapp');\n}\n\n/*switch (metadata.type) {\n    case 'Teams':\n        if (metadata.ss_TeamsEnabled === 'true'){\n            relations.push('Send Teams');\n        }\n        break;\n    case 'Teams and Email':\n        if (metadata.ss_TeamsEnabled === 'true'){\n            relations.push('Send Teams');\n        }\n        if (metadata.ss_EmailEnabled === 'true'){\n            relations.push('Send Email');\n        }\n        break; \n    case 'Email':\n        if (metadata.ss_TeamsEnabled === 'true'){\n            relations.push('Send Email');\n        }\n        break;\n    default:\n        relations.push('Other');\n}\n*/\nreturn relations;"
+        "tbelScript" : "var relations = [];\nif(metadata.ss_TeamsEnabled==true){\n    relations.push('Send Teams');\n}\nif(metadata.ss_EmailEnabled==true){\n    relations.push('Send Email');\n}\nif(metadata.ss_WhatsappEnabled==true){\n    relations.push('Send Whatsapp');\n}\nif(metadata.ss_TelegramEnabled==true){\n    relations.push('Send Telegram');\n}\n\n/*switch (metadata.type) {\n    case 'Teams':\n        if (metadata.ss_TeamsEnabled === 'true'){\n            relations.push('Send Teams');\n        }\n        break;\n    case 'Teams and Email':\n        if (metadata.ss_TeamsEnabled === 'true'){\n            relations.push('Send Teams');\n        }\n        if (metadata.ss_EmailEnabled === 'true'){\n            relations.push('Send Email');\n        }\n        break; \n    case 'Email':\n        if (metadata.ss_TeamsEnabled === 'true'){\n            relations.push('Send Email');\n        }\n        break;\n    default:\n        relations.push('Other');\n}\n*/\nreturn relations;"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -194,8 +206,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1151,
-        "layoutY" : 126
+        "layoutX" : 1130,
+        "layoutY" : 125
       },
       "configuration" : {
         "useSystemSmtpSettings" : true,
@@ -228,8 +240,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1150,
-        "layoutY" : 53
+        "layoutX" : 1129,
+        "layoutY" : 52
       },
       "configuration" : {
         "restEndpointUrlPattern" : "${ss_TeamsUrl}",
@@ -298,8 +310,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 278,
-        "layoutY" : 613
+        "layoutX" : 277,
+        "layoutY" : 682
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -475,8 +487,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1151,
-        "layoutY" : 202
+        "layoutX" : 1130,
+        "layoutY" : 201
       },
       "configuration" : {
         "restEndpointUrlPattern" : "https://api.textmebot.com/send.php?recipient=${ss_telefono}&apikey=3uVVBeCu8kqg&text=${msg}",
@@ -517,8 +529,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 803,
-        "layoutY" : 629
+        "layoutX" : 1383,
+        "layoutY" : 277
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -540,8 +552,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 801,
-        "layoutY" : 553
+        "layoutX" : 1384,
+        "layoutY" : 201
       },
       "configuration" : {
         "restEndpointUrlPattern" : "https://api.telegram.org/bot${API_KEY}/sendMessage",
@@ -583,8 +595,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 800,
-        "layoutY" : 706
+        "layoutX" : 1131,
+        "layoutY" : 274
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -610,8 +622,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 444,
-        "layoutY" : 816
+        "layoutX" : 699,
+        "layoutY" : 505
       },
       "configuration" : {
         "msgCount" : 0,
@@ -638,8 +650,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 801,
-        "layoutY" : 776
+        "layoutX" : 876,
+        "layoutY" : 275
       },
       "configuration" : {
         "relationsQuery" : {
@@ -669,6 +681,33 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 275,
+        "layoutY" : 608
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchTo" : "METADATA",
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "TelegramEnable" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : true
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "7ba71210-c5a0-11ee-9101-d71950cabe39"
+      },
+      "name" : "Telegram?",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
     } ],
     "ruleChainConnections" : null
   },

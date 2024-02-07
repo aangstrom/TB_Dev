@@ -1171,6 +1171,139 @@
           "row" : 0,
           "col" : 0,
           "id" : "37139576-db8b-9b06-efa6-1f7962f17bba"
+        },
+        "4227df14-daf4-6643-77b1-2f9f48c3f8fb" : {
+          "typeFullFqn" : "system.cards.timeseries_table",
+          "type" : "timeseries",
+          "sizeX" : 8,
+          "sizeY" : 6.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "1c013bc4-31ac-4639-e3d6-26d41fbdd32f",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "F1cost",
+                "type" : "timeseries",
+                "label" : "F1cost",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.7308018485682497,
+                "decimals" : 10
+              }, {
+                "name" : "F2cost",
+                "type" : "timeseries",
+                "label" : "F2cost",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.9095057270373024,
+                "decimals" : 10
+              }, {
+                "name" : "F3cost",
+                "type" : "timeseries",
+                "label" : "F3cost",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.3500794007402035,
+                "decimals" : 10,
+                "aggregationType" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "power",
+                "type" : "timeseries",
+                "label" : "power",
+                "color" : "#8bc34a",
+                "settings" : { },
+                "_hash" : 0.4558272061345705,
+                "decimals" : 10
+              }, {
+                "name" : "powerCost",
+                "type" : "timeseries",
+                "label" : "powerCost",
+                "color" : "#3f51b5",
+                "settings" : { },
+                "_hash" : 0.5812330827792145,
+                "decimals" : 10
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "hideInterval" : false,
+              "hideLastInterval" : false,
+              "hideQuickInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 0,
+                "timewindowMs" : 172860000,
+                "quickInterval" : "CURRENT_DAY",
+                "interval" : 1000
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 15178
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "enableSearch" : true,
+              "enableSelectColumnDisplay" : true,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "showCellActionsMenu" : true,
+              "reserveSpaceForHiddenAction" : "true",
+              "showTimestamp" : true,
+              "dateFormat" : {
+                "format" : "yyyy-MM-dd HH:mm:ss"
+              },
+              "displayPagination" : true,
+              "useEntityLabel" : false,
+              "defaultPageSize" : 30,
+              "hideEmptyLines" : false,
+              "disableStickyHeader" : false,
+              "useRowStyleFunction" : false,
+              "rowStyleFunction" : ""
+            },
+            "title" : "Bungalow Florenz",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "displayTimewindow" : false,
+            "configMode" : "advanced",
+            "titleFont" : null,
+            "titleColor" : null,
+            "titleIcon" : null,
+            "enableDataExport" : true,
+            "titleTooltip" : "",
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "4227df14-daf4-6643-77b1-2f9f48c3f8fb"
         }
       },
       "states" : {
@@ -1265,6 +1398,12 @@
                   "sizeX" : 6,
                   "sizeY" : 6,
                   "row" : 9,
+                  "col" : 6
+                },
+                "4227df14-daf4-6643-77b1-2f9f48c3f8fb" : {
+                  "sizeX" : 6,
+                  "sizeY" : 6,
+                  "row" : 15,
                   "col" : 6
                 }
               },
@@ -1401,6 +1540,18 @@
             "singleEntity" : {
               "entityType" : "CUSTOMER",
               "id" : "63f39a50-c3ff-11ee-9101-d71950cabe39"
+            }
+          }
+        },
+        "1c013bc4-31ac-4639-e3d6-26d41fbdd32f" : {
+          "id" : "1c013bc4-31ac-4639-e3d6-26d41fbdd32f",
+          "alias" : "Bungalow Florenz",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "ASSET",
+              "id" : "47f83200-c406-11ee-9101-d71950cabe39"
             }
           }
         }

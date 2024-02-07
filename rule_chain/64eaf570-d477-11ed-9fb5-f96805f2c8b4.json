@@ -100,6 +100,14 @@
       "fromIndex" : 12,
       "toIndex" : 6,
       "type" : "Success"
+    }, {
+      "fromIndex" : 14,
+      "toIndex" : 15,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 16,
+      "toIndex" : 14,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 10,
     "nodes" : [ {
@@ -113,6 +121,7 @@
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
         "tbelScript" : "var relations = [];\nif(metadata.ss_TeamsEnabled==true){\n    relations.push('Send Teams');\n}\nif(metadata.ss_EmailEnabled==true){\n    relations.push('Send Email');\n}\nif(metadata.ss_WhatsappEnabled==true){\n    relations.push('Send Whatsapp');\n}\n\n/*switch (metadata.type) {\n    case 'Teams':\n        if (metadata.ss_TeamsEnabled === 'true'){\n            relations.push('Send Teams');\n        }\n        break;\n    case 'Teams and Email':\n        if (metadata.ss_TeamsEnabled === 'true'){\n            relations.push('Send Teams');\n        }\n        if (metadata.ss_EmailEnabled === 'true'){\n            relations.push('Send Email');\n        }\n        break; \n    case 'Email':\n        if (metadata.ss_TeamsEnabled === 'true'){\n            relations.push('Send Email');\n        }\n        break;\n    default:\n        relations.push('Other');\n}\n*/\nreturn relations;"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -122,6 +131,7 @@
       },
       "name" : "Email/Teams",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     }, {
       "additionalInfo" : {
@@ -131,13 +141,14 @@
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
-        "fetchToData" : false,
         "clientAttributeNames" : [ ],
         "sharedAttributeNames" : [ ],
         "serverAttributeNames" : [ "TeamsEnabled" ],
         "latestTsKeyNames" : [ ],
-        "getLatestValueWithTs" : true
+        "getLatestValueWithTs" : true,
+        "fetchTo" : "METADATA"
       },
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -147,6 +158,7 @@
       },
       "name" : "Teams?",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
     }, {
       "additionalInfo" : {
@@ -156,13 +168,14 @@
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
-        "fetchToData" : false,
         "clientAttributeNames" : [ ],
         "sharedAttributeNames" : [ ],
         "serverAttributeNames" : [ "EmailEnabled" ],
         "latestTsKeyNames" : [ ],
-        "getLatestValueWithTs" : false
+        "getLatestValueWithTs" : false,
+        "fetchTo" : "METADATA"
       },
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -172,6 +185,7 @@
       },
       "name" : "Email?",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
     }, {
       "additionalInfo" : {
@@ -195,6 +209,7 @@
         "proxyUser" : null,
         "proxyPassword" : null
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -204,6 +219,7 @@
       },
       "name" : "Send Email",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.mail.TbSendEmailNode"
     }, {
       "additionalInfo" : {
@@ -235,6 +251,7 @@
           "type" : "anonymous"
         }
       },
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -244,6 +261,7 @@
       },
       "name" : "Send Teams",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
     }, {
       "additionalInfo" : {
@@ -261,6 +279,7 @@
         "isHtmlTemplate" : null,
         "bodyTemplate" : "<p align=\"center\" style=\"color:red;font-weight: bold;font-size:30px\">!Nuovo Allarme !</p>\n<p align=\"center\" style=\"font-weight: bold;\">$[type]</p>\n<p align=\"center\">$[severity]</p>\n\n$[details.data]\n\n\n<br><br>\n<b>Rilevato su:</b> ${ss_name}"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -270,6 +289,7 @@
       },
       "name" : "Crea mail",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.mail.TbMsgToEmailNode"
     }, {
       "additionalInfo" : {
@@ -282,6 +302,7 @@
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: \"POST_TELEMETRY_REQUEST\"};",
         "tbelScript" : "return {msg: msg, metadata: metadata, msgType: \"POST_TELEMETRY_REQUEST\"};"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -291,6 +312,7 @@
       },
       "name" : "Trasform to telemetry",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
@@ -300,13 +322,14 @@
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
-        "fetchToData" : false,
         "clientAttributeNames" : [ ],
         "sharedAttributeNames" : [ ],
         "serverAttributeNames" : [ "TeamsUrl" ],
         "latestTsKeyNames" : [ ],
-        "getLatestValueWithTs" : false
+        "getLatestValueWithTs" : false,
+        "fetchTo" : "METADATA"
       },
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -316,6 +339,7 @@
       },
       "name" : "Get TeamsUrl",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
     }, {
       "additionalInfo" : {
@@ -325,13 +349,14 @@
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
-        "fetchToData" : false,
         "clientAttributeNames" : [ ],
         "sharedAttributeNames" : [ ],
         "serverAttributeNames" : [ "Email" ],
         "latestTsKeyNames" : [ ],
-        "getLatestValueWithTs" : false
+        "getLatestValueWithTs" : false,
+        "fetchTo" : "METADATA"
       },
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -341,6 +366,7 @@
       },
       "name" : "Get email",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
     }, {
       "additionalInfo" : {
@@ -353,6 +379,7 @@
         "jsScript" : "var newMsg = {\n   \"type\":\"message\",\n   \"attachments\":[\n      {\n         \"contentType\":\"application/vnd.microsoft.card.adaptive\",\n         \"contentUrl\":null,\n         \"content\":\n{\n    \"type\": \"AdaptiveCard\",\n    \"body\": [\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Large\",\n            \"weight\": \"Bolder\",\n            \"text\": \"! Nuovo Allarme !\",\n            \"horizontalAlignment\": \"Center\",\n            \"color\": \"Attention\"\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Medium\",\n            \"weight\": \"Bolder\",\n            \"text\": msg.type,\n            \"horizontalAlignment\": \"Center\",\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Medium\",\n            \"text\": msg.severity,\n            \"horizontalAlignment\": \"Center\",\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"text\": msg.details.data,\n            \"wrap\": true\n        },\n        {\n            \"type\": \"FactSet\",\n            \"facts\": [\n                {\n                    \"$data\": \"${properties}\",\n                    \"title\": \"Sensore rilevazione:\",\n                    \"value\": metadata.ss_name\n                }\n            ]\n        }\n    ],\n    \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n    \"version\": \"1.4\"\n}\n\n          \n      }\n   ]\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};",
         "tbelScript" : "var newMsg = {\n   \"type\":\"message\",\n   \"attachments\":[\n      {\n         \"contentType\":\"application/vnd.microsoft.card.adaptive\",\n         \"contentUrl\":null,\n         \"content\":\n{\n    \"type\": \"AdaptiveCard\",\n    \"body\": [\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Large\",\n            \"weight\": \"Bolder\",\n            \"text\": \"! Nuovo Allarme !\",\n            \"horizontalAlignment\": \"Center\",\n            \"color\": \"Attention\"\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Medium\",\n            \"weight\": \"Bolder\",\n            \"text\": msg.type,\n            \"horizontalAlignment\": \"Center\",\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Medium\",\n            \"text\": msg.severity,\n            \"horizontalAlignment\": \"Center\",\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"text\": msg.details.data,\n            \"wrap\": true\n        },\n        {\n            \"type\": \"FactSet\",\n            \"facts\": [\n                {\n                    \"$data\": \"${properties}\",\n                    \"title\": \"Sensore rilevazione:\",\n                    \"value\": metadata.ss_name\n                }\n            ]\n        }\n    ],\n    \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n    \"version\": \"1.4\"\n}\n\n          \n      }\n   ]\n};\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -362,6 +389,7 @@
       },
       "name" : "Create Card",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
@@ -371,13 +399,14 @@
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
-        "fetchToData" : false,
         "clientAttributeNames" : [ ],
         "sharedAttributeNames" : [ ],
         "serverAttributeNames" : [ "name" ],
         "latestTsKeyNames" : [ ],
-        "getLatestValueWithTs" : false
+        "getLatestValueWithTs" : false,
+        "fetchTo" : "METADATA"
       },
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -387,6 +416,7 @@
       },
       "name" : "Get Name",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
     }, {
       "additionalInfo" : {
@@ -399,6 +429,7 @@
         "jsScript" : "var metadata= {\n    msg:\"Messaggio da: \"+metadata.ss_name+\", di tipo: \"+msg.severity+\", prescrizione: \"+msg.details.data,\n    ss_telefono: metadata.ss_telefono\n}\nvar newMsg = {\n   \"type\":\"message\",\n   \"attachments\":[\n      {\n         \"contentType\":\"application/vnd.microsoft.card.adaptive\",\n         \"contentUrl\":null,\n         \"content\":\n{\n    \"type\": \"AdaptiveCard\",\n    \"body\": [\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Large\",\n            \"weight\": \"Bolder\",\n            \"text\": \"! Nuovo Allarme !\",\n            \"horizontalAlignment\": \"Center\",\n            \"color\": \"Attention\"\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Medium\",\n            \"weight\": \"Bolder\",\n            \"text\": msg.type,\n            \"horizontalAlignment\": \"Center\",\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Medium\",\n            \"text\": msg.severity,\n            \"horizontalAlignment\": \"Center\",\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"text\": msg.details.data,\n            \"wrap\": true\n        },\n        {\n            \"type\": \"FactSet\",\n            \"facts\": [\n                {\n                    \"$data\": \"${properties}\",\n                    \"title\": \"Sensore rilevazione:\",\n                    \"value\": metadata.ss_name\n                }\n            ]\n        }\n    ],\n    \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n    \"version\": \"1.4\"\n}\n\n          \n      }\n   ]\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
         "tbelScript" : "var metadata= {\n    msg:\"Messaggio da: \"+metadata.ss_name+\", di tipo: \"+msg.severity+\", prescrizione: \"+msg.details.data,\n    ss_telefono: metadata.ss_telefono\n};\nvar newMsg = {\n   \"type\":\"message\",\n   \"attachments\":[\n      {\n         \"contentType\":\"application/vnd.microsoft.card.adaptive\",\n         \"contentUrl\":null,\n         \"content\":\n{\n    \"type\": \"AdaptiveCard\",\n    \"body\": [\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Large\",\n            \"weight\": \"Bolder\",\n            \"text\": \"! Nuovo Allarme !\",\n            \"horizontalAlignment\": \"Center\",\n            \"color\": \"Attention\"\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Medium\",\n            \"weight\": \"Bolder\",\n            \"text\": msg.type,\n            \"horizontalAlignment\": \"Center\",\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"size\": \"Medium\",\n            \"text\": msg.severity,\n            \"horizontalAlignment\": \"Center\",\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"text\": msg.details.data,\n            \"wrap\": true\n        },\n        {\n            \"type\": \"FactSet\",\n            \"facts\": [\n                {\n                    \"$data\": \"${properties}\",\n                    \"title\": \"Sensore rilevazione:\",\n                    \"value\": metadata.ss_name\n                }\n            ]\n        }\n    ],\n    \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n    \"version\": \"1.4\"\n}\n\n          \n      }\n   ]\n};\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -408,6 +439,7 @@
       },
       "name" : "Create Card",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
@@ -417,13 +449,14 @@
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
-        "fetchToData" : false,
         "clientAttributeNames" : [ ],
         "sharedAttributeNames" : [ ],
         "serverAttributeNames" : [ "WhatsappEnabled", "telefono" ],
         "latestTsKeyNames" : [ ],
-        "getLatestValueWithTs" : true
+        "getLatestValueWithTs" : true,
+        "fetchTo" : "METADATA"
       },
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -433,6 +466,7 @@
       },
       "name" : "Whatsapp?",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
     }, {
       "additionalInfo" : {
@@ -464,6 +498,7 @@
           "type" : "anonymous"
         }
       },
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -473,7 +508,102 @@
       },
       "name" : "Send Whatsapp",
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 654,
+        "layoutY" : 646
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var newMsg ={};\r\nnewMsg.text='\"Rilevata acqua dal sensore: ' +  metadata.name + '\"';\r\nnewMsg.chat_id=metadata.chat_id; //has to be replaced by the actual chat id\r\n\r\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "43d7ddc0-c59a-11ee-9101-d71950cabe39"
+      },
+      "name" : "HSE Telegram Bot",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1026,
+        "layoutY" : 591
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "https://api.telegram.org/bot${API_KEY}/sendMessage",
+        "requestMethod" : "POST",
+        "useSimpleClientHttpFactory" : false,
+        "parseToPlainText" : false,
+        "ignoreRequestBody" : false,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : {
+          "Content-Type" : "application/json"
+        },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : null,
+        "maxQueueSize" : null,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "43d9b280-c59a-11ee-9101-d71950cabe39"
+      },
+      "name" : "To Telegram",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 467,
+        "layoutY" : 766
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 1,
+        "scriptLang" : "TBEL",
+        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40, API_KEY: 23456789, chat_id: 124566 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "queueName" : null,
+        "originatorId" : "3908b070-27c7-11ee-bb94-e90efb8ecc83",
+        "originatorType" : "DEVICE"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "43da9ce0-c59a-11ee-9101-d71950cabe39"
+      },
+      "name" : "Test",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     } ],
     "ruleChainConnections" : null
   },

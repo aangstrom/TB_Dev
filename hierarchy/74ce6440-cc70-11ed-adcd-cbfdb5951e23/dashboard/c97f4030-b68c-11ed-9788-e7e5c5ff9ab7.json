@@ -12744,7 +12744,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if(value===0){\r\n    return false;\r\n}else{\r\n    return true;\r\n}"
+                "postFuncBody" : "if(value==0){\r\n    return false;\r\n}else{\r\n    return true;\r\n}"
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -12783,7 +12783,7 @@
               "tooltipIndividual" : false,
               "tooltipCumulative" : false,
               "hideZeros" : false,
-              "tooltipValueFormatter" : "",
+              "tooltipValueFormatter" : "if(value==false){\n    return \"Nessuna Perdita\";\n}else{\n    return \"PErdita Rilevata!\"\n}",
               "grid" : {
                 "verticalLines" : true,
                 "horizontalLines" : true,

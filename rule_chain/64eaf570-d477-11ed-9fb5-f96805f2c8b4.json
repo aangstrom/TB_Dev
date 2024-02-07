@@ -108,6 +108,10 @@
       "fromIndex" : 16,
       "toIndex" : 14,
       "type" : "Success"
+    }, {
+      "fromIndex" : 17,
+      "toIndex" : 16,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 10,
     "nodes" : [ {
@@ -519,7 +523,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var newMsg ={};\r\nnewMsg.text='Rilevata acqua dal sensore: ' +  metadata.ss_name + '';\r\nnewMsg.chat_id=metadata.chat_id; //has to be replaced by the actual chat id\r\n\r\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var newMsg ={};\r\nnewMsg.text='Rilevata acqua dal sensore: ' +  metadata.ss_name + '';\r\nnewMsg.chat_id=metadata.chat_id; //has to be replaced by the actual chat id\r\nmetadata.API_KEY=\"6865737804:AAEqV4RCVVFXabkcH0LnhgZFUDTX8E5cs1g\";\r\n\r\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -603,6 +607,34 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 430,
+        "layoutY" : 772
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 10,
+        "scriptLang" : "TBEL",
+        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40, chat_id:661586654 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "queueName" : null,
+        "originatorId" : "2273c450-baa0-11ee-9101-d71950cabe39",
+        "originatorType" : "DEVICE"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "1f8d37f0-c59d-11ee-9101-d71950cabe39"
+      },
+      "name" : "Test",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     } ],
     "ruleChainConnections" : null
   },

@@ -19,7 +19,46 @@
     "image" : null,
     "name" : "Acqua",
     "profileData" : {
-      "alarms" : null,
+      "alarms" : [ {
+        "alarmType" : "Rilevamento perdita acqua",
+        "clearRule" : null,
+        "createRules" : {
+          "CRITICAL" : {
+            "alarmDetails" : null,
+            "condition" : {
+              "condition" : [ {
+                "key" : {
+                  "key" : "water",
+                  "type" : "TIME_SERIES"
+                },
+                "predicate" : {
+                  "type" : "STRING",
+                  "ignoreCase" : false,
+                  "operation" : "NOT_EQUAL",
+                  "value" : {
+                    "defaultValue" : "normal",
+                    "dynamicValue" : null,
+                    "userValue" : null
+                  }
+                },
+                "value" : null,
+                "valueType" : "STRING"
+              } ],
+              "spec" : {
+                "type" : "SIMPLE"
+              }
+            },
+            "dashboardId" : null,
+            "schedule" : null
+          }
+        },
+        "id" : "a283ab1c-5dea-7b89-7764-94e37dd5fc7d",
+        "propagate" : false,
+        "propagateRelationTypes" : null,
+        "propagateToOwner" : false,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false
+      } ],
       "configuration" : {
         "type" : "DEFAULT"
       },

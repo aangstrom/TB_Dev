@@ -21,7 +21,33 @@
     "profileData" : {
       "alarms" : [ {
         "alarmType" : "Rilevamento perdita acqua",
-        "clearRule" : null,
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "water",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "NUMERIC",
+                "operation" : "EQUAL",
+                "value" : {
+                  "defaultValue" : 0.0,
+                  "dynamicValue" : null,
+                  "userValue" : null
+                }
+              },
+              "value" : null,
+              "valueType" : "NUMERIC"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
+          },
+          "dashboardId" : null,
+          "schedule" : null
+        },
         "createRules" : {
           "CRITICAL" : {
             "alarmDetails" : null,
@@ -32,16 +58,16 @@
                   "type" : "TIME_SERIES"
                 },
                 "predicate" : {
-                  "type" : "BOOLEAN",
+                  "type" : "NUMERIC",
                   "operation" : "NOT_EQUAL",
                   "value" : {
-                    "defaultValue" : false,
+                    "defaultValue" : 0.0,
                     "dynamicValue" : null,
                     "userValue" : null
                   }
                 },
                 "value" : null,
-                "valueType" : "BOOLEAN"
+                "valueType" : "NUMERIC"
               } ],
               "spec" : {
                 "type" : "SIMPLE"

@@ -34,7 +34,7 @@
       "type" : "Send Whatsapp"
     }, {
       "fromIndex" : 0,
-      "toIndex" : 17,
+      "toIndex" : 16,
       "type" : "Send Telegram"
     }, {
       "fromIndex" : 1,
@@ -98,11 +98,11 @@
       "type" : "Success"
     }, {
       "fromIndex" : 12,
-      "toIndex" : 18,
+      "toIndex" : 17,
       "type" : "Failure"
     }, {
       "fromIndex" : 12,
-      "toIndex" : 18,
+      "toIndex" : 17,
       "type" : "Success"
     }, {
       "fromIndex" : 14,
@@ -110,24 +110,16 @@
       "type" : "Success"
     }, {
       "fromIndex" : 16,
-      "toIndex" : 20,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 17,
       "toIndex" : 14,
       "type" : "Success"
     }, {
-      "fromIndex" : 18,
+      "fromIndex" : 17,
       "toIndex" : 6,
       "type" : "Failure"
     }, {
-      "fromIndex" : 18,
+      "fromIndex" : 17,
       "toIndex" : 6,
       "type" : "Success"
-    }, {
-      "fromIndex" : 20,
-      "toIndex" : 18,
-      "type" : "Created"
     } ],
     "firstNodeIndex" : 10,
     "nodes" : [ {
@@ -599,34 +591,6 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 10,
-        "layoutY" : 604
-      },
-      "configuration" : {
-        "msgCount" : 0,
-        "periodInSeconds" : 60,
-        "scriptLang" : "TBEL",
-        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40, ss_name:\"Bagno 2\"};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "queueName" : null,
-        "originatorId" : "a0ecf480-b6ba-11ee-9101-d71950cabe39",
-        "originatorType" : "DEVICE"
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "1f8d37f0-c59d-11ee-9101-d71950cabe39"
-      },
-      "name" : "Test",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
         "layoutX" : 876,
         "layoutY" : 275
       },
@@ -708,39 +672,6 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 65,
-        "layoutY" : 814
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
-        "alarmDetailsBuildTbel" : "var details = {data: \"Rilevata perdita acqua dal sensore: \"+metadata.ss_name};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
-        "useMessageAlarmData" : false,
-        "overwriteAlarmDetails" : false,
-        "alarmType" : "General Alarm",
-        "severity" : "CRITICAL",
-        "propagate" : false,
-        "relationTypes" : [ ],
-        "propagateToOwner" : false,
-        "propagateToOwnerHierarchy" : false,
-        "propagateToTenant" : false,
-        "dynamicSeverity" : false
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "2f20a100-c5a4-11ee-9101-d71950cabe39"
-      },
-      "name" : "Test alarm",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
     } ],
     "ruleChainConnections" : null
   },

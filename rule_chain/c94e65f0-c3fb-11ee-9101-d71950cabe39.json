@@ -205,6 +205,10 @@
       "toIndex" : 58,
       "type" : "Success"
     }, {
+      "fromIndex" : 33,
+      "toIndex" : 86,
+      "type" : "Success"
+    }, {
       "fromIndex" : 34,
       "toIndex" : 35,
       "type" : "Success"
@@ -439,6 +443,10 @@
     }, {
       "fromIndex" : 85,
       "toIndex" : 84,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 86,
+      "toIndex" : 57,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 83,
@@ -2810,6 +2818,29 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1504,
+        "layoutY" : 1282
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var message={};\nmessage.active=true;\nreturn {msg: message, metadata: metadata, msgType: 'POST_ATTRIBUTES_REQUEST'};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "58eb4020-c744-11ee-9101-d71950cabe39"
+      },
+      "name" : "Make active",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

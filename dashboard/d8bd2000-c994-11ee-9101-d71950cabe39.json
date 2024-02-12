@@ -4443,23 +4443,12 @@
               "entityAliasId" : "b755362a-b545-8ee6-a67b-df2c9e39d6e5",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "name",
-                "type" : "entityField",
+                "name" : "porto_name",
+                "type" : "attribute",
                 "label" : "Nome",
-                "color" : "#ffc107",
-                "settings" : {
-                  "dataKeyHidden" : false,
-                  "dataKeyType" : "server",
-                  "dataKeyValueType" : "string",
-                  "required" : false,
-                  "isEditable" : "readonly",
-                  "appearance" : "outline",
-                  "subscriptSizing" : "fixed",
-                  "useCustomIcon" : false,
-                  "useGetValueFunction" : false,
-                  "useSetValueFunction" : false
-                },
-                "_hash" : 0.06574133384226966,
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.1500477176022743,
                 "aggregationType" : null,
                 "units" : null,
                 "decimals" : null,
@@ -4467,7 +4456,7 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "stato",
+                "name" : "porto_stato",
                 "type" : "attribute",
                 "label" : "Stato",
                 "color" : "#ffc107",
@@ -4501,7 +4490,7 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "stato_assegnazione",
+                "name" : "porto_stato_assegnazione",
                 "type" : "attribute",
                 "label" : "Stato di assegnazione",
                 "color" : "#607d8b",
@@ -4549,7 +4538,7 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "note",
+                "name" : "porto_note",
                 "type" : "attribute",
                 "label" : "Note",
                 "color" : "#4caf50",
@@ -4562,7 +4551,7 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "floorplan",
+                "name" : "porto_floorplan",
                 "type" : "attribute",
                 "label" : "Piantina (formato Base64)",
                 "color" : "#607d8b",
@@ -4639,7 +4628,7 @@
             "displayTimewindow" : true,
             "widgetCss" : "",
             "pageSize" : 1024,
-            "noDataDisplayMessage" : "Nessun Bungalow Selezionato",
+            "noDataDisplayMessage" : "Nessuna Houseboat Selezionata",
             "margin" : "0px"
           },
           "id" : "c8179e09-b426-a989-5813-7ac39ce3cdea",
@@ -6364,7 +6353,7 @@
               "nodeOpenedFunction" : "/**\n\n// Function should return boolean value indicating whether current node should be opened (expanded) when it first loaded.\n\n// The following example code will open by default nodes up to third level.\n\nreturn nodeCtx.level <= 2;\n\n**/\n//return nodeCtx.level <= 2;",
               "nodeDisabledFunction" : "/**\n\n// Function should return boolean value indicating whether current node should be disabled (not selectable).\n\n// The following example code will disable current node according to the value of example 'nodeDisabled' attribute.\n\nvar data = nodeCtx.data;\nif (data.hasOwnProperty('nodeDisabled') && data['nodeDisabled'] !== null) {\n    return data['nodeDisabled'] === 'true';\n} else {\n    return false;\n}\n  \n**/\n",
               "nodeIconFunction" : "var data =  nodeCtx.data;\nvar entity = nodeCtx.entity;\nif(entity.id.entityType === 'CUSTOMER') {\n    return {materialIcon: \"person\"};\n}else if(data.Type==\"bungalow\"){\n    return {materialIcon: \"business\"};\n}else if(data.Type==\"Affluenza\"){\n    return {materialIcon: \"groups\"};\n}else if(data.Type==\"Stato Bagno\"){\n    return {materialIcon: \"shower\"};\n}else if(data.Type==\"AA Sensor\"){\n    return {materialIcon: \"thermostat\"};\n}else if(data.Type==\"AA Energy\" || data.Type==\"Energy\"){\n    return {materialIcon: \"bolt\"};\n}else if(data.Type==\"Acqua\"){\n    return {materialIcon: \"thermostat\"};\n}else if(data.Type==\"Presenza\"){\n    return {materialIcon: \"sensors\"};\n}else if(data.Type==\"Piazzola\"){\n    return {materialIcon: \"zoom_in_map\"};\n}else if(data.Type==\"Servizio Igienico\"){\n    return {materialIcon: \"wc\"};\n}else if(data.Name==\"Piscina\"){\n    return {materialIcon: \"pool\"};\n}else if(data.Name==\"Ristorante\"){\n    return {materialIcon: \"restaurant\"};\n}else if(data.Name==\"Piazzole\"){\n    return {materialIcon: \"holiday_village\"};\n}else if(data.Name==\"Colonnine Ricarica\"){\n    return {materialIcon: \"electrical_services\"};\n}else if(data.Name==\"Servizi Igienici\"){\n    return {materialIcon: \"wc\"};\n}else if(data.Name==\"Supermercato\"){\n    return {materialIcon: \"store\"};\n}else {\n    return 'default';\n}",
-              "nodeTextFunction" : "var data =  nodeCtx.data;\nvar entity = nodeCtx.entity;\nvar text = entity.name;\nif (data.hasOwnProperty.name && data.name !== null) {\n    if(data.Type==\"bungalow\" || data.Type==\"Piazzola\"){\n        text=data.Stato+entity.name+\" (\"+data.Presenza+\")\";\n    }else if(data.Type==\"Servizio Igienico\"){\n        text=entity.name+\" (\"+data.Stato2+\")\";\n    }else if(data.Type==\"Affluenza\"){\n        text=data.active+data.campeggi_name+' ('+data.affluenza+' persone)';\n    }else if(data.Type==\"AA Sensor\" || data.Type==\"AA Energy\" || data.Type==\"Energy\" || data.Type==\"Acqua\" || data.Type==\"Presenza\" || data.Type==\"Stato Bagno\"){\n        text=data.active+data.campeggi_name;\n    }else{\n        text=entity.name;\n    }\n}\nreturn text;",
+              "nodeTextFunction" : "var data =  nodeCtx.data;\nvar entity = nodeCtx.entity;\nvar text = entity.name;\nif (data.hasOwnProperty.name && data.name !== null) {\n    if(data.Type==\"bungalow\" || data.Type==\"Piazzola\"){\n        text=data.Stato+entity.porto_name+\" (\"+data.Presenza+\")\";\n    }else if(data.Type==\"Servizio Igienico\"){\n        text=entity.name+\" (\"+data.Stato2+\")\";\n    }else if(data.Type==\"Affluenza\"){\n        text=data.active+data.porto_name+' ('+data.affluenza+' persone)';\n    }else if(data.Type==\"AA Sensor\" || data.Type==\"AA Energy\" || data.Type==\"Energy\" || data.Type==\"Acqua\" || data.Type==\"Presenza\" || data.Type==\"Stato Bagno\"){\n        text=data.active+data.porto_name;\n    }else if(data.Type==\"Categoria\"){\n        text=data.porto_name;\n    }else{\n        text=entity.name;\n    }\n}\nreturn text;",
               "nodesSortFunction" : "/**\n\n// This function is used to sort nodes of the same level. Function should compare two nodes and return \n// integer value: \n//     - less than 0 - sort nodeCtx1 to an index lower than nodeCtx2\n//     - 0 - leave nodeCtx1 and nodeCtx2 unchanged with respect to each other\n//     - greater than 0 - sort nodeCtx2 to an index lower than nodeCtx1\n\n// The following example code will sort entities first by entity type in alphabetical order then\n// by entity name in alphabetical order.\n\nvar result = nodeCtx1.entity.id.entityType.localeCompare(nodeCtx2.entity.id.entityType);\nif (result === 0) {\n    result = nodeCtx1.entity.name.localeCompare(nodeCtx2.entity.name);\n}\nreturn result;\n  \n**/"
             },
             "title" : "Campeggio Demo",
@@ -6429,12 +6418,18 @@
                 "usePostProcessing" : true,
                 "postFuncBody" : "var state = value;\n\nvar stateSvg = getStateSvg(state);\nvar encodedStateSvg = encodeURIComponent(stateSvg);\nvar stateSvgUrl = 'data:image/svg+xml,' + encodedStateSvg;\n\nreturn '<span>'+\n           '<img style=\"vertical-align: middle;\" class=\"mat-icon\" src=\"'+ stateSvgUrl +'\">' +\n       '</span>';\n            \nfunction getStateSvg(state) {\n    switch (state) {\n        case 'true':            \n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#1F8B4D\"/>' +\n                   '</svg>';\n        default:\n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#AAAAAA\"/>' +\n                   '</svg>';\n    }\n}"
               }, {
-                "name" : "campeggi_name",
+                "name" : "porto_name",
                 "type" : "attribute",
-                "label" : "campeggi_name",
+                "label" : "porto_name",
                 "color" : "#9c27b0",
                 "settings" : { },
-                "_hash" : 0.44625065903260497
+                "_hash" : 0.44625065903260497,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               }, {
                 "name" : "presenza",
                 "type" : "attribute",
@@ -9191,23 +9186,12 @@
               "entityAliasId" : "b755362a-b545-8ee6-a67b-df2c9e39d6e5",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "name",
-                "type" : "entityField",
+                "name" : "porto_name",
+                "type" : "attribute",
                 "label" : "Nome",
-                "color" : "#ffc107",
-                "settings" : {
-                  "dataKeyHidden" : false,
-                  "dataKeyType" : "server",
-                  "dataKeyValueType" : "string",
-                  "required" : false,
-                  "isEditable" : "readonly",
-                  "appearance" : "outline",
-                  "subscriptSizing" : "fixed",
-                  "useCustomIcon" : false,
-                  "useGetValueFunction" : false,
-                  "useSetValueFunction" : false
-                },
-                "_hash" : 0.06574133384226966,
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.4749603590062328,
                 "aggregationType" : null,
                 "units" : null,
                 "decimals" : null,
@@ -9215,7 +9199,7 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "stato",
+                "name" : "porto_stato",
                 "type" : "attribute",
                 "label" : "Stato",
                 "color" : "#ffc107",
@@ -9249,7 +9233,7 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "stato_assegnazione",
+                "name" : "porto_stato_assegnazione",
                 "type" : "attribute",
                 "label" : "Stato Assegnazione",
                 "color" : "#ffc107",
@@ -9297,7 +9281,7 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "note",
+                "name" : "porto_note",
                 "type" : "attribute",
                 "label" : "Note",
                 "color" : "#4caf50",
@@ -9605,23 +9589,12 @@
               "entityAliasId" : "b755362a-b545-8ee6-a67b-df2c9e39d6e5",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "name",
-                "type" : "entityField",
+                "name" : "porto_name",
+                "type" : "attribute",
                 "label" : "Nome",
                 "color" : "#ffc107",
-                "settings" : {
-                  "dataKeyHidden" : false,
-                  "dataKeyType" : "server",
-                  "dataKeyValueType" : "string",
-                  "required" : false,
-                  "isEditable" : "readonly",
-                  "appearance" : "outline",
-                  "subscriptSizing" : "fixed",
-                  "useCustomIcon" : false,
-                  "useGetValueFunction" : false,
-                  "useSetValueFunction" : false
-                },
-                "_hash" : 0.06574133384226966,
+                "settings" : { },
+                "_hash" : 0.010329535087611141,
                 "aggregationType" : null,
                 "units" : null,
                 "decimals" : null,
@@ -9629,7 +9602,7 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "stato",
+                "name" : "porto_stato",
                 "type" : "attribute",
                 "label" : "Stato",
                 "color" : "#ffc107",
@@ -9663,7 +9636,7 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "note",
+                "name" : "Porto_note",
                 "type" : "attribute",
                 "label" : "Note",
                 "color" : "#4caf50",

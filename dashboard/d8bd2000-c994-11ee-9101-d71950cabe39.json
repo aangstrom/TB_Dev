@@ -6100,29 +6100,20 @@
               "entityAliasId" : "783dd5f0-d34d-946d-a82f-95d3a6eaadd1",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "name",
-                "type" : "entityField",
+                "name" : "porto_name",
+                "type" : "attribute",
                 "label" : "Nome",
-                "color" : "#2196f3",
-                "settings" : {
-                  "columnWidth" : "20%",
-                  "useCellStyleFunction" : false,
-                  "cellStyleFunction" : "",
-                  "useCellContentFunction" : false,
-                  "cellContentFunction" : "",
-                  "defaultColumnVisibility" : "visible",
-                  "columnSelectionToDisplay" : "enabled",
-                  "columnExportOption" : "onlyVisible"
-                },
-                "_hash" : 0.46096251592014714,
+                "color" : "#ffeb3b",
+                "settings" : { },
+                "_hash" : 0.6593519805583057,
+                "aggregationType" : null,
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : null,
-                "postFuncBody" : null,
-                "aggregationType" : null
+                "postFuncBody" : null
               }, {
-                "name" : "stato",
+                "name" : "porto_stato",
                 "type" : "attribute",
                 "label" : "Stato",
                 "color" : "#ffc107",
@@ -6164,7 +6155,7 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "stato_assegnazione",
+                "name" : "porto_stato_assegnazione",
                 "type" : "attribute",
                 "label" : "Stato Assegnazione",
                 "color" : "#e91e63",
@@ -6229,7 +6220,7 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "note",
+                "name" : "porto_note",
                 "type" : "attribute",
                 "label" : "Note",
                 "color" : "#ffc107",
@@ -6274,12 +6265,12 @@
                 "id" : "27b78a0c-3e2d-8d90-72dd-10f9f80351b5"
               } ],
               "actionCellButton" : [ {
-                "name" : "Impostazioni Bungalow",
+                "name" : "Impostazioni Houseboat",
                 "icon" : "settings",
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
                 "type" : "openDashboardState",
-                "targetDashboardStateId" : "settings_bungalow",
+                "targetDashboardStateId" : "settings_houseboat",
                 "setEntityId" : true,
                 "stateEntityParamName" : "selectedDevice",
                 "openRightLayout" : false,
@@ -6563,7 +6554,7 @@
             "settings" : {
               "useMarkdownTextFunction" : true,
               "markdownTextPattern" : "# Markdown/HTML card \\n - **Current entity**: **${entityName}**. \\n - **Current value**: **${Random}**.",
-              "markdownTextFunction" : "var device,bungalow,all_bungalow,bagni,supermercato,colonnine,colonnina,piazzole,piazzola,piscina,ristorante,allarmi,wc,stato_bagno,affluenza;\nif (data && data.length && data[0].entityId) {\n    if(data[0].Type==\"Acqua\" || data[0].Type==\"AA Sensor\" || data[0].Type==\"Energy\" || data[0].Type==\"AA Energy\" || data[0].Type==\"Presenza\"){\n        device=true;\n    }\n    if(data[0].Type=='bungalow'){\n        bungalow=true;\n    }\n    if(data[0].Type=='Colonnina'){\n        colonnina=true;\n    }\n    if(data[0].Type=='Piazzola'){\n        piazzola=true;\n    }\n    if(data[0].Type=='Servizio Igienico'){\n        wc=true;\n    }\n    if(data[0].Type=='Stato Bagno'){\n        stato_bagno=true;\n    }\n    if(data[0].Type=='Affluenza'){\n        affluenza=true;\n    }\n    if(data[0].deviceType==\"Categoria\"){\n        if(data[0].entityName==\"Bungalow\"){\n            all_bungalow=true;\n        }\n        if(data[0].entityName==\"Servizi Igienici\"){\n            bagni=true;\n        }\n        if(data[0].entityName==\"Piscina\"){\n            piscina=true;\n        }\n        if(data[0].entityName==\"Piazzole\"){\n            piazzole=true;\n        }\n        if(data[0].entityName==\"Colonnine Ricarica\"){\n            colonnine=true;\n        }\n        if(data[0].entityName==\"Supermercato\"){\n            supermercato=true;\n        }\n        if(data[0].entityName==\"Ristorante\"){\n            supermercato=true;\n        }\n        if(data[0].entityName==\"Allarmi\"){\n            allarmi=true;\n        }\n    }\n} else {\n    device = false;\n    bungalow = false;\n    bagni = false;\n    wc = false;\n    supermercato = false;\n    colonnine = false;\n    colonnina = false;\n    piazzole = false;\n    piazzola = false;\n    piscina = false;\n    ristorante = false;\n    allarmi = false;\n    stato_bagno = false;\n    affluenza = false;\n}\nreturn '<div class=\"main-layout\" style=\"width: 100%; height:100%;\" fxLayout=\"column\">' +\n    (\n        bungalow==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        all_bungalow==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_bungalow\"></tb-dashboard-state></div>') :\n        bagni==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_bagni\"></tb-dashboard-state></div>') :\n        wc==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        supermercato==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        ristorante==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        colonnine==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_colonnine\"></tb-dashboard-state></div>') :\n        colonnina==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        piazzole==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_piazzole\"></tb-dashboard-state></div>') :\n        piazzola==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        piscina==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        device==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_device\"></tb-dashboard-state></div>') :\n        allarmi==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"alarm_all\"></tb-dashboard-state></div>') :\n        affluenza==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_device\"></tb-dashboard-state></div>') :\n        stato_bagno==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_device\"></tb-dashboard-state></div>') :\n        ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_mappa\"></tb-dashboard-state></div>')\n    );",
+              "markdownTextFunction" : "var device,bungalow,all_bungalow,bagni,supermercato,colonnine,colonnina,piazzole,piazzola,piscina,ristorante,allarmi,wc,stato_bagno,affluenza;\nif (data && data.length && data[0].entityId) {\n    if(data[0].Type==\"Acqua\" || data[0].Type==\"AA Sensor\" || data[0].Type==\"Energy\" || data[0].Type==\"AA Energy\" || data[0].Type==\"Presenza\"){\n        device=true;\n    }\n    if(data[0].Type=='bungalow'){\n        bungalow=true;\n    }\n    if(data[0].Type=='Colonnina'){\n        colonnina=true;\n    }\n    if(data[0].Type=='Piazzola'){\n        piazzola=true;\n    }\n    if(data[0].Type=='Servizio Igienico'){\n        wc=true;\n    }\n    if(data[0].Type=='Stato Bagno'){\n        stato_bagno=true;\n    }\n    if(data[0].Type=='Affluenza'){\n        affluenza=true;\n    }\n    if(data[0].deviceType==\"Categoria\"){\n        if(data[0].entityName==\"Bungalow\"){\n            all_bungalow=true;\n        }\n        if(data[0].entityName==\"Servizi Igienici\"){\n            bagni=true;\n        }\n        if(data[0].entityName==\"Piscina\"){\n            piscina=true;\n        }\n        if(data[0].entityName==\"Piazzole\"){\n            piazzole=true;\n        }\n        if(data[0].entityName==\"Colonnine Ricarica\"){\n            colonnine=true;\n        }\n        if(data[0].entityName==\"Supermercato\"){\n            supermercato=true;\n        }\n        if(data[0].entityName==\"Ristorante\"){\n            supermercato=true;\n        }\n        if(data[0].entityName==\"Allarmi\"){\n            allarmi=true;\n        }\n    }\n} else {\n    device = false;\n    bungalow = false;\n    bagni = false;\n    wc = false;\n    supermercato = false;\n    colonnine = false;\n    colonnina = false;\n    piazzole = false;\n    piazzola = false;\n    piscina = false;\n    ristorante = false;\n    allarmi = false;\n    stato_bagno = false;\n    affluenza = false;\n}\nreturn '<div class=\"main-layout\" style=\"width: 100%; height:100%;\" fxLayout=\"column\">' +\n    (\n        bungalow==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        all_bungalow==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_houseboat\"></tb-dashboard-state></div>') :\n        bagni==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_bagni\"></tb-dashboard-state></div>') :\n        wc==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        supermercato==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        ristorante==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        colonnine==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_colonnine\"></tb-dashboard-state></div>') :\n        colonnina==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        piazzole==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_piazzole\"></tb-dashboard-state></div>') :\n        piazzola==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        piscina==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n        device==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_device\"></tb-dashboard-state></div>') :\n        allarmi==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"alarm_all\"></tb-dashboard-state></div>') :\n        affluenza==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_device\"></tb-dashboard-state></div>') :\n        stato_bagno==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_device\"></tb-dashboard-state></div>') :\n        ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_mappa\"></tb-dashboard-state></div>')\n    );",
               "applyDefaultMarkdownStyle" : true,
               "markdownCss" : ".tb-markdown-view > div {\n    padding: 0;\n}\n.header{\n    margin: 10px;\n    height: 35px;\n}\n.title {\n    font-size: 18px;\n    font-weight: 500;\n    color: #28232D;\n}\n#edit{\n    margin-right:10px;\n}"
             },
@@ -15781,39 +15772,6 @@
             }
           }
         },
-        "page_bungalow" : {
-          "name" : "page_bungalow",
-          "root" : false,
-          "layouts" : {
-            "main" : {
-              "widgets" : {
-                "51c22b8b-2bd8-8358-108e-a05567eededa" : {
-                  "sizeX" : 24,
-                  "sizeY" : 13,
-                  "row" : 1,
-                  "col" : 0
-                },
-                "628ce482-6b96-c42b-df6f-d824210d2dd6" : {
-                  "sizeX" : 24,
-                  "sizeY" : 1,
-                  "row" : 0,
-                  "col" : 0
-                }
-              },
-              "gridSettings" : {
-                "backgroundColor" : "#EEEEEE",
-                "columns" : 24,
-                "margin" : 10,
-                "outerMargin" : true,
-                "backgroundSizeMode" : "100%",
-                "autoFillHeight" : true,
-                "backgroundImageUrl" : null,
-                "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70
-              }
-            }
-          }
-        },
         "page_device" : {
           "name" : "page_device",
           "root" : false,
@@ -15998,39 +15956,6 @@
                 "margin" : 10,
                 "outerMargin" : true,
                 "backgroundSizeMode" : "100%"
-              }
-            }
-          }
-        },
-        "settings_bungalow" : {
-          "name" : "Impostazioni Bungalow",
-          "root" : false,
-          "layouts" : {
-            "main" : {
-              "widgets" : {
-                "c8179e09-b426-a989-5813-7ac39ce3cdea" : {
-                  "sizeX" : 24,
-                  "sizeY" : 12,
-                  "row" : 0,
-                  "col" : 0
-                },
-                "78b1ab8f-9569-26f1-89d4-64692445b8d7" : {
-                  "sizeX" : 24,
-                  "sizeY" : 10,
-                  "row" : 12,
-                  "col" : 0
-                }
-              },
-              "gridSettings" : {
-                "backgroundColor" : "#ffffff",
-                "columns" : 24,
-                "margin" : 0,
-                "backgroundSizeMode" : "100%",
-                "autoFillHeight" : false,
-                "backgroundImageUrl" : null,
-                "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70,
-                "outerMargin" : true
               }
             }
           }
@@ -16454,6 +16379,72 @@
                 "margin" : 10,
                 "outerMargin" : true,
                 "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        },
+        "settings_houseboat" : {
+          "name" : "Impostazioni Houseboat",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "c8179e09-b426-a989-5813-7ac39ce3cdea" : {
+                  "sizeX" : 24,
+                  "sizeY" : 12,
+                  "row" : 0,
+                  "col" : 0
+                },
+                "78b1ab8f-9569-26f1-89d4-64692445b8d7" : {
+                  "sizeX" : 24,
+                  "sizeY" : 10,
+                  "row" : 12,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#ffffff",
+                "columns" : 24,
+                "margin" : 0,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : false,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70,
+                "outerMargin" : true
+              }
+            }
+          }
+        },
+        "page_houseboat" : {
+          "name" : "page_houseboat",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "51c22b8b-2bd8-8358-108e-a05567eededa" : {
+                  "sizeX" : 24,
+                  "sizeY" : 13,
+                  "row" : 1,
+                  "col" : 0
+                },
+                "628ce482-6b96-c42b-df6f-d824210d2dd6" : {
+                  "sizeX" : 24,
+                  "sizeY" : 1,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#EEEEEE",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : true,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70
               }
             }
           }

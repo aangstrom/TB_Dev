@@ -5655,6 +5655,26 @@
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
                 "id" : "e34ceea1-f69f-157a-bf99-164ea4ae03ac"
+              } ],
+              "headerButton" : [ {
+                "name" : "Impostazioni",
+                "icon" : "settings",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "settings_porto",
+                "setEntityId" : true,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "popoverPreferredPlacement" : "top",
+                "popoverHideOnClickOutside" : true,
+                "popoverHideDashboardToolbar" : true,
+                "popoverWidth" : "25vw",
+                "popoverHeight" : "50vh",
+                "popoverStyle" : { },
+                "openInSeparateDialog" : false,
+                "openInPopover" : true,
+                "id" : "2094e98b-17e9-6c77-3692-0f8eb7ddfcaa"
               } ]
             },
             "showTitleIcon" : false,
@@ -15175,6 +15195,176 @@
           "row" : 0,
           "col" : 0,
           "id" : "ad31fa41-84d1-5a27-94ba-a0a00ed50cfc"
+        },
+        "06803844-9a83-cb7f-e912-af1c0e7e71f8" : {
+          "type" : "latest",
+          "sizeX" : 11,
+          "sizeY" : 16,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "55f23be2-d63e-ce45-b3f5-d05604647f2a",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Nome",
+                "color" : "#ffc107",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "string",
+                  "required" : false,
+                  "isEditable" : "readonly",
+                  "appearance" : "outline",
+                  "subscriptSizing" : "fixed",
+                  "useCustomIcon" : false,
+                  "useGetValueFunction" : false,
+                  "useSetValueFunction" : false
+                },
+                "_hash" : 0.06574133384226966,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "floorplan",
+                "type" : "attribute",
+                "label" : "Piantina (formato Base64)",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.20965411481646834,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "F1",
+                "type" : "attribute",
+                "label" : "Costo fascia oraria F1",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.399145499459697,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "F2",
+                "type" : "attribute",
+                "label" : "Costo fascia oraria F2",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.3460639473636282,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "F3",
+                "type" : "attribute",
+                "label" : "Costo fascia oraria F3",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.12492101538369993,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "Acqua",
+                "type" : "attribute",
+                "label" : "Costo Acqua al mc",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.46603590875481116,
+                "aggregationType" : null,
+                "units" : "m³",
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1683549171832,
+                  "endTimeMs" : 1683635571832
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "showResultMessage" : true,
+              "showActionButtons" : false,
+              "showGroupTitle" : false,
+              "fieldsAlignment" : "column",
+              "groupTitle" : "${entityName}",
+              "fieldsInRow" : 2,
+              "columnGap" : 10,
+              "rowGap" : 5
+            },
+            "title" : "Soglie allarmi",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "enableDataExport" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "18px",
+              "fontWeight" : 600,
+              "padding" : "5px 10px 5px 5px",
+              "textTransform" : "capitalize"
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "showTitleIcon" : false,
+            "titleIcon" : null,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "displayTimewindow" : true,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "Nessuna Colonnina Selezionata",
+            "margin" : "0px"
+          },
+          "id" : "06803844-9a83-cb7f-e912-af1c0e7e71f8",
+          "typeFullFqn" : "system.input_widgets.update_multiple_attributes"
         }
       },
       "states" : {
@@ -16612,6 +16802,29 @@
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
                 "mobileRowHeight" : 70
+              }
+            }
+          }
+        },
+        "settings_porto" : {
+          "name" : "settings_porto",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "06803844-9a83-cb7f-e912-af1c0e7e71f8" : {
+                  "sizeX" : 24,
+                  "sizeY" : 12,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%"
               }
             }
           }

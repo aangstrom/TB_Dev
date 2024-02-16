@@ -389,6 +389,10 @@
       "toIndex" : 76,
       "type" : "Success"
     }, {
+      "fromIndex" : 77,
+      "toIndex" : 122,
+      "type" : "Success"
+    }, {
       "fromIndex" : 78,
       "toIndex" : 9,
       "type" : "Success"
@@ -656,6 +660,10 @@
       "fromIndex" : 121,
       "toIndex" : 103,
       "type" : "Success"
+    }, {
+      "fromIndex" : 122,
+      "toIndex" : 123,
+      "type" : "Failure"
     } ],
     "firstNodeIndex" : 31,
     "nodes" : [ {
@@ -4315,6 +4323,50 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 891,
+        "layoutY" : 1051
+      },
+      "configuration" : {
+        "version" : 0
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "55c8aab0-cce7-11ee-9101-d71950cabe39"
+      },
+      "name" : "23456",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbAssetTypeSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 859,
+        "layoutY" : 950
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);",
+        "tbelScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "55ca0a40-cce7-11ee-9101-d71950cabe39"
+      },
+      "name" : "log",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbLogNode"
     } ],
     "ruleChainConnections" : null
   },

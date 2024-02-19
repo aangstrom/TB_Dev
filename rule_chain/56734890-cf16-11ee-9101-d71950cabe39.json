@@ -86,7 +86,7 @@
       "type" : "Success"
     }, {
       "fromIndex" : 14,
-      "toIndex" : 13,
+      "toIndex" : 17,
       "type" : "Success"
     }, {
       "fromIndex" : 15,
@@ -100,6 +100,14 @@
       "fromIndex" : 16,
       "toIndex" : 15,
       "type" : "Status"
+    }, {
+      "fromIndex" : 17,
+      "toIndex" : 6,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 17,
+      "toIndex" : 13,
+      "type" : "Delay"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -398,8 +406,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 502,
-        "layoutY" : 703
+        "layoutX" : 553,
+        "layoutY" : 802
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -488,6 +496,29 @@
         "id" : "8cd0cf00-cf1d-11ee-9101-d71950cabe39"
       },
       "name" : "if(status)",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 428,
+        "layoutY" : 704
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if(msg.delay!=null) {\n    return ['Delay'];\n}else{\n    return ['Success'];\n}\nreturn nextRelation(metadata, msg);"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "1f84a7e0-cf1e-11ee-9101-d71950cabe39"
+      },
+      "name" : "if delay",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"

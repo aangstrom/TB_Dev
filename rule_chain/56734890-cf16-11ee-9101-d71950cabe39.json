@@ -70,16 +70,36 @@
       "type" : "Success"
     }, {
       "fromIndex" : 9,
-      "toIndex" : 6,
+      "toIndex" : 12,
       "type" : "Success"
     }, {
       "fromIndex" : 9,
-      "toIndex" : 12,
+      "toIndex" : 16,
       "type" : "Success"
     }, {
       "fromIndex" : 12,
       "toIndex" : 6,
       "type" : "Success"
+    }, {
+      "fromIndex" : 13,
+      "toIndex" : 6,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 14,
+      "toIndex" : 13,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 15,
+      "toIndex" : 14,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 16,
+      "toIndex" : 6,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 16,
+      "toIndex" : 15,
+      "type" : "Status"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -336,8 +356,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 331,
-        "layoutY" : 454
+        "layoutX" : 330,
+        "layoutY" : 118
       },
       "configuration" : {
         "inputValueKey" : "status",
@@ -375,6 +395,102 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 502,
+        "layoutY" : 703
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var meta={};\nvar message={};\n\nmeta=metadata;\nmeta.ts=parseLong(metadata.ts)+1;\n\nmessage.status=msg.delay;\nreturn {msg: message, metadata: meta, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "8ccde8d0-cf1d-11ee-9101-d71950cabe39"
+      },
+      "name" : "Calculate Delay",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 352,
+        "layoutY" : 603
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var message={};\nif(msg.periodInMs>10800000){\n    var temp=msg.status;\n    message=msg;\n    message.status=0;\n    message.delay=temp;\n}else{\n    message=msg;\n}\nreturn {msg: message, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "8ccf4860-cf1d-11ee-9101-d71950cabe39"
+      },
+      "name" : "Calculate",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 329,
+        "layoutY" : 502
+      },
+      "configuration" : {
+        "inputValueKey" : "status",
+        "outputValueKey" : "delta",
+        "useCache" : true,
+        "addPeriodBetweenMsgs" : true,
+        "periodValueKey" : "periodInMs",
+        "round" : null,
+        "tellFailureIfDeltaIsNegative" : true
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "8cd00bb0-cf1d-11ee-9101-d71950cabe39"
+      },
+      "name" : "Get time different",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.CalculateDeltaNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 322,
+        "layoutY" : 389
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if(msg.status!=null) {\n    return ['Status'];\n}else{\n    return ['Success']\n}\nreturn nextRelation(metadata, msg);"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "8cd0cf00-cf1d-11ee-9101-d71950cabe39"
+      },
+      "name" : "if(status)",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     } ],
     "ruleChainConnections" : null
   },

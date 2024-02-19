@@ -427,7 +427,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var message={};\nif(msg.periodInMs>10800000){\n    var temp=msg.status;\n    message=msg;\n    message.status=0;\n    message.delay=temp;\n}else{\n    message=msg;\n}\nreturn {msg: message, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var message={};\nif(msg.periodInMs>=10800000){\n    var temp=msg.status;\n    message=msg;\n    message.status=0;\n    message.delay=temp;\n}else{\n    message=msg;\n}\nreturn {msg: message, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,

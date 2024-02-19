@@ -449,6 +449,10 @@
       "toIndex" : 62,
       "type" : "Success"
     }, {
+      "fromIndex" : 84,
+      "toIndex" : 90,
+      "type" : "Success"
+    }, {
       "fromIndex" : 85,
       "toIndex" : 87,
       "type" : "Success"
@@ -471,6 +475,10 @@
     }, {
       "fromIndex" : 89,
       "toIndex" : 63,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 90,
+      "toIndex" : 9,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 79,
@@ -2727,8 +2735,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 300,
-        "layoutY" : 1062
+        "layoutX" : 301,
+        "layoutY" : 1050
       },
       "configuration" : {
         "inputValueKey" : "liter",
@@ -2990,6 +2998,29 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 925,
+        "layoutY" : 1061
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var message={};\nmessage.active=true;\nreturn {msg: message, metadata: metadata, msgType: 'POST_ATTRIBUTES_REQUEST'};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4f3fd920-cf03-11ee-9101-d71950cabe39"
+      },
+      "name" : "Make active",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

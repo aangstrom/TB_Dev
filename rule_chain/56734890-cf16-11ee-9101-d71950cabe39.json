@@ -412,7 +412,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var meta={};\nvar message={};\n\nmeta=metadata;\nmeta.ts=parseLong(metadata.ts)+1;\n\nmessage.status=msg.delay;\nreturn {msg: message, metadata: meta, msgType: msgType};"
+        "tbelScript" : "var meta={};\nvar message={};\n\nmeta=metadata;\nmeta.ts=parseLong(metadata.ts)+1;\n\nmessage.status=msg.delay;\nmessage.delay=null;\nreturn {msg: message, metadata: meta, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -435,7 +435,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var message={};\nif(msg.periodInMs>=10800000){\n    var temp=msg.status;\n    message=msg;\n    message.status=0;\n    message.delay=temp;\n}else{\n    message=msg;\n}\nreturn {msg: message, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var message={};\nif(msg.periodInMs>=10800000){\n    var temp=msg.status;\n    message=msg;\n    message.status=0;\n    message.delay=temp;\n    message.periodInMs=null;\n    message.delta=null;\n}else{\n    message=msg;\n    message.periodInMs=null;\n    message.delta=null;\n}\nreturn {msg: message, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,

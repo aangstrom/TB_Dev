@@ -16182,29 +16182,7 @@
           "sizeX" : 5,
           "sizeY" : 3.5,
           "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "55f23be2-d63e-ce45-b3f5-d05604647f2a",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "name",
-                "type" : "entityField",
-                "label" : "Name_client",
-                "color" : "#4caf50",
-                "settings" : { },
-                "_hash" : 0.2860582185919256,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              } ],
-              "alarmFilterConfig" : {
-                "statusList" : [ "ACTIVE" ]
-              }
-            } ],
+            "datasources" : [ ],
             "timewindow" : {
               "displayValue" : "",
               "selectedTab" : 0,
@@ -16236,7 +16214,7 @@
             "settings" : {
               "useMarkdownTextFunction" : true,
               "markdownTextPattern" : "# Markdown/HTML card \\n - **Current entity**: **${entityName}**. \\n - **Current value**: **${Random}**.",
-              "markdownTextFunction" : "return '<div class=\"main-layout\" style=\"width: 100%; height: 100%;\" fxLayout=\"row\">' +\n        '<div fxLayout=\"column\" fxLayoutAlign=\"center\"><button id=\"go-back\" matTooltip=\"Go back\" type=\"button\" mat-icon-button><mat-icon>arrow_back</mat-icon></button></div>' +\n        '<div fxFlex fxLayout=\"column\" fxLayoutAlign=\"center\">' +\n           '<div class=\"title\">Report settimanale per: ${Name_client}</div>' +\n        '</div>'+\n   '<div>';",
+              "markdownTextFunction" : "return '<div class=\"main-layout\" style=\"width: 100%; height: 100%;\" fxLayout=\"row\">' +\n        '<div fxFlex fxLayout=\"column\" fxLayoutAlign=\"center\">' +\n           '<div class=\"title\">Report settimanale per: Holiday Village Florenz</div>' +\n        '</div>'+\n   '<div>';",
               "applyDefaultMarkdownStyle" : true,
               "markdownCss" : ".main-layout {\n    height: 60px;\n} \n\n.main-layout .header .mat-icon.title-icon {\n    width: 40px;\n    height: 40px;\n}\n\n.main-layout .title {\n    font-size: 24px;\n    font-weight: 500;\n    color: #28232D;\n}\n\n.tb-markdown-view .params {\n    background-color: #FAFAFA;\n    border-radius: 4px;\n    padding: 10px;\n    margin-bottom: 10px;\n}\n\n.tb-markdown-view .param-title {\n    font-size: 12px;\n    font-weight: normal;\n    color: #757575;\n}\n\n.tb-markdown-view .param {\n    font-size: 12px;\n    font-weight: 500;\n    color: #212121;\n    line-height: 24px;\n    height: 24px;\n}\n\n.tb-markdown-view .param #battery-level {\n    width: 24px;\n    height: 24px;\n    line-height: 24px;\n    padding: 0 2px;\n    min-width: 28px;\n}\n"
             },
@@ -16257,17 +16235,7 @@
             "widgetCss" : "",
             "noDataDisplayMessage" : "",
             "actions" : {
-              "elementClick" : [ {
-                "name" : "go-back",
-                "icon" : "more_horiz",
-                "useShowWidgetActionFunction" : null,
-                "showWidgetActionFunction" : "return true;",
-                "type" : "custom",
-                "customFunction" : "let stateIndex = widgetContext.stateController.getStateIndex();\r\nif (stateIndex > 0) {\r\n    stateIndex -= 1;\r\n    backToPrevState(stateIndex);\r\n}\r\n\r\nfunction backToPrevState(stateIndex) {\r\n    widgetContext.stateController.navigatePrevState(stateIndex);\r\n}\r\n",
-                "openInSeparateDialog" : false,
-                "openInPopover" : false,
-                "id" : "37e5e007-da10-e64c-be1e-899094481e42"
-              } ]
+              "elementClick" : [ ]
             },
             "useDashboardTimewindow" : true,
             "displayTimewindow" : true

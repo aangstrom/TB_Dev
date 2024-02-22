@@ -82,7 +82,7 @@
       "type" : "Success"
     }, {
       "fromIndex" : 13,
-      "toIndex" : 6,
+      "toIndex" : 18,
       "type" : "Success"
     }, {
       "fromIndex" : 14,
@@ -102,12 +102,16 @@
       "type" : "Status"
     }, {
       "fromIndex" : 17,
-      "toIndex" : 6,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 17,
       "toIndex" : 13,
       "type" : "Delay"
+    }, {
+      "fromIndex" : 17,
+      "toIndex" : 18,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 18,
+      "toIndex" : 6,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -422,7 +426,7 @@
         "entityType" : "RULE_NODE",
         "id" : "8ccde8d0-cf1d-11ee-9101-d71950cabe39"
       },
-      "name" : "Calculate Delay",
+      "name" : "Calculate status before delay",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
@@ -508,7 +512,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(msg.delay!=null) {\n    return ['Delay'];\n}else{\n    return ['Success'];\n}\nreturn nextRelation(metadata, msg);"
+        "tbelScript" : "if(msg.delay!=null) {\n    return ['Delay', \"Success\"];\n}else{\n    return ['Success'];\n}\nreturn nextRelation(metadata, msg);"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -522,6 +526,29 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 643,
+        "layoutY" : 504
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var message={};\nmessage=msg;\nmessage.delay=null;\nreturn {msg: message, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "7d22e470-d158-11ee-9101-d71950cabe39"
+      },
+      "name" : "Remove Delay",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

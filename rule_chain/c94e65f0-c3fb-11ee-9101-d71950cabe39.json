@@ -488,6 +488,10 @@
       "fromIndex" : 92,
       "toIndex" : 9,
       "type" : "Success"
+    }, {
+      "fromIndex" : 94,
+      "toIndex" : 93,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 78,
     "nodes" : [ {
@@ -2614,7 +2618,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(msg.power!=null) {\n    return ['energy'];\n}else if(msg.liter!=null) {\n    return ['water'];\n}else if(msg.occupancy!=null) {\n    return ['occupancy'];\n}else{\n    return ['false'];\n}"
+        "tbelScript" : "if(msg.power!=null) {\n    return ['energy'];\n}else if(msg.liter!=null) {\n    if(msg.string!=null){\n        return ['water', 'Federico'];\n    }else{\n        return ['water'];\n    }\n}else if(msg.occupancy!=null) {\n    return ['occupancy'];\n}else if(msg.string!=null){\n    return ['Federico'];\n}else{\n    return ['false'];\n}"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -3081,6 +3085,67 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 920,
+        "layoutY" : 181
+      },
+      "configuration" : {
+        "useSystemSmtpSettings" : true,
+        "smtpHost" : "localhost",
+        "smtpPort" : 25,
+        "username" : null,
+        "password" : null,
+        "smtpProtocol" : "smtp",
+        "timeout" : 10000,
+        "enableTls" : false,
+        "tlsVersion" : "TLSv1.2",
+        "enableProxy" : false,
+        "proxyHost" : null,
+        "proxyPort" : null,
+        "proxyUser" : null,
+        "proxyPassword" : null
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "1d483500-d577-11ee-9101-d71950cabe39"
+      },
+      "name" : "Send to Federico",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.mail.TbSendEmailNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 663,
+        "layoutY" : 156
+      },
+      "configuration" : {
+        "fromTemplate" : "alert@aangstrom.it",
+        "toTemplate" : "federico.furlatti@aangstrom.it",
+        "ccTemplate" : null,
+        "bccTemplate" : null,
+        "subjectTemplate" : "Nuova stringa non codificata",
+        "mailBodyType" : "true",
+        "bodyTemplate" : "<p align=\"center\" style=\"color:red;font-weight: bold;font-size:30px\">!Nuova stringa non codificata !</p>\n\n$[details.data]\n\n\n<br><br>"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "1d4acd10-d577-11ee-9101-d71950cabe39"
+      },
+      "name" : "Crea mail",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.mail.TbMsgToEmailNode"
     } ],
     "ruleChainConnections" : null
   },

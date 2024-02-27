@@ -413,6 +413,10 @@
       "toIndex" : 82,
       "type" : "water"
     }, {
+      "fromIndex" : 78,
+      "toIndex" : 95,
+      "type" : "Federico"
+    }, {
       "fromIndex" : 79,
       "toIndex" : 45,
       "type" : "Success"
@@ -491,6 +495,14 @@
     }, {
       "fromIndex" : 94,
       "toIndex" : 93,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 95,
+      "toIndex" : 9,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 95,
+      "toIndex" : 94,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 78,
@@ -3088,8 +3100,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 920,
-        "layoutY" : 181
+        "layoutX" : 952,
+        "layoutY" : 126
       },
       "configuration" : {
         "useSystemSmtpSettings" : true,
@@ -3122,8 +3134,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 663,
-        "layoutY" : 156
+        "layoutX" : 677,
+        "layoutY" : 127
       },
       "configuration" : {
         "fromTemplate" : "alert@aangstrom.it",
@@ -3132,7 +3144,7 @@
         "bccTemplate" : null,
         "subjectTemplate" : "Nuova stringa non codificata",
         "mailBodyType" : "true",
-        "bodyTemplate" : "<p align=\"center\" style=\"color:red;font-weight: bold;font-size:30px\">!Nuova stringa non codificata !</p>\n\n$[details.data]\n\n\n<br><br>"
+        "bodyTemplate" : "<p align=\"center\" style=\"color:red;font-weight: bold;font-size:30px\">!Nuova stringa non codificata !</p>\n\n$[string]\n\n\n<br><br>"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -3146,6 +3158,29 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.mail.TbMsgToEmailNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 378,
+        "layoutY" : 126
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "68190a00-d577-11ee-9101-d71950cabe39"
+      },
+      "name" : "Buffer",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

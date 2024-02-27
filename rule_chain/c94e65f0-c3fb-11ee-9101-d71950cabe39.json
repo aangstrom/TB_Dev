@@ -502,8 +502,12 @@
       "type" : "Success"
     }, {
       "fromIndex" : 95,
-      "toIndex" : 94,
+      "toIndex" : 96,
       "type" : "Success"
+    }, {
+      "fromIndex" : 96,
+      "toIndex" : 94,
+      "type" : "False"
     } ],
     "firstNodeIndex" : 78,
     "nodes" : [ {
@@ -3100,8 +3104,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 952,
-        "layoutY" : 126
+        "layoutX" : 1126,
+        "layoutY" : 151
       },
       "configuration" : {
         "useSystemSmtpSettings" : true,
@@ -3134,8 +3138,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 677,
-        "layoutY" : 127
+        "layoutX" : 852,
+        "layoutY" : 151
       },
       "configuration" : {
         "fromTemplate" : "alert@aangstrom.it",
@@ -3161,8 +3165,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 378,
-        "layoutY" : 126
+        "layoutX" : 340,
+        "layoutY" : 152
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -3181,6 +3185,29 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 603,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return msg.temperature > 20;",
+        "tbelScript" : "return msg.string.startsWith('c1');"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "de3940f0-d578-11ee-9101-d71950cabe39"
+      },
+      "name" : "Script if not c1",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
     } ],
     "ruleChainConnections" : null
   },

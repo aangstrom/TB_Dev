@@ -15493,6 +15493,115 @@
           },
           "id" : "06803844-9a83-cb7f-e912-af1c0e7e71f8",
           "typeFullFqn" : "system.input_widgets.update_multiple_attributes"
+        },
+        "b0b89f8e-dbaa-cc08-f4f9-0177ecfb59c9" : {
+          "typeFullFqn" : "system.cards.html_value_card",
+          "type" : "latest",
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "55f23be2-d63e-ce45-b3f5-d05604647f2a",
+              "dataKeys" : [ ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1700662695164,
+                  "endTimeMs" : 1700749095164
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div class='card'>\n    <div class=\"container\">\n        <div id=\"report\" class=\"item\"><i class=\"fa fa-line-chart\" aria-hidden=\"true\"></i> Report</div>\n        <div id=\"allarmi\" class=\"item\"><i class=\"fa fa-exclamation-circle\" aria-hidden=\"true\"></i> Allarmi</div>\n        <div id=\"eventi\" class=\"item\"><i class=\"fa fa-list\" aria-hidden=\"true\"></i> Eventi</div>\n    </div>\n</div>",
+              "cardCss" : ".card {\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n}\n.container{\n    justify-content: space-around;\n    align-items: center;\n    display: flex;\n    margin-left: 30px;\n}\n.item{\n    margin-right: 20px;\n    font-weight: bold;\n    font-size: 26px;\n}\n.item:hover{\n    cursor: pointer;\n    background-color: grey;\n    opacity: 9;\n    padding: 10px;\n}"
+            },
+            "title" : "HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "report",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "report",
+                "setEntityId" : true,
+                "stateEntityParamName" : "bungalow_selezionato",
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "90d96311-25bf-33ce-435e-b4a94437c44a"
+              }, {
+                "name" : "allarmi",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "page_allarmi_selezionati",
+                "setEntityId" : true,
+                "stateEntityParamName" : "bungalow_selezionato",
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "1f4ef349-3152-8241-701f-0ac62b8f586f"
+              }, {
+                "name" : "eventi",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "page_eventi_selezionati",
+                "setEntityId" : true,
+                "stateEntityParamName" : "bungalow_selezionato",
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "e190ccc6-e437-9587-8193-ba4ae1fc96f0"
+              } ]
+            },
+            "displayTimewindow" : true,
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "b0b89f8e-dbaa-cc08-f4f9-0177ecfb59c9"
         }
       },
       "states" : {
@@ -16368,7 +16477,13 @@
                 },
                 "bde31308-35fa-04dd-a4d8-957ebca2d747" : {
                   "sizeX" : 19,
-                  "sizeY" : 12,
+                  "sizeY" : 11,
+                  "row" : 1,
+                  "col" : 6
+                },
+                "b0b89f8e-dbaa-cc08-f4f9-0177ecfb59c9" : {
+                  "sizeX" : 19,
+                  "sizeY" : 1,
                   "row" : 0,
                   "col" : 6
                 }

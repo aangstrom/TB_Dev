@@ -430,15 +430,15 @@
       "type" : "Success"
     }, {
       "fromIndex" : 82,
-      "toIndex" : 9,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 82,
       "toIndex" : 75,
       "type" : "Success"
     }, {
       "fromIndex" : 82,
       "toIndex" : 83,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 82,
+      "toIndex" : 98,
       "type" : "Success"
     }, {
       "fromIndex" : 83,
@@ -508,6 +508,14 @@
       "fromIndex" : 96,
       "toIndex" : 94,
       "type" : "False"
+    }, {
+      "fromIndex" : 97,
+      "toIndex" : 9,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 98,
+      "toIndex" : 97,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 78,
     "nodes" : [ {
@@ -3208,6 +3216,63 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 331,
+        "layoutY" : 814
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "msg.literCost=(msg.liter/1000)*metadata.Acqua;\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "49530460-d64c-11ee-9101-d71950cabe39"
+      },
+      "name" : "Costo Acqua",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 337,
+        "layoutY" : 909
+      },
+      "configuration" : {
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "TO",
+          "maxLevel" : null,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "CUSTOMER" ]
+          } ]
+        },
+        "dataToFetch" : "ATTRIBUTES",
+        "fetchTo" : "METADATA",
+        "dataMapping" : {
+          "Acqua" : "Acqua"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4954b210-d64c-11ee-9101-d71950cabe39"
+      },
+      "name" : "Get Acqua Cost",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
     } ],
     "ruleChainConnections" : null
   },

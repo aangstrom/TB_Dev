@@ -21,7 +21,33 @@
     "profileData" : {
       "alarms" : [ {
         "alarmType" : "Manomissione",
-        "clearRule" : null,
+        "clearRule" : {
+          "alarmDetails" : null,
+          "condition" : {
+            "condition" : [ {
+              "key" : {
+                "key" : "manomissione",
+                "type" : "TIME_SERIES"
+              },
+              "predicate" : {
+                "type" : "NUMERIC",
+                "operation" : "EQUAL",
+                "value" : {
+                  "defaultValue" : 0.0,
+                  "dynamicValue" : null,
+                  "userValue" : null
+                }
+              },
+              "value" : null,
+              "valueType" : "NUMERIC"
+            } ],
+            "spec" : {
+              "type" : "SIMPLE"
+            }
+          },
+          "dashboardId" : null,
+          "schedule" : null
+        },
         "createRules" : {
           "CRITICAL" : {
             "alarmDetails" : "Il sensore ${name} è stato manomesso o non è più attaccato",

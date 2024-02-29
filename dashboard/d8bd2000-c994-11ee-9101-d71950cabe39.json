@@ -15379,7 +15379,7 @@
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
                 "type" : "custom",
-                "customFunction" : null,
+                "customFunction" : "var $injector = widgetContext.$scope.$injector;\r\nvar params = widgetContext.stateController.getStateParams();\r\n$injector.get(widgetContext.servicesMap.get('entityService')).getEntity(entityId.entityType, entityId.id)\r\n  .subscribe(function(data) {\r\n        params.selectedDevice=null;\r\n        params.visualizzazione = null;\r\n        widgetContext.stateController.updateState(null, params);\r\n});",
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
                 "id" : "8d99f21b-669b-84ff-3830-b397ada1ad4b"

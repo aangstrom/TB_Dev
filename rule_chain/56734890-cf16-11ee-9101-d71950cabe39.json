@@ -439,11 +439,11 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var message={};\nif(msg.periodInMs>=10800000){\n    var temp=msg.status;\n    message=msg;\n    message.status=0;\n    message.delay=temp;\n    message.periodInMs=null;\n    message.delta=null;\n}else{\n    message=msg;\n    message.periodInMs=null;\n    message.delta=null;\n}\nreturn {msg: message, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var message={};\nvar tempoChiusura;\nvar tempoApertura;\nif(msg.periodInMs!=null){\n    var tempo=msg.periodInMs/60000;\n    if(msg.status==1){\n        tempoChiusura=tempo;\n    }else if(msg.status==0){\n        tempoApertura=tempo;\n    }\n}\nif(msg.periodInMs>=10800000){\n    var temp=msg.status;\n    message=msg;\n    message.status=0;\n    message.delay=temp;\n    message.periodInMs=null;\n    message.tempoChiusura=tempoChiusura;\n    message.tempoApertura=tempoApertura;\n    message.delta=null;\n}else{\n    message=msg;\n    message.periodInMs=null;\n    message.tempoChiusura=tempoChiusura;\n    message.tempoApertura=tempoApertura;\n    message.delta=null;\n}\nreturn {msg: message, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",

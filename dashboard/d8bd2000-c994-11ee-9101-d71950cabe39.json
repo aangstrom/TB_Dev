@@ -17547,16 +17547,20 @@
               "hideAggregation" : false,
               "hideAggInterval" : false,
               "hideTimezone" : false,
-              "selectedTab" : 0,
-              "realtime" : {
-                "realtimeType" : 1,
+              "selectedTab" : 1,
+              "history" : {
+                "historyType" : 2,
                 "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY",
-                "interval" : 3600000
+                "interval" : 3600000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1709567817263,
+                  "endTimeMs" : 1709654217263
+                },
+                "quickInterval" : "CURRENT_DAY"
               },
               "aggregation" : {
                 "type" : "AVG",
-                "limit" : 200
+                "limit" : 10000
               }
             },
             "showTitle" : false,
@@ -17602,12 +17606,12 @@
               "comparisonEnabled" : false,
               "showLegend" : true,
               "legendConfig" : {
-                "direction" : "row",
+                "direction" : "column",
                 "position" : "bottom",
                 "sortDataKeys" : false,
                 "showMin" : false,
                 "showMax" : false,
-                "showAvg" : false,
+                "showAvg" : true,
                 "showTotal" : false,
                 "showLatest" : false
               },
@@ -18283,23 +18287,7 @@
               "iconColor" : {
                 "type" : "range",
                 "color" : "#000000DE",
-                "rangeList" : [ {
-                  "from" : 0,
-                  "to" : 10,
-                  "color" : "#305AD7"
-                }, {
-                  "from" : 10,
-                  "to" : 30,
-                  "color" : "#3FA71A"
-                }, {
-                  "from" : 30,
-                  "to" : 50,
-                  "color" : "#F36900"
-                }, {
-                  "from" : 50,
-                  "to" : null,
-                  "color" : "#D81838"
-                } ],
+                "rangeList" : [ ],
                 "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
               },
               "valueFont" : {
@@ -18478,12 +18466,12 @@
               "comparisonEnabled" : false,
               "showLegend" : true,
               "legendConfig" : {
-                "direction" : "row",
+                "direction" : "column",
                 "position" : "bottom",
                 "sortDataKeys" : false,
                 "showMin" : false,
                 "showMax" : false,
-                "showAvg" : false,
+                "showAvg" : true,
                 "showTotal" : false,
                 "showLatest" : false
               },

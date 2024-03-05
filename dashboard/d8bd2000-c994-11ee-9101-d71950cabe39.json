@@ -15490,7 +15490,7 @@
               "dataKeys" : [ {
                 "name" : "mc",
                 "type" : "timeseries",
-                "label" : "Costo totale giorno",
+                "label" : "Totale del mese",
                 "color" : "#2196f3",
                 "settings" : { },
                 "_hash" : 0.18240374175255902,
@@ -15529,7 +15529,7 @@
                   "startTimeMs" : 1709562745502,
                   "endTimeMs" : 1709649145502
                 },
-                "quickInterval" : "CURRENT_DAY"
+                "quickInterval" : "CURRENT_MONTH"
               },
               "aggregation" : {
                 "type" : "AVG",
@@ -15561,7 +15561,7 @@
               "showIcon" : true,
               "iconSize" : 40,
               "iconSizeUnit" : "px",
-              "icon" : "mdi:hydro-power",
+              "icon" : "water_drop",
               "iconColor" : {
                 "type" : "range",
                 "color" : "#000000DE",
@@ -15654,7 +15654,7 @@
             "actions" : { },
             "showTitleIcon" : false,
             "titleTooltip" : "",
-            "dropShadow" : true,
+            "dropShadow" : false,
             "margin" : "0px",
             "widgetStyle" : { },
             "widgetCss" : "",
@@ -15868,594 +15868,6 @@
           "row" : 0,
           "col" : 0,
           "id" : "fbae9110-eb8a-6e08-9718-c73adb155564"
-        },
-        "70fe1bdc-0354-f344-5b1a-1da9969c5b0a" : {
-          "typeFullFqn" : "system.flow_rate_card",
-          "type" : "latest",
-          "sizeX" : 3,
-          "sizeY" : 3,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : "",
-              "entityAliasId" : "b755362a-b545-8ee6-a67b-df2c9e39d6e5",
-              "dataKeys" : [ {
-                "name" : "mc",
-                "type" : "timeseries",
-                "label" : "Costo totale giorno",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.18240374175255902,
-                "aggregationType" : "SUM",
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "return value;",
-                "comparisonEnabled" : null
-              } ],
-              "alarmFilterConfig" : {
-                "statusList" : [ "ACTIVE" ]
-              }
-            } ],
-            "timewindow" : {
-              "displayValue" : "",
-              "hideInterval" : false,
-              "hideLastInterval" : false,
-              "hideQuickInterval" : false,
-              "hideAggregation" : false,
-              "hideAggInterval" : false,
-              "hideTimezone" : false,
-              "selectedTab" : 1,
-              "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 2,
-                "interval" : 1000,
-                "timewindowMs" : 86400000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1709562745502,
-                  "endTimeMs" : 1709649145502
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "limit" : 25000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "layout" : "centered",
-              "autoScale" : true,
-              "showLabel" : true,
-              "labelFont" : {
-                "size" : 16,
-                "sizeUnit" : "px",
-                "family" : "Roboto",
-                "weight" : "500",
-                "style" : "normal",
-                "lineHeight" : "24px"
-              },
-              "labelColor" : {
-                "type" : "constant",
-                "color" : "#000000DE",
-                "rangeList" : null,
-                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
-              },
-              "showIcon" : true,
-              "iconSize" : 40,
-              "iconSizeUnit" : "px",
-              "icon" : "mdi:hydro-power",
-              "iconColor" : {
-                "type" : "range",
-                "color" : "#000000DE",
-                "rangeList" : [ {
-                  "from" : 0,
-                  "to" : 10,
-                  "color" : "#305AD7"
-                }, {
-                  "from" : 10,
-                  "to" : 30,
-                  "color" : "#3FA71A"
-                }, {
-                  "from" : 30,
-                  "to" : 50,
-                  "color" : "#F36900"
-                }, {
-                  "from" : 50,
-                  "to" : null,
-                  "color" : "#D81838"
-                } ],
-                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
-              },
-              "valueFont" : {
-                "size" : 28,
-                "sizeUnit" : "px",
-                "family" : "Roboto",
-                "weight" : "500",
-                "style" : "normal",
-                "lineHeight" : "32px"
-              },
-              "valueColor" : {
-                "type" : "range",
-                "color" : "#000000DE",
-                "rangeList" : [ {
-                  "from" : 0,
-                  "to" : 10,
-                  "color" : "#305AD7"
-                }, {
-                  "from" : 10,
-                  "to" : 30,
-                  "color" : "#3FA71A"
-                }, {
-                  "from" : 30,
-                  "to" : 50,
-                  "color" : "#F36900"
-                }, {
-                  "from" : 50,
-                  "to" : null,
-                  "color" : "#D81838"
-                } ],
-                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
-              },
-              "showDate" : true,
-              "dateFormat" : {
-                "format" : null,
-                "lastUpdateAgo" : true,
-                "custom" : false
-              },
-              "dateFont" : {
-                "size" : 12,
-                "sizeUnit" : "px",
-                "family" : "Roboto",
-                "weight" : "500",
-                "style" : "normal",
-                "lineHeight" : "16px"
-              },
-              "dateColor" : {
-                "type" : "constant",
-                "color" : "rgba(0, 0, 0, 0.38)",
-                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
-              },
-              "background" : {
-                "type" : "color",
-                "color" : "#fff",
-                "overlay" : {
-                  "enabled" : false,
-                  "color" : "rgba(255,255,255,0.72)",
-                  "blur" : 3
-                }
-              }
-            },
-            "title" : "Flow rate card",
-            "useDashboardTimewindow" : false,
-            "displayTimewindow" : false,
-            "configMode" : "basic",
-            "units" : "L",
-            "decimals" : 0,
-            "enableFullscreen" : false,
-            "borderRadius" : "0px",
-            "actions" : { },
-            "showTitleIcon" : false,
-            "titleTooltip" : "",
-            "dropShadow" : true,
-            "margin" : "0px",
-            "widgetStyle" : { },
-            "widgetCss" : "",
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : "",
-            "titleIcon" : "",
-            "iconColor" : "rgba(0, 0, 0, 0.87)",
-            "iconSize" : "14px",
-            "enableDataExport" : false
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "70fe1bdc-0354-f344-5b1a-1da9969c5b0a"
-        },
-        "d7452cb2-8ebd-a185-262a-13a0b0ae94f2" : {
-          "typeFullFqn" : "system.flow_rate_card",
-          "type" : "latest",
-          "sizeX" : 3,
-          "sizeY" : 3,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : "",
-              "entityAliasId" : "b755362a-b545-8ee6-a67b-df2c9e39d6e5",
-              "dataKeys" : [ {
-                "name" : "mc",
-                "type" : "timeseries",
-                "label" : "Costo totale giorno",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.18240374175255902,
-                "aggregationType" : "SUM",
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "return value;",
-                "comparisonEnabled" : null
-              } ],
-              "alarmFilterConfig" : {
-                "statusList" : [ "ACTIVE" ]
-              }
-            } ],
-            "timewindow" : {
-              "displayValue" : "",
-              "hideInterval" : false,
-              "hideLastInterval" : false,
-              "hideQuickInterval" : false,
-              "hideAggregation" : false,
-              "hideAggInterval" : false,
-              "hideTimezone" : false,
-              "selectedTab" : 1,
-              "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 2,
-                "interval" : 1000,
-                "timewindowMs" : 86400000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1709562745502,
-                  "endTimeMs" : 1709649145502
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "limit" : 25000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "layout" : "centered",
-              "autoScale" : true,
-              "showLabel" : true,
-              "labelFont" : {
-                "size" : 16,
-                "sizeUnit" : "px",
-                "family" : "Roboto",
-                "weight" : "500",
-                "style" : "normal",
-                "lineHeight" : "24px"
-              },
-              "labelColor" : {
-                "type" : "constant",
-                "color" : "#000000DE",
-                "rangeList" : null,
-                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
-              },
-              "showIcon" : true,
-              "iconSize" : 40,
-              "iconSizeUnit" : "px",
-              "icon" : "mdi:hydro-power",
-              "iconColor" : {
-                "type" : "range",
-                "color" : "#000000DE",
-                "rangeList" : [ {
-                  "from" : 0,
-                  "to" : 10,
-                  "color" : "#305AD7"
-                }, {
-                  "from" : 10,
-                  "to" : 30,
-                  "color" : "#3FA71A"
-                }, {
-                  "from" : 30,
-                  "to" : 50,
-                  "color" : "#F36900"
-                }, {
-                  "from" : 50,
-                  "to" : null,
-                  "color" : "#D81838"
-                } ],
-                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
-              },
-              "valueFont" : {
-                "size" : 28,
-                "sizeUnit" : "px",
-                "family" : "Roboto",
-                "weight" : "500",
-                "style" : "normal",
-                "lineHeight" : "32px"
-              },
-              "valueColor" : {
-                "type" : "range",
-                "color" : "#000000DE",
-                "rangeList" : [ {
-                  "from" : 0,
-                  "to" : 10,
-                  "color" : "#305AD7"
-                }, {
-                  "from" : 10,
-                  "to" : 30,
-                  "color" : "#3FA71A"
-                }, {
-                  "from" : 30,
-                  "to" : 50,
-                  "color" : "#F36900"
-                }, {
-                  "from" : 50,
-                  "to" : null,
-                  "color" : "#D81838"
-                } ],
-                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
-              },
-              "showDate" : true,
-              "dateFormat" : {
-                "format" : null,
-                "lastUpdateAgo" : true,
-                "custom" : false
-              },
-              "dateFont" : {
-                "size" : 12,
-                "sizeUnit" : "px",
-                "family" : "Roboto",
-                "weight" : "500",
-                "style" : "normal",
-                "lineHeight" : "16px"
-              },
-              "dateColor" : {
-                "type" : "constant",
-                "color" : "rgba(0, 0, 0, 0.38)",
-                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
-              },
-              "background" : {
-                "type" : "color",
-                "color" : "#fff",
-                "overlay" : {
-                  "enabled" : false,
-                  "color" : "rgba(255,255,255,0.72)",
-                  "blur" : 3
-                }
-              }
-            },
-            "title" : "Flow rate card",
-            "useDashboardTimewindow" : false,
-            "displayTimewindow" : false,
-            "configMode" : "basic",
-            "units" : "L",
-            "decimals" : 0,
-            "enableFullscreen" : false,
-            "borderRadius" : "0px",
-            "actions" : { },
-            "showTitleIcon" : false,
-            "titleTooltip" : "",
-            "dropShadow" : true,
-            "margin" : "0px",
-            "widgetStyle" : { },
-            "widgetCss" : "",
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : "",
-            "titleIcon" : "",
-            "iconColor" : "rgba(0, 0, 0, 0.87)",
-            "iconSize" : "14px",
-            "enableDataExport" : false
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "d7452cb2-8ebd-a185-262a-13a0b0ae94f2"
-        },
-        "8a4adf9f-9567-f419-e7fb-513803352b7b" : {
-          "typeFullFqn" : "system.flow_rate_card",
-          "type" : "latest",
-          "sizeX" : 3,
-          "sizeY" : 3,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : "",
-              "entityAliasId" : "b755362a-b545-8ee6-a67b-df2c9e39d6e5",
-              "dataKeys" : [ {
-                "name" : "mc",
-                "type" : "timeseries",
-                "label" : "Costo totale giorno",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.18240374175255902,
-                "aggregationType" : "SUM",
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "return value;",
-                "comparisonEnabled" : null
-              } ],
-              "alarmFilterConfig" : {
-                "statusList" : [ "ACTIVE" ]
-              }
-            } ],
-            "timewindow" : {
-              "displayValue" : "",
-              "hideInterval" : false,
-              "hideLastInterval" : false,
-              "hideQuickInterval" : false,
-              "hideAggregation" : false,
-              "hideAggInterval" : false,
-              "hideTimezone" : false,
-              "selectedTab" : 1,
-              "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "history" : {
-                "historyType" : 2,
-                "interval" : 1000,
-                "timewindowMs" : 86400000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1709562745502,
-                  "endTimeMs" : 1709649145502
-                },
-                "quickInterval" : "CURRENT_DAY"
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "limit" : 25000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "layout" : "centered",
-              "autoScale" : true,
-              "showLabel" : true,
-              "labelFont" : {
-                "size" : 16,
-                "sizeUnit" : "px",
-                "family" : "Roboto",
-                "weight" : "500",
-                "style" : "normal",
-                "lineHeight" : "24px"
-              },
-              "labelColor" : {
-                "type" : "constant",
-                "color" : "#000000DE",
-                "rangeList" : null,
-                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
-              },
-              "showIcon" : true,
-              "iconSize" : 40,
-              "iconSizeUnit" : "px",
-              "icon" : "mdi:hydro-power",
-              "iconColor" : {
-                "type" : "range",
-                "color" : "#000000DE",
-                "rangeList" : [ {
-                  "from" : 0,
-                  "to" : 10,
-                  "color" : "#305AD7"
-                }, {
-                  "from" : 10,
-                  "to" : 30,
-                  "color" : "#3FA71A"
-                }, {
-                  "from" : 30,
-                  "to" : 50,
-                  "color" : "#F36900"
-                }, {
-                  "from" : 50,
-                  "to" : null,
-                  "color" : "#D81838"
-                } ],
-                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
-              },
-              "valueFont" : {
-                "size" : 28,
-                "sizeUnit" : "px",
-                "family" : "Roboto",
-                "weight" : "500",
-                "style" : "normal",
-                "lineHeight" : "32px"
-              },
-              "valueColor" : {
-                "type" : "range",
-                "color" : "#000000DE",
-                "rangeList" : [ {
-                  "from" : 0,
-                  "to" : 10,
-                  "color" : "#305AD7"
-                }, {
-                  "from" : 10,
-                  "to" : 30,
-                  "color" : "#3FA71A"
-                }, {
-                  "from" : 30,
-                  "to" : 50,
-                  "color" : "#F36900"
-                }, {
-                  "from" : 50,
-                  "to" : null,
-                  "color" : "#D81838"
-                } ],
-                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
-              },
-              "showDate" : true,
-              "dateFormat" : {
-                "format" : null,
-                "lastUpdateAgo" : true,
-                "custom" : false
-              },
-              "dateFont" : {
-                "size" : 12,
-                "sizeUnit" : "px",
-                "family" : "Roboto",
-                "weight" : "500",
-                "style" : "normal",
-                "lineHeight" : "16px"
-              },
-              "dateColor" : {
-                "type" : "constant",
-                "color" : "rgba(0, 0, 0, 0.38)",
-                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
-              },
-              "background" : {
-                "type" : "color",
-                "color" : "#fff",
-                "overlay" : {
-                  "enabled" : false,
-                  "color" : "rgba(255,255,255,0.72)",
-                  "blur" : 3
-                }
-              }
-            },
-            "title" : "Flow rate card",
-            "useDashboardTimewindow" : false,
-            "displayTimewindow" : false,
-            "configMode" : "basic",
-            "units" : "L",
-            "decimals" : 0,
-            "enableFullscreen" : false,
-            "borderRadius" : "0px",
-            "actions" : { },
-            "showTitleIcon" : false,
-            "titleTooltip" : "",
-            "dropShadow" : true,
-            "margin" : "0px",
-            "widgetStyle" : { },
-            "widgetCss" : "",
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : "",
-            "titleIcon" : "",
-            "iconColor" : "rgba(0, 0, 0, 0.87)",
-            "iconSize" : "14px",
-            "enableDataExport" : false
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "8a4adf9f-9567-f419-e7fb-513803352b7b"
         },
         "1f06d64a-211b-942c-0279-3369390900e8" : {
           "typeFullFqn" : "system.flow_rate_card",
@@ -16879,6 +16291,7 @@
               }
             } ],
             "timewindow" : {
+              "displayValue" : "",
               "hideInterval" : false,
               "hideLastInterval" : false,
               "hideQuickInterval" : false,
@@ -16886,10 +16299,16 @@
               "hideAggInterval" : false,
               "hideTimezone" : false,
               "selectedTab" : 1,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
               "history" : {
                 "historyType" : 2,
-                "timewindowMs" : 86400000,
                 "interval" : 1000,
+                "timewindowMs" : 86400000,
                 "fixedTimewindow" : {
                   "startTimeMs" : 1709562745502,
                   "endTimeMs" : 1709649145502
@@ -17037,6 +16456,580 @@
           "row" : 0,
           "col" : 0,
           "id" : "691b0df3-148c-2b55-36fb-b6c105d12295"
+        },
+        "a65b6361-387c-63de-adfb-bad81a52bbfc" : {
+          "typeFullFqn" : "system.flow_rate_card",
+          "type" : "latest",
+          "sizeX" : 3,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "b755362a-b545-8ee6-a67b-df2c9e39d6e5",
+              "dataKeys" : [ {
+                "name" : "mc",
+                "type" : "timeseries",
+                "label" : "Totale del giorno",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.18240374175255902,
+                "aggregationType" : "SUM",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "return value;",
+                "comparisonEnabled" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "hideInterval" : false,
+              "hideLastInterval" : false,
+              "hideQuickInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 1,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 2,
+                "interval" : 1000,
+                "timewindowMs" : 86400000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1709562745502,
+                  "endTimeMs" : 1709649145502
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "layout" : "centered",
+              "autoScale" : true,
+              "showLabel" : true,
+              "labelFont" : {
+                "size" : 16,
+                "sizeUnit" : "px",
+                "family" : "Roboto",
+                "weight" : "500",
+                "style" : "normal",
+                "lineHeight" : "24px"
+              },
+              "labelColor" : {
+                "type" : "constant",
+                "color" : "#000000DE",
+                "rangeList" : null,
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "showIcon" : true,
+              "iconSize" : 40,
+              "iconSizeUnit" : "px",
+              "icon" : "water_drop",
+              "iconColor" : {
+                "type" : "range",
+                "color" : "#000000DE",
+                "rangeList" : [ {
+                  "from" : 0,
+                  "to" : 10,
+                  "color" : "#305AD7"
+                }, {
+                  "from" : 10,
+                  "to" : 30,
+                  "color" : "#3FA71A"
+                }, {
+                  "from" : 30,
+                  "to" : 50,
+                  "color" : "#F36900"
+                }, {
+                  "from" : 50,
+                  "to" : null,
+                  "color" : "#D81838"
+                } ],
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "valueFont" : {
+                "size" : 28,
+                "sizeUnit" : "px",
+                "family" : "Roboto",
+                "weight" : "500",
+                "style" : "normal",
+                "lineHeight" : "32px"
+              },
+              "valueColor" : {
+                "type" : "range",
+                "color" : "#000000DE",
+                "rangeList" : [ {
+                  "from" : 0,
+                  "to" : 10,
+                  "color" : "#305AD7"
+                }, {
+                  "from" : 10,
+                  "to" : 30,
+                  "color" : "#3FA71A"
+                }, {
+                  "from" : 30,
+                  "to" : 50,
+                  "color" : "#F36900"
+                }, {
+                  "from" : 50,
+                  "to" : null,
+                  "color" : "#D81838"
+                } ],
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "showDate" : false,
+              "dateFormat" : {
+                "format" : null,
+                "lastUpdateAgo" : true,
+                "custom" : false
+              },
+              "dateFont" : {
+                "size" : 12,
+                "sizeUnit" : "px",
+                "family" : "Roboto",
+                "weight" : "500",
+                "style" : "normal",
+                "lineHeight" : "16px"
+              },
+              "dateColor" : {
+                "type" : "constant",
+                "color" : "rgba(0, 0, 0, 0.38)",
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "background" : {
+                "type" : "color",
+                "color" : "#fff",
+                "overlay" : {
+                  "enabled" : false,
+                  "color" : "rgba(255,255,255,0.72)",
+                  "blur" : 3
+                }
+              }
+            },
+            "title" : "Flow rate card",
+            "useDashboardTimewindow" : false,
+            "displayTimewindow" : false,
+            "configMode" : "advanced",
+            "units" : "L",
+            "decimals" : 0,
+            "enableFullscreen" : false,
+            "borderRadius" : "0px",
+            "actions" : { },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "dropShadow" : false,
+            "margin" : "0px",
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "titleIcon" : "",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "14px",
+            "enableDataExport" : false
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "a65b6361-387c-63de-adfb-bad81a52bbfc"
+        },
+        "ad6ec491-13fb-a471-a1f3-eab4e3b5d062" : {
+          "typeFullFqn" : "system.flow_rate_card",
+          "type" : "latest",
+          "sizeX" : 3,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "b755362a-b545-8ee6-a67b-df2c9e39d6e5",
+              "dataKeys" : [ {
+                "name" : "mc",
+                "type" : "timeseries",
+                "label" : "Totale ultima ora",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.18240374175255902,
+                "aggregationType" : "SUM",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "return value;",
+                "comparisonEnabled" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "hideInterval" : false,
+              "hideLastInterval" : false,
+              "hideQuickInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 1,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 2,
+                "interval" : 1000,
+                "timewindowMs" : 86400000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1709562745502,
+                  "endTimeMs" : 1709649145502
+                },
+                "quickInterval" : "CURRENT_HOUR"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "layout" : "centered",
+              "autoScale" : true,
+              "showLabel" : true,
+              "labelFont" : {
+                "size" : 16,
+                "sizeUnit" : "px",
+                "family" : "Roboto",
+                "weight" : "500",
+                "style" : "normal",
+                "lineHeight" : "24px"
+              },
+              "labelColor" : {
+                "type" : "constant",
+                "color" : "#000000DE",
+                "rangeList" : null,
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "showIcon" : true,
+              "iconSize" : 40,
+              "iconSizeUnit" : "px",
+              "icon" : "water_drop",
+              "iconColor" : {
+                "type" : "range",
+                "color" : "#000000DE",
+                "rangeList" : [ {
+                  "from" : 0,
+                  "to" : 10,
+                  "color" : "#305AD7"
+                }, {
+                  "from" : 10,
+                  "to" : 30,
+                  "color" : "#3FA71A"
+                }, {
+                  "from" : 30,
+                  "to" : 50,
+                  "color" : "#F36900"
+                }, {
+                  "from" : 50,
+                  "to" : null,
+                  "color" : "#D81838"
+                } ],
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "valueFont" : {
+                "size" : 28,
+                "sizeUnit" : "px",
+                "family" : "Roboto",
+                "weight" : "500",
+                "style" : "normal",
+                "lineHeight" : "32px"
+              },
+              "valueColor" : {
+                "type" : "range",
+                "color" : "#000000DE",
+                "rangeList" : [ {
+                  "from" : 0,
+                  "to" : 10,
+                  "color" : "#305AD7"
+                }, {
+                  "from" : 10,
+                  "to" : 30,
+                  "color" : "#3FA71A"
+                }, {
+                  "from" : 30,
+                  "to" : 50,
+                  "color" : "#F36900"
+                }, {
+                  "from" : 50,
+                  "to" : null,
+                  "color" : "#D81838"
+                } ],
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "showDate" : false,
+              "dateFormat" : {
+                "format" : null,
+                "lastUpdateAgo" : true,
+                "custom" : false
+              },
+              "dateFont" : {
+                "size" : 12,
+                "sizeUnit" : "px",
+                "family" : "Roboto",
+                "weight" : "500",
+                "style" : "normal",
+                "lineHeight" : "16px"
+              },
+              "dateColor" : {
+                "type" : "constant",
+                "color" : "rgba(0, 0, 0, 0.38)",
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "background" : {
+                "type" : "color",
+                "color" : "#fff",
+                "overlay" : {
+                  "enabled" : false,
+                  "color" : "rgba(255,255,255,0.72)",
+                  "blur" : 3
+                }
+              }
+            },
+            "title" : "Flow rate card",
+            "useDashboardTimewindow" : false,
+            "displayTimewindow" : false,
+            "configMode" : "basic",
+            "units" : "L",
+            "decimals" : 0,
+            "enableFullscreen" : false,
+            "borderRadius" : "0px",
+            "actions" : { },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "dropShadow" : false,
+            "margin" : "0px",
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "titleIcon" : "",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "14px",
+            "enableDataExport" : false
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "ad6ec491-13fb-a471-a1f3-eab4e3b5d062"
+        },
+        "f172c4da-b353-3dba-975a-19d095d2f713" : {
+          "typeFullFqn" : "system.flow_rate_card",
+          "type" : "latest",
+          "sizeX" : 3,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "b755362a-b545-8ee6-a67b-df2c9e39d6e5",
+              "dataKeys" : [ {
+                "name" : "mc",
+                "type" : "timeseries",
+                "label" : "Altro",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.7122451880967111
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "hideInterval" : false,
+              "hideLastInterval" : false,
+              "hideQuickInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 1,
+              "history" : {
+                "historyType" : 2,
+                "timewindowMs" : 86400000,
+                "interval" : 1000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1709562745502,
+                  "endTimeMs" : 1709649145502
+                },
+                "quickInterval" : "CURRENT_HOUR"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "layout" : "centered",
+              "autoScale" : true,
+              "showLabel" : true,
+              "labelFont" : {
+                "size" : 16,
+                "sizeUnit" : "px",
+                "family" : "Roboto",
+                "weight" : "500",
+                "style" : "normal",
+                "lineHeight" : "24px"
+              },
+              "labelColor" : {
+                "type" : "constant",
+                "color" : "#000000DE",
+                "rangeList" : null,
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "showIcon" : true,
+              "iconSize" : 40,
+              "iconSizeUnit" : "px",
+              "icon" : "water_drop",
+              "iconColor" : {
+                "type" : "range",
+                "color" : "#000000DE",
+                "rangeList" : [ {
+                  "from" : 0,
+                  "to" : 10,
+                  "color" : "#305AD7"
+                }, {
+                  "from" : 10,
+                  "to" : 30,
+                  "color" : "#3FA71A"
+                }, {
+                  "from" : 30,
+                  "to" : 50,
+                  "color" : "#F36900"
+                }, {
+                  "from" : 50,
+                  "to" : null,
+                  "color" : "#D81838"
+                } ],
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "valueFont" : {
+                "size" : 28,
+                "sizeUnit" : "px",
+                "family" : "Roboto",
+                "weight" : "500",
+                "style" : "normal",
+                "lineHeight" : "32px"
+              },
+              "valueColor" : {
+                "type" : "range",
+                "color" : "#000000DE",
+                "rangeList" : [ {
+                  "from" : 0,
+                  "to" : 10,
+                  "color" : "#305AD7"
+                }, {
+                  "from" : 10,
+                  "to" : 30,
+                  "color" : "#3FA71A"
+                }, {
+                  "from" : 30,
+                  "to" : 50,
+                  "color" : "#F36900"
+                }, {
+                  "from" : 50,
+                  "to" : null,
+                  "color" : "#D81838"
+                } ],
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "showDate" : false,
+              "dateFormat" : {
+                "format" : null,
+                "lastUpdateAgo" : true,
+                "custom" : false
+              },
+              "dateFont" : {
+                "size" : 12,
+                "sizeUnit" : "px",
+                "family" : "Roboto",
+                "weight" : "500",
+                "style" : "normal",
+                "lineHeight" : "16px"
+              },
+              "dateColor" : {
+                "type" : "constant",
+                "color" : "rgba(0, 0, 0, 0.38)",
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "background" : {
+                "type" : "color",
+                "color" : "#fff",
+                "overlay" : {
+                  "enabled" : false,
+                  "color" : "rgba(255,255,255,0.72)",
+                  "blur" : 3
+                }
+              }
+            },
+            "title" : "Flow rate card",
+            "useDashboardTimewindow" : false,
+            "displayTimewindow" : false,
+            "configMode" : "basic",
+            "units" : "L",
+            "decimals" : 0,
+            "enableFullscreen" : false,
+            "borderRadius" : "0px",
+            "actions" : { },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "dropShadow" : false,
+            "margin" : "0px",
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "titleIcon" : "",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "14px",
+            "enableDataExport" : false
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "f172c4da-b353-3dba-975a-19d095d2f713"
         }
       },
       "states" : {
@@ -17759,24 +17752,6 @@
                   "row" : 8,
                   "col" : 0
                 },
-                "70fe1bdc-0354-f344-5b1a-1da9969c5b0a" : {
-                  "sizeX" : 6,
-                  "sizeY" : 3,
-                  "row" : 5,
-                  "col" : 6
-                },
-                "d7452cb2-8ebd-a185-262a-13a0b0ae94f2" : {
-                  "sizeX" : 6,
-                  "sizeY" : 3,
-                  "row" : 5,
-                  "col" : 12
-                },
-                "8a4adf9f-9567-f419-e7fb-513803352b7b" : {
-                  "sizeX" : 6,
-                  "sizeY" : 3,
-                  "row" : 5,
-                  "col" : 18
-                },
                 "1f06d64a-211b-942c-0279-3369390900e8" : {
                   "sizeX" : 6,
                   "sizeY" : 3,
@@ -17793,6 +17768,24 @@
                   "sizeX" : 6,
                   "sizeY" : 3,
                   "row" : 8,
+                  "col" : 18
+                },
+                "a65b6361-387c-63de-adfb-bad81a52bbfc" : {
+                  "sizeX" : 6,
+                  "sizeY" : 3,
+                  "row" : 5,
+                  "col" : 6
+                },
+                "ad6ec491-13fb-a471-a1f3-eab4e3b5d062" : {
+                  "sizeX" : 6,
+                  "sizeY" : 3,
+                  "row" : 5,
+                  "col" : 12
+                },
+                "f172c4da-b353-3dba-975a-19d095d2f713" : {
+                  "sizeX" : 6,
+                  "sizeY" : 3,
+                  "row" : 5,
                   "col" : 18
                 }
               },

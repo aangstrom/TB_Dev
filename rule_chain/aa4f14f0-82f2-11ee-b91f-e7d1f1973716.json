@@ -277,6 +277,10 @@
       "toIndex" : 72,
       "type" : "Success"
     }, {
+      "fromIndex" : 47,
+      "toIndex" : 140,
+      "type" : "Success"
+    }, {
       "fromIndex" : 48,
       "toIndex" : 50,
       "type" : "Success"
@@ -971,6 +975,10 @@
     }, {
       "fromIndex" : 139,
       "toIndex" : 73,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 140,
+      "toIndex" : 71,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 31,
@@ -2948,13 +2956,13 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1984,
-        "layoutY" : 1338
+        "layoutX" : 1983,
+        "layoutY" : 1299
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "msg.F1=null;\nmsg.F2=null;\nmsg.F3=null;\nmsg.F23=null;\nmsg.F1cost=null;\nmsg.F2cost=null;\nmsg.F3cost=null;\nmsg.F23cost=null;\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "msg.F1=null;\nmsg.F2=null;\nmsg.F3=null;\nmsg.F23=null;\nmsg.F1cost=null;\nmsg.F2cost=null;\nmsg.F3cost=null;\nmsg.F23cost=null;\nmsg.powercost=null;\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -5282,6 +5290,48 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1983,
+        "layoutY" : 1367
+      },
+      "configuration" : {
+        "inputValueKey" : "powerCost",
+        "outputValueKey" : "powerCost",
+        "mathFunction" : "SUM",
+        "aggIntervalType" : "CUSTOM",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_TELEMETRY_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "PERIODICALLY",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 1,
+        "periodTimeUnit" : "HOURS",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : "Main"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "366a36b0-db93-11ee-9101-d71950cabe39"
+      },
+      "name" : "powerCost",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
     } ],
     "ruleChainConnections" : null
   },

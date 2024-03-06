@@ -45,6 +45,10 @@
       "toIndex" : 36,
       "type" : "Success"
     }, {
+      "fromIndex" : 2,
+      "toIndex" : 55,
+      "type" : "Success"
+    }, {
       "fromIndex" : 3,
       "toIndex" : 2,
       "type" : "Success"
@@ -398,6 +402,10 @@
       "type" : "Success"
     }, {
       "fromIndex" : 54,
+      "toIndex" : 36,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 55,
       "toIndex" : 36,
       "type" : "Success"
     } ],
@@ -1875,6 +1883,29 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1415,
+        "layoutY" : 55
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "msg.literCost=(msg.liter/1000)*metadata.Acqua;\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "1f8f0480-dbc9-11ee-80a4-a369e7fd2696"
+      },
+      "name" : "Costo Acqua",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

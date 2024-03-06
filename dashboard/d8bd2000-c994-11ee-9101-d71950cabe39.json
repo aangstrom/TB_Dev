@@ -16580,18 +16580,18 @@
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "return value;",
+                "usePostProcessing" : false,
+                "postFuncBody" : null,
                 "comparisonEnabled" : false,
-                "timeForComparison" : "previousInterval",
-                "comparisonResultType" : "DELTA_ABSOLUTE"
+                "timeForComparison" : "customInterval",
+                "comparisonResultType" : "DELTA_ABSOLUTE",
+                "comparisonCustomIntervalValue" : 7200000
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
               }
             } ],
             "timewindow" : {
-              "displayValue" : "",
               "hideInterval" : false,
               "hideLastInterval" : false,
               "hideQuickInterval" : false,
@@ -16599,21 +16599,15 @@
               "hideAggInterval" : false,
               "hideTimezone" : false,
               "selectedTab" : 1,
-              "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
               "history" : {
                 "historyType" : 2,
-                "interval" : 1000,
                 "timewindowMs" : 86400000,
+                "interval" : 1000,
                 "fixedTimewindow" : {
                   "startTimeMs" : 1709562745502,
                   "endTimeMs" : 1709649145502
                 },
-                "quickInterval" : "CURRENT_MONTH"
+                "quickInterval" : "CURRENT_DAY"
               },
               "aggregation" : {
                 "type" : "AVG",
@@ -16789,7 +16783,6 @@
               }
             } ],
             "timewindow" : {
-              "displayValue" : "",
               "hideInterval" : false,
               "hideLastInterval" : false,
               "hideQuickInterval" : false,
@@ -16797,16 +16790,10 @@
               "hideAggInterval" : false,
               "hideTimezone" : false,
               "selectedTab" : 1,
-              "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY"
-              },
               "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
+                "historyType" : 2,
                 "timewindowMs" : 3600000,
+                "interval" : 1000,
                 "fixedTimewindow" : {
                   "startTimeMs" : 1709562745502,
                   "endTimeMs" : 1709649145502

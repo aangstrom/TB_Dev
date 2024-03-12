@@ -251,6 +251,160 @@
           "row" : 0,
           "col" : 0,
           "id" : "8f5fd2ed-c6a8-631b-ea4d-b6f6a28b35e0"
+        },
+        "c44f8443-f397-cead-cf4b-706d7b195860" : {
+          "typeFullFqn" : "system.charts.basic_timeseries",
+          "type" : "timeseries",
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "42aac406-b3df-5a26-e049-e0f64420b620",
+              "dataKeys" : [ {
+                "name" : "Phase_A_power",
+                "type" : "timeseries",
+                "label" : "Destra",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.8660605705235864,
+                "units" : "W",
+                "decimals" : 2
+              }, {
+                "name" : "Phase_B_power",
+                "type" : "timeseries",
+                "label" : "Sinistra",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.2084065207344845,
+                "units" : "W",
+                "decimals" : 2
+              }, {
+                "name" : "Phase_C_power",
+                "type" : "timeseries",
+                "label" : "Luce",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.5048000373000849,
+                "units" : "W",
+                "decimals" : 2
+              }, {
+                "name" : "temperature",
+                "type" : "timeseries",
+                "label" : "Temperatura",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.5698155704588028,
+                "aggregationType" : null,
+                "units" : "°C",
+                "decimals" : 1,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "humidity",
+                "type" : "timeseries",
+                "label" : "Umidità",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.15804455698038522,
+                "aggregationType" : null,
+                "units" : "%",
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "stack" : false,
+              "enableSelection" : true,
+              "fontSize" : 10,
+              "fontColor" : "#545454",
+              "showTooltip" : true,
+              "tooltipIndividual" : false,
+              "tooltipCumulative" : false,
+              "hideZeros" : false,
+              "tooltipValueFormatter" : "",
+              "grid" : {
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1,
+                "color" : "#545454",
+                "backgroundColor" : null,
+                "tickColor" : "#DDDDDD"
+              },
+              "xaxis" : {
+                "title" : null,
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "min" : null,
+                "max" : null,
+                "title" : null,
+                "showLabels" : true,
+                "color" : "#545454",
+                "tickSize" : null,
+                "tickDecimals" : 0,
+                "ticksFormatter" : ""
+              },
+              "shadowSize" : 4,
+              "smoothLines" : false,
+              "thresholdsLineWidth" : null,
+              "comparisonEnabled" : false,
+              "showLegend" : true,
+              "legendConfig" : {
+                "direction" : "row",
+                "position" : "bottom",
+                "sortDataKeys" : false,
+                "showMin" : false,
+                "showMax" : false,
+                "showAvg" : true,
+                "showTotal" : false,
+                "showLatest" : false
+              },
+              "customLegendEnabled" : false
+            },
+            "title" : "Timeseries Line Chart",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "configMode" : "advanced",
+            "actions" : { },
+            "showTitleIcon" : false,
+            "titleIcon" : "thermostat",
+            "iconColor" : "#1F6BDD",
+            "useDashboardTimewindow" : true,
+            "displayTimewindow" : true,
+            "titleFont" : null,
+            "titleColor" : null,
+            "enableDataExport" : false,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "c44f8443-f397-cead-cf4b-706d7b195860"
         }
       },
       "states" : {
@@ -270,6 +424,12 @@
                   "sizeX" : 24,
                   "sizeY" : 5,
                   "row" : 5,
+                  "col" : 0
+                },
+                "c44f8443-f397-cead-cf4b-706d7b195860" : {
+                  "sizeX" : 24,
+                  "sizeY" : 9,
+                  "row" : 10,
                   "col" : 0
                 }
               },
@@ -307,6 +467,20 @@
               "entityType" : "DEVICE",
               "id" : "684afe70-a887-11ed-bcb8-7f48a6e846b2"
             }
+          }
+        },
+        "42aac406-b3df-5a26-e049-e0f64420b620" : {
+          "id" : "42aac406-b3df-5a26-e049-e0f64420b620",
+          "alias" : "Gruppo",
+          "filter" : {
+            "type" : "entityGroup",
+            "resolveMultiple" : true,
+            "groupStateEntity" : false,
+            "stateEntityParamName" : null,
+            "defaultStateGroupType" : null,
+            "defaultStateEntityGroup" : null,
+            "groupType" : "DEVICE",
+            "entityGroup" : "deb661e0-e089-11ee-80a4-a369e7fd2696"
           }
         }
       },

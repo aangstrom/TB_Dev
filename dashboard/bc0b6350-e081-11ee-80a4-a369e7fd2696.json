@@ -829,13 +829,13 @@
               "retrieveValueMethod" : "timeseries",
               "checkStatusMethod" : "checkStatus",
               "valueAttribute" : "temperature",
-              "parseValueFunction" : "return data > 20.6 ? true : false;",
+              "parseValueFunction" : "return data > 20.5 ? true : false;",
               "requestTimeout" : 500,
               "requestPersistent" : false,
               "persistentPollingInterval" : 5000
             },
             "title" : "Led indicator",
-            "dropShadow" : true,
+            "dropShadow" : false,
             "enableFullscreen" : false,
             "widgetStyle" : { },
             "titleStyle" : {
@@ -847,7 +847,11 @@
             "actions" : { },
             "decimals" : 2,
             "datasources" : [ ],
-            "targetDeviceAliasIds" : [ "4889f10d-beb8-9c9c-cf0d-1ef87f24a627" ]
+            "targetDeviceAliasIds" : [ "4889f10d-beb8-9c9c-cf0d-1ef87f24a627" ],
+            "enableDataExport" : true,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
           },
           "row" : 0,
           "col" : 0,
@@ -1218,60 +1222,64 @@
             "main" : {
               "widgets" : {
                 "975b5e9e-1432-60f8-196c-7e09b962d00e" : {
-                  "sizeX" : 24,
-                  "sizeY" : 5,
+                  "sizeX" : 48,
+                  "sizeY" : 10,
                   "row" : 0,
                   "col" : 0
                 },
                 "8f5fd2ed-c6a8-631b-ea4d-b6f6a28b35e0" : {
-                  "sizeX" : 24,
-                  "sizeY" : 5,
-                  "row" : 5,
-                  "col" : 0
-                },
-                "c44f8443-f397-cead-cf4b-706d7b195860" : {
-                  "sizeX" : 24,
-                  "sizeY" : 9,
+                  "sizeX" : 48,
+                  "sizeY" : 10,
                   "row" : 10,
                   "col" : 0
                 },
+                "c44f8443-f397-cead-cf4b-706d7b195860" : {
+                  "sizeX" : 48,
+                  "sizeY" : 18,
+                  "row" : 20,
+                  "col" : 0
+                },
                 "59beb99b-44c2-bb08-d596-6dadfef96c7d" : {
-                  "sizeX" : 5,
-                  "sizeY" : 1,
-                  "row" : 19,
+                  "sizeX" : 10,
+                  "sizeY" : 2,
+                  "row" : 38,
                   "col" : 0
                 },
                 "3c1fbdb3-d37a-745e-2bfa-ba7ad84b4c69" : {
-                  "sizeX" : 8,
-                  "sizeY" : 5,
-                  "row" : 20,
+                  "sizeX" : 16,
+                  "sizeY" : 10,
+                  "row" : 40,
                   "col" : 0
                 },
                 "1ddad54b-2f21-d22f-053e-f6834f1c3ca3" : {
                   "sizeX" : 2,
                   "sizeY" : 2,
-                  "row" : 20,
-                  "col" : 8
+                  "row" : 40,
+                  "col" : 16
                 },
                 "2885ecf3-8821-8032-980b-50e40085472a" : {
-                  "sizeX" : 5,
-                  "sizeY" : 1,
-                  "row" : 20,
-                  "col" : 10
+                  "sizeX" : 10,
+                  "sizeY" : 2,
+                  "row" : 40,
+                  "col" : 20
                 },
                 "09a94eec-7275-a64e-24d1-a098b9bb1cc2" : {
-                  "sizeX" : 6,
-                  "sizeY" : 5,
-                  "row" : 21,
-                  "col" : 10
+                  "sizeX" : 12,
+                  "sizeY" : 10,
+                  "row" : 42,
+                  "col" : 20
                 }
               },
               "gridSettings" : {
                 "backgroundColor" : "#eeeeee",
-                "columns" : 24,
+                "columns" : 48,
                 "margin" : 10,
                 "outerMargin" : true,
-                "backgroundSizeMode" : "100%"
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : false,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70
               }
             }
           }

@@ -706,7 +706,7 @@
               }, {
                 "name" : "temperature",
                 "type" : "timeseries",
-                "label" : "temperature",
+                "label" : "temperatura",
                 "color" : "#4caf50",
                 "settings" : { },
                 "_hash" : 0.7804255740156987,
@@ -809,6 +809,49 @@
           "row" : 0,
           "col" : 0,
           "id" : "3c1fbdb3-d37a-745e-2bfa-ba7ad84b4c69"
+        },
+        "1ddad54b-2f21-d22f-053e-f6834f1c3ca3" : {
+          "typeFullFqn" : "system.control_widgets.led_indicator",
+          "type" : "rpc",
+          "sizeX" : 2.5,
+          "sizeY" : 2.5,
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : false,
+            "backgroundColor" : "#e6e7e8",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "title" : "Led indicator",
+              "ledColor" : "#4caf50",
+              "initialValue" : true,
+              "performCheckStatus" : false,
+              "retrieveValueMethod" : "timeseries",
+              "checkStatusMethod" : "checkStatus",
+              "valueAttribute" : "temperature",
+              "parseValueFunction" : "return data > 21 ? true : false;",
+              "requestTimeout" : 500,
+              "requestPersistent" : false,
+              "persistentPollingInterval" : 5000
+            },
+            "title" : "Led indicator",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 2,
+            "datasources" : [ ],
+            "targetDeviceAliasIds" : [ "4889f10d-beb8-9c9c-cf0d-1ef87f24a627" ]
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "1ddad54b-2f21-d22f-053e-f6834f1c3ca3"
         }
       },
       "states" : {
@@ -847,6 +890,12 @@
                   "sizeY" : 5,
                   "row" : 20,
                   "col" : 0
+                },
+                "1ddad54b-2f21-d22f-053e-f6834f1c3ca3" : {
+                  "sizeX" : 2,
+                  "sizeY" : 2,
+                  "row" : 20,
+                  "col" : 8
                 }
               },
               "gridSettings" : {

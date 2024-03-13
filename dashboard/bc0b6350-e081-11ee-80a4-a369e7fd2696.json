@@ -810,53 +810,6 @@
           "col" : 0,
           "id" : "3c1fbdb3-d37a-745e-2bfa-ba7ad84b4c69"
         },
-        "1ddad54b-2f21-d22f-053e-f6834f1c3ca3" : {
-          "typeFullFqn" : "system.control_widgets.led_indicator",
-          "type" : "rpc",
-          "sizeX" : 2.5,
-          "sizeY" : 2.5,
-          "config" : {
-            "targetDeviceAliases" : [ ],
-            "showTitle" : false,
-            "backgroundColor" : "#e6e7e8",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "title" : "",
-              "ledColor" : "#4caf50",
-              "initialValue" : true,
-              "performCheckStatus" : false,
-              "retrieveValueMethod" : "timeseries",
-              "checkStatusMethod" : "checkStatus",
-              "valueAttribute" : "temperature",
-              "parseValueFunction" : "return data > 20.5 ? true : false;",
-              "requestTimeout" : 500,
-              "requestPersistent" : false,
-              "persistentPollingInterval" : 5000
-            },
-            "title" : "Led indicator",
-            "dropShadow" : false,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "useDashboardTimewindow" : true,
-            "showLegend" : false,
-            "actions" : { },
-            "decimals" : 2,
-            "datasources" : [ ],
-            "targetDeviceAliasIds" : [ "4889f10d-beb8-9c9c-cf0d-1ef87f24a627" ],
-            "enableDataExport" : true,
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : ""
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "1ddad54b-2f21-d22f-053e-f6834f1c3ca3"
-        },
         "2885ecf3-8821-8032-980b-50e40085472a" : {
           "typeFullFqn" : "system.cards.horizontal_value_card",
           "type" : "latest",
@@ -1212,6 +1165,49 @@
           "row" : 0,
           "col" : 0,
           "id" : "09a94eec-7275-a64e-24d1-a098b9bb1cc2"
+        },
+        "5af68832-f5fc-3978-648d-fb44befad1cf" : {
+          "typeFullFqn" : "system.control_widgets.led_indicator",
+          "type" : "rpc",
+          "sizeX" : 2.5,
+          "sizeY" : 2.5,
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : false,
+            "backgroundColor" : "#e6e7e8",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "title" : "",
+              "ledColor" : "#4caf50",
+              "initialValue" : true,
+              "performCheckStatus" : false,
+              "retrieveValueMethod" : "timeseries",
+              "checkStatusMethod" : "checkStatus",
+              "valueAttribute" : "temperature",
+              "parseValueFunction" : "return data > 20.5 ? true : false;",
+              "requestTimeout" : 500,
+              "requestPersistent" : false,
+              "persistentPollingInterval" : 5000
+            },
+            "title" : "Led indicator",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 2,
+            "datasources" : [ ],
+            "targetDeviceAliasIds" : [ "4889f10d-beb8-9c9c-cf0d-1ef87f24a627" ]
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "5af68832-f5fc-3978-648d-fb44befad1cf"
         }
       },
       "states" : {
@@ -1251,12 +1247,6 @@
                   "row" : 40,
                   "col" : 0
                 },
-                "1ddad54b-2f21-d22f-053e-f6834f1c3ca3" : {
-                  "sizeX" : 1,
-                  "sizeY" : 1,
-                  "row" : 40,
-                  "col" : 16
-                },
                 "2885ecf3-8821-8032-980b-50e40085472a" : {
                   "sizeX" : 10,
                   "sizeY" : 2,
@@ -1268,6 +1258,12 @@
                   "sizeY" : 10,
                   "row" : 42,
                   "col" : 20
+                },
+                "5af68832-f5fc-3978-648d-fb44befad1cf" : {
+                  "sizeX" : 2,
+                  "sizeY" : 2,
+                  "row" : 40,
+                  "col" : 16
                 }
               },
               "gridSettings" : {

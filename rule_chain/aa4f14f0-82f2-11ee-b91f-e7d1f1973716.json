@@ -329,6 +329,10 @@
       "toIndex" : 90,
       "type" : "Success"
     }, {
+      "fromIndex" : 61,
+      "toIndex" : 148,
+      "type" : "Success"
+    }, {
       "fromIndex" : 62,
       "toIndex" : 71,
       "type" : "Success"
@@ -3452,8 +3456,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1415,
-        "layoutY" : 1800
+        "layoutX" : 1419,
+        "layoutY" : 2088
       },
       "configuration" : {
         "msgCount" : 0,
@@ -5579,6 +5583,40 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2234,
+        "layoutY" : 1126
+      },
+      "configuration" : {
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "TO",
+          "maxLevel" : null,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "CUSTOMER" ]
+          } ]
+        },
+        "dataToFetch" : "ATTRIBUTES",
+        "fetchTo" : "METADATA",
+        "dataMapping" : {
+          "temperature" : "temperature"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e7ee4d50-e2e0-11ee-80a4-a369e7fd2696"
+      },
+      "name" : "Get temperature from Cliente",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
     } ],
     "ruleChainConnections" : null
   },

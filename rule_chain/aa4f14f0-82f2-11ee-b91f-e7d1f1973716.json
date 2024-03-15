@@ -5619,7 +5619,8 @@
         "dataToFetch" : "ATTRIBUTES",
         "fetchTo" : "METADATA",
         "dataMapping" : {
-          "temperature" : "internal_temperature"
+          "temperature" : "internal_temperature",
+          "area" : "area"
         }
       },
       "configurationVersion" : 1,
@@ -5630,7 +5631,7 @@
         "entityType" : "RULE_NODE",
         "id" : "525b53e0-e2e1-11ee-80a4-a369e7fd2696"
       },
-      "name" : "Get Temperature from",
+      "name" : "Get Temperature from Asset",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
@@ -5671,7 +5672,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var isolamento=1;\nvar area=metadata.area;\nvar deltaT=metadata.internal_temperature-metadata.external_temperature;\nvar potenzaTeorica=Math.round((area*deltaT*isolamento)*100)/100;\nvar isolamentoReale=Math.round(((msg.power/(area*deltaT))*100)/100);\n\nmsg.potenzaTeorica=potenzaTeorica;\nmsg.potenzaTeoricaKW=potenzaTeorica/860.4;\nmsg.isolamentoReale=isolamentoReale;\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,

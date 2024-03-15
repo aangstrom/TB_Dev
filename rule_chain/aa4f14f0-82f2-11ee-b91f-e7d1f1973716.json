@@ -1012,6 +1012,18 @@
       "fromIndex" : 147,
       "toIndex" : 9,
       "type" : "Success"
+    }, {
+      "fromIndex" : 148,
+      "toIndex" : 149,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 149,
+      "toIndex" : 151,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 150,
+      "toIndex" : 148,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 31,
     "nodes" : [ {
@@ -5586,8 +5598,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 2234,
-        "layoutY" : 1126
+        "layoutX" : 2250,
+        "layoutY" : 1129
       },
       "configuration" : {
         "relationsQuery" : {
@@ -5620,8 +5632,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 2232,
-        "layoutY" : 1058
+        "layoutX" : 2252,
+        "layoutY" : 1053
       },
       "configuration" : {
         "relationsQuery" : {
@@ -5651,6 +5663,57 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1980,
+        "layoutY" : 1111
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 10,
+        "scriptLang" : "TBEL",
+        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "queueName" : null,
+        "originatorId" : null,
+        "originatorType" : null
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a7100cf0-e2e1-11ee-80a4-a369e7fd2696"
+      },
+      "name" : "Test",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2505,
+        "layoutY" : 1033
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a7108220-e2e1-11ee-80a4-a369e7fd2696"
+      },
+      "name" : "Calculate",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

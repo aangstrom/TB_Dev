@@ -158,7 +158,7 @@
       "type" : "True"
     }, {
       "fromIndex" : 31,
-      "toIndex" : 150,
+      "toIndex" : 151,
       "type" : "True"
     }, {
       "fromIndex" : 32,
@@ -1010,23 +1010,27 @@
       "type" : "Success"
     }, {
       "fromIndex" : 147,
-      "toIndex" : 148,
+      "toIndex" : 150,
       "type" : "Success"
     }, {
       "fromIndex" : 148,
-      "toIndex" : 151,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 149,
       "toIndex" : 72,
       "type" : "Success"
     }, {
-      "fromIndex" : 150,
+      "fromIndex" : 149,
       "toIndex" : 137,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 150,
+      "toIndex" : 148,
       "type" : "Success"
     }, {
       "fromIndex" : 151,
       "toIndex" : 149,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 152,
+      "toIndex" : 147,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 30,
@@ -5607,40 +5611,6 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 2402,
-        "layoutY" : 350
-      },
-      "configuration" : {
-        "relationsQuery" : {
-          "fetchLastLevelOnly" : false,
-          "direction" : "TO",
-          "maxLevel" : 1,
-          "filters" : [ {
-            "relationType" : "Contains",
-            "entityTypes" : [ "ASSET" ]
-          } ]
-        },
-        "dataToFetch" : "LATEST_TELEMETRY",
-        "fetchTo" : "METADATA",
-        "dataMapping" : {
-          "temperature" : "internal_temp"
-        }
-      },
-      "configurationVersion" : 1,
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "525b53e0-e2e1-11ee-80a4-a369e7fd2696"
-      },
-      "name" : "Get Temperature from Asset",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
         "layoutX" : 2689,
         "layoutY" : 365
       },
@@ -5712,7 +5682,9 @@
         "dataToFetch" : "ATTRIBUTES",
         "fetchTo" : "METADATA",
         "dataMapping" : {
-          "area" : "area"
+          "area" : "area",
+          "avgTemperature" : "internal_temp",
+          "temperatura" : "BCK"
         }
       },
       "configurationVersion" : 1,
@@ -5727,6 +5699,76 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 633,
+        "layoutY" : 604
+      },
+      "configuration" : {
+        "inputValueKey" : "temperature",
+        "outputValueKey" : "avgTemperature",
+        "mathFunction" : "AVG",
+        "aggIntervalType" : "HOUR",
+        "timeZoneId" : "Europe/Rome",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "outMsgType" : "POST_ATTRIBUTES_REQUEST",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "ON_EACH_CHANGE",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 5,
+        "periodTimeUnit" : "MINUTES",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "queueName" : null
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a776ab10-e2ee-11ee-80a4-a369e7fd2696"
+      },
+      "name" : "Media Temperatura",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2020,
+        "layoutY" : 406
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 10,
+        "scriptLang" : "TBEL",
+        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "queueName" : null,
+        "originatorId" : "e89ed730-9063-11ee-842a-55fec3ab5bf6",
+        "originatorType" : "ASSET"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a7779570-e2ee-11ee-80a4-a369e7fd2696"
+      },
+      "name" : "test",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     } ],
     "ruleChainConnections" : null
   },

@@ -1682,7 +1682,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var message={};\nmessage.mc=msg.mc;\nmessage.temperature=msg.temperature;\nmessage.humidity=msg.humidity;\nmessage.presenza=msg.presenza;\nreturn {msg: message, metadata: metadata, msgType: \"POST_ATTRIBUTES_REQUEST\"};"
+        "tbelScript" : "var message={};\nmessage.mc=msg.mc;\nmessage.temperature=msg.temperature;\nmessage.humidity=msg.humidity;\nmessage.presenza=msg.presenza;\nvar msgType=\"POST_ATTRIBUTES_REQUEST\";\nreturn {msg: message, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -5693,8 +5693,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 834,
-        "layoutY" : 648
+        "layoutX" : 1013,
+        "layoutY" : 704
       },
       "configuration" : {
         "originatorSource" : "RELATED",
@@ -5703,7 +5703,7 @@
         "relationsQuery" : {
           "fetchLastLevelOnly" : false,
           "direction" : "TO",
-          "maxLevel" : null,
+          "maxLevel" : 1,
           "filters" : [ {
             "relationType" : null,
             "entityTypes" : [ "ASSET" ]

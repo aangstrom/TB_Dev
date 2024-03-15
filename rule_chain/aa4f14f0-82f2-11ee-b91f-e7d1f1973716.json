@@ -1021,6 +1021,10 @@
       "toIndex" : 147,
       "type" : "Success"
     }, {
+      "fromIndex" : 150,
+      "toIndex" : 72,
+      "type" : "Success"
+    }, {
       "fromIndex" : 151,
       "toIndex" : 9,
       "type" : "Success"
@@ -5614,7 +5618,7 @@
         "relationsQuery" : {
           "fetchLastLevelOnly" : false,
           "direction" : "TO",
-          "maxLevel" : 1,
+          "maxLevel" : 2,
           "filters" : [ {
             "relationType" : "Contains",
             "entityTypes" : [ "ASSET" ]
@@ -5676,7 +5680,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var isolamento=1;\nvar area=metadata.area;\nvar deltaT=metadata.internal_temperature-metadata.external_temperature;\nvar potenzaTeorica=Math.round((area*deltaT*isolamento)*100)/100;\nvar isolamentoReale=Math.round(((msg.power/(area*deltaT))*100)/100);\n\nmsg.potenzaTeorica=potenzaTeorica;\nmsg.potenzaTeoricaKW=potenzaTeorica/860.4;\nmsg.isolamentoReale=isolamentoReale;\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var isolamento=1;\nvar area=metadata.area;\nvar deltaT=metadata.internal_temperature-metadata.external_temperature;\nvar potenzaTeorica=Math.round((area*deltaT*isolamento)*100)/100;\nvar isolamentoReale=Math.round(((msg.power/(area*deltaT))*100)/100);\n\nmsg.potenzaTeorica=potenzaTeorica;\nmsg.potenzaTeoricaKW=potenzaTeorica/860.4;\nmsg.isolamentoReale=isolamentoReale;\n\nreturn {msg: msg, metadata: metadata, msgType: 'POST_TELEMETRY_REQUEST'};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,

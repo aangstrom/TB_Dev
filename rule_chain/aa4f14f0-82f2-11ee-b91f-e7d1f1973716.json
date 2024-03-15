@@ -1000,6 +1000,14 @@
       "fromIndex" : 145,
       "toIndex" : 146,
       "type" : "Success"
+    }, {
+      "fromIndex" : 146,
+      "toIndex" : 147,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 147,
+      "toIndex" : 9,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 31,
     "nodes" : [ {
@@ -5454,8 +5462,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 303,
-        "layoutY" : 79
+        "layoutX" : 307,
+        "layoutY" : 33
       },
       "configuration" : {
         "msgCount" : 0,
@@ -5482,8 +5490,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 304,
-        "layoutY" : 177
+        "layoutX" : 308,
+        "layoutY" : 131
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -5509,8 +5517,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 303,
-        "layoutY" : 277
+        "layoutX" : 307,
+        "layoutY" : 231
       },
       "configuration" : {
         "restEndpointUrlPattern" : "https://api.openweathermap.org/data/2.5/weather?lat=${ss_latitude}&lon=${ss_longitude}&units=metric&appid=e44f5f3e8074d38034d3e63533c468a6",
@@ -5538,7 +5546,7 @@
       },
       "configurationVersion" : 1,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -5548,6 +5556,29 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 307,
+        "layoutY" : 331
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var message={};\nmessage.mc=msg.mc;\nmessage.temperature=msg.temperature;\nmessage.humidity=msg.humidity;\nmessage.presenza=msg.presenza;\nreturn {msg: message, metadata: metadata, msgType: 'POST_ATTRIBUTES_REQUEST'};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "94404b50-e2df-11ee-80a4-a369e7fd2696"
+      },
+      "name" : "Transform to attribute",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

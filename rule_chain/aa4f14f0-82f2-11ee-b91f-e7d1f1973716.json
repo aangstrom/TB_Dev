@@ -1014,7 +1014,7 @@
       "type" : "Success"
     }, {
       "fromIndex" : 148,
-      "toIndex" : 150,
+      "toIndex" : 152,
       "type" : "Success"
     }, {
       "fromIndex" : 149,
@@ -1027,6 +1027,10 @@
     }, {
       "fromIndex" : 151,
       "toIndex" : 137,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 152,
+      "toIndex" : 150,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 30,
@@ -5573,8 +5577,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 2412,
-        "layoutY" : 442
+        "layoutX" : 2402,
+        "layoutY" : 450
       },
       "configuration" : {
         "relationsQuery" : {
@@ -5607,24 +5611,23 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 2414,
-        "layoutY" : 366
+        "layoutX" : 2402,
+        "layoutY" : 350
       },
       "configuration" : {
         "relationsQuery" : {
           "fetchLastLevelOnly" : false,
           "direction" : "TO",
-          "maxLevel" : null,
+          "maxLevel" : 1,
           "filters" : [ {
             "relationType" : "Contains",
             "entityTypes" : [ "ASSET" ]
           } ]
         },
-        "dataToFetch" : "ATTRIBUTES",
+        "dataToFetch" : "LATEST_TELEMETRY",
         "fetchTo" : "METADATA",
         "dataMapping" : {
-          "temperature" : "internal_temp",
-          "area" : "area"
+          "temperature" : "internal_temp"
         }
       },
       "configurationVersion" : 1,
@@ -5722,6 +5725,40 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2400,
+        "layoutY" : 253
+      },
+      "configuration" : {
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "TO",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "ASSET" ]
+          } ]
+        },
+        "dataToFetch" : "ATTRIBUTES",
+        "fetchTo" : "METADATA",
+        "dataMapping" : {
+          "area" : "area"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "1c2f9bc0-e2ee-11ee-80a4-a369e7fd2696"
+      },
+      "name" : "Get area from Asset",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
     } ],
     "ruleChainConnections" : null
   },

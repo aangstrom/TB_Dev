@@ -1285,6 +1285,162 @@
           "row" : 0,
           "col" : 0,
           "id" : "4227df14-daf4-6643-77b1-2f9f48c3f8fb"
+        },
+        "4dcc39f6-4d62-640a-d139-469dce4c4c66" : {
+          "typeFullFqn" : "system.charts.basic_timeseries",
+          "type" : "timeseries",
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "3720bc1b-039e-7e65-5d9c-c421a4543b9b",
+              "dataKeys" : [ {
+                "name" : "potenzaReale",
+                "type" : "timeseries",
+                "label" : "potenzaReale",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.25239978699145094,
+                "units" : "",
+                "decimals" : 2
+              }, {
+                "name" : "potenzaTeorica",
+                "type" : "timeseries",
+                "label" : "potenzaTeorica",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.33934555419430135,
+                "decimals" : 2
+              }, {
+                "name" : "potenzaTeoricaKW",
+                "type" : "timeseries",
+                "label" : "potenzaTeoricaKW",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.09480166003431867,
+                "units" : "W",
+                "decimals" : 2
+              }, {
+                "name" : "isolamentoReale",
+                "type" : "timeseries",
+                "label" : "isolamentoReale",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.4053484524927089,
+                "decimals" : 0
+              }, {
+                "name" : "power",
+                "type" : "timeseries",
+                "label" : "power",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.40139063191542057,
+                "units" : "W",
+                "decimals" : 2
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "hideInterval" : false,
+              "hideLastInterval" : false,
+              "hideQuickInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 0,
+                "timewindowMs" : 345601000,
+                "quickInterval" : "CURRENT_DAY",
+                "interval" : 900000
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "stack" : false,
+              "fontSize" : 10,
+              "fontColor" : "#545454",
+              "showTooltip" : true,
+              "tooltipIndividual" : false,
+              "tooltipCumulative" : false,
+              "hideZeros" : false,
+              "grid" : {
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1,
+                "color" : "#545454",
+                "backgroundColor" : null,
+                "tickColor" : "#DDDDDD"
+              },
+              "xaxis" : {
+                "title" : null,
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "min" : null,
+                "max" : null,
+                "title" : null,
+                "showLabels" : true,
+                "color" : "#545454",
+                "tickSize" : null,
+                "tickDecimals" : 0,
+                "ticksFormatter" : ""
+              },
+              "shadowSize" : 4,
+              "smoothLines" : false,
+              "comparisonEnabled" : false,
+              "xaxisSecond" : {
+                "axisPosition" : "top",
+                "title" : null,
+                "showLabels" : true
+              },
+              "showLegend" : true,
+              "legendConfig" : {
+                "direction" : "column",
+                "position" : "bottom",
+                "sortDataKeys" : false,
+                "showMin" : false,
+                "showMax" : false,
+                "showAvg" : true,
+                "showTotal" : false,
+                "showLatest" : false
+              },
+              "customLegendEnabled" : false
+            },
+            "title" : "Timeseries Line Chart",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "configMode" : "basic",
+            "actions" : { },
+            "showTitleIcon" : false,
+            "titleIcon" : "thermostat",
+            "iconColor" : "#1F6BDD",
+            "useDashboardTimewindow" : false,
+            "displayTimewindow" : true,
+            "titleFont" : null,
+            "titleColor" : null,
+            "enableDataExport" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "4dcc39f6-4d62-640a-d139-469dce4c4c66"
         }
       },
       "states" : {
@@ -1386,6 +1542,12 @@
                   "sizeY" : 6,
                   "row" : 15,
                   "col" : 6
+                },
+                "4dcc39f6-4d62-640a-d139-469dce4c4c66" : {
+                  "sizeX" : 12,
+                  "sizeY" : 5,
+                  "row" : 21,
+                  "col" : 0
                 }
               },
               "gridSettings" : {
@@ -1533,6 +1695,18 @@
             "singleEntity" : {
               "entityType" : "ASSET",
               "id" : "47f83200-c406-11ee-9101-d71950cabe39"
+            }
+          }
+        },
+        "3720bc1b-039e-7e65-5d9c-c421a4543b9b" : {
+          "id" : "3720bc1b-039e-7e65-5d9c-c421a4543b9b",
+          "alias" : "Energia Bungalow 1",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "ASSET",
+              "id" : "e89ed730-9063-11ee-842a-55fec3ab5bf6"
             }
           }
         }

@@ -22,19 +22,7 @@
   "metaData" : {
     "connections" : [ {
       "fromIndex" : 0,
-      "toIndex" : 1,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 0,
-      "toIndex" : 3,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 0,
-      "toIndex" : 26,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 0,
-      "toIndex" : 64,
+      "toIndex" : 62,
       "type" : "Success"
     }, {
       "fromIndex" : 1,
@@ -207,10 +195,6 @@
     }, {
       "fromIndex" : 39,
       "toIndex" : 58,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 39,
-      "toIndex" : 60,
       "type" : "Success"
     }, {
       "fromIndex" : 41,
@@ -429,20 +413,28 @@
       "toIndex" : 57,
       "type" : "False"
     }, {
-      "fromIndex" : 60,
-      "toIndex" : 61,
+      "fromIndex" : 61,
+      "toIndex" : 1,
       "type" : "Success"
     }, {
       "fromIndex" : 61,
-      "toIndex" : 62,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 61,
+      "toIndex" : 26,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 61,
+      "toIndex" : 60,
       "type" : "Duplicate"
     }, {
       "fromIndex" : 61,
-      "toIndex" : 62,
+      "toIndex" : 60,
       "type" : "Error"
     }, {
-      "fromIndex" : 64,
-      "toIndex" : 63,
+      "fromIndex" : 62,
+      "toIndex" : 61,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 39,
@@ -1567,8 +1559,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 452,
-        "layoutY" : 409
+        "layoutX" : 218,
+        "layoutY" : 353
       },
       "configuration" : {
         "ruleChainId" : "64eaf570-d477-11ed-9fb5-f96805f2c8b4"
@@ -1588,8 +1580,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 453,
-        "layoutY" : 483
+        "layoutX" : 219,
+        "layoutY" : 427
       },
       "configuration" : {
         "ruleChainId" : "af235ad0-ef2d-11ed-9fb5-f96805f2c8b4"
@@ -2052,58 +2044,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 201,
-        "layoutY" : 301
-      },
-      "configuration" : {
-        "tellFailureIfAbsent" : true,
-        "fetchTo" : "METADATA",
-        "clientAttributeNames" : [ "first_hour", "total_liter" ],
-        "sharedAttributeNames" : [ ],
-        "serverAttributeNames" : [ ],
-        "latestTsKeyNames" : [ ],
-        "getLatestValueWithTs" : false
-      },
-      "configurationVersion" : 1,
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "babb6340-e5dd-11ee-bfd0-e302eb9a3b91"
-      },
-      "name" : "Get first_hour",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 201,
-        "layoutY" : 400
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(metadata.cs_first_hour==msg.first_hour){\n    return ['Duplicate'];\n}else if(msg.liter>1700){\n    return ['Error'];\n}else{\n    msg.first_hour=null;\n    return ['Success'];\n}"
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "662d2880-e5de-11ee-bfd0-e302eb9a3b91"
-      },
-      "name" : "Switch Duplicate, Error, Success",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 202,
-        "layoutY" : 502
+        "layoutX" : 528,
+        "layoutY" : 401
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -2131,11 +2073,11 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(msg.liter==metadata.total_liter){\n    return ['Error'];\n}else{\n    return ['Success'];\n}"
+        "tbelScript" : "if(metadata.cs_first_hour==msg.first_hour){\n    return ['Duplicate'];\n}else if(msg.liter==metadata.cs_total_liter){\n    return ['Error'];\n}else{\n    return ['Success'];\n}"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -2154,7 +2096,7 @@
       "configuration" : {
         "tellFailureIfAbsent" : true,
         "fetchTo" : "METADATA",
-        "clientAttributeNames" : [ "total_liter" ],
+        "clientAttributeNames" : [ "total_liter", "first_hour" ],
         "sharedAttributeNames" : [ ],
         "serverAttributeNames" : [ ],
         "latestTsKeyNames" : [ ],
@@ -2162,13 +2104,13 @@
       },
       "configurationVersion" : 1,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
         "id" : "e9147b60-e5e1-11ee-bfd0-e302eb9a3b91"
       },
-      "name" : "Get total_liter",
+      "name" : "Get total_liter and first_hour",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"

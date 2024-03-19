@@ -428,6 +428,18 @@
       "fromIndex" : 59,
       "toIndex" : 57,
       "type" : "False"
+    }, {
+      "fromIndex" : 60,
+      "toIndex" : 61,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 61,
+      "toIndex" : 62,
+      "type" : "Duplicate"
+    }, {
+      "fromIndex" : 61,
+      "toIndex" : 62,
+      "type" : "Error"
     } ],
     "firstNodeIndex" : 39,
     "nodes" : [ {
@@ -2036,8 +2048,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 462,
-        "layoutY" : 29
+        "layoutX" : 201,
+        "layoutY" : 301
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -2060,6 +2072,52 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 201,
+        "layoutY" : 400
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if(metadata.first_hour==msg.first_hour){\n    return ['Duplicate'];\n}else if(msg.liter>1000){\n    return ['Error'];\n}else{\n    return ['Success'];\n}"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "662d2880-e5de-11ee-bfd0-e302eb9a3b91"
+      },
+      "name" : "Switch Duplicate, Error, Success",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 202,
+        "layoutY" : 502
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);",
+        "tbelScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "662debd0-e5de-11ee-bfd0-e302eb9a3b91"
+      },
+      "name" : "Error, Duplicate",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbLogNode"
     } ],
     "ruleChainConnections" : null
   },

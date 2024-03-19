@@ -201,6 +201,10 @@
       "toIndex" : 42,
       "type" : "Alarm Created"
     }, {
+      "fromIndex" : 39,
+      "toIndex" : 58,
+      "type" : "Success"
+    }, {
       "fromIndex" : 41,
       "toIndex" : 30,
       "type" : "Success"
@@ -404,6 +408,22 @@
       "fromIndex" : 55,
       "toIndex" : 36,
       "type" : "Success"
+    }, {
+      "fromIndex" : 57,
+      "toIndex" : 56,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 58,
+      "toIndex" : 36,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 58,
+      "toIndex" : 59,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 59,
+      "toIndex" : 57,
+      "type" : "False"
     } ],
     "firstNodeIndex" : 39,
     "nodes" : [ {
@@ -436,8 +456,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 804,
-        "layoutY" : 28
+        "layoutX" : 810,
+        "layoutY" : 144
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -459,8 +479,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1084,
-        "layoutY" : 103
+        "layoutX" : 1090,
+        "layoutY" : 219
       },
       "configuration" : {
         "relationsQuery" : {
@@ -493,8 +513,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 805,
-        "layoutY" : 103
+        "layoutX" : 811,
+        "layoutY" : 219
       },
       "configuration" : {
         "inputValueKey" : "liter",
@@ -535,8 +555,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 801,
-        "layoutY" : 177
+        "layoutX" : 807,
+        "layoutY" : 293
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -1242,8 +1262,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1080,
-        "layoutY" : 28
+        "layoutX" : 1086,
+        "layoutY" : 144
       },
       "configuration" : {
         "relationsQuery" : {
@@ -1527,7 +1547,7 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 352,
+        "layoutX" : 450,
         "layoutY" : 301
       },
       "configuration" : {
@@ -1548,7 +1568,7 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 353,
+        "layoutX" : 451,
         "layoutY" : 375
       },
       "configuration" : {
@@ -1569,8 +1589,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1076,
-        "layoutY" : 177
+        "layoutX" : 1082,
+        "layoutY" : 293
       },
       "configuration" : {
         "version" : 0
@@ -1902,6 +1922,113 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1800,
+        "layoutY" : 26
+      },
+      "configuration" : {
+        "useSystemSmtpSettings" : true,
+        "smtpHost" : "localhost",
+        "smtpPort" : 25,
+        "username" : null,
+        "password" : null,
+        "smtpProtocol" : "smtp",
+        "timeout" : 10000,
+        "enableTls" : false,
+        "tlsVersion" : "TLSv1.2",
+        "enableProxy" : false,
+        "proxyHost" : null,
+        "proxyPort" : null,
+        "proxyUser" : null,
+        "proxyPassword" : null
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "88081160-e5dc-11ee-bfd0-e302eb9a3b91"
+      },
+      "name" : "Send to Federico",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.mail.TbSendEmailNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1527,
+        "layoutY" : 27
+      },
+      "configuration" : {
+        "fromTemplate" : "alert@aangstrom.it",
+        "toTemplate" : "federico.furlatti@aangstrom.it",
+        "ccTemplate" : null,
+        "bccTemplate" : null,
+        "subjectTemplate" : "Nuova stringa non codificata",
+        "mailBodyType" : "true",
+        "bodyTemplate" : "<p align=\"center\" style=\"color:red;font-weight: bold;font-size:30px\">!Nuova stringa non codificata !</p>\n\n$[string]\n\n\n<br><br>"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "880ad080-e5dc-11ee-bfd0-e302eb9a3b91"
+      },
+      "name" : "Crea mail",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.mail.TbMsgToEmailNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1001,
+        "layoutY" : 23
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "880b93d0-e5dc-11ee-bfd0-e302eb9a3b91"
+      },
+      "name" : "Buffer",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1275,
+        "layoutY" : 26
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return msg.temperature > 20;",
+        "tbelScript" : "return msg.string.startsWith('c1');"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "880c7e30-e5dc-11ee-bfd0-e302eb9a3b91"
+      },
+      "name" : "Script if not c1",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
     } ],
     "ruleChainConnections" : null
   },

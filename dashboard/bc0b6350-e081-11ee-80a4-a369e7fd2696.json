@@ -1465,19 +1465,19 @@
           "col" : 0,
           "id" : "03fb7a29-b9ff-0ada-84ac-f20f24aac45b"
         },
-        "ce2e08b8-3d35-805a-654b-b49e4261d379" : {
-          "typeFullFqn" : "system.power_button",
+        "61aa3929-4e00-8fd6-0d53-8668fe4c5cd3" : {
+          "typeFullFqn" : "system.single_switch",
           "type" : "rpc",
           "sizeX" : 3.5,
-          "sizeY" : 3.5,
+          "sizeY" : 1,
           "config" : {
-            "showTitle" : true,
+            "showTitle" : false,
             "backgroundColor" : "#ffffff",
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
               "initialState" : {
-                "action" : "EXECUTE_RPC",
+                "action" : "DO_NOTHING",
                 "defaultValue" : false,
                 "executeRpc" : {
                   "method" : "getState",
@@ -1486,16 +1486,16 @@
                   "persistentPollingInterval" : 1000
                 },
                 "getAttribute" : {
-                  "key" : "state",
-                  "scope" : null
+                  "scope" : null,
+                  "key" : "state"
                 },
                 "getTimeSeries" : {
                   "key" : "state"
                 },
                 "dataToValue" : {
                   "type" : "NONE",
-                  "compareToValue" : true,
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
+                  "compareToValue" : true
                 }
               },
               "onUpdateState" : {
@@ -1556,13 +1556,52 @@
                   "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
                 }
               },
-              "layout" : "default",
-              "mainColorOn" : "var(--tb-primary-500)",
-              "backgroundColorOn" : "#FFFFFF",
-              "mainColorOff" : "#A2A2A2",
-              "backgroundColorOff" : "#FFFFFF",
-              "mainColorDisabled" : "rgba(0,0,0,0.12)",
-              "backgroundColorDisabled" : "#FFFFFF",
+              "layout" : "right",
+              "autoScale" : true,
+              "showLabel" : true,
+              "label" : "Switch",
+              "labelFont" : {
+                "family" : "Roboto",
+                "size" : 16,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "500",
+                "lineHeight" : "24px"
+              },
+              "labelColor" : "rgba(0, 0, 0, 0.76)",
+              "showIcon" : false,
+              "iconSize" : 24,
+              "iconSizeUnit" : "px",
+              "icon" : "mdi:lightbulb-outline",
+              "iconColor" : "rgba(0, 0, 0, 0.76)",
+              "switchColorOn" : "var(--tb-primary-500)",
+              "switchColorOff" : "var(--tb-primary-100)",
+              "switchColorDisabled" : "#D5D7E5",
+              "tumblerColorOn" : "#fff",
+              "tumblerColorOff" : "#fff",
+              "tumblerColorDisabled" : "#fff",
+              "showOnLabel" : false,
+              "onLabel" : "On",
+              "onLabelFont" : {
+                "family" : "Roboto",
+                "size" : 16,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "24px"
+              },
+              "onLabelColor" : "rgba(0, 0, 0, 0.38)",
+              "showOffLabel" : false,
+              "offLabel" : "Off",
+              "offLabelFont" : {
+                "family" : "Roboto",
+                "size" : 16,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "24px"
+              },
+              "offLabelColor" : "rgba(0, 0, 0, 0.38)",
               "background" : {
                 "type" : "color",
                 "color" : "#fff",
@@ -1573,7 +1612,7 @@
                 }
               }
             },
-            "title" : "Power",
+            "title" : "Single Switch",
             "dropShadow" : true,
             "enableFullscreen" : false,
             "widgetStyle" : { },
@@ -1581,10 +1620,10 @@
             "widgetCss" : "",
             "noDataDisplayMessage" : "",
             "titleFont" : {
-              "size" : 16,
+              "size" : 12,
               "sizeUnit" : "px",
-              "family" : "Roboto",
-              "weight" : "500",
+              "family" : null,
+              "weight" : null,
               "style" : null,
               "lineHeight" : "1.6"
             },
@@ -1595,21 +1634,20 @@
               "fontWeight" : 400
             },
             "pageSize" : 1024,
-            "titleIcon" : "mdi:lightbulb-outline",
+            "titleIcon" : "",
             "iconColor" : "rgba(0, 0, 0, 0.87)",
-            "iconSize" : "24px",
+            "iconSize" : "14px",
             "configMode" : "basic",
+            "datasources" : [ ],
             "targetDevice" : {
-              "type" : "entity",
-              "entityAliasId" : "56be956e-cd93-4c29-25f1-dba32d4aa533"
+              "type" : "device",
+              "deviceId" : "09608820-32a4-11ed-accb-016e0c746b7f"
             },
-            "titleColor" : null,
-            "borderRadius" : null,
-            "datasources" : [ ]
+            "borderRadius" : null
           },
           "row" : 0,
           "col" : 0,
-          "id" : "ce2e08b8-3d35-805a-654b-b49e4261d379"
+          "id" : "61aa3929-4e00-8fd6-0d53-8668fe4c5cd3"
         }
       },
       "states" : {
@@ -1667,9 +1705,9 @@
                   "row" : 50,
                   "col" : 0
                 },
-                "ce2e08b8-3d35-805a-654b-b49e4261d379" : {
+                "61aa3929-4e00-8fd6-0d53-8668fe4c5cd3" : {
                   "sizeX" : 7,
-                  "sizeY" : 7,
+                  "sizeY" : 2,
                   "row" : 62,
                   "col" : 0
                 }

@@ -1499,7 +1499,7 @@
                 }
               },
               "onUpdateState" : {
-                "action" : "EXECUTE_RPC",
+                "action" : "SET_ATTRIBUTE",
                 "executeRpc" : {
                   "method" : "setState",
                   "requestTimeout" : 5000,
@@ -1507,15 +1507,15 @@
                   "persistentPollingInterval" : 1000
                 },
                 "setAttribute" : {
-                  "key" : "state",
-                  "scope" : "SERVER_SCOPE"
+                  "scope" : "SERVER_SCOPE",
+                  "key" : "state"
                 },
                 "putTimeSeries" : {
                   "key" : "state"
                 },
                 "valueToData" : {
                   "type" : "CONSTANT",
-                  "constantValue" : true,
+                  "constantValue" : false,
                   "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */\nreturn value;"
                 }
               },

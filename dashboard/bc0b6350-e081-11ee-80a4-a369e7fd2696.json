@@ -1455,7 +1455,7 @@
             "iconColor" : "rgba(0, 0, 0, 0.87)",
             "iconSize" : "24px",
             "displayTimewindow" : true,
-            "configMode" : "basic",
+            "configMode" : "advanced",
             "titleFont" : null,
             "titleColor" : null,
             "titleIcon" : null,
@@ -1464,6 +1464,152 @@
           "row" : 0,
           "col" : 0,
           "id" : "03fb7a29-b9ff-0ada-84ac-f20f24aac45b"
+        },
+        "ce2e08b8-3d35-805a-654b-b49e4261d379" : {
+          "typeFullFqn" : "system.power_button",
+          "type" : "rpc",
+          "sizeX" : 3.5,
+          "sizeY" : 3.5,
+          "config" : {
+            "showTitle" : true,
+            "backgroundColor" : "#ffffff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "initialState" : {
+                "action" : "EXECUTE_RPC",
+                "defaultValue" : false,
+                "executeRpc" : {
+                  "method" : "getState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "getAttribute" : {
+                  "key" : "state",
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : true,
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
+                }
+              },
+              "onUpdateState" : {
+                "action" : "EXECUTE_RPC",
+                "executeRpc" : {
+                  "method" : "setState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "setAttribute" : {
+                  "key" : "state",
+                  "scope" : "SERVER_SCOPE"
+                },
+                "putTimeSeries" : {
+                  "key" : "state"
+                },
+                "valueToData" : {
+                  "type" : "CONSTANT",
+                  "constantValue" : true,
+                  "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */\nreturn value;"
+                }
+              },
+              "offUpdateState" : {
+                "action" : "EXECUTE_RPC",
+                "executeRpc" : {
+                  "method" : "setState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "setAttribute" : {
+                  "key" : "state",
+                  "scope" : "SERVER_SCOPE"
+                },
+                "putTimeSeries" : {
+                  "key" : "state"
+                },
+                "valueToData" : {
+                  "type" : "CONSTANT",
+                  "constantValue" : false,
+                  "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */ \n return value;"
+                }
+              },
+              "disabledState" : {
+                "action" : "DO_NOTHING",
+                "defaultValue" : false,
+                "getAttribute" : {
+                  "key" : "state",
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : true,
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
+                }
+              },
+              "layout" : "default",
+              "mainColorOn" : "var(--tb-primary-500)",
+              "backgroundColorOn" : "#FFFFFF",
+              "mainColorOff" : "#A2A2A2",
+              "backgroundColorOff" : "#FFFFFF",
+              "mainColorDisabled" : "rgba(0,0,0,0.12)",
+              "backgroundColorDisabled" : "#FFFFFF",
+              "background" : {
+                "type" : "color",
+                "color" : "#fff",
+                "overlay" : {
+                  "enabled" : false,
+                  "color" : "rgba(255,255,255,0.72)",
+                  "blur" : 3
+                }
+              }
+            },
+            "title" : "Power",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "titleFont" : {
+              "size" : 16,
+              "sizeUnit" : "px",
+              "family" : "Roboto",
+              "weight" : "500",
+              "style" : null,
+              "lineHeight" : "1.6"
+            },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "pageSize" : 1024,
+            "titleIcon" : "mdi:lightbulb-outline",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "configMode" : "basic",
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "56be956e-cd93-4c29-25f1-dba32d4aa533"
+            },
+            "titleColor" : null,
+            "borderRadius" : null,
+            "datasources" : [ ]
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "ce2e08b8-3d35-805a-654b-b49e4261d379"
         }
       },
       "states" : {
@@ -1519,6 +1665,12 @@
                   "sizeX" : 38,
                   "sizeY" : 12,
                   "row" : 50,
+                  "col" : 0
+                },
+                "ce2e08b8-3d35-805a-654b-b49e4261d379" : {
+                  "sizeX" : 7,
+                  "sizeY" : 7,
+                  "row" : 62,
                   "col" : 0
                 }
               },

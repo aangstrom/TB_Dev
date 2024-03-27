@@ -1648,6 +1648,187 @@
           "row" : 0,
           "col" : 0,
           "id" : "61aa3929-4e00-8fd6-0d53-8668fe4c5cd3"
+        },
+        "19698fc9-9555-7bfa-ae68-e76e5f4d88a1" : {
+          "typeFullFqn" : "system.toggle_button",
+          "type" : "rpc",
+          "sizeX" : 4,
+          "sizeY" : 2,
+          "config" : {
+            "showTitle" : true,
+            "backgroundColor" : "#ffffff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "initialState" : {
+                "action" : "GET_ATTRIBUTE",
+                "defaultValue" : false,
+                "executeRpc" : {
+                  "method" : "getState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "getAttribute" : {
+                  "scope" : "SERVER_SCOPE",
+                  "key" : "valve"
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
+                  "compareToValue" : true
+                }
+              },
+              "checkState" : {
+                "action" : "SET_ATTRIBUTE",
+                "executeRpc" : {
+                  "method" : "setState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "setAttribute" : {
+                  "scope" : "SERVER_SCOPE",
+                  "key" : "valve"
+                },
+                "putTimeSeries" : {
+                  "key" : "state"
+                },
+                "valueToData" : {
+                  "type" : "CONSTANT",
+                  "constantValue" : true,
+                  "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */\nreturn value;"
+                }
+              },
+              "uncheckState" : {
+                "action" : "SET_ATTRIBUTE",
+                "executeRpc" : {
+                  "method" : "setState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "setAttribute" : {
+                  "scope" : "SERVER_SCOPE",
+                  "key" : "valve"
+                },
+                "putTimeSeries" : {
+                  "key" : "state"
+                },
+                "valueToData" : {
+                  "type" : "CONSTANT",
+                  "constantValue" : false,
+                  "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */ \n return value;"
+                }
+              },
+              "disabledState" : {
+                "action" : "DO_NOTHING",
+                "defaultValue" : false,
+                "getAttribute" : {
+                  "key" : "state",
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : true,
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
+                }
+              },
+              "autoScale" : true,
+              "horizontalFill" : true,
+              "verticalFill" : false,
+              "checkedAppearance" : {
+                "type" : "outlined",
+                "showLabel" : true,
+                "label" : "Opened",
+                "showIcon" : true,
+                "icon" : "mdi:lock-open-variant",
+                "iconSize" : 24,
+                "iconSizeUnit" : "px",
+                "mainColor" : "#198038",
+                "backgroundColor" : "#FFFFFF",
+                "borderRadius" : "4px",
+                "customStyle" : {
+                  "enabled" : null,
+                  "hovered" : null,
+                  "pressed" : null,
+                  "activated" : null,
+                  "disabled" : null
+                }
+              },
+              "uncheckedAppearance" : {
+                "type" : "filled",
+                "autoScale" : true,
+                "showLabel" : true,
+                "label" : "Closed",
+                "showIcon" : true,
+                "icon" : "lock",
+                "iconSize" : 24,
+                "iconSizeUnit" : "px",
+                "mainColor" : "#D12730",
+                "backgroundColor" : "#FFFFFF",
+                "customStyle" : {
+                  "enabled" : null,
+                  "hovered" : null,
+                  "pressed" : null,
+                  "activated" : null,
+                  "disabled" : null
+                },
+                "borderRadius" : "4px"
+              },
+              "background" : {
+                "type" : "color",
+                "color" : "#fff",
+                "overlay" : {
+                  "enabled" : false,
+                  "color" : "rgba(255,255,255,0.72)",
+                  "blur" : 3
+                }
+              }
+            },
+            "title" : "Door",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "titleFont" : {
+              "size" : 16,
+              "sizeUnit" : "px",
+              "family" : "Roboto",
+              "weight" : "500",
+              "style" : null,
+              "lineHeight" : "1.6"
+            },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "pageSize" : 1024,
+            "titleIcon" : "home",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "configMode" : "basic",
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "d2045159-33fc-5408-8f0d-7891af27d689"
+            },
+            "titleColor" : null,
+            "borderRadius" : null,
+            "datasources" : [ ]
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "19698fc9-9555-7bfa-ae68-e76e5f4d88a1"
         }
       },
       "states" : {
@@ -1710,6 +1891,12 @@
                   "sizeY" : 2,
                   "row" : 62,
                   "col" : 0
+                },
+                "19698fc9-9555-7bfa-ae68-e76e5f4d88a1" : {
+                  "sizeX" : 8,
+                  "sizeY" : 4,
+                  "row" : 62,
+                  "col" : 7
                 }
               },
               "gridSettings" : {
@@ -1775,6 +1962,18 @@
             "singleEntity" : {
               "entityType" : "ASSET",
               "id" : "e89ed730-9063-11ee-842a-55fec3ab5bf6"
+            }
+          }
+        },
+        "d2045159-33fc-5408-8f0d-7891af27d689" : {
+          "id" : "d2045159-33fc-5408-8f0d-7891af27d689",
+          "alias" : "Bove",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "95f2c470-ec2e-11ee-ba1f-8b1e38c6e412"
             }
           }
         }

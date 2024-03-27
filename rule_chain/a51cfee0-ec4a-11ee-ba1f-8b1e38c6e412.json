@@ -448,7 +448,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var message={};\n//var msgType=\"ATTRIBUTES_UPDATED\";\nmessage.devEui=metadata.cs_DevEUI;\nmessage.fPort=metadata.cs_fPort;\nmessage.confirmed=true;\n\nif(msg.valve==0){\n    message.data=\"0404A0170055\";\n}\nif(msg.valve==1){\n    message.data=\"0404A0170099\";\n}\nreturn {msg: message, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var message={};\n//var msgType=\"ATTRIBUTES_UPDATED\";\nmessage.devEui=metadata.cs_DevEUI;\nmessage.fPort=metadata.cs_fPort;\nmessage.confirmed=true;\n\nif(msg.valve==0){\n    message.data=btoa(\"0404A0170055\");\n}\nif(msg.valve==1){\n    message.data=btoa(\"0404A0170099\");\n}\nreturn {msg: message, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,

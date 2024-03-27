@@ -82,19 +82,19 @@
       "type" : "Success"
     }, {
       "fromIndex" : 13,
-      "toIndex" : 14,
+      "toIndex" : 0,
       "type" : "Success"
     }, {
-      "fromIndex" : 14,
-      "toIndex" : 0,
+      "fromIndex" : 15,
+      "toIndex" : 14,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 10,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 502,
-        "layoutY" : 577
+        "layoutX" : 501,
+        "layoutY" : 501
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -408,35 +408,11 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 501,
-        "layoutY" : 504
+        "layoutX" : 502,
+        "layoutY" : 749
       },
       "configuration" : {
-        "scriptLang" : "TBEL",
-        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var message={};\nvar msgType=\"ATTRIBUTES_UPDATED\";\n//var msgType=\"RPC_CALL_FROM_SERVER_TO_DEVICE\";\n\nif(msg.valve==0){\n    message.downlink=\"0404A0170055\";\n}\nif(msg.valve==1){\n    message.downlink=\"0404A0170099\";\n}\nreturn {msg: message, metadata: metadata, msgType: msgType};"
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "20c878b0-ec4d-11ee-ba1f-8b1e38c6e412"
-      },
-      "name" : "msg.downlink",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 505,
-        "layoutY" : 783
-      },
-      "configuration" : {
-        "topicPattern" : "application/c93a4de8-be61-4417-838b-c10237a8cccd/devices/$[devEui]/command/down",
+        "topicPattern" : "application/c93a4de8-be61-4417-838b-c10237a8cccd/device/$[devEui]/command/down",
         "host" : "aa8.aangstrom.it",
         "port" : 1885,
         "connectTimeoutSec" : 10,
@@ -463,6 +439,30 @@
       "ruleChainId" : null,
       "singletonMode" : true,
       "type" : "org.thingsboard.rule.engine.mqtt.TbMqttNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 501,
+        "layoutY" : 576
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var message={};\nvar msgType=\"ATTRIBUTES_UPDATED\";\n//var msgType=\"RPC_CALL_FROM_SERVER_TO_DEVICE\";\n\nif(msg.valve==0){\n    message.downlink=\"0404A0170055\";\n}\nif(msg.valve==1){\n    message.downlink=\"0404A0170099\";\n}\nreturn {msg: message, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "6a3a0f00-ec51-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "msg.downlink",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

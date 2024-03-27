@@ -85,8 +85,16 @@
       "toIndex" : 0,
       "type" : "Success"
     }, {
+      "fromIndex" : 14,
+      "toIndex" : 17,
+      "type" : "Success"
+    }, {
       "fromIndex" : 15,
       "toIndex" : 14,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 17,
+      "toIndex" : 16,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 10,
@@ -408,8 +416,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 502,
-        "layoutY" : 749
+        "layoutX" : 503,
+        "layoutY" : 653
       },
       "configuration" : {
         "topicPattern" : "application/c93a4de8-be61-4417-838b-c10237a8cccd/device/$[devEui]/command/down",
@@ -458,7 +466,65 @@
         "entityType" : "RULE_NODE",
         "id" : "6a3a0f00-ec51-11ee-ba1f-8b1e38c6e412"
       },
-      "name" : "msg.downlink",
+      "name" : "msg.downlink change valve",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 503,
+        "layoutY" : 802
+      },
+      "configuration" : {
+        "topicPattern" : "application/c93a4de8-be61-4417-838b-c10237a8cccd/device/$[devEui]/command/down",
+        "host" : "localhost",
+        "port" : 1885,
+        "connectTimeoutSec" : 10,
+        "clientId" : null,
+        "cleanSession" : true,
+        "retainedMessage" : false,
+        "ssl" : false,
+        "credentials" : {
+          "type" : "basic",
+          "username" : "aangstrom",
+          "password" : "Sexten69!"
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "6a137a90-ec59-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "To Chirpstack",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.mqtt.TbMqttNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 503,
+        "layoutY" : 726
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var message={};\n//var msgType=\"ATTRIBUTES_UPDATED\";\n/*message.devEui=metadata.cs_DevEUI;\nmessage.confirmed=true;\nmessage.fPort=metadata.cs_fPort;\n*/\nvar data=\"AQOQHwA=\";\nmessage={\n    \"devEui\": metadata.cs_DevEUI,             \n    \"confirmed\": true,                       \n    \"fPort\": metadata.cs_fPort,                              \n    \"data\": data,\n};\nreturn {msg: message, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "6a13efc0-ec59-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "msg.downlink get status",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,

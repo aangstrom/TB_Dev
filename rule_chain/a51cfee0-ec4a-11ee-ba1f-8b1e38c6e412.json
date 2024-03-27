@@ -448,7 +448,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var message={};\n//var msgType=\"ATTRIBUTES_UPDATED\";\n/*message.devEui=metadata.cs_DevEUI;\nmessage.confirmed=true;\nmessage.fPort=metadata.cs_fPort;\n*/\nvar data;\nif(msg.valve==0){\n    data=\"0404A0170055\";\n}\nif(msg.valve==1){\n    //data=btoa(\"0404A0170099\");\n    data=\"0404A0170099\";\n}\nmessage={\n    \"devEui\": metadata.cs_DevEUI,             \n    \"confirmed\": true,                       \n    \"fPort\": metadata.cs_fPort,                              \n    \"data\": data,\n};\nreturn {msg: message, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var message={};\n//var msgType=\"ATTRIBUTES_UPDATED\";\n/*message.devEui=metadata.cs_DevEUI;\nmessage.confirmed=true;\nmessage.fPort=metadata.cs_fPort;\n*/\nvar data;\nif(msg.valve==0){\n    data=\"0404A0170055\";\n}\nif(msg.valve==1){\n    //data=btoa(\"0404A0170099\");\n    data=\"0404A0170099\";\n}\nmessage={\n    \"devEui\": metadata.cs_DevEUI,             \n    \"confirmed\": true,                       \n    \"fPort\": metadata.cs_fPort,                              \n    \"data\": btoa(data),\n};\nreturn {msg: message, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,

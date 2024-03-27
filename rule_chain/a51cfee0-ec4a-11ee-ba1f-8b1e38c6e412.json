@@ -26,10 +26,6 @@
       "type" : "Success"
     }, {
       "fromIndex" : 4,
-      "toIndex" : 0,
-      "type" : "RPC Request to Device"
-    }, {
-      "fromIndex" : 4,
       "toIndex" : 2,
       "type" : "Post telemetry"
     }, {
@@ -57,6 +53,10 @@
       "toIndex" : 13,
       "type" : "RPC Request to Device"
     }, {
+      "fromIndex" : 4,
+      "toIndex" : 14,
+      "type" : "Attributes Updated"
+    }, {
       "fromIndex" : 8,
       "toIndex" : 4,
       "type" : "False"
@@ -80,13 +80,21 @@
       "fromIndex" : 11,
       "toIndex" : 8,
       "type" : "Success"
+    }, {
+      "fromIndex" : 14,
+      "toIndex" : 15,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 15,
+      "toIndex" : 0,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 11,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 250,
-        "layoutY" : 900
+        "layoutX" : 502,
+        "layoutY" : 577
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -113,8 +121,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 573,
-        "layoutY" : 900
+        "layoutX" : 503,
+        "layoutY" : 651
       },
       "configuration" : {
         "integrationId" : "03f1c920-be81-11ee-9101-d71950cabe39"
@@ -395,6 +403,54 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 501,
+        "layoutY" : 426
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if(msg.valve!=null) {\n    return ['Success'];\n}\nreturn nextRelation(metadata, msg);"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "20c80380-ec4d-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "if valve",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 501,
+        "layoutY" : 504
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var message={};\nvar msgType=\"RPC_CALL_FROM_SERVER_TO_DEVICE\";\n\nif(msg.valve==0){\n    message.downlink=\"0404A0170055\";\n}\nif(msg.valve==1){\n    message.downlink=\"0404A0170099\";\n}\nreturn {msg: message, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "20c878b0-ec4d-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "msg.downlink",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

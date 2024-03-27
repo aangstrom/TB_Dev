@@ -22,43 +22,51 @@
   "metaData" : {
     "connections" : [ {
       "fromIndex" : 0,
-      "toIndex" : 1,
+      "toIndex" : 15,
       "type" : "Success"
     }, {
-      "fromIndex" : 4,
-      "toIndex" : 2,
+      "fromIndex" : 3,
+      "toIndex" : 1,
       "type" : "Post telemetry"
     }, {
-      "fromIndex" : 4,
-      "toIndex" : 3,
+      "fromIndex" : 3,
+      "toIndex" : 2,
       "type" : "Post attributes"
     }, {
-      "fromIndex" : 4,
-      "toIndex" : 5,
+      "fromIndex" : 3,
+      "toIndex" : 4,
       "type" : "RPC Request from Device"
     }, {
-      "fromIndex" : 4,
-      "toIndex" : 6,
+      "fromIndex" : 3,
+      "toIndex" : 5,
       "type" : "Other"
     }, {
-      "fromIndex" : 4,
-      "toIndex" : 7,
+      "fromIndex" : 3,
+      "toIndex" : 6,
       "type" : "RPC Request to Device"
     }, {
-      "fromIndex" : 4,
-      "toIndex" : 12,
+      "fromIndex" : 3,
+      "toIndex" : 11,
       "type" : "Generate Report"
     }, {
-      "fromIndex" : 4,
-      "toIndex" : 13,
+      "fromIndex" : 3,
+      "toIndex" : 12,
       "type" : "RPC Request to Device"
     }, {
-      "fromIndex" : 4,
-      "toIndex" : 14,
+      "fromIndex" : 3,
+      "toIndex" : 13,
       "type" : "Attributes Updated"
     }, {
+      "fromIndex" : 7,
+      "toIndex" : 3,
+      "type" : "False"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 8,
+      "type" : "True"
+    }, {
       "fromIndex" : 8,
-      "toIndex" : 4,
+      "toIndex" : 3,
       "type" : "False"
     }, {
       "fromIndex" : 8,
@@ -66,30 +74,22 @@
       "type" : "True"
     }, {
       "fromIndex" : 9,
-      "toIndex" : 4,
-      "type" : "False"
-    }, {
-      "fromIndex" : 9,
-      "toIndex" : 10,
-      "type" : "True"
-    }, {
-      "fromIndex" : 10,
-      "toIndex" : 4,
+      "toIndex" : 3,
       "type" : "Success"
     }, {
-      "fromIndex" : 11,
-      "toIndex" : 8,
+      "fromIndex" : 10,
+      "toIndex" : 7,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 13,
+      "toIndex" : 14,
       "type" : "Success"
     }, {
       "fromIndex" : 14,
-      "toIndex" : 15,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 15,
       "toIndex" : 0,
       "type" : "Success"
     } ],
-    "firstNodeIndex" : 11,
+    "firstNodeIndex" : 10,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
@@ -118,28 +118,6 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 503,
-        "layoutY" : 651
-      },
-      "configuration" : {
-        "integrationId" : "03f1c920-be81-11ee-9101-d71950cabe39"
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "2bedc850-ec4b-11ee-ba1f-8b1e38c6e412"
-      },
-      "name" : "Send downlink",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.integration.TbIntegrationDownlinkNode"
     }, {
       "additionalInfo" : {
         "description" : null,
@@ -451,6 +429,40 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 505,
+        "layoutY" : 783
+      },
+      "configuration" : {
+        "topicPattern" : "application/c93a4de8-be61-4417-838b-c10237a8cccd/devices/$[devEui]/command/down",
+        "host" : "aa8.aangstrom.it",
+        "port" : 1885,
+        "connectTimeoutSec" : 10,
+        "clientId" : null,
+        "cleanSession" : true,
+        "retainedMessage" : false,
+        "ssl" : false,
+        "credentials" : {
+          "type" : "basic",
+          "username" : "aangstom",
+          "password" : "Sexten69!"
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "1f5b3040-ec51-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "To Chirpstack",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : true,
+      "type" : "org.thingsboard.rule.engine.mqtt.TbMqttNode"
     } ],
     "ruleChainConnections" : null
   },

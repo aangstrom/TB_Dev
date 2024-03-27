@@ -107,7 +107,7 @@
       },
       "configurationVersion" : 1,
       "createdTime" : 0,
-      "debugMode" : false,
+      "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -129,7 +129,7 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : false,
+      "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -436,7 +436,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var message={};\nvar msgType=\"RPC_CALL_FROM_SERVER_TO_DEVICE\";\n\nif(msg.valve==0){\n    message.downlink=\"0404A0170055\";\n}\nif(msg.valve==1){\n    message.downlink=\"0404A0170099\";\n}\nreturn {msg: message, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var message={};\nvar msgType=\"ATTRIBUTES_UPDATED\";\n//var msgType=\"RPC_CALL_FROM_SERVER_TO_DEVICE\";\n\nif(msg.valve==0){\n    message.downlink=\"0404A0170055\";\n}\nif(msg.valve==1){\n    message.downlink=\"0404A0170099\";\n}\nreturn {msg: message, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,

@@ -130,7 +130,11 @@
       "type" : "Success"
     }, {
       "fromIndex" : 20,
-      "toIndex" : 22,
+      "toIndex" : 27,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 20,
+      "toIndex" : 28,
       "type" : "Alarm Created"
     }, {
       "fromIndex" : 23,
@@ -148,13 +152,21 @@
       "fromIndex" : 25,
       "toIndex" : 22,
       "type" : "Created"
+    }, {
+      "fromIndex" : 27,
+      "toIndex" : 29,
+      "type" : "True"
+    }, {
+      "fromIndex" : 29,
+      "toIndex" : 30,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 20,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 101,
-        "layoutY" : 451
+        "layoutX" : 160,
+        "layoutY" : 688
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -177,8 +189,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 727,
-        "layoutY" : 495
+        "layoutX" : 768,
+        "layoutY" : 715
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -211,8 +223,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 725,
-        "layoutY" : 650
+        "layoutX" : 766,
+        "layoutY" : 870
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -236,8 +248,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 379,
-        "layoutY" : 529
+        "layoutX" : 420,
+        "layoutY" : 749
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -260,8 +272,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 727,
-        "layoutY" : 451
+        "layoutX" : 768,
+        "layoutY" : 671
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -294,8 +306,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 725,
-        "layoutY" : 696
+        "layoutX" : 766,
+        "layoutY" : 916
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -319,8 +331,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 727,
-        "layoutY" : 539
+        "layoutX" : 768,
+        "layoutY" : 759
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -353,8 +365,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 727,
-        "layoutY" : 582
+        "layoutX" : 768,
+        "layoutY" : 802
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -387,8 +399,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 101,
-        "layoutY" : 527
+        "layoutX" : 160,
+        "layoutY" : 764
       },
       "configuration" : {
         "tellFailureIfAbsent" : false,
@@ -705,8 +717,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1004,
-        "layoutY" : 451
+        "layoutX" : 1127,
+        "layoutY" : 697
       },
       "configuration" : {
         "ruleChainId" : "64eaf570-d477-11ed-9fb5-f96805f2c8b4"
@@ -727,8 +739,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 378,
-        "layoutY" : 777
+        "layoutX" : 419,
+        "layoutY" : 997
       },
       "configuration" : {
         "relationsQuery" : {
@@ -762,8 +774,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 627,
-        "layoutY" : 777
+        "layoutX" : 668,
+        "layoutY" : 997
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -786,8 +798,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 928,
-        "layoutY" : 777
+        "layoutX" : 969,
+        "layoutY" : 997
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -820,8 +832,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 927,
-        "layoutY" : 828
+        "layoutX" : 968,
+        "layoutY" : 1048
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -842,6 +854,104 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.action.TbClearAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 478,
+        "layoutY" : 472
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return msg.temperature > 20;",
+        "tbelScript" : "return msg.occupancy!=null;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "1f6c7220-f353-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "if Occupancy",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 367,
+        "layoutY" : 621
+      },
+      "configuration" : {
+        "ruleChainId" : "64eaf570-d477-11ed-9fb5-f96805f2c8b4"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "1f6cc040-f353-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "To Notification",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 742,
+        "layoutY" : 437
+      },
+      "configuration" : {
+        "inputValueKey" : "occupancy",
+        "outputValueKey" : "occupancyDelta",
+        "useCache" : true,
+        "addPeriodBetweenMsgs" : true,
+        "periodValueKey" : "periodInMs",
+        "round" : null,
+        "tellFailureIfDeltaIsNegative" : true
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "1f6d0e60-f353-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "Get occupancy time",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.CalculateDeltaNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 826,
+        "layoutY" : 541
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var message={};\nvar tempoChiusura;\nvar tempoApertura;\nif(msg.periodInMs!=null){\n    var tempo=msg.periodInMs/60000;\n    if(msg.status==1){\n        tempoChiusura=tempo;\n    }else if(msg.status==0){\n        tempoApertura=tempo;\n    }\n}\nif(msg.periodInMs>=10800000){\n    var temp=msg.status;\n    message=msg;\n    message.status=0;\n    message.delay=temp;\n    message.periodInMs=null;\n    message.tempoChiusura=tempoChiusura;\n    message.tempoApertura=tempoApertura;\n    message.delta=null;\n}else{\n    message=msg;\n    message.periodInMs=null;\n    message.tempoChiusura=tempoChiusura;\n    message.tempoApertura=tempoApertura;\n    message.delta=null;\n}\nreturn {msg: message, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "1f6d8390-f353-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "Calculate > 3h",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

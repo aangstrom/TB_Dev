@@ -26,7 +26,7 @@
       "type" : "True"
     }, {
       "fromIndex" : 1,
-      "toIndex" : 23,
+      "toIndex" : 22,
       "type" : "Created"
     }, {
       "fromIndex" : 3,
@@ -54,15 +54,15 @@
       "type" : "Umidita_alta"
     }, {
       "fromIndex" : 4,
-      "toIndex" : 23,
+      "toIndex" : 22,
       "type" : "Created"
     }, {
       "fromIndex" : 6,
-      "toIndex" : 23,
+      "toIndex" : 22,
       "type" : "Created"
     }, {
       "fromIndex" : 7,
-      "toIndex" : 23,
+      "toIndex" : 22,
       "type" : "Created"
     }, {
       "fromIndex" : 8,
@@ -126,15 +126,15 @@
       "type" : "Success"
     }, {
       "fromIndex" : 20,
-      "toIndex" : 21,
+      "toIndex" : 22,
       "type" : "Alarm Created"
     } ],
     "firstNodeIndex" : 20,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 351,
-        "layoutY" : 325
+        "layoutX" : 123,
+        "layoutY" : 408
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -157,13 +157,13 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 679,
-        "layoutY" : 522
+        "layoutX" : 454,
+        "layoutY" : 495
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
-        "alarmDetailsBuildTbel" : "var details = {\"data\": \"La temperatura è inferiore ad 1°C\",\"campeggi_name\": metadata.ss_campeggi_name};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {\"data\": \"La temperatura è inferiore ad 10°C\",\"Sensore\": metadata.ss_name};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\nreturn details;",
         "useMessageAlarmData" : false,
         "overwriteAlarmDetails" : false,
         "alarmType" : "Temperatura",
@@ -191,8 +191,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 677,
-        "layoutY" : 677
+        "layoutX" : 452,
+        "layoutY" : 650
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -216,8 +216,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 351,
-        "layoutY" : 476
+        "layoutX" : 123,
+        "layoutY" : 559
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -240,13 +240,13 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 679,
-        "layoutY" : 478
+        "layoutX" : 454,
+        "layoutY" : 451
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
-        "alarmDetailsBuildTbel" : "var details = {\"data\": \"La temperatura è al di sopra dei 30°C\",\"campeggi_name\": metadata.ss_campeggi_name};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {\"data\": \"La temperatura è al di sopra dei 26°C\",\"Sensore\": metadata.ss_name};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\nreturn details;",
         "useMessageAlarmData" : false,
         "overwriteAlarmDetails" : false,
         "alarmType" : "Temperatura",
@@ -274,8 +274,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 677,
-        "layoutY" : 723
+        "layoutX" : 452,
+        "layoutY" : 696
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -299,16 +299,16 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 679,
-        "layoutY" : 566
+        "layoutX" : 454,
+        "layoutY" : 539
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
-        "alarmDetailsBuildTbel" : "var details = {\"data\": \"L'umidità è inferiore al 10%\",\"campeggi_name\": metadata.ss_campeggi_name};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {\"data\": \"L'umidità è inferiore al 40% pertanto l'ambiente è da considerarsi dannoso per la salute.\",\"Sensore\": metadata.ss_name};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\nreturn details;",
         "useMessageAlarmData" : false,
         "overwriteAlarmDetails" : false,
-        "alarmType" : "Temperatura",
+        "alarmType" : "Umidità",
         "severity" : "CRITICAL",
         "propagate" : true,
         "relationTypes" : [ ],
@@ -333,16 +333,16 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 679,
-        "layoutY" : 609
+        "layoutX" : 454,
+        "layoutY" : 582
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
-        "alarmDetailsBuildTbel" : "var details = {\"data\": \"L'umidità è al di sopra dei 90%\",\"campeggi_name\": metadata.ss_campeggi_name};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {\"data\": \"L'umidità è al di sopra dei 70% pertanto l'ambiente è favorevole alla proliferazione di muffe, pollini, lieviti e allergeni\",\"Sensore\": metadata.ss_name};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\nreturn details;",
         "useMessageAlarmData" : false,
         "overwriteAlarmDetails" : false,
-        "alarmType" : "Temperatura",
+        "alarmType" : "Umidità",
         "severity" : "CRITICAL",
         "propagate" : true,
         "relationTypes" : [ ],
@@ -367,8 +367,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 351,
-        "layoutY" : 400
+        "layoutX" : 123,
+        "layoutY" : 483
       },
       "configuration" : {
         "tellFailureIfAbsent" : false,
@@ -395,8 +395,8 @@
     }, {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 1575,
-        "layoutY" : 250
+        "layoutX" : 1552,
+        "layoutY" : 144
       },
       "configuration" : {
         "defaultTTL" : 0,
@@ -418,8 +418,8 @@
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 1302,
-        "layoutY" : 183
+        "layoutX" : 1279,
+        "layoutY" : 77
       },
       "configuration" : {
         "scope" : "CLIENT_SCOPE",
@@ -443,8 +443,8 @@
     }, {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 982,
-        "layoutY" : 302
+        "layoutX" : 926,
+        "layoutY" : 102
       },
       "configuration" : {
         "version" : 0
@@ -465,8 +465,8 @@
     }, {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 1303,
-        "layoutY" : 314
+        "layoutX" : 1280,
+        "layoutY" : 208
       },
       "configuration" : {
         "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
@@ -486,8 +486,8 @@
       "type" : "org.thingsboard.rule.engine.action.TbLogNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 1306,
-        "layoutY" : 369
+        "layoutX" : 1283,
+        "layoutY" : 263
       },
       "configuration" : {
         "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
@@ -508,8 +508,8 @@
     }, {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 1309,
-        "layoutY" : 482
+        "layoutX" : 1286,
+        "layoutY" : 376
       },
       "configuration" : {
         "timeoutInSeconds" : 60
@@ -529,8 +529,8 @@
       "type" : "org.thingsboard.rule.engine.rpc.TbSendRPCRequestNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 609,
-        "layoutY" : 277
+        "layoutX" : 627,
+        "layoutY" : 102
       },
       "configuration" : {
         "originatorTypes" : [ "ENTITY_GROUP" ]
@@ -550,8 +550,8 @@
       "type" : "org.thingsboard.rule.engine.filter.TbOriginatorTypeFilterNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 733,
-        "layoutY" : 141
+        "layoutX" : 579,
+        "layoutY" : 225
       },
       "configuration" : {
         "messageTypes" : [ "POST_ATTRIBUTES_REQUEST", "RPC_CALL_FROM_SERVER_TO_DEVICE" ]
@@ -571,8 +571,8 @@
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeFilterNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 990,
-        "layoutY" : 140
+        "layoutX" : 827,
+        "layoutY" : 223
       },
       "configuration" : {
         "entityGroupId" : null,
@@ -594,8 +594,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1305,
-        "layoutY" : 425
+        "layoutX" : 1282,
+        "layoutY" : 319
       },
       "configuration" : {
         "ruleChainId" : "fa3689a0-3f5d-11ed-accb-016e0c746b7f"
@@ -616,8 +616,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1304,
-        "layoutY" : 246
+        "layoutX" : 1281,
+        "layoutY" : 140
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -640,8 +640,8 @@
     }, {
       "additionalInfo" : {
         "description" : "Process incoming messages from devices with the alarm rules defined in the device profile. Dispatch all incoming messages with \"Success\" relation type.",
-        "layoutX" : 312,
-        "layoutY" : 145
+        "layoutX" : 303,
+        "layoutY" : 152
       },
       "configuration" : {
         "persistAlarmRulesState" : false,
@@ -663,30 +663,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 577,
-        "layoutY" : 28
-      },
-      "configuration" : {
-        "ruleChainId" : "64eaf570-d477-11ed-9fb5-f96805f2c8b4"
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "9301a320-f32d-11ee-ba1f-8b1e38c6e412"
-      },
-      "name" : "To Notification",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 827,
-        "layoutY" : 29
+        "layoutX" : 1004,
+        "layoutY" : 452
       },
       "configuration" : {
         "ruleChainId" : "af235ad0-ef2d-11ed-9fb5-f96805f2c8b4"
@@ -707,8 +685,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 976,
-        "layoutY" : 551
+        "layoutX" : 750,
+        "layoutY" : 450
       },
       "configuration" : {
         "ruleChainId" : "64eaf570-d477-11ed-9fb5-f96805f2c8b4"

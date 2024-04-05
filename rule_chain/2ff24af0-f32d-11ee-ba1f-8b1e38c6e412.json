@@ -161,8 +161,24 @@
       "toIndex" : 30,
       "type" : "Success"
     }, {
+      "fromIndex" : 30,
+      "toIndex" : 32,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 30,
+      "toIndex" : 33,
+      "type" : "Success"
+    }, {
       "fromIndex" : 31,
       "toIndex" : 29,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 32,
+      "toIndex" : 15,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 33,
+      "toIndex" : 15,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 20,
@@ -479,8 +495,8 @@
     }, {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 926,
-        "layoutY" : 102
+        "layoutX" : 898,
+        "layoutY" : 215
       },
       "configuration" : {
         "version" : 0
@@ -565,8 +581,8 @@
       "type" : "org.thingsboard.rule.engine.rpc.TbSendRPCRequestNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 627,
-        "layoutY" : 102
+        "layoutX" : 599,
+        "layoutY" : 215
       },
       "configuration" : {
         "originatorTypes" : [ "ENTITY_GROUP" ]
@@ -586,8 +602,8 @@
       "type" : "org.thingsboard.rule.engine.filter.TbOriginatorTypeFilterNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 579,
-        "layoutY" : 225
+        "layoutX" : 677,
+        "layoutY" : 71
       },
       "configuration" : {
         "messageTypes" : [ "POST_ATTRIBUTES_REQUEST", "RPC_CALL_FROM_SERVER_TO_DEVICE" ]
@@ -607,8 +623,8 @@
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeFilterNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 827,
-        "layoutY" : 223
+        "layoutX" : 925,
+        "layoutY" : 69
       },
       "configuration" : {
         "entityGroupId" : null,
@@ -861,8 +877,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 471,
-        "layoutY" : 456
+        "layoutX" : 504,
+        "layoutY" : 376
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -907,8 +923,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 710,
-        "layoutY" : 439
+        "layoutX" : 505,
+        "layoutY" : 526
       },
       "configuration" : {
         "inputValueKey" : "occupancy",
@@ -935,13 +951,13 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 826,
-        "layoutY" : 541
+        "layoutX" : 751,
+        "layoutY" : 526
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var message={};\nvar tempoChiusura;\nvar tempoApertura;\nif(msg.periodInMs!=null){\n    var tempo=msg.periodInMs/60000;\n    if(msg.status==1){\n        tempoChiusura=tempo;\n    }else if(msg.status==0){\n        tempoApertura=tempo;\n    }\n}\nif(msg.periodInMs>=10800000){\n    var temp=msg.status;\n    message=msg;\n    message.status=0;\n    message.delay=temp;\n    message.periodInMs=null;\n    message.tempoChiusura=tempoChiusura;\n    message.tempoApertura=tempoApertura;\n    message.delta=null;\n}else{\n    message=msg;\n    message.periodInMs=null;\n    message.tempoChiusura=tempoChiusura;\n    message.tempoApertura=tempoApertura;\n    message.delta=null;\n}\nreturn {msg: message, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var message={};\nmessage.occupancy=msg.occupancy;\nif(metadata.ss_latestOccupancy!=null){\n    var temp=metadata.ss_latestOccupancy;\n    if(temp==1){\n        if(msg.occupancy==1){\n            message.tempoOccupato=Math.floor(msg.periodInMs/60000);\n        }\n        if(msg.occupancy==0){\n            message.tempoLibero=0;\n        }\n    }\n    if(temp==0){\n        if(msg.occupancy==1){\n            message.tempoOccupato=0;\n        }\n        if(msg.occupancy==0){\n            message.tempoLibero=Math.floor(msg.periodInMs/60000);\n        }\n    }\n}\nreturn {msg: message, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -951,7 +967,7 @@
         "entityType" : "RULE_NODE",
         "id" : "1f6d8390-f353-11ee-ba1f-8b1e38c6e412"
       },
-      "name" : "Calculate > 3h",
+      "name" : "Calculate tempoLibero e tempoOccupato",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
@@ -959,8 +975,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 669,
-        "layoutY" : 353
+        "layoutX" : 504,
+        "layoutY" : 450
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -984,6 +1000,54 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 753,
+        "layoutY" : 425
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var message={};\nmessage.occupancy=msg.occupancy;\nreturn {msg: msg, metadata: metadata, msgType: \"POST_ATTRIBUTES_REQUEST\"};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0fb2fef0-f356-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "occupancy to attribute",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 976,
+        "layoutY" : 425
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var message={};\nmessage.tempoLibero=msg.tempoLibero;\nmessage.tempoOccupato=msg.tempoOccupato;\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0fb37420-f356-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "tempoLibero e tempoOccupato",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

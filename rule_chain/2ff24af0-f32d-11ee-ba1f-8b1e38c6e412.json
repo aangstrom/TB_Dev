@@ -154,11 +154,15 @@
       "type" : "Created"
     }, {
       "fromIndex" : 27,
-      "toIndex" : 29,
+      "toIndex" : 31,
       "type" : "True"
     }, {
       "fromIndex" : 29,
       "toIndex" : 30,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 31,
+      "toIndex" : 29,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 20,
@@ -857,8 +861,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 478,
-        "layoutY" : 472
+        "layoutX" : 471,
+        "layoutY" : 456
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -903,8 +907,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 742,
-        "layoutY" : 437
+        "layoutX" : 710,
+        "layoutY" : 439
       },
       "configuration" : {
         "inputValueKey" : "occupancy",
@@ -952,6 +956,34 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 669,
+        "layoutY" : 353
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchTo" : "METADATA",
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "latestOccupancy" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : false
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "79cbd260-f353-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "Get latestOccupancy",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
     } ],
     "ruleChainConnections" : null
   },

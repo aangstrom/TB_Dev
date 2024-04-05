@@ -69,6 +69,10 @@
       "toIndex" : 3,
       "type" : "Success"
     }, {
+      "fromIndex" : 8,
+      "toIndex" : 23,
+      "type" : "Success"
+    }, {
       "fromIndex" : 11,
       "toIndex" : 10,
       "type" : "Post attributes"
@@ -128,13 +132,29 @@
       "fromIndex" : 20,
       "toIndex" : 22,
       "type" : "Alarm Created"
+    }, {
+      "fromIndex" : 23,
+      "toIndex" : 24,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 24,
+      "toIndex" : 25,
+      "type" : "DeltaT_alto"
+    }, {
+      "fromIndex" : 24,
+      "toIndex" : 26,
+      "type" : "ok"
+    }, {
+      "fromIndex" : 25,
+      "toIndex" : 22,
+      "type" : "Created"
     } ],
     "firstNodeIndex" : 20,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 123,
-        "layoutY" : 408
+        "layoutX" : 101,
+        "layoutY" : 451
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -157,7 +177,7 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 454,
+        "layoutX" : 727,
         "layoutY" : 495
       },
       "configuration" : {
@@ -191,7 +211,7 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 452,
+        "layoutX" : 725,
         "layoutY" : 650
       },
       "configuration" : {
@@ -216,8 +236,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 123,
-        "layoutY" : 559
+        "layoutX" : 379,
+        "layoutY" : 529
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -240,7 +260,7 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 454,
+        "layoutX" : 727,
         "layoutY" : 451
       },
       "configuration" : {
@@ -274,7 +294,7 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 452,
+        "layoutX" : 725,
         "layoutY" : 696
       },
       "configuration" : {
@@ -299,7 +319,7 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 454,
+        "layoutX" : 727,
         "layoutY" : 539
       },
       "configuration" : {
@@ -333,7 +353,7 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 454,
+        "layoutX" : 727,
         "layoutY" : 582
       },
       "configuration" : {
@@ -367,8 +387,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 123,
-        "layoutY" : 483
+        "layoutX" : 101,
+        "layoutY" : 527
       },
       "configuration" : {
         "tellFailureIfAbsent" : false,
@@ -418,8 +438,8 @@
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 1279,
-        "layoutY" : 77
+        "layoutX" : 1276,
+        "layoutY" : 92
       },
       "configuration" : {
         "scope" : "CLIENT_SCOPE",
@@ -465,8 +485,8 @@
     }, {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 1280,
-        "layoutY" : 208
+        "layoutX" : 1276,
+        "layoutY" : 209
       },
       "configuration" : {
         "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
@@ -486,8 +506,8 @@
       "type" : "org.thingsboard.rule.engine.action.TbLogNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 1283,
-        "layoutY" : 263
+        "layoutX" : 1276,
+        "layoutY" : 262
       },
       "configuration" : {
         "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
@@ -508,8 +528,8 @@
     }, {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 1286,
-        "layoutY" : 376
+        "layoutX" : 1277,
+        "layoutY" : 379
       },
       "configuration" : {
         "timeoutInSeconds" : 60
@@ -594,7 +614,7 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1282,
+        "layoutX" : 1277,
         "layoutY" : 319
       },
       "configuration" : {
@@ -616,8 +636,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1281,
-        "layoutY" : 140
+        "layoutX" : 1276,
+        "layoutY" : 150
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -663,7 +683,7 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1004,
+        "layoutX" : 1276,
         "layoutY" : 452
       },
       "configuration" : {
@@ -685,8 +705,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 750,
-        "layoutY" : 450
+        "layoutX" : 1004,
+        "layoutY" : 451
       },
       "configuration" : {
         "ruleChainId" : "64eaf570-d477-11ed-9fb5-f96805f2c8b4"
@@ -704,6 +724,124 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 378,
+        "layoutY" : 777
+      },
+      "configuration" : {
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "TO",
+          "maxLevel" : null,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "CUSTOMER" ]
+          } ]
+        },
+        "dataToFetch" : "LATEST_TELEMETRY",
+        "fetchTo" : "METADATA",
+        "dataMapping" : {
+          "temperature" : "temperatureCliente"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "2c6142b0-f332-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "Get Cliente temperature",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 627,
+        "layoutY" : 777
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if(metadata.temperatureCliente!=null){\n    var temp=metadata.temperatureCliente-msg.temperature;\n    if(temp>5 || temp<-5){\n        return ['DeltaT_alto'];\n    }else{\n        return ['ok'];\n    }\n}else{\n    return ['ok'];\n}"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "2c6190d0-f332-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "DeltaT alto",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 928,
+        "layoutY" : 777
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {\"data\": \"La differenza tra temperatura ed esterna è maggiore di 5°C\",\"Sensore\": metadata.ss_name};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\nreturn details;",
+        "useMessageAlarmData" : false,
+        "overwriteAlarmDetails" : false,
+        "alarmType" : "DeltaT",
+        "severity" : "CRITICAL",
+        "propagate" : true,
+        "relationTypes" : [ ],
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false,
+        "dynamicSeverity" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "2c61def0-f332-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "Allarme DeltaT",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 927,
+        "layoutY" : 828
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {\"data\": \"La differenza tra temperatura interna ed esterna è tornata all'interno dei limiti impostati!\",\"Sensore\": metadata.ss_name};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmType" : "DeltaT"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "2c622d10-f332-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "Clear Alarm DeltaT",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbClearAlarmNode"
     } ],
     "ruleChainConnections" : null
   },

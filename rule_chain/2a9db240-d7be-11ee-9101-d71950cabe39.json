@@ -436,6 +436,30 @@
       "fromIndex" : 62,
       "toIndex" : 61,
       "type" : "Success"
+    }, {
+      "fromIndex" : 71,
+      "toIndex" : 63,
+      "type" : "LowBatteryAlarm"
+    }, {
+      "fromIndex" : 71,
+      "toIndex" : 64,
+      "type" : "EmptyPipe"
+    }, {
+      "fromIndex" : 71,
+      "toIndex" : 65,
+      "type" : "ReverseFlow"
+    }, {
+      "fromIndex" : 71,
+      "toIndex" : 67,
+      "type" : "LeakageAlarm"
+    }, {
+      "fromIndex" : 71,
+      "toIndex" : 69,
+      "type" : "TemperatureAlarm"
+    }, {
+      "fromIndex" : 71,
+      "toIndex" : 70,
+      "type" : "BurstAlarm"
     } ],
     "firstNodeIndex" : 39,
     "nodes" : [ {
@@ -2173,7 +2197,7 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 101,
+        "layoutX" : 213,
         "layoutY" : 554
       },
       "configuration" : {
@@ -2207,7 +2231,7 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 101,
+        "layoutX" : 213,
         "layoutY" : 596
       },
       "configuration" : {
@@ -2241,7 +2265,7 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 101,
+        "layoutX" : 213,
         "layoutY" : 639
       },
       "configuration" : {
@@ -2309,7 +2333,7 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 101,
+        "layoutX" : 213,
         "layoutY" : 773
       },
       "configuration" : {
@@ -2377,7 +2401,7 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 101,
+        "layoutX" : 213,
         "layoutY" : 684
       },
       "configuration" : {
@@ -2411,7 +2435,7 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 101,
+        "layoutX" : 213,
         "layoutY" : 728
       },
       "configuration" : {
@@ -2442,6 +2466,30 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 0,
+        "layoutY" : 656
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if(msg.LowBatteryAlarm==1){return ['LowBatteryAlarm'];}\nelse if(msg.EmptyPipe==1){return ['EmptyPipe'];}\nelse if(msg.ReverseFlow==1){return ['ReverseFlow'];}\nelse if(msg.OverRange==1){return ['OverRange'];}\nelse if(msg.TemperatureAlarm==1){return ['TemperatureAlarm'];}\nelse if(msg.EEError==1){return ['EEError'];}\nelse if(msg.LeakageAlarm==1){return ['LeakageAlarm'];}\nelse if(msg.BurstAlarm==1){return ['BurstAlarm'];}\n\n\n\n\nelse{return ['ok'];}\n/*\nif(msg.EmptyPipe==1){\n    return ['EmptyPipe'];\n}\n*/\nreturn nextRelation(metadata, msg);"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f25e0110-f580-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "Switch alarm",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     } ],
     "ruleChainConnections" : null
   },

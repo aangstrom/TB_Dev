@@ -446,6 +446,10 @@
       "type" : "EmptyPipe"
     }, {
       "fromIndex" : 71,
+      "toIndex" : 64,
+      "type" : "EmptyTube"
+    }, {
+      "fromIndex" : 71,
       "toIndex" : 65,
       "type" : "ReverseFlow"
     }, {
@@ -2299,8 +2303,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 101,
-        "layoutY" : 971
+        "layoutX" : 22,
+        "layoutY" : 521
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -2367,8 +2371,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 103,
-        "layoutY" : 926
+        "layoutX" : 24,
+        "layoutY" : 476
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -2475,7 +2479,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(msg.LowBatteryAlarm==1){return ['LowBatteryAlarm'];}\nelse if(msg.EmptyPipe==1){return ['EmptyPipe'];}\nelse if(msg.ReverseFlow==1){return ['ReverseFlow'];}\nelse if(msg.OverRange==1){return ['OverRange'];}\nelse if(msg.TemperatureAlarm==1){return ['TemperatureAlarm'];}\nelse if(msg.EEError==1){return ['EEError'];}\nelse if(msg.LeakageAlarm==1){return ['LeakageAlarm'];}\nelse if(msg.BurstAlarm==1){return ['BurstAlarm'];}\n\n\n\n\nelse{return ['ok'];}\n/*\nif(msg.EmptyPipe==1){\n    return ['EmptyPipe'];\n}\n*/\nreturn nextRelation(metadata, msg);"
+        "tbelScript" : "if(msg.LowBatteryAlarm==1){return ['LowBatteryAlarm'];}\nelse if(msg.EmptyPipe==1){return ['EmptyPipe'];}\nelse if(msg.EmptyTube==1){return ['EmptyPipe'];}\nelse if(msg.ReverseFlow==1){return ['ReverseFlow'];}\nelse if(msg.OverRange==1){return ['OverRange'];}\nelse if(msg.TemperatureAlarm==1){return ['TemperatureAlarm'];}\nelse if(msg.EEError==1){return ['EEError'];}\nelse if(msg.LeakageAlarm==1){return ['LeakageAlarm'];}\nelse if(msg.BurstAlarm==1){return ['BurstAlarm'];}\n\n\n\n\nelse{return ['ok'];}\n/*\nif(msg.EmptyPipe==1){\n    return ['EmptyPipe'];\n}\n*/\nreturn nextRelation(metadata, msg);"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -2490,6 +2494,346 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 217,
+        "layoutY" : 901
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {\"data\": \"La batteria ha finito il ciclo di vita, sostituirla il prima possibile!\",\"name\": metadata.ss_name};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\nreturn details;",
+        "useMessageAlarmData" : false,
+        "overwriteAlarmDetails" : false,
+        "alarmType" : "Batteria",
+        "severity" : "CRITICAL",
+        "propagate" : true,
+        "relationTypes" : [ ],
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false,
+        "dynamicSeverity" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "02410300-f583-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "Allarme BatteryOver",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 217,
+        "layoutY" : 943
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {\"data\": \"La batteria si sta scaricando!\",\"name\": metadata.ss_name};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\nreturn details;",
+        "useMessageAlarmData" : false,
+        "overwriteAlarmDetails" : false,
+        "alarmType" : "Batteria",
+        "severity" : "MAJOR",
+        "propagate" : true,
+        "relationTypes" : [ ],
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false,
+        "dynamicSeverity" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "02417830-f583-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "Allarme BatteryWarning",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 217,
+        "layoutY" : 986
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {\"data\": \"Lo stato della batteria ha un errore!\",\"name\": metadata.ss_name};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\nreturn details;",
+        "useMessageAlarmData" : false,
+        "overwriteAlarmDetails" : false,
+        "alarmType" : "Batteria",
+        "severity" : "CRITICAL",
+        "propagate" : true,
+        "relationTypes" : [ ],
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false,
+        "dynamicSeverity" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "02419f40-f583-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "Allarme BatteryError",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 217,
+        "layoutY" : 1119
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {\"data\": \"È stata rilevata una perdita!\",\"name\": metadata.ss_name};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\nreturn details;",
+        "useMessageAlarmData" : false,
+        "overwriteAlarmDetails" : false,
+        "alarmType" : "Perdita",
+        "severity" : "CRITICAL",
+        "propagate" : true,
+        "relationTypes" : [ ],
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false,
+        "dynamicSeverity" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0241c650-f583-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "Allarme FlowOutOfRange",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 217,
+        "layoutY" : 1031
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {\"data\": \"L'accuratezza del contatore è temporaneamente non precisa'!\",\"name\": metadata.ss_name};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\nreturn details;",
+        "useMessageAlarmData" : false,
+        "overwriteAlarmDetails" : false,
+        "alarmType" : "Accuratezza",
+        "severity" : "MINOR",
+        "propagate" : true,
+        "relationTypes" : [ ],
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false,
+        "dynamicSeverity" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0241ed60-f583-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "Allarme AccuracyUnsafe",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 217,
+        "layoutY" : 1075
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {\"data\": \"È stato rilevato un errore Hardware!\",\"name\": metadata.ss_name};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\nreturn details;",
+        "useMessageAlarmData" : false,
+        "overwriteAlarmDetails" : false,
+        "alarmType" : "Hardware",
+        "severity" : "CRITICAL",
+        "propagate" : true,
+        "relationTypes" : [ ],
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false,
+        "dynamicSeverity" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "02421470-f583-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "Allarme HardwareError",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 217,
+        "layoutY" : 1251
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {\"data\": \"È stata rilevata una perdita!\",\"name\": metadata.ss_name};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\nreturn details;",
+        "useMessageAlarmData" : false,
+        "overwriteAlarmDetails" : false,
+        "alarmType" : "Perdita",
+        "severity" : "CRITICAL",
+        "propagate" : true,
+        "relationTypes" : [ ],
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false,
+        "dynamicSeverity" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "02423b80-f583-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "Allarme NdcModuleBatteryWarning",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 217,
+        "layoutY" : 1163
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {\"data\": \"La temperatura dell'acqua rischia di ghiacciare i tubi!\",\"name\": metadata.ss_name};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\nreturn details;",
+        "useMessageAlarmData" : false,
+        "overwriteAlarmDetails" : false,
+        "alarmType" : "Temperatura Acqua",
+        "severity" : "CRITICAL",
+        "propagate" : true,
+        "relationTypes" : [ ],
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false,
+        "dynamicSeverity" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "02426290-f583-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "Allarme Sleep",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 217,
+        "layoutY" : 1207
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {\"data\": \"Il contatore è stato manomesso!\",\"name\": metadata.ss_name};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\nreturn details;",
+        "useMessageAlarmData" : false,
+        "overwriteAlarmDetails" : false,
+        "alarmType" : "Manomissione",
+        "severity" : "CRITICAL",
+        "propagate" : true,
+        "relationTypes" : [ ],
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false,
+        "dynamicSeverity" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "024289a0-f583-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "Allarme NotProtected",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 217,
+        "layoutY" : 1294
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {\"data\": \"È stata rilevata una perdita!\",\"name\": metadata.ss_name};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\nreturn details;",
+        "useMessageAlarmData" : false,
+        "overwriteAlarmDetails" : false,
+        "alarmType" : "Perdita",
+        "severity" : "CRITICAL",
+        "propagate" : true,
+        "relationTypes" : [ ],
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : false,
+        "propagateToTenant" : false,
+        "dynamicSeverity" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0242b0b0-f583-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "Allarme NdcModuleConnectionLost",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
     } ],
     "ruleChainConnections" : null
   },

@@ -464,6 +464,30 @@
       "fromIndex" : 71,
       "toIndex" : 70,
       "type" : "BurstAlarm"
+    }, {
+      "fromIndex" : 71,
+      "toIndex" : 72,
+      "type" : "BatteryOver"
+    }, {
+      "fromIndex" : 71,
+      "toIndex" : 73,
+      "type" : "BatteryWarning"
+    }, {
+      "fromIndex" : 71,
+      "toIndex" : 74,
+      "type" : "BatteryError"
+    }, {
+      "fromIndex" : 71,
+      "toIndex" : 76,
+      "type" : "AccuracyUnsafe"
+    }, {
+      "fromIndex" : 71,
+      "toIndex" : 77,
+      "type" : "HardwareError"
+    }, {
+      "fromIndex" : 71,
+      "toIndex" : 79,
+      "type" : "Sleep"
     } ],
     "firstNodeIndex" : 39,
     "nodes" : [ {
@@ -2303,8 +2327,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 22,
-        "layoutY" : 521
+        "layoutX" : 220,
+        "layoutY" : 1223
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -2371,8 +2395,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 24,
-        "layoutY" : 476
+        "layoutX" : 220,
+        "layoutY" : 1179
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -2479,7 +2503,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(msg.LowBatteryAlarm==1){return ['LowBatteryAlarm'];}\nelse if(msg.EmptyPipe==1){return ['EmptyPipe'];}\nelse if(msg.EmptyTube==1){return ['EmptyPipe'];}\nelse if(msg.ReverseFlow==1){return ['ReverseFlow'];}\nelse if(msg.OverRange==1){return ['OverRange'];}\nelse if(msg.TemperatureAlarm==1){return ['TemperatureAlarm'];}\nelse if(msg.EEError==1){return ['EEError'];}\nelse if(msg.LeakageAlarm==1){return ['LeakageAlarm'];}\nelse if(msg.BurstAlarm==1){return ['BurstAlarm'];}\n\n\n\n\nelse{return ['ok'];}\n/*\nif(msg.EmptyPipe==1){\n    return ['EmptyPipe'];\n}\n*/\nreturn nextRelation(metadata, msg);"
+        "tbelScript" : "if(msg.LowBatteryAlarm==1){return ['LowBatteryAlarm'];}\nelse if(msg.EmptyPipe==1){return ['EmptyPipe'];}\nelse if(msg.EmptyTube==1){return ['EmptyPipe'];}\nelse if(msg.ReverseFlow==1){return ['ReverseFlow'];}\nelse if(msg.OverRange==1){return ['OverRange'];}\nelse if(msg.TemperatureAlarm==1){return ['TemperatureAlarm'];}\nelse if(msg.EEError==1){return ['EEError'];}\nelse if(msg.LeakageAlarm==1){return ['LeakageAlarm'];}\nelse if(msg.BurstAlarm==1){return ['BurstAlarm'];}\nelse if(msg.BatteryOver==1){return ['BatteryOver'];}\nelse if(msg.BatteryWarning==1){return ['BatteryWarning'];}\nelse if(msg.BatteryError==1){return ['BatteryError'];}\nelse if(msg.AccuracyUnsafe==1){return ['AccuracyUnsafe'];}\nelse if(msg.HardwareError==1){return ['HardwareError'];}\nelse if(msg.FlowOutOfRange==1){return ['FlowOutOfRange'];}\nelse if(msg.Sleep==1){return ['Sleep'];}\nelse if(msg.NotProtected==1){return ['NotProtected'];}\nelse if(msg.NdcModuleBatteryWarning==1){return ['NdcModuleBatteryWarning'];}\nelse if(msg.NdcModuleConnectionLost==1){return ['NdcModuleConnectionLost'];}\nelse{return ['ok'];}\n\nreturn nextRelation(metadata, msg);"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,

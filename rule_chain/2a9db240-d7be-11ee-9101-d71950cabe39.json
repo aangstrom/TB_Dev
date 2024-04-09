@@ -2127,7 +2127,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(metadata.cs_first_hour==msg.first_hour){\n    return ['Duplicate'];\n}else if(msg.liter==metadata.cs_total_liter){\n    return ['Error'];\n}else{\n    msg.first_hour=null;\n    return ['Success'];\n}"
+        "tbelScript" : "if(msg.liter>=metadata.cs_total_liter){\n    return ['Error'];\n}else{\n    msg.first_hour=null;\n    return ['Success'];\n}"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,

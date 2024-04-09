@@ -38,12 +38,12 @@
       "type" : "Success"
     }, {
       "fromIndex" : 0,
-      "toIndex" : 35,
-      "type" : "Other"
-    }, {
-      "fromIndex" : 0,
       "toIndex" : 81,
       "type" : "Success"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 82,
+      "type" : "Other"
     }, {
       "fromIndex" : 1,
       "toIndex" : 28,
@@ -507,6 +507,10 @@
     }, {
       "fromIndex" : 81,
       "toIndex" : 58,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 82,
+      "toIndex" : 35,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 38,
@@ -2883,6 +2887,30 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 989,
+        "layoutY" : 81
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var message={};\nmessage.first_hour=msg.first_hour;\nmessage.total_liter=msg.total_liter;\nreturn {msg: message, metadata: metadata, msgType: 'POST_ATTRIBUTES_REQUEST'};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a8355640-f66d-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "Attribute to Asset",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

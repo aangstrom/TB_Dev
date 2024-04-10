@@ -45,18 +45,6 @@
       "toIndex" : 4,
       "type" : "Temperatura_alta"
     }, {
-      "fromIndex" : 3,
-      "toIndex" : 5,
-      "type" : "ok"
-    }, {
-      "fromIndex" : 3,
-      "toIndex" : 6,
-      "type" : "Umidita_bassa"
-    }, {
-      "fromIndex" : 3,
-      "toIndex" : 7,
-      "type" : "Umidita_alta"
-    }, {
       "fromIndex" : 4,
       "toIndex" : 22,
       "type" : "Created"
@@ -141,6 +129,10 @@
       "toIndex" : 28,
       "type" : "Alarm Created"
     }, {
+      "fromIndex" : 20,
+      "toIndex" : 35,
+      "type" : "Success"
+    }, {
       "fromIndex" : 23,
       "toIndex" : 24,
       "type" : "Success"
@@ -184,13 +176,37 @@
       "fromIndex" : 33,
       "toIndex" : 15,
       "type" : "Success"
+    }, {
+      "fromIndex" : 34,
+      "toIndex" : 5,
+      "type" : "Umidita_ok"
+    }, {
+      "fromIndex" : 34,
+      "toIndex" : 5,
+      "type" : "ok"
+    }, {
+      "fromIndex" : 34,
+      "toIndex" : 6,
+      "type" : "Umidita_bassa"
+    }, {
+      "fromIndex" : 34,
+      "toIndex" : 7,
+      "type" : "Umidita_alta"
+    }, {
+      "fromIndex" : 35,
+      "toIndex" : 36,
+      "type" : "True"
+    }, {
+      "fromIndex" : 36,
+      "toIndex" : 34,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 20,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 153,
-        "layoutY" : 578
+        "layoutX" : 95,
+        "layoutY" : 782
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -213,8 +229,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 754,
-        "layoutY" : 598
+        "layoutX" : 753,
+        "layoutY" : 746
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -247,8 +263,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 752,
-        "layoutY" : 753
+        "layoutX" : 753,
+        "layoutY" : 790
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -272,13 +288,13 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 406,
-        "layoutY" : 632
+        "layoutX" : 405,
+        "layoutY" : 780
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(msg.temperature>26){\n    return ['Temperatura_alta'];\n}else if(msg.temperature<=26 || msg.temperature>10){\n    return ['Temperatura_ok'];\n}else if(msg.temperature<=10){\n    return ['Temperatura_bassa'];\n}else if(msg.humidity>=70){\n    return ['Umidita_alta'];\n}else if(msg.humidity<=40){\n    return ['Umidita_bassa'];\n}else{\n    return ['ok'];\n}"
+        "tbelScript" : "if(msg.temperature>26){\n    return ['Temperatura_alta'];\n}else if(msg.temperature<=10){\n    return ['Temperatura_bassa'];\n}else if(msg.temperature<=26 || msg.temperature>10){\n    return ['Temperatura_ok'];\n}else{\n    return ['ok'];\n}"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -288,7 +304,7 @@
         "entityType" : "RULE_NODE",
         "id" : "92fc24e0-f32d-11ee-ba1f-8b1e38c6e412"
       },
-      "name" : "Switch temp/hum",
+      "name" : "Switch Temperature",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
@@ -296,8 +312,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 754,
-        "layoutY" : 554
+        "layoutX" : 753,
+        "layoutY" : 702
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -330,8 +346,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 752,
-        "layoutY" : 799
+        "layoutX" : 753,
+        "layoutY" : 616
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -355,8 +371,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 754,
-        "layoutY" : 642
+        "layoutX" : 753,
+        "layoutY" : 529
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -389,8 +405,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 754,
-        "layoutY" : 685
+        "layoutX" : 753,
+        "layoutY" : 572
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -423,8 +439,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 153,
-        "layoutY" : 654
+        "layoutX" : 95,
+        "layoutY" : 858
       },
       "configuration" : {
         "tellFailureIfAbsent" : false,
@@ -1052,6 +1068,82 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 226,
+        "layoutY" : 677
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if(msg.humidity>=70){\n    return ['Umidita_alta'];\n}else if(msg.humidity<=40){\n    return ['Umidita_bassa'];\n}else if(msg.humidity<70 || msg.humidity>40){\n    return ['Umidita_ok'];\n}else{\n    return ['ok'];\n}"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "43c1bb70-f723-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "Switch Humidity",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 229,
+        "layoutY" : 525
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return msg.temperature > 20;",
+        "tbelScript" : "return msg.humidity!=null;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "43c230a0-f723-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "if Humidity",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 227,
+        "layoutY" : 602
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : false,
+        "fetchTo" : "METADATA",
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "name" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : false
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "43c257b0-f723-11ee-ba1f-8b1e38c6e412"
+      },
+      "name" : "Get name",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
     } ],
     "ruleChainConnections" : null
   },

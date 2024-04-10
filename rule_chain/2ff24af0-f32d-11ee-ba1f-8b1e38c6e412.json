@@ -35,6 +35,10 @@
     }, {
       "fromIndex" : 3,
       "toIndex" : 2,
+      "type" : "Temperatura_ok"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 2,
       "type" : "ok"
     }, {
       "fromIndex" : 3,
@@ -254,7 +258,7 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : false,
+      "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -274,7 +278,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(msg.temperature>26){\n    return ['Temperatura_alta'];\n}else if(msg.temperature<=10){\n    return ['Temperatura_bassa'];\n}else if(msg.humidity>=70){\n    return ['Umidita_alta'];\n}else if(msg.humidity<=40){\n    return ['Umidita_bassa'];\n}else{\n    return ['ok'];\n}"
+        "tbelScript" : "if(msg.temperature>26){\n    return ['Temperatura_alta'];\n}else if(msg.temperature<=26 || msg.temperature>10){\n    return ['Temperatura_ok'];\n}else if(msg.temperature<=10){\n    return ['Temperatura_bassa'];\n}else if(msg.humidity>=70){\n    return ['Umidita_alta'];\n}else if(msg.humidity<=40){\n    return ['Umidita_bassa'];\n}else{\n    return ['ok'];\n}"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,

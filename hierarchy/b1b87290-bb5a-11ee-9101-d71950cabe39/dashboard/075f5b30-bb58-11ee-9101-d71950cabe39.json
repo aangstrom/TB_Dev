@@ -11116,6 +11116,125 @@
           "row" : 0,
           "col" : 0,
           "id" : "5dd27b40-a001-2d27-dbef-eaae078f862f"
+        },
+        "8b6bcc1a-7558-b169-65f3-85859c709e4a" : {
+          "typeFullFqn" : "system.cards.html_value_card",
+          "type" : "latest",
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "ce83ea33-45bf-19a7-5ae0-c051e73f0f4e",
+              "dataKeys" : [ ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1700662695164,
+                  "endTimeMs" : 1700749095164
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<div class='card'>\n    <div class=\"container\">\n        <div id=\"home\" class=\"item-selected\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> Home</div>\n        <div id=\"report\" class=\"item\"><i class=\"fa fa-line-chart\" aria-hidden=\"true\"></i> Report</div>\n        <div id=\"allarmi\" class=\"item\"><i class=\"fa fa-exclamation-circle\" aria-hidden=\"true\"></i> Allarmi</div>\n        <div id=\"eventi\" class=\"item\"><i class=\"fa fa-list\" aria-hidden=\"true\"></i> Eventi</div>\n    </div>\n</div>",
+              "cardCss" : ".card {\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n}\n.container{\n    justify-content: space-around;\n    align-items: center;\n    display: flex;\n    margin-left: 30px;\n}\n.item{\n    margin-right: 20px;\n    font-weight: bold;\n    padding: 10px;\n    font-size: 26px;\n}\n.item:hover{\n    cursor: pointer;\n    background-color: #3F51B599;\n    color: #3F51B5;\n    border-radius: 0.75rem;\n}\n.item-selected{\n    margin-right: 20px;\n    font-weight: bold;\n    font-size: 26px;\n    background-color: #3F51B544;\n    color: #3F51B5AA;\n    padding: 10px;\n    border-radius: 0.75rem;\n}\n.item-selected:hover{\n    cursor: pointer;\n    background-color: #3F51B599;\n    color: #3F51B5;\n    border-radius: 0.75rem;\n}"
+            },
+            "title" : "HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "report",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "report",
+                "setEntityId" : true,
+                "stateEntityParamName" : "bungalow_selezionato",
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "90d96311-25bf-33ce-435e-b4a94437c44a"
+              }, {
+                "name" : "allarmi",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "page_allarmi_selezionati",
+                "setEntityId" : true,
+                "stateEntityParamName" : "bungalow_selezionato",
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "1f4ef349-3152-8241-701f-0ac62b8f586f"
+              }, {
+                "name" : "eventi",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "page_eventi_selezionati",
+                "setEntityId" : true,
+                "stateEntityParamName" : "bungalow_selezionato",
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "e190ccc6-e437-9587-8193-ba4ae1fc96f0"
+              }, {
+                "name" : "home",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "var $injector = widgetContext.$scope.$injector;\r\nvar params = widgetContext.stateController.getStateParams();\r\n$injector.get(widgetContext.servicesMap.get('entityService')).getEntity(entityId.entityType, entityId.id)\r\n  .subscribe(function(data) {\r\n        params.selectedDevice=null;\r\n        params.visualizzazione = null;\r\n        widgetContext.stateController.updateState(null, params);\r\n});",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "8d99f21b-669b-84ff-3830-b397ada1ad4b"
+              } ]
+            },
+            "displayTimewindow" : true,
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "8b6bcc1a-7558-b169-65f3-85859c709e4a"
         }
       },
       "states" : {
@@ -12070,13 +12189,19 @@
                 "4fb2e6e8-6ae7-68f0-9cd6-2461373c4e12" : {
                   "sizeX" : 24,
                   "sizeY" : 1,
-                  "row" : 0,
+                  "row" : 11,
                   "col" : 0
                 },
                 "5dd27b40-a001-2d27-dbef-eaae078f862f" : {
                   "sizeX" : 24,
                   "sizeY" : 10,
                   "row" : 1,
+                  "col" : 0
+                },
+                "8b6bcc1a-7558-b169-65f3-85859c709e4a" : {
+                  "sizeX" : 24,
+                  "sizeY" : 1,
+                  "row" : 0,
                   "col" : 0
                 }
               },
@@ -12293,6 +12418,18 @@
             "fetchLastLevelOnly" : false,
             "relationType" : "Contains",
             "assetTypes" : [ "Colonnina" ]
+          }
+        },
+        "ce83ea33-45bf-19a7-5ae0-c051e73f0f4e" : {
+          "id" : "ce83ea33-45bf-19a7-5ae0-c051e73f0f4e",
+          "alias" : "Cliente1",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "CUSTOMER",
+              "id" : "b965b540-c9b8-11ee-9101-d71950cabe39"
+            }
           }
         }
       },

@@ -2328,23 +2328,49 @@
           "sizeY" : 37.5,
           "config" : {
             "datasources" : [ {
-              "type" : "entity",
+              "type" : "device",
               "name" : "",
+              "deviceId" : "10112ba0-01e6-11ed-91ed-0903699d62f6",
               "entityAliasId" : "4889f10d-beb8-9c9c-cf0d-1ef87f24a627",
               "dataKeys" : [ {
-                "name" : "temperature",
-                "type" : "timeseries",
-                "label" : "temperature",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.6284868986614962
-              }, {
                 "name" : "humidity",
                 "type" : "timeseries",
-                "label" : "humidity",
+                "label" : "Grid",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.12216056996320712,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "temperature",
+                "type" : "timeseries",
+                "label" : "Pv",
                 "color" : "#4caf50",
                 "settings" : { },
-                "_hash" : 0.28282299276193035
+                "_hash" : 0.5639363812164446,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "return 10000;"
+              }, {
+                "name" : "light",
+                "type" : "timeseries",
+                "label" : "CarChargingState",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.9793267763059443,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]

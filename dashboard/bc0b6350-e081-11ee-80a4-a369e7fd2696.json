@@ -2427,6 +2427,140 @@
           "row" : 0,
           "col" : 0,
           "id" : "37a55d03-666f-a2ee-b9a2-94c7c34393cf"
+        },
+        "e92409cd-0ef8-548e-dd83-cdf55ee644cd" : {
+          "typeFullFqn" : "tenant.funnel",
+          "type" : "latest",
+          "sizeX" : 9.5,
+          "sizeY" : 7.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "4889f10d-beb8-9c9c-cf0d-1ef87f24a627",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "humidity",
+                "type" : "timeseries",
+                "label" : "humidity",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.5758133262760095
+              }, {
+                "name" : "temperature",
+                "type" : "timeseries",
+                "label" : "temperature",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.07565189066236266
+              }, {
+                "name" : "light",
+                "type" : "timeseries",
+                "label" : "light",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.5488606097784801
+              }, {
+                "name" : "battery",
+                "type" : "timeseries",
+                "label" : "battery",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.13008522817304558
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1714732136711,
+                  "endTimeMs" : 1714818536711
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : { },
+            "title" : "Funnel",
+            "useDashboardTimewindow" : true,
+            "displayTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "e92409cd-0ef8-548e-dd83-cdf55ee644cd"
+        },
+        "ef8dbee1-1d01-61b1-fc13-c0e6a9d5c590" : {
+          "typeFullFqn" : "tenant.double_slider",
+          "type" : "rpc",
+          "sizeX" : 9.5,
+          "sizeY" : 12,
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "requestTimeout" : 500,
+              "sliderHideTooltip" : true,
+              "sliderMinValue" : 1,
+              "sliderMaxValue" : 100,
+              "sliderInitMinValue" : 20,
+              "sliderInitMaxValue" : 25,
+              "sliderStepWidth" : 1,
+              "sliderBackgroundColor" : "#4a148c",
+              "sliderMaxChangeRequestMethod" : "setTempertureONThreshold",
+              "sliderMaxStatusRequestMethod" : "getTempertureONThreshold",
+              "sliderMinChangeRequestMethod" : "setTempertureOFFThreshold",
+              "sliderMinStatusRequestMethod" : "getTempertureOFFThreshold",
+              "orientation" : "0"
+            },
+            "title" : "Double Slider",
+            "showTitleIcon" : true,
+            "titleIcon" : "more_horiz",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "eeee",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "displayTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "datasources" : [ ],
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "56be956e-cd93-4c29-25f1-dba32d4aa533"
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "ef8dbee1-1d01-61b1-fc13-c0e6a9d5c590"
         }
       },
       "states" : {
@@ -2506,6 +2640,18 @@
                   "sizeX" : 18,
                   "sizeY" : 16,
                   "row" : 66,
+                  "col" : 0
+                },
+                "e92409cd-0ef8-548e-dd83-cdf55ee644cd" : {
+                  "sizeX" : 19,
+                  "sizeY" : 15,
+                  "row" : 82,
+                  "col" : 0
+                },
+                "ef8dbee1-1d01-61b1-fc13-c0e6a9d5c590" : {
+                  "sizeX" : 19,
+                  "sizeY" : 5,
+                  "row" : 97,
                   "col" : 0
                 }
               },

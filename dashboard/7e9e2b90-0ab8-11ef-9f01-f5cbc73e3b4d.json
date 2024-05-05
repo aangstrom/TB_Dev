@@ -1,0 +1,924 @@
+{
+  "entityType" : "DASHBOARD",
+  "entity" : {
+    "assignedCustomers" : null,
+    "configuration" : {
+      "description" : "",
+      "widgets" : {
+        "18c7e8dd-77a2-f5ba-c3ce-a2f722b6549e" : {
+          "type" : "latest",
+          "sizeX" : 6,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "ed80b34a-3264-35c6-c909-7804a8d9701c",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "Wind Direction",
+                "type" : "timeseries",
+                "label" : "Wind Direction",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.6253041006436111
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1676095297576,
+                  "endTimeMs" : 1676181697576
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 2500
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "minorTicks" : 22,
+              "needleCircleSize" : 15,
+              "showBorder" : true,
+              "borderOuterWidth" : 10,
+              "colorPlate" : "#222",
+              "colorMajorTicks" : "#f5f5f5",
+              "colorMinorTicks" : "#ddd",
+              "colorNeedle" : "#f08080",
+              "colorNeedleCircle" : "#e8e8e8",
+              "colorBorder" : "#ccc",
+              "majorTickFont" : {
+                "family" : "Roboto",
+                "style" : "normal",
+                "weight" : "500",
+                "color" : "#ccc"
+              },
+              "animation" : true,
+              "animationDuration" : 500,
+              "animationRule" : "cycle",
+              "animationTarget" : "needle",
+              "majorTicks" : [ "N", "NE", "E", "SE", "S", "SW", "W", "NW" ]
+            },
+            "title" : "Wind direction",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "18c7e8dd-77a2-f5ba-c3ce-a2f722b6549e",
+          "typeFullFqn" : "system.analogue_gauges.analogue_compass"
+        },
+        "26b3c108-c4b5-bd13-4ccd-f532795438cf" : {
+          "type" : "rpc",
+          "sizeX" : 2.5,
+          "sizeY" : 2.5,
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : false,
+            "backgroundColor" : "#e6e7e8",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "title" : "Health alarm",
+              "ledColor" : "#7700ff",
+              "initialValue" : true,
+              "performCheckStatus" : false,
+              "retrieveValueMethod" : "timeseries",
+              "valueAttribute" : "Air Quality",
+              "parseValueFunction" : "return data>180 ? true : false;"
+            },
+            "title" : "Health alarm",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 2,
+            "datasources" : [ ],
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "units" : "",
+            "noDataDisplayMessage" : "",
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "ed80b34a-3264-35c6-c909-7804a8d9701c"
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "26b3c108-c4b5-bd13-4ccd-f532795438cf",
+          "typeFullFqn" : "system.control_widgets.led_indicator"
+        },
+        "bdd12693-a0fa-c2c9-7be0-5051b4503689" : {
+          "type" : "latest",
+          "sizeX" : 5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "ed80b34a-3264-35c6-c909-7804a8d9701c",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "Temperature",
+                "type" : "timeseries",
+                "label" : "Temperature",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.06855148842324299
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1676095297576,
+                  "endTimeMs" : 1676181697576
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 2500
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#ff5722",
+            "color" : "rgba(255, 255, 255, 0.87)",
+            "padding" : "16px",
+            "settings" : {
+              "labelPosition" : "top"
+            },
+            "title" : "New Simple card",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "units" : "°C",
+            "decimals" : 0,
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "bdd12693-a0fa-c2c9-7be0-5051b4503689",
+          "typeFullFqn" : "system.cards.simple_card"
+        },
+        "e7359aaa-1ea0-0a30-2b21-509255b163f5" : {
+          "type" : "latest",
+          "sizeX" : 5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "ed80b34a-3264-35c6-c909-7804a8d9701c",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "Humidity",
+                "type" : "timeseries",
+                "label" : "Humidity",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.7849137708441474
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1676095297576,
+                  "endTimeMs" : 1676181697576
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 2500
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#22ff43",
+            "color" : "rgba(255, 255, 255, 0.87)",
+            "padding" : "16px",
+            "settings" : {
+              "labelPosition" : "top"
+            },
+            "title" : "New Simple card",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "units" : "%",
+            "decimals" : 0,
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "e7359aaa-1ea0-0a30-2b21-509255b163f5",
+          "typeFullFqn" : "system.cards.simple_card"
+        },
+        "0baa06bf-34db-c216-3b99-2793d3abc213" : {
+          "type" : "latest",
+          "sizeX" : 5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "ed80b34a-3264-35c6-c909-7804a8d9701c",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "Air Quality",
+                "type" : "timeseries",
+                "label" : "Air Quality",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.8550477523492104
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1676095297576,
+                  "endTimeMs" : 1676181697576
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 2500
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#225cff",
+            "color" : "rgba(255, 255, 255, 0.87)",
+            "padding" : "16px",
+            "settings" : {
+              "labelPosition" : "top"
+            },
+            "title" : "New Simple card",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "units" : "AQI",
+            "decimals" : 0,
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "0baa06bf-34db-c216-3b99-2793d3abc213",
+          "typeFullFqn" : "system.cards.simple_card"
+        },
+        "18b6d12e-451c-2768-7a39-e5dd6259beaa" : {
+          "type" : "latest",
+          "sizeX" : 5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "ed80b34a-3264-35c6-c909-7804a8d9701c",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "Rain height",
+                "type" : "timeseries",
+                "label" : "Rainfall",
+                "color" : "#f3d721",
+                "settings" : { },
+                "_hash" : 0.4124402239219953,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1676095297576,
+                  "endTimeMs" : 1676181697576
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 2500
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#ffce22",
+            "color" : "rgba(255, 255, 255, 0.87)",
+            "padding" : "16px",
+            "settings" : {
+              "labelPosition" : "top"
+            },
+            "title" : "New Simple card",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "units" : "mm",
+            "decimals" : 0,
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "18b6d12e-451c-2768-7a39-e5dd6259beaa",
+          "typeFullFqn" : "system.cards.simple_card"
+        },
+        "89ecf759-6fa1-7639-5ef3-f77c14fafe68" : {
+          "type" : "timeseries",
+          "sizeX" : 8,
+          "sizeY" : 6.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "ed80b34a-3264-35c6-c909-7804a8d9701c",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "Humidity",
+                "type" : "timeseries",
+                "label" : "Humidity",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.4174930956939804
+              }, {
+                "name" : "Light Intensity",
+                "type" : "timeseries",
+                "label" : "Light Intensity",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.5693009336233883
+              }, {
+                "name" : "Rain height",
+                "type" : "timeseries",
+                "label" : "Rain height",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.9472896264340815
+              }, {
+                "name" : "Temperature",
+                "type" : "timeseries",
+                "label" : "Temperature",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.46641667953643573
+              }, {
+                "name" : "Air Quality",
+                "type" : "timeseries",
+                "label" : "Air Quality",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.8542552646453119
+              }, {
+                "name" : "Wind Direction",
+                "type" : "timeseries",
+                "label" : "Wind Direction",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.2893610761994283
+              }, {
+                "name" : "Wind Velocity",
+                "type" : "timeseries",
+                "label" : "Wind Velocity",
+                "color" : "#8bc34a",
+                "settings" : { },
+                "_hash" : 0.40949241463589336
+              }, {
+                "name" : "Pressure",
+                "type" : "timeseries",
+                "label" : "Pressure",
+                "color" : "#3f51b5",
+                "settings" : { },
+                "_hash" : 0.28242175772030254
+              } ],
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "interval" : 1000,
+                "timewindowMs" : 60000
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "enableSearch" : true,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "reserveSpaceForHiddenAction" : "true",
+              "showTimestamp" : true,
+              "showMilliseconds" : false,
+              "displayPagination" : true,
+              "useEntityLabel" : false,
+              "defaultPageSize" : 10,
+              "hideEmptyLines" : false,
+              "disableStickyHeader" : false,
+              "useRowStyleFunction" : false
+            },
+            "title" : "Weather data table",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "displayTimewindow" : true,
+            "titleTooltip" : "",
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "89ecf759-6fa1-7639-5ef3-f77c14fafe68",
+          "typeFullFqn" : "system.cards.timeseries_table"
+        },
+        "8a6f07fb-c65d-b598-6156-958b7c8dd47f" : {
+          "type" : "rpc",
+          "sizeX" : 2.5,
+          "sizeY" : 2.5,
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : false,
+            "backgroundColor" : "#e6e7e8",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "title" : "Light status",
+              "ledColor" : "#04ff35",
+              "initialValue" : true,
+              "performCheckStatus" : false,
+              "retrieveValueMethod" : "timeseries",
+              "valueAttribute" : "Light Intensity",
+              "parseValueFunction" : "return data ? true : false;"
+            },
+            "title" : "Light Status",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 2,
+            "datasources" : [ ],
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "units" : "",
+            "noDataDisplayMessage" : "",
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "ed80b34a-3264-35c6-c909-7804a8d9701c"
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "8a6f07fb-c65d-b598-6156-958b7c8dd47f",
+          "typeFullFqn" : "system.control_widgets.led_indicator"
+        },
+        "dc566c56-c953-dcd2-5228-6cfb17179808" : {
+          "type" : "latest",
+          "sizeX" : 5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "ed80b34a-3264-35c6-c909-7804a8d9701c",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "Wind Velocity",
+                "type" : "timeseries",
+                "label" : "Wind Velocity",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.3255049649518549
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1676095297576,
+                  "endTimeMs" : 1676181697576
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 2500
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#ff22cb",
+            "color" : "rgba(255, 255, 255, 0.87)",
+            "padding" : "16px",
+            "settings" : {
+              "labelPosition" : "top"
+            },
+            "title" : "New Simple card",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "units" : "km/h",
+            "decimals" : 0,
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "dc566c56-c953-dcd2-5228-6cfb17179808",
+          "typeFullFqn" : "system.cards.simple_card"
+        },
+        "f4a68773-b15d-e09d-0bb7-374e5f29e703" : {
+          "type" : "latest",
+          "sizeX" : 5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "ed80b34a-3264-35c6-c909-7804a8d9701c",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "Pressure",
+                "type" : "timeseries",
+                "label" : "Pressure",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.8861375634099602
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1676095297576,
+                  "endTimeMs" : 1676181697576
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 2500
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#22eaff",
+            "color" : "rgba(255, 255, 255, 0.87)",
+            "padding" : "16px",
+            "settings" : {
+              "labelPosition" : "top"
+            },
+            "title" : "New Simple card",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "units" : "kPa",
+            "decimals" : 0,
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "f4a68773-b15d-e09d-0bb7-374e5f29e703",
+          "typeFullFqn" : "system.cards.simple_card"
+        }
+      },
+      "states" : {
+        "default" : {
+          "name" : "Weather Monitor",
+          "root" : true,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "18c7e8dd-77a2-f5ba-c3ce-a2f722b6549e" : {
+                  "sizeX" : 4,
+                  "sizeY" : 4,
+                  "row" : 4,
+                  "col" : 13
+                },
+                "26b3c108-c4b5-bd13-4ccd-f532795438cf" : {
+                  "sizeX" : 4,
+                  "sizeY" : 2,
+                  "row" : 0,
+                  "col" : 13
+                },
+                "bdd12693-a0fa-c2c9-7be0-5051b4503689" : {
+                  "sizeX" : 6,
+                  "sizeY" : 4,
+                  "row" : 0,
+                  "col" : 0
+                },
+                "e7359aaa-1ea0-0a30-2b21-509255b163f5" : {
+                  "sizeX" : 6,
+                  "sizeY" : 4,
+                  "row" : 4,
+                  "col" : 0
+                },
+                "0baa06bf-34db-c216-3b99-2793d3abc213" : {
+                  "sizeX" : 7,
+                  "sizeY" : 4,
+                  "row" : 0,
+                  "col" : 6
+                },
+                "18b6d12e-451c-2768-7a39-e5dd6259beaa" : {
+                  "sizeX" : 7,
+                  "sizeY" : 4,
+                  "row" : 4,
+                  "col" : 6
+                },
+                "89ecf759-6fa1-7639-5ef3-f77c14fafe68" : {
+                  "sizeX" : 24,
+                  "sizeY" : 8,
+                  "row" : 8,
+                  "col" : 0
+                },
+                "8a6f07fb-c65d-b598-6156-958b7c8dd47f" : {
+                  "sizeX" : 4,
+                  "sizeY" : 2,
+                  "row" : 2,
+                  "col" : 13
+                },
+                "dc566c56-c953-dcd2-5228-6cfb17179808" : {
+                  "sizeX" : 7,
+                  "sizeY" : 4,
+                  "row" : 4,
+                  "col" : 17
+                },
+                "f4a68773-b15d-e09d-0bb7-374e5f29e703" : {
+                  "sizeX" : 7,
+                  "sizeY" : 4,
+                  "row" : 0,
+                  "col" : 17
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "backgroundSizeMode" : "100%",
+                "outerMargin" : true
+              }
+            }
+          }
+        }
+      },
+      "entityAliases" : {
+        "18f1309b-6bf9-7e03-f85c-181b3d5b7259" : {
+          "id" : "18f1309b-6bf9-7e03-f85c-181b3d5b7259",
+          "alias" : "SN-001",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "ddf1bcf0-a746-11ed-b1c3-0f6987d9be44"
+            }
+          }
+        },
+        "d99b151b-8cc6-df2e-69e1-90041b7c3634" : {
+          "id" : "d99b151b-8cc6-df2e-69e1-90041b7c3634",
+          "alias" : "Virtual Device",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "d1f1df90-a86b-11ed-8820-0f6987d9be44"
+            }
+          }
+        },
+        "ed80b34a-3264-35c6-c909-7804a8d9701c" : {
+          "id" : "ed80b34a-3264-35c6-c909-7804a8d9701c",
+          "alias" : "Device",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "41b624a0-a905-11ed-8da1-0f6987d9be44"
+            }
+          }
+        }
+      },
+      "filters" : { },
+      "timewindow" : {
+        "displayValue" : "",
+        "hideInterval" : false,
+        "hideLastInterval" : false,
+        "hideQuickInterval" : false,
+        "hideAggregation" : false,
+        "hideAggInterval" : false,
+        "hideTimezone" : false,
+        "selectedTab" : 0,
+        "realtime" : {
+          "realtimeType" : 0,
+          "interval" : 1000,
+          "timewindowMs" : 60000,
+          "quickInterval" : "CURRENT_DAY"
+        },
+        "history" : {
+          "historyType" : 0,
+          "interval" : 1000,
+          "timewindowMs" : 60000,
+          "fixedTimewindow" : {
+            "startTimeMs" : 1675732035703,
+            "endTimeMs" : 1675818435703
+          },
+          "quickInterval" : "CURRENT_DAY"
+        },
+        "aggregation" : {
+          "type" : "AVG",
+          "limit" : 2500
+        }
+      },
+      "settings" : {
+        "stateControllerId" : "entity",
+        "showTitle" : false,
+        "showDashboardsSelect" : true,
+        "showEntitiesSelect" : true,
+        "showDashboardTimewindow" : true,
+        "showDashboardExport" : true,
+        "toolbarAlwaysOpen" : true
+      }
+    },
+    "customerId" : null,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "DASHBOARD",
+      "id" : "7e9e2b90-0ab8-11ef-9f01-f5cbc73e3b4d"
+    },
+    "image" : null,
+    "mobileHide" : false,
+    "mobileOrder" : null,
+    "name" : "Weather Monitor",
+    "ownerId" : null,
+    "title" : "Weather Monitor"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

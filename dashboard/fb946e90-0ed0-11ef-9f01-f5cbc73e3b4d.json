@@ -3,7 +3,181 @@
   "entity" : {
     "assignedCustomers" : null,
     "configuration" : {
-      "description" : ""
+      "description" : "",
+      "widgets" : {
+        "986ab945-c740-62c8-8b63-dd4b788e9ea0" : {
+          "typeFullFqn" : "system.cards.markdown_card",
+          "type" : "latest",
+          "sizeX" : 5,
+          "sizeY" : 3.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "146cb432-bb4f-f1fe-ae24-aaf04330b949",
+              "dataKeys" : [ {
+                "name" : "color",
+                "type" : "attribute",
+                "label" : "color",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.03412711437813165
+              }, {
+                "name" : "top",
+                "type" : "attribute",
+                "label" : "top",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.9902533165496179
+              }, {
+                "name" : "left",
+                "type" : "attribute",
+                "label" : "left",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.9714974564651657
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1715261669992,
+                  "endTimeMs" : 1715348069992
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "useMarkdownTextFunction" : true,
+              "markdownTextPattern" : "### Markdown/HTML card\n - **Current entity**: ${entityName}.\n - **Current value**: ${Random}.",
+              "markdownTextFunction" : "var linea1=[\"verticale\",200,50,50];\nvar linea2=[\"verticale\",200,100,50,\"<div class='verticale-linea' style='height:200px;top:100px;left:50px;'></div>\"];\nreturn '<div class=\"paratoia\" style=\"background:'+data[0].color+';top:'+data[0].top+'px;left:'+data[0].left+'px;\"></div>'+linea2[4];\n\n\n\n\n//+'<div class=\"'+linea1[0]+'-linea\" style=\"height:'+linea1[1]+'px;top:'+linea1[2]+'px;left:'+linea1[3]+'px;\"></div>'+\n\n//Linea Orizzontale    <div class=\"linea-orizzontale\" style=\"width:'+linea1[0]+'px;top:'+linea1[1]+'px;left:'+linea1[2]+'px;\"></div>'\n\n\n//return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
+              "applyDefaultMarkdownStyle" : true,
+              "markdownCss" : ".paratoia{\n    position: absolute;\n    width: 200px;\n    height: 100px;\n}\n.verticale-linea{\n    position: absolute;\n    margin: 0px 95px;\n    border-left: 10px solid blue;\n}\n.orizzontale-linea{\n    position: absolute;\n    margin: 45px 0px;\n    border-bottom: 10px solid blue;\n}"
+            },
+            "title" : "Markdown/HTML Card",
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "showLegend" : false,
+            "useDashboardTimewindow" : true,
+            "displayTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "986ab945-c740-62c8-8b63-dd4b788e9ea0"
+        }
+      },
+      "states" : {
+        "default" : {
+          "name" : "Consorzio di Bonifica",
+          "root" : true,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "986ab945-c740-62c8-8b63-dd4b788e9ea0" : {
+                  "sizeX" : 24,
+                  "sizeY" : 8,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        }
+      },
+      "entityAliases" : {
+        "146cb432-bb4f-f1fe-ae24-aaf04330b949" : {
+          "id" : "146cb432-bb4f-f1fe-ae24-aaf04330b949",
+          "alias" : "Test",
+          "filter" : {
+            "type" : "entityGroup",
+            "resolveMultiple" : true,
+            "groupStateEntity" : false,
+            "stateEntityParamName" : null,
+            "defaultStateGroupType" : null,
+            "defaultStateEntityGroup" : null,
+            "groupType" : "DEVICE",
+            "entityGroup" : "deb661e0-e089-11ee-80a4-a369e7fd2696"
+          }
+        }
+      },
+      "filters" : { },
+      "timewindow" : {
+        "displayValue" : "",
+        "hideInterval" : false,
+        "hideLastInterval" : false,
+        "hideQuickInterval" : false,
+        "hideAggregation" : false,
+        "hideAggInterval" : false,
+        "hideTimezone" : false,
+        "selectedTab" : 0,
+        "realtime" : {
+          "realtimeType" : 0,
+          "interval" : 1000,
+          "timewindowMs" : 60000,
+          "quickInterval" : "CURRENT_DAY"
+        },
+        "history" : {
+          "historyType" : 0,
+          "interval" : 1000,
+          "timewindowMs" : 60000,
+          "fixedTimewindow" : {
+            "startTimeMs" : 1715261222481,
+            "endTimeMs" : 1715347622481
+          },
+          "quickInterval" : "CURRENT_DAY"
+        },
+        "aggregation" : {
+          "type" : "AVG",
+          "limit" : 25000
+        }
+      },
+      "settings" : {
+        "stateControllerId" : "entity",
+        "showTitle" : false,
+        "showDashboardsSelect" : true,
+        "showEntitiesSelect" : true,
+        "showDashboardTimewindow" : true,
+        "showDashboardExport" : true,
+        "toolbarAlwaysOpen" : true
+      }
     },
     "customerId" : null,
     "externalId" : null,

@@ -49,6 +49,19 @@
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
+              }, {
+                "name" : "Phase_C_power",
+                "type" : "timeseries",
+                "label" : "livello",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.8929884215135604,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -85,9 +98,9 @@
             "settings" : {
               "useMarkdownTextFunction" : true,
               "markdownTextPattern" : "### Markdown/HTML card\n - **Current entity**: ${entityName}.\n - **Current value**: ${Random}.",
-              "markdownTextFunction" : "var linea1=[\"verticale\",200,25,25];\n//var linea_verticale=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n//var linea_orizzontale=\"<div class='orizzontale-linea' style='width:200px;top:50px;left:50px;'></div>\";\n\nvar linea2=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n\nreturn '<div class=\"main\"><div class=\"container\" style=\"top:'+data[0].top+'px;\">'+\n'<div class=\"paratoia\" style=\"background:'+data[0].color+'; top:'+data[0].percentuale+'px;\"></div>'+'</div>'+linea2+'</div>';\n\n\n//+'<div class=\"'+linea1[0]+'-linea\" style=\"height:'+linea1[1]+'px;top:'+linea1[2]+'px;left:'+linea1[3]+'px;\"></div>'+\n//Linea Orizzontale    <div class=\"linea-orizzontale\" style=\"width:'+linea1[0]+'px;top:'+linea1[1]+'px;left:'+linea1[2]+'px;\"></div>'\n//return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
+              "markdownTextFunction" : "var linea1=[\"verticale\",200,25,25];\n//var linea_verticale=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n//var linea_orizzontale=\"<div class='orizzontale-linea' style='width:200px;top:50px;left:50px;'></div>\";\n\nvar linea2=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\nvar altezza=200-data[0].percentuale;\n//data[0].percentuale\nreturn '<div class=\"main\">'+\n'<div class=\"container\" style=\"margin-top:'+data[0].top+'px;\">'+\n'<div class=\"paratoia\" style=\"background:'+data[0].color+';\"><div class=\"mobile\" style=\"height:'+altezza+'px;\">'+data[0].percentuale+' %</div></div>'+\n'<div class=\"testo\">Posizione: '+data[0].percentuale+' % '+\n'Livello: '+data[0].livello+' %</div>'+\n'</div>'+\n'</div>';\n\n\n//+'<div class=\"'+linea1[0]+'-linea\" style=\"height:'+linea1[1]+'px;top:'+linea1[2]+'px;left:'+linea1[3]+'px;\"></div>'+\n//Linea Orizzontale    <div class=\"linea-orizzontale\" style=\"width:'+linea1[0]+'px;top:'+linea1[1]+'px;left:'+linea1[2]+'px;\"></div>'\n//return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
               "applyDefaultMarkdownStyle" : true,
-              "markdownCss" : ".main{\n    width: 100%;\n    height: 100%;\n}\n.container{\n    position: absolute;\n    justify-content: center;\n    border: 1px solid black;\n    height: 250px;\n    width: 200px;\n}\n.paratoia{\n    position: absolute;\n    width: 198px;\n    height: 100px;\n    left: 0px;\n}\n.verticale-linea{\n    position: absolute;\n    margin: 0px 95px;\n    border-left: 10px solid blue;\n}\n.orizzontale-linea{\n    position: absolute;\n    margin: 45px 0px;\n    border-bottom: 10px solid blue;\n}"
+              "markdownCss" : ".main{\n    width: 100%;\n    height: 100%;\n    border: 5px solid black;\n    display: flex;\n    align-items: center;\n    justify-content: space-around;\n}\n.container{\n    align-items: center;\n    text-align: center;\n    border: 1px solid black;\n    height: 300px;\n    width: 200px;\n}\n.paratoia{\n    width: 198px;\n    height: 200px;\n}\n.mobile{\n    width: 198px;\n    height: 100px;\n    align-content: center;\n    font-size: 25px;\n    color: white;\n    background: grey;\n}\n.testo{\n    font-size: 18px;\n    margin-top: 10px;\n}\n.verticale-linea{\n    position: absolute;\n    margin: 0px 95px;\n    border-left: 10px solid blue;\n}\n.orizzontale-linea{\n    position: absolute;\n    margin: 45px 0px;\n    border-bottom: 10px solid blue;\n}"
             },
             "title" : "Markdown/HTML Card",
             "showTitleIcon" : false,

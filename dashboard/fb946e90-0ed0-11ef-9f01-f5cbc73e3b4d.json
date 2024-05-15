@@ -161,7 +161,7 @@
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
                 "type" : "custom",
-                "customFunction" : "var $injector = widgetContext.$scope.$injector;\r\nvar params = widgetContext.stateController.getStateParams();\r\n$injector.get(widgetContext.servicesMap.get('entityService')).getEntity(entityId.entityType, entityId.id)\r\n  .subscribe(function(data) {\r\n        var deviceType = data.id.entityType;\r\n        params.visualizzazione = null;\r\n        widgetContext.stateController.updateState(null, params);\r\n        if(deviceType==\"DEVICE\" || deviceType==\"ASSET\"){\r\n            /*var Type=data.type;\r\n            if(Type==\"Acqua\" || Type==\"AA Sensor\" || Type==\"Energy\" || Type==\"AA Energy\" || Type==\"Presenza\" || Type==\"Affluenza\" || Type==\"Stato Bagno\" || Type==\"Condizionatore\" || Type==\"Macchina Utensile\"){\r\n                params.selectedDevice = {\r\n                    entityId: entityId\r\n                };\r\n            }*/\r\n            params.visualizzazione = {\r\n                entityId: entityId\r\n            };\r\n            widgetContext.stateController.updateState(null, params);\r\n        }else if(deviceType==\"CUSTOMER\"){\r\n            params.visualizzazione = null;\r\n            widgetContext.stateController.updateState(null, params);\r\n        }else{\r\n            params.visualizzazione = null;\r\n            widgetContext.stateController.updateState(null, params);\r\n        }\r\n});",
+                "customFunction" : "var $injector = widgetContext.$scope.$injector;\r\nvar params = widgetContext.stateController.getStateParams();\r\n$injector.get(widgetContext.servicesMap.get('entityService')).getEntity(entityId.entityType, entityId.id)\r\n  .subscribe(function(data) {\r\n        var deviceType = data.id.entityType;\r\n        params.visualizzazione = null;\r\n        widgetContext.stateController.updateState(null, params);\r\n        if(deviceType==\"DEVICE\" || deviceType==\"ASSET\"){\r\n            var Type=data.type;\r\n            if(Type==\"Paratoia\"){\r\n                params.selectedDevice = {\r\n                    entityId: entityId\r\n                };\r\n            }\r\n            params.visualizzazione = {\r\n                entityId: entityId\r\n            };\r\n            widgetContext.stateController.updateState(null, params);\r\n        }else if(deviceType==\"CUSTOMER\"){\r\n            params.visualizzazione = null;\r\n            widgetContext.stateController.updateState(null, params);\r\n        }else{\r\n            params.visualizzazione = null;\r\n            widgetContext.stateController.updateState(null, params);\r\n        }\r\n});",
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
                 "id" : "d78bc6d1-0385-9476-eb43-d3e6b8a611b6"
@@ -190,7 +190,7 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : "",
-              "entityAliasId" : "3771d9d5-05ce-bc80-390b-68e807c651a1",
+              "entityAliasId" : "b6c66dda-bf66-300e-023d-6a8cc70d3384",
               "dataKeys" : [ {
                 "name" : "color",
                 "type" : "attribute",
@@ -311,7 +311,7 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : "",
-              "entityAliasId" : "3771d9d5-05ce-bc80-390b-68e807c651a1",
+              "entityAliasId" : "b6c66dda-bf66-300e-023d-6a8cc70d3384",
               "dataKeys" : [ {
                 "name" : "Posizione",
                 "type" : "timeseries",
@@ -1319,7 +1319,7 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : "",
-              "entityAliasId" : "146cb432-bb4f-f1fe-ae24-aaf04330b949",
+              "entityAliasId" : "b6c66dda-bf66-300e-023d-6a8cc70d3384",
               "dataKeys" : [ {
                 "name" : "Phase_B_power",
                 "type" : "timeseries",
@@ -2643,14 +2643,12 @@
         },
         "b6c66dda-bf66-300e-023d-6a8cc70d3384" : {
           "id" : "b6c66dda-bf66-300e-023d-6a8cc70d3384",
-          "alias" : "Temperature",
+          "alias" : "SelectedDevice",
           "filter" : {
-            "type" : "singleEntity",
+            "type" : "stateEntity",
             "resolveMultiple" : false,
-            "singleEntity" : {
-              "entityType" : "DEVICE",
-              "id" : "10112ba0-01e6-11ed-91ed-0903699d62f6"
-            }
+            "stateEntityParamName" : "selectedDevice",
+            "defaultStateEntity" : null
           }
         },
         "39b4e1e7-81a0-e219-c09a-0a9953a7066f" : {

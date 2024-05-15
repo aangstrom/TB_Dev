@@ -2546,6 +2546,45 @@
           "row" : 0,
           "col" : 0,
           "id" : "a00e7be1-1885-d376-00a0-223729a21b11"
+        },
+        "ac722b9a-4078-deaf-527e-b18db3d8e2df" : {
+          "typeFullFqn" : "system.cards.html_card",
+          "type" : "static",
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "static",
+              "name" : "function",
+              "dataKeys" : [ {
+                "name" : "f(x)",
+                "type" : "function",
+                "label" : "Random",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.15479322438769105,
+                "funcBody" : "var value = prevValue + Math.random() * 100 - 50;\nvar multiplier = Math.pow(10, 2 || 0);\nvar value = Math.round(value * multiplier) / multiplier;\nif (value < -1000) {\n\tvalue = -1000;\n} else if (value > 1000) {\n\tvalue = 1000;\n}\nreturn value;"
+              } ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "cardHtml" : "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Load and Display IFC File</title>\n    <style>\n        body { margin: 0; }\n        canvas { width: 100%; height: 100vh; display: block; }\n    </style>\n</head>\n<body>\n    <input type=\"file\" id=\"file-input\" accept=\".ifc\"/>\n    <script type=\"module\">\n        import { WebGLRenderer, PerspectiveCamera, Scene, Color, AmbientLight, DirectionalLight } from 'https://unpkg.com/three@0.143.0/build/three.module.js';\n        import { OrbitControls } from 'https://unpkg.com/three@0.143.0/examples/jsm/controls/OrbitControls.js';\n        import { IFCLoader } from 'https://unpkg.com/web-ifc-three@0.0.30/IFCLoader.js';\n\n        let camera, scene, renderer, controls;\n\n        init();\n        function init() {\n            const container = document.createElement('div');\n            document.body.appendChild(container);\n\n            // Renderer\n            renderer = new WebGLRenderer({ antialias: true });\n            renderer.setSize(window.innerWidth, window.innerHeight);\n            container.appendChild(renderer.domElement);\n\n            // Scene\n            scene = new Scene();\n            scene.background = new Color(0xa0a0a0);\n\n            // Camera\n            camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);\n            camera.position.set(0, 5, 15);\n\n            // Lights\n            const light = new AmbientLight(0x404040); // soft white light\n            scene.add(light);\n            const directionalLight = new DirectionalLight(0xffffff, 0.5);\n            directionalLight.position.set(0, 1, 0); // directly overhead\n            scene.add(directionalLight);\n\n            // Controls\n            controls = new OrbitControls(camera, renderer.domElement);\n            controls.addEventListener('change', render); // use if there is no animation loop\n            controls.minDistance = 2;\n            controls.maxDistance = 500;\n            controls.target.set(0, 0, 0);\n            controls.update();\n\n            window.addEventListener('resize', onWindowResize, false);\n\n            // Handling IFC file input\n            document.getElementById('file-input').addEventListener('change', (event) => {\n                loadIFCFile(event.target.files[0]);\n            });\n        }\n\n        function loadIFCFile(file) {\n            const ifcLoader = new IFCLoader();\n            ifcLoader.ifcManager.setWasmPath('https://unpkg.com/web-ifc/');\n            const url = URL.createObjectURL(file);\n            ifcLoader.load(url, (model) => {\n                scene.add(model);\n                render();\n            });\n        }\n\n        function onWindowResize() {\n            camera.aspect = window.innerWidth / window.innerHeight;\n            camera.updateProjectionMatrix();\n            renderer.setSize(window.innerWidth, window.innerHeight);\n            render();\n        }\n\n        function render() {\n            renderer.render(scene, camera);\n        }\n    </script>\n</body>\n</html>\n",
+              "cardCss" : ""
+            },
+            "title" : "HTML Card",
+            "dropShadow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "ac722b9a-4078-deaf-527e-b18db3d8e2df"
         }
       },
       "states" : {
@@ -2638,6 +2677,12 @@
                   "sizeY" : 3,
                   "row" : 93,
                   "col" : 19
+                },
+                "ac722b9a-4078-deaf-527e-b18db3d8e2df" : {
+                  "sizeX" : 23,
+                  "sizeY" : 18,
+                  "row" : 62,
+                  "col" : 20
                 }
               },
               "gridSettings" : {

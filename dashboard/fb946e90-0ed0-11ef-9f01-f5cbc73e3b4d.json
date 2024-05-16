@@ -44,7 +44,7 @@
               "nodeOpenedFunction" : "/**\n\n// Function should return boolean value indicating whether current node should be opened (expanded) when it first loaded.\n\n// The following example code will open by default nodes up to third level.\n\nreturn nodeCtx.level <= 2;\n\n**/\n//return nodeCtx.level <= 2;",
               "nodeDisabledFunction" : "/**\n\n// Function should return boolean value indicating whether current node should be disabled (not selectable).\n\n// The following example code will disable current node according to the value of example 'nodeDisabled' attribute.\n\nvar data = nodeCtx.data;\nif (data.hasOwnProperty('nodeDisabled') && data['nodeDisabled'] !== null) {\n    return data['nodeDisabled'] === 'true';\n} else {\n    return false;\n}\n  \n**/\n",
               "nodeIconFunction" : "var data =  nodeCtx.data;\nvar entity = nodeCtx.entity;\nif(entity.id.entityType === 'CUSTOMER') {\n    return {materialIcon: \"person\"};\n}else if(data.Type==\"Impianto\"){\n    return {materialIcon: \"business\"};\n}else if(data.Type==\"Sub-Centro\"){\n    return {materialIcon: \"apartment\"};\n}else if(data.Type==\"Paratoia\"){\n    return {materialIcon: \"width_wide\"};\n}else {\n    return 'default';\n}",
-              "nodeTextFunction" : "var data =  nodeCtx.data;\nvar entity = nodeCtx.entity;\nvar text = entity.name;\nif (data.hasOwnProperty.name && data.name !== null) {\n    if(data.Type==\"bungalow\" || data.Type==\"Piazzola\"){\n        text=data.Stato+entity.name+\" (\"+data.Presenza+\")\";\n    }else if(data.Type==\"Servizio Igienico\"){\n        text=entity.name+\" (\"+data.Stato2+\")\";\n    }else if(data.Type==\"Affluenza\"){\n        text=data.active+data.campeggi_name+' ('+data.affluenza+' persone)';\n    }else if(data.Type==\"AA Sensor\" || data.Type==\"AA Energy\" || data.Type==\"Energy\" || data.Type==\"Acqua\" || data.Type==\"Presenza\" || data.Type==\"Stato Bagno\"){\n        text=data.active+data.campeggi_name;\n    }else{\n        text=entity.name;\n    }\n}\nreturn text;",
+              "nodeTextFunction" : "var data =  nodeCtx.data;\nvar entity = nodeCtx.entity;\nvar text = entity.name;\nif (data.hasOwnProperty.name && data.name !== null) {\n    if(data.Type==\"bungalow\" || data.Type==\"Piazzola\"){\n        text=data.Stato+entity.name+\" (\"+data.Presenza+\")\";\n    }else if(data.Type==\"Servizio Igienico\"){\n        text=entity.name+\" (\"+data.Stato2+\")\";\n    }else if(data.Type==\"Affluenza\"){\n        text=data.active+data.campeggi_name+' ('+data.affluenza+' persone)';\n    }else if(data.Type==\"AA Sensor\" || data.Type==\"AA Energy\" || data.Type==\"Energy\" || data.Type==\"Acqua\" || data.Type==\"Presenza\" || data.Type==\"Stato Bagno\"){\n        text=data.active+data.campeggi_name;\n    }else if(data.Type==\"Paratoia\"){\n        text=entity.name+\" (\"+data.Posizione+\"%, Livello: \"+data.Livello_valle+\" mm)\";\n    }else{\n        text=entity.name;\n    }\n}\nreturn text;",
               "nodesSortFunction" : "/**\n\n// This function is used to sort nodes of the same level. Function should compare two nodes and return \n// integer value: \n//     - less than 0 - sort nodeCtx1 to an index lower than nodeCtx2\n//     - 0 - leave nodeCtx1 and nodeCtx2 unchanged with respect to each other\n//     - greater than 0 - sort nodeCtx2 to an index lower than nodeCtx1\n\n// The following example code will sort entities first by entity type in alphabetical order then\n// by entity name in alphabetical order.\n\nvar result = nodeCtx1.entity.id.entityType.localeCompare(nodeCtx2.entity.id.entityType);\nif (result === 0) {\n    result = nodeCtx1.entity.name.localeCompare(nodeCtx2.entity.name);\n}\nreturn result;\n  \n**/"
             },
             "title" : "Menù albero",
@@ -109,19 +109,6 @@
                 "usePostProcessing" : true,
                 "postFuncBody" : "var state = value;\n\nvar stateSvg = getStateSvg(state);\nvar encodedStateSvg = encodeURIComponent(stateSvg);\nvar stateSvgUrl = 'data:image/svg+xml,' + encodedStateSvg;\n\nreturn '<span>'+\n           '<img style=\"vertical-align: middle;\" class=\"mat-icon\" src=\"'+ stateSvgUrl +'\">' +\n       '</span>';\n            \nfunction getStateSvg(state) {\n    switch (state) {\n        case 'true':            \n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#1F8B4D\"/>' +\n                   '</svg>';\n        default:\n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#AAAAAA\"/>' +\n                   '</svg>';\n    }\n}"
               }, {
-                "name" : "presenza",
-                "type" : "attribute",
-                "label" : "Presenza",
-                "color" : "#8bc34a",
-                "settings" : { },
-                "_hash" : 0.16415911595150234,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "var state = value;\n\nvar stateSvg = getStateSvg(state);\nvar encodedStateSvg = encodeURIComponent(stateSvg);\nvar stateSvgUrl = 'data:image/svg+xml,' + encodedStateSvg;\nvar stateLabel = getStateLabel(state);\n\nreturn '<span>'+\n           '<img style=\"vertical-align: middle;\" class=\"mat-icon\" src=\"'+ stateSvgUrl +'\"><span style=\"vertical-align: middle;\">'+stateLabel+'</span>' +\n       '</span>';\n            \nfunction getStateSvg(state) {\n    switch (state) {\n        case 'true':\n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#E64A19\"/>' +\n                   '</svg>';\n        case 'false':            \n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#1F8B4D\"/>' +\n                   '</svg>';\n        default:\n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#AAAAAA\"/>' +\n                   '</svg>';\n    }\n}\n\nfunction getStateLabel(state) {\n    switch(state) {\n        case 'false':\n            return 'Libero';\n        case 'true':\n            return 'Occupato';\n        default:\n            return state;\n    }\n}\n"
-              }, {
                 "name" : "name",
                 "type" : "entityField",
                 "label" : "Name",
@@ -129,25 +116,25 @@
                 "settings" : { },
                 "_hash" : 0.27367954989942933
               }, {
-                "name" : "stato",
-                "type" : "attribute",
-                "label" : "Stato2",
-                "color" : "#3f51b5",
+                "name" : "Posizione",
+                "type" : "timeseries",
+                "label" : "Posizione",
+                "color" : "#e91e63",
                 "settings" : { },
-                "_hash" : 0.07435570309732631,
-                "aggregationType" : null,
+                "_hash" : 0.5671039453355797
+              }, {
+                "name" : "Livello valle",
+                "type" : "timeseries",
+                "label" : "Livello_valle",
+                "color" : "#ffeb3b",
+                "settings" : { },
+                "_hash" : 0.02316873438885536,
+                "aggregationType" : "NONE",
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "var state = value;\n\nvar stateSvg = getStateSvg(state);\nvar encodedStateSvg = encodeURIComponent(stateSvg);\nvar stateSvgUrl = 'data:image/svg+xml,' + encodedStateSvg;\nvar stateLabel = getStateLabel(state);\n\n\nreturn '<span>'+\n           '<img style=\"vertical-align: middle;\" class=\"mat-icon\" src=\"'+ stateSvgUrl +'\">' +\n           '<span style=\"vertical-align: middle;\">'+ stateLabel +'</span>' +\n       '</span>';\n            \nfunction getStateSvg(state) {\n    switch (state) {\n        case 'inagibile':\n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#E64A19\"/>' +\n                   '</svg>';\n        case 'manutenzione':            \n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#D5C21B\"/>' +\n                   '</svg>';\n        case 'normale':            \n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#1F8B4D\"/>' +\n                   '</svg>';\n        default:\n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#AAAAAA\"/>' +\n                   '</svg>';\n    }\n}\n\nfunction getStateLabel(state) {\n    switch(state) {\n        case 'inagibile':\n            return 'Inagibile';\n        case 'manutenzione':\n            return 'Manutenzione';\n        case 'normale':\n            return 'Normale';\n        default:\n            return state;\n    }\n}"
-              }, {
-                "name" : "affluenza",
-                "type" : "timeseries",
-                "label" : "affluenza",
-                "color" : "#e91e63",
-                "settings" : { },
-                "_hash" : 0.4312391293667277
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -801,10 +788,16 @@
               }, {
                 "name" : "Livello valle",
                 "type" : "timeseries",
-                "label" : "Livello valle",
+                "label" : "Livello_valle",
                 "color" : "#ffc107",
                 "settings" : { },
-                "_hash" : 0.7705035217437652
+                "_hash" : 0.7705035217437652,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               }, {
                 "name" : "Livello monte",
                 "type" : "timeseries",
@@ -833,6 +826,13 @@
                 "color" : "#3f51b5",
                 "settings" : { },
                 "_hash" : 0.3310752020392418
+              }, {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Name",
+                "color" : "#e91e63",
+                "settings" : { },
+                "_hash" : 0.2905387882050565
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -901,13 +901,13 @@
               "markerOffsetY" : 1,
               "draggableMarker" : false,
               "showLabel" : true,
-              "useLabelFunction" : false,
-              "label" : "${entityName}",
+              "useLabelFunction" : true,
+              "labelFunction" : "if(data.Type==\"Paratoia\" || data.Type==\"Impianto\"){\n    return '<div style=\"text-align:center;\"><b>'+data.Name+\"</b><br> (\"+data.Posizione+\"%, Livello: \"+data.Livello_valle+\" mm)</div>\";\n}\nelse{\n    return data.Name;\n}",
               "showTooltip" : true,
               "showTooltipAction" : "hover",
               "autocloseTooltip" : true,
               "useTooltipFunction" : true,
-              "tooltipFunction" : "var deviceType=data['Type'];\nvar stato=data['Stato'];\nvar temp;\nif(deviceType=='Impianto'){\n    temp='<b>Posizione:</b> ${Posizione:0} %<br/><b>Livello Valle:</b> ${Livello valle:0} m<br/><b>Livello Monte:</b> ${Livello monte:0} m<br/><small>See advanced settings for details</small>';\n}\nif(deviceType=='Paratoia'){\n    if(stato!=null){\n        temp='<b>Posizione:</b> ${Posizione:0} %<br/><b>Livello Valle:</b> ${Livello valle:0} m<br/><b>Livello Monte:</b> ${Livello monte:0} m<br/><b>Stato:</b> ${Stato}<br/><small>See advanced settings for details</small>';\n    }else{\n        temp='<b>Posizione:</b> ${Posizione:0} %<br/><b>Livello Valle:</b> ${Livello valle:0} m<br/><b>Livello Monte:</b> ${Livello monte:0} m<br/><small>See advanced settings for details</small>';\n    }\n}\nvar header='<h4>${entityName}</h4>';\nreturn header+temp;",
+              "tooltipFunction" : "var deviceType=data['Type'];\nvar stato=data['Stato'];\nvar temp;\nif(deviceType=='Impianto'){\n    temp='<b>Posizione:</b> ${Posizione:0} %<br/><b>Livello Valle:</b> ${Livello_valle:0} m<br/><b>Livello Monte:</b> ${Livello monte:0} m<br/><small>See advanced settings for details</small>';\n}\nif(deviceType=='Paratoia'){\n    if(stato!=null){\n        temp='<b>Posizione:</b> ${Posizione:0} %<br/><b>Livello Valle:</b> ${Livello_valle:0} m<br/><b>Livello Monte:</b> ${Livello monte:0} m<br/><b>Stato:</b> ${Stato}<br/><small>See advanced settings for details</small>';\n    }else{\n        temp='<b>Posizione:</b> ${Posizione:0} %<br/><b>Livello Valle:</b> ${Livello valle:0} m<br/><b>Livello Monte:</b> ${Livello monte:0} m<br/><small>See advanced settings for details</small>';\n    }\n}\nvar header='<h4>${entityName}</h4>';\nreturn header+temp;",
               "tooltipOffsetX" : 0,
               "tooltipOffsetY" : -1,
               "color" : "#048AD3",

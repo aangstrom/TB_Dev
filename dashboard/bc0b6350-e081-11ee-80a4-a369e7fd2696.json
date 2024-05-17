@@ -2547,45 +2547,6 @@
           "col" : 0,
           "id" : "a00e7be1-1885-d376-00a0-223729a21b11"
         },
-        "83f97564-8845-d6b7-102c-da6e0b10f0b5" : {
-          "typeFullFqn" : "system.cards.html_card",
-          "type" : "static",
-          "sizeX" : 7.5,
-          "sizeY" : 3,
-          "config" : {
-            "datasources" : [ {
-              "type" : "static",
-              "name" : "function",
-              "dataKeys" : [ {
-                "name" : "f(x)",
-                "type" : "function",
-                "label" : "Random",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.15479322438769105,
-                "funcBody" : "var value = prevValue + Math.random() * 100 - 50;\nvar multiplier = Math.pow(10, 2 || 0);\nvar value = Math.round(value * multiplier) / multiplier;\nif (value < -1000) {\n\tvalue = -1000;\n} else if (value > 1000) {\n\tvalue = 1000;\n}\nreturn value;"
-              } ]
-            } ],
-            "timewindow" : {
-              "realtime" : {
-                "timewindowMs" : 60000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "rgb(255, 255, 255)",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "8px",
-            "settings" : {
-              "cardHtml" : "\n<div class='card'>HTML code here\n\n\n\n\n\n\t\n\n\n\t\t<script type=\"importmap\">\n\t\t\t{\n\t\t\t\t\"imports\": {\n\t\t\t\t\t\"three\": \"../build/three.module.js\",\n\t\t\t\t\t\"three/addons/\": \"./jsm/\",\n\t\t\t\t\t\"three/examples/jsm/utils/BufferGeometryUtils\": \"./jsm/utils/BufferGeometryUtils.js\",\n\t\t\t\t\t\"three-mesh-bvh\": \"https://cdn.jsdelivr.net/npm/three-mesh-bvh@0.5.23/build/index.module.js\",\n\t\t\t\t\t\"web-ifc\": \"https://cdn.jsdelivr.net/npm/web-ifc@0.0.36/web-ifc-api.js\",\n\t\t\t\t\t\"web-ifc-three\": \"https://cdn.jsdelivr.net/npm/web-ifc-three@0.0.126/IFCLoader.js\"\n\t\t\t\t}\n\t\t\t}\n\t\t</script>\n\n\t\t<script type=\"module\">\n\n\t\t\timport * as THREE from 'three';\n\t\t\timport { OrbitControls } from 'three/addons/controls/OrbitControls.js';\n\n\t\t\timport { IFCLoader } from 'web-ifc-three';\n\t\t\timport { IFCSPACE } from 'web-ifc';\n\n\t\t\tlet scene, camera, renderer;\n\n\t\t\tfunction init() {\n\n\t\t\t\t//Scene\n\t\t\t\tscene = new THREE.Scene();\n\t\t\t\tscene.background = new THREE.Color( 0x8cc7de );\n\n\t\t\t\t//Camera\n\t\t\t\tcamera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 1000 );\n\t\t\t\tcamera.position.z = - 70;\n\t\t\t\tcamera.position.y = 25;\n\t\t\t\tcamera.position.x = 90;\n\n\t\t\t\t//Initial cube\n\t\t\t\tconst geometry = new THREE.BoxGeometry();\n\t\t\t\tconst material = new THREE.MeshPhongMaterial( { color: 0xffffff } );\n\t\t\t\tconst cube = new THREE.Mesh( geometry, material );\n\t\t\t\tscene.add( cube );\n\n\t\t\t\t//Lights\n\t\t\t\tconst directionalLight1 = new THREE.DirectionalLight( 0xffeeff, 2.5 );\n\t\t\t\tdirectionalLight1.position.set( 1, 1, 1 );\n\t\t\t\tscene.add( directionalLight1 );\n\n\t\t\t\tconst directionalLight2 = new THREE.DirectionalLight( 0xffffff, 2.5 );\n\t\t\t\tdirectionalLight2.position.set( - 1, 0.5, - 1 );\n\t\t\t\tscene.add( directionalLight2 );\n\n\t\t\t\tconst ambientLight = new THREE.AmbientLight( 0xffffee, 0.75 );\n\t\t\t\tscene.add( ambientLight );\n\n\t\t\t\t//Setup IFC Loader\n\t\t\t\tconst ifcLoader = new IFCLoader();\n\t\t\t\tawait ifcLoader.ifcManager.setWasmPath( 'https://cdn.jsdelivr.net/npm/web-ifc@0.0.36/', true );\n\n\t\t\t\tawait ifcLoader.ifcManager.parser.setupOptionalCategories( {\n\t\t\t\t\t[ IFCSPACE ]: false,\n\t\t\t\t} );\n\n\t\t\t\tawait ifcLoader.ifcManager.applyWebIfcConfig( {\n\t\t\t\t\tUSE_FAST_BOOLS: true\n\t\t\t\t} );\n\n\t\t\t\tifcLoader.load( 'models/ifc/rac_advanced_sample_project.ifc', function ( model ) {\n\n\t\t\t\t\tscene.add( model.mesh );\n\t\t\t\t\trender();\n\n\t\t\t\t} );\n\n\t\t\t\t//Renderer\n\t\t\t\trenderer = new THREE.WebGLRenderer( { antialias: true } );\n\t\t\t\trenderer.setSize( window.innerWidth, window.innerHeight );\n\t\t\t\trenderer.setPixelRatio( window.devicePixelRatio );\n\t\t\t\tdocument.body.appendChild( renderer.domElement );\n\n\t\t\t\t//Controls\n\t\t\t\tconst controls = new OrbitControls( camera, renderer.domElement );\n\t\t\t\tcontrols.addEventListener( 'change', render );\n\n\t\t\t\twindow.addEventListener( 'resize', onWindowResize );\n\n\t\t\t\trender();\n\n\t\t\t}\n\n\t\t\tfunction onWindowResize() {\n\n\t\t\t\tcamera.aspect = window.innerWidth / window.innerHeight;\n\t\t\t\tcamera.updateProjectionMatrix();\n\t\t\t\trenderer.setSize( window.innerWidth, window.innerHeight );\n\n\t\t\t\trender();\n\n\t\t\t}\n\n\t\t\tfunction render() {\n\n\t\t\t\trenderer.render( scene, camera );\n\n\t\t\t}\n\n\t\t\tinit();\n\n\t\t</script>\n\t\n\n<canvas data-engine=\"three.js r164\" width=\"1070\" height=\"1396\" style=\"display: block; width: 535px; height: 698px; touch-action: none;\"></canvas>\n</div>",
-              "cardCss" : ""
-            },
-            "title" : "HTML Card",
-            "dropShadow" : true
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "83f97564-8845-d6b7-102c-da6e0b10f0b5"
-        },
         "0b8f6893-9e80-d690-10c1-409ce105f6e0" : {
           "typeFullFqn" : "system.slider",
           "type" : "rpc",
@@ -2836,17 +2797,11 @@
                   "row" : 93,
                   "col" : 19
                 },
-                "83f97564-8845-d6b7-102c-da6e0b10f0b5" : {
-                  "sizeX" : 18,
-                  "sizeY" : 14,
-                  "row" : 62,
-                  "col" : 20
-                },
                 "0b8f6893-9e80-d690-10c1-409ce105f6e0" : {
                   "sizeX" : 16,
                   "sizeY" : 6,
-                  "row" : 76,
-                  "col" : 19
+                  "row" : 62,
+                  "col" : 20
                 }
               },
               "gridSettings" : {

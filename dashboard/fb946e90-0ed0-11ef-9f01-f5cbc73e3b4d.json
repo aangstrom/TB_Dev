@@ -3291,14 +3291,24 @@
           "sizeY" : 6.5,
           "config" : {
             "timewindow" : {
+              "hideInterval" : false,
+              "hideLastInterval" : false,
+              "hideQuickInterval" : false,
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : true,
+              "selectedTab" : 0,
               "realtime" : {
-                "interval" : 1000,
-                "timewindowMs" : 86400000
+                "realtimeType" : 0,
+                "timewindowMs" : 86400000,
+                "quickInterval" : "CURRENT_DAY",
+                "interval" : 1000
               },
               "aggregation" : {
                 "type" : "NONE",
                 "limit" : 200
-              }
+              },
+              "timezone" : null
             },
             "showTitle" : false,
             "backgroundColor" : "rgb(255, 255, 255)",
@@ -4458,34 +4468,24 @@
         }
       },
       "timewindow" : {
-        "displayValue" : "",
         "hideInterval" : false,
         "hideLastInterval" : false,
         "hideQuickInterval" : false,
         "hideAggregation" : false,
         "hideAggInterval" : false,
-        "hideTimezone" : false,
+        "hideTimezone" : true,
         "selectedTab" : 0,
         "realtime" : {
           "realtimeType" : 0,
-          "interval" : 1000,
           "timewindowMs" : 60000,
-          "quickInterval" : "CURRENT_DAY"
-        },
-        "history" : {
-          "historyType" : 0,
-          "interval" : 1000,
-          "timewindowMs" : 60000,
-          "fixedTimewindow" : {
-            "startTimeMs" : 1715261222481,
-            "endTimeMs" : 1715347622481
-          },
-          "quickInterval" : "CURRENT_DAY"
+          "quickInterval" : "CURRENT_DAY",
+          "interval" : 1000
         },
         "aggregation" : {
           "type" : "AVG",
           "limit" : 25000
-        }
+        },
+        "timezone" : null
       },
       "settings" : {
         "stateControllerId" : "entity",

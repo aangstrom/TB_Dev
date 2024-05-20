@@ -5540,20 +5540,22 @@
           "id" : "39b4e1e7-81a0-e219-c09a-0a9953a7066f",
           "alias" : "Mappa",
           "filter" : {
-            "type" : "assetSearchQuery",
+            "type" : "relationsQuery",
             "resolveMultiple" : true,
-            "rootStateEntity" : true,
-            "stateEntityParamName" : "visualizzazione",
-            "defaultStateEntity" : {
+            "rootStateEntity" : false,
+            "stateEntityParamName" : null,
+            "defaultStateEntity" : null,
+            "rootEntity" : {
               "entityType" : "CUSTOMER",
               "id" : "73c0cf10-1289-11ef-b44e-91c31f727eb7"
             },
-            "rootEntity" : null,
             "direction" : "FROM",
-            "maxLevel" : null,
+            "maxLevel" : 1,
             "fetchLastLevelOnly" : false,
-            "relationType" : "Contains",
-            "assetTypes" : [ "Impianto", "Sub-Centro", "Paratoia", "Pompa" ]
+            "filters" : [ {
+              "relationType" : "Contains",
+              "entityTypes" : [ "ASSET", "DEVICE" ]
+            } ]
           }
         },
         "d2b4a37c-6ec7-0068-65bc-c41169d01f84" : {

@@ -3899,19 +3899,25 @@
                 }
               },
               "disabledState" : {
-                "action" : "DO_NOTHING",
+                "action" : "GET_ATTRIBUTE",
                 "defaultValue" : false,
+                "executeRpc" : {
+                  "method" : null,
+                  "requestTimeout" : null,
+                  "requestPersistent" : null,
+                  "persistentPollingInterval" : null
+                },
                 "getAttribute" : {
-                  "key" : "state",
-                  "scope" : null
+                  "scope" : "SERVER_SCOPE",
+                  "key" : "stato_demo"
                 },
                 "getTimeSeries" : {
                   "key" : "state"
                 },
                 "dataToValue" : {
                   "type" : "NONE",
-                  "compareToValue" : true,
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
+                  "compareToValue" : true
                 }
               },
               "layout" : "right",

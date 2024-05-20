@@ -3523,8 +3523,10 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
+              "layout" : "row",
+              "autoScale" : true,
               "showLabel" : true,
-              "label" : "Total",
+              "label" : "Allarmi Critici",
               "labelFont" : {
                 "family" : "Roboto",
                 "size" : 12,
@@ -3551,16 +3553,16 @@
               "iconBackgroundSize" : 36,
               "iconBackgroundSizeUnit" : "px",
               "iconBackgroundColor" : {
-                "type" : "constant",
                 "color" : "rgb(244, 67, 54)",
+                "type" : "constant",
                 "rangeList" : [ {
                   "from" : 0,
                   "to" : 0,
                   "color" : "rgba(0, 105, 92, 1)"
                 }, {
                   "from" : 1,
-                  "to" : null,
-                  "color" : "rgba(209, 39, 48, 1)"
+                  "color" : "rgba(209, 39, 48, 1)",
+                  "to" : null
                 } ],
                 "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
               },
@@ -3577,12 +3579,7 @@
                 "color" : "rgba(0, 0, 0, 0.87)",
                 "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
               },
-              "showChevron" : false,
-              "chevronSize" : 24,
-              "chevronSizeUnit" : "px",
-              "chevronColor" : "rgba(0, 0, 0, 0.38)",
-              "layout" : "column",
-              "autoScale" : true
+              "showChevron" : false
             },
             "title" : "Alarm count",
             "dropShadow" : false,
@@ -3691,6 +3688,8 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
+              "layout" : "row",
+              "autoScale" : true,
               "showLabel" : true,
               "label" : "Altri Allarmi",
               "labelFont" : {
@@ -3719,9 +3718,16 @@
               "iconBackgroundSize" : 36,
               "iconBackgroundSizeUnit" : "px",
               "iconBackgroundColor" : {
-                "type" : "constant",
                 "color" : "rgb(245, 221, 0)",
-                "rangeList" : [ ],
+                "type" : "constant",
+                "rangeList" : [ {
+                  "from" : 0,
+                  "to" : 0,
+                  "color" : "rgba(0, 105, 92, 1)"
+                }, {
+                  "from" : 1,
+                  "color" : "rgba(209, 39, 48, 1)"
+                } ],
                 "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
               },
               "valueFont" : {
@@ -3737,12 +3743,7 @@
                 "color" : "rgba(0, 0, 0, 0.87)",
                 "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
               },
-              "showChevron" : false,
-              "chevronSize" : 24,
-              "chevronSizeUnit" : "px",
-              "chevronColor" : "rgba(0, 0, 0, 0.38)",
-              "layout" : "column",
-              "autoScale" : true
+              "showChevron" : false
             },
             "title" : "Alarm count",
             "dropShadow" : false,

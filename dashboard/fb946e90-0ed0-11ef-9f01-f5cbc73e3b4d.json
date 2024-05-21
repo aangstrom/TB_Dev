@@ -5300,6 +5300,19 @@
                 "color" : "#607d8b",
                 "settings" : { },
                 "_hash" : 0.9735906566646007
+              }, {
+                "name" : "Movement",
+                "type" : "timeseries",
+                "label" : "Movement",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.042592676722892575,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==1){\n    return \"In movimento\";\n}else{\n    return \"Fermo\";\n}"
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -5368,11 +5381,12 @@
               "markerOffsetY" : 1,
               "draggableMarker" : false,
               "showLabel" : true,
-              "useLabelFunction" : false,
-              "label" : "${entityName}",
+              "useLabelFunction" : true,
+              "labelFunction" : "var color = '#048AD3';\nif (data.Movement !== undefined) {\n    if (data.Movement === \"In movimento\") {\n        color = '#52a352';\n    }\n}\nreturn \"<div style='position: relative; white-space: nowrap; text-align: center; font-size: 16px; top: 25px;'><span style='margin-left: -500%;'></span><div style='border: solid \"+color+\"; border-radius: 10px; color: \"+color+\"; background-color: #fff; padding-left: 5px; padding-right: 5px; padding-top: 3px; padding-bottom: 3px;'>${entityName}<div style='font-size: 10px;'> Velocità: \"+data.Speed+\" Km/h</div><div style='font-size: 10px;'> Stato: \"+data.Movement+\"</div></div><span style='margin-right: -500%;'></span></div>\";\n/*\n\nvar status = dsData[dsIndex]['status'];\nvar color = '#f16362';\nif (typeof status !== undefined) {\n    if (status === \"On route\") {\n        color = '#52a352';\n    }\n    if (status === \"Broken\") {\n        color = '#f16362';\n    }\n    if (status === \"Refueling\") {\n        color = '#408dde';\n    }\n    if (status === \"At the stop\") {\n        color = 'orange';\n    }\n}\nreturn \"<div style='position: relative; white-space: nowrap; text-align: center; font-size: 16px; top: 25px;'><span style='margin-left: -500%;'></span><div style='border: solid \"+color+\"; border-radius: 10px; color: \"+color+\"; background-color: #fff; padding-left: 5px; padding-right: 5px; padding-top: 3px; padding-bottom: 3px;'>\"+data.Name+\"<div style='font-size: 10px;'> Posizione: \"+data.Posizione+\"%</div><div style='font-size: 10px;'>Livello: \"+data.Livello_valle+\" mm</div></div><span style='margin-right: -500%;'></span></div>\";\n*/",
               "showTooltip" : false,
               "color" : "#048AD3",
-              "useColorFunction" : false,
+              "useColorFunction" : true,
+              "colorFunction" : "if (data.Movement !== undefined) {\n    if (data.Movement === \"In movimento\") {\n        return '#52a352';\n    }else{\n        return '#048AD3';\n    }\n}",
               "useMarkerImageFunction" : false,
               "markerImage" : null,
               "markerImageSize" : 34,
@@ -5433,7 +5447,19 @@
             "useDashboardTimewindow" : false,
             "showLegend" : false,
             "widgetStyle" : { },
-            "actions" : { },
+            "actions" : {
+              "markerClick" : [ {
+                "name" : "Click sul marker",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : null,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "cad7a932-89fa-30cb-8c98-60d1427643ad"
+              } ]
+            },
             "displayTimewindow" : false,
             "enableDataExport" : false,
             "margin" : "0px",

@@ -6441,13 +6441,26 @@
               } ]
             } ],
             "timewindow" : {
+              "hideInterval" : false,
+              "hideLastInterval" : false,
+              "hideQuickInterval" : false,
+              "hideAggregation" : true,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 1,
               "history" : {
+                "historyType" : 0,
+                "timewindowMs" : 86400000,
                 "interval" : 1000,
-                "timewindowMs" : 60000
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1716298216802,
+                  "endTimeMs" : 1716384616802
+                },
+                "quickInterval" : "CURRENT_DAY"
               },
               "aggregation" : {
                 "type" : "NONE",
-                "limit" : 500
+                "limit" : 25000
               }
             },
             "showTitle" : false,
@@ -6568,7 +6581,7 @@
               "fontWeight" : 400
             },
             "widgetStyle" : { },
-            "useDashboardTimewindow" : true,
+            "useDashboardTimewindow" : false,
             "showLegend" : false,
             "actions" : { },
             "legendConfig" : {

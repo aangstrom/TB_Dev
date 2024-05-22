@@ -689,7 +689,24 @@
             "units" : "°C",
             "useDashboardTimewindow" : true,
             "displayTimewindow" : true,
-            "actions" : { },
+            "actions" : {
+              "headerButton" : [ {
+                "name" : "ttt",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "mobileAction",
+                "mobileAction" : {
+                  "type" : "takePhoto",
+                  "handleEmptyResultFunction" : "// Optional function body to handle empty result. \n// Usually this happens when user cancels the action (for ex. by pressing phone back button). \n\nshowEmptyResultDialog('Take photo action was cancelled!');\n\nfunction showEmptyResultDialog(message) {\n    setTimeout(function() {\n        widgetContext.dialogs.alert('Empty result', message).subscribe();\n    }, 100);\n}\n",
+                  "handleErrorFunction" : "// Optional function body to handle error occurred while mobile action execution \n// - error - Error message\n\nshowErrorDialog('Failed to take photo', error);\n\nfunction showErrorDialog(title, error) {\n    setTimeout(function() {\n        widgetContext.dialogs.alert(title, error).subscribe();\n    }, 100);\n}\n",
+                  "processImageFunction" : "// Function body to process image obtained as a result of mobile action (take photo, take image from gallery, etc.). \n// - imageUrl - image URL in base64 data format\n\nshowImageDialog('Photo', imageUrl);\n//saveEntityImageAttribute('image', imageUrl);\n\nfunction showImageDialog(title, imageUrl) {\n    setTimeout(function() {\n        widgetContext.customDialog.customDialog(imageDialogTemplate, ImageDialogController, {imageUrl: imageUrl, title: title}).subscribe();\n    }, 100);\n}\n\nfunction saveEntityImageAttribute(attributeName, imageUrl) {\n    if (entityId) {\n        let attributes = [{\n            key: attributeName, value: imageUrl\n        }];\n        widgetContext.attributeService.saveEntityAttributes(entityId, \"SERVER_SCOPE\", attributes).subscribe(\n           function() {\n               widgetContext.showSuccessToast('Image attribute saved!');\n           },\n           function(error) {\n               widgetContext.dialogs.alert('Image attribute save failed', JSON.stringify(error));\n           }\n        );\n    }\n}\n\nvar\n  imageDialogTemplate =\n    '<div aria-label=\"Image\">' +\n    '<form #theForm=\"ngForm\">' +\n    '<mat-toolbar fxLayout=\"row\" color=\"primary\">' +\n    '<h2>{{title}}</h2>' +\n    '<span fxFlex></span>' +\n    '<button mat-icon-button (click)=\"close()\">' +\n    '<mat-icon>close</mat-icon>' +\n    '</button>' +\n    '</mat-toolbar>' +\n    '<div mat-dialog-content>' +\n    '<div class=\"mat-content mat-padding\">' +\n    '<div fxLayout=\"column\" fxFlex>' +\n    '<div style=\"padding-top: 20px;\">' +\n    '<img [src]=\"imageUrl\" style=\"height: 300px;\"/>' +\n    '</div>' +\n    '</div>' +\n    '</div>' +\n    '</div>' +\n    '<div mat-dialog-actions fxLayout=\"row\">' +\n    '<span fxFlex></span>' +\n    '<button mat-button (click)=\"close()\" style=\"margin-right:20px;\">Close</button>' +\n    '</div>' +\n    '</form>' +\n    '</div>';\n\nfunction ImageDialogController(instance) {\n  let vm = instance;\n  vm.title = vm.data.title;\n  vm.imageUrl = vm.data.imageUrl;\n  vm.close = function ()\n  {\n    vm.dialogRef.close(null);\n  }\n}\n"
+                },
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "aa34cc50-fd02-b6fa-42b9-a7434219cdf0"
+              } ]
+            },
             "borderRadius" : null
           },
           "row" : 0,

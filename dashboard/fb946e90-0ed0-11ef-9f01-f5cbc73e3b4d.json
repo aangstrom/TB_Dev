@@ -2167,6 +2167,13 @@
                 "color" : "#e91e63",
                 "settings" : { },
                 "_hash" : 0.9097084818087506
+              }, {
+                "name" : "color",
+                "type" : "attribute",
+                "label" : "color",
+                "color" : "#ffeb3b",
+                "settings" : { },
+                "_hash" : 0.6359225974797988
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -2273,7 +2280,7 @@
               "useMarkerImageFunction" : true,
               "markerImage" : null,
               "markerImageSize" : 34,
-              "markerImageFunction" : "var height=100+data.Posizione;\r\nvar s='<svg width=\"300\" height=\"300\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"300\" height=\"300\" x=\"10\" y=\"100\" style=\"fill:rgb(0,255,255);\" /><rect width=\"300\" height=\"'+height+'\" x=\"10\" y=\"100\" style=\"fill:rgb(101,101,101);\" /></svg>';\r\nvar temp=encodeURIComponent(s);\r\nvar encodedData =\"data:image/svg+xml,\"+temp; \r\n\r\nvar res={\r\n    url:encodedData,\r\n    //url: images[0],\r\n    size: 80\r\n}\r\nreturn res;\r\n\r\n/*var type = data['Type'];\r\nif (type == 'thermometer') {\r\n  var res = {\r\n    url: images[0],\r\n    size: 40\r\n  }\r\n  var temperature = data['temperature'];\r\n  if (typeof temperature !== undefined) {\r\n    var percent = (temperature + 60)/120;\r\n    var index = Math.min(3, Math.floor(4 * percent));\r\n    res.url = images[index];\r\n  }\r\n  return res;\r\n}\r\n*/",
+              "markerImageFunction" : "if(data.Type==\"Paratoia\"){\r\n    var height=100+data.Posizione;\r\n    var svg='<svg width=\"300\" height=\"250\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"300\" height=\"250\" x=\"00\" y=\"0\" style=\"fill:'+data.color+';\" /><rect width=\"300\" height=\"'+height+'\" x=\"00\" y=\"0\" style=\"fill:rgb(101,101,101)\" /></svg>';\r\n    var encodedData =\"data:image/svg+xml,\"+encodeURIComponent(svg); \r\n    var res={\r\n        url:encodedData,\r\n        size: 80\r\n    }\r\n    return res;\r\n}\r\n\r\n/*var type = data['Type'];\r\nif (type == 'thermometer') {\r\n  var res = {\r\n    url: images[0],\r\n    size: 40\r\n  }\r\n  var temperature = data['temperature'];\r\n  if (typeof temperature !== undefined) {\r\n    var percent = (temperature + 60)/120;\r\n    var index = Math.min(3, Math.floor(4 * percent));\r\n    res.url = images[index];\r\n  }\r\n  return res;\r\n}\r\n*/",
               "markerImages" : [ ],
               "showPolygon" : true,
               "polygonKeyName" : "perimeter",

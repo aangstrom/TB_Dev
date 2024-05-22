@@ -696,165 +696,6 @@
           "col" : 0,
           "id" : "e2a5538c-7c10-17ec-29b4-e9a3bc17d431"
         },
-        "85829d1d-4f0b-973f-b3ca-262be9a01017" : {
-          "typeFullFqn" : "system.slider",
-          "type" : "rpc",
-          "sizeX" : 5,
-          "sizeY" : 3,
-          "config" : {
-            "showTitle" : true,
-            "backgroundColor" : "#ffffff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "initialState" : {
-                "action" : "EXECUTE_RPC",
-                "defaultValue" : 0,
-                "executeRpc" : {
-                  "method" : "getState",
-                  "requestTimeout" : 5000,
-                  "requestPersistent" : false,
-                  "persistentPollingInterval" : 1000
-                },
-                "getAttribute" : {
-                  "key" : "state",
-                  "scope" : null
-                },
-                "getTimeSeries" : {
-                  "key" : "state"
-                },
-                "dataToValue" : {
-                  "type" : "NONE",
-                  "compareToValue" : true,
-                  "dataToValueFunction" : "/* Should return integer value */\nreturn data;"
-                }
-              },
-              "valueChange" : {
-                "action" : "EXECUTE_RPC",
-                "executeRpc" : {
-                  "method" : "setState",
-                  "requestTimeout" : 5000,
-                  "requestPersistent" : false,
-                  "persistentPollingInterval" : 1000
-                },
-                "setAttribute" : {
-                  "key" : "state",
-                  "scope" : "SERVER_SCOPE"
-                },
-                "putTimeSeries" : {
-                  "key" : "state"
-                },
-                "valueToData" : {
-                  "type" : "VALUE",
-                  "constantValue" : 0,
-                  "valueToDataFunction" : "/* Convert input integer value to RPC parameters or attribute/time-series value */\nreturn value;"
-                }
-              },
-              "disabledState" : {
-                "action" : "DO_NOTHING",
-                "defaultValue" : false,
-                "getAttribute" : {
-                  "key" : "state",
-                  "scope" : null
-                },
-                "getTimeSeries" : {
-                  "key" : "state"
-                },
-                "dataToValue" : {
-                  "type" : "NONE",
-                  "compareToValue" : true,
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
-                }
-              },
-              "layout" : "default",
-              "autoScale" : true,
-              "showValue" : true,
-              "valueUnits" : "%",
-              "valueDecimals" : 0,
-              "valueFont" : {
-                "family" : "Roboto",
-                "size" : 36,
-                "sizeUnit" : "px",
-                "style" : "normal",
-                "weight" : "500",
-                "lineHeight" : "36px"
-              },
-              "valueColor" : "rgba(0, 0, 0, 0.87)",
-              "tickMin" : 0,
-              "tickMax" : 100,
-              "showTicks" : true,
-              "ticksFont" : {
-                "family" : "Roboto",
-                "size" : 11,
-                "sizeUnit" : "px",
-                "style" : "normal",
-                "weight" : "400",
-                "lineHeight" : "16px"
-              },
-              "ticksColor" : "rgba(0,0,0,0.54)",
-              "showTickMarks" : true,
-              "tickMarksCount" : 11,
-              "tickMarksColor" : "var(--tb-primary-500)",
-              "mainColor" : "var(--tb-primary-500)",
-              "backgroundColor" : "var(--tb-primary-100)",
-              "mainColorDisabled" : "#9BA2B0",
-              "backgroundColorDisabled" : "#D5D7E5",
-              "leftIconSize" : 24,
-              "leftIconSizeUnit" : "px",
-              "leftIcon" : "lightbulb",
-              "leftIconColor" : "var(--tb-primary-500)",
-              "rightIconSize" : 24,
-              "rightIconSizeUnit" : "px",
-              "rightIcon" : "mdi:lightbulb-on",
-              "rightIconColor" : "var(--tb-primary-500)",
-              "background" : {
-                "type" : "color",
-                "color" : "#fff",
-                "overlay" : {
-                  "enabled" : false,
-                  "color" : "rgba(255,255,255,0.72)",
-                  "blur" : 3
-                }
-              }
-            },
-            "title" : "Slider",
-            "dropShadow" : true,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "actions" : { },
-            "widgetCss" : "",
-            "noDataDisplayMessage" : "",
-            "titleFont" : {
-              "size" : 16,
-              "sizeUnit" : "px",
-              "family" : null,
-              "weight" : "500",
-              "style" : null,
-              "lineHeight" : "24px"
-            },
-            "showTitleIcon" : false,
-            "titleTooltip" : "",
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "pageSize" : 1024,
-            "titleIcon" : "",
-            "iconColor" : "rgba(0, 0, 0, 0.87)",
-            "iconSize" : "14px",
-            "configMode" : "basic",
-            "titleColor" : "rgba(0, 0, 0, 0.87)",
-            "datasources" : [ ],
-            "targetDevice" : {
-              "type" : "device",
-              "deviceId" : "3908b070-27c7-11ee-bb94-e90efb8ecc83"
-            },
-            "borderRadius" : null
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "85829d1d-4f0b-973f-b3ca-262be9a01017"
-        },
         "fc28d579-fa38-879c-4747-12d16e0aa1ee" : {
           "typeFullFqn" : "system.cards.entities_table",
           "type" : "latest",
@@ -945,6 +786,128 @@
           "row" : 0,
           "col" : 0,
           "id" : "fc28d579-fa38-879c-4747-12d16e0aa1ee"
+        },
+        "59fed46c-7391-12d8-0678-93fb23ce26ca" : {
+          "typeFullFqn" : "system.command_button",
+          "type" : "rpc",
+          "sizeX" : 3,
+          "sizeY" : 1,
+          "config" : {
+            "showTitle" : false,
+            "backgroundColor" : "rgba(255, 255, 255, 0)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "onClickState" : {
+                "action" : "EXECUTE_RPC",
+                "executeRpc" : {
+                  "method" : "setState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "setAttribute" : {
+                  "scope" : "SERVER_SCOPE",
+                  "key" : "state"
+                },
+                "putTimeSeries" : {
+                  "key" : "state"
+                },
+                "valueToData" : {
+                  "type" : "NONE",
+                  "constantValue" : true,
+                  "valueToDataFunction" : "/* Return RPC parameters or attribute/time-series value */\nreturn true;"
+                }
+              },
+              "disabledState" : {
+                "action" : "DO_NOTHING",
+                "defaultValue" : false,
+                "getAttribute" : {
+                  "key" : "state",
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : true,
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
+                }
+              },
+              "appearance" : {
+                "type" : "outlined",
+                "autoScale" : true,
+                "showLabel" : true,
+                "label" : "Send",
+                "showIcon" : true,
+                "icon" : "arrow_outward",
+                "iconSize" : 24,
+                "iconSizeUnit" : "px",
+                "mainColor" : "var(--tb-primary-500)",
+                "backgroundColor" : "#FFFFFF",
+                "customStyle" : {
+                  "enabled" : null,
+                  "hovered" : null,
+                  "pressed" : null,
+                  "activated" : null,
+                  "disabled" : null
+                }
+              }
+            },
+            "title" : "Command button",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "actions" : {
+              "headerButton" : [ {
+                "name" : "photo",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : false,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "mobileAction",
+                "mobileAction" : {
+                  "type" : "takePhoto",
+                  "handleEmptyResultFunction" : "// Optional function body to handle empty result. \n// Usually this happens when user cancels the action (for ex. by pressing phone back button). \n\nshowEmptyResultDialog('Take photo action was cancelled!');\n\nfunction showEmptyResultDialog(message) {\n    setTimeout(function() {\n        widgetContext.dialogs.alert('Empty result', message).subscribe();\n    }, 100);\n}\n",
+                  "handleErrorFunction" : "// Optional function body to handle error occurred while mobile action execution \n// - error - Error message\n\nshowErrorDialog('Failed to take photo', error);\n\nfunction showErrorDialog(title, error) {\n    setTimeout(function() {\n        widgetContext.dialogs.alert(title, error).subscribe();\n    }, 100);\n}\n",
+                  "processImageFunction" : "// Function body to process image obtained as a result of mobile action (take photo, take image from gallery, etc.). \n// - imageUrl - image URL in base64 data format\n\nshowImageDialog('Photo', imageUrl);\n//saveEntityImageAttribute('image', imageUrl);\n\nfunction showImageDialog(title, imageUrl) {\n    setTimeout(function() {\n        widgetContext.customDialog.customDialog(imageDialogTemplate, ImageDialogController, {imageUrl: imageUrl, title: title}).subscribe();\n    }, 100);\n}\n\nfunction saveEntityImageAttribute(attributeName, imageUrl) {\n    if (entityId) {\n        let attributes = [{\n            key: attributeName, value: imageUrl\n        }];\n        widgetContext.attributeService.saveEntityAttributes(entityId, \"SERVER_SCOPE\", attributes).subscribe(\n           function() {\n               widgetContext.showSuccessToast('Image attribute saved!');\n           },\n           function(error) {\n               widgetContext.dialogs.alert('Image attribute save failed', JSON.stringify(error));\n           }\n        );\n    }\n}\n\nvar\n  imageDialogTemplate =\n    '<div aria-label=\"Image\">' +\n    '<form #theForm=\"ngForm\">' +\n    '<mat-toolbar fxLayout=\"row\" color=\"primary\">' +\n    '<h2>{{title}}</h2>' +\n    '<span fxFlex></span>' +\n    '<button mat-icon-button (click)=\"close()\">' +\n    '<mat-icon>close</mat-icon>' +\n    '</button>' +\n    '</mat-toolbar>' +\n    '<div mat-dialog-content>' +\n    '<div class=\"mat-content mat-padding\">' +\n    '<div fxLayout=\"column\" fxFlex>' +\n    '<div style=\"padding-top: 20px;\">' +\n    '<img [src]=\"imageUrl\" style=\"height: 300px;\"/>' +\n    '</div>' +\n    '</div>' +\n    '</div>' +\n    '</div>' +\n    '<div mat-dialog-actions fxLayout=\"row\">' +\n    '<span fxFlex></span>' +\n    '<button mat-button (click)=\"close()\" style=\"margin-right:20px;\">Close</button>' +\n    '</div>' +\n    '</form>' +\n    '</div>';\n\nfunction ImageDialogController(instance) {\n  let vm = instance;\n  vm.title = vm.data.title;\n  vm.imageUrl = vm.data.imageUrl;\n  vm.close = function ()\n  {\n    vm.dialogRef.close(null);\n  }\n}\n"
+                },
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "29110a2a-5959-95cf-1728-3e21cb5bd7e0"
+              } ]
+            },
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "titleFont" : {
+              "size" : 12,
+              "sizeUnit" : "px",
+              "family" : null,
+              "weight" : null,
+              "style" : null,
+              "lineHeight" : "1.6"
+            },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "pageSize" : 1024,
+            "titleIcon" : "",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "14px",
+            "configMode" : "advanced",
+            "borderRadius" : "4px",
+            "datasources" : [ ],
+            "targetDevice" : {
+              "type" : "device",
+              "deviceId" : "3908b070-27c7-11ee-bb94-e90efb8ecc83"
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "59fed46c-7391-12d8-0678-93fb23ce26ca"
         }
       },
       "states" : {
@@ -955,7 +918,7 @@
             "main" : {
               "widgets" : {
                 "88deeefa-aacc-857d-a8d8-a935550f175a" : {
-                  "sizeX" : 5,
+                  "sizeX" : 4,
                   "sizeY" : 4,
                   "row" : 0,
                   "col" : 0
@@ -974,16 +937,16 @@
                   "row" : 6,
                   "col" : 0
                 },
-                "85829d1d-4f0b-973f-b3ca-262be9a01017" : {
-                  "sizeX" : 4,
-                  "sizeY" : 2,
-                  "row" : 10,
-                  "col" : 0
-                },
                 "fc28d579-fa38-879c-4747-12d16e0aa1ee" : {
                   "sizeX" : 4,
                   "sizeY" : 4,
-                  "row" : 12,
+                  "row" : 10,
+                  "col" : 0
+                },
+                "59fed46c-7391-12d8-0678-93fb23ce26ca" : {
+                  "sizeX" : 2,
+                  "sizeY" : 0,
+                  "row" : 14,
                   "col" : 0
                 }
               },

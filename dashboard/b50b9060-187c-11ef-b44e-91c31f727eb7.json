@@ -696,52 +696,164 @@
           "col" : 0,
           "id" : "e2a5538c-7c10-17ec-29b4-e9a3bc17d431"
         },
-        "be6fd9aa-8139-24c3-d34a-445e4659a251" : {
-          "typeFullFqn" : "system.control_widgets.switch_control",
+        "85829d1d-4f0b-973f-b3ca-262be9a01017" : {
+          "typeFullFqn" : "system.slider",
           "type" : "rpc",
-          "sizeX" : 4,
-          "sizeY" : 2.5,
+          "sizeX" : 5,
+          "sizeY" : 3,
           "config" : {
-            "targetDeviceAliases" : [ ],
-            "showTitle" : false,
-            "backgroundColor" : "#e6e7e8",
+            "showTitle" : true,
+            "backgroundColor" : "#ffffff",
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "title" : "Switch control",
-              "showOnOffLabels" : false,
-              "initialValue" : false,
-              "retrieveValueMethod" : "rpc",
-              "valueKey" : "value",
-              "getValueMethod" : "getValue",
-              "parseValueFunction" : "return data ? true : false;",
-              "setValueMethod" : "setValue",
-              "convertValueFunction" : "return value;",
-              "requestTimeout" : 500,
-              "requestPersistent" : false,
-              "persistentPollingInterval" : 5000
+              "initialState" : {
+                "action" : "EXECUTE_RPC",
+                "defaultValue" : 0,
+                "executeRpc" : {
+                  "method" : "getState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "getAttribute" : {
+                  "key" : "state",
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : true,
+                  "dataToValueFunction" : "/* Should return integer value */\nreturn data;"
+                }
+              },
+              "valueChange" : {
+                "action" : "EXECUTE_RPC",
+                "executeRpc" : {
+                  "method" : "setState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "setAttribute" : {
+                  "key" : "state",
+                  "scope" : "SERVER_SCOPE"
+                },
+                "putTimeSeries" : {
+                  "key" : "state"
+                },
+                "valueToData" : {
+                  "type" : "VALUE",
+                  "constantValue" : 0,
+                  "valueToDataFunction" : "/* Convert input integer value to RPC parameters or attribute/time-series value */\nreturn value;"
+                }
+              },
+              "disabledState" : {
+                "action" : "DO_NOTHING",
+                "defaultValue" : false,
+                "getAttribute" : {
+                  "key" : "state",
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : true,
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
+                }
+              },
+              "layout" : "default",
+              "autoScale" : true,
+              "showValue" : true,
+              "valueUnits" : "%",
+              "valueDecimals" : 0,
+              "valueFont" : {
+                "family" : "Roboto",
+                "size" : 36,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "500",
+                "lineHeight" : "36px"
+              },
+              "valueColor" : "rgba(0, 0, 0, 0.87)",
+              "tickMin" : 0,
+              "tickMax" : 100,
+              "showTicks" : true,
+              "ticksFont" : {
+                "family" : "Roboto",
+                "size" : 11,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "16px"
+              },
+              "ticksColor" : "rgba(0,0,0,0.54)",
+              "showTickMarks" : true,
+              "tickMarksCount" : 11,
+              "tickMarksColor" : "var(--tb-primary-500)",
+              "mainColor" : "var(--tb-primary-500)",
+              "backgroundColor" : "var(--tb-primary-100)",
+              "mainColorDisabled" : "#9BA2B0",
+              "backgroundColorDisabled" : "#D5D7E5",
+              "leftIconSize" : 24,
+              "leftIconSizeUnit" : "px",
+              "leftIcon" : "lightbulb",
+              "leftIconColor" : "var(--tb-primary-500)",
+              "rightIconSize" : 24,
+              "rightIconSizeUnit" : "px",
+              "rightIcon" : "mdi:lightbulb-on",
+              "rightIconColor" : "var(--tb-primary-500)",
+              "background" : {
+                "type" : "color",
+                "color" : "#fff",
+                "overlay" : {
+                  "enabled" : false,
+                  "color" : "rgba(255,255,255,0.72)",
+                  "blur" : 3
+                }
+              }
             },
-            "title" : "Switch Control",
+            "title" : "Slider",
             "dropShadow" : true,
             "enableFullscreen" : false,
             "widgetStyle" : { },
+            "actions" : { },
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "titleFont" : {
+              "size" : 16,
+              "sizeUnit" : "px",
+              "family" : null,
+              "weight" : "500",
+              "style" : null,
+              "lineHeight" : "24px"
+            },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
             "titleStyle" : {
               "fontSize" : "16px",
               "fontWeight" : 400
             },
-            "useDashboardTimewindow" : true,
-            "showLegend" : false,
-            "actions" : { },
-            "decimals" : 2,
+            "pageSize" : 1024,
+            "titleIcon" : "",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "14px",
+            "configMode" : "basic",
+            "titleColor" : "rgba(0, 0, 0, 0.87)",
             "datasources" : [ ],
             "targetDevice" : {
               "type" : "device",
-              "deviceId" : "ebb79200-0831-11ee-bd5f-9374f67afc66"
-            }
+              "deviceId" : "3908b070-27c7-11ee-bb94-e90efb8ecc83"
+            },
+            "borderRadius" : null
           },
           "row" : 0,
           "col" : 0,
-          "id" : "be6fd9aa-8139-24c3-d34a-445e4659a251"
+          "id" : "85829d1d-4f0b-973f-b3ca-262be9a01017"
         }
       },
       "states" : {
@@ -769,11 +881,11 @@
                   "row" : 3,
                   "col" : 0
                 },
-                "be6fd9aa-8139-24c3-d34a-445e4659a251" : {
+                "85829d1d-4f0b-973f-b3ca-262be9a01017" : {
                   "sizeX" : 2,
                   "sizeY" : 1,
-                  "row" : 5,
-                  "col" : 0
+                  "row" : 2,
+                  "col" : 2
                 }
               },
               "gridSettings" : {

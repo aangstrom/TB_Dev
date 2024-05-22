@@ -2704,6 +2704,129 @@
           "row" : 0,
           "col" : 0,
           "id" : "0b8f6893-9e80-d690-10c1-409ce105f6e0"
+        },
+        "f2e7f8c1-7a57-bc06-3c48-8192fe070e9e" : {
+          "typeFullFqn" : "system.cards.html_card",
+          "type" : "static",
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "static",
+              "name" : "function",
+              "dataKeys" : [ {
+                "name" : "f(x)",
+                "type" : "function",
+                "label" : "Random",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.15479322438769105,
+                "funcBody" : "var value = prevValue + Math.random() * 100 - 50;\nvar multiplier = Math.pow(10, 2 || 0);\nvar value = Math.round(value * multiplier) / multiplier;\nif (value < -1000) {\n\tvalue = -1000;\n} else if (value > 1000) {\n\tvalue = 1000;\n}\nreturn value;"
+              } ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "cardHtml" : "<div class='card'>\n\n\n<svg width=\"320\" height=\"130\" xmlns=\"http://www.w3.org/2000/svg\">\n    <rect width=\"300\" height=\"100\" x=\"10\" y=\"40\" style=\"fill:rgb(0,255,255);stroke-width:2;stroke:red\" />\n\t<rect width=\"200\" height=\"100\" x=\"10\" y=\"10\" style=\"fill:rgb(0,0,255);stroke-width:1;stroke:red\" />\n\n  Sorry, your browser does not support inline SVG.  \n</svg>\n\n</div>",
+              "cardCss" : ".card {\n    font-weight: bold;\n    font-size: 32px;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}"
+            },
+            "title" : "HTML Card",
+            "dropShadow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "f2e7f8c1-7a57-bc06-3c48-8192fe070e9e"
+        },
+        "af9d31c8-4440-f3f3-2f97-8fb4617d2bb5" : {
+          "typeFullFqn" : "system.cards.markdown_card",
+          "type" : "latest",
+          "sizeX" : 5,
+          "sizeY" : 3.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "4889f10d-beb8-9c9c-cf0d-1ef87f24a627",
+              "dataKeys" : [ {
+                "name" : "temperature",
+                "type" : "timeseries",
+                "label" : "temperature",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.17853834280292968
+              }, {
+                "name" : "state",
+                "type" : "attribute",
+                "label" : "state",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.883580409571662
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1716303365849,
+                  "endTimeMs" : 1716389765849
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "useMarkdownTextFunction" : false,
+              "markdownTextPattern" : "### Markdown/HTML card\n - **Current entity**: ${temperature}.\n - **Current state**: ${state}.\n - **Current value**: ${Random}.\n\n\n<div class='card'>\n\n\n<svg width=\"320\" height=\"130\" xmlns=\"http://www.w3.org/2000/svg\">\n    <rect width=\"300\" height=\"100\" x=\"10\" y=\"40\" style=\"fill:rgb(0,255,255);stroke-width:2;stroke:red\" />\n\t<rect width=\"200\" height=${temperature} x=\"10\" y=\"10\" style=\"fill:rgb(0,0,255);stroke-width:1;stroke:red\" />\n</svg>\n\n</div>",
+              "markdownTextFunction" : "return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
+              "applyDefaultMarkdownStyle" : true,
+              "markdownCss" : ""
+            },
+            "title" : "Markdown/HTML Card",
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "showLegend" : false,
+            "useDashboardTimewindow" : true,
+            "displayTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "af9d31c8-4440-f3f3-2f97-8fb4617d2bb5"
         }
       },
       "states" : {
@@ -2802,6 +2925,18 @@
                   "sizeY" : 6,
                   "row" : 62,
                   "col" : 20
+                },
+                "f2e7f8c1-7a57-bc06-3c48-8192fe070e9e" : {
+                  "sizeX" : 15,
+                  "sizeY" : 12,
+                  "row" : 38,
+                  "col" : 30
+                },
+                "af9d31c8-4440-f3f3-2f97-8fb4617d2bb5" : {
+                  "sizeX" : 13,
+                  "sizeY" : 11,
+                  "row" : 68,
+                  "col" : 18
                 }
               },
               "gridSettings" : {

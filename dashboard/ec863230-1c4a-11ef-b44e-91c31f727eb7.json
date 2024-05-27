@@ -2966,10 +2966,16 @@
               "dataKeys" : [ {
                 "name" : "state",
                 "type" : "attribute",
-                "label" : "state",
+                "label" : "Paratoia",
                 "color" : "#2196f3",
                 "settings" : { },
-                "_hash" : 0.551821929216632
+                "_hash" : 0.551821929216632,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -3045,7 +3051,7 @@
                 "weight" : "500",
                 "color" : null
               },
-              "showValue" : true,
+              "showValue" : false,
               "valueFont" : {
                 "family" : "Roboto",
                 "size" : 36,
@@ -3061,13 +3067,21 @@
                 "weight" : "500",
                 "color" : "#666666"
               },
-              "showTicks" : false,
-              "tickWidth" : 4,
+              "showTicks" : true,
+              "tickWidth" : 1,
               "colorTicks" : "#666",
-              "ticksValue" : [ ],
+              "ticksValue" : [ {
+                "valueSource" : "predefinedValue",
+                "value" : 5
+              }, {
+                "valueSource" : "predefinedValue",
+                "entityAlias" : null,
+                "attribute" : null,
+                "value" : 10
+              } ],
               "animation" : true,
               "animationDuration" : 500,
-              "animationRule" : "linear"
+              "animationRule" : "bounce"
             },
             "title" : "Gauge",
             "dropShadow" : true,

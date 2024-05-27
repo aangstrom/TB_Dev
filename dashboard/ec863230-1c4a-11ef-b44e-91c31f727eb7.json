@@ -3298,6 +3298,190 @@
           "row" : 0,
           "col" : 0,
           "id" : "7441e2a8-2f9d-94cf-233d-0e3ff74ada4c"
+        },
+        "82327f3d-0f76-ea87-ac2a-0907040dbf14" : {
+          "typeFullFqn" : "system.single_switch",
+          "type" : "rpc",
+          "sizeX" : 3.5,
+          "sizeY" : 1,
+          "config" : {
+            "showTitle" : false,
+            "backgroundColor" : "#ffffff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "initialState" : {
+                "action" : "GET_ATTRIBUTE",
+                "defaultValue" : false,
+                "executeRpc" : {
+                  "method" : "getState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "getAttribute" : {
+                  "key" : "led_value",
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : true,
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
+                }
+              },
+              "onUpdateState" : {
+                "action" : "SET_ATTRIBUTE",
+                "executeRpc" : {
+                  "method" : "setState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "setAttribute" : {
+                  "key" : "led_value",
+                  "scope" : "SERVER_SCOPE"
+                },
+                "putTimeSeries" : {
+                  "key" : "state"
+                },
+                "valueToData" : {
+                  "type" : "CONSTANT",
+                  "constantValue" : true,
+                  "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */\nreturn value;"
+                }
+              },
+              "offUpdateState" : {
+                "action" : "SET_ATTRIBUTE",
+                "executeRpc" : {
+                  "method" : "setState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "setAttribute" : {
+                  "key" : "led_value",
+                  "scope" : "SERVER_SCOPE"
+                },
+                "putTimeSeries" : {
+                  "key" : "state"
+                },
+                "valueToData" : {
+                  "type" : "CONSTANT",
+                  "constantValue" : false,
+                  "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */ \n return value;"
+                }
+              },
+              "disabledState" : {
+                "action" : "DO_NOTHING",
+                "defaultValue" : false,
+                "getAttribute" : {
+                  "key" : "state",
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : true,
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
+                }
+              },
+              "layout" : "right",
+              "autoScale" : true,
+              "showLabel" : false,
+              "label" : "Switch",
+              "labelFont" : {
+                "family" : "Roboto",
+                "size" : 16,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "500",
+                "lineHeight" : "24px"
+              },
+              "labelColor" : "rgba(0, 0, 0, 0.76)",
+              "showIcon" : false,
+              "iconSize" : 24,
+              "iconSizeUnit" : "px",
+              "icon" : "mdi:lightbulb-outline",
+              "iconColor" : "rgba(0, 0, 0, 0.76)",
+              "switchColorOn" : "var(--tb-primary-500)",
+              "switchColorOff" : "var(--tb-primary-100)",
+              "switchColorDisabled" : "#D5D7E5",
+              "tumblerColorOn" : "#fff",
+              "tumblerColorOff" : "#fff",
+              "tumblerColorDisabled" : "#fff",
+              "showOnLabel" : false,
+              "onLabel" : "On",
+              "onLabelFont" : {
+                "family" : "Roboto",
+                "size" : 16,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "24px"
+              },
+              "onLabelColor" : "rgba(0, 0, 0, 0.38)",
+              "showOffLabel" : false,
+              "offLabel" : "Off",
+              "offLabelFont" : {
+                "family" : "Roboto",
+                "size" : 16,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "24px"
+              },
+              "offLabelColor" : "rgba(0, 0, 0, 0.38)",
+              "background" : {
+                "type" : "color",
+                "color" : "#fff",
+                "overlay" : {
+                  "enabled" : false,
+                  "color" : "rgba(255,255,255,0.72)",
+                  "blur" : 3
+                }
+              }
+            },
+            "title" : "Single Switch",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "titleFont" : {
+              "size" : 12,
+              "sizeUnit" : "px",
+              "family" : null,
+              "weight" : null,
+              "style" : null,
+              "lineHeight" : "1.6"
+            },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "pageSize" : 1024,
+            "titleIcon" : "",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "14px",
+            "configMode" : "advanced",
+            "datasources" : [ ],
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "b6fff1dc-6ecd-6ee6-663e-721eaece8cb7"
+            },
+            "borderRadius" : null
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "82327f3d-0f76-ea87-ac2a-0907040dbf14"
         }
       },
       "states" : {
@@ -3456,6 +3640,12 @@
                   "sizeY" : 4,
                   "row" : 18,
                   "col" : 24
+                },
+                "82327f3d-0f76-ea87-ac2a-0907040dbf14" : {
+                  "sizeX" : 3,
+                  "sizeY" : 2,
+                  "row" : 16,
+                  "col" : 30
                 }
               },
               "gridSettings" : {

@@ -6948,6 +6948,490 @@
           "row" : 0,
           "col" : 0,
           "id" : "be35ee17-1733-48d6-a241-9f74c03ad12f"
+        },
+        "2948d86a-b041-f063-26f5-e9b436d8ab19" : {
+          "typeFullFqn" : "system.cards.markdown_card",
+          "type" : "latest",
+          "sizeX" : 5,
+          "sizeY" : 3.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "5ceaf079-d456-ae75-33f4-edf66728a42f",
+              "dataKeys" : [ {
+                "name" : "color",
+                "type" : "attribute",
+                "label" : "color",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.03412711437813165
+              }, {
+                "name" : "top",
+                "type" : "attribute",
+                "label" : "top",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.9902533165496179
+              }, {
+                "name" : "left",
+                "type" : "attribute",
+                "label" : "left",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.9714974564651657
+              }, {
+                "name" : "Posizione",
+                "type" : "timeseries",
+                "label" : "Posizione",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.5018559525423407,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "Livello valle",
+                "type" : "timeseries",
+                "label" : "livello",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.8929884215135604,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1715261669992,
+                  "endTimeMs" : 1715348069992
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "useMarkdownTextFunction" : true,
+              "markdownTextPattern" : "### Markdown/HTML card\n - **Current entity**: ${entityName}.\n - **Current value**: ${Random}.",
+              "markdownTextFunction" : "//var linea1=[\"verticale\",200,25,25];\n//var linea_verticale=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n//var linea_orizzontale=\"<div class='orizzontale-linea' style='width:200px;top:50px;left:50px;'></div>\";\n//var linea2=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n\nvar altezza=200-data[0].Posizione;\nreturn '<div class=\"main\">'+\n'<div class=\"container\">'+\n'<div class=\"paratoia\" style=\"background:'+data[0].color+';\"><div class=\"mobile\" style=\"height:'+altezza+'px;\">'+data[0].Posizione+' %</div></div>'+\n'<div class=\"testo\"><div>Posizione: '+data[0].Posizione+' %</div>'+\n'<div>Livello: '+data[0].livello+' m</div>'+\n'<div class=\"simboli\"><div class=\"simbolo\" style=\"background-color:red;\">R</div><div class=\"simbolo\" style=\"background-color:lime;\">I</div></div>'+\n'</div>'+\n'</div>';",
+              "applyDefaultMarkdownStyle" : true,
+              "markdownCss" : ".main{\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: space-around;\n}\n.container{\n    align-items: center;\n    text-align: center;\n    border: 1px solid black;\n    height: 300px;\n    width: 200px;\n}\n.paratoia{\n    width: 198px;\n    height: 200px;\n}\n.mobile{\n    width: 198px;\n    height: 100px;\n    align-content: center;\n    font-size: 25px;\n    color: white;\n    background: grey;\n}\n.testo{\n    font-size: 18px;\n    margin-top: 10px;\n}\n.simboli{\n    display:flex;\n    justify-content: space-around;\n    color: black;\n}\n.simbolo{\n    width: 30px;\n    padding: 0px 5px;\n    border-radius: 100%;\n}\n.verticale-linea{\n    position: absolute;\n    margin: 0px 95px;\n    border-left: 10px solid blue;\n}\n.orizzontale-linea{\n    position: absolute;\n    margin: 45px 0px;\n    border-bottom: 10px solid blue;\n}"
+            },
+            "title" : "Markdown/HTML Card",
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "showLegend" : false,
+            "useDashboardTimewindow" : true,
+            "displayTimewindow" : true,
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "2948d86a-b041-f063-26f5-e9b436d8ab19"
+        },
+        "574aadbd-c9cb-eefd-7351-126b3026feb9" : {
+          "typeFullFqn" : "system.cards.markdown_card",
+          "type" : "latest",
+          "sizeX" : 5,
+          "sizeY" : 3.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "16811e42-eeca-1a21-ba8e-717bd6d7c21e",
+              "dataKeys" : [ {
+                "name" : "color",
+                "type" : "attribute",
+                "label" : "color",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.03412711437813165
+              }, {
+                "name" : "top",
+                "type" : "attribute",
+                "label" : "top",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.9902533165496179
+              }, {
+                "name" : "left",
+                "type" : "attribute",
+                "label" : "left",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.9714974564651657
+              }, {
+                "name" : "Posizione",
+                "type" : "timeseries",
+                "label" : "Posizione",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.5018559525423407,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "Livello valle",
+                "type" : "timeseries",
+                "label" : "livello",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.8929884215135604,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1715261669992,
+                  "endTimeMs" : 1715348069992
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "useMarkdownTextFunction" : true,
+              "markdownTextPattern" : "### Markdown/HTML card\n - **Current entity**: ${entityName}.\n - **Current value**: ${Random}.",
+              "markdownTextFunction" : "//var linea1=[\"verticale\",200,25,25];\n//var linea_verticale=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n//var linea_orizzontale=\"<div class='orizzontale-linea' style='width:200px;top:50px;left:50px;'></div>\";\n//var linea2=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n\nvar altezza=200-data[0].Posizione;\nreturn '<div class=\"main\">'+\n'<div class=\"container\">'+\n'<div class=\"paratoia\" style=\"background:'+data[0].color+';\"><div class=\"mobile\" style=\"height:'+altezza+'px;\">'+data[0].Posizione+' %</div></div>'+\n'<div class=\"testo\"><div>Posizione: '+data[0].Posizione+' %</div>'+\n'<div>Livello: '+data[0].livello+' m</div>'+\n'<div class=\"simboli\"><div class=\"simbolo\" style=\"background-color:red;\">R</div><div class=\"simbolo\" style=\"background-color:lime;\">I</div></div>'+\n'</div>'+\n'</div>';",
+              "applyDefaultMarkdownStyle" : true,
+              "markdownCss" : ".main{\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: space-around;\n}\n.container{\n    align-items: center;\n    text-align: center;\n    border: 1px solid black;\n    height: 300px;\n    width: 200px;\n}\n.paratoia{\n    width: 198px;\n    height: 200px;\n}\n.mobile{\n    width: 198px;\n    height: 100px;\n    align-content: center;\n    font-size: 25px;\n    color: white;\n    background: grey;\n}\n.testo{\n    font-size: 18px;\n    margin-top: 10px;\n}\n.simboli{\n    display:flex;\n    justify-content: space-around;\n    color: black;\n}\n.simbolo{\n    width: 30px;\n    padding: 0px 5px;\n    border-radius: 100%;\n}\n.verticale-linea{\n    position: absolute;\n    margin: 0px 95px;\n    border-left: 10px solid blue;\n}\n.orizzontale-linea{\n    position: absolute;\n    margin: 45px 0px;\n    border-bottom: 10px solid blue;\n}"
+            },
+            "title" : "Markdown/HTML Card",
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "showLegend" : false,
+            "useDashboardTimewindow" : true,
+            "displayTimewindow" : true,
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "574aadbd-c9cb-eefd-7351-126b3026feb9"
+        },
+        "95b344e7-106f-88ac-609b-0dd5bfc2cce6" : {
+          "typeFullFqn" : "system.cards.markdown_card",
+          "type" : "latest",
+          "sizeX" : 5,
+          "sizeY" : 3.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "c499414f-80fc-c00b-5f7e-8e88762499a0",
+              "dataKeys" : [ {
+                "name" : "color",
+                "type" : "attribute",
+                "label" : "color",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.03412711437813165
+              }, {
+                "name" : "top",
+                "type" : "attribute",
+                "label" : "top",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.9902533165496179
+              }, {
+                "name" : "left",
+                "type" : "attribute",
+                "label" : "left",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.9714974564651657
+              }, {
+                "name" : "Posizione",
+                "type" : "timeseries",
+                "label" : "Posizione",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.5018559525423407,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "Livello valle",
+                "type" : "timeseries",
+                "label" : "livello",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.8929884215135604,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1715261669992,
+                  "endTimeMs" : 1715348069992
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "useMarkdownTextFunction" : true,
+              "markdownTextPattern" : "### Markdown/HTML card\n - **Current entity**: ${entityName}.\n - **Current value**: ${Random}.",
+              "markdownTextFunction" : "//var linea1=[\"verticale\",200,25,25];\n//var linea_verticale=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n//var linea_orizzontale=\"<div class='orizzontale-linea' style='width:200px;top:50px;left:50px;'></div>\";\n//var linea2=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n\nvar altezza=200-data[0].Posizione;\nreturn '<div class=\"main\">'+\n'<div class=\"container\">'+\n'<div class=\"paratoia\" style=\"background:'+data[0].color+';\"><div class=\"mobile\" style=\"height:'+altezza+'px;\">'+data[0].Posizione+' %</div></div>'+\n'<div class=\"testo\"><div>Posizione: '+data[0].Posizione+' %</div>'+\n'<div>Livello: '+data[0].livello+' m</div>'+\n'<div class=\"simboli\"><div class=\"simbolo\" style=\"background-color:red;\">R</div><div class=\"simbolo\" style=\"background-color:lime;\">I</div></div>'+\n'</div>'+\n'</div>';",
+              "applyDefaultMarkdownStyle" : true,
+              "markdownCss" : ".main{\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: space-around;\n}\n.container{\n    align-items: center;\n    text-align: center;\n    border: 1px solid black;\n    height: 300px;\n    width: 200px;\n}\n.paratoia{\n    width: 198px;\n    height: 200px;\n}\n.mobile{\n    width: 198px;\n    height: 100px;\n    align-content: center;\n    font-size: 25px;\n    color: white;\n    background: grey;\n}\n.testo{\n    font-size: 18px;\n    margin-top: 10px;\n}\n.simboli{\n    display:flex;\n    justify-content: space-around;\n    color: black;\n}\n.simbolo{\n    width: 30px;\n    padding: 0px 5px;\n    border-radius: 100%;\n}\n.verticale-linea{\n    position: absolute;\n    margin: 0px 95px;\n    border-left: 10px solid blue;\n}\n.orizzontale-linea{\n    position: absolute;\n    margin: 45px 0px;\n    border-bottom: 10px solid blue;\n}"
+            },
+            "title" : "Markdown/HTML Card",
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "showLegend" : false,
+            "useDashboardTimewindow" : true,
+            "displayTimewindow" : true,
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "95b344e7-106f-88ac-609b-0dd5bfc2cce6"
+        },
+        "8ed8ed0c-ba9c-71c4-71f6-9c4fb2378ac4" : {
+          "typeFullFqn" : "system.cards.markdown_card",
+          "type" : "latest",
+          "sizeX" : 5,
+          "sizeY" : 3.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "d098c7e2-898c-ded6-4923-35c3f2ebaa3d",
+              "dataKeys" : [ {
+                "name" : "color",
+                "type" : "attribute",
+                "label" : "color",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.03412711437813165
+              }, {
+                "name" : "top",
+                "type" : "attribute",
+                "label" : "top",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.9902533165496179
+              }, {
+                "name" : "left",
+                "type" : "attribute",
+                "label" : "left",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.9714974564651657
+              }, {
+                "name" : "Posizione",
+                "type" : "timeseries",
+                "label" : "Posizione",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.5018559525423407,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "Livello valle",
+                "type" : "timeseries",
+                "label" : "livello",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.8929884215135604,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1715261669992,
+                  "endTimeMs" : 1715348069992
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "useMarkdownTextFunction" : true,
+              "markdownTextPattern" : "### Markdown/HTML card\n - **Current entity**: ${entityName}.\n - **Current value**: ${Random}.",
+              "markdownTextFunction" : "//var linea1=[\"verticale\",200,25,25];\n//var linea_verticale=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n//var linea_orizzontale=\"<div class='orizzontale-linea' style='width:200px;top:50px;left:50px;'></div>\";\n//var linea2=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n\nvar altezza=200-data[0].Posizione;\nreturn '<div class=\"main\">'+\n'<div class=\"container\">'+\n'<div class=\"paratoia\" style=\"background:'+data[0].color+';\"><div class=\"mobile\" style=\"height:'+altezza+'px;\">'+data[0].Posizione+' %</div></div>'+\n'<div class=\"testo\"><div>Posizione: '+data[0].Posizione+' %</div>'+\n'<div>Livello: '+data[0].livello+' m</div>'+\n'<div class=\"simboli\"><div class=\"simbolo\" style=\"background-color:red;\">R</div><div class=\"simbolo\" style=\"background-color:lime;\">I</div></div>'+\n'</div>'+\n'</div>';",
+              "applyDefaultMarkdownStyle" : true,
+              "markdownCss" : ".main{\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: space-around;\n}\n.container{\n    align-items: center;\n    text-align: center;\n    border: 1px solid black;\n    height: 300px;\n    width: 200px;\n}\n.paratoia{\n    width: 198px;\n    height: 200px;\n}\n.mobile{\n    width: 198px;\n    height: 100px;\n    align-content: center;\n    font-size: 25px;\n    color: white;\n    background: grey;\n}\n.testo{\n    font-size: 18px;\n    margin-top: 10px;\n}\n.simboli{\n    display:flex;\n    justify-content: space-around;\n    color: black;\n}\n.simbolo{\n    width: 30px;\n    padding: 0px 5px;\n    border-radius: 100%;\n}\n.verticale-linea{\n    position: absolute;\n    margin: 0px 95px;\n    border-left: 10px solid blue;\n}\n.orizzontale-linea{\n    position: absolute;\n    margin: 45px 0px;\n    border-bottom: 10px solid blue;\n}"
+            },
+            "title" : "Markdown/HTML Card",
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "showLegend" : false,
+            "useDashboardTimewindow" : true,
+            "displayTimewindow" : true,
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "8ed8ed0c-ba9c-71c4-71f6-9c4fb2378ac4"
         }
       },
       "states" : {
@@ -7380,6 +7864,47 @@
               }
             }
           }
+        },
+        "paratoie" : {
+          "name" : "Paratoie",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "2948d86a-b041-f063-26f5-e9b436d8ab19" : {
+                  "sizeX" : 6,
+                  "sizeY" : 5,
+                  "row" : 2,
+                  "col" : 0
+                },
+                "574aadbd-c9cb-eefd-7351-126b3026feb9" : {
+                  "sizeX" : 6,
+                  "sizeY" : 5,
+                  "row" : 2,
+                  "col" : 6
+                },
+                "95b344e7-106f-88ac-609b-0dd5bfc2cce6" : {
+                  "sizeX" : 6,
+                  "sizeY" : 5,
+                  "row" : 2,
+                  "col" : 12
+                },
+                "8ed8ed0c-ba9c-71c4-71f6-9c4fb2378ac4" : {
+                  "sizeX" : 6,
+                  "sizeY" : 5,
+                  "row" : 2,
+                  "col" : 18
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
         }
       },
       "entityAliases" : {
@@ -7517,6 +8042,42 @@
             "singleEntity" : {
               "entityType" : "ASSET",
               "id" : "ed842f50-1288-11ef-b44e-91c31f727eb7"
+            }
+          }
+        },
+        "16811e42-eeca-1a21-ba8e-717bd6d7c21e" : {
+          "id" : "16811e42-eeca-1a21-ba8e-717bd6d7c21e",
+          "alias" : "Paratoia 2",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "ASSET",
+              "id" : "37f928b0-1289-11ef-b44e-91c31f727eb7"
+            }
+          }
+        },
+        "c499414f-80fc-c00b-5f7e-8e88762499a0" : {
+          "id" : "c499414f-80fc-c00b-5f7e-8e88762499a0",
+          "alias" : "Impianto 1",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "ASSET",
+              "id" : "2fce1830-1289-11ef-b44e-91c31f727eb7"
+            }
+          }
+        },
+        "d098c7e2-898c-ded6-4923-35c3f2ebaa3d" : {
+          "id" : "d098c7e2-898c-ded6-4923-35c3f2ebaa3d",
+          "alias" : "Impianto 2",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "ASSET",
+              "id" : "77e33db0-128b-11ef-b44e-91c31f727eb7"
             }
           }
         }

@@ -329,7 +329,13 @@
                 "label" : "Temperatura",
                 "color" : "#2196f3",
                 "settings" : { },
-                "_hash" : 0.7828704849217418
+                "_hash" : 0.7828704849217418,
+                "aggregationType" : "NONE",
+                "units" : "",
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -364,15 +370,16 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "labelPosition" : "top",
               "layout" : "horizontal",
+              "autoScale" : true,
               "showLabel" : true,
               "labelFont" : {
                 "family" : "Roboto",
                 "size" : 16,
                 "sizeUnit" : "px",
                 "style" : "normal",
-                "weight" : "500"
+                "weight" : "500",
+                "lineHeight" : "1.5"
               },
               "labelColor" : {
                 "type" : "constant",
@@ -389,11 +396,12 @@
                 "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
               },
               "valueFont" : {
+                "family" : "Roboto",
                 "size" : 36,
                 "sizeUnit" : "px",
-                "family" : "Roboto",
+                "style" : "normal",
                 "weight" : "500",
-                "style" : "normal"
+                "lineHeight" : "100%"
               },
               "valueColor" : {
                 "type" : "constant",
@@ -404,14 +412,16 @@
               "dateFormat" : {
                 "format" : null,
                 "lastUpdateAgo" : true,
-                "custom" : false
+                "custom" : false,
+                "auto" : false
               },
               "dateFont" : {
                 "family" : "Roboto",
                 "size" : 12,
                 "sizeUnit" : "px",
                 "style" : "normal",
-                "weight" : "500"
+                "weight" : "500",
+                "lineHeight" : "1.33"
               },
               "dateColor" : {
                 "type" : "constant",
@@ -426,8 +436,7 @@
                   "color" : "rgba(255,255,255,0.72)",
                   "blur" : 3
                 }
-              },
-              "autoScale" : true
+              }
             },
             "title" : "Horizontal value card",
             "dropShadow" : false,
@@ -437,7 +446,7 @@
               "fontWeight" : 400
             },
             "units" : "°C",
-            "decimals" : 2,
+            "decimals" : null,
             "useDashboardTimewindow" : true,
             "showLegend" : false,
             "widgetStyle" : { },

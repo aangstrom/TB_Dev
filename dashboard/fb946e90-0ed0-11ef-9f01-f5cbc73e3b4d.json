@@ -7474,30 +7474,281 @@
           "col" : 0,
           "id" : "8ed8ed0c-ba9c-71c4-71f6-9c4fb2378ac4"
         },
-        "0333deef-f673-ec05-c8bb-3feeec9f7582" : {
+        "678e9a6d-e1c2-468d-5923-3cce5e6d77b2" : {
           "type" : "latest",
-          "sizeX" : 5,
+          "sizeX" : 7.5,
           "sizeY" : 3.5,
           "config" : {
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 86400000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1692539282466,
+                  "endTimeMs" : 1692625682466
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#671F6E",
+            "color" : "rgb(255, 255, 255)",
+            "padding" : "0px",
+            "settings" : {
+              "nodeRelationQueryFunction" : "var entity = nodeCtx.entity;\nvar query = {\n    parameters: {\n        rootId: entity.id.id,\n        rootType: entity.id.entityType,\n        direction: \"FROM\",\n        maxLevel: 1\n    },\n    filters: [{\n        relationType: \"Contains\",\n        entityTypes: []\n    }]\n};\nreturn query;\n\n/**\n\n// Function should return relations query object for current node used to fetch entity children.\n// Function can return 'default' string value. In this case default relations query will be used.\n\n// The following example code will construct simple relations query that will fetch relations of type 'Contains'\n// from the current entity.\n\nvar entity = nodeCtx.entity;\nvar query = {\n    parameters: {\n        rootId: entity.id.id,\n        rootType: entity.id.entityType,\n        direction: \"FROM\",\n        maxLevel: 1\n    },\n    filters: [{\n        relationType: \"Contains\",\n        entityTypes: []\n    }]\n};\nreturn query;\n\n**/\n",
+              "nodeHasChildrenFunction" : "/**\n\n// Function should return boolean value indicating whether current node has children (whether it can be expanded).\n\n// The following example code will restrict entities hierarchy expansion up to third level.\n\nreturn nodeCtx.level <= 2;\n\n// The next example code will restrict entities expansion according to the value of example 'nodeHasChildren' attribute.\n\nvar data = nodeCtx.data;\nif (data.hasOwnProperty('nodeHasChildren') && data['nodeHasChildren'] !== null) {\n    return data['nodeHasChildren'] === 'true';\n} else {\n    return true;\n}\n  \n**/\n ",
+              "nodeOpenedFunction" : "/**\n\n// Function should return boolean value indicating whether current node should be opened (expanded) when it first loaded.\n\n// The following example code will open by default nodes up to third level.\n\nreturn nodeCtx.level <= 2;\n\n**/\n//return nodeCtx.level <= 2;",
+              "nodeDisabledFunction" : "/**\n\n// Function should return boolean value indicating whether current node should be disabled (not selectable).\n\n// The following example code will disable current node according to the value of example 'nodeDisabled' attribute.\n\nvar data = nodeCtx.data;\nif (data.hasOwnProperty('nodeDisabled') && data['nodeDisabled'] !== null) {\n    return data['nodeDisabled'] === 'true';\n} else {\n    return false;\n}\n  \n**/\n",
+              "nodeIconFunction" : "var data =  nodeCtx.data;\nvar entity = nodeCtx.entity;\nif(entity.id.entityType === 'CUSTOMER') {\n    return {materialIcon: \"person\"};\n}else if(data.Type==\"Impianto\"){\n    return {materialIcon: \"business\"};\n}else if(data.Type==\"Sub-Centro\"){\n    return {materialIcon: \"apartment\"};\n}else if(data.Type==\"Paratoia\"){\n    return {materialIcon: \"width_wide\"};\n}else {\n    return 'default';\n}",
+              "nodeTextFunction" : "var data =  nodeCtx.data;\nvar entity = nodeCtx.entity;\nvar text = entity.name;\nif (data.hasOwnProperty.name && data.name !== null) {\n    if(data.Type==\"bungalow\" || data.Type==\"Piazzola\"){\n        text=data.Stato+entity.name+\" (\"+data.Presenza+\")\";\n    }else if(data.Type==\"Servizio Igienico\"){\n        text=entity.name+\" (\"+data.Stato2+\")\";\n    }else if(data.Type==\"Affluenza\"){\n        text=data.active+data.campeggi_name+' ('+data.affluenza+' persone)';\n    }else if(data.Type==\"AA Sensor\" || data.Type==\"AA Energy\" || data.Type==\"Energy\" || data.Type==\"Acqua\" || data.Type==\"Presenza\" || data.Type==\"Stato Bagno\"){\n        text=data.active+data.campeggi_name;\n    }else if(data.Type==\"Paratoia\" || data.Type==\"Impianto\"){\n        text=data.Stato+entity.name+\" (\"+data.Posizione+\"%, Livello: \"+data.Livello_valle+\" mm)\";\n    }else if(data.Type==\"tracker\"){\n        text=data.name+\" (\"+entity.name+\")\";\n    }else{\n        text=entity.name;\n    }\n}\nreturn text;",
+              "nodesSortFunction" : "/**\n\n// This function is used to sort nodes of the same level. Function should compare two nodes and return \n// integer value: \n//     - less than 0 - sort nodeCtx1 to an index lower than nodeCtx2\n//     - 0 - leave nodeCtx1 and nodeCtx2 unchanged with respect to each other\n//     - greater than 0 - sort nodeCtx2 to an index lower than nodeCtx1\n\n// The following example code will sort entities first by entity type in alphabetical order then\n// by entity name in alphabetical order.\n\nvar result = nodeCtx1.entity.id.entityType.localeCompare(nodeCtx2.entity.id.entityType);\nif (result === 0) {\n    result = nodeCtx1.entity.name.localeCompare(nodeCtx2.entity.name);\n}\nreturn result;\n  \n**/"
+            },
+            "title" : "Menù albero",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
             "datasources" : [ {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "3771d9d5-05ce-bc80-390b-68e807c651a1",
-              "filterId" : null,
+              "entityAliasId" : "e4ab67ff-8164-4912-fe9e-70863fcd0439",
+              "filterId" : "a834affc-e0d5-6f73-b817-a762211e335b",
               "dataKeys" : [ {
                 "name" : "name",
                 "type" : "attribute",
                 "label" : "name",
-                "color" : "#2196f3",
+                "color" : "#f44336",
                 "settings" : { },
-                "_hash" : 0.5854642774360208
+                "_hash" : 0.7626662935339583,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               }, {
                 "name" : "type",
                 "type" : "entityField",
                 "label" : "Type",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.974705854180542
+              }, {
+                "name" : "active",
+                "type" : "attribute",
+                "label" : "active",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.17483322930810363,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "var state = value;\n\nvar stateSvg = getStateSvg(state);\nvar encodedStateSvg = encodeURIComponent(stateSvg);\nvar stateSvgUrl = 'data:image/svg+xml,' + encodedStateSvg;\n\nreturn '<span>'+\n           '<img style=\"vertical-align: middle;\" class=\"mat-icon\" src=\"'+ stateSvgUrl +'\">' +\n       '</span>';\n            \nfunction getStateSvg(state) {\n    switch (state) {\n        case 'true':            \n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#1F8B4D\"/>' +\n                   '</svg>';\n        default:\n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#AAAAAA\"/>' +\n                   '</svg>';\n    }\n}"
+              }, {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Name",
+                "color" : "#8bc34a",
+                "settings" : { },
+                "_hash" : 0.27367954989942933
+              }, {
+                "name" : "Posizione",
+                "type" : "timeseries",
+                "label" : "Posizione",
+                "color" : "#e91e63",
+                "settings" : { },
+                "_hash" : 0.5671039453355797
+              }, {
+                "name" : "Livello valle",
+                "type" : "timeseries",
+                "label" : "Livello_valle",
+                "color" : "#ffeb3b",
+                "settings" : { },
+                "_hash" : 0.02316873438885536,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "Stato",
+                "type" : "timeseries",
+                "label" : "Stato",
+                "color" : "#3f51b5",
+                "settings" : { },
+                "_hash" : 0.6525450517041123,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "var state = value;\n\nvar stateSvg = getStateSvg(state);\nvar encodedStateSvg = encodeURIComponent(stateSvg);\nvar stateSvgUrl = 'data:image/svg+xml,' + encodedStateSvg;\n\nreturn '<span>'+\n           '<img style=\"vertical-align: middle;\" class=\"mat-icon\" src=\"'+ stateSvgUrl +'\">' +\n       '</span>';\n            \nfunction getStateSvg(state) {\n    switch (state) {\n        case 'Apertura':\n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#8BC34A\"/>' +\n                   '</svg>';\n        case 'Chiusura':            \n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#fb923c\"/>' +\n                   '</svg>';\n        default:\n            return '<svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">' +\n                   '<circle cx=\"10\" cy=\"10\" r=\"6\" fill=\"#048AD3\"/>' +\n                   '</svg>';\n    }\n}"
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "widgetStyle" : { },
+            "actions" : {
+              "nodeSelected" : [ {
+                "name" : "Apri Dettagli",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "var $injector = widgetContext.$scope.$injector;\r\nvar params = widgetContext.stateController.getStateParams();\r\n$injector.get(widgetContext.servicesMap.get('entityService')).getEntity(entityId.entityType, entityId.id)\r\n  .subscribe(function(data) {\r\n        var deviceType = data.id.entityType;\r\n        params.visualizzazione = null;\r\n        widgetContext.stateController.updateState(null, params);\r\n        if(deviceType==\"DEVICE\" || deviceType==\"ASSET\"){\r\n            var Type=data.type;\r\n            if(Type==\"Paratoia\"){\r\n                params.selectedDevice = {\r\n                    entityId: entityId\r\n                };\r\n            }\r\n            params.visualizzazione = {\r\n                entityId: entityId\r\n            };\r\n            widgetContext.stateController.updateState(null, params);\r\n        }else if(deviceType==\"CUSTOMER\"){\r\n            params.visualizzazione = null;\r\n            widgetContext.stateController.updateState(null, params);\r\n        }else{\r\n            params.visualizzazione = null;\r\n            widgetContext.stateController.updateState(null, params);\r\n        }\r\n});",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "d78bc6d1-0385-9476-eb43-d3e6b8a611b6"
+              } ],
+              "headerButton" : [ {
+                "name" : "Home",
+                "icon" : "home",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "var $injector = widgetContext.$scope.$injector;\r\nvar params = widgetContext.stateController.getStateParams();\r\n$injector.get(widgetContext.servicesMap.get('entityService')).getEntity(entityId.entityType, entityId.id)\r\n  .subscribe(function(data) {\r\n        var deviceType = data.id.entityType;\r\n        params.visualizzazione = null;\r\n        widgetContext.stateController.updateState(null, params);\r\n        if(deviceType==\"DEVICE\" || deviceType==\"ASSET\"){\r\n            var Type=data.type;\r\n            if(Type==\"Paratoia\"){\r\n                params.selectedDevice = {\r\n                    entityId: entityId\r\n                };\r\n            }\r\n            params.visualizzazione = {\r\n                entityId: entityId\r\n            };\r\n            widgetContext.stateController.updateState(null, params);\r\n        }else if(deviceType==\"CUSTOMER\"){\r\n            params.visualizzazione = null;\r\n            widgetContext.stateController.updateState(null, params);\r\n        }else{\r\n            params.visualizzazione = null;\r\n            widgetContext.stateController.updateState(null, params);\r\n        }\r\n});",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "683ec8e3-4012-ba9b-a526-882308e8f6dc"
+              } ]
+            },
+            "displayTimewindow" : true,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 2048,
+            "noDataDisplayMessage" : "Errore",
+            "borderRadius" : "0px",
+            "margin" : "0px"
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "678e9a6d-e1c2-468d-5923-3cce5e6d77b2",
+          "typeFullFqn" : "system.cards.entities_hierarchy"
+        },
+        "6dff506e-08e9-7385-eaa6-2365ef4a1132" : {
+          "typeFullFqn" : "system.maps_v2.openstreetmap",
+          "type" : "latest",
+          "sizeX" : 8.5,
+          "sizeY" : 6,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "39b4e1e7-81a0-e219-c09a-0a9953a7066f",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "latitude",
+                "type" : "attribute",
+                "label" : "latitude",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.3575387509227801
+              }, {
+                "name" : "longitude",
+                "type" : "attribute",
+                "label" : "longitude",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.7916260459131466
+              }, {
+                "name" : "Posizione",
+                "type" : "timeseries",
+                "label" : "Posizione",
                 "color" : "#f44336",
                 "settings" : { },
-                "_hash" : 0.6230106624570069
+                "_hash" : 0.9377789164875903
+              }, {
+                "name" : "Livello valle",
+                "type" : "timeseries",
+                "label" : "Livello_valle",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.7705035217437652,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "Livello monte",
+                "type" : "timeseries",
+                "label" : "Livello monte",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.9825641879082687
+              }, {
+                "name" : "type",
+                "type" : "entityField",
+                "label" : "Type",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.08146432832155703
+              }, {
+                "name" : "Stato",
+                "type" : "timeseries",
+                "label" : "Stato",
+                "color" : "#3f51b5",
+                "settings" : { },
+                "_hash" : 0.5468282416891661
+              }, {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Name",
+                "color" : "#e91e63",
+                "settings" : { },
+                "_hash" : 0.9097084818087506
+              }, {
+                "name" : "color",
+                "type" : "attribute",
+                "label" : "color",
+                "color" : "#ffeb3b",
+                "settings" : { },
+                "_hash" : 0.6359225974797988
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            }, {
+              "type" : "entity",
+              "entityAliasId" : "3771d9d5-05ce-bc80-390b-68e807c651a1",
+              "dataKeys" : [ {
+                "name" : "perimeter",
+                "type" : "attribute",
+                "label" : "perimeter",
+                "color" : "#3f51b5",
+                "settings" : { },
+                "_hash" : 0.3943169021108597,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -7517,8 +7768,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1692539734376,
-                  "endTimeMs" : 1692626134376
+                  "startTimeMs" : 1715265671586,
+                  "endTimeMs" : 1715352071586
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -7532,42 +7783,148 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "useMarkdownTextFunction" : true,
-              "markdownTextPattern" : "# Markdown/HTML card \\n - **Current entity**: **${entityName}**. \\n - **Current value**: **${Random}**.",
-              "markdownTextFunction" : "var device,impianto,sub_centro,paratoia,automezzi,tracker;\nconsole.log(data);\nif(data && data.length && data[0].entityId) {\n    if(data[0].Type=='Automezzi'){\n        automezzi=true;\n    }\n    if(data[0].Type=='tracker'){\n        tracker=true;\n    }\n    if(data[0].Type=='Impianto'){\n        impianto=true;\n    }\n    if(data[0].Type=='Sub-Centro'){\n        sub_centro=true;\n    }\n    if(data[0].Type=='Paratoia'){\n        paratoia=true;\n    }\n    /*if(data[0].Type==\"Acqua\" || data[0].Type==\"AA Sensor\" || data[0].Type==\"Energy\" || data[0].Type==\"AA Energy\" || data[0].Type==\"Presenza\" || data[0].Type==\"Condizionatore\" || data[0].Type==\"Macchina Utensile\"){\n        device=true;\n    }\n    if(data[0].deviceType==\"Categoria\"){\n        if(data[0].entityName==\"Reparto 1\"){\n            all_reparti=true;\n        }\n        if(data[0].entityName==\"Servizi Igienici\"){\n            bagni=true;\n        }\n        if(data[0].entityName==\"Piscina\"){\n            piscina=true;\n        }\n        if(data[0].entityName==\"Piazzole\"){\n            piazzole=true;\n        }\n        if(data[0].entityName==\"Colonnine Ricarica\"){\n            colonnine=true;\n        }\n        if(data[0].entityName==\"Supermercato\"){\n            supermercato=true;\n        }\n        if(data[0].entityName==\"Ristorante\"){\n            supermercato=true;\n        }\n        if(data[0].entityName==\"Allarmi\"){\n            allarmi=true;\n        }\n    }*/\n} else {\n    tracker=false;\n    automezzi=false;\n    impianto=false;\n    sub_centro=false;\n    paratoia=false;\n    device=false;\n}\nreturn '<div class=\"main-layout\" style=\"width: 100%; height:100%;\" fxLayout=\"column\">' +\n    (\n        tracker==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"tracker\"></tb-dashboard-state></div>') :\n        automezzi==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"automezzi\"></tb-dashboard-state></div>') :\n        impianto==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"impianto\"></tb-dashboard-state></div>') :\n        paratoia==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"paratoia\"></tb-dashboard-state></div>') :\n        sub_centro==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"sub_centro\"></tb-dashboard-state></div>') :\n        ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"mappa\"></tb-dashboard-state></div>')\n    );\n    \n    /*customer==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"destra\"></tb-dashboard-state></div>') :\n    reparto==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"sub_centro\"></tb-dashboard-state></div>') :\n    bagni==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_bagni\"></tb-dashboard-state></div>') :\n    wc==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n    supermercato==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n    ristorante==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n    colonnine==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_colonnine\"></tb-dashboard-state></div>') :\n    colonnina==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n    piazzole==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_piazzole\"></tb-dashboard-state></div>') :\n    piazzola==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n    piscina==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n    device==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"paratoia\"></tb-dashboard-state></div>') :\n    device_1==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_device_1\"></tb-dashboard-state></div>') :\n    allarmi==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"alarm_all\"></tb-dashboard-state></div>') :\n    affluenza==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_device\"></tb-dashboard-state></div>') :\n    stato_bagno==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_device\"></tb-dashboard-state></div>') :\n    floorplan==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_floorplan\"></tb-dashboard-state></div>') :\n    */",
-              "applyDefaultMarkdownStyle" : true,
-              "markdownCss" : ".tb-markdown-view > div {\n    padding: 0;\n}\n.header{\n    margin: 10px;\n    height: 35px;\n}\n.title {\n    font-size: 18px;\n    font-weight: 500;\n    color: #28232D;\n}\n#edit{\n    margin-right:10px;\n}"
+              "provider" : "openstreet-map",
+              "gmApiKey" : "AIzaSyDoEx2kaGz3PxwbI9T7ccTSg5xjdw8Nw8Q",
+              "gmDefaultMapType" : "roadmap",
+              "mapProvider" : "OpenStreetMap.Mapnik",
+              "useCustomProvider" : false,
+              "customProviderTileUrl" : "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+              "mapProviderHere" : "HERE.normalDay",
+              "credentials" : {
+                "useV3" : true,
+                "app_id" : "AhM6TzD9ThyK78CT3ptx",
+                "app_code" : "p6NPiITB3Vv0GMUFnkLOOg",
+                "apiKey" : "kVXykxAfZ6LS4EbCTO02soFVfjA7HoBzNVVH9u7nzoE"
+              },
+              "mapImageUrl" : "tb-image:aGVyZV9tYXBfc3lzdGVtX3dpZGdldF9tYXBfaW1hZ2Uuc3Zn:IkhFUkUgTWFwIiBzeXN0ZW0gd2lkZ2V0IG1hcCBpbWFnZQ==;data:image/svg+xml;base64,PHN2ZyBpZD0ic3ZnMiIgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTAwIiB3aWR0aD0iMTAwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zOmNjPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgdmlld0JveD0iMCAwIDEwMCAxMDAiPgogPGcgaWQ9ImxheWVyMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAtOTUyLjM2KSI+CiAgPHJlY3QgaWQ9InJlY3Q0Njg0IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBoZWlnaHQ9Ijk5LjAxIiB3aWR0aD0iOTkuMDEiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiB5PSI5NTIuODYiIHg9Ii40OTUwNSIgc3Ryb2tlLXdpZHRoPSIuOTkwMTAiIGZpbGw9IiNlZWUiLz4KICA8dGV4dCBpZD0idGV4dDQ2ODYiIHN0eWxlPSJ3b3JkLXNwYWNpbmc6MHB4O2xldHRlci1zcGFjaW5nOjBweDt0ZXh0LWFuY2hvcjptaWRkbGU7dGV4dC1hbGlnbjpjZW50ZXIiIGZvbnQtd2VpZ2h0PSJib2xkIiB4bWw6c3BhY2U9InByZXNlcnZlIiBmb250LXNpemU9IjEwcHgiIGxpbmUtaGVpZ2h0PSIxMjUlIiB5PSI5NzAuNzI4MDkiIHg9IjQ5LjM5NjQ3NyIgZm9udC1mYW1pbHk9IlJvYm90byIgZmlsbD0iIzY2NjY2NiI+PHRzcGFuIGlkPSJ0c3BhbjQ2OTAiIHg9IjUwLjY0NjQ3NyIgeT0iOTcwLjcyODA5Ij5JbWFnZSBiYWNrZ3JvdW5kIDwvdHNwYW4+PHRzcGFuIGlkPSJ0c3BhbjQ2OTIiIHg9IjQ5LjM5NjQ3NyIgeT0iOTgzLjIyODA5Ij5pcyBub3QgY29uZmlndXJlZDwvdHNwYW4+PC90ZXh0PgogIDxyZWN0IGlkPSJyZWN0NDY5NCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgaGVpZ2h0PSIxOS4zNiIgd2lkdGg9IjY5LjM2IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgeT0iOTkyLjY4IiB4PSIxNS4zMiIgc3Ryb2tlLXdpZHRoPSIuNjM5ODYiIGZpbGw9Im5vbmUiLz4KIDwvZz4KPC9zdmc+Cg==",
+              "imageEntityAlias" : "",
+              "imageUrlAttribute" : "",
+              "tmApiKey" : "84d6d83e0e51e481e50454ccbe8986b",
+              "tmDefaultMapType" : "roadmap",
+              "latKeyName" : "latitude",
+              "lngKeyName" : "longitude",
+              "xPosKeyName" : "xPos",
+              "yPosKeyName" : "yPos",
+              "defaultZoomLevel" : null,
+              "defaultCenterPosition" : "0,0",
+              "disableScrollZooming" : false,
+              "disableDoubleClickZooming" : false,
+              "disableZoomControl" : false,
+              "fitMapBounds" : true,
+              "useDefaultCenterPosition" : false,
+              "mapPageSize" : 16384,
+              "markerOffsetX" : 0.5,
+              "markerOffsetY" : 1,
+              "posFunction" : "return {x: origXPos, y: origYPos};",
+              "draggableMarker" : false,
+              "showLabel" : true,
+              "useLabelFunction" : true,
+              "label" : "${entityName}",
+              "labelFunction" : "var color = '#048AD3';\nif(data.Stato==\"Apertura\"){\n    color='#8BC34A';\n}else if (data.Stato==\"Chiusura\"){\n    color='#fb923c';\n}else{\n    color='#048AD3';\n}\nif(data.Type==\"Paratoia\" || data.Type==\"Impianto\"){\n    if(data.Stato==\"Apertura\" || data.Stato==\"Chiusura\"){\n        return \"<div style='position: relative; white-space: nowrap; text-align: center; font-size: 16px; top: 25px;'><span style='margin-left: -500%;'></span><div style='border: solid \"+color+\"; border-radius: 10px; color: \"+color+\"; background-color: #fff; padding-left: 5px; padding-right: 5px; padding-top: 3px; padding-bottom: 3px;'>\"+data.Name+\"<div style='font-size: 10px;'> Posizione: \"+data.Posizione+\"%</div><div style='font-size: 10px;'>Livello: \"+data.Livello_valle+\" mm</div><div style='font-size: 10px;'>Stato: \"+data.Stato+\"</div></div><span style='margin-right: -500%;'></span></div>\";\n    }else{\n        return \"<div style='position: relative; white-space: nowrap; text-align: center; font-size: 16px; top: 25px;'><span style='margin-left: -500%;'></span><div style='border: solid \"+color+\"; border-radius: 10px; color: \"+color+\"; background-color: #fff; padding-left: 5px; padding-right: 5px; padding-top: 3px; padding-bottom: 3px;'>\"+data.Name+\"<div style='font-size: 10px;'> Posizione: \"+data.Posizione+\"%</div><div style='font-size: 10px;'>Livello: \"+data.Livello_valle+\" mm</div></div><span style='margin-right: -500%;'></span></div>\";\n    }\n}else{\n    return \"<div style='position: relative; white-space: nowrap; text-align: center; font-size: 16px; top: 25px;'><span style='margin-left: -500%;'></span><div style='border: solid \"+color+\"; border-radius: 10px; color: \"+color+\"; background-color: #fff; padding-left: 5px; padding-right: 5px; padding-top: 3px; padding-bottom: 3px;'>\"+data.Name+\"</div><span style='margin-right: -500%;'></span></div>\";\n}",
+              "showTooltip" : false,
+              "showTooltipAction" : "click",
+              "autocloseTooltip" : true,
+              "useTooltipFunction" : false,
+              "tooltipPattern" : "<b>${entityName}</b><br/><br/><b>Latitude:</b> ${latitude:7}<br/><b>Longitude:</b> ${longitude:7}",
+              "tooltipFunction" : null,
+              "tooltipOffsetX" : 0,
+              "tooltipOffsetY" : -1,
+              "color" : "#048AD3",
+              "useColorFunction" : true,
+              "colorFunction" : "var stato = dsData[dsIndex]['Stato'];\r\nif(stato==\"Apertura\"){\r\n    return '#8BC34A';\r\n}else if (stato==\"Chiusura\"){\r\n    return '#fb923c';\r\n}else{\r\n    return '#048AD3';\r\n}",
+              "useMarkerImageFunction" : true,
+              "markerImage" : null,
+              "markerImageSize" : 34,
+              "markerImageFunction" : "if(data.Type==\"Paratoia\"){\r\n    var height=100+data.Posizione;\r\n    var svg='<svg width=\"300\" height=\"250\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"300\" height=\"250\" x=\"00\" y=\"0\" style=\"fill:'+data.color+';\" /><rect width=\"300\" height=\"'+height+'\" x=\"00\" y=\"0\" style=\"fill:rgb(101,101,101)\" /></svg>';\r\n    var encodedData =\"data:image/svg+xml,\"+encodeURIComponent(svg); \r\n    var res={\r\n        url:encodedData,\r\n        size: 80\r\n    }\r\n    return res;\r\n}\r\n\r\n/*var type = data['Type'];\r\nif (type == 'thermometer') {\r\n  var res = {\r\n    url: images[0],\r\n    size: 40\r\n  }\r\n  var temperature = data['temperature'];\r\n  if (typeof temperature !== undefined) {\r\n    var percent = (temperature + 60)/120;\r\n    var index = Math.min(3, Math.floor(4 * percent));\r\n    res.url = images[index];\r\n  }\r\n  return res;\r\n}\r\n*/",
+              "markerImages" : [ ],
+              "showPolygon" : true,
+              "polygonKeyName" : "perimeter",
+              "editablePolygon" : false,
+              "showPolygonLabel" : true,
+              "usePolygonLabelFunction" : false,
+              "polygonLabel" : "${entityName}",
+              "polygonLabelFunction" : null,
+              "showPolygonTooltip" : false,
+              "showPolygonTooltipAction" : "click",
+              "autoClosePolygonTooltip" : true,
+              "usePolygonTooltipFunction" : false,
+              "polygonTooltipPattern" : "<b>${entityName}</b><br/><br/><b>TimeStamp:</b> ${ts:7}",
+              "polygonTooltipFunction" : null,
+              "polygonColor" : "#F9A19B",
+              "polygonOpacity" : 0.1,
+              "usePolygonColorFunction" : false,
+              "polygonColorFunction" : null,
+              "polygonStrokeColor" : "#F9A19B",
+              "polygonStrokeOpacity" : 1,
+              "polygonStrokeWeight" : 3,
+              "usePolygonStrokeColorFunction" : false,
+              "polygonStrokeColorFunction" : null,
+              "showCircle" : false,
+              "circleKeyName" : "perimeter",
+              "editableCircle" : false,
+              "showCircleLabel" : false,
+              "useCircleLabelFunction" : false,
+              "circleLabel" : "${entityName}",
+              "circleLabelFunction" : null,
+              "showCircleTooltip" : false,
+              "showCircleTooltipAction" : "click",
+              "autoCloseCircleTooltip" : true,
+              "useCircleTooltipFunction" : false,
+              "circleTooltipPattern" : "<b>${entityName}</b><br/><br/><b>TimeStamp:</b> ${ts:7}",
+              "circleTooltipFunction" : null,
+              "circleFillColor" : "#3388ff",
+              "circleFillColorOpacity" : 0.2,
+              "useCircleFillColorFunction" : false,
+              "circleFillColorFunction" : null,
+              "circleStrokeColor" : "#3388ff",
+              "circleStrokeOpacity" : 1,
+              "circleStrokeWeight" : 3,
+              "useCircleStrokeColorFunction" : false,
+              "circleStrokeColorFunction" : null,
+              "useClusterMarkers" : false,
+              "zoomOnClick" : true,
+              "maxZoom" : null,
+              "maxClusterRadius" : 80,
+              "animate" : true,
+              "spiderfyOnMaxZoom" : false,
+              "showCoverageOnHover" : true,
+              "chunkedLoading" : false,
+              "removeOutsideVisibleBounds" : true,
+              "useIconCreateFunction" : false,
+              "clusterMarkerFunction" : null
             },
-            "title" : "New Markdown/HTML Card",
-            "showTitleIcon" : false,
-            "iconColor" : "rgba(0, 0, 0, 0.87)",
-            "iconSize" : "24px",
-            "titleTooltip" : "",
+            "title" : "OpenStreet Map",
             "dropShadow" : false,
             "enableFullscreen" : false,
-            "widgetStyle" : { },
             "titleStyle" : {
               "fontSize" : "16px",
               "fontWeight" : 400
             },
-            "showLegend" : false,
             "useDashboardTimewindow" : true,
-            "enableDataExport" : false,
-            "margin" : "0px",
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : "",
+            "showLegend" : false,
+            "widgetStyle" : { },
             "actions" : {
-              "elementClick" : [ ],
+              "markerClick" : [ {
+                "name" : "Click sul marker",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "var $injector = widgetContext.$scope.$injector;\r\nvar params = widgetContext.stateController.getStateParams();\r\n$injector.get(widgetContext.servicesMap.get('entityService')).getEntity(entityId.entityType, entityId.id)\r\n  .subscribe(function(data) {\r\n        var deviceType = data.id.entityType;\r\n        params.visualizzazione = null;\r\n        widgetContext.stateController.updateState(null, params);\r\n        if(deviceType==\"DEVICE\" || deviceType==\"ASSET\"){\r\n            var Type=data.type;\r\n            if(Type==\"Paratoia\"){\r\n                params.selectedDevice = {\r\n                    entityId: entityId\r\n                };\r\n            }\r\n            params.visualizzazione = {\r\n                entityId: entityId\r\n            };\r\n            widgetContext.stateController.updateState(null, params);\r\n        }else{\r\n            params.visualizzazione = null;\r\n            widgetContext.stateController.updateState(null, params);\r\n        }\r\n});",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "1d82647a-c319-6209-8b09-1d96900a1b30"
+              } ],
+              "tooltipAction" : [ ],
               "headerButton" : [ {
-                "name" : "Demo",
-                "icon" : "multiline_chart",
-                "useShowWidgetActionFunction" : false,
+                "name" : "Modifica",
+                "icon" : "edit",
+                "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
                 "type" : "openDashboardState",
-                "targetDashboardStateId" : "demo",
+                "targetDashboardStateId" : "modifica",
                 "setEntityId" : false,
-                "stateEntityParamName" : "cliente",
+                "stateEntityParamName" : "selezione",
                 "openRightLayout" : false,
                 "dialogTitle" : "",
                 "dialogHideDashboardToolbar" : true,
@@ -7575,16 +7932,403 @@
                 "dialogHeight" : 80,
                 "openInSeparateDialog" : true,
                 "openInPopover" : false,
-                "id" : "62bb0efd-90d8-c681-b60c-3ab8089952d2"
+                "id" : "a26dbc2f-02b8-4188-98c5-84c7663b7f06"
+              }, {
+                "name" : "Stati",
+                "icon" : "mdi:waves-arrow-up",
+                "useShowWidgetActionFunction" : false,
+                "showWidgetActionFunction" : "console.log(data);\nreturn data[0] && data[0].entityName === \"Sub-centro 1\";",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "paratoie",
+                "setEntityId" : false,
+                "stateEntityParamName" : null,
+                "openRightLayout" : false,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "70864d5d-6850-d823-cbd5-639f7c2ff7a1"
               } ]
             },
             "displayTimewindow" : true,
-            "borderRadius" : "0px"
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
           },
           "row" : 0,
           "col" : 0,
-          "id" : "0333deef-f673-ec05-c8bb-3feeec9f7582",
-          "typeFullFqn" : "system.cards.markdown_card"
+          "id" : "6dff506e-08e9-7385-eaa6-2365ef4a1132"
+        },
+        "0a975133-93cc-ca6b-dd40-151f1a6083de" : {
+          "typeFullFqn" : "system.alarm_count",
+          "type" : "latest",
+          "sizeX" : 3.5,
+          "sizeY" : 1.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "alarmCount",
+              "name" : "",
+              "dataKeys" : [ {
+                "name" : "count",
+                "type" : "count",
+                "label" : "count",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.08177223385125143
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ],
+                "severityList" : [ "CRITICAL" ],
+                "assignedToCurrentUser" : false,
+                "assigneeId" : null
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1716104663154,
+                  "endTimeMs" : 1716191063154
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#671F6E",
+            "color" : "rgb(255, 255, 255)",
+            "padding" : "0px",
+            "settings" : {
+              "layout" : "row",
+              "autoScale" : true,
+              "showLabel" : true,
+              "label" : "Allarmi Critici",
+              "labelFont" : {
+                "family" : "Roboto",
+                "size" : 12,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "16px"
+              },
+              "labelColor" : {
+                "type" : "constant",
+                "color" : "rgb(255, 255, 255)",
+                "rangeList" : null,
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "showIcon" : true,
+              "iconSize" : 20,
+              "iconSizeUnit" : "px",
+              "icon" : "warning",
+              "iconColor" : {
+                "type" : "constant",
+                "color" : "rgba(255, 255, 255, 1)",
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "showIconBackground" : true,
+              "iconBackgroundSize" : 36,
+              "iconBackgroundSizeUnit" : "px",
+              "iconBackgroundColor" : {
+                "color" : "rgb(244, 67, 54)",
+                "type" : "constant",
+                "rangeList" : [ {
+                  "from" : 0,
+                  "to" : 0,
+                  "color" : "rgba(0, 105, 92, 1)"
+                }, {
+                  "from" : 1,
+                  "color" : "rgba(209, 39, 48, 1)",
+                  "to" : null
+                } ],
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "valueFont" : {
+                "family" : "Roboto",
+                "size" : 20,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "500",
+                "lineHeight" : "24px"
+              },
+              "valueColor" : {
+                "type" : "constant",
+                "color" : "rgba(255, 255, 255, 0.87)",
+                "rangeList" : null,
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "showChevron" : false
+            },
+            "title" : "Alarm count",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "units" : "",
+            "decimals" : null,
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : {
+              "cardClick" : [ {
+                "name" : "Allarmi",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "allarmi",
+                "setEntityId" : true,
+                "stateEntityParamName" : "selectedDevice",
+                "openRightLayout" : false,
+                "dialogTitle" : "",
+                "dialogHideDashboardToolbar" : true,
+                "dialogWidth" : 80,
+                "dialogHeight" : 80,
+                "openInSeparateDialog" : true,
+                "openInPopover" : false,
+                "id" : "0e53adc1-2c6e-2770-cbeb-b5c3b971b8cf"
+              } ]
+            },
+            "configMode" : "advanced",
+            "displayTimewindow" : true,
+            "margin" : "0px",
+            "borderRadius" : "0px",
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleFont" : {
+              "size" : 12,
+              "sizeUnit" : "px",
+              "family" : null,
+              "weight" : null,
+              "style" : null,
+              "lineHeight" : "1"
+            },
+            "titleIcon" : "",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "14px",
+            "timewindowStyle" : {
+              "showIcon" : true,
+              "iconSize" : "14px",
+              "icon" : "query_builder",
+              "iconPosition" : "left",
+              "font" : {
+                "size" : 12,
+                "sizeUnit" : "px",
+                "family" : null,
+                "weight" : null,
+                "style" : null,
+                "lineHeight" : "1"
+              },
+              "color" : null
+            },
+            "titleColor" : "rgba(0, 0, 0, 0.54)",
+            "enableDataExport" : false
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "0a975133-93cc-ca6b-dd40-151f1a6083de"
+        },
+        "77d1a324-d67b-6618-c03d-82876f225d61" : {
+          "typeFullFqn" : "system.alarm_count",
+          "type" : "latest",
+          "sizeX" : 3.5,
+          "sizeY" : 1.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "alarmCount",
+              "name" : "",
+              "dataKeys" : [ {
+                "name" : "count",
+                "type" : "count",
+                "label" : "count",
+                "settings" : { },
+                "_hash" : 0.924850787528886
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ],
+                "severityList" : [ "MAJOR", "MINOR", "WARNING", "INDETERMINATE" ],
+                "assignedToCurrentUser" : false,
+                "assigneeId" : null
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1716104663154,
+                  "endTimeMs" : 1716191063154
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#671F6E",
+            "color" : "rgb(255, 255, 255)",
+            "padding" : "0px",
+            "settings" : {
+              "layout" : "row",
+              "autoScale" : true,
+              "showLabel" : true,
+              "label" : "Altri Allarmi",
+              "labelFont" : {
+                "family" : "Roboto",
+                "size" : 12,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "16px"
+              },
+              "labelColor" : {
+                "type" : "constant",
+                "color" : "rgb(255, 255, 255)",
+                "rangeList" : null,
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "showIcon" : true,
+              "iconSize" : 20,
+              "iconSizeUnit" : "px",
+              "icon" : "warning",
+              "iconColor" : {
+                "type" : "constant",
+                "color" : "rgba(255, 255, 255, 1)",
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "showIconBackground" : true,
+              "iconBackgroundSize" : 36,
+              "iconBackgroundSizeUnit" : "px",
+              "iconBackgroundColor" : {
+                "color" : "rgb(245, 221, 0)",
+                "type" : "constant",
+                "rangeList" : [ {
+                  "from" : 0,
+                  "to" : 0,
+                  "color" : "rgba(0, 105, 92, 1)"
+                }, {
+                  "from" : 1,
+                  "color" : "rgba(209, 39, 48, 1)"
+                } ],
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "valueFont" : {
+                "family" : "Roboto",
+                "size" : 20,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "500",
+                "lineHeight" : "24px"
+              },
+              "valueColor" : {
+                "type" : "constant",
+                "color" : "rgba(255, 255, 255, 0.87)",
+                "rangeList" : null,
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "showChevron" : false
+            },
+            "title" : "Alarm count",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "units" : "",
+            "decimals" : null,
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : {
+              "cardClick" : [ {
+                "name" : "Allarmi",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "allarmi",
+                "setEntityId" : true,
+                "stateEntityParamName" : "selectedDevice",
+                "openRightLayout" : false,
+                "dialogTitle" : "",
+                "dialogHideDashboardToolbar" : true,
+                "dialogWidth" : 80,
+                "dialogHeight" : 80,
+                "openInSeparateDialog" : true,
+                "openInPopover" : false,
+                "id" : "c5a9e14d-9a53-c34f-9f87-7d3ccae29fc1"
+              } ]
+            },
+            "configMode" : "advanced",
+            "displayTimewindow" : true,
+            "margin" : "0px",
+            "borderRadius" : "0px",
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleFont" : {
+              "size" : 12,
+              "sizeUnit" : "px",
+              "family" : null,
+              "weight" : null,
+              "style" : null,
+              "lineHeight" : "1"
+            },
+            "titleIcon" : "",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "14px",
+            "timewindowStyle" : {
+              "showIcon" : true,
+              "iconSize" : "14px",
+              "icon" : "query_builder",
+              "iconPosition" : "left",
+              "font" : {
+                "size" : 12,
+                "sizeUnit" : "px",
+                "family" : null,
+                "weight" : null,
+                "style" : null,
+                "lineHeight" : "1"
+              },
+              "color" : null
+            },
+            "titleColor" : "rgba(0, 0, 0, 0.54)",
+            "enableDataExport" : false
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "77d1a324-d67b-6618-c03d-82876f225d61"
         }
       },
       "states" : {
@@ -8027,32 +8771,50 @@
                 "2948d86a-b041-f063-26f5-e9b436d8ab19" : {
                   "sizeX" : 6,
                   "sizeY" : 6,
-                  "row" : 1,
-                  "col" : 0
+                  "row" : 0,
+                  "col" : 5
                 },
                 "574aadbd-c9cb-eefd-7351-126b3026feb9" : {
                   "sizeX" : 6,
                   "sizeY" : 6,
-                  "row" : 1,
-                  "col" : 6
+                  "row" : 6,
+                  "col" : 5
                 },
                 "95b344e7-106f-88ac-609b-0dd5bfc2cce6" : {
                   "sizeX" : 6,
                   "sizeY" : 6,
-                  "row" : 1,
-                  "col" : 12
+                  "row" : 0,
+                  "col" : 11
                 },
                 "8ed8ed0c-ba9c-71c4-71f6-9c4fb2378ac4" : {
                   "sizeX" : 6,
                   "sizeY" : 6,
-                  "row" : 1,
-                  "col" : 18
+                  "row" : 6,
+                  "col" : 11
                 },
-                "0333deef-f673-ec05-c8bb-3feeec9f7582" : {
-                  "sizeX" : 19,
+                "678e9a6d-e1c2-468d-5923-3cce5e6d77b2" : {
+                  "sizeX" : 5,
+                  "sizeY" : 10,
+                  "row" : 0,
+                  "col" : 0
+                },
+                "6dff506e-08e9-7385-eaa6-2365ef4a1132" : {
+                  "sizeX" : 7,
                   "sizeY" : 12,
-                  "row" : 16,
-                  "col" : 5
+                  "row" : 0,
+                  "col" : 17
+                },
+                "0a975133-93cc-ca6b-dd40-151f1a6083de" : {
+                  "sizeX" : 5,
+                  "sizeY" : 1,
+                  "row" : 10,
+                  "col" : 0
+                },
+                "77d1a324-d67b-6618-c03d-82876f225d61" : {
+                  "sizeX" : 5,
+                  "sizeY" : 1,
+                  "row" : 11,
+                  "col" : 0
                 }
               },
               "gridSettings" : {

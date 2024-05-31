@@ -2399,11 +2399,7 @@
                 "setEntityId" : false,
                 "stateEntityParamName" : null,
                 "openRightLayout" : false,
-                "dialogTitle" : "",
-                "dialogHideDashboardToolbar" : true,
-                "dialogWidth" : 80,
-                "dialogHeight" : 80,
-                "openInSeparateDialog" : true,
+                "openInSeparateDialog" : false,
                 "openInPopover" : false,
                 "id" : "70864d5d-6850-d823-cbd5-639f7c2ff7a1"
               } ]
@@ -7477,6 +7473,118 @@
           "row" : 0,
           "col" : 0,
           "id" : "8ed8ed0c-ba9c-71c4-71f6-9c4fb2378ac4"
+        },
+        "0333deef-f673-ec05-c8bb-3feeec9f7582" : {
+          "type" : "latest",
+          "sizeX" : 5,
+          "sizeY" : 3.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "3771d9d5-05ce-bc80-390b-68e807c651a1",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "name",
+                "type" : "attribute",
+                "label" : "name",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.5854642774360208
+              }, {
+                "name" : "type",
+                "type" : "entityField",
+                "label" : "Type",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.6230106624570069
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1692539734376,
+                  "endTimeMs" : 1692626134376
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "useMarkdownTextFunction" : true,
+              "markdownTextPattern" : "# Markdown/HTML card \\n - **Current entity**: **${entityName}**. \\n - **Current value**: **${Random}**.",
+              "markdownTextFunction" : "var device,impianto,sub_centro,paratoia,automezzi,tracker;\nconsole.log(data);\nif(data && data.length && data[0].entityId) {\n    if(data[0].Type=='Automezzi'){\n        automezzi=true;\n    }\n    if(data[0].Type=='tracker'){\n        tracker=true;\n    }\n    if(data[0].Type=='Impianto'){\n        impianto=true;\n    }\n    if(data[0].Type=='Sub-Centro'){\n        sub_centro=true;\n    }\n    if(data[0].Type=='Paratoia'){\n        paratoia=true;\n    }\n    /*if(data[0].Type==\"Acqua\" || data[0].Type==\"AA Sensor\" || data[0].Type==\"Energy\" || data[0].Type==\"AA Energy\" || data[0].Type==\"Presenza\" || data[0].Type==\"Condizionatore\" || data[0].Type==\"Macchina Utensile\"){\n        device=true;\n    }\n    if(data[0].deviceType==\"Categoria\"){\n        if(data[0].entityName==\"Reparto 1\"){\n            all_reparti=true;\n        }\n        if(data[0].entityName==\"Servizi Igienici\"){\n            bagni=true;\n        }\n        if(data[0].entityName==\"Piscina\"){\n            piscina=true;\n        }\n        if(data[0].entityName==\"Piazzole\"){\n            piazzole=true;\n        }\n        if(data[0].entityName==\"Colonnine Ricarica\"){\n            colonnine=true;\n        }\n        if(data[0].entityName==\"Supermercato\"){\n            supermercato=true;\n        }\n        if(data[0].entityName==\"Ristorante\"){\n            supermercato=true;\n        }\n        if(data[0].entityName==\"Allarmi\"){\n            allarmi=true;\n        }\n    }*/\n} else {\n    tracker=false;\n    automezzi=false;\n    impianto=false;\n    sub_centro=false;\n    paratoia=false;\n    device=false;\n}\nreturn '<div class=\"main-layout\" style=\"width: 100%; height:100%;\" fxLayout=\"column\">' +\n    (\n        tracker==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"tracker\"></tb-dashboard-state></div>') :\n        automezzi==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"automezzi\"></tb-dashboard-state></div>') :\n        impianto==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"impianto\"></tb-dashboard-state></div>') :\n        paratoia==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"paratoia\"></tb-dashboard-state></div>') :\n        sub_centro==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"sub_centro\"></tb-dashboard-state></div>') :\n        ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"mappa\"></tb-dashboard-state></div>')\n    );\n    \n    /*customer==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"destra\"></tb-dashboard-state></div>') :\n    reparto==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"sub_centro\"></tb-dashboard-state></div>') :\n    bagni==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_bagni\"></tb-dashboard-state></div>') :\n    wc==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n    supermercato==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n    ristorante==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n    colonnine==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_colonnine\"></tb-dashboard-state></div>') :\n    colonnina==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n    piazzole==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_piazzole\"></tb-dashboard-state></div>') :\n    piazzola==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n    piscina==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_dettagli\"></tb-dashboard-state></div>') :\n    device==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"paratoia\"></tb-dashboard-state></div>') :\n    device_1==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_device_1\"></tb-dashboard-state></div>') :\n    allarmi==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"alarm_all\"></tb-dashboard-state></div>') :\n    affluenza==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_device\"></tb-dashboard-state></div>') :\n    stato_bagno==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_device\"></tb-dashboard-state></div>') :\n    floorplan==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_floorplan\"></tb-dashboard-state></div>') :\n    */",
+              "applyDefaultMarkdownStyle" : true,
+              "markdownCss" : ".tb-markdown-view > div {\n    padding: 0;\n}\n.header{\n    margin: 10px;\n    height: 35px;\n}\n.title {\n    font-size: 18px;\n    font-weight: 500;\n    color: #28232D;\n}\n#edit{\n    margin-right:10px;\n}"
+            },
+            "title" : "New Markdown/HTML Card",
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "showLegend" : false,
+            "useDashboardTimewindow" : true,
+            "enableDataExport" : false,
+            "margin" : "0px",
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "actions" : {
+              "elementClick" : [ ],
+              "headerButton" : [ {
+                "name" : "Demo",
+                "icon" : "multiline_chart",
+                "useShowWidgetActionFunction" : false,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "demo",
+                "setEntityId" : false,
+                "stateEntityParamName" : "cliente",
+                "openRightLayout" : false,
+                "dialogTitle" : "",
+                "dialogHideDashboardToolbar" : true,
+                "dialogWidth" : 80,
+                "dialogHeight" : 80,
+                "openInSeparateDialog" : true,
+                "openInPopover" : false,
+                "id" : "62bb0efd-90d8-c681-b60c-3ab8089952d2"
+              } ]
+            },
+            "displayTimewindow" : true,
+            "borderRadius" : "0px"
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "0333deef-f673-ec05-c8bb-3feeec9f7582",
+          "typeFullFqn" : "system.cards.markdown_card"
         }
       },
       "states" : {
@@ -7919,34 +8027,44 @@
                 "2948d86a-b041-f063-26f5-e9b436d8ab19" : {
                   "sizeX" : 6,
                   "sizeY" : 6,
-                  "row" : 0,
+                  "row" : 1,
                   "col" : 0
                 },
                 "574aadbd-c9cb-eefd-7351-126b3026feb9" : {
                   "sizeX" : 6,
                   "sizeY" : 6,
-                  "row" : 0,
+                  "row" : 1,
                   "col" : 6
                 },
                 "95b344e7-106f-88ac-609b-0dd5bfc2cce6" : {
                   "sizeX" : 6,
                   "sizeY" : 6,
-                  "row" : 0,
+                  "row" : 1,
                   "col" : 12
                 },
                 "8ed8ed0c-ba9c-71c4-71f6-9c4fb2378ac4" : {
                   "sizeX" : 6,
                   "sizeY" : 6,
-                  "row" : 0,
+                  "row" : 1,
                   "col" : 18
+                },
+                "0333deef-f673-ec05-c8bb-3feeec9f7582" : {
+                  "sizeX" : 19,
+                  "sizeY" : 12,
+                  "row" : 16,
+                  "col" : 5
                 }
               },
               "gridSettings" : {
                 "backgroundColor" : "#eeeeee",
                 "columns" : 24,
-                "margin" : 10,
-                "outerMargin" : true,
-                "backgroundSizeMode" : "100%"
+                "margin" : 0,
+                "outerMargin" : false,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : false,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70
               }
             }
           }

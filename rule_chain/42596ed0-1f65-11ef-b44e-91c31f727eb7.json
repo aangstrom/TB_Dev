@@ -33,13 +33,17 @@
       "fromIndex" : 4,
       "toIndex" : 3,
       "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 3,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : null,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 174,
-        "layoutY" : 367
+        "layoutX" : 180,
+        "layoutY" : 276
       },
       "configuration" : {
         "msgCount" : 0,
@@ -66,8 +70,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 120,
-        "layoutY" : 471
+        "layoutX" : 175,
+        "layoutY" : 359
       },
       "configuration" : {
         "msgCount" : 0,
@@ -165,6 +169,34 @@
         "id" : "7185e3e0-1f66-11ef-b44e-91c31f727eb7"
       },
       "name" : "Impianto 2",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 177,
+        "layoutY" : 442
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 60,
+        "scriptLang" : "TBEL",
+        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var posizione=Math.random() * (100 - 60);\nvar valle=7500 + Math.random() * (100 - 0);\nvar monte=7530 + Math.random() * (100 - 0);\nposizione=Math.round( posizione * 100 ) / 100;\nvalle=Math.round( valle * 100 ) / 100;\nmonte=Math.round( monte * 100 ) / 100;\nvar metadata={};\nvar msg = {Posizione: posizione, \"Livello valle\": valle, \"Livello monte\": monte};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "originatorId" : "9814b750-12c0-11ef-b44e-91c31f727eb7",
+        "originatorType" : "ASSET"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "80953790-1f67-11ef-b44e-91c31f727eb7"
+      },
+      "name" : "Paratoia 3",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,

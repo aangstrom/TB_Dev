@@ -7023,6 +7023,13 @@
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
+              }, {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Name",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.049646529099574455
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -7059,11 +7066,11 @@
             "settings" : {
               "useMarkdownTextFunction" : true,
               "markdownTextPattern" : "### Markdown/HTML card\n - **Current entity**: ${entityName}.\n - **Current value**: ${Random}.",
-              "markdownTextFunction" : "//var linea1=[\"verticale\",200,25,25];\n//var linea_verticale=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n//var linea_orizzontale=\"<div class='orizzontale-linea' style='width:200px;top:50px;left:50px;'></div>\";\n//var linea2=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n\nvar altezza=200-data[0].Posizione;\nreturn '<div class=\"main\">'+\n'<div class=\"container\">'+\n'<div class=\"paratoia\" style=\"background:'+data[0].color+';\"><div class=\"mobile\" style=\"height:'+altezza+'px;\">'+data[0].Posizione+' %</div></div>'+\n'<div class=\"testo\"><div>Posizione: '+data[0].Posizione+' %</div>'+\n'<div>Livello: '+data[0].livello+' m</div>'+\n'<div class=\"simboli\"><div class=\"simbolo\" style=\"background-color:red;\">R</div><div class=\"simbolo\" style=\"background-color:lime;\">I</div></div>'+\n'</div>'+\n'</div>';",
+              "markdownTextFunction" : "//var linea1=[\"verticale\",200,25,25];\n//var linea_verticale=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n//var linea_orizzontale=\"<div class='orizzontale-linea' style='width:200px;top:50px;left:50px;'></div>\";\n//var linea2=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n\nvar altezza=200-data[0].Posizione;\nreturn '<div class=title>'+data[0].Name+'</div><br>'+\n'<div class=\"main\">'+\n'<div class=\"container\">'+\n'<div class=\"paratoia\" style=\"background:'+data[0].color+';\"><div class=\"mobile\" style=\"height:'+altezza+'px;\">'+data[0].Posizione+' %</div></div>'+\n'<div class=\"testo\"><div>Posizione: '+data[0].Posizione+' %</div>'+\n'<div>Livello: '+data[0].livello+' m</div>'+\n'<div class=\"simboli\"><div class=\"simbolo\" style=\"background-color:red;\">R</div><div class=\"simbolo\" style=\"background-color:lime;\">I</div></div>'+\n'</div>'+\n'</div>';",
               "applyDefaultMarkdownStyle" : true,
-              "markdownCss" : ".main{\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: space-around;\n}\n.container{\n    align-items: center;\n    text-align: center;\n    border: 1px solid black;\n    height: 300px;\n    width: 200px;\n}\n.paratoia{\n    width: 198px;\n    height: 200px;\n}\n.mobile{\n    width: 198px;\n    height: 100px;\n    align-content: center;\n    font-size: 25px;\n    color: white;\n    background: grey;\n}\n.testo{\n    font-size: 18px;\n    margin-top: 10px;\n}\n.simboli{\n    display:flex;\n    justify-content: space-around;\n    color: black;\n}\n.simbolo{\n    width: 30px;\n    padding: 0px 5px;\n    border-radius: 100%;\n}\n.verticale-linea{\n    position: absolute;\n    margin: 0px 95px;\n    border-left: 10px solid blue;\n}\n.orizzontale-linea{\n    position: absolute;\n    margin: 45px 0px;\n    border-bottom: 10px solid blue;\n}"
+              "markdownCss" : ".main{\n    width: 100%;\n    height: 70%;\n    display: flex;\n    align-items: center;\n    justify-content: space-around;\n}\n.container{\n    align-items: center;\n    text-align: center;\n    border: 1px solid black;\n    height: 300px;\n    width: 200px;\n}\n.paratoia{\n    width: 198px;\n    height: 200px;\n}\n.mobile{\n    width: 198px;\n    height: 100px;\n    align-content: center;\n    font-size: 25px;\n    color: white;\n    background: grey;\n}\n.testo{\n    font-size: 18px;\n    margin-top: 10px;\n}\n.simboli{\n    display:flex;\n    justify-content: space-around;\n    color: black;\n}\n.simbolo{\n    width: 30px;\n    padding: 0px 5px;\n    border-radius: 100%;\n}\n.verticale-linea{\n    position: absolute;\n    margin: 0px 95px;\n    border-left: 10px solid blue;\n}\n.orizzontale-linea{\n    position: absolute;\n    margin: 45px 0px;\n    border-bottom: 10px solid blue;\n}\n.title{\n    margin-top: 20px;\n    text-align: center;\n    font-size: 30px;\n}"
             },
-            "title" : "Markdown/HTML Card",
+            "title" : "${entityName}",
             "showTitleIcon" : false,
             "iconColor" : "rgba(0, 0, 0, 0.87)",
             "iconSize" : "24px",
@@ -7144,6 +7151,13 @@
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
+              }, {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Name",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.20583543820173644
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -7180,11 +7194,11 @@
             "settings" : {
               "useMarkdownTextFunction" : true,
               "markdownTextPattern" : "### Markdown/HTML card\n - **Current entity**: ${entityName}.\n - **Current value**: ${Random}.",
-              "markdownTextFunction" : "//var linea1=[\"verticale\",200,25,25];\n//var linea_verticale=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n//var linea_orizzontale=\"<div class='orizzontale-linea' style='width:200px;top:50px;left:50px;'></div>\";\n//var linea2=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n\nvar altezza=200-data[0].Posizione;\nreturn '<div class=\"main\">'+\n'<div class=\"container\">'+\n'<div class=\"paratoia\" style=\"background:'+data[0].color+';\"><div class=\"mobile\" style=\"height:'+altezza+'px;\">'+data[0].Posizione+' %</div></div>'+\n'<div class=\"testo\"><div>Posizione: '+data[0].Posizione+' %</div>'+\n'<div>Livello: '+data[0].livello+' m</div>'+\n'<div class=\"simboli\"><div class=\"simbolo\" style=\"background-color:red;\">R</div><div class=\"simbolo\" style=\"background-color:lime;\">I</div></div>'+\n'</div>'+\n'</div>';",
+              "markdownTextFunction" : "//var linea1=[\"verticale\",200,25,25];\n//var linea_verticale=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n//var linea_orizzontale=\"<div class='orizzontale-linea' style='width:200px;top:50px;left:50px;'></div>\";\n//var linea2=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n\nvar altezza=200-data[0].Posizione;\nreturn '<div class=title>'+data[0].Name+'</div><br>'+ \n'<div class=\"main\">'+\n'<div class=\"container\">'+\n'<div class=\"paratoia\" style=\"background:'+data[0].color+';\"><div class=\"mobile\" style=\"height:'+altezza+'px;\">'+data[0].Posizione+' %</div></div>'+\n'<div class=\"testo\"><div>Posizione: '+data[0].Posizione+' %</div>'+\n'<div>Livello: '+data[0].livello+' m</div>'+\n'<div class=\"simboli\"><div class=\"simbolo\" style=\"background-color:red;\">R</div><div class=\"simbolo\" style=\"background-color:lime;\">I</div></div>'+\n'</div>'+\n'</div>';",
               "applyDefaultMarkdownStyle" : true,
-              "markdownCss" : ".main{\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: space-around;\n}\n.container{\n    align-items: center;\n    text-align: center;\n    border: 1px solid black;\n    height: 300px;\n    width: 200px;\n}\n.paratoia{\n    width: 198px;\n    height: 200px;\n}\n.mobile{\n    width: 198px;\n    height: 100px;\n    align-content: center;\n    font-size: 25px;\n    color: white;\n    background: grey;\n}\n.testo{\n    font-size: 18px;\n    margin-top: 10px;\n}\n.simboli{\n    display:flex;\n    justify-content: space-around;\n    color: black;\n}\n.simbolo{\n    width: 30px;\n    padding: 0px 5px;\n    border-radius: 100%;\n}\n.verticale-linea{\n    position: absolute;\n    margin: 0px 95px;\n    border-left: 10px solid blue;\n}\n.orizzontale-linea{\n    position: absolute;\n    margin: 45px 0px;\n    border-bottom: 10px solid blue;\n}"
+              "markdownCss" : ".main{\n    width: 100%;\n    height: 70%;\n    display: flex;\n    align-items: center;\n    justify-content: space-around;\n}\n.container{\n    align-items: center;\n    text-align: center;\n    border: 1px solid black;\n    height: 300px;\n    width: 200px;\n}\n.paratoia{\n    width: 198px;\n    height: 200px;\n}\n.mobile{\n    width: 198px;\n    height: 100px;\n    align-content: center;\n    font-size: 25px;\n    color: white;\n    background: grey;\n}\n.testo{\n    font-size: 18px;\n    margin-top: 10px;\n}\n.simboli{\n    display:flex;\n    justify-content: space-around;\n    color: black;\n}\n.simbolo{\n    width: 30px;\n    padding: 0px 5px;\n    border-radius: 100%;\n}\n.verticale-linea{\n    position: absolute;\n    margin: 0px 95px;\n    border-left: 10px solid blue;\n}\n.orizzontale-linea{\n    position: absolute;\n    margin: 45px 0px;\n    border-bottom: 10px solid blue;\n}\n.title{\n    margin-top: 20px;\n    text-align: center;\n    font-size: 30px;\n}"
             },
-            "title" : "Markdown/HTML Card",
+            "title" : "${entityName}",
             "showTitleIcon" : false,
             "iconColor" : "rgba(0, 0, 0, 0.87)",
             "iconSize" : "24px",
@@ -7265,6 +7279,13 @@
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
+              }, {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Name",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.17773471824149323
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -7301,9 +7322,9 @@
             "settings" : {
               "useMarkdownTextFunction" : true,
               "markdownTextPattern" : "### Markdown/HTML card\n - **Current entity**: ${entityName}.\n - **Current value**: ${Random}.",
-              "markdownTextFunction" : "//var linea1=[\"verticale\",200,25,25];\n//var linea_verticale=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n//var linea_orizzontale=\"<div class='orizzontale-linea' style='width:200px;top:50px;left:50px;'></div>\";\n//var linea2=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n\nvar altezza=200-data[0].Posizione;\nreturn '<div class=\"main\">'+\n'<div class=\"container\">'+\n'<div class=\"paratoia\" style=\"background:'+data[0].color+';\"><div class=\"mobile\" style=\"height:'+altezza+'px;\">'+data[0].Posizione+' %</div></div>'+\n'<div class=\"testo\"><div>Posizione: '+data[0].Posizione+' %</div>'+\n'<div>Livello: '+data[0].livello+' m</div>'+\n'<div class=\"simboli\"><div class=\"simbolo\" style=\"background-color:red;\">R</div><div class=\"simbolo\" style=\"background-color:lime;\">I</div></div>'+\n'</div>'+\n'</div>';",
+              "markdownTextFunction" : "//var linea1=[\"verticale\",200,25,25];\n//var linea_verticale=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n//var linea_orizzontale=\"<div class='orizzontale-linea' style='width:200px;top:50px;left:50px;'></div>\";\n//var linea2=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n\nvar altezza=200-data[0].Posizione;\nreturn '<div class=title>'+data[0].Name+'</div><br>'+\n'<div class=\"main\">'+\n'<div class=\"container\">'+\n'<div class=\"paratoia\" style=\"background:'+data[0].color+';\"><div class=\"mobile\" style=\"height:'+altezza+'px;\">'+data[0].Posizione+' %</div></div>'+\n'<div class=\"testo\"><div>Posizione: '+data[0].Posizione+' %</div>'+\n'<div>Livello: '+data[0].livello+' m</div>'+\n'<div class=\"simboli\"><div class=\"simbolo\" style=\"background-color:red;\">R</div><div class=\"simbolo\" style=\"background-color:lime;\">I</div></div>'+\n'</div>'+\n'</div>';",
               "applyDefaultMarkdownStyle" : true,
-              "markdownCss" : ".main{\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: space-around;\n}\n.container{\n    align-items: center;\n    text-align: center;\n    border: 1px solid black;\n    height: 300px;\n    width: 200px;\n}\n.paratoia{\n    width: 198px;\n    height: 200px;\n}\n.mobile{\n    width: 198px;\n    height: 100px;\n    align-content: center;\n    font-size: 25px;\n    color: white;\n    background: grey;\n}\n.testo{\n    font-size: 18px;\n    margin-top: 10px;\n}\n.simboli{\n    display:flex;\n    justify-content: space-around;\n    color: black;\n}\n.simbolo{\n    width: 30px;\n    padding: 0px 5px;\n    border-radius: 100%;\n}\n.verticale-linea{\n    position: absolute;\n    margin: 0px 95px;\n    border-left: 10px solid blue;\n}\n.orizzontale-linea{\n    position: absolute;\n    margin: 45px 0px;\n    border-bottom: 10px solid blue;\n}"
+              "markdownCss" : ".main{\n    width: 100%;\n    height: 70%;\n    display: flex;\n    align-items: center;\n    justify-content: space-around;\n}\n.container{\n    align-items: center;\n    text-align: center;\n    border: 1px solid black;\n    height: 300px;\n    width: 200px;\n}\n.paratoia{\n    width: 198px;\n    height: 200px;\n}\n.mobile{\n    width: 198px;\n    height: 100px;\n    align-content: center;\n    font-size: 25px;\n    color: white;\n    background: grey;\n}\n.testo{\n    font-size: 18px;\n    margin-top: 10px;\n}\n.simboli{\n    display:flex;\n    justify-content: space-around;\n    color: black;\n}\n.simbolo{\n    width: 30px;\n    padding: 0px 5px;\n    border-radius: 100%;\n}\n.verticale-linea{\n    position: absolute;\n    margin: 0px 95px;\n    border-left: 10px solid blue;\n}\n.orizzontale-linea{\n    position: absolute;\n    margin: 45px 0px;\n    border-bottom: 10px solid blue;\n}\n.title{\n    margin-top: 20px;\n    text-align: center;\n    font-size: 30px;\n}"
             },
             "title" : "Markdown/HTML Card",
             "showTitleIcon" : false,
@@ -7386,6 +7407,13 @@
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
+              }, {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Name",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.6969563304829218
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -7422,9 +7450,9 @@
             "settings" : {
               "useMarkdownTextFunction" : true,
               "markdownTextPattern" : "### Markdown/HTML card\n - **Current entity**: ${entityName}.\n - **Current value**: ${Random}.",
-              "markdownTextFunction" : "//var linea1=[\"verticale\",200,25,25];\n//var linea_verticale=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n//var linea_orizzontale=\"<div class='orizzontale-linea' style='width:200px;top:50px;left:50px;'></div>\";\n//var linea2=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n\nvar altezza=200-data[0].Posizione;\nreturn '<div class=\"main\">'+\n'<div class=\"container\">'+\n'<div class=\"paratoia\" style=\"background:'+data[0].color+';\"><div class=\"mobile\" style=\"height:'+altezza+'px;\">'+data[0].Posizione+' %</div></div>'+\n'<div class=\"testo\"><div>Posizione: '+data[0].Posizione+' %</div>'+\n'<div>Livello: '+data[0].livello+' m</div>'+\n'<div class=\"simboli\"><div class=\"simbolo\" style=\"background-color:red;\">R</div><div class=\"simbolo\" style=\"background-color:lime;\">I</div></div>'+\n'</div>'+\n'</div>';",
+              "markdownTextFunction" : "//var linea1=[\"verticale\",200,25,25];\n//var linea_verticale=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n//var linea_orizzontale=\"<div class='orizzontale-linea' style='width:200px;top:50px;left:50px;'></div>\";\n//var linea2=\"<div class='verticale-linea' style='height:200px;top:50px;left:50px;'></div>\";\n\nvar altezza=200-data[0].Posizione;\nreturn '<div class=title>'+data[0].Name+'</div><br>'+\n'<div class=\"main\">'+\n'<div class=\"container\">'+\n'<div class=\"paratoia\" style=\"background:'+data[0].color+';\"><div class=\"mobile\" style=\"height:'+altezza+'px;\">'+data[0].Posizione+' %</div></div>'+\n'<div class=\"testo\"><div>Posizione: '+data[0].Posizione+' %</div>'+\n'<div>Livello: '+data[0].livello+' m</div>'+\n'<div class=\"simboli\"><div class=\"simbolo\" style=\"background-color:red;\">R</div><div class=\"simbolo\" style=\"background-color:lime;\">I</div></div>'+\n'</div>'+\n'</div>';",
               "applyDefaultMarkdownStyle" : true,
-              "markdownCss" : ".main{\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: space-around;\n}\n.container{\n    align-items: center;\n    text-align: center;\n    border: 1px solid black;\n    height: 300px;\n    width: 200px;\n}\n.paratoia{\n    width: 198px;\n    height: 200px;\n}\n.mobile{\n    width: 198px;\n    height: 100px;\n    align-content: center;\n    font-size: 25px;\n    color: white;\n    background: grey;\n}\n.testo{\n    font-size: 18px;\n    margin-top: 10px;\n}\n.simboli{\n    display:flex;\n    justify-content: space-around;\n    color: black;\n}\n.simbolo{\n    width: 30px;\n    padding: 0px 5px;\n    border-radius: 100%;\n}\n.verticale-linea{\n    position: absolute;\n    margin: 0px 95px;\n    border-left: 10px solid blue;\n}\n.orizzontale-linea{\n    position: absolute;\n    margin: 45px 0px;\n    border-bottom: 10px solid blue;\n}"
+              "markdownCss" : ".main{\n    width: 100%;\n    height: 70%;\n    display: flex;\n    align-items: center;\n    justify-content: space-around;\n}\n.container{\n    align-items: center;\n    text-align: center;\n    border: 1px solid black;\n    height: 300px;\n    width: 200px;\n}\n.paratoia{\n    width: 198px;\n    height: 200px;\n}\n.mobile{\n    width: 198px;\n    height: 100px;\n    align-content: center;\n    font-size: 25px;\n    color: white;\n    background: grey;\n}\n.testo{\n    font-size: 18px;\n    margin-top: 10px;\n}\n.simboli{\n    display:flex;\n    justify-content: space-around;\n    color: black;\n}\n.simbolo{\n    width: 30px;\n    padding: 0px 5px;\n    border-radius: 100%;\n}\n.verticale-linea{\n    position: absolute;\n    margin: 0px 95px;\n    border-left: 10px solid blue;\n}\n.orizzontale-linea{\n    position: absolute;\n    margin: 45px 0px;\n    border-bottom: 10px solid blue;\n}\n.title{\n    margin-top: 20px;\n    text-align: center;\n    font-size: 30px;\n}"
             },
             "title" : "Markdown/HTML Card",
             "showTitleIcon" : false,
@@ -7890,26 +7918,26 @@
               "widgets" : {
                 "2948d86a-b041-f063-26f5-e9b436d8ab19" : {
                   "sizeX" : 6,
-                  "sizeY" : 5,
-                  "row" : 2,
+                  "sizeY" : 6,
+                  "row" : 0,
                   "col" : 0
                 },
                 "574aadbd-c9cb-eefd-7351-126b3026feb9" : {
                   "sizeX" : 6,
-                  "sizeY" : 5,
-                  "row" : 2,
+                  "sizeY" : 6,
+                  "row" : 0,
                   "col" : 6
                 },
                 "95b344e7-106f-88ac-609b-0dd5bfc2cce6" : {
                   "sizeX" : 6,
-                  "sizeY" : 5,
-                  "row" : 2,
+                  "sizeY" : 6,
+                  "row" : 0,
                   "col" : 12
                 },
                 "8ed8ed0c-ba9c-71c4-71f6-9c4fb2378ac4" : {
                   "sizeX" : 6,
-                  "sizeY" : 5,
-                  "row" : 2,
+                  "sizeY" : 6,
+                  "row" : 0,
                   "col" : 18
                 }
               },

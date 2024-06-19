@@ -330,7 +330,12 @@
               "dashThickness" : 0,
               "gaugeColor" : "#eeeeee",
               "showTitle" : true,
-              "gaugeType" : "arc"
+              "gaugeType" : "arc",
+              "barColor" : {
+                "type" : "constant",
+                "color" : "#2196f3",
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              }
             },
             "title" : "Gauge",
             "dropShadow" : true,
@@ -445,7 +450,12 @@
               "dashThickness" : 0,
               "gaugeColor" : "#eeeeee",
               "showTitle" : true,
-              "gaugeType" : "arc"
+              "gaugeType" : "arc",
+              "barColor" : {
+                "type" : "constant",
+                "color" : "#4CAF50",
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              }
             },
             "title" : "Gauge",
             "dropShadow" : true,
@@ -560,7 +570,12 @@
               "dashThickness" : 0,
               "gaugeColor" : "#eeeeee",
               "showTitle" : true,
-              "gaugeType" : "arc"
+              "gaugeType" : "arc",
+              "barColor" : {
+                "type" : "constant",
+                "color" : "#435B63",
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              }
             },
             "title" : "Gauge",
             "dropShadow" : true,
@@ -1053,7 +1068,12 @@
               "dashThickness" : 0,
               "gaugeColor" : "#eeeeee",
               "showTitle" : true,
-              "gaugeType" : "arc"
+              "gaugeType" : "arc",
+              "barColor" : {
+                "type" : "constant",
+                "color" : "#AA6448",
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              }
             },
             "title" : "Gauge",
             "dropShadow" : true,
@@ -3092,7 +3112,40 @@
               } ],
               "animation" : true,
               "animationDuration" : 500,
-              "animationRule" : "linear"
+              "animationRule" : "linear",
+              "barColor" : {
+                "type" : "gradient",
+                "color" : "#2196f3",
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';",
+                "rangeList" : {
+                  "advancedMode" : false,
+                  "range" : null,
+                  "rangeAdvanced" : [ {
+                    "from" : {
+                      "type" : "constant",
+                      "value" : null,
+                      "entityAlias" : "",
+                      "entityKey" : "",
+                      "entityKeyType" : "attribute"
+                    },
+                    "to" : {
+                      "type" : "constant",
+                      "value" : null,
+                      "entityAlias" : "",
+                      "entityKey" : "",
+                      "entityKeyType" : "attribute"
+                    },
+                    "color" : null
+                  } ]
+                },
+                "gradient" : {
+                  "advancedMode" : false,
+                  "gradient" : [ "#D91414", "#F5DD00", "#1AA74A" ],
+                  "gradientAdvanced" : null,
+                  "minValue" : 0,
+                  "maxValue" : 100
+                }
+              }
             },
             "title" : "Gauge",
             "dropShadow" : true,
@@ -3987,7 +4040,7 @@
             "padding" : "0px",
             "settings" : {
               "useMarkdownTextFunction" : false,
-              "markdownTextPattern" : "\n<div class='card'>\n\n\n<svg width=\"98\" height=\"228\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\">\n <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->\n <title>switch</title>\n <g class=\"layer\">\n  <title>Layer 1</title>\n  <circle cx=\"74\" cy=\"203.97\" fill=\"#FF0000\" id=\"svg_1\" r=\"21.47\" stroke=\"#000000\" stroke-width=\"5\"/>\n  <line fill=\"none\" id=\"open\" visibility=${invisible} stroke=\"#000000\" stroke-width=\"20\" x1=\"10\" x2=\"64\" y1=\"26.97\" y2=\"185.97\"/>\n  <circle cx=\"74\" cy=\"23.97\" fill=\"#FF0000\" id=\"svg_3\" r=\"21.47\" stroke=\"#000000\" stroke-width=\"5\"/>\n  <line fill=\"none\" id=\"close\" visibility=${visible} points=\"null\" stroke=\"#000000\" stroke-width=\"20\" x1=\"39.38\" x2=\"71.62\" y1=\"19.23\" y2=\"183.71\"/>\n </g>\n</svg>\n\n</div>",
+              "markdownTextPattern" : "\n<div class='card'>\n\n\n<svg width=\"98\" height=\"228\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\">\n <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->\n <title>switch</title>\n <g class=\"layer\">\n  <title>Layer 1</title>\n  <circle cx=\"74\" cy=\"203.97\" fill=\"#FFFFFF\" id=\"svg_1\" r=\"21.47\" stroke=\"#000000\" stroke-width=\"5\"/>\n  <line fill=\"none\" id=\"open\" visibility=${invisible} stroke=\"#000000\" stroke-width=\"20\" x1=\"10\" x2=\"64\" y1=\"26.97\" y2=\"185.97\"/>\n  <circle cx=\"74\" cy=\"23.97\" fill=\"#FFFFFF\" id=\"svg_3\" r=\"21.47\" stroke=\"#000000\" stroke-width=\"5\"/>\n  <line fill=\"none\" id=\"close\" visibility=${visible} points=\"null\" stroke=\"#000000\" stroke-width=\"20\" x1=\"39.38\" x2=\"71.62\" y1=\"19.23\" y2=\"183.71\"/>\n </g>\n</svg>\n\n</div>",
               "markdownTextFunction" : "return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
               "applyDefaultMarkdownStyle" : true,
               "markdownCss" : ""

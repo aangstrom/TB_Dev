@@ -1639,45 +1639,6 @@
           "row" : 0,
           "col" : 0,
           "id" : "e652e230-5c5d-2b9f-6e5d-6b6b3a2083c1"
-        },
-        "e16da8ce-0896-99a3-05f9-3e77d47443b7" : {
-          "typeFullFqn" : "system.cards.html_card",
-          "type" : "static",
-          "sizeX" : 7.5,
-          "sizeY" : 3,
-          "config" : {
-            "datasources" : [ {
-              "type" : "static",
-              "name" : "function",
-              "dataKeys" : [ {
-                "name" : "f(x)",
-                "type" : "function",
-                "label" : "Random",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.15479322438769105,
-                "funcBody" : "var value = prevValue + Math.random() * 100 - 50;\nvar multiplier = Math.pow(10, 2 || 0);\nvar value = Math.round(value * multiplier) / multiplier;\nif (value < -1000) {\n\tvalue = -1000;\n} else if (value > 1000) {\n\tvalue = 1000;\n}\nreturn value;"
-              } ]
-            } ],
-            "timewindow" : {
-              "realtime" : {
-                "timewindowMs" : 60000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "rgb(255, 255, 255)",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "8px",
-            "settings" : {
-              "cardHtml" : "<div class='card'>\n    <img src=\"/api/images/public/ph99YTK40dP19D2olHU7wMcZVlVSNdYv\" alt=\"compressor3.svg\" />\n</div>",
-              "cardCss" : ".card {\n    font-weight: bold;\n    font-size: 32px;\n    color: #999;\n    width: 50%;\n    height: 50%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}"
-            },
-            "title" : "HTML Card",
-            "dropShadow" : true
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "e16da8ce-0896-99a3-05f9-3e77d47443b7"
         }
       },
       "states" : {
@@ -1722,12 +1683,6 @@
                   "sizeY" : 2,
                   "row" : 20,
                   "col" : 38
-                },
-                "e16da8ce-0896-99a3-05f9-3e77d47443b7" : {
-                  "sizeX" : 15,
-                  "sizeY" : 12,
-                  "row" : 22,
-                  "col" : 0
                 }
               },
               "gridSettings" : {
@@ -1820,9 +1775,9 @@
         "selectedTab" : 0,
         "realtime" : {
           "realtimeType" : 0,
-          "timewindowMs" : 86400000,
+          "timewindowMs" : 604800000,
           "quickInterval" : "CURRENT_DAY",
-          "interval" : 300000
+          "interval" : 1800000
         },
         "aggregation" : {
           "type" : "AVG",

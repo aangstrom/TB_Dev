@@ -1949,7 +1949,7 @@
                 "dataToValue" : {
                   "type" : "NONE",
                   "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
-                  "compareToValue" : true
+                  "compareToValue" : "AA Energy"
                 }
               },
               "onUpdateState" : {
@@ -1969,7 +1969,7 @@
                 },
                 "valueToData" : {
                   "type" : "CONSTANT",
-                  "constantValue" : true,
+                  "constantValue" : "AA Energy",
                   "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */\nreturn value;"
                 }
               },
@@ -1990,7 +1990,7 @@
                 },
                 "valueToData" : {
                   "type" : "CONSTANT",
-                  "constantValue" : false,
+                  "constantValue" : "AA",
                   "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */ \n return value;"
                 }
               },
@@ -2241,13 +2241,13 @@
         },
         "51bc6e18-32c5-dfce-9732-b7701a5dc15e" : {
           "id" : "51bc6e18-32c5-dfce-9732-b7701a5dc15e",
-          "alias" : "Dashboard",
+          "alias" : "Current user",
           "filter" : {
             "type" : "singleEntity",
             "resolveMultiple" : false,
             "singleEntity" : {
-              "entityType" : "DASHBOARD",
-              "id" : "cd26d890-1f29-11ef-b44e-91c31f727eb7"
+              "entityType" : "CURRENT_USER",
+              "id" : "13814000-1dd2-11b2-8080-808080808080"
             }
           }
         }
@@ -2258,16 +2258,20 @@
           "filter" : "Energia",
           "keyFilters" : [ {
             "key" : {
-              "type" : "ATTRIBUTE",
-              "key" : "Energia"
+              "type" : "ENTITY_FIELD",
+              "key" : "type"
             },
-            "valueType" : "BOOLEAN",
+            "valueType" : "STRING",
             "predicates" : [ {
               "keyFilterPredicate" : {
                 "operation" : "EQUAL",
                 "value" : {
-                  "defaultValue" : true,
-                  "dynamicValue" : null
+                  "defaultValue" : false,
+                  "dynamicValue" : {
+                    "sourceType" : "CURRENT_USER",
+                    "sourceAttribute" : "Energia",
+                    "inherit" : false
+                  }
                 },
                 "type" : "BOOLEAN"
               },
@@ -2334,6 +2338,14 @@
   },
   "relations" : [ ],
   "attributes" : {
-    "SERVER_SCOPE" : [ ]
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Energia",
+      "lastUpdateTs" : 1719827123629,
+      "longValue" : null,
+      "strValue" : null
+    } ]
   }
 }

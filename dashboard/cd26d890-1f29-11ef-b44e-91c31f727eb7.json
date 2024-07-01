@@ -103,7 +103,7 @@
                 "name" : "Phase_B_power",
                 "type" : "timeseries",
                 "label" : "${Phase_B_Name}",
-                "color" : "#ffc107",
+                "color" : "#F5DD00",
                 "settings" : {
                   "hideDataByDefault" : false,
                   "disableDataHiding" : false,
@@ -285,6 +285,7 @@
               "type" : "entity",
               "name" : "",
               "entityAliasId" : "4889f10d-beb8-9c9c-cf0d-1ef87f24a627",
+              "filterId" : "06e8d0da-db33-18c8-f9e4-fce5609f3530",
               "dataKeys" : [ {
                 "name" : "temperature",
                 "type" : "timeseries",
@@ -299,23 +300,92 @@
                 "usePostProcessing" : false,
                 "postFuncBody" : null
               }, {
-                "name" : "temperature",
+                "name" : "humidity",
                 "type" : "timeseries",
-                "label" : "temperatura",
+                "label" : "Umidità",
                 "color" : "#4caf50",
                 "settings" : { },
-                "_hash" : 0.7804255740156987,
-                "units" : "°C",
-                "decimals" : 0,
+                "_hash" : 0.8030830027692326,
                 "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "return 5;"
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
               },
               "latestDataKeys" : [ ]
+            }, {
+              "type" : "entity",
+              "entityAliasId" : "56be956e-cd93-4c29-25f1-dba32d4aa533",
+              "filterId" : "06e8d0da-db33-18c8-f9e4-fce5609f3530",
+              "dataKeys" : [ {
+                "name" : "Phase_B_power",
+                "type" : "timeseries",
+                "label" : "${Phase_B_Name}",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.20450048136232768,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "Phase_C_power",
+                "type" : "timeseries",
+                "label" : "${Phase_C_Name}",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.9041905063609676,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "Phase_A_power",
+                "type" : "timeseries",
+                "label" : "${Phase_A_Name}",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.39143832014537927,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ {
+                "name" : "Phase_A_Name",
+                "type" : "attribute",
+                "label" : "Phase_A_Name",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.12162253819756952
+              }, {
+                "name" : "Phase_B_Name",
+                "type" : "attribute",
+                "label" : "Phase_B_Name",
+                "color" : "#8bc34a",
+                "settings" : { },
+                "_hash" : 0.9640315350268951
+              }, {
+                "name" : "Phase_C_Name",
+                "type" : "attribute",
+                "label" : "Phase_C_Name",
+                "color" : "#3f51b5",
+                "settings" : { },
+                "_hash" : 0.2734586093967426
+              } ]
             } ],
             "timewindow" : {
               "realtime" : {
@@ -628,19 +698,48 @@
                   "color" : {
                     "type" : "range",
                     "color" : "rgba(0, 0, 0, 0.87)",
-                    "rangeList" : [ {
-                      "from" : null,
-                      "to" : 5,
-                      "color" : "#3FA71A"
-                    }, {
-                      "from" : 5,
-                      "to" : 15,
-                      "color" : "#F36900"
-                    }, {
-                      "from" : 15,
-                      "to" : null,
-                      "color" : "#D81838"
-                    } ],
+                    "gradient" : {
+                      "advancedMode" : false,
+                      "gradient" : [ "rgba(0, 255, 0, 1)", "rgba(255, 0, 0, 1)" ],
+                      "gradientAdvanced" : [ {
+                        "source" : {
+                          "type" : "constant"
+                        },
+                        "color" : "rgba(0, 255, 0, 1)"
+                      }, {
+                        "source" : {
+                          "type" : "constant"
+                        },
+                        "color" : "rgba(255, 0, 0, 1)"
+                      } ],
+                      "minValue" : 0,
+                      "maxValue" : 100
+                    },
+                    "rangeList" : {
+                      "advancedMode" : false,
+                      "range" : [ {
+                        "from" : null,
+                        "to" : 17,
+                        "color" : "#D81838"
+                      }, {
+                        "from" : 17,
+                        "to" : 20,
+                        "color" : "#F36900"
+                      }, {
+                        "from" : 20,
+                        "to" : 26,
+                        "color" : "#3FA71A"
+                      }, {
+                        "from" : 26,
+                        "to" : 28,
+                        "color" : "#F36900"
+                      }, {
+                        "from" : 28,
+                        "to" : null,
+                        "color" : "#D81838"
+                      } ],
+                      "rangeAdvanced" : [ ]
+                    },
                     "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
                   },
                   "showArrow" : false
@@ -667,19 +766,22 @@
                   "color" : {
                     "type" : "range",
                     "color" : "rgba(0, 0, 0, 0.87)",
-                    "rangeList" : [ {
-                      "from" : null,
-                      "to" : 0,
-                      "color" : "#198038"
-                    }, {
-                      "from" : 0,
-                      "to" : 0,
-                      "color" : "#000000DE"
-                    }, {
-                      "from" : 0,
-                      "to" : null,
-                      "color" : "#D12730"
-                    } ],
+                    "rangeList" : {
+                      "advancedMode" : false,
+                      "range" : [ {
+                        "from" : null,
+                        "to" : 0,
+                        "color" : "#198038"
+                      }, {
+                        "from" : 0,
+                        "to" : 0,
+                        "color" : "#000000DE"
+                      }, {
+                        "from" : 0,
+                        "to" : null,
+                        "color" : "#D12730"
+                      } ]
+                    },
                     "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
                   },
                   "showArrow" : true
@@ -709,7 +811,10 @@
                   "color" : {
                     "type" : "constant",
                     "color" : "rgba(0, 0, 0, 0.38)",
-                    "rangeList" : [ ],
+                    "rangeList" : {
+                      "advancedMode" : false,
+                      "range" : [ ]
+                    },
                     "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
                   },
                   "showArrow" : false
@@ -827,7 +932,8 @@
                   "blur" : 3
                 }
               },
-              "autoScale" : true
+              "autoScale" : true,
+              "padding" : "18px"
             },
             "title" : "Temperatura",
             "dropShadow" : false,
@@ -836,7 +942,7 @@
               "fontSize" : "16px",
               "fontWeight" : 400
             },
-            "configMode" : "advanced",
+            "configMode" : "basic",
             "actions" : { },
             "showTitleIcon" : true,
             "titleIcon" : "bolt",
@@ -891,258 +997,13 @@
           "config" : {
             "datasources" : [ {
               "type" : "entity",
-              "name" : "",
-              "entityAliasId" : "56be956e-cd93-4c29-25f1-dba32d4aa533",
-              "dataKeys" : [ {
-                "name" : "Phase_A_power",
-                "type" : "timeseries",
-                "label" : "${Phase_A_Name}",
-                "color" : "#2196f3",
-                "settings" : {
-                  "yAxisId" : "default",
-                  "showInLegend" : true,
-                  "dataHiddenByDefault" : false,
-                  "type" : "line",
-                  "lineSettings" : {
-                    "showLine" : true,
-                    "step" : false,
-                    "stepType" : "start",
-                    "smooth" : false,
-                    "lineType" : "solid",
-                    "lineWidth" : 2,
-                    "showPoints" : false,
-                    "showPointLabel" : false,
-                    "pointLabelPosition" : "top",
-                    "pointLabelFont" : {
-                      "family" : "Roboto",
-                      "size" : 11,
-                      "sizeUnit" : "px",
-                      "style" : "normal",
-                      "weight" : "400",
-                      "lineHeight" : "1"
-                    },
-                    "pointLabelColor" : "rgba(0, 0, 0, 0.76)",
-                    "pointShape" : "emptyCircle",
-                    "pointSize" : 4,
-                    "fillAreaSettings" : {
-                      "type" : "none",
-                      "opacity" : 0.4,
-                      "gradient" : {
-                        "start" : 100,
-                        "end" : 0
-                      }
-                    }
-                  },
-                  "barSettings" : {
-                    "showBorder" : false,
-                    "borderWidth" : 2,
-                    "borderRadius" : 0,
-                    "showLabel" : false,
-                    "labelPosition" : "top",
-                    "labelFont" : {
-                      "family" : "Roboto",
-                      "size" : 11,
-                      "sizeUnit" : "px",
-                      "style" : "normal",
-                      "weight" : "400",
-                      "lineHeight" : "1"
-                    },
-                    "labelColor" : "rgba(0, 0, 0, 0.76)",
-                    "backgroundSettings" : {
-                      "type" : "none",
-                      "opacity" : 0.4,
-                      "gradient" : {
-                        "start" : 100,
-                        "end" : 0
-                      }
-                    }
-                  }
-                },
-                "_hash" : 0.29702609403249225,
-                "aggregationType" : null,
-                "units" : "W",
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "Phase_B_power",
-                "type" : "timeseries",
-                "label" : "${Phase_B_Name}",
-                "color" : "#F39507",
-                "settings" : {
-                  "yAxisId" : "default",
-                  "showInLegend" : true,
-                  "dataHiddenByDefault" : false,
-                  "type" : "line",
-                  "lineSettings" : {
-                    "showLine" : true,
-                    "step" : false,
-                    "stepType" : "start",
-                    "smooth" : false,
-                    "lineType" : "solid",
-                    "lineWidth" : 2,
-                    "showPoints" : false,
-                    "showPointLabel" : false,
-                    "pointLabelPosition" : "top",
-                    "pointLabelFont" : {
-                      "family" : "Roboto",
-                      "size" : 11,
-                      "sizeUnit" : "px",
-                      "style" : "normal",
-                      "weight" : "400",
-                      "lineHeight" : "1"
-                    },
-                    "pointLabelColor" : "rgba(0, 0, 0, 0.76)",
-                    "pointShape" : "emptyCircle",
-                    "pointSize" : 4,
-                    "fillAreaSettings" : {
-                      "type" : "none",
-                      "opacity" : 0.4,
-                      "gradient" : {
-                        "start" : 100,
-                        "end" : 0
-                      }
-                    }
-                  },
-                  "barSettings" : {
-                    "showBorder" : false,
-                    "borderWidth" : 2,
-                    "borderRadius" : 0,
-                    "showLabel" : false,
-                    "labelPosition" : "top",
-                    "labelFont" : {
-                      "family" : "Roboto",
-                      "size" : 11,
-                      "sizeUnit" : "px",
-                      "style" : "normal",
-                      "weight" : "400",
-                      "lineHeight" : "1"
-                    },
-                    "labelColor" : "rgba(0, 0, 0, 0.76)",
-                    "backgroundSettings" : {
-                      "type" : "none",
-                      "opacity" : 0.4,
-                      "gradient" : {
-                        "start" : 100,
-                        "end" : 0
-                      }
-                    }
-                  }
-                },
-                "_hash" : 0.5238754638516809,
-                "aggregationType" : null,
-                "units" : "W",
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "Phase_C_power",
-                "type" : "timeseries",
-                "label" : "${Phase_C_Name}",
-                "color" : "#f44336",
-                "settings" : {
-                  "yAxisId" : "default",
-                  "showInLegend" : true,
-                  "dataHiddenByDefault" : false,
-                  "type" : "line",
-                  "lineSettings" : {
-                    "showLine" : true,
-                    "step" : false,
-                    "stepType" : "start",
-                    "smooth" : false,
-                    "lineType" : "solid",
-                    "lineWidth" : 2,
-                    "showPoints" : false,
-                    "showPointLabel" : false,
-                    "pointLabelPosition" : "top",
-                    "pointLabelFont" : {
-                      "family" : "Roboto",
-                      "size" : 11,
-                      "sizeUnit" : "px",
-                      "style" : "normal",
-                      "weight" : "400",
-                      "lineHeight" : "1"
-                    },
-                    "pointLabelColor" : "rgba(0, 0, 0, 0.76)",
-                    "pointShape" : "emptyCircle",
-                    "pointSize" : 4,
-                    "fillAreaSettings" : {
-                      "type" : "none",
-                      "opacity" : 0.4,
-                      "gradient" : {
-                        "start" : 100,
-                        "end" : 0
-                      }
-                    }
-                  },
-                  "barSettings" : {
-                    "showBorder" : false,
-                    "borderWidth" : 2,
-                    "borderRadius" : 0,
-                    "showLabel" : false,
-                    "labelPosition" : "top",
-                    "labelFont" : {
-                      "family" : "Roboto",
-                      "size" : 11,
-                      "sizeUnit" : "px",
-                      "style" : "normal",
-                      "weight" : "400",
-                      "lineHeight" : "1"
-                    },
-                    "labelColor" : "rgba(0, 0, 0, 0.76)",
-                    "backgroundSettings" : {
-                      "type" : "none",
-                      "opacity" : 0.4,
-                      "gradient" : {
-                        "start" : 100,
-                        "end" : 0
-                      }
-                    }
-                  }
-                },
-                "_hash" : 0.33609874366016723,
-                "aggregationType" : null,
-                "units" : "W",
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              } ],
-              "alarmFilterConfig" : {
-                "statusList" : [ "ACTIVE" ]
-              },
-              "latestDataKeys" : [ {
-                "name" : "Phase_A_Name",
-                "type" : "attribute",
-                "label" : "Phase_A_Name",
-                "color" : "#607d8b",
-                "settings" : { },
-                "_hash" : 0.29996441772173865
-              }, {
-                "name" : "Phase_B_Name",
-                "type" : "attribute",
-                "label" : "Phase_B_Name",
-                "color" : "#ffc107",
-                "settings" : { },
-                "_hash" : 0.9405932579483269
-              }, {
-                "name" : "Phase_C_Name",
-                "type" : "attribute",
-                "label" : "Phase_C_Name",
-                "color" : "#9c27b0",
-                "settings" : { },
-                "_hash" : 0.4832383132107909
-              } ]
-            }, {
-              "type" : "entity",
               "entityAliasId" : "4889f10d-beb8-9c9c-cf0d-1ef87f24a627",
+              "filterId" : "06e8d0da-db33-18c8-f9e4-fce5609f3530",
               "dataKeys" : [ {
                 "name" : "temperature",
                 "type" : "timeseries",
                 "label" : "Temperatura",
-                "color" : "#8bc34a",
+                "color" : "#048AD3",
                 "settings" : {
                   "yAxisId" : "axis1",
                   "showInLegend" : true,
@@ -1214,7 +1075,7 @@
                 "name" : "humidity",
                 "type" : "timeseries",
                 "label" : "Umidità",
-                "color" : "#3f51b5",
+                "color" : "#8BC34A",
                 "settings" : {
                   "yAxisId" : "axis1",
                   "showInLegend" : true,
@@ -1287,6 +1148,253 @@
                 "statusList" : [ "ACTIVE" ]
               },
               "latestDataKeys" : [ ]
+            }, {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "56be956e-cd93-4c29-25f1-dba32d4aa533",
+              "filterId" : "06e8d0da-db33-18c8-f9e4-fce5609f3530",
+              "dataKeys" : [ {
+                "name" : "Phase_B_power",
+                "type" : "timeseries",
+                "label" : "${Phase_B_Name}",
+                "color" : "#F5DD00",
+                "settings" : {
+                  "yAxisId" : "default",
+                  "showInLegend" : true,
+                  "dataHiddenByDefault" : false,
+                  "type" : "line",
+                  "lineSettings" : {
+                    "showLine" : true,
+                    "step" : false,
+                    "stepType" : "start",
+                    "smooth" : false,
+                    "lineType" : "solid",
+                    "lineWidth" : 2,
+                    "showPoints" : false,
+                    "showPointLabel" : false,
+                    "pointLabelPosition" : "top",
+                    "pointLabelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "pointLabelColor" : "rgba(0, 0, 0, 0.76)",
+                    "pointShape" : "emptyCircle",
+                    "pointSize" : 4,
+                    "fillAreaSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  },
+                  "barSettings" : {
+                    "showBorder" : false,
+                    "borderWidth" : 2,
+                    "borderRadius" : 0,
+                    "showLabel" : false,
+                    "labelPosition" : "top",
+                    "labelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "labelColor" : "rgba(0, 0, 0, 0.76)",
+                    "backgroundSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  }
+                },
+                "_hash" : 0.5238754638516809,
+                "aggregationType" : null,
+                "units" : "W",
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "Phase_C_power",
+                "type" : "timeseries",
+                "label" : "${Phase_C_Name}",
+                "color" : "#435B63",
+                "settings" : {
+                  "yAxisId" : "default",
+                  "showInLegend" : true,
+                  "dataHiddenByDefault" : false,
+                  "type" : "line",
+                  "lineSettings" : {
+                    "showLine" : true,
+                    "step" : false,
+                    "stepType" : "start",
+                    "smooth" : false,
+                    "lineType" : "solid",
+                    "lineWidth" : 2,
+                    "showPoints" : false,
+                    "showPointLabel" : false,
+                    "pointLabelPosition" : "top",
+                    "pointLabelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "pointLabelColor" : "rgba(0, 0, 0, 0.76)",
+                    "pointShape" : "emptyCircle",
+                    "pointSize" : 4,
+                    "fillAreaSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  },
+                  "barSettings" : {
+                    "showBorder" : false,
+                    "borderWidth" : 2,
+                    "borderRadius" : 0,
+                    "showLabel" : false,
+                    "labelPosition" : "top",
+                    "labelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "labelColor" : "rgba(0, 0, 0, 0.76)",
+                    "backgroundSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  }
+                },
+                "_hash" : 0.33609874366016723,
+                "aggregationType" : null,
+                "units" : "W",
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "Phase_A_power",
+                "type" : "timeseries",
+                "label" : "${Phase_A_Name}",
+                "color" : "#F44336",
+                "settings" : {
+                  "yAxisId" : "default",
+                  "showInLegend" : true,
+                  "dataHiddenByDefault" : false,
+                  "type" : "line",
+                  "lineSettings" : {
+                    "showLine" : true,
+                    "step" : false,
+                    "stepType" : "start",
+                    "smooth" : false,
+                    "lineType" : "solid",
+                    "lineWidth" : 2,
+                    "showPoints" : false,
+                    "showPointLabel" : false,
+                    "pointLabelPosition" : "top",
+                    "pointLabelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "pointLabelColor" : "rgba(0, 0, 0, 0.76)",
+                    "pointShape" : "emptyCircle",
+                    "pointSize" : 4,
+                    "fillAreaSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  },
+                  "barSettings" : {
+                    "showBorder" : false,
+                    "borderWidth" : 2,
+                    "borderRadius" : 0,
+                    "showLabel" : false,
+                    "labelPosition" : "top",
+                    "labelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "labelColor" : "rgba(0, 0, 0, 0.76)",
+                    "backgroundSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  }
+                },
+                "_hash" : 0.29702609403249225,
+                "aggregationType" : null,
+                "units" : "W",
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ {
+                "name" : "Phase_A_Name",
+                "type" : "attribute",
+                "label" : "Phase_A_Name",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.29996441772173865
+              }, {
+                "name" : "Phase_B_Name",
+                "type" : "attribute",
+                "label" : "Phase_B_Name",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.9405932579483269
+              }, {
+                "name" : "Phase_C_Name",
+                "type" : "attribute",
+                "label" : "Phase_C_Name",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "_hash" : 0.4832383132107909
+              } ]
             } ],
             "timewindow" : {
               "hideInterval" : false,
@@ -1765,7 +1873,7 @@
                 "dataToValue" : {
                   "type" : "NONE",
                   "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
-                  "compareToValue" : true
+                  "compareToValue" : "AA Sensor"
                 }
               },
               "onUpdateState" : {
@@ -1785,7 +1893,7 @@
                 },
                 "valueToData" : {
                   "type" : "CONSTANT",
-                  "constantValue" : true,
+                  "constantValue" : "AA Sensor",
                   "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */\nreturn value;"
                 }
               },
@@ -1806,7 +1914,7 @@
                 },
                 "valueToData" : {
                   "type" : "CONSTANT",
-                  "constantValue" : false,
+                  "constantValue" : "false",
                   "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */ \n return value;"
                 }
               },
@@ -1941,16 +2049,16 @@
                   "persistentPollingInterval" : 1000
                 },
                 "getAttribute" : {
-                  "scope" : "SERVER_SCOPE",
-                  "key" : "Energia"
+                  "key" : "Energia",
+                  "scope" : "SERVER_SCOPE"
                 },
                 "getTimeSeries" : {
                   "key" : "state"
                 },
                 "dataToValue" : {
                   "type" : "NONE",
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
-                  "compareToValue" : "AA Energy"
+                  "compareToValue" : "AA Energy",
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
                 }
               },
               "onUpdateState" : {
@@ -1962,8 +2070,8 @@
                   "persistentPollingInterval" : 1000
                 },
                 "setAttribute" : {
-                  "scope" : "SERVER_SCOPE",
-                  "key" : "Energia"
+                  "key" : "Energia",
+                  "scope" : "SERVER_SCOPE"
                 },
                 "putTimeSeries" : {
                   "key" : "state"
@@ -1991,7 +2099,7 @@
                 },
                 "valueToData" : {
                   "type" : "CONSTANT",
-                  "constantValue" : "AA",
+                  "constantValue" : "false",
                   "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */ \n return value;"
                 }
               },

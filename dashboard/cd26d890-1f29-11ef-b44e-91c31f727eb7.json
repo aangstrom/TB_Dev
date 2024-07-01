@@ -94,100 +94,6 @@
                 "statusList" : [ "ACTIVE" ]
               },
               "latestDataKeys" : null
-            }, {
-              "type" : "entity",
-              "entityAliasId" : "56be956e-cd93-4c29-25f1-dba32d4aa533",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "Phase_B_power",
-                "type" : "timeseries",
-                "label" : "${Phase_B_Name}",
-                "color" : "#ffc107",
-                "settings" : {
-                  "hideDataByDefault" : false,
-                  "disableDataHiding" : false,
-                  "removeFromLegend" : false,
-                  "excludeFromStacking" : false,
-                  "showLines" : true,
-                  "lineWidth" : 1,
-                  "fillLines" : true,
-                  "fillLinesOpacity" : 0.4,
-                  "showPoints" : false,
-                  "tooltipValueFormatter" : "",
-                  "showSeparateAxis" : false,
-                  "axisTitle" : "",
-                  "axisMin" : null,
-                  "axisMax" : null,
-                  "axisPosition" : "left",
-                  "axisTickSize" : null,
-                  "axisTickDecimals" : null,
-                  "axisTicksFormatter" : "",
-                  "comparisonSettings" : {
-                    "showValuesForComparison" : true,
-                    "comparisonValuesLabel" : "",
-                    "color" : ""
-                  },
-                  "thresholds" : [ ]
-                },
-                "_hash" : 0.9172109255414342,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "Phase_C_power",
-                "type" : "timeseries",
-                "label" : "${Phase_C_Name}",
-                "color" : "#607d8b",
-                "settings" : { },
-                "_hash" : 0.2990512172807722,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "Phase_A_power",
-                "type" : "timeseries",
-                "label" : "${Phase_A_Name}",
-                "color" : "#F44336",
-                "settings" : { },
-                "_hash" : 0.2957165840395308,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              } ],
-              "alarmFilterConfig" : {
-                "statusList" : [ "ACTIVE" ]
-              },
-              "latestDataKeys" : [ {
-                "name" : "Phase_A_Name",
-                "type" : "attribute",
-                "label" : "Phase_A_Name",
-                "color" : "#9c27b0",
-                "settings" : { },
-                "_hash" : 0.3595142914697984
-              }, {
-                "name" : "Phase_B_Name",
-                "type" : "attribute",
-                "label" : "Phase_B_Name",
-                "color" : "#8bc34a",
-                "settings" : { },
-                "_hash" : 0.31202475987753675
-              }, {
-                "name" : "Phase_C_Name",
-                "type" : "attribute",
-                "label" : "Phase_C_Name",
-                "color" : "#3f51b5",
-                "settings" : { },
-                "_hash" : 0.7429169204036992
-              } ]
             } ],
             "timewindow" : {
               "realtime" : {
@@ -2255,7 +2161,7 @@
       "filters" : {
         "06e8d0da-db33-18c8-f9e4-fce5609f3530" : {
           "id" : "06e8d0da-db33-18c8-f9e4-fce5609f3530",
-          "filter" : "Type",
+          "filter" : "Energia",
           "keyFilters" : [ {
             "key" : {
               "type" : "ENTITY_FIELD",
@@ -2296,9 +2202,9 @@
         "selectedTab" : 0,
         "realtime" : {
           "realtimeType" : 0,
-          "timewindowMs" : 86400000,
+          "timewindowMs" : 300000,
           "quickInterval" : "CURRENT_DAY",
-          "interval" : 300000
+          "interval" : 30000
         },
         "aggregation" : {
           "type" : "AVG",

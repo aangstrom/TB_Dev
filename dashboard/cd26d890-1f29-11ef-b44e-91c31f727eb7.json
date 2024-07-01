@@ -304,11 +304,33 @@
                 "type" : "timeseries",
                 "label" : "Umidità",
                 "color" : "#4caf50",
-                "settings" : { },
+                "settings" : {
+                  "hideDataByDefault" : false,
+                  "disableDataHiding" : false,
+                  "removeFromLegend" : false,
+                  "excludeFromStacking" : false,
+                  "showLines" : false,
+                  "showPoints" : false,
+                  "tooltipValueFormatter" : "",
+                  "showSeparateAxis" : true,
+                  "axisTitle" : "",
+                  "axisMin" : 0,
+                  "axisMax" : 100,
+                  "axisPosition" : "left",
+                  "axisTickSize" : null,
+                  "axisTickDecimals" : null,
+                  "axisTicksFormatter" : "",
+                  "comparisonSettings" : {
+                    "showValuesForComparison" : true,
+                    "comparisonValuesLabel" : "",
+                    "color" : ""
+                  },
+                  "thresholds" : [ ]
+                },
                 "_hash" : 0.8030830027692326,
                 "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
+                "units" : "%",
+                "decimals" : 2,
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
@@ -1081,7 +1103,7 @@
                 "label" : "Umidità",
                 "color" : "#8BC34A",
                 "settings" : {
-                  "yAxisId" : "axis1",
+                  "yAxisId" : "axis2",
                   "showInLegend" : true,
                   "dataHiddenByDefault" : false,
                   "type" : "line",
@@ -1104,6 +1126,8 @@
                       "lineHeight" : "1"
                     },
                     "pointLabelColor" : "rgba(0, 0, 0, 0.76)",
+                    "enablePointLabelBackground" : false,
+                    "pointLabelBackground" : "rgba(255,255,255,0.56)",
                     "pointShape" : "emptyCircle",
                     "pointSize" : 4,
                     "fillAreaSettings" : {
@@ -1130,6 +1154,8 @@
                       "lineHeight" : "1"
                     },
                     "labelColor" : "rgba(0, 0, 0, 0.76)",
+                    "enableLabelBackground" : false,
+                    "labelBackground" : "rgba(255,255,255,0.56)",
                     "backgroundSettings" : {
                       "type" : "none",
                       "opacity" : 0.4,
@@ -1138,6 +1164,12 @@
                         "end" : 0
                       }
                     }
+                  },
+                  "tooltipValueFormatter" : null,
+                  "comparisonSettings" : {
+                    "showValuesForComparison" : false,
+                    "comparisonValuesLabel" : "",
+                    "color" : ""
                   }
                 },
                 "_hash" : 0.232538802809378,
@@ -1425,12 +1457,46 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
+              "comparisonEnabled" : false,
+              "timeForComparison" : "previousInterval",
+              "comparisonCustomIntervalValue" : 7200000,
+              "comparisonXAxis" : {
+                "show" : true,
+                "label" : "",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "600",
+                  "lineHeight" : "1"
+                },
+                "labelColor" : "rgba(0, 0, 0, 0.54)",
+                "position" : "top",
+                "showTickLabels" : true,
+                "tickLabelFont" : {
+                  "family" : "Roboto",
+                  "size" : 10,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "400",
+                  "lineHeight" : "1"
+                },
+                "tickLabelColor" : "rgba(0, 0, 0, 0.54)",
+                "ticksFormat" : { },
+                "showTicks" : true,
+                "ticksColor" : "rgba(0, 0, 0, 0.54)",
+                "showLine" : true,
+                "lineColor" : "rgba(0, 0, 0, 0.54)",
+                "showSplitLines" : true,
+                "splitLinesColor" : "rgba(0, 0, 0, 0.12)"
+              },
               "yAxes" : {
                 "default" : {
-                  "units" : null,
+                  "units" : "W",
                   "decimals" : 0,
                   "show" : true,
-                  "label" : "Energy",
+                  "label" : "Energia",
                   "labelFont" : {
                     "family" : "Roboto",
                     "size" : 12,
@@ -1465,7 +1531,7 @@
                   "units" : "°C",
                   "decimals" : 1,
                   "show" : true,
-                  "label" : "Temperature",
+                  "label" : "Temperatura",
                   "labelFont" : {
                     "family" : "Roboto",
                     "size" : 12,
@@ -1497,11 +1563,57 @@
                   "order" : 1,
                   "min" : 0,
                   "max" : 35
+                },
+                "axis2" : {
+                  "units" : "%",
+                  "decimals" : 2,
+                  "show" : true,
+                  "label" : "Umidità",
+                  "labelFont" : {
+                    "family" : "Roboto",
+                    "size" : 12,
+                    "sizeUnit" : "px",
+                    "style" : "normal",
+                    "weight" : "600",
+                    "lineHeight" : "1"
+                  },
+                  "labelColor" : "rgba(0, 0, 0, 0.54)",
+                  "position" : "left",
+                  "showTickLabels" : true,
+                  "tickLabelFont" : {
+                    "family" : "Roboto",
+                    "size" : 12,
+                    "sizeUnit" : "px",
+                    "style" : "normal",
+                    "weight" : "400",
+                    "lineHeight" : "1"
+                  },
+                  "tickLabelColor" : "rgba(0, 0, 0, 0.54)",
+                  "ticksFormatter" : null,
+                  "showTicks" : true,
+                  "ticksColor" : "rgba(0, 0, 0, 0.54)",
+                  "showLine" : true,
+                  "lineColor" : "rgba(0, 0, 0, 0.54)",
+                  "showSplitLines" : true,
+                  "splitLinesColor" : "rgba(0, 0, 0, 0.12)",
+                  "id" : "axis2",
+                  "order" : 2,
+                  "min" : 0,
+                  "max" : 100,
+                  "ticksGenerator" : null,
+                  "interval" : null,
+                  "splitNumber" : null
                 }
               },
               "thresholds" : [ ],
               "dataZoom" : false,
               "stack" : false,
+              "grid" : {
+                "show" : false,
+                "backgroundColor" : null,
+                "borderWidth" : 1,
+                "borderColor" : "#ccc"
+              },
               "xAxis" : {
                 "show" : true,
                 "label" : "",
@@ -1547,6 +1659,15 @@
                 }
               },
               "showLegend" : true,
+              "legendColumnTitleFont" : {
+                "family" : "Roboto",
+                "size" : 12,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "16px"
+              },
+              "legendColumnTitleColor" : "rgba(0, 0, 0, 0.38)",
               "legendLabelFont" : {
                 "family" : "Roboto",
                 "size" : 12,
@@ -1556,6 +1677,15 @@
                 "lineHeight" : "16px"
               },
               "legendLabelColor" : "rgba(0, 0, 0, 0.76)",
+              "legendValueFont" : {
+                "family" : "Roboto",
+                "size" : 12,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "500",
+                "lineHeight" : "16px"
+              },
+              "legendValueColor" : "rgba(0, 0, 0, 0.87)",
               "legendConfig" : {
                 "direction" : "column",
                 "position" : "bottom",
@@ -1568,6 +1698,15 @@
               },
               "showTooltip" : true,
               "tooltipTrigger" : "axis",
+              "tooltipLabelFont" : {
+                "family" : "Roboto",
+                "size" : 12,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "16px"
+              },
+              "tooltipLabelColor" : "rgba(0, 0, 0, 0.76)",
               "tooltipValueFont" : {
                 "family" : "Roboto",
                 "size" : 12,
@@ -1577,6 +1716,7 @@
                 "lineHeight" : "16px"
               },
               "tooltipValueColor" : "rgba(0, 0, 0, 0.76)",
+              "tooltipValueFormatter" : null,
               "tooltipShowDate" : true,
               "tooltipDateFormat" : {
                 "format" : null,
@@ -1639,10 +1779,7 @@
             },
             "titleColor" : "rgba(0, 0, 0, 0.87)",
             "titleTooltip" : "",
-            "widgetStyle" : {
-              "background" : "var(--tb-primary-500)",
-              "color" : "white"
-            },
+            "widgetStyle" : null,
             "widgetCss" : "",
             "pageSize" : 1024,
             "units" : "",

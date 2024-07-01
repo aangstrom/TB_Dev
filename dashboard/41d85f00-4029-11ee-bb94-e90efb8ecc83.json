@@ -36,7 +36,7 @@
             },
             "showTitle" : true,
             "backgroundColor" : "rgb(255, 255, 255)",
-            "color" : "rgba(0, 0, 0, 0.87)",
+            "color" : "rgb(0, 0, 0)",
             "padding" : "4px",
             "settings" : {
               "nodeRelationQueryFunction" : "var entity = nodeCtx.entity;\nvar query = {\n    parameters: {\n        rootId: entity.id.id,\n        rootType: entity.id.entityType,\n        direction: \"FROM\",\n        maxLevel: 1\n    },\n    filters: [{\n        relationType: \"Contains\",\n        entityTypes: []\n    }]\n};\nreturn query;\n\n/**\n\n// Function should return relations query object for current node used to fetch entity children.\n// Function can return 'default' string value. In this case default relations query will be used.\n\n// The following example code will construct simple relations query that will fetch relations of type 'Contains'\n// from the current entity.\n\nvar entity = nodeCtx.entity;\nvar query = {\n    parameters: {\n        rootId: entity.id.id,\n        rootType: entity.id.entityType,\n        direction: \"FROM\",\n        maxLevel: 1\n    },\n    filters: [{\n        relationType: \"Contains\",\n        entityTypes: []\n    }]\n};\nreturn query;\n\n**/\n",
@@ -61,7 +61,7 @@
               "type" : "entity",
               "name" : null,
               "entityAliasId" : "2f1efd07-3e5a-d727-2354-a151b2f61f3b",
-              "filterId" : "7505e418-dc63-61da-4ec0-e0ee90d8cc96",
+              "filterId" : null,
               "dataKeys" : [ {
                 "name" : "name",
                 "type" : "attribute",
@@ -106,7 +106,10 @@
                 "statusList" : [ "ACTIVE" ]
               }
             } ],
-            "widgetStyle" : { },
+            "widgetStyle" : {
+              "background" : "var(--tb-primary-500)",
+              "color" : "white"
+            },
             "actions" : {
               "nodeSelected" : [ {
                 "name" : "Apri Dettagli",
@@ -3431,7 +3434,7 @@
             "titleTooltip" : "",
             "dropShadow" : false,
             "enableFullscreen" : false,
-            "widgetStyle" : { },
+            "widgetStyle" : null,
             "titleStyle" : {
               "fontSize" : "16px",
               "fontWeight" : 400
@@ -3537,7 +3540,7 @@
               "type" : "entity",
               "name" : null,
               "entityAliasId" : "2f1efd07-3e5a-d727-2354-a151b2f61f3b",
-              "filterId" : "7505e418-dc63-61da-4ec0-e0ee90d8cc96",
+              "filterId" : null,
               "dataKeys" : [ {
                 "name" : "name",
                 "type" : "attribute",
@@ -3582,7 +3585,10 @@
                 "statusList" : [ "ACTIVE" ]
               }
             } ],
-            "widgetStyle" : { },
+            "widgetStyle" : {
+              "background" : "var(--tb-primary-500)",
+              "color" : "white"
+            },
             "actions" : {
               "nodeSelected" : [ {
                 "name" : "Apri Dettagli",

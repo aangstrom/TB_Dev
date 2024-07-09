@@ -2055,6 +2055,51 @@
           "row" : 0,
           "col" : 0,
           "id" : "c1824c35-46f9-933e-a57f-d5fb43b19a96"
+        },
+        "78675eb0-5e9c-3b49-e70e-eeb461d24ee0" : {
+          "typeFullFqn" : "tenant.camera_viewer",
+          "type" : "static",
+          "sizeX" : 5.5,
+          "sizeY" : 5.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "static",
+              "name" : "function",
+              "dataKeys" : [ {
+                "name" : "f(x)",
+                "type" : "function",
+                "label" : "Random",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.15479322438769105,
+                "funcBody" : "var value = prevValue + Math.random() * 100 - 50;\nvar multiplier = Math.pow(10, 2 || 0);\nvar value = Math.round(value * multiplier) / multiplier;\nif (value < -1000) {\n\tvalue = -1000;\n} else if (value > 1000) {\n\tvalue = 1000;\n}\nreturn value;"
+              } ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "title" : "Title",
+              "subtitle" : "Subtitle"
+            },
+            "title" : "Camera Viewer",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "enableDataExport" : false,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "78675eb0-5e9c-3b49-e70e-eeb461d24ee0"
         }
       },
       "states" : {
@@ -2111,6 +2156,12 @@
                   "sizeY" : 2,
                   "row" : 11,
                   "col" : 23
+                },
+                "78675eb0-5e9c-3b49-e70e-eeb461d24ee0" : {
+                  "sizeX" : 11,
+                  "sizeY" : 11,
+                  "row" : 22,
+                  "col" : 0
                 }
               },
               "gridSettings" : {

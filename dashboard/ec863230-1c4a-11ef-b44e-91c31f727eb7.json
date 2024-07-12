@@ -834,10 +834,16 @@
               "dataKeys" : [ {
                 "name" : "oil_level",
                 "type" : "attribute",
-                "label" : "oil_level",
+                "label" : "Fuel Level",
                 "color" : "#2196f3",
                 "settings" : { },
-                "_hash" : 0.35981986349957196
+                "_hash" : 0.35981986349957196,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -872,15 +878,16 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "labelPosition" : "top",
               "layout" : "horizontal",
+              "autoScale" : true,
               "showLabel" : true,
               "labelFont" : {
                 "family" : "Roboto",
                 "size" : 16,
                 "sizeUnit" : "px",
                 "style" : "normal",
-                "weight" : "500"
+                "weight" : "500",
+                "lineHeight" : "1.5"
               },
               "labelColor" : {
                 "type" : "constant",
@@ -890,70 +897,79 @@
               "showIcon" : true,
               "iconSize" : 40,
               "iconSizeUnit" : "px",
-              "icon" : "mdi:leaf",
+              "icon" : "mdi:fuel",
               "iconColor" : {
                 "type" : "range",
                 "color" : "rgba(0, 0, 0, 0.87)",
-                "rangeList" : [ {
-                  "from" : 0,
-                  "to" : 10,
-                  "color" : "#4B70DD"
-                }, {
-                  "from" : 10,
-                  "to" : 50,
-                  "color" : "#FFA600"
-                }, {
-                  "from" : 50,
-                  "to" : 90,
-                  "color" : "#F36900"
-                }, {
-                  "from" : 90,
-                  "to" : null,
-                  "color" : "#D81838"
-                } ],
-                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';",
+                "rangeList" : {
+                  "advancedMode" : false,
+                  "range" : [ {
+                    "from" : 0,
+                    "to" : 10,
+                    "color" : "#4B70DD"
+                  }, {
+                    "from" : 10,
+                    "to" : 50,
+                    "color" : "#FFA600"
+                  }, {
+                    "from" : 50,
+                    "to" : 90,
+                    "color" : "#F36900"
+                  }, {
+                    "from" : 90,
+                    "to" : null,
+                    "color" : "#D81838"
+                  } ]
+                }
               },
               "valueFont" : {
+                "family" : "Roboto",
                 "size" : 36,
                 "sizeUnit" : "px",
-                "family" : "Roboto",
+                "style" : "normal",
                 "weight" : "500",
-                "style" : "normal"
+                "lineHeight" : "100%"
               },
               "valueColor" : {
                 "type" : "range",
                 "color" : "rgba(0, 0, 0, 0.87)",
                 "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';",
-                "rangeList" : [ {
-                  "from" : 0,
-                  "to" : 10,
-                  "color" : "#4B70DD"
-                }, {
-                  "from" : 10,
-                  "to" : 50,
-                  "color" : "#FFA600"
-                }, {
-                  "from" : 50,
-                  "to" : 90,
-                  "color" : "#F36900"
-                }, {
-                  "from" : 90,
-                  "to" : null,
-                  "color" : "#D81838"
-                } ]
+                "rangeList" : {
+                  "advancedMode" : false,
+                  "range" : [ {
+                    "from" : 0,
+                    "to" : 10,
+                    "color" : "#4B70DD"
+                  }, {
+                    "from" : 10,
+                    "to" : 50,
+                    "color" : "#FFA600"
+                  }, {
+                    "from" : 50,
+                    "to" : 90,
+                    "color" : "#F36900"
+                  }, {
+                    "from" : 90,
+                    "to" : null,
+                    "color" : "#D81838"
+                  } ]
+                }
               },
               "showDate" : true,
               "dateFormat" : {
                 "format" : null,
                 "lastUpdateAgo" : true,
-                "custom" : false
+                "custom" : false,
+                "auto" : false
               },
               "dateFont" : {
                 "family" : "Roboto",
                 "size" : 12,
                 "sizeUnit" : "px",
                 "style" : "normal",
-                "weight" : "500"
+                "weight" : "500",
+                "lineHeight" : "1.33"
               },
               "dateColor" : {
                 "type" : "constant",
@@ -968,8 +984,7 @@
                   "color" : "rgba(255,255,255,0.72)",
                   "blur" : 3
                 }
-              },
-              "autoScale" : true
+              }
             },
             "title" : "Horizontal humidity card",
             "dropShadow" : true,
@@ -2346,11 +2361,11 @@
               "autoScale" : true,
               "showLabel" : true,
               "labelFont" : {
+                "family" : "Roboto",
                 "size" : 20,
                 "sizeUnit" : "px",
-                "family" : "Roboto",
-                "weight" : "500",
                 "style" : "normal",
+                "weight" : "500",
                 "lineHeight" : "1.5"
               },
               "labelColor" : {
@@ -2361,7 +2376,7 @@
               "showIcon" : true,
               "iconSize" : 40,
               "iconSizeUnit" : "px",
-              "icon" : "mdi:oil-lamp",
+              "icon" : "mdi:oil",
               "iconColor" : {
                 "type" : "constant",
                 "color" : "#5469FF",

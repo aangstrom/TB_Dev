@@ -4301,6 +4301,141 @@
           "row" : 0,
           "col" : 0,
           "id" : "cc142e79-2245-365f-b078-40fc7f1bc150"
+        },
+        "0485ba35-a510-75e8-8a0e-0f53609b1b7b" : {
+          "typeFullFqn" : "system.cards.markdown_card",
+          "type" : "latest",
+          "sizeX" : 5,
+          "sizeY" : 3.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "device",
+              "name" : "",
+              "deviceId" : "d7281f60-1c5a-11ef-b44e-91c31f727eb7",
+              "entityAliasId" : null,
+              "dataKeys" : [ {
+                "name" : "state",
+                "type" : "attribute",
+                "label" : "state",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.883580409571662,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : 0,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "return Math.round(value);"
+              }, {
+                "name" : "state",
+                "type" : "attribute",
+                "label" : "paratoia_pos",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.48138080654374127,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : 0,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "return 178-value;"
+              }, {
+                "name" : "led_value",
+                "type" : "attribute",
+                "label" : "led_value",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.2916973482229335
+              }, {
+                "name" : "led_value",
+                "type" : "attribute",
+                "label" : "close_status",
+                "color" : "#607d8b",
+                "settings" : { },
+                "_hash" : 0.0812465122941608,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if (value == 'true') {\n  return \"Visible\";\n} else {\n  return \"Hidden\";\n}\n\n"
+              }, {
+                "name" : "led_value",
+                "type" : "attribute",
+                "label" : "open_status",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.9295425894114557,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if (value != 'true') {\n  return \"Visible\";\n} else {\n  return \"Hidden\";\n}"
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1716303365849,
+                  "endTimeMs" : 1716389765849
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "useMarkdownTextFunction" : false,
+              "markdownTextPattern" : "\n<div class='card'>\n\n\n<svg width=\"640\" height=\"480\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\">\n <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->\n\n <g class=\"layer\">\n  <title>Layer 1</title>\n  <rect fill=\"#e5e5e5\" height=\"373\" id=\"svg_1\" stroke=\"#666666\" width=\"194\" x=\"61.37\" y=\"55.37\"/>\n  <rect fill=\"#ffffff\" height=\"178\" id=\"svg_2\" stroke=\"#000000\" stroke-width=\"0\" transform=\"matrix(1 0 0 1 0 0)\" width=\"193\" x=\"61.94\" y=\"150.44\"/>\n  <rect fill=\"#005fbf\" height=\"70.25\" id=\"svg_38\" stroke=\"#000000\" stroke-width=\"0\" transform=\"matrix(1 0 0 1 0 0)\" width=\"60\" x=\"177.07\" y=\"243.37\"/>\n  <line fill=\"none\" id=\"svg_3\" stroke=\"#000000\" stroke-width=\"0\" transform=\"matrix(1 0 0 1 0 0)\" x1=\"157.69\" x2=\"158.19\" y1=\"56.94\" y2=\"145.94\"/>\n  <rect fill=\"#cccccc\" height=\"91.5\" id=\"svg_4\" stroke=\"#000000\" stroke-width=\"0\" width=\"3\" x=\"158.06\" y=\"55.44\"/>\n  <rect fill=\"#b2b2b2\" height=\"98\" id=\"svg_6\" stroke=\"#000000\" stroke-width=\"0\" transform=\"matrix(1 0 0 1 0 0)\" width=\"3.5\" x=\"159.06\" y=\"327.18\"/>\n  <circle cx=\"111.81\" cy=\"87.06\" fill=\"#7f7f7f\" id=\"svg_7\" r=\"16.98\" stroke=\"#000000\" stroke-width=\"0\"/>\n  <line fill=\"none\" id=\"svg_8\" stroke=\"#000000\" stroke-width=\"3\" x1=\"112.06\" x2=\"112.06\" y1=\"79.31\" y2=\"94.81\"/>\n  <line fill=\"none\" id=\"svg_9\" stroke=\"#000000\" stroke-width=\"3\" x1=\"104.56\" x2=\"119.56\" y1=\"87.06\" y2=\"87.06\"/>\n  <circle cx=\"208.38\" cy=\"87\" fill=\"#7f7f7f\" id=\"svg_12\" r=\"16.98\" stroke=\"#000000\" stroke-width=\"0\"/>\n  <line fill=\"none\" id=\"svg_11\" stroke=\"#000000\" stroke-width=\"3\" x1=\"208.63\" x2=\"208.63\" y1=\"79.25\" y2=\"94.75\"/>\n  <line fill=\"none\" id=\"svg_10\" stroke=\"#000000\" stroke-width=\"3\" x1=\"201.13\" x2=\"216.13\" y1=\"87\" y2=\"87\"/>\n  <circle cx=\"110.88\" cy=\"391.75\" fill=\"#7f7f7f\" id=\"svg_15\" r=\"16.98\" stroke=\"#000000\" stroke-width=\"0\"/>\n  <line fill=\"none\" id=\"svg_14\" stroke=\"#000000\" stroke-width=\"3\" x1=\"111.13\" x2=\"111.13\" y1=\"384\" y2=\"399.5\"/>\n  <line fill=\"none\" id=\"svg_13\" stroke=\"#000000\" stroke-width=\"3\" x1=\"103.63\" x2=\"118.63\" y1=\"391.75\" y2=\"391.75\"/>\n  <circle cx=\"209.88\" cy=\"392\" fill=\"#7f7f7f\" id=\"svg_18\" r=\"16.98\" stroke=\"#000000\" stroke-width=\"0\"/>\n  <line fill=\"none\" id=\"svg_17\" stroke=\"#000000\" stroke-width=\"3\" transform=\"matrix(1 0 0 1 0 0)\" x1=\"210.13\" x2=\"210.13\" y1=\"384.25\" y2=\"399.75\"/>\n  <line fill=\"none\" id=\"svg_16\" stroke=\"#000000\" stroke-width=\"3\" x1=\"202.63\" x2=\"217.63\" y1=\"392\" y2=\"392\"/>\n  <line fill=\"none\" id=\"svg_19\" stroke=\"#007fff\" stroke-width=\"8\" transform=\"matrix(1 0 0 1 0 0)\" x1=\"117\" x2=\"254\" y1=\"164.12\" y2=\"164.12\"/>\n  <text fill=\"#007fff\" font-family=\"Helvetica\" font-size=\"16\" font-weight=\"bold\" id=\"svg_20\" stroke=\"#000000\" stroke-width=\"0\" text-anchor=\"middle\" x=\"90\" xml:space=\"preserve\" y=\"169.62\">CHINT</text>\n  <rect fill=\"#005fbf\" height=\"70.25\" id=\"svg_21\" stroke=\"#000000\" stroke-width=\"0\" transform=\"matrix(1 0 0 1 0 0)\" width=\"60\" x=\"83.12\" y=\"243\"/>\n  <line fill=\"none\" id=\"svg_24\" stroke=\"#56aaff\" stroke-width=\"2\" transform=\"matrix(1 0 0 1 0 0)\" x1=\"87.22\" x2=\"138.72\" y1=\"268.84\" y2=\"268.84\"/>\n  <line fill=\"none\" id=\"svg_25\" stroke=\"#56aaff\" stroke-width=\"3\" transform=\"matrix(1 0 0 1 0 0)\" x1=\"87.47\" x2=\"138.97\" y1=\"274.1\" y2=\"274.1\"/>\n  <text fill=\"#007fff\" font-family=\"Helvetica\" font-size=\"11\" font-weight=\"bold\" id=\"svg_29\" stroke=\"#56aaff\" stroke-width=\"0\" text-anchor=\"middle\" transform=\"matrix(1 0 0 1 0 0)\" x=\"111.47\" xml:space=\"preserve\" y=\"258.66\">O  OFF</text>\n  <line fill=\"none\" id=\"svg_30\" stroke=\"#56aaff\" stroke-width=\"3\" transform=\"matrix(1 0 0 1 0 0)\" x1=\"87.62\" x2=\"139.12\" y1=\"283.25\" y2=\"283.25\"/>\n  <line fill=\"none\" id=\"svg_31\" stroke=\"#56aaff\" stroke-width=\"2\" transform=\"matrix(1 0 0 1 0 0)\" x1=\"87.62\" x2=\"139.12\" y1=\"288.75\" y2=\"288.75\"/>\n  <text fill=\"#007fff\" font-family=\"Helvetica\" font-size=\"11\" font-weight=\"bold\" id=\"svg_32\" stroke=\"#56aaff\" stroke-width=\"0\" text-anchor=\"middle\" transform=\"matrix(1 0 0 1 0 0)\" x=\"111.37\" xml:space=\"preserve\" y=\"306.33\">1  ON</text>\n  <line fill=\"none\" id=\"svg_37\" stroke=\"#56aaff\" stroke-width=\"2\" transform=\"matrix(1 0 0 1 0 0)\" x1=\"180.98\" x2=\"232.48\" y1=\"268.68\" y2=\"268.68\"/>\n  <line fill=\"none\" id=\"svg_36\" stroke=\"#56aaff\" stroke-width=\"3\" transform=\"matrix(1 0 0 1 0 0)\" x1=\"181.23\" x2=\"232.73\" y1=\"273.93\" y2=\"273.93\"/>\n  <text fill=\"#007fff\" font-family=\"Helvetica\" font-size=\"11\" font-weight=\"bold\" id=\"svg_35\" stroke=\"#56aaff\" stroke-width=\"0\" text-anchor=\"middle\" transform=\"matrix(1 0 0 1 0 0)\" x=\"205.23\" xml:space=\"preserve\" y=\"258.49\">O  OFF</text>\n  <line fill=\"none\" id=\"svg_34\" stroke=\"#56aaff\" stroke-width=\"3\" transform=\"matrix(1 0 0 1 0 0)\" x1=\"181.38\" x2=\"232.88\" y1=\"283.08\" y2=\"283.08\"/>\n  <text fill=\"#007fff\" font-family=\"Helvetica\" font-size=\"11\" font-weight=\"bold\" id=\"svg_33\" stroke=\"#56aaff\" stroke-width=\"0\" text-anchor=\"middle\" transform=\"matrix(1 0 0 1 0 0)\" x=\"205.13\" xml:space=\"preserve\" y=\"306.16\">1  ON</text>\n  <line fill=\"none\" id=\"svg_39\" stroke=\"#56aaff\" stroke-width=\"2\" transform=\"matrix(1 0 0 1 0 0)\" x1=\"181.32\" x2=\"232.82\" y1=\"289\" y2=\"289\"/>\n  <rect fill=\"#005fbf\" height=\"38.25\" id=\"open\" visibility=${open_status} rx=\"3\" ry=\"3\" stroke=\"#000000\" stroke-width=\"0\" transform=\"matrix(1 0 0 1 0 0)\" width=\"181\" x=\"66.87\" y=\"276\"/>\n  <rect fill=\"#005fbf\" height=\"38.25\" id=\"close\" visibility=${close_status} rx=\"3\" ry=\"3\" stroke=\"#000000\" stroke-width=\"0\" transform=\"matrix(-0.999991 -0.00413934 0.00413934 -0.999991 838.308 399.733)\" width=\"181\" x=\"590.84\" y=\"120.7\"/>\n  <g id=\"led\" visibility=${open_status}>\n   <rect fill=\"#7fff00\" height=\"9.5\" id=\"led_off\" stroke=\"#000000\" stroke-width=\"0\" width=\"27.5\" x=\"193.69\" y=\"184.31\"/>\n   <rect fill=\"#ff0000\" height=\"9.5\" id=\"svg_5\" stroke=\"#000000\" stroke-width=\"0\" width=\"27.5\" x=\"194\" y=\"197.5\"/>\n  </g>\n </g>\n</svg>\n\n\n\n<svg width=\"98\" height=\"228\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\">\n <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->\n <title>switch</title>\n <g class=\"layer\">\n  <title>Layer 1</title>\n  <circle cx=\"74\" cy=\"203.97\" fill=\"#FFFFFF\" id=\"svg_1\" r=\"21.47\" stroke=\"#000000\" stroke-width=\"5\"/>\n  <line fill=\"none\" id=\"open1\" visibility=${open_status} stroke=\"#000000\" stroke-width=\"20\" x1=\"10\" x2=\"64\" y1=\"26.97\" y2=\"185.97\"/>\n  <circle cx=\"74\" cy=\"23.97\" fill=\"#FFFFFF\" id=\"svg_3\" r=\"21.47\" stroke=\"#000000\" stroke-width=\"5\"/>\n  <line fill=\"none\" id=\"close1\" visibility=${close_status} points=\"null\" stroke=\"#000000\" stroke-width=\"20\" x1=\"39.38\" x2=\"71.62\" y1=\"19.23\" y2=\"183.71\"/>\n </g>\n</svg>\n\n</div>",
+              "markdownTextFunction" : "return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
+              "applyDefaultMarkdownStyle" : true,
+              "markdownCss" : ""
+            },
+            "title" : "Markdown/HTML Card",
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "showLegend" : false,
+            "useDashboardTimewindow" : true,
+            "displayTimewindow" : true,
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "decimals" : 0,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "0485ba35-a510-75e8-8a0e-0f53609b1b7b"
         }
       },
       "states" : {
@@ -4495,6 +4630,12 @@
                   "sizeY" : 19,
                   "row" : 8,
                   "col" : 36
+                },
+                "0485ba35-a510-75e8-8a0e-0f53609b1b7b" : {
+                  "sizeX" : 10,
+                  "sizeY" : 19,
+                  "row" : 0,
+                  "col" : 46
                 }
               },
               "gridSettings" : {

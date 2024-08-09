@@ -1,7 +1,9 @@
 {
   "entityType" : "INTEGRATION",
   "entity" : {
-    "additionalInfo" : null,
+    "additionalInfo" : {
+      "description" : ""
+    },
     "allowCreateDevicesOrAssets" : true,
     "configuration" : {
       "metadata" : { },
@@ -36,7 +38,7 @@
       "id" : "d13303f0-563d-11ef-b2e2-65b916afcec8"
     },
     "edgeTemplate" : false,
-    "enabled" : true,
+    "enabled" : false,
     "externalId" : null,
     "id" : {
       "entityType" : "INTEGRATION",
@@ -48,8 +50,28 @@
     "secret" : "4aa2xeolq4mdhe2k2kts",
     "type" : "MQTT"
   },
-  "relations" : [ ],
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "d14aaaa0-563d-11ef-b2e2-65b916afcec8"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "30ae38e0-563e-11ef-b2e2-65b916afcec8"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  } ],
   "attributes" : {
-    "SERVER_SCOPE" : [ ]
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"success\":true}",
+      "key" : "integration_status_aa8-v3-5-0-12",
+      "lastUpdateTs" : 1723200897647,
+      "longValue" : null,
+      "strValue" : null
+    } ]
   }
 }

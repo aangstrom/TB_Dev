@@ -49,6 +49,10 @@
       "toIndex" : 12,
       "type" : "Post telemetry"
     }, {
+      "fromIndex" : 2,
+      "toIndex" : 13,
+      "type" : "RPC Request to Device"
+    }, {
       "fromIndex" : 6,
       "toIndex" : 2,
       "type" : "False"
@@ -89,6 +93,7 @@
         "skipLatestPersistence" : null,
         "useServerTs" : null
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -97,7 +102,9 @@
         "id" : "a8b568e0-bd83-11ed-b0b2-3d060a5456ec"
       },
       "name" : "Save Timeseries 7GG",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
     }, {
       "additionalInfo" : {
@@ -106,8 +113,11 @@
       },
       "configuration" : {
         "scope" : "CLIENT_SCOPE",
-        "notifyDevice" : "false"
+        "notifyDevice" : false,
+        "sendAttributesUpdatedNotification" : false,
+        "updateAttributesOnlyOnValueChange" : false
       },
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -116,7 +126,9 @@
         "id" : "a8b60520-bd83-11ed-b0b2-3d060a5456ec"
       },
       "name" : "Save Attributes",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
     }, {
       "additionalInfo" : {
@@ -127,6 +139,7 @@
       "configuration" : {
         "version" : 0
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -135,7 +148,9 @@
         "id" : "a8b6a160-bd83-11ed-b0b2-3d060a5456ec"
       },
       "name" : "Message Type Switch",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
     }, {
       "additionalInfo" : {
@@ -145,6 +160,7 @@
       "configuration" : {
         "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -153,7 +169,9 @@
         "id" : "a8b73da0-bd83-11ed-b0b2-3d060a5456ec"
       },
       "name" : "Log RPC from Device",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.action.TbLogNode"
     }, {
       "additionalInfo" : {
@@ -163,6 +181,7 @@
       "configuration" : {
         "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -171,7 +190,9 @@
         "id" : "a8b78bc0-bd83-11ed-b0b2-3d060a5456ec"
       },
       "name" : "Log Other",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.action.TbLogNode"
     }, {
       "additionalInfo" : {
@@ -182,6 +203,7 @@
       "configuration" : {
         "timeoutInSeconds" : 60
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -190,7 +212,9 @@
         "id" : "a8b93970-bd83-11ed-b0b2-3d060a5456ec"
       },
       "name" : "RPC Call Request",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.rpc.TbSendRPCRequestNode"
     }, {
       "additionalInfo" : {
@@ -200,6 +224,7 @@
       "configuration" : {
         "originatorTypes" : [ "ENTITY_GROUP" ]
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -208,7 +233,9 @@
         "id" : "a8b9aea0-bd83-11ed-b0b2-3d060a5456ec"
       },
       "name" : "Is Entity Group",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbOriginatorTypeFilterNode"
     }, {
       "additionalInfo" : {
@@ -218,6 +245,7 @@
       "configuration" : {
         "messageTypes" : [ "POST_ATTRIBUTES_REQUEST", "RPC_CALL_FROM_SERVER_TO_DEVICE" ]
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -226,7 +254,9 @@
         "id" : "a8ba23d0-bd83-11ed-b0b2-3d060a5456ec"
       },
       "name" : "Post attributes or RPC request",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeFilterNode"
     }, {
       "additionalInfo" : {
@@ -237,6 +267,7 @@
         "entityGroupId" : null,
         "entityGroupIsMessageOriginator" : true
       },
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -245,7 +276,9 @@
         "id" : "a8ba71f0-bd83-11ed-b0b2-3d060a5456ec"
       },
       "name" : "Duplicate To Group Entities",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbDuplicateMsgToGroupNode"
     }, {
       "additionalInfo" : {
@@ -257,6 +290,7 @@
         "persistAlarmRulesState" : false,
         "fetchAlarmRulesStateOnStart" : false
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -265,7 +299,9 @@
         "id" : "a8bae720-bd83-11ed-b0b2-3d060a5456ec"
       },
       "name" : "Device Profile Node",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.profile.TbDeviceProfileNode"
     }, {
       "additionalInfo" : {
@@ -274,8 +310,10 @@
         "layoutY" : 771
       },
       "configuration" : {
-        "ruleChainId" : "7c655170-01d5-11ed-8014-35af6f7ed6b6"
+        "ruleChainId" : "7c655170-01d5-11ed-8014-35af6f7ed6b6",
+        "forwardMsgToDefaultRuleChain" : false
       },
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -284,7 +322,9 @@
         "id" : "a8bb3540-bd83-11ed-b0b2-3d060a5456ec"
       },
       "name" : "Generate Report",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
     }, {
       "additionalInfo" : {
@@ -293,8 +333,10 @@
         "layoutY" : 607
       },
       "configuration" : {
-        "ruleChainId" : "fa3689a0-3f5d-11ed-accb-016e0c746b7f"
+        "ruleChainId" : "fa3689a0-3f5d-11ed-accb-016e0c746b7f",
+        "forwardMsgToDefaultRuleChain" : false
       },
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -303,7 +345,9 @@
         "id" : "a8bb8360-bd83-11ed-b0b2-3d060a5456ec"
       },
       "name" : "Process RPC Reply",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
     }, {
       "additionalInfo" : {
@@ -316,6 +360,7 @@
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
         "tbelScript" : "if((JSON.stringify(msg) === '{}')==true) {\n    return ['Failed'];\n}else{\n    return ['Success'];\n}\nreturn nextRelation(metadata, msg);"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -324,8 +369,32 @@
         "id" : "bea10bd0-cd70-11ed-b483-d7ac3d8e6493"
       },
       "name" : "Discard empty",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 883,
+        "layoutY" : 743
+      },
+      "configuration" : {
+        "integrationId" : "d14aaaa0-563d-11ef-b2e2-65b916afcec8"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ac86bfb0-564c-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "Fuxa MQTT",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.integration.TbIntegrationDownlinkNode"
     } ],
     "ruleChainConnections" : null
   },

@@ -4436,6 +4436,190 @@
           "row" : 0,
           "col" : 0,
           "id" : "0485ba35-a510-75e8-8a0e-0f53609b1b7b"
+        },
+        "ebd679cf-d7b2-3a67-157c-51034e7b21b2" : {
+          "typeFullFqn" : "system.single_switch",
+          "type" : "rpc",
+          "sizeX" : 3.5,
+          "sizeY" : 1,
+          "config" : {
+            "showTitle" : false,
+            "backgroundColor" : "#ffffff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "initialState" : {
+                "action" : "GET_TIME_SERIES",
+                "defaultValue" : false,
+                "executeRpc" : {
+                  "method" : "getState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "getAttribute" : {
+                  "scope" : null,
+                  "key" : "state"
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
+                  "compareToValue" : true
+                }
+              },
+              "onUpdateState" : {
+                "action" : "EXECUTE_RPC",
+                "executeRpc" : {
+                  "method" : "setState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "setAttribute" : {
+                  "key" : "state",
+                  "scope" : "SERVER_SCOPE"
+                },
+                "putTimeSeries" : {
+                  "key" : "state"
+                },
+                "valueToData" : {
+                  "type" : "CONSTANT",
+                  "constantValue" : true,
+                  "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */\nreturn value;"
+                }
+              },
+              "offUpdateState" : {
+                "action" : "EXECUTE_RPC",
+                "executeRpc" : {
+                  "method" : "setState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "setAttribute" : {
+                  "key" : "state",
+                  "scope" : "SERVER_SCOPE"
+                },
+                "putTimeSeries" : {
+                  "key" : "state"
+                },
+                "valueToData" : {
+                  "type" : "CONSTANT",
+                  "constantValue" : false,
+                  "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */ \n return value;"
+                }
+              },
+              "disabledState" : {
+                "action" : "DO_NOTHING",
+                "defaultValue" : false,
+                "getAttribute" : {
+                  "key" : "state",
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : true,
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
+                }
+              },
+              "layout" : "right",
+              "autoScale" : true,
+              "showLabel" : true,
+              "label" : "Switch",
+              "labelFont" : {
+                "family" : "Roboto",
+                "size" : 16,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "500",
+                "lineHeight" : "24px"
+              },
+              "labelColor" : "rgba(0, 0, 0, 0.76)",
+              "showIcon" : false,
+              "iconSize" : 24,
+              "iconSizeUnit" : "px",
+              "icon" : "mdi:lightbulb-outline",
+              "iconColor" : "rgba(0, 0, 0, 0.76)",
+              "switchColorOn" : "var(--tb-primary-500)",
+              "switchColorOff" : "var(--tb-primary-100)",
+              "switchColorDisabled" : "#D5D7E5",
+              "tumblerColorOn" : "#fff",
+              "tumblerColorOff" : "#fff",
+              "tumblerColorDisabled" : "#fff",
+              "showOnLabel" : false,
+              "onLabel" : "On",
+              "onLabelFont" : {
+                "family" : "Roboto",
+                "size" : 16,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "24px"
+              },
+              "onLabelColor" : "rgba(0, 0, 0, 0.38)",
+              "showOffLabel" : false,
+              "offLabel" : "Off",
+              "offLabelFont" : {
+                "family" : "Roboto",
+                "size" : 16,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "24px"
+              },
+              "offLabelColor" : "rgba(0, 0, 0, 0.38)",
+              "background" : {
+                "type" : "color",
+                "color" : "#fff",
+                "overlay" : {
+                  "enabled" : false,
+                  "color" : "rgba(255,255,255,0.72)",
+                  "blur" : 3
+                }
+              }
+            },
+            "title" : "Single Switch",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "titleFont" : {
+              "size" : 12,
+              "sizeUnit" : "px",
+              "family" : null,
+              "weight" : null,
+              "style" : null,
+              "lineHeight" : "1.6"
+            },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "pageSize" : 1024,
+            "titleIcon" : "",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "14px",
+            "configMode" : "basic",
+            "datasources" : [ ],
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "5fb17893-5f0d-4a90-6aad-d7d0d88b89e9"
+            },
+            "borderRadius" : null
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "ebd679cf-d7b2-3a67-157c-51034e7b21b2"
         }
       },
       "states" : {
@@ -4636,6 +4820,12 @@
                   "sizeY" : 14,
                   "row" : 0,
                   "col" : 46
+                },
+                "ebd679cf-d7b2-3a67-157c-51034e7b21b2" : {
+                  "sizeX" : 7,
+                  "sizeY" : 2,
+                  "row" : 28,
+                  "col" : 0
                 }
               },
               "gridSettings" : {
@@ -4687,6 +4877,18 @@
             "singleEntity" : {
               "entityType" : "ASSET",
               "id" : "e89ed730-9063-11ee-842a-55fec3ab5bf6"
+            }
+          }
+        },
+        "5fb17893-5f0d-4a90-6aad-d7d0d88b89e9" : {
+          "id" : "5fb17893-5f0d-4a90-6aad-d7d0d88b89e9",
+          "alias" : "Switch_mqtt",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "30ae38e0-563e-11ef-b2e2-65b916afcec8"
             }
           }
         }

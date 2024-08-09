@@ -2157,7 +2157,7 @@
                 "action" : "GET_TIME_SERIES",
                 "defaultValue" : false,
                 "executeRpc" : {
-                  "method" : "getState",
+                  "method" : "fuxa",
                   "requestTimeout" : 5000,
                   "requestPersistent" : false,
                   "persistentPollingInterval" : 1000
@@ -2176,9 +2176,9 @@
                 }
               },
               "onUpdateState" : {
-                "action" : "ADD_TIME_SERIES",
+                "action" : "EXECUTE_RPC",
                 "executeRpc" : {
-                  "method" : "setState",
+                  "method" : "fuxa",
                   "requestTimeout" : 5000,
                   "requestPersistent" : false,
                   "persistentPollingInterval" : 1000
@@ -2197,9 +2197,9 @@
                 }
               },
               "offUpdateState" : {
-                "action" : "ADD_TIME_SERIES",
+                "action" : "EXECUTE_RPC",
                 "executeRpc" : {
-                  "method" : "setState",
+                  "method" : "fuxa",
                   "requestTimeout" : 5000,
                   "requestPersistent" : false,
                   "persistentPollingInterval" : 1000

@@ -4817,39 +4817,6 @@
               "deviceId" : "30ae38e0-563e-11ef-b2e2-65b916afcec8",
               "entityAliasId" : null,
               "dataKeys" : [ {
-                "name" : "state",
-                "type" : "attribute",
-                "label" : "state",
-                "color" : "#4caf50",
-                "settings" : { },
-                "_hash" : 0.883580409571662,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : 0,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "return Math.round(value);"
-              }, {
-                "name" : "state",
-                "type" : "attribute",
-                "label" : "paratoia_pos",
-                "color" : "#f44336",
-                "settings" : { },
-                "_hash" : 0.48138080654374127,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : 0,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "return 178-value;"
-              }, {
-                "name" : "led_value",
-                "type" : "attribute",
-                "label" : "led_value",
-                "color" : "#607d8b",
-                "settings" : { },
-                "_hash" : 0.2916973482229335
-              }, {
                 "name" : "value",
                 "type" : "attribute",
                 "label" : "close_status",
@@ -4874,7 +4841,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "if (value != 1) {\n  return \"Visible\";\n} else {\n  return \"Hidden\";\n}"
+                "postFuncBody" : "if (value == 0) {\n  return \"Hidden\";\n} else {\n  return \"Visible\";\n}"
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]

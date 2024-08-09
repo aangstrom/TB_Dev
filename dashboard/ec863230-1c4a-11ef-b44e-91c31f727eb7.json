@@ -4462,16 +4462,16 @@
                   "key" : "state"
                 },
                 "getTimeSeries" : {
-                  "key" : "state"
+                  "key" : "value"
                 },
                 "dataToValue" : {
                   "type" : "NONE",
                   "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
-                  "compareToValue" : true
+                  "compareToValue" : 1
                 }
               },
               "onUpdateState" : {
-                "action" : "EXECUTE_RPC",
+                "action" : "ADD_TIME_SERIES",
                 "executeRpc" : {
                   "method" : "setState",
                   "requestTimeout" : 5000,
@@ -4479,20 +4479,20 @@
                   "persistentPollingInterval" : 1000
                 },
                 "setAttribute" : {
-                  "key" : "state",
-                  "scope" : "SERVER_SCOPE"
+                  "scope" : "SERVER_SCOPE",
+                  "key" : "state"
                 },
                 "putTimeSeries" : {
-                  "key" : "state"
+                  "key" : "value"
                 },
                 "valueToData" : {
                   "type" : "CONSTANT",
-                  "constantValue" : true,
+                  "constantValue" : 1,
                   "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */\nreturn value;"
                 }
               },
               "offUpdateState" : {
-                "action" : "EXECUTE_RPC",
+                "action" : "ADD_TIME_SERIES",
                 "executeRpc" : {
                   "method" : "setState",
                   "requestTimeout" : 5000,
@@ -4500,15 +4500,15 @@
                   "persistentPollingInterval" : 1000
                 },
                 "setAttribute" : {
-                  "key" : "state",
-                  "scope" : "SERVER_SCOPE"
+                  "scope" : "SERVER_SCOPE",
+                  "key" : "state"
                 },
                 "putTimeSeries" : {
-                  "key" : "state"
+                  "key" : "value"
                 },
                 "valueToData" : {
                   "type" : "CONSTANT",
-                  "constantValue" : false,
+                  "constantValue" : 0,
                   "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */ \n return value;"
                 }
               },
@@ -4824,8 +4824,8 @@
                 "ebd679cf-d7b2-3a67-157c-51034e7b21b2" : {
                   "sizeX" : 7,
                   "sizeY" : 2,
-                  "row" : 28,
-                  "col" : 0
+                  "row" : 22,
+                  "col" : 23
                 }
               },
               "gridSettings" : {

@@ -4818,19 +4818,6 @@
               "entityAliasId" : null,
               "dataKeys" : [ {
                 "name" : "value",
-                "type" : "attribute",
-                "label" : "open_status",
-                "color" : "#ffc107",
-                "settings" : { },
-                "_hash" : 0.9295425894114557,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : true,
-                "postFuncBody" : "if (value == '0.00') {\n  return \"Hidden\";\n} else {\n  return \"Visible\";\n}"
-              }, {
-                "name" : "value",
                 "type" : "timeseries",
                 "label" : "value",
                 "color" : "#f44336",
@@ -4849,6 +4836,19 @@
                 "funcBody" : null,
                 "usePostProcessing" : true,
                 "postFuncBody" : "if (value == 1) {\n    return \"Visible\";\n}else if(value==0){\n    return \"Hiddden\";\n}else {\n    return \"Error\";\n}"
+              }, {
+                "name" : "value",
+                "type" : "timeseries",
+                "label" : "open_status",
+                "color" : "#f44336",
+                "settings" : { },
+                "_hash" : 0.08180804566617161,
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "if (value == 0) {\n    return \"Visible\";\n}else if(value==1){\n    return \"Hiddden\";\n}else {\n    return \"Error\";\n}"
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]

@@ -1,0 +1,306 @@
+{
+  "entityType" : "DASHBOARD",
+  "entity" : {
+    "assignedCustomers" : null,
+    "configuration" : {
+      "description" : "",
+      "widgets" : {
+        "70848204-a3c3-e40f-da57-1f7acea530ea" : {
+          "typeFullFqn" : "system.cards.markdown_card",
+          "type" : "latest",
+          "sizeX" : 5,
+          "sizeY" : 3.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "device",
+              "name" : "",
+              "deviceId" : "0ce586f0-5686-11ef-afce-55a0c471f7b4",
+              "dataKeys" : [ {
+                "name" : "close_status",
+                "type" : "attribute",
+                "label" : "close_status",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.024603539327919144
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1723145577275,
+                  "endTimeMs" : 1723231977275
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "useMarkdownTextFunction" : true,
+              "markdownTextPattern" : "### Markdown/HTML card\n - **Current entity**: ${entityName}.\n - **Current value**: ${Random}.",
+              "markdownTextFunction" : "var close_status = false;\r\nvar option1 = 'hidden';\r\nvar option2 = 'visible';\r\nif (data && data.length) {\r\n    var ds = data[0];\r\n    close_status = ds['close_status'] == 1 ? true : false;\r\n    \r\n    if (close_status) {\r\n        option1 = 'visible';\r\n        option2 = 'hidden';\r\n    }\r\n}\r\n\r\nreturn `<svg width=\"31\" height=\"140\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\">\r\n<!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->\r\n<g class=\"layer\">\r\n<title>Layer 1</title>\r\n<rect fill=\"#e5e5e5\" height=\"140\" id=\"svg_1\" stroke=\"#000000\" stroke-width=\"0\" width=\"30\" x=\"0\" y=\"0\"/>\r\n<rect fill=\"#f7f7f7\" height=\"80\" id=\"svg_2\" stroke=\"#000000\" stroke-width=\"0\" width=\"30\" x=\"0\" y=\"30\"/>\r\n<circle cx=\"15\" cy=\"10\" fill=\"#e5e5e5\" id=\"svg_3\" r=\"5\" stroke=\"#000000\" stroke-width=\"0\"/>\r\n<line fill=\"none\" id=\"svg_5\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-width=\"2\" x1=\"12\" x2=\"18\" y1=\"10\" y2=\"10\"/>\r\n<line fill=\"none\" id=\"svg_6\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-width=\"2\" x1=\"15\" x2=\"15\" y1=\"7\" y2=\"13\"/>\r\n<circle cx=\"15\" cy=\"10\" fill=\"none\" id=\"svg_7\" r=\"5\" stroke=\"#999999\" stroke-linecap=\"round\"/>\r\n<line fill=\"none\" id=\"svg_8\" stroke=\"#005fbf\" stroke-width=\"2\" x1=\"30\" x2=\"11\" y1=\"34\" y2=\"34\"/>\r\n<text fill=\"#007fff\" font-family=\"Helvetica\" font-size=\"3\" font-weight=\"bold\" id=\"svg_9\" stroke=\"#005fbf\" stroke-width=\"0\" text-anchor=\"middle\" transform=\"matrix(1 0 0 1 0 0)\" x=\"6\" xml:space=\"preserve\" y=\"35\">CHINT</text>\r\n<text fill=\"#000000\" font-family=\"Helvetica\" font-size=\"2\" font-weight=\"bold\" id=\"svg_10\" stroke=\"#005fbf\" stroke-width=\"0\" text-anchor=\"middle\" transform=\"matrix(1 0 0 1 0 0)\" x=\"5\" xml:space=\"preserve\" y=\"38\">NB 1-63</text>\r\n<text fill=\"#000000\" font-family=\"Helvetica\" font-size=\"2\" font-weight=\"bold\" id=\"svg_11\" stroke=\"#005fbf\" stroke-width=\"0\" text-anchor=\"middle\" transform=\"matrix(1 0 0 1 0 0)\" x=\"3\" xml:space=\"preserve\" y=\"41\">C16</text>\r\n<rect fill=\"#cccccc\" height=\"29\" id=\"svg_12\" rx=\"3\" ry=\"3\" stroke=\"#000000\" stroke-width=\"0\" width=\"26\" x=\"2\" y=\"80\"/>\r\n<rect fill=\"#007fff\" height=\"19\" id=\"svg_13\" stroke=\"#000000\" stroke-width=\"0\" width=\"18\" x=\"6\" y=\"83\"/>\r\n<rect fill=\"#aad4ff\" height=\"3\" id=\"svg_14\" stroke=\"#000000\" stroke-width=\"0\" width=\"18\" x=\"6\" y=\"80\"/>\r\n<text fill=\"#003f7f\" font-family=\"Helvetica\" font-size=\"5\" font-weight=\"bold\" id=\"svg_15\" opacity=\"0.35\" stroke=\"#000000\" stroke-width=\"0\" text-anchor=\"middle\" transform=\"matrix(1 0 0 1 0 0)\" x=\"15\" xml:space=\"preserve\" y=\"88\">O OFF</text>\r\n<rect fill=\"#005fbf\" height=\"2\" id=\"svg_16\" stroke=\"#000000\" stroke-width=\"0\" width=\"18\" x=\"6\" y=\"89\"/>\r\n<rect fill=\"#005fbf\" height=\"1\" id=\"svg_17\" stroke=\"#000000\" stroke-width=\"0\" width=\"18\" x=\"6\" y=\"92\"/>\r\n<circle cx=\"15\" cy=\"130\" fill=\"#e5e5e5\" id=\"svg_25\" r=\"5\" stroke=\"#000000\" stroke-width=\"0\"/>\r\n<line fill=\"none\" id=\"svg_24\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-width=\"2\" x1=\"12\" x2=\"18\" y1=\"130\" y2=\"130\"/>\r\n<line fill=\"none\" id=\"svg_23\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-width=\"2\" x1=\"15\" x2=\"15\" y1=\"127\" y2=\"133\"/>\r\n<circle cx=\"15\" cy=\"130\" fill=\"none\" id=\"svg_22\" r=\"5\" stroke=\"#999999\" stroke-linecap=\"round\"/>\r\n<text fill=\"#003f7f\" font-family=\"Helvetica\" font-size=\"5\" font-weight=\"bold\" id=\"svg_32\" opacity=\"0.35\" stroke=\"#000000\" stroke-width=\"0\" text-anchor=\"middle\" transform=\"matrix(1 0 0 1 0 0)\" x=\"15\" xml:space=\"preserve\" y=\"101\">1 ON</text>\r\n<rect fill=\"#aad4ff\" height=\"3\" id=\"svg_33\" stroke=\"#000000\" stroke-width=\"0\" transform=\"matrix(1 0 0 1 0 10)\" width=\"18\" x=\"6\" y=\"92\"/>\r\n<rect fill=\"#005fbf\" height=\"2\" id=\"svg_34\" stroke=\"#000000\" stroke-width=\"0\" width=\"18\" x=\"6\" y=\"94\"/>\r\n<line fill=\"none\" id=\"svg_37\" stroke=\"#cccccc\" x1=\"15\" x2=\"15\" y1=\"16\" y2=\"30\"/>\r\n<line fill=\"none\" id=\"svg_38\" stroke=\"#cccccc\" x1=\"15\" x2=\"15\" y1=\"110\" y2=\"124\"/>\r\n<g id=\"close\" visibility=\"${option1}\" >\r\n<rect fill=\"#ff0000\" height=\"2\" id=\"svg_27\" stroke=\"#000000\" stroke-width=\"0\" width=\"6\" x=\"12\" y=\"63\"/>\r\n<g id=\"svg_36\">\r\n<rect fill=\"#007fff\" height=\"7\" id=\"svg_18\" rx=\"1\" ry=\"1\" stroke=\"#000000\" stroke-width=\"0\" width=\"26\" x=\"2\" y=\"84\"/>\r\n<rect fill=\"#005fbf\" height=\"4\" id=\"svg_19\" rx=\"2\" ry=\"2\" stroke=\"#000000\" stroke-width=\"0\" width=\"22\" x=\"4\" y=\"82\"/>\r\n<rect fill=\"#005fbf\" height=\"3\" id=\"svg_20\" stroke=\"#000000\" stroke-width=\"0\" width=\"26\" x=\"2\" y=\"86\"/>\r\n<rect fill=\"#005fbf\" height=\"3\" id=\"svg_21\" rx=\"1\" ry=\"1\" stroke=\"#000000\" stroke-width=\"0\" width=\"26\" x=\"2\" y=\"84\"/>\r\n</g>\r\n</g>\r\n<g id=\"open\" visibility=\"${option2}\" >\r\n<rect fill=\"#00bf00\" height=\"2\" id=\"svg_26\" stroke=\"#000000\" stroke-width=\"0\" width=\"6\" x=\"12\" y=\"63\"/>\r\n<g id=\"svg_35\">\r\n<rect fill=\"#007fff\" height=\"7\" id=\"svg_30\" rx=\"1\" ry=\"1\" stroke=\"#000000\" stroke-width=\"0\" width=\"26\" x=\"2\" y=\"94\"/>\r\n<rect fill=\"#005fbf\" height=\"4\" id=\"svg_29\" rx=\"2\" ry=\"2\" stroke=\"#000000\" stroke-width=\"0\" width=\"22\" x=\"4\" y=\"98\"/>\r\n<rect fill=\"#005fbf\" height=\"3\" id=\"svg_28\" rx=\"1\" ry=\"1\" stroke=\"#000000\" stroke-width=\"0\" width=\"26\" x=\"2\" y=\"98\"/>\r\n<rect fill=\"#005fbf\" height=\"3\" id=\"svg_31\" stroke=\"#000000\" stroke-width=\"0\" width=\"26\" x=\"2\" y=\"96\"/>\r\n</g>\r\n</g>\r\n</g>\r\n</svg>`",
+              "applyDefaultMarkdownStyle" : true,
+              "markdownCss" : ""
+            },
+            "title" : "Markdown/HTML Card",
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "showLegend" : false,
+            "useDashboardTimewindow" : true,
+            "displayTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "70848204-a3c3-e40f-da57-1f7acea530ea"
+        },
+        "3352bdfa-b5b9-06c8-f036-b89a763d20ee" : {
+          "typeFullFqn" : "system.input_widgets.update_multiple_attributes",
+          "type" : "latest",
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "device",
+              "name" : "",
+              "deviceId" : "0ce586f0-5686-11ef-afce-55a0c471f7b4",
+              "dataKeys" : [ {
+                "name" : "close_status",
+                "type" : "attribute",
+                "label" : "close_status",
+                "color" : "#2196f3",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "booleanSwitch",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "disabledOnDataKey" : "",
+                  "appearance" : "outline",
+                  "subscriptSizing" : "fixed",
+                  "slideToggleLabelPosition" : "after",
+                  "selectOptions" : [ ],
+                  "step" : 1,
+                  "minValue" : null,
+                  "maxValue" : null,
+                  "requiredErrorMessage" : "",
+                  "minValueErrorMessage" : "",
+                  "maxValueErrorMessage" : "",
+                  "invalidDateErrorMessage" : "",
+                  "invalidJsonErrorMessage" : "",
+                  "dialogTitle" : "",
+                  "saveButtonLabel" : "",
+                  "cancelButtonLabel" : "",
+                  "useCustomIcon" : false,
+                  "icon" : "",
+                  "customIcon" : "",
+                  "useGetValueFunction" : true,
+                  "getValueFunctionBody" : "return value == 1 ? true : false;",
+                  "useSetValueFunction" : true,
+                  "setValueFunctionBody" : "return value == true ? 1 : 0;"
+                },
+                "_hash" : 0.42083487330253266,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1723145894656,
+                  "endTimeMs" : 1723232294656
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "widgetTitle" : "",
+              "showResultMessage" : true,
+              "showActionButtons" : false,
+              "updateAllValues" : false,
+              "saveButtonLabel" : "",
+              "resetButtonLabel" : "",
+              "showGroupTitle" : false,
+              "groupTitle" : "${entityName}",
+              "fieldsAlignment" : "row",
+              "fieldsInRow" : 2,
+              "rowGap" : 5,
+              "columnGap" : 10
+            },
+            "title" : "Update Multiple Attributes",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "enableDataExport" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "displayTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "3352bdfa-b5b9-06c8-f036-b89a763d20ee"
+        }
+      },
+      "states" : {
+        "default" : {
+          "name" : "Test",
+          "root" : true,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "70848204-a3c3-e40f-da57-1f7acea530ea" : {
+                  "sizeX" : 13,
+                  "sizeY" : 11,
+                  "row" : 0,
+                  "col" : 9
+                },
+                "3352bdfa-b5b9-06c8-f036-b89a763d20ee" : {
+                  "sizeX" : 7,
+                  "sizeY" : 3,
+                  "row" : 3,
+                  "col" : 1
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        }
+      },
+      "entityAliases" : {
+        "dafad755-3580-8d84-e856-18c9e711b552" : {
+          "id" : "dafad755-3580-8d84-e856-18c9e711b552",
+          "alias" : "Device-001",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "0ce586f0-5686-11ef-afce-55a0c471f7b4"
+            }
+          }
+        }
+      },
+      "filters" : { },
+      "timewindow" : {
+        "displayValue" : "",
+        "hideInterval" : false,
+        "hideLastInterval" : false,
+        "hideQuickInterval" : false,
+        "hideAggregation" : false,
+        "hideAggInterval" : false,
+        "hideTimezone" : false,
+        "selectedTab" : 0,
+        "realtime" : {
+          "realtimeType" : 0,
+          "interval" : 1000,
+          "timewindowMs" : 60000,
+          "quickInterval" : "CURRENT_DAY"
+        },
+        "history" : {
+          "historyType" : 0,
+          "interval" : 1000,
+          "timewindowMs" : 60000,
+          "fixedTimewindow" : {
+            "startTimeMs" : 1723145566985,
+            "endTimeMs" : 1723231966985
+          },
+          "quickInterval" : "CURRENT_DAY"
+        },
+        "aggregation" : {
+          "type" : "AVG",
+          "limit" : 25000
+        }
+      },
+      "settings" : {
+        "stateControllerId" : "entity",
+        "showTitle" : false,
+        "showDashboardsSelect" : true,
+        "showEntitiesSelect" : true,
+        "showDashboardTimewindow" : true,
+        "showDashboardExport" : true,
+        "toolbarAlwaysOpen" : true
+      }
+    },
+    "customerId" : null,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "DASHBOARD",
+      "id" : "177bcba0-56f5-11ef-b2e2-65b916afcec8"
+    },
+    "image" : null,
+    "mobileHide" : false,
+    "mobileOrder" : null,
+    "name" : "Test",
+    "ownerId" : null,
+    "title" : "Test"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

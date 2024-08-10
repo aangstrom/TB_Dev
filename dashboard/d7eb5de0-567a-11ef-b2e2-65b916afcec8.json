@@ -263,6 +263,65 @@
           "row" : 0,
           "col" : 0,
           "id" : "da625058-a091-7a80-32d5-8f5305eda114"
+        },
+        "38404dc1-04e4-05da-e859-99e2b899c7dd" : {
+          "typeFullFqn" : "tenant.circuit_breaker_2",
+          "type" : "latest",
+          "sizeX" : 1.5,
+          "sizeY" : 4.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "device",
+              "name" : "",
+              "deviceId" : "30ae38e0-563e-11ef-b2e2-65b916afcec8",
+              "dataKeys" : [ {
+                "name" : "close_status",
+                "type" : "attribute",
+                "label" : "close_status",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.4040113306217705
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1723214711187,
+                  "endTimeMs" : 1723301111187
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : { },
+            "title" : "Circuit_Breaker_2",
+            "useDashboardTimewindow" : true,
+            "displayTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "38404dc1-04e4-05da-e859-99e2b899c7dd"
         }
       },
       "states" : {
@@ -283,6 +342,12 @@
                   "sizeY" : 1,
                   "row" : 4,
                   "col" : 2
+                },
+                "38404dc1-04e4-05da-e859-99e2b899c7dd" : {
+                  "sizeX" : 1,
+                  "sizeY" : 4,
+                  "row" : 5,
+                  "col" : 0
                 }
               },
               "gridSettings" : {

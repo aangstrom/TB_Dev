@@ -6,7 +6,6 @@
     },
     "allowCreateDevicesOrAssets" : true,
     "configuration" : {
-      "metadata" : { },
       "clientConfiguration" : {
         "host" : "aa8.aangstrom.it",
         "port" : 1885,
@@ -25,8 +24,12 @@
       "topicFilters" : [ {
         "filter" : "fuxa/variables/v1",
         "qos" : 0
+      }, {
+        "filter" : "uiflow/fancoil/#",
+        "qos" : 0
       } ],
-      "downlinkTopicPattern" : "${topic}"
+      "downlinkTopicPattern" : "${topic}",
+      "metadata" : { }
     },
     "debugMode" : true,
     "defaultConverterId" : {
@@ -64,6 +67,14 @@
     "typeGroup" : "COMMON"
   } ],
   "attributes" : {
-    "SERVER_SCOPE" : [ ]
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"success\":true}",
+      "key" : "integration_status_aa8-v3-5-0-12",
+      "lastUpdateTs" : 1723205096957,
+      "longValue" : null,
+      "strValue" : null
+    } ]
   }
 }

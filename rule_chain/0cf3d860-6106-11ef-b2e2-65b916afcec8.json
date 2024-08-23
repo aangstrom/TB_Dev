@@ -27,7 +27,7 @@
       },
       "configuration" : {
         "msgCount" : 0,
-        "periodInSeconds" : 60,
+        "periodInSeconds" : 10,
         "scriptLang" : "JS",
         "jsScript" : "\nif (prevMsg == null) {\n    prevMsg = {};\n    prevMsg.liters = 0;\n}\n\nvar msg = { liters: prevMsg.liters + 1 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",

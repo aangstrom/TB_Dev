@@ -34,6 +34,10 @@
       "toIndex" : 5,
       "type" : "Success"
     }, {
+      "fromIndex" : 4,
+      "toIndex" : 7,
+      "type" : "Success"
+    }, {
       "fromIndex" : 5,
       "toIndex" : 6,
       "type" : "Success"
@@ -238,6 +242,46 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 796,
+        "layoutY" : 712
+      },
+      "configuration" : {
+        "operation" : "ADD",
+        "arguments" : [ {
+          "type" : "MESSAGE_BODY",
+          "key" : "liters",
+          "name" : "x",
+          "defaultValue" : null
+        }, {
+          "type" : "TIME_SERIES",
+          "key" : "liters",
+          "name" : "y",
+          "defaultValue" : 0
+        } ],
+        "result" : {
+          "type" : "TIME_SERIES",
+          "key" : "liters",
+          "resultValuePrecision" : 2,
+          "addToBody" : false,
+          "addToMetadata" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "39822950-610f-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "Add delta to existing telemetry",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.math.TbMathNode"
     } ],
     "ruleChainConnections" : null
   },

@@ -25,6 +25,10 @@
       "fromIndex" : 2,
       "toIndex" : 3,
       "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 7,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : null,
     "nodes" : [ {
@@ -211,6 +215,46 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 705,
+        "layoutY" : 270
+      },
+      "configuration" : {
+        "operation" : "SUB",
+        "arguments" : [ {
+          "type" : "MESSAGE_BODY",
+          "key" : "liters",
+          "name" : "x",
+          "defaultValue" : null
+        }, {
+          "type" : "TIME_SERIES",
+          "key" : "liters",
+          "name" : "y",
+          "defaultValue" : 0
+        } ],
+        "result" : {
+          "type" : "MESSAGE_BODY",
+          "key" : "deltaLiters",
+          "resultValuePrecision" : 2,
+          "addToBody" : false,
+          "addToMetadata" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "75dc02f0-6122-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "calculate delta",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.math.TbMathNode"
     } ],
     "ruleChainConnections" : null
   },

@@ -69,16 +69,20 @@
             } ],
             "widgetStyle" : { },
             "actions" : {
-              "headerButton" : [ {
-                "name" : "Add New",
+              "headerButton" : [ ],
+              "nodeSelected" : [ {
+                "name" : "Node Selected",
                 "icon" : "more_horiz",
-                "useShowWidgetActionFunction" : true,
-                "showWidgetActionFunction" : "console.log(data)\nreturn true;",
-                "type" : "custom",
-                "customFunction" : "console.log(entityName)",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "updateDashboardState",
+                "targetDashboardStateId" : null,
+                "setEntityId" : true,
+                "stateEntityParamName" : "selectedNode",
+                "openRightLayout" : false,
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
-                "id" : "58f58889-0b86-86f6-902d-f3413daf8def"
+                "id" : "9f186502-6f08-b6d7-9bfe-df45995cddb5"
               } ]
             },
             "displayTimewindow" : true,
@@ -90,6 +94,89 @@
           "row" : 0,
           "col" : 0,
           "id" : "ce772a46-ca75-e884-6f59-5e389a909d8f"
+        },
+        "0ca05859-5367-a3e4-1773-997101ba8f47" : {
+          "typeFullFqn" : "system.input_widgets.update_multiple_attributes",
+          "type" : "latest",
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "90a86a98-d68b-376c-4c58-c4fc61538d55",
+              "dataKeys" : [ {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Name",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.4809760100761269
+              }, {
+                "name" : "type",
+                "type" : "entityField",
+                "label" : "Type",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.7119593856492159
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1724302364317,
+                  "endTimeMs" : 1724388764317
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "groupTitle" : "${entityName}",
+              "showActionButtons" : true,
+              "fieldsAlignment" : "row",
+              "fieldsInRow" : 2,
+              "columnGap" : 10,
+              "rowGap" : 5
+            },
+            "title" : "Update Multiple Attributes",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "enableDataExport" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "displayTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "0ca05859-5367-a3e4-1773-997101ba8f47"
         }
       },
       "states" : {
@@ -100,15 +187,21 @@
             "main" : {
               "widgets" : {
                 "ce772a46-ca75-e884-6f59-5e389a909d8f" : {
-                  "sizeX" : 7,
-                  "sizeY" : 11,
+                  "sizeX" : 8,
+                  "sizeY" : 15,
                   "row" : 0,
                   "col" : 0
+                },
+                "0ca05859-5367-a3e4-1773-997101ba8f47" : {
+                  "sizeX" : 10,
+                  "sizeY" : 4,
+                  "row" : 0,
+                  "col" : 22
                 }
               },
               "gridSettings" : {
                 "backgroundColor" : "#eeeeee",
-                "columns" : 24,
+                "columns" : 32,
                 "margin" : 10,
                 "outerMargin" : true,
                 "backgroundSizeMode" : "100%",
@@ -130,6 +223,16 @@
             "resolveMultiple" : true,
             "assetTypes" : [ "Building" ],
             "assetNameFilter" : ""
+          }
+        },
+        "90a86a98-d68b-376c-4c58-c4fc61538d55" : {
+          "id" : "90a86a98-d68b-376c-4c58-c4fc61538d55",
+          "alias" : "Selected Node",
+          "filter" : {
+            "type" : "stateEntity",
+            "resolveMultiple" : false,
+            "stateEntityParamName" : "selectedNode",
+            "defaultStateEntity" : null
           }
         }
       },

@@ -31,23 +31,15 @@
       "type" : "Success"
     }, {
       "fromIndex" : 3,
-      "toIndex" : 5,
+      "toIndex" : 4,
       "type" : "Success"
     }, {
       "fromIndex" : 4,
-      "toIndex" : 7,
+      "toIndex" : 5,
       "type" : "Success"
     }, {
       "fromIndex" : 5,
       "toIndex" : 6,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 6,
-      "toIndex" : 4,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 7,
-      "toIndex" : 8,
       "type" : "Success"
     } ],
     "firstNodeIndex" : null,
@@ -162,40 +154,6 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 796,
-        "layoutY" : 621
-      },
-      "configuration" : {
-        "originatorSource" : "RELATED",
-        "preserveOriginatorIfCustomer" : false,
-        "entityType" : null,
-        "entityNamePattern" : null,
-        "relationsQuery" : {
-          "fetchLastLevelOnly" : false,
-          "direction" : "FROM",
-          "maxLevel" : 1,
-          "filters" : [ {
-            "relationType" : "Contains",
-            "entityTypes" : [ "ASSET" ]
-          } ]
-        }
-      },
-      "configurationVersion" : 1,
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "5802eab0-610d-11ef-b2e2-65b916afcec8"
-      },
-      "name" : "get parent asset",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
         "layoutX" : 791,
         "layoutY" : 413
       },
@@ -249,55 +207,12 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 796,
-        "layoutY" : 712
+        "layoutX" : 800,
+        "layoutY" : 627
       },
       "configuration" : {
-        "operation" : "ADD",
-        "arguments" : [ {
-          "type" : "MESSAGE_BODY",
-          "key" : "liters",
-          "name" : "x",
-          "defaultValue" : null
-        }, {
-          "type" : "TIME_SERIES",
-          "key" : "liters",
-          "name" : "y",
-          "defaultValue" : 0
-        } ],
-        "result" : {
-          "type" : "TIME_SERIES",
-          "key" : "liters",
-          "resultValuePrecision" : 2,
-          "addToBody" : false,
-          "addToMetadata" : false
-        }
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "39822950-610f-11ef-b2e2-65b916afcec8"
-      },
-      "name" : "Add delta to existing telemetry",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.math.TbMathNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 793,
-        "layoutY" : 798
-      },
-      "configuration" : {
-        "checkForSingleEntity" : false,
-        "direction" : "FROM",
-        "entityType" : "ASSET",
-        "entityId" : null,
-        "relationType" : "Contains"
+        "forwardMsgToDefaultRuleChain" : false,
+        "ruleChainId" : "ed4e2560-610f-11ef-b2e2-65b916afcec8"
       },
       "configurationVersion" : 1,
       "createdTime" : 0,
@@ -305,13 +220,13 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "9aead660-610f-11ef-b2e2-65b916afcec8"
+        "id" : "18114250-6110-11ef-b2e2-65b916afcec8"
       },
-      "name" : "any parent asset?",
+      "name" : "save delta liters to parent asset",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.filter.TbCheckRelationNode"
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
     } ],
     "ruleChainConnections" : null
   },

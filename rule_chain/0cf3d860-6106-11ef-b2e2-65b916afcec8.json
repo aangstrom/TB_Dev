@@ -18,116 +18,44 @@
   },
   "metaData" : {
     "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
       "fromIndex" : 3,
       "toIndex" : 4,
-      "type" : "Success"
+      "type" : "True"
     }, {
       "fromIndex" : 4,
       "toIndex" : 5,
-      "type" : "Success"
+      "type" : "True"
     }, {
       "fromIndex" : 5,
       "toIndex" : 6,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 6,
-      "toIndex" : 7,
       "type" : "True"
     }, {
       "fromIndex" : 7,
-      "toIndex" : 8,
-      "type" : "True"
+      "toIndex" : 0,
+      "type" : "Success"
     }, {
       "fromIndex" : 8,
-      "toIndex" : 9,
-      "type" : "True"
+      "toIndex" : 0,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 0,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : null,
     "nodes" : [ {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 76,
-        "layoutY" : 303
-      },
-      "configuration" : {
-        "msgCount" : 0,
-        "periodInSeconds" : 60,
-        "scriptLang" : "JS",
-        "jsScript" : "\nif (prevMsg == null) {\n    prevMsg = {};\n    prevMsg.liters = 0;\n}\n\nvar msg = { liters: prevMsg.liters + 1 };\nvar metadata = {  };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "originatorId" : "e47cd8e0-6106-11ef-b2e2-65b916afcec8",
-        "originatorType" : "DEVICE"
-      },
-      "configurationVersion" : 1,
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "14689bc0-6107-11ef-b2e2-65b916afcec8"
-      },
-      "name" : "wm-7860000000001",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 79,
-        "layoutY" : 417
-      },
-      "configuration" : {
-        "msgCount" : 0,
-        "periodInSeconds" : 60,
-        "scriptLang" : "JS",
-        "jsScript" : "\nif (prevMsg == null) {\n    prevMsg = {};\n    prevMsg.liters = 0;\n}\n\nvar msg = { liters: prevMsg.liters + 1 };\nvar metadata = {  };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "originatorId" : "eee0c260-6106-11ef-b2e2-65b916afcec8",
-        "originatorType" : "DEVICE"
-      },
-      "configurationVersion" : 1,
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "146910f0-6107-11ef-b2e2-65b916afcec8"
-      },
-      "name" : "wm-7860000000002",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 79,
-        "layoutY" : 535
-      },
-      "configuration" : {
-        "msgCount" : 0,
-        "periodInSeconds" : 60,
-        "scriptLang" : "JS",
-        "jsScript" : "\nif (prevMsg == null) {\n    prevMsg = {};\n    prevMsg.liters = 0;\n}\n\nvar msg = { liters: prevMsg.liters + 1 };\nvar metadata = {  };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "originatorId" : "f630dc30-6106-11ef-b2e2-65b916afcec8",
-        "originatorType" : "DEVICE"
-      },
-      "configurationVersion" : 1,
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "14693800-6107-11ef-b2e2-65b916afcec8"
-      },
-      "name" : "wm-7860000000003",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
-    }, {
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 447,
@@ -296,6 +224,90 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 60,
+        "layoutY" : 312
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 10,
+        "scriptLang" : "JS",
+        "jsScript" : "\nif (prevMsg == null) {\n    prevMsg = {};\n    prevMsg.liters = 0;\n}\n\nvar msg = { liters: prevMsg.liters + 1 };\nvar metadata = {  };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "originatorId" : "e47cd8e0-6106-11ef-b2e2-65b916afcec8",
+        "originatorType" : "DEVICE"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "011e6a40-6116-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "wm-7860000000001",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 56,
+        "layoutY" : 417
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 10,
+        "scriptLang" : "JS",
+        "jsScript" : "\nif (prevMsg == null) {\n    prevMsg = {};\n    prevMsg.liters = 0;\n}\n\nvar msg = { liters: prevMsg.liters + 1 };\nvar metadata = {  };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "originatorId" : "eee0c260-6106-11ef-b2e2-65b916afcec8",
+        "originatorType" : "DEVICE"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "011e9150-6116-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "wm-7860000000002",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 55,
+        "layoutY" : 519
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 10,
+        "scriptLang" : "JS",
+        "jsScript" : "\nif (prevMsg == null) {\n    prevMsg = {};\n    prevMsg.liters = 0;\n}\n\nvar msg = { liters: prevMsg.liters + 1 };\nvar metadata = {  };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "originatorId" : "f630dc30-6106-11ef-b2e2-65b916afcec8",
+        "originatorType" : "DEVICE"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "011eb860-6116-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "wm-7860000000003",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     } ],
     "ruleChainConnections" : null
   },

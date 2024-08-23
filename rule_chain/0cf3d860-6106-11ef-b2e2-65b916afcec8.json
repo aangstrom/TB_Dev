@@ -34,6 +34,10 @@
       "toIndex" : 5,
       "type" : "Success"
     }, {
+      "fromIndex" : 4,
+      "toIndex" : 6,
+      "type" : "Success"
+    }, {
       "fromIndex" : 5,
       "toIndex" : 4,
       "type" : "Success"
@@ -150,8 +154,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 790,
-        "layoutY" : 524
+        "layoutX" : 796,
+        "layoutY" : 525
       },
       "configuration" : {
         "originatorSource" : "RELATED",
@@ -210,6 +214,29 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.CalculateDeltaNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 795,
+        "layoutY" : 619
+      },
+      "configuration" : {
+        "copyFrom" : "DATA",
+        "keys" : [ "deltaLiters" ]
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f9d74ac0-610d-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "deltaLiters to metadata",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbCopyKeysNode"
     } ],
     "ruleChainConnections" : null
   },

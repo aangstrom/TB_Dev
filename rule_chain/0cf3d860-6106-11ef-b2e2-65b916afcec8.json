@@ -29,6 +29,10 @@
       "fromIndex" : 2,
       "toIndex" : 3,
       "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 5,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : null,
     "nodes" : [ {
@@ -118,8 +122,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 570,
-        "layoutY" : 413
+        "layoutX" : 447,
+        "layoutY" : 411
       },
       "configuration" : {
         "defaultTTL" : 0,
@@ -139,6 +143,69 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1125,
+        "layoutY" : 422
+      },
+      "configuration" : {
+        "originatorSource" : "RELATED",
+        "preserveOriginatorIfCustomer" : false,
+        "entityType" : null,
+        "entityNamePattern" : null,
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "FROM",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "ASSET" ]
+          } ]
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "5802eab0-610d-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "get parent asset",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 794,
+        "layoutY" : 416
+      },
+      "configuration" : {
+        "inputValueKey" : "liter",
+        "outputValueKey" : "deltaLiter",
+        "useCache" : true,
+        "addPeriodBetweenMsgs" : false,
+        "periodValueKey" : "periodInMs",
+        "round" : null,
+        "tellFailureIfDeltaIsNegative" : true,
+        "excludeZeroDeltas" : false
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "58035fe0-610d-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "get delta",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.CalculateDeltaNode"
     } ],
     "ruleChainConnections" : null
   },

@@ -34,16 +34,12 @@
       "toIndex" : 5,
       "type" : "Success"
     }, {
-      "fromIndex" : 4,
+      "fromIndex" : 5,
       "toIndex" : 6,
       "type" : "Success"
     }, {
-      "fromIndex" : 5,
-      "toIndex" : 4,
-      "type" : "Success"
-    }, {
       "fromIndex" : 6,
-      "toIndex" : 7,
+      "toIndex" : 4,
       "type" : "Success"
     } ],
     "firstNodeIndex" : null,
@@ -159,7 +155,7 @@
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 796,
-        "layoutY" : 525
+        "layoutY" : 621
       },
       "configuration" : {
         "originatorSource" : "RELATED",
@@ -222,48 +218,26 @@
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 795,
-        "layoutY" : 619
+        "layoutY" : 531
       },
       "configuration" : {
-        "copyFrom" : "DATA",
-        "keys" : [ "deltaLiters" ]
+        "scriptLang" : "JS",
+        "jsScript" : "metadata.deltaLiters = msg.deltaLiters;\n\nvar msg ={};\nmsg.liters = metadata.deltaLiters;\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
       },
-      "configurationVersion" : 2,
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "f9d74ac0-610d-11ef-b2e2-65b916afcec8"
+        "id" : "af5e8b60-610e-11ef-b2e2-65b916afcec8"
       },
-      "name" : "deltaLiters to metadata",
+      "name" : "copy deltaLiters to metadata and prepare msg",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.transform.TbCopyKeysNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 797,
-        "layoutY" : 707
-      },
-      "configuration" : {
-        "deleteFrom" : "DATA",
-        "keys" : [ "liters", "deltaLiters" ]
-      },
-      "configurationVersion" : 2,
-      "createdTime" : 0,
-      "debugMode" : true,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "4cb80720-610e-11ef-b2e2-65b916afcec8"
-      },
-      "name" : "delete all keys",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.transform.TbDeleteKeysNode"
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

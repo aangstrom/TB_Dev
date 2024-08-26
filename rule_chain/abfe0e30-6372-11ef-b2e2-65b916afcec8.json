@@ -183,7 +183,7 @@
       },
       "configuration" : {
         "scriptLang" : "JS",
-        "jsScript" : "var families = [];\nvar total_people = 0;\n\nfor (var i=0; i < msg.data.length; i++) {\n    var obj = msg.data[i];\n    \n    families.push({\n        name: obj.latest.ENTITY_FIELD.name.value,\n        size: +obj.latest.ATTRIBUTE.family_size.value\n    });\n    total_people += (+obj.latest.ATTRIBUTE.family_size.value); \n}\n\nvar msg = {};\nmsg.families = families;\nmsg.total_people = total_people;\n\nvar comsumption = metadata.deltaLiters;\n\nvar consumptionOnTotal = comsumption / total_people;\nmsg.consumptionOnTotal = consumptionOnTotal;\n\nfor (i=0; i < msg.families.length; i++) {\n    var family = msg.families[i];\n    family.litres = consumptionOnTotal * family.size;\n}\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "jsScript" : "var families = [];\nvar total_people = 0;\n\nfor (var i=0; i < msg.data.length; i++) {\n    var obj = msg.data[i];\n    \n    families.push({\n        name: obj.latest.ENTITY_FIELD.name.value,\n        size: +obj.latest.ATTRIBUTE.family_size.value\n    });\n    total_people += (+obj.latest.ATTRIBUTE.family_size.value); \n}\n\n\nvar comsumption = metadata.deltaLiters;\nvar consumptionOnTotal = comsumption / total_people;\n\n\nfor (i=0; i < families.length; i++) {\n    var family = families[i];\n    family.litres = consumptionOnTotal * family.size;\n}\n\nmsg = families;\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
         "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,

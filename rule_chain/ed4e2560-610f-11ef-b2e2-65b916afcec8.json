@@ -22,7 +22,7 @@
   "metaData" : {
     "connections" : [ {
       "fromIndex" : 0,
-      "toIndex" : 1,
+      "toIndex" : 5,
       "type" : "Success"
     }, {
       "fromIndex" : 1,
@@ -35,6 +35,10 @@
     }, {
       "fromIndex" : 4,
       "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 1,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 0,
@@ -75,8 +79,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 627,
-        "layoutY" : 405
+        "layoutX" : 634,
+        "layoutY" : 496
       },
       "configuration" : {
         "operation" : "ADD",
@@ -115,8 +119,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 624,
-        "layoutY" : 491
+        "layoutX" : 631,
+        "layoutY" : 582
       },
       "configuration" : {
         "checkForSingleEntity" : false,
@@ -141,8 +145,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 624,
-        "layoutY" : 666
+        "layoutX" : 631,
+        "layoutY" : 757
       },
       "configuration" : {
         "forwardMsgToDefaultRuleChain" : true,
@@ -164,8 +168,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 624,
-        "layoutY" : 574
+        "layoutX" : 631,
+        "layoutY" : 665
       },
       "configuration" : {
         "scriptLang" : "JS",
@@ -185,6 +189,33 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 636,
+        "layoutY" : 408
+      },
+      "configuration" : {
+        "fetchTo" : "METADATA",
+        "dataMapping" : {
+          "name" : "originatorName",
+          "type" : "originatorType"
+        },
+        "ignoreNullStrings" : false
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "67319920-6372-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "get name & type",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetOriginatorFieldsNode"
     } ],
     "ruleChainConnections" : null
   },

@@ -276,7 +276,7 @@
       },
       "configuration" : {
         "scriptLang" : "JS",
-        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "jsScript" : "var newMsg = {};\nnewMsg.liters = msg.liters;\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
         "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,

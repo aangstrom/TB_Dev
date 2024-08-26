@@ -106,12 +106,12 @@
       },
       "configuration" : {
         "scriptLang" : "JS",
-        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "jsScript" : "metadata.token = msg.token;\n\nvar msg = {\n    \"entityFilter\": {\n        \"type\": \"assetSearchQuery\",\n        \"rootEntity\": {\n            \"entityType\": \"ASSET\",\n            \"id\": metadata.originatorId\n        },\n        \"direction\": \"TO\",\n        \"maxLevel\": 1,\n        \"fetchLastLevelOnly\": false,\n        \"relationType\": \"Contains\",\n        \"assetTypes\": [\n            \"Family\"\n        ]\n    },\n    \"entityFields\": [\n        {\n            \"type\": \"ENTITY_FIELD\",\n            \"key\": \"name\"\n        },\n        {\n            \"type\": \"ENTITY_FIELD\",\n            \"key\": \"label\"\n        },\n        {\n            \"type\": \"ENTITY_FIELD\",\n            \"key\": \"additionalInfo\"\n        }\n    ],\n    \"latestValues\": [\n        {\n            \"type\": \"ATTRIBUTE\",\n            \"key\": \"family_size\"\n        }\n    ],\n    \"pageLink\": {\n        \"page\": 0,\n        \"pageSize\": 100,\n        \"sortOrder\": {\n            \"key\": {\n                \"key\": \"name\",\n                \"type\": \"ENTITY_FIELD\"\n            },\n            \"direction\": \"ASC\"\n        }\n    }\n};\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
         "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : false,
+      "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",

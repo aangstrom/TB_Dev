@@ -267,6 +267,34 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.math.TbMathNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 51,
+        "layoutY" : 634
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 10,
+        "scriptLang" : "JS",
+        "jsScript" : "\nif (prevMsg == null) {\n    prevMsg = {};\n    prevMsg.liters = 0;\n}\n\nvar msg = { liters: prevMsg.liters + 1 };\nvar metadata = {  };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "\nif (prevMsg == null) {\n    prevMsg = {};\n    prevMsg.liters = 0;\n}\n\nvar msg = { liters: prevMsg.liters + 1 };\nvar metadata = {  };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "originatorId" : "1a56dca0-636d-11ef-b2e2-65b916afcec8",
+        "originatorType" : "DEVICE"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9975b5d0-6370-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "wm-7860000000004",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     } ],
     "ruleChainConnections" : null
   },

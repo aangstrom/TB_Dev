@@ -40,6 +40,10 @@
       "toIndex" : 3,
       "type" : "Success"
     }, {
+      "fromIndex" : 3,
+      "toIndex" : 60,
+      "type" : "Success"
+    }, {
       "fromIndex" : 4,
       "toIndex" : 5,
       "type" : "phaseA"
@@ -2567,6 +2571,30 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetOriginatorFieldsNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1636,
+        "layoutY" : 511
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "578cd5f0-6563-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "prepare payload for google sheet",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

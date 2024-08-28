@@ -459,6 +459,14 @@
       "fromIndex" : 59,
       "toIndex" : 57,
       "type" : "Success"
+    }, {
+      "fromIndex" : 60,
+      "toIndex" : 62,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 62,
+      "toIndex" : 61,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 0,
     "nodes" : [ {
@@ -2599,7 +2607,7 @@
       "additionalInfo" : {
         "description" : "",
         "layoutX" : 1649,
-        "layoutY" : 655
+        "layoutY" : 683
       },
       "configuration" : {
         "restEndpointUrlPattern" : "https://script.google.com/macros/s/AKfycbznayckhrATYs4ToE8qR-TW7D9H3FAvBVfxy91ms4mh_ySfAX_i1WXUt280UftgCmlf/exec",
@@ -2639,6 +2647,30 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1639,
+        "layoutY" : 597
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if((JSON.stringify(msg) === '{}')==true) {\n    return ['Failed'];\n}else{\n    return ['Success'];\n}\nreturn nextRelation(metadata, msg);"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "74f2d120-6564-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "Discard empty",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     } ],
     "ruleChainConnections" : null
   },

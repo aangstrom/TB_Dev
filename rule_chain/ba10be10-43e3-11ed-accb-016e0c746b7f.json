@@ -188,13 +188,14 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : false,
+      "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
         "id" : "63f95990-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Save Timeseries",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
@@ -218,6 +219,7 @@
         "id" : "63f980a0-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Save Attributes",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
@@ -239,6 +241,7 @@
         "id" : "63f980a1-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Message Type Switch",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
@@ -260,6 +263,7 @@
         "id" : "63f980a2-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Log RPC from Device",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.action.TbLogNode"
@@ -280,6 +284,7 @@
         "id" : "63f9a7b0-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Log Other",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.action.TbLogNode"
@@ -301,6 +306,7 @@
         "id" : "63f9a7b1-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "RPC Call Request",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.rpc.TbSendRPCRequestNode"
@@ -321,6 +327,7 @@
         "id" : "63f9a7b2-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Is Entity Group",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbOriginatorTypeFilterNode"
@@ -341,6 +348,7 @@
         "id" : "63f9a7b3-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Post attributes or RPC request",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeFilterNode"
@@ -362,6 +370,7 @@
         "id" : "63f9cec0-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Duplicate To Group Entities",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbDuplicateMsgToGroupNode"
@@ -384,6 +393,7 @@
         "id" : "63f9cec1-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Device Profile Node",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.profile.TbDeviceProfileNode"
@@ -394,9 +404,10 @@
         "layoutY" : 572
       },
       "configuration" : {
-        "ruleChainId" : "7c655170-01d5-11ed-8014-35af6f7ed6b6"
+        "ruleChainId" : "7c655170-01d5-11ed-8014-35af6f7ed6b6",
+        "forwardMsgToDefaultRuleChain" : false
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -405,6 +416,7 @@
         "id" : "63f9cec2-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Generate Report",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
@@ -415,9 +427,10 @@
         "layoutY" : 460
       },
       "configuration" : {
-        "ruleChainId" : "fa3689a0-3f5d-11ed-accb-016e0c746b7f"
+        "ruleChainId" : "fa3689a0-3f5d-11ed-accb-016e0c746b7f",
+        "forwardMsgToDefaultRuleChain" : false
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -426,6 +439,7 @@
         "id" : "63f9cec3-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Process RPC Reply",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
@@ -441,11 +455,10 @@
         "scriptLang" : "TBEL",
         "jsScript" : "var temperature = 18 + Math.random() * (32 - 18);\ntemperature = Math.round( temperature * 100 ) / 100;\nvar humidity = 10 + Math.random() * (90 - 10);\nhumidity = Math.round( humidity * 100 ) / 100;\nvar soundAvg = 30 + Math.random() * (90 - 10);\nsoundAvg = Math.round( soundAvg * 100 ) / 100;\nvar soundPeak = 50 + Math.random() * (90 - 10);\nsoundPeak = Math.round( soundPeak * 100 ) / 100;\nvar light = 100 + Math.random() * (500 - 20);\nlight = Math.round( light * 100 ) / 100;\nvar user_latitude = 44.8923521;\nvar user_longitude = 11.6176377;\nvar vdd = 3718;\nvar msg = { \n            temperature: temperature,\n            humidity: humidity,\n            soundAvg: soundAvg,\n            soundPeak: soundPeak,\n            light: light,\n            user_latitude: user_latitude,\n            user_longitude: user_longitude,\n            vdd: vdd,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
         "tbelScript" : "var temperature = 18 + Math.random() * (32 - 18);\ntemperature = Math.round( temperature * 100 ) / 100;\nvar humidity = 10 + Math.random() * (90 - 10);\nhumidity = Math.round( humidity * 100 ) / 100;\nvar soundAvg = 30 + Math.random() * (90 - 10);\nsoundAvg = Math.round( soundAvg * 100 ) / 100;\nvar soundPeak = 50 + Math.random() * (90 - 10);\nsoundPeak = Math.round( soundPeak * 100 ) / 100;\nvar light = 100 + Math.random() * (500 - 20);\nlight = Math.round( light * 100 ) / 100;\nvar co2 = 300 + Math.random() * (1200 - 50);\nco2 = Math.round( co2 * 100 ) / 100;\nvar vdd = 3718;\nvar msg = { \n            temperature: temperature,\n            humidity: humidity,\n            soundAvg: soundAvg,\n            soundPeak: soundPeak,\n            light: light,\n            co2: co2,\n            vdd: vdd,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
-        "queueName" : null,
         "originatorId" : "e6238730-430c-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -454,6 +467,7 @@
         "id" : "63f9f5d0-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Generator",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -469,11 +483,10 @@
         "scriptLang" : "TBEL",
         "jsScript" : "var temperature = 18 + Math.random() * (32 - 18);\ntemperature = Math.round( temperature * 100 ) / 100;\nvar humidity = 10 + Math.random() * (90 - 10);\nhumidity = Math.round( humidity * 100 ) / 100;\nvar soundAvg = 10 + Math.random() * (90 - 10);\nsoundAvg = Math.round( soundAvg * 100 ) / 100;\nvar soundPeak = 30 + Math.random() * (90 - 10);\nsoundPeak = Math.round( soundPeak * 100 ) / 100;\nvar light = 10 + Math.random() * (500 - 20);\nlight = Math.round( light * 100 ) / 100;\nvar co2 = 300 + Math.random() * (1200 - 50);\nco2 = Math.round( co2 * 100 ) / 100;\nvar user_latitude = 44.9034748;\nvar user_longitude = 11.6190913;\nvar vdd = 3994;\nvar msg = { \n            temperature: temperature,\n            humidity: humidity,\n            soundAvg: soundAvg,\n            soundPeak: soundPeak,\n            light: light,\n            co2: co2,\n            user_latitude: user_latitude,\n            user_longitude: user_longitude,\n            vdd: vdd,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
         "tbelScript" : "var temperature = 18 + Math.random() * (32 - 18);\ntemperature = Math.round( temperature * 100 ) / 100;\nvar humidity = 10 + Math.random() * (90 - 10);\nhumidity = Math.round( humidity * 100 ) / 100;\nvar soundAvg = 10 + Math.random() * (90 - 10);\nsoundAvg = Math.round( soundAvg * 100 ) / 100;\nvar soundPeak = 30 + Math.random() * (90 - 10);\nsoundPeak = Math.round( soundPeak * 100 ) / 100;\nvar light = 10 + Math.random() * (500 - 20);\nlight = Math.round( light * 100 ) / 100;\nvar co2 = 300 + Math.random() * (1200 - 50);\nco2 = Math.round( co2 * 100 ) / 100;\n\n\nvar power = 300 + Math.random() * (1200 - 50);\npower = Math.round( co2 * 100 ) / 100;\n\nvar vdd = 3994;\nvar msg = { \n            temperature: temperature,\n            humidity: humidity,\n            soundAvg: soundAvg,\n            soundPeak: soundPeak,\n            light: light,\n            co2: co2,\n            //power: power,\n            vdd: vdd,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
-        "queueName" : null,
         "originatorId" : "edae6010-430c-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -482,6 +495,7 @@
         "id" : "63f9f5d1-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Sensore 3",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -500,7 +514,7 @@
         "originatorId" : null,
         "originatorType" : null
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -509,6 +523,7 @@
         "id" : "63fa1ce0-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "energy-demo",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -527,7 +542,7 @@
         "originatorId" : "7c15f8f0-01d5-11ed-8014-35af6f7ed6b6",
         "originatorType" : "DEVICE"
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -536,6 +551,7 @@
         "id" : "63fa1ce1-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Trivella Demo",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -554,7 +570,7 @@
         "originatorId" : "eccb2a30-9649-11ed-a0f1-b51a14fb887c",
         "originatorType" : "ASSET"
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -563,6 +579,7 @@
         "id" : "63fa43f0-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Meteo sede 1",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -590,6 +607,7 @@
         "id" : "63fa43f1-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Get latitude and longitude",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
@@ -632,6 +650,7 @@
         "id" : "63fa43f2-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Get current weather",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
@@ -655,6 +674,7 @@
         "id" : "63fa6b00-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "get weather telemetry",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
@@ -673,7 +693,7 @@
         "originatorId" : "7c15f8f0-01d5-11ed-8014-35af6f7ed6b6",
         "originatorType" : "DEVICE"
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -682,6 +702,7 @@
         "id" : "63fa6b01-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Caldaia",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -709,6 +730,7 @@
         "id" : "63fa6b02-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Get setTemperature",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
@@ -732,6 +754,7 @@
         "id" : "63fa9210-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Trasform to telemetry",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
@@ -755,6 +778,7 @@
         "id" : "63fa9211-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "CheckShelly3em",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
@@ -790,6 +814,7 @@
         "id" : "63fa9212-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "3emtokafka",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
@@ -813,6 +838,7 @@
         "id" : "63fa9213-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Add_deviceName",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
@@ -848,6 +874,7 @@
         "id" : "63fab920-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "3emtokafka2",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
@@ -870,6 +897,7 @@
         "id" : "63fab921-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Device Profile 7GG",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.profile.TbDeviceProfileNode"
@@ -893,6 +921,7 @@
         "id" : "63fab922-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Save Timeseries 7GG",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
@@ -914,6 +943,7 @@
         "id" : "63fab923-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Message Type Switch",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
@@ -937,6 +967,7 @@
         "id" : "63fae030-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Discard empty",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
@@ -947,9 +978,10 @@
         "layoutY" : 166
       },
       "configuration" : {
-        "ruleChainId" : "2856ccc0-d476-11ed-9fb5-f96805f2c8b4"
+        "ruleChainId" : "2856ccc0-d476-11ed-9fb5-f96805f2c8b4",
+        "forwardMsgToDefaultRuleChain" : false
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -958,6 +990,7 @@
         "id" : "63fae031-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "To Energy Calculation",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
@@ -981,6 +1014,7 @@
         "id" : "63fae032-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Check Energy Sensor",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
@@ -991,9 +1025,10 @@
         "layoutY" : 496
       },
       "configuration" : {
-        "ruleChainId" : "64eaf570-d477-11ed-9fb5-f96805f2c8b4"
+        "ruleChainId" : "64eaf570-d477-11ed-9fb5-f96805f2c8b4",
+        "forwardMsgToDefaultRuleChain" : false
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1002,6 +1037,7 @@
         "id" : "63fb0740-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "To Notification",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
@@ -1026,6 +1062,7 @@
         "id" : "63fb0741-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Save Attributes",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
@@ -1047,6 +1084,7 @@
         "id" : "63fb0742-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Shelly Relay",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.integration.TbIntegrationDownlinkNode"
@@ -1070,6 +1108,7 @@
         "id" : "63fb2e50-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "If relay change",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
@@ -1080,9 +1119,10 @@
         "layoutY" : 89
       },
       "configuration" : {
-        "ruleChainId" : "af235ad0-ef2d-11ed-9fb5-f96805f2c8b4"
+        "ruleChainId" : "af235ad0-ef2d-11ed-9fb5-f96805f2c8b4",
+        "forwardMsgToDefaultRuleChain" : false
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1091,6 +1131,7 @@
         "id" : "63fb2e51-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "To conteggio Allarmi",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
@@ -1106,11 +1147,10 @@
         "scriptLang" : "TBEL",
         "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var soundAvg = 10 + Math.random() * (120 - 10);\nsoundAvg = Math.round( soundAvg * 100 ) / 100;\nvar soundPeak = 30 + Math.random() * (120 - 10);\nsoundPeak = Math.round( soundPeak * 100 ) / 100;\nvar vdd = 3994;\n\nvar msg = {\n            soundAvg: soundAvg,\n            soundPeak: soundPeak,\n            vdd: vdd,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
-        "queueName" : null,
         "originatorId" : "2347daf0-f0b2-11ed-9fb5-f96805f2c8b4",
         "originatorType" : "DEVICE"
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1119,6 +1159,7 @@
         "id" : "9a6441a0-f0b2-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Generatore rumore",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -1140,6 +1181,7 @@
         "id" : "59bc8c80-f322-11ed-9a4b-e3fd271b8b84"
       },
       "name" : "Request getRelay",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.rpc.TbSendRPCReplyNode"
@@ -1167,6 +1209,7 @@
         "id" : "398e1090-f323-11ed-9a4b-e3fd271b8b84"
       },
       "name" : "Get Relay Value",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
@@ -1177,9 +1220,10 @@
         "layoutY" : 871
       },
       "configuration" : {
-        "ruleChainId" : "4f08d9a0-f675-11ed-9a4b-e3fd271b8b84"
+        "ruleChainId" : "4f08d9a0-f675-11ed-9a4b-e3fd271b8b84",
+        "forwardMsgToDefaultRuleChain" : false
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1188,6 +1232,7 @@
         "id" : "6b3e6090-f675-11ed-9a4b-e3fd271b8b84"
       },
       "name" : "To HSE Demo",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
@@ -1198,9 +1243,10 @@
         "layoutY" : 102
       },
       "configuration" : {
-        "ruleChainId" : "9ceaf8c0-2545-11ee-bb94-e90efb8ecc83"
+        "ruleChainId" : "9ceaf8c0-2545-11ee-bb94-e90efb8ecc83",
+        "forwardMsgToDefaultRuleChain" : false
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1209,6 +1255,7 @@
         "id" : "c8ef9660-2545-11ee-bb94-e90efb8ecc83"
       },
       "name" : "Kafka",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
@@ -1219,9 +1266,10 @@
         "layoutY" : 921
       },
       "configuration" : {
-        "ruleChainId" : "aa4f14f0-82f2-11ee-b91f-e7d1f1973716"
+        "ruleChainId" : "aa4f14f0-82f2-11ee-b91f-e7d1f1973716",
+        "forwardMsgToDefaultRuleChain" : false
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1230,6 +1278,7 @@
         "id" : "2f5e9350-8488-11ee-b91f-e7d1f1973716"
       },
       "name" : "To Campeggi",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"

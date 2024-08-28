@@ -492,6 +492,7 @@
         "id" : "ee6efd61-d48a-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Get F1/F2/F3/F23",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
@@ -515,6 +516,7 @@
         "id" : "ee6efd62-d48a-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Costo per Fascia",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
@@ -538,6 +540,7 @@
         "id" : "ee6f2471-d48a-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Discard empty",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
@@ -554,13 +557,14 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : false,
+      "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
         "id" : "ee6f2472-d48a-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "Save Timeseries",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
@@ -584,6 +588,7 @@
         "id" : "6e951420-f49d-11ed-9a4b-e3fd271b8b84"
       },
       "name" : "Copy to asset",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
@@ -605,9 +610,10 @@
             "relationType" : "phaseA",
             "entityTypes" : [ "ASSET" ]
           } ]
-        }
+        },
+        "preserveOriginatorIfCustomer" : true
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -616,6 +622,7 @@
         "id" : "e9e0ec50-f4a0-11ed-9a4b-e3fd271b8b84"
       },
       "name" : "Cambia tipo A",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
@@ -637,9 +644,10 @@
             "relationType" : "phaseC",
             "entityTypes" : [ "ASSET" ]
           } ]
-        }
+        },
+        "preserveOriginatorIfCustomer" : true
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -648,6 +656,7 @@
         "id" : "e9e1afa0-f4a0-11ed-9a4b-e3fd271b8b84"
       },
       "name" : "Cambia tipo C",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
@@ -669,9 +678,10 @@
             "relationType" : "phaseB",
             "entityTypes" : [ "ASSET" ]
           } ]
-        }
+        },
+        "preserveOriginatorIfCustomer" : true
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -680,6 +690,7 @@
         "id" : "e9e224d0-f4a0-11ed-9a4b-e3fd271b8b84"
       },
       "name" : "Cambia tipo B",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
@@ -703,6 +714,7 @@
         "id" : "297b6340-f4ba-11ed-9a4b-e3fd271b8b84"
       },
       "name" : "Transform name to power",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
@@ -730,6 +742,7 @@
         "id" : "7f67bfb0-f4bf-11ed-9a4b-e3fd271b8b84"
       },
       "name" : "Get active status",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
@@ -753,6 +766,7 @@
         "id" : "7f680dd0-f4bf-11ed-9a4b-e3fd271b8b84"
       },
       "name" : "Status",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
@@ -766,9 +780,9 @@
         "scope" : "SERVER_SCOPE",
         "notifyDevice" : false,
         "sendAttributesUpdatedNotification" : false,
-        "updateAttributesOnlyOnValueChange" : "false"
+        "updateAttributesOnlyOnValueChange" : false
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -777,6 +791,7 @@
         "id" : "31d34160-f4c0-11ed-9a4b-e3fd271b8b84"
       },
       "name" : "Save Attributes",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
@@ -800,6 +815,7 @@
         "id" : "2ff58f30-f559-11ed-9a4b-e3fd271b8b84"
       },
       "name" : "Orari operativi",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
@@ -841,6 +857,7 @@
         "id" : "4b75a170-f55c-11ed-9a4b-e3fd271b8b84"
       },
       "name" : "Get Turni",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
@@ -862,9 +879,10 @@
             "relationType" : "Contains",
             "entityTypes" : [ "ASSET" ]
           } ]
-        }
+        },
+        "preserveOriginatorIfCustomer" : true
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -873,6 +891,7 @@
         "id" : "3ce84790-f622-11ed-9a4b-e3fd271b8b84"
       },
       "name" : "Add to Reparto",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
@@ -894,9 +913,10 @@
             "relationType" : null,
             "entityTypes" : [ "CUSTOMER" ]
           } ]
-        }
+        },
+        "preserveOriginatorIfCustomer" : true
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -905,6 +925,7 @@
         "id" : "3ce98010-f622-11ed-9a4b-e3fd271b8b84"
       },
       "name" : "Add to Cliente",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
@@ -928,6 +949,7 @@
         "id" : "3cea9180-f622-11ed-9a4b-e3fd271b8b84"
       },
       "name" : "uffici/produzione + F1/F2/F3/F23",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
@@ -955,6 +977,7 @@
         "id" : "3ceb54d0-f622-11ed-9a4b-e3fd271b8b84"
       },
       "name" : "Get tipologia",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
@@ -978,6 +1001,7 @@
         "id" : "aad8d5f0-f62a-11ed-9a4b-e3fd271b8b84"
       },
       "name" : "if energy",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
@@ -999,9 +1023,10 @@
             "relationType" : "Contains",
             "entityTypes" : [ "ASSET" ]
           } ]
-        }
+        },
+        "preserveOriginatorIfCustomer" : true
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1010,6 +1035,7 @@
         "id" : "359865c0-f62b-11ed-9a4b-e3fd271b8b84"
       },
       "name" : "Add to Sede",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
@@ -1033,6 +1059,7 @@
         "id" : "455b38b0-f631-11ed-9a4b-e3fd271b8b84"
       },
       "name" : "Switch Total",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
@@ -1060,6 +1087,7 @@
         "id" : "b2179330-f641-11ed-9a4b-e3fd271b8b84"
       },
       "name" : "Get latest Total",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
@@ -1083,6 +1111,7 @@
         "id" : "05cc0860-f644-11ed-9a4b-e3fd271b8b84"
       },
       "name" : "Delta",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
@@ -1113,10 +1142,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1125,6 +1153,7 @@
         "id" : "3085e5b0-046a-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "Produzione",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -1155,10 +1184,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1167,6 +1195,7 @@
         "id" : "30876c50-046a-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "ProduzioneCost",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -1197,10 +1226,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1209,6 +1237,7 @@
         "id" : "3087e180-046a-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "Operativo",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -1239,10 +1268,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1251,6 +1279,7 @@
         "id" : "89f54b31-046b-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "F2",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -1281,10 +1310,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1293,6 +1321,7 @@
         "id" : "89f60e80-046b-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "F1",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -1323,10 +1352,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1335,6 +1363,7 @@
         "id" : "89f6aac0-046b-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "F3",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -1365,10 +1394,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1377,6 +1405,7 @@
         "id" : "89f71ff0-046b-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "F23",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -1407,10 +1436,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1419,6 +1447,7 @@
         "id" : "d724f7c0-046b-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "Non_operativo",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -1449,10 +1478,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1461,6 +1489,7 @@
         "id" : "d7256cf0-046b-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "Pranzo",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -1491,10 +1520,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1503,6 +1531,7 @@
         "id" : "63ed6500-046e-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "Turno1",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -1533,10 +1562,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1545,6 +1573,7 @@
         "id" : "63ee7670-046e-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "Turno1cost",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -1575,10 +1604,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1587,6 +1615,7 @@
         "id" : "63ef39c0-046e-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "Turno2",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -1617,10 +1646,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1629,6 +1657,7 @@
         "id" : "63efaef0-046e-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "Turno2cost",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -1659,10 +1688,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1671,6 +1699,7 @@
         "id" : "63effd10-046e-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "Turno3",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -1701,10 +1730,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1713,6 +1741,7 @@
         "id" : "63f07240-046e-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "Turno3cost",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -1743,10 +1772,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1755,6 +1783,7 @@
         "id" : "bbdf0eb0-0470-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "Generale",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -1785,10 +1814,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1797,6 +1825,7 @@
         "id" : "bbdf5cd0-0470-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "GeneraleCost",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -1827,10 +1856,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1839,6 +1867,7 @@
         "id" : "3d331ec0-0471-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "Illuminazione",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -1869,10 +1898,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1881,6 +1909,7 @@
         "id" : "3d33bb00-0471-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "IlluminazioneCost",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -1911,10 +1940,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1923,6 +1951,7 @@
         "id" : "3d343030-0471-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "Clima",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -1953,10 +1982,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1965,6 +1993,7 @@
         "id" : "3d347e50-0471-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "ClimaCost",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -1988,6 +2017,7 @@
         "id" : "7de023b0-0475-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "uffici/produzione",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
@@ -2018,10 +2048,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -2030,6 +2059,7 @@
         "id" : "660be380-0503-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "F2cost",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -2060,10 +2090,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -2072,6 +2101,7 @@
         "id" : "660ccde0-0503-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "F1cost",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -2102,10 +2132,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -2114,6 +2143,7 @@
         "id" : "660d4310-0503-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "F3cost",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -2144,10 +2174,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -2156,6 +2185,7 @@
         "id" : "660d9130-0503-11ee-9a4b-a56c330ec2ff"
       },
       "name" : "F23cost",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -2186,10 +2216,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -2198,6 +2227,7 @@
         "id" : "c76fcb90-5ba8-11ee-bb94-e90efb8ecc83"
       },
       "name" : "SovraccaricoCost",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -2228,10 +2258,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -2240,6 +2269,7 @@
         "id" : "c7712b20-5ba8-11ee-bb94-e90efb8ecc83"
       },
       "name" : "Sovraccarico",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -2270,10 +2300,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -2282,6 +2311,7 @@
         "id" : "c771a050-5ba8-11ee-bb94-e90efb8ecc83"
       },
       "name" : "Normale",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -2312,10 +2342,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -2324,6 +2353,7 @@
         "id" : "c771ee70-5ba8-11ee-bb94-e90efb8ecc83"
       },
       "name" : "Scarico",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -2354,10 +2384,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -2366,6 +2395,7 @@
         "id" : "c77263a0-5ba8-11ee-bb94-e90efb8ecc83"
       },
       "name" : "NormaleCost",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -2396,10 +2426,9 @@
         "parentEntitiesQuery" : {
           "type" : "group",
           "entityGroupId" : null
-        },
-        "queueName" : "Main"
+        }
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -2408,6 +2437,7 @@
         "id" : "c772ffe0-5ba8-11ee-bb94-e90efb8ecc83"
       },
       "name" : "ScaricoCost",
+      "queueName" : "Main",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
@@ -2435,6 +2465,7 @@
         "id" : "40a9e220-5ba9-11ee-bb94-e90efb8ecc83"
       },
       "name" : "Get Data for sovraccarico/normale/scarico",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
@@ -2458,6 +2489,7 @@
         "id" : "f919f560-5baa-11ee-bb94-e90efb8ecc83"
       },
       "name" : "Calculate sovraccarico/normale/scarico",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
@@ -2481,6 +2513,7 @@
         "id" : "0e840670-8469-11ee-b91f-e7d1f1973716"
       },
       "name" : "if destra",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
@@ -2491,9 +2524,10 @@
         "layoutY" : 794
       },
       "configuration" : {
-        "ruleChainId" : "aa4f14f0-82f2-11ee-b91f-e7d1f1973716"
+        "ruleChainId" : "aa4f14f0-82f2-11ee-b91f-e7d1f1973716",
+        "forwardMsgToDefaultRuleChain" : false
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -2502,6 +2536,7 @@
         "id" : "0e84c9c0-8469-11ee-b91f-e7d1f1973716"
       },
       "name" : "to Campeggi",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
@@ -2528,6 +2563,7 @@
         "id" : "2dc90ef0-8477-11ee-b91f-e7d1f1973716"
       },
       "name" : "Get originator",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetOriginatorFieldsNode"

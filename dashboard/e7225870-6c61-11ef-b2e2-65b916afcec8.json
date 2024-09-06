@@ -194,7 +194,83 @@
           "col" : 0,
           "id" : "1270c34a-f518-cc69-de13-dfc20a0876e5"
         },
-        "1bc7831c-c485-a9bf-cca4-86db9b7363fc" : {
+        "7d50239b-1bf8-d3ff-0cf9-464bf775b0dd" : {
+          "typeFullFqn" : "system.cards.markdown_card",
+          "type" : "latest",
+          "sizeX" : 5,
+          "sizeY" : 3.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "entityAliasId" : "d8459acd-8b50-4e20-9879-98e4eee9e6af",
+              "dataKeys" : [ {
+                "name" : "type",
+                "type" : "entityField",
+                "label" : "Type",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.05648809195313098
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1725566622839,
+                  "endTimeMs" : 1725653022839
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "useMarkdownTextFunction" : true,
+              "markdownTextPattern" : "### Markdown/HTML card\n - **Current entity**: ${entityName}.\n - **Current value**: ${Random}.",
+              "markdownTextFunction" : "var type = data[0]['Type'];\r\nvar state = '';\r\n\r\nconsole.log(type);\r\nif (type.startsWith('AL3')) {\r\n     state = \"device_details_page\";\r\n} else {\r\n    state = \"asset_list_page\";\r\n}\r\n\r\nreturn '<div class=\"main-layout\" style=\"width: 100%; height: 100%; margin:0; padding:0\" fxLayout=\"column\">' +\r\n    '<tb-dashboard-state fxFlex [ctx]=\"ctx\" [syncParentStateParams]=\"true\" stateId=\"' + state + '\"></tb-dashboard-state>' +\r\n    '</div>';\r\n    \r\n",
+              "applyDefaultMarkdownStyle" : true,
+              "markdownCss" : ""
+            },
+            "title" : "Markdown/HTML Card",
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "showLegend" : false,
+            "useDashboardTimewindow" : true,
+            "displayTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "7d50239b-1bf8-d3ff-0cf9-464bf775b0dd"
+        },
+        "601d2892-ba3a-4831-6598-6d717d39c880" : {
           "typeFullFqn" : "system.cards.entities_table",
           "type" : "latest",
           "sizeX" : 7.5,
@@ -256,7 +332,7 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : "",
-              "entityAliasId" : "99d2962a-eb72-1087-cb8c-35de2944b513",
+              "entityAliasId" : "eb17d115-9874-7d27-4fd4-7053242e2caf",
               "filterId" : null,
               "dataKeys" : [ {
                 "name" : "name",
@@ -295,7 +371,7 @@
           },
           "row" : 0,
           "col" : 0,
-          "id" : "1bc7831c-c485-a9bf-cca4-86db9b7363fc"
+          "id" : "601d2892-ba3a-4831-6598-6d717d39c880"
         }
       },
       "states" : {
@@ -317,9 +393,9 @@
                   "row" : 0,
                   "col" : 7
                 },
-                "1bc7831c-c485-a9bf-cca4-86db9b7363fc" : {
+                "7d50239b-1bf8-d3ff-0cf9-464bf775b0dd" : {
                   "sizeX" : 25,
-                  "sizeY" : 13,
+                  "sizeY" : 12,
                   "row" : 2,
                   "col" : 7
                 }
@@ -334,6 +410,49 @@
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
                 "mobileRowHeight" : 70
+              }
+            }
+          }
+        },
+        "asset_list_page" : {
+          "name" : "asset_list_page",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "601d2892-ba3a-4831-6598-6d717d39c880" : {
+                  "sizeX" : 24,
+                  "sizeY" : 10,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 0,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : true,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70
+              }
+            }
+          }
+        },
+        "device_details_page" : {
+          "name" : "device_details_page",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : { },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%"
               }
             }
           }
@@ -363,6 +482,25 @@
         "99d2962a-eb72-1087-cb8c-35de2944b513" : {
           "id" : "99d2962a-eb72-1087-cb8c-35de2944b513",
           "alias" : "Selected Node Childs",
+          "filter" : {
+            "type" : "relationsQuery",
+            "resolveMultiple" : true,
+            "rootStateEntity" : true,
+            "stateEntityParamName" : "selectedNode",
+            "defaultStateEntity" : null,
+            "rootEntity" : null,
+            "direction" : "TO",
+            "maxLevel" : 1,
+            "fetchLastLevelOnly" : false,
+            "filters" : [ {
+              "relationType" : "Contains",
+              "entityTypes" : [ "ASSET" ]
+            } ]
+          }
+        },
+        "eb17d115-9874-7d27-4fd4-7053242e2caf" : {
+          "id" : "eb17d115-9874-7d27-4fd4-7053242e2caf",
+          "alias" : "Selected Node Childs1",
           "filter" : {
             "type" : "relationsQuery",
             "resolveMultiple" : true,

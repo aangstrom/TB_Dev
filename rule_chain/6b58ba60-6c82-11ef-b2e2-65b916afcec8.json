@@ -73,6 +73,10 @@
       "fromIndex" : 11,
       "toIndex" : 4,
       "type" : "Success"
+    }, {
+      "fromIndex" : 12,
+      "toIndex" : 13,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : null,
     "nodes" : [ {
@@ -464,6 +468,46 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbDuplicateMsgToRelatedNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 278,
+        "layoutY" : 806
+      },
+      "configuration" : {
+        "operation" : "ADD",
+        "arguments" : [ {
+          "type" : "MESSAGE_BODY",
+          "key" : "energy",
+          "name" : "x",
+          "defaultValue" : 0
+        }, {
+          "type" : "TIME_SERIES",
+          "key" : "energy",
+          "name" : "y",
+          "defaultValue" : null
+        } ],
+        "result" : {
+          "type" : "TIME_SERIES",
+          "key" : "energy",
+          "resultValuePrecision" : 2,
+          "addToBody" : false,
+          "addToMetadata" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "08c39710-6c89-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "add energy in timeseries",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.math.TbMathNode"
     } ],
     "ruleChainConnections" : null
   },

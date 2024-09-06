@@ -123,6 +123,13 @@
                 "color" : "#2196f3",
                 "settings" : { },
                 "_hash" : 0.07938867393368687
+              }, {
+                "name" : "energy",
+                "type" : "timeseries",
+                "label" : "energy",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.28802748592772986
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -158,10 +165,10 @@
             "padding" : "0px",
             "settings" : {
               "useMarkdownTextFunction" : false,
-              "markdownTextPattern" : "<h2>${entityName}</h2>\n",
+              "markdownTextPattern" : "<h4>${entityName}</h4>  <b>Energy</b>: ${energy:N2} kWh\n",
               "markdownTextFunction" : "return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
               "applyDefaultMarkdownStyle" : true,
-              "markdownCss" : ""
+              "markdownCss" : "b {\n    margin-left: 40px;\n}"
             },
             "title" : "Markdown/HTML Card",
             "showTitleIcon" : false,

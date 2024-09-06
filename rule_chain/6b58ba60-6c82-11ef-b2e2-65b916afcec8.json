@@ -66,6 +66,10 @@
       "toIndex" : 9,
       "type" : "Success"
     }, {
+      "fromIndex" : 9,
+      "toIndex" : 12,
+      "type" : "Success"
+    }, {
       "fromIndex" : 11,
       "toIndex" : 4,
       "type" : "Success"
@@ -368,8 +372,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 284,
-        "layoutY" : 714
+        "layoutX" : 9,
+        "layoutY" : 615
       },
       "configuration" : {
         "forwardMsgToDefaultRuleChain" : false,
@@ -430,6 +434,36 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 284,
+        "layoutY" : 723
+      },
+      "configuration" : {
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "FROM",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "ASSET" ]
+          } ]
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b5f81060-6c88-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "get parent asset",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbDuplicateMsgToRelatedNode"
     } ],
     "ruleChainConnections" : null
   },

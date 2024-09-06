@@ -7,7 +7,10 @@
     "configuration" : null,
     "debugMode" : true,
     "externalId" : null,
-    "firstRuleNodeId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "0cd69930-6c87-11ef-b2e2-65b916afcec8"
+    },
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "0cbcf6b0-6c87-11ef-b2e2-65b916afcec8"
@@ -17,9 +20,323 @@
     "type" : "CORE"
   },
   "metaData" : {
-    "connections" : null,
-    "firstNodeIndex" : null,
-    "nodes" : [ ],
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 5,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 6,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 7,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 8,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 0,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 367,
+        "layoutY" : 212
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var msg = {\n  \"username\": \"usman.azam173@gmail.com\",\n  \"password\": \"popo345popo\"\n};\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0cd69930-6c87-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "script",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 373,
+        "layoutY" : 305
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "https://aa8.aangstrom.it/api/auth/login",
+        "requestMethod" : "POST",
+        "useSimpleClientHttpFactory" : false,
+        "parseToPlainText" : false,
+        "ignoreRequestBody" : false,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : {
+          "Content-Type" : "application/json"
+        },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : null,
+        "maxQueueSize" : null,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0cd6e750-6c87-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "login",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 374,
+        "layoutY" : 394
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "metadata.token = msg.token;\n\nvar msg = {\n    \"entityFilter\": {\n        \"type\": \"assetSearchQuery\",\n        \"rootEntity\": {\n            \"entityType\": \"ASSET\",\n            \"id\": metadata.originatorId\n        },\n        \"direction\": \"TO\",\n        \"maxLevel\": 1,\n        \"fetchLastLevelOnly\": false,\n        \"relationType\": \"Contains\",\n        \"assetTypes\": [\n            \"Family\"\n        ]\n    },\n    \"entityFields\": [\n        {\n            \"type\": \"ENTITY_FIELD\",\n            \"key\": \"name\"\n        },\n        {\n            \"type\": \"ENTITY_FIELD\",\n            \"key\": \"label\"\n        },\n        {\n            \"type\": \"ENTITY_FIELD\",\n            \"key\": \"additionalInfo\"\n        }\n    ],\n    \"latestValues\": [\n        {\n            \"type\": \"ATTRIBUTE\",\n            \"key\": \"family_size\"\n        }\n    ],\n    \"pageLink\": {\n        \"page\": 0,\n        \"pageSize\": 100,\n        \"sortOrder\": {\n            \"key\": {\n                \"key\": \"name\",\n                \"type\": \"ENTITY_FIELD\"\n            },\n            \"direction\": \"ASC\"\n        }\n    }\n};\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0cd70e60-6c87-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "copy token and prepare payload for getting families info in current asset",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 374,
+        "layoutY" : 483
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "https://aa8.aangstrom.it/api/entitiesQuery/find",
+        "requestMethod" : "POST",
+        "useSimpleClientHttpFactory" : false,
+        "parseToPlainText" : false,
+        "ignoreRequestBody" : false,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : {
+          "Content-Type" : "application/json",
+          "Authorization" : "Bearer ${token}"
+        },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : null,
+        "maxQueueSize" : null,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0cd73570-6c87-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "find all famlies with residents count",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 379,
+        "layoutY" : 577
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var families = [];\nvar total_people = 0;\n\nfor (var i=0; i < msg.data.length; i++) {\n    var obj = msg.data[i];\n    \n    families.push({\n        name: obj.latest.ENTITY_FIELD.name.value,\n        size: +obj.latest.ATTRIBUTE.family_size.value\n    });\n    total_people += (+obj.latest.ATTRIBUTE.family_size.value); \n}\n\n\nvar comsumption = metadata.deltaLiters;\nvar consumptionOnTotal = comsumption / total_people;\n\n\nfor (i=0; i < families.length; i++) {\n    var family = families[i];\n    family.liters = consumptionOnTotal * family.size;\n}\n\nmsg = families;\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0cd75c80-6c87-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "parse family info",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 380,
+        "layoutY" : 674
+      },
+      "configuration" : {
+        "version" : 0
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0cd78390-6c87-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "split famiiy array",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbSplitArrayMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 377,
+        "layoutY" : 758
+      },
+      "configuration" : {
+        "originatorSource" : "ENTITY",
+        "preserveOriginatorIfCustomer" : false,
+        "entityType" : "ASSET",
+        "entityNamePattern" : "$[name]",
+        "relationsQuery" : {
+          "direction" : "FROM",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ ],
+            "negate" : false
+          } ],
+          "fetchLastLevelOnly" : false
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0cd7d1b0-6c87-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "to Family Asset",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 704,
+        "layoutY" : 758
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var newMsg = {};\nnewMsg.liters = msg.liters;\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0cd7d1b1-6c87-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "prepare telemetry",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 951,
+        "layoutY" : 757
+      },
+      "configuration" : {
+        "operation" : "ADD",
+        "arguments" : [ {
+          "type" : "MESSAGE_BODY",
+          "key" : "liters",
+          "name" : "x",
+          "defaultValue" : null
+        }, {
+          "type" : "TIME_SERIES",
+          "key" : "liters",
+          "name" : "y",
+          "defaultValue" : 0
+        } ],
+        "result" : {
+          "type" : "TIME_SERIES",
+          "key" : "liters",
+          "resultValuePrecision" : 2,
+          "addToBody" : false,
+          "addToMetadata" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0cd81fd0-6c87-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "Add delta to existing telemetry",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.math.TbMathNode"
+    } ],
     "ruleChainConnections" : null
   },
   "relations" : [ ],

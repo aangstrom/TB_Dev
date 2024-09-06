@@ -151,7 +151,7 @@
             "padding" : "0px",
             "settings" : {
               "useMarkdownTextFunction" : false,
-              "markdownTextPattern" : "${entityName}.\n",
+              "markdownTextPattern" : "<h2>${entityName}</h2>\n",
               "markdownTextFunction" : "return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
               "applyDefaultMarkdownStyle" : true,
               "markdownCss" : ""
@@ -161,8 +161,8 @@
             "iconColor" : "rgba(0, 0, 0, 0.87)",
             "iconSize" : "24px",
             "titleTooltip" : "",
-            "dropShadow" : true,
-            "enableFullscreen" : true,
+            "dropShadow" : false,
+            "enableFullscreen" : false,
             "widgetStyle" : { },
             "titleStyle" : {
               "fontSize" : "16px",
@@ -170,7 +170,11 @@
             },
             "showLegend" : false,
             "useDashboardTimewindow" : true,
-            "displayTimewindow" : true
+            "displayTimewindow" : true,
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
           },
           "row" : 0,
           "col" : 0,
@@ -185,21 +189,21 @@
             "main" : {
               "widgets" : {
                 "0c9160c4-7d0a-7fb2-f6f6-c375746280a6" : {
-                  "sizeX" : 5,
-                  "sizeY" : 11,
+                  "sizeX" : 7,
+                  "sizeY" : 15,
                   "row" : 0,
                   "col" : 0
                 },
                 "1270c34a-f518-cc69-de13-dfc20a0876e5" : {
-                  "sizeX" : 10,
+                  "sizeX" : 25,
                   "sizeY" : 2,
                   "row" : 0,
-                  "col" : 5
+                  "col" : 7
                 }
               },
               "gridSettings" : {
                 "backgroundColor" : "#eeeeee",
-                "columns" : 24,
+                "columns" : 32,
                 "margin" : 10,
                 "outerMargin" : true,
                 "backgroundSizeMode" : "100%",

@@ -35,8 +35,12 @@
       "type" : "Post telemetry"
     }, {
       "fromIndex" : 3,
-      "toIndex" : 5,
+      "toIndex" : 6,
       "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 5,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : null,
     "nodes" : [ {
@@ -167,11 +171,11 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 943,
-        "layoutY" : 554
+        "layoutX" : 1138,
+        "layoutY" : 593
       },
       "configuration" : {
-        "inputValueKey" : "energy",
+        "inputValueKey" : "deltaEnergy",
         "outputValueKey" : "avgHourlyConsumption",
         "mathFunction" : "SUM",
         "aggIntervalType" : "DAY",
@@ -206,6 +210,35 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 870,
+        "layoutY" : 592
+      },
+      "configuration" : {
+        "inputValueKey" : "energy",
+        "outputValueKey" : "deltaEnergy",
+        "useCache" : false,
+        "addPeriodBetweenMsgs" : false,
+        "periodValueKey" : "periodInMs",
+        "round" : 2,
+        "tellFailureIfDeltaIsNegative" : false,
+        "excludeZeroDeltas" : false
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ff4af4c0-6c84-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "Calculate Delta",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.CalculateDeltaNode"
     } ],
     "ruleChainConnections" : null
   },

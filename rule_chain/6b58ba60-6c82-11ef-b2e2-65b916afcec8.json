@@ -85,6 +85,14 @@
       "fromIndex" : 14,
       "toIndex" : 15,
       "type" : "Success"
+    }, {
+      "fromIndex" : 15,
+      "toIndex" : 16,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 16,
+      "toIndex" : 17,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : null,
     "nodes" : [ {
@@ -580,6 +588,76 @@
       "id" : {
         "entityType" : "RULE_NODE",
         "id" : "4ec22380-6c89-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "add energy in timeseries",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.math.TbMathNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 274,
+        "layoutY" : 1093
+      },
+      "configuration" : {
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "FROM",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "ASSET" ]
+          } ]
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c4f33fd0-6c89-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "get parent asset",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbDuplicateMsgToRelatedNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 271,
+        "layoutY" : 1181
+      },
+      "configuration" : {
+        "operation" : "ADD",
+        "arguments" : [ {
+          "type" : "MESSAGE_BODY",
+          "key" : "energy",
+          "name" : "x",
+          "defaultValue" : null
+        }, {
+          "type" : "TIME_SERIES",
+          "key" : "energy",
+          "name" : "y",
+          "defaultValue" : 0
+        } ],
+        "result" : {
+          "type" : "TIME_SERIES",
+          "key" : "energy",
+          "resultValuePrecision" : 2,
+          "addToBody" : false,
+          "addToMetadata" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c4f366e0-6c89-11ef-b2e2-65b916afcec8"
       },
       "name" : "add energy in timeseries",
       "queueName" : null,

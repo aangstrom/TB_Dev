@@ -26,6 +26,10 @@
       "toIndex" : 2,
       "type" : "Success"
     }, {
+      "fromIndex" : 1,
+      "toIndex" : 9,
+      "type" : "Success"
+    }, {
       "fromIndex" : 2,
       "toIndex" : 3,
       "type" : "Success"
@@ -343,6 +347,35 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 279,
+        "layoutY" : 531
+      },
+      "configuration" : {
+        "inputValueKey" : "energy",
+        "outputValueKey" : "deltaEnergy",
+        "useCache" : false,
+        "addPeriodBetweenMsgs" : false,
+        "periodValueKey" : "periodInMs",
+        "round" : 2,
+        "tellFailureIfDeltaIsNegative" : false,
+        "excludeZeroDeltas" : false
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "79760590-6c86-11ef-b2e2-65b916afcec8"
+      },
+      "name" : "Calculate Delta",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.CalculateDeltaNode"
     } ],
     "ruleChainConnections" : null
   },

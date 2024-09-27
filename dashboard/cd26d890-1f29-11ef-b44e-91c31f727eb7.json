@@ -2231,6 +2231,45 @@
           "row" : 0,
           "col" : 0,
           "id" : "edaf5a35-20bd-a763-3c0f-94cadde72637"
+        },
+        "e675b20c-374f-82a4-eeb9-b76df53e3a12" : {
+          "typeFullFqn" : "system.cards.html_card",
+          "type" : "static",
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "static",
+              "name" : "function",
+              "dataKeys" : [ {
+                "name" : "f(x)",
+                "type" : "function",
+                "label" : "Random",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.15479322438769105,
+                "funcBody" : "var value = prevValue + Math.random() * 100 - 50;\nvar multiplier = Math.pow(10, 2 || 0);\nvar value = Math.round(value * multiplier) / multiplier;\nif (value < -1000) {\n\tvalue = -1000;\n} else if (value > 1000) {\n\tvalue = 1000;\n}\nreturn value;"
+              } ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "cardHtml" : "<div class='card'>\n    <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/watch?v=ByED80IKdIU\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen>\n    </iframe>\n</div>",
+              "cardCss" : ""
+            },
+            "title" : "HTML Card",
+            "dropShadow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "e675b20c-374f-82a4-eeb9-b76df53e3a12"
         }
       },
       "states" : {
@@ -2291,8 +2330,8 @@
                 "78675eb0-5e9c-3b49-e70e-eeb461d24ee0" : {
                   "sizeX" : 18,
                   "sizeY" : 12,
-                  "row" : 49,
-                  "col" : 20
+                  "row" : 48,
+                  "col" : 0
                 },
                 "42b44528-97d7-3f38-3437-b53588c4f893" : {
                   "sizeX" : 18,
@@ -2310,6 +2349,12 @@
                   "sizeX" : 35,
                   "sizeY" : 26,
                   "row" : 22,
+                  "col" : 18
+                },
+                "e675b20c-374f-82a4-eeb9-b76df53e3a12" : {
+                  "sizeX" : 19,
+                  "sizeY" : 11,
+                  "row" : 48,
                   "col" : 18
                 }
               },

@@ -12,7 +12,7 @@
       "tbelEncoder" : "// Encode downlink data from incoming Rule Engine message\n\n// msg - JSON message payload downlink message json\n// msgType - type of message, for ex. 'ATTRIBUTES_UPDATED', 'POST_TELEMETRY_REQUEST', etc.\n// metadata - list of key-value pairs with additional data about the message\n// integrationMetadata - list of key-value pairs with additional data defined in Integration executing this converter\nvar data;\n\nif(msg.method==\"fuxa\"){\n    data = msg.params*1;\n    var result = {\n        contentType: \"TEXT\",\n        data: data,\n        metadata: {\n                topic: 'fuxa/variables/v1'\n        }\n    };\n    return result;\n}",
       "updateOnlyKeys" : [ "manufacturer" ]
     },
-    "debugMode" : true,
+    "debugMode" : false,
     "edgeTemplate" : false,
     "externalId" : null,
     "id" : {

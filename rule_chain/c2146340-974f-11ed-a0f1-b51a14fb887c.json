@@ -97,14 +97,16 @@
         "skipLatestPersistence" : null,
         "useServerTs" : null
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugMode" : false,
+      "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
         "id" : "c21e7560-974f-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Save Timeseries",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
@@ -115,8 +117,11 @@
       },
       "configuration" : {
         "scope" : "CLIENT_SCOPE",
-        "notifyDevice" : "false"
+        "notifyDevice" : false,
+        "sendAttributesUpdatedNotification" : false,
+        "updateAttributesOnlyOnValueChange" : false
       },
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -125,6 +130,7 @@
         "id" : "c2204a20-974f-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Save Attributes",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
@@ -137,6 +143,7 @@
       "configuration" : {
         "version" : 0
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -145,6 +152,7 @@
         "id" : "c220bf50-974f-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Message Type Switch",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
@@ -156,6 +164,7 @@
       "configuration" : {
         "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -164,6 +173,7 @@
         "id" : "c2221ee0-974f-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Log RPC from Device",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.action.TbLogNode"
@@ -175,6 +185,7 @@
       "configuration" : {
         "jsScript" : "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -183,6 +194,7 @@
         "id" : "c2229410-974f-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Log Other",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.action.TbLogNode"
@@ -195,6 +207,7 @@
       "configuration" : {
         "timeoutInSeconds" : 60
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -203,6 +216,7 @@
         "id" : "c223cc90-974f-11ed-a0f1-b51a14fb887c"
       },
       "name" : "RPC Call Request",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.rpc.TbSendRPCRequestNode"
@@ -214,6 +228,7 @@
       "configuration" : {
         "originatorTypes" : [ "ENTITY_GROUP" ]
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -222,6 +237,7 @@
         "id" : "c2248fe0-974f-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Is Entity Group",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbOriginatorTypeFilterNode"
@@ -233,6 +249,7 @@
       "configuration" : {
         "messageTypes" : [ "POST_ATTRIBUTES_REQUEST", "RPC_CALL_FROM_SERVER_TO_DEVICE" ]
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -241,6 +258,7 @@
         "id" : "c225a150-974f-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Post attributes or RPC request",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeFilterNode"
@@ -253,6 +271,7 @@
         "entityGroupId" : null,
         "entityGroupIsMessageOriginator" : true
       },
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -261,6 +280,7 @@
         "id" : "c225ef70-974f-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Duplicate To Group Entities",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbDuplicateMsgToGroupNode"
@@ -272,8 +292,9 @@
       },
       "configuration" : {
         "persistAlarmRulesState" : false,
-        "fetchAlarmRulesStateOnStart" : false
+        "fetchAlarmRulesStateOnStart" : "false"
       },
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -282,6 +303,7 @@
         "id" : "c2268bb0-974f-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Device Profile Node",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.profile.TbDeviceProfileNode"
@@ -292,8 +314,10 @@
         "layoutY" : 731
       },
       "configuration" : {
-        "ruleChainId" : "7c655170-01d5-11ed-8014-35af6f7ed6b6"
+        "ruleChainId" : "7c655170-01d5-11ed-8014-35af6f7ed6b6",
+        "forwardMsgToDefaultRuleChain" : false
       },
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -302,6 +326,7 @@
         "id" : "c22700e0-974f-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Generate Report",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
@@ -312,8 +337,10 @@
         "layoutY" : 567
       },
       "configuration" : {
-        "ruleChainId" : "fa3689a0-3f5d-11ed-accb-016e0c746b7f"
+        "ruleChainId" : "fa3689a0-3f5d-11ed-accb-016e0c746b7f",
+        "forwardMsgToDefaultRuleChain" : false
       },
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -322,6 +349,7 @@
         "id" : "c2277610-974f-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Process RPC Reply",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
@@ -340,6 +368,7 @@
         "originatorId" : "f00ceb70-32a3-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -348,6 +377,7 @@
         "id" : "14c62060-9750-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Smart sensor",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -366,6 +396,7 @@
         "originatorId" : "f011f480-32a3-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -374,6 +405,7 @@
         "id" : "14c66e80-9750-11ed-a0f1-b51a14fb887c"
       },
       "name" : "HVAC",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -392,6 +424,7 @@
         "originatorId" : "f018f960-32a3-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -400,6 +433,7 @@
         "id" : "14c6bca0-9750-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Water meter",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -418,6 +452,7 @@
         "originatorId" : "f0161330-32a3-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -426,6 +461,7 @@
         "id" : "14c731d0-9750-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Energy meter",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -440,6 +476,7 @@
         "jsScript" : "var enabled, targetTemperature;\nif (msg.method==\"setEnabled\"){\n    if(msg.params==\"false\"){\n        enabled = false;\n    }\n    else if(msg.params==\"true\"){\n        enabled = true;\n    }\n}\nelse if (msg.method==\"setTemperature\"){\n    targetTemperature = msg.params;\n}\nvar type = \"POST_TELEMETRY_REQUEST\";\nvar messaggio = {\n    enabled: enabled,\n    targetTemperature: targetTemperature\n}\nreturn {msg: messaggio, metadata: metadata, msgType: type};",
         "tbelScript" : "var enabled;\nvar targetTemperature;\nif (msg.method==\"setEnabled\"){\n    if(msg.params==\"false\"){\n        enabled = false;\n    }\n    else if(msg.params==\"true\"){\n        enabled = true;\n    }\n} else if (msg.method==\"setTemperature\"){\n    targetTemperature = msg.params;\n}\nvar type = \"POST_TELEMETRY_REQUEST\";\n\nvar messaggio = {\n    enabled: enabled,\n    targetTemperature: targetTemperature,\n};\nreturn {msg: messaggio, metadata: metadata, msgType: type};"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -448,6 +485,7 @@
         "id" : "e0999ff0-97e6-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Script rpc",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
@@ -462,6 +500,7 @@
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
         "tbelScript" : "function nextRelation(metadata, msg) {\n    return ['falso'];\n}\nif (msgType == 'RPC_CALL_FROM_SERVER_TO_DEVICE') {\n    if(msg.method==\"setEnabled\"){\n        return ['vero'];\n    } else if (msg.method==\"setTemperature\"){\n        return ['vero'];\n    } else {\n        return ['falso'];\n    }\n}\nreturn nextRelation(metadata, msg);"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -470,6 +509,7 @@
         "id" : "926c15f0-97e7-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Is RPC",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
@@ -488,6 +528,7 @@
         "originatorId" : "16f25980-ade9-11ed-bcb8-7f48a6e846b2",
         "originatorType" : "DEVICE"
       },
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -496,6 +537,7 @@
         "id" : "5b442050-ade9-11ed-bcb8-7f48a6e846b2"
       },
       "name" : "Energy meter 2",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
@@ -514,6 +556,7 @@
         "originatorId" : "21f06020-ade9-11ed-bcb8-7f48a6e846b2",
         "originatorType" : "DEVICE"
       },
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -522,6 +565,7 @@
         "id" : "5b4558d0-ade9-11ed-bcb8-7f48a6e846b2"
       },
       "name" : "Energy meter 3",
+      "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"

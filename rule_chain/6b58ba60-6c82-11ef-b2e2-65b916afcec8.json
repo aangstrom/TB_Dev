@@ -114,7 +114,7 @@
         "originatorId" : "f167afe0-6c81-11ef-b2e2-65b916afcec8",
         "originatorType" : "DEVICE"
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : true,
       "externalId" : null,
@@ -142,7 +142,7 @@
         "originatorId" : "fa305ff0-6c81-11ef-b2e2-65b916afcec8",
         "originatorType" : "DEVICE"
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : true,
       "externalId" : null,
@@ -158,14 +158,14 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 416,
-        "layoutY" : 363
+        "layoutX" : 471,
+        "layoutY" : 346
       },
       "configuration" : {
         "persistAlarmRulesState" : false,
-        "fetchAlarmRulesStateOnStart" : false
+        "fetchAlarmRulesStateOnStart" : "false"
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : true,
       "externalId" : null,
@@ -340,8 +340,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 279,
-        "layoutY" : 531
+        "layoutX" : 374,
+        "layoutY" : 522
       },
       "configuration" : {
         "inputValueKey" : "energy",
@@ -668,6 +668,30 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.math.TbMathNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 334,
+        "layoutY" : 202
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "735a1790-8fc8-11ef-b256-311bc5574c38"
+      },
+      "name" : "prepare payload",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

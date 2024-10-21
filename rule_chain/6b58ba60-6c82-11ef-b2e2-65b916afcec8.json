@@ -26,6 +26,10 @@
       "toIndex" : 8,
       "type" : "Success"
     }, {
+      "fromIndex" : 0,
+      "toIndex" : 19,
+      "type" : "Success"
+    }, {
       "fromIndex" : 1,
       "toIndex" : 2,
       "type" : "Success"
@@ -96,6 +100,10 @@
     }, {
       "fromIndex" : 16,
       "toIndex" : 17,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 19,
+      "toIndex" : 18,
       "type" : "Success"
     } ],
     "firstNodeIndex" : null,
@@ -671,8 +679,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 334,
-        "layoutY" : 202
+        "layoutX" : 636,
+        "layoutY" : 181
       },
       "configuration" : {
         "scriptLang" : "JS",
@@ -692,6 +700,34 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 349,
+        "layoutY" : 177
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchTo" : "METADATA",
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "secret_key", "stripe_customer_id" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : false
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "382b68f0-8fe0-11ef-b256-311bc5574c38"
+      },
+      "name" : "get client id and secret key",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
     } ],
     "ruleChainConnections" : null
   },

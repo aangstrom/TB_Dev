@@ -679,12 +679,12 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 635,
-        "layoutY" : 179
+        "layoutX" : 673,
+        "layoutY" : 178
       },
       "configuration" : {
         "scriptLang" : "JS",
-        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "jsScript" : "var msg = {\n  \"event_name\": \"energy_001\",\n  \"payload\": {\n    \"stripe_customer_id\": metadata.ss_stripe_customer_id,\n    \"value\": msg.energy\n  }\n};\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
         "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,

@@ -49,11 +49,11 @@
       "type" : "RPC Request to Device"
     }, {
       "fromIndex" : 2,
-      "toIndex" : 32,
+      "toIndex" : 28,
       "type" : "Post telemetry"
     }, {
       "fromIndex" : 2,
-      "toIndex" : 36,
+      "toIndex" : 32,
       "type" : "RPC Request to Device"
     }, {
       "fromIndex" : 6,
@@ -81,31 +81,35 @@
       "type" : "Success"
     }, {
       "fromIndex" : 9,
+      "toIndex" : 29,
+      "type" : "Alarm Created"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 33,
+      "type" : "Alarm Cleared"
+    }, {
+      "fromIndex" : 9,
       "toIndex" : 33,
       "type" : "Alarm Created"
     }, {
       "fromIndex" : 9,
-      "toIndex" : 37,
-      "type" : "Alarm Cleared"
-    }, {
-      "fromIndex" : 9,
-      "toIndex" : 37,
-      "type" : "Alarm Created"
-    }, {
-      "fromIndex" : 9,
-      "toIndex" : 37,
+      "toIndex" : 33,
       "type" : "Alarm Severity Updated"
     }, {
       "fromIndex" : 9,
-      "toIndex" : 37,
+      "toIndex" : 33,
       "type" : "Alarm Updated"
     }, {
       "fromIndex" : 12,
-      "toIndex" : 41,
+      "toIndex" : 37,
       "type" : "Success"
     }, {
       "fromIndex" : 12,
-      "toIndex" : 43,
+      "toIndex" : 39,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 15,
+      "toIndex" : 16,
       "type" : "Success"
     }, {
       "fromIndex" : 16,
@@ -116,64 +120,52 @@
       "toIndex" : 18,
       "type" : "Success"
     }, {
-      "fromIndex" : 18,
-      "toIndex" : 19,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 20,
+      "fromIndex" : 19,
       "toIndex" : 21,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 21,
-      "toIndex" : 22,
-      "type" : "Success"
+      "type" : "energymeter"
     }, {
       "fromIndex" : 23,
       "toIndex" : 25,
-      "type" : "energymeter"
-    }, {
-      "fromIndex" : 27,
-      "toIndex" : 29,
       "type" : "Success"
     }, {
-      "fromIndex" : 29,
-      "toIndex" : 28,
+      "fromIndex" : 25,
+      "toIndex" : 24,
       "type" : "Post telemetry"
     }, {
-      "fromIndex" : 29,
-      "toIndex" : 34,
+      "fromIndex" : 25,
+      "toIndex" : 30,
       "type" : "Post attributes"
     }, {
-      "fromIndex" : 30,
+      "fromIndex" : 26,
       "toIndex" : 0,
       "type" : "Success"
     }, {
-      "fromIndex" : 32,
-      "toIndex" : 30,
+      "fromIndex" : 28,
+      "toIndex" : 26,
       "type" : "Other"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 27,
+      "type" : "Energy"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 38,
+      "type" : "Energy"
     }, {
       "fromIndex" : 32,
       "toIndex" : 31,
-      "type" : "Energy"
-    }, {
-      "fromIndex" : 32,
-      "toIndex" : 42,
-      "type" : "Energy"
-    }, {
-      "fromIndex" : 36,
-      "toIndex" : 35,
       "type" : "Relay"
     }, {
-      "fromIndex" : 36,
-      "toIndex" : 40,
+      "fromIndex" : 32,
+      "toIndex" : 36,
       "type" : "getRelay"
     }, {
-      "fromIndex" : 38,
+      "fromIndex" : 34,
       "toIndex" : 9,
       "type" : "Success"
     }, {
-      "fromIndex" : 40,
-      "toIndex" : 39,
+      "fromIndex" : 36,
+      "toIndex" : 35,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
@@ -382,9 +374,9 @@
       },
       "configuration" : {
         "persistAlarmRulesState" : false,
-        "fetchAlarmRulesStateOnStart" : false
+        "fetchAlarmRulesStateOnStart" : "false"
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -458,7 +450,7 @@
         "originatorId" : "e6238730-430c-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -486,7 +478,7 @@
         "originatorId" : "edae6010-430c-11ed-accb-016e0c746b7f",
         "originatorType" : "DEVICE"
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -512,9 +504,9 @@
         "jsScript" : "var temp = prevMsg.energy;\nvar d = new Date();\nvar hour = d.getHours();\nvar amperage, energy, frequency, power, voltage;\nswitch(hour) {\n  case 8:\n  case 9:\n  case 10:\n  case 11:\n  case 12:\n  case 13:\n  case 14:\n  case 15:\n  case 16:\n  case 17:\n    amperage = (Math.random() * (5 - 0) + 10).toFixed(1);\n    frequency = (Math.random() * (50 - 0) + 10).toFixed(1);\n    power = Math.random() * (1000 - 0) + 0;\n    power = Math.round( power * 100 ) / 100;\n    energy = power;\n    voltage = (Math.random() * (10 - 0) + 220).toFixed(2);\n    break;\n  default:\n    amperage = 0.1 + (Math.random() * (0.1 - 0) + 0).toFixed(1);\n    frequency = 10;\n    power = null;\n    energy = temp;\n    voltage = 0.5;\n}\namperage = Math.round( amperage * 100 ) / 100;\nfrequency = Math.round( frequency * 100 ) / 100;\nvoltage = Math.round( voltage * 100 ) / 100;\nvar msg = {\n    amperage: amperage,\n    energy: energy,\n    frequency: frequency,\n    power: power,\n    voltage: voltage\n};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var temp = prevMsg.energy;\nvar hour = new Date().getHours();\nvar amperage;\nvar energy;\nvar frequency;\nvar power;\nvar voltage;\nvar power_factor;\nif(hour>=8 && hour<=17){\n    amperage = Math.random() * (5 - 0) + 10;\n    frequency = Math.random() * (50 - 0) + 10;\n    power = Math.random() * (1000 - 0) + 0;\n    power = Math.round( power * 100 ) / 100;\n    power_factor = Math.random() * (1 - 0.2);\n    energy = power;\n    voltage = Math.random() * (10 - 0) + 220;\n} else {\n    amperage = 0.1 + Math.random() * (0.1 - 0) + 0;\n    frequency = 10;\n    power = null;\n    power_factor = null;\n    energy = temp;\n    voltage = 0.5;\n}\namperage = toFixed(amperage,2);\nfrequency = toFixed(frequency,2);\nvoltage = toFixed(voltage,2);\npower_factor = toFixed(power_factor,2);\nvar msg = {\n    amperage: amperage,\n    energy: energy,\n    frequency: frequency,\n    power: power,\n    power_factor: power_factor,\n    voltage: voltage\n};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "originatorId" : null,
-        "originatorType" : null
+        "originatorType" : "RULE_NODE"
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -523,34 +515,6 @@
         "id" : "63fa1ce0-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "energy-demo",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 57,
-        "layoutY" : 357
-      },
-      "configuration" : {
-        "msgCount" : 0,
-        "periodInSeconds" : 10,
-        "scriptLang" : "TBEL",
-        "jsScript" : "var temp = prevMsg.energy;\nvar d = new Date();\nvar hour = d.getHours();\nvar amperage, energy, frequency, power, voltage;\nswitch(hour) {\n  case 8:\n  case 9:\n  case 10:\n  case 11:\n  case 12:\n  case 13:\n  case 14:\n  case 15:\n  case 16:\n  case 17:\n    amperage = (Math.random() * (5 - 0) + 10).toFixed(1);\n    frequency = (Math.random() * (50 - 0) + 10).toFixed(1);\n    power = Math.random() * (1000 - 0) + 0;\n    power = Math.round( power * 100 ) / 100;\n    energy = power;\n    voltage = (Math.random() * (10 - 0) + 220).toFixed(2);\n    break;\n  default:\n    amperage = 0.1 + (Math.random() * (0.1 - 0) + 0).toFixed(1);\n    frequency = 10;\n    power = null;\n    energy = temp;\n    voltage = 0.5;\n}\namperage = Math.round( amperage * 100 ) / 100;\nfrequency = Math.round( frequency * 100 ) / 100;\nvoltage = Math.round( voltage * 100 ) / 100;\nvar msg = {\n    amperage: amperage,\n    energy: energy,\n    frequency: frequency,\n    power: power,\n    voltage: voltage\n};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var temp;\nif(prevMsg!=null){\n    temp=prevMsg.lunghScavo;\n}else{\n    temp=0.1;\n}\nvar hour = new Date().getHours();\nvar lunghScavo;\nvar pressSpinta;\nvar allarme_off;\nvar ins_tubo;\nvar spinta_avanti;\nvar spinta_indietro;\nvar rotazione_Attiva;\nvar direzione=Math.random() < 0.7;\nif(hour>=8 && hour<=17){\n    temporaneo = Math.random() * (0.5 - 0);\n    lunghScavo= temp;\n    pressSpinta = Math.random() * (100 - 0);\n    allarme_off = Math.random() < 0.9;\n    ins_tubo = Math.random() < 0.5;\n    if(direzione==true){\n        spinta_avanti=true;\n        spinta_indietro=false;\n    }else{\n        spinta_avanti=false;\n        spinta_indietro=true;\n    }\n    rotazione_Attiva=true;\n} else {\n    lunghScavo = null;\n    pressSpinta = null;\n    allarme_off = true;\n    ins_tubo = false;\n    spinta_avanti=false;\n    spinta_indietro=false;\n    rotazione_Attiva = false;\n}\npressSpinta = toFixed(pressSpinta,2);\nlunghScavo = toFixed(lunghScavo,2);\nvar msg = {\n    pressSpinta: pressSpinta,\n    lunghScavo: prevMsg.lunghScavo,\n    allarme_off: allarme_off,\n    ins_tubo: ins_tubo,\n    spinta_avanti: spinta_avanti,\n    spinta_indietro: spinta_indietro,\n    rotazione_Attiva: rotazione_Attiva\n};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };\n\n",
-        "originatorId" : "7c15f8f0-01d5-11ed-8014-35af6f7ed6b6",
-        "originatorType" : "DEVICE"
-      },
-      "configurationVersion" : 1,
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "63fa1ce1-ef3e-11ed-9fb5-f96805f2c8b4"
-      },
-      "name" : "Trivella Demo",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
@@ -570,7 +534,7 @@
         "originatorId" : "eccb2a30-9649-11ed-a0f1-b51a14fb887c",
         "originatorType" : "ASSET"
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -634,14 +598,12 @@
         "headers" : {
           "Content-Type" : "application/json"
         },
-        "useRedisQueueForMsgPersistence" : false,
-        "trimQueue" : false,
-        "maxQueueSize" : 0,
         "credentials" : {
           "type" : "anonymous"
-        }
+        },
+        "maxInMemoryBufferSizeInKb" : 256
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 3,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -674,86 +636,6 @@
         "id" : "63fa6b00-ef3e-11ed-9fb5-f96805f2c8b4"
       },
       "name" : "get weather telemetry",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 56,
-        "layoutY" : 542
-      },
-      "configuration" : {
-        "msgCount" : 0,
-        "periodInSeconds" : 30,
-        "scriptLang" : "TBEL",
-        "jsScript" : "var temperature = 18 + Math.random() * (32 - 18);\ntemperature = Math.round( temperature * 100 ) / 100;\nvar humidity = 10 + Math.random() * (90 - 10);\nhumidity = Math.round( humidity * 100 ) / 100;\nvar soundAvg = 10 + Math.random() * (90 - 10);\nsoundAvg = Math.round( soundAvg * 100 ) / 100;\nvar soundPeak = 30 + Math.random() * (90 - 10);\nsoundPeak = Math.round( soundPeak * 100 ) / 100;\nvar light = 10 + Math.random() * (500 - 20);\nlight = Math.round( light * 100 ) / 100;\nvar co2 = 300 + Math.random() * (1200 - 50);\nco2 = Math.round( co2 * 100 ) / 100;\nvar user_latitude = 44.9034748;\nvar user_longitude = 11.6190913;\nvar vdd = 3994;\nvar msg = { \n            temperature: temperature,\n            humidity: humidity,\n            soundAvg: soundAvg,\n            soundPeak: soundPeak,\n            light: light,\n            co2: co2,\n            user_latitude: user_latitude,\n            user_longitude: user_longitude,\n            vdd: vdd,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
-        "tbelScript" : "var temperature = 19 + Math.random() * (5 - 0);\ntemperature = Math.round( temperature * 100 ) / 100;\nvar msg = { \n            temperature: temperature,\n};\nreturn { msg: msg, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };\n",
-        "originatorId" : "7c15f8f0-01d5-11ed-8014-35af6f7ed6b6",
-        "originatorType" : "DEVICE"
-      },
-      "configurationVersion" : 1,
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "63fa6b01-ef3e-11ed-9fb5-f96805f2c8b4"
-      },
-      "name" : "Caldaia",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 61,
-        "layoutY" : 622
-      },
-      "configuration" : {
-        "tellFailureIfAbsent" : true,
-        "clientAttributeNames" : [ ],
-        "sharedAttributeNames" : [ ],
-        "serverAttributeNames" : [ "setNewTemperature" ],
-        "latestTsKeyNames" : [ ],
-        "getLatestValueWithTs" : false,
-        "fetchTo" : "DATA"
-      },
-      "configurationVersion" : 1,
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "63fa6b02-ef3e-11ed-9fb5-f96805f2c8b4"
-      },
-      "name" : "Get setTemperature",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 59,
-        "layoutY" : 697
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "jsScript" : "return {msg: msg, metadata: metadata, msgType: \"POST_TELEMETRY_REQUEST\"};",
-        "tbelScript" : "var status;\nif(msg.temperature>=msg.ss_setNewTemperature){\n    status=0;\n}else{\n    status=1;\n}\nvar newMsg={\n    status: status,\n    temperature: msg.temperature,\n    setTemperature: msg.ss_setNewTemperature\n};\nreturn {msg: newMsg, metadata: metadata, msgType: \"POST_TELEMETRY_REQUEST\"};"
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "63fa9210-ef3e-11ed-9fb5-f96805f2c8b4"
-      },
-      "name" : "Trasform to telemetry",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
@@ -886,9 +768,9 @@
       },
       "configuration" : {
         "persistAlarmRulesState" : false,
-        "fetchAlarmRulesStateOnStart" : false
+        "fetchAlarmRulesStateOnStart" : "false"
       },
-      "configurationVersion" : 0,
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -1150,7 +1032,7 @@
         "originatorId" : "2347daf0-f0b2-11ed-9fb5-f96805f2c8b4",
         "originatorType" : "DEVICE"
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,

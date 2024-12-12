@@ -24,7 +24,7 @@
     },
     "downlinkConverterId" : null,
     "edgeTemplate" : false,
-    "enabled" : true,
+    "enabled" : false,
     "externalId" : null,
     "id" : {
       "entityType" : "INTEGRATION",
@@ -47,15 +47,16 @@
       "id" : "28a3ece0-24bb-11ee-bb94-e90efb8ecc83"
     },
     "type" : "ManagedByIntegration",
-    "typeGroup" : "COMMON"
+    "typeGroup" : "COMMON",
+    "version" : 0
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ {
       "booleanValue" : null,
       "doubleValue" : null,
-      "jsonValue" : "{\"success\":true}",
+      "jsonValue" : "{\"success\":false,\"serviceId\":\"aa8-v3-5-0-12\",\"error\":\"java.lang.RuntimeException: Connection to node could not be established. Broker may not be available.\\n\\tat org.thingsboard.integration.kafka.AbstractKafkaIntegration.initConsumer(AbstractKafkaIntegration.java:131)\\n\\tat org.thingsboard.integration.kafka.basic.BasicKafkaIntegration.init(BasicKafkaIntegration.java:54)\\n\\tat org.thingsboard.integration.api.AbstractIntegration.update(AbstractIntegration.java:116)\\n\\tat org.thingsboard.server.service.integration.DefaultIntegrationManagerService.processUpdateEvent(DefaultIntegrationManagerService.java:625)\\n\\tat org.thingsboard.server.service.integration.DefaultIntegrationManagerService.lambda$reInitIntegrations$12(DefaultIntegrationManagerService.java:721)\\n\\tat java.base/java.util.concurrent.ConcurrentHashMap$ValuesView.forEach(ConcurrentHashMap.java:4780)\\n\\tat org.thingsboard.server.service.integration.DefaultIntegrationManagerService.reInitIntegrations(DefaultIntegrationManagerService.java:717)\\n\\tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)\\n\\tat java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)\\n\\tat java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)\\n\\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)\\n\\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)\\n\\tat java.base/java.lang.Thread.run(Thread.java:840)\\nCaused by: org.apache.kafka.common.errors.TimeoutException: Timeout expired while fetching topic metadata\\n\"}",
       "key" : "integration_status_aa8-v3-5-0-12",
-      "lastUpdateTs" : 1690793766509,
+      "lastUpdateTs" : 1734018240000,
       "longValue" : null,
       "strValue" : null
     } ]

@@ -122,26 +122,18 @@
       "type" : "Success"
     }, {
       "fromIndex" : 25,
-      "toIndex" : 27,
+      "toIndex" : 24,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 25,
+      "toIndex" : 26,
       "type" : "Success"
     }, {
       "fromIndex" : 26,
       "toIndex" : 27,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 27,
-      "toIndex" : 24,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 27,
-      "toIndex" : 28,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 28,
-      "toIndex" : 29,
       "type" : "True"
     }, {
-      "fromIndex" : 29,
+      "fromIndex" : 27,
       "toIndex" : 9,
       "type" : "Success"
     } ],
@@ -155,6 +147,7 @@
       "configuration" : {
         "version" : 0
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -163,7 +156,9 @@
         "id" : "e31330f0-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "SwitchEventType",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
     }, {
       "additionalInfo" : {
@@ -176,6 +171,7 @@
         "skipLatestPersistence" : false,
         "useServerTs" : false
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -184,7 +180,9 @@
         "id" : "e313a620-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Save telemetry",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
     }, {
       "additionalInfo" : {
@@ -197,6 +195,7 @@
         "jsScript" : "var newMsg = {\n    currentIrrigationWaterConsumption: 0,\n    irrigationState: \"ON\",\n    irrigationTask: {\n        startTs: Date.now(), \n        durationThreshold: (msg.durationInMinutes ? msg.durationInMinutes * 60 * 1000 : 0),\n        consumptionThreshold: msg.volumeInLitters,\n        consumption: 0\n    }\n}\n\nreturn {msg: newMsg, metadata: metadata, msgType: \"POST_TELEMETRY_REQUEST\"};",
         "tbelScript" : "var newMsg = {\n    currentIrrigationWaterConsumption: 0,\n    irrigationState: \"ON\",\n    irrigationTask: {\n        startTs: Date.now(), \n        durationThreshold: (msg.durationInMinutes != null ? msg.durationInMinutes * 60 * 1000 : 0),\n        consumptionThreshold: msg.volumeInLitters,\n        consumption: 0\n    }\n};\n\nreturn {msg: newMsg, metadata: metadata, msgType: \"POST_TELEMETRY_REQUEST\"};"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -205,7 +204,9 @@
         "id" : "e313f440-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "To Irrigation Start",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
@@ -218,6 +219,7 @@
         "metadataNames" : [ ],
         "checkAllKeys" : true
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -226,7 +228,9 @@
         "id" : "e3146970-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "IsMsgFromWaterMeter",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbCheckMessageNode"
     }, {
       "additionalInfo" : {
@@ -237,6 +241,7 @@
       "configuration" : {
         "messageTypes" : [ "START_IRRIGATION" ]
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -245,7 +250,9 @@
         "id" : "e314b790-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Start Irrigation Using Volume",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeFilterNode"
     }, {
       "additionalInfo" : {
@@ -258,6 +265,7 @@
         "skipLatestPersistence" : false,
         "useServerTs" : false
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -266,7 +274,9 @@
         "id" : "e314dea0-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Save Timeseries",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
     }, {
       "additionalInfo" : {
@@ -277,6 +287,7 @@
       "configuration" : {
         "timeoutInSeconds" : 60
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -285,7 +296,9 @@
         "id" : "e3152cc0-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Start Irrigation",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.rpc.TbSendRPCRequestNode"
     }, {
       "additionalInfo" : {
@@ -303,8 +316,10 @@
             "relationType" : "FieldToSmartValve",
             "entityTypes" : [ "DEVICE" ]
           } ]
-        }
+        },
+        "preserveOriginatorIfCustomer" : true
       },
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -313,7 +328,9 @@
         "id" : "e3157ae0-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "To Smart Valve",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
     }, {
       "additionalInfo" : {
@@ -326,6 +343,7 @@
         "jsScript" : "var msg = { method: \"TURN_ON\", params: {} };\nvar metadata = { \n    expirationTime: new Date().getTime() + 300000,\n    oneway: true,\n    persistent: true\n};\nvar msgType = \"RPC_CALL_FROM_SERVER_TO_DEVICE\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var msg = { method: \"TURN_ON\", params: {} };\nvar metadata = { \n    expirationTime: Date.now() + 300000,\n    oneway: true,\n    persistent: true\n};\nvar msgType = \"RPC_CALL_FROM_SERVER_TO_DEVICE\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -334,7 +352,9 @@
         "id" : "e315c900-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "To Turn On RPC call",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
@@ -363,6 +383,7 @@
           "addToMetadata" : false
         }
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -371,7 +392,9 @@
         "id" : "e315f010-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "calculateIrrigationWaterConsumption",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.math.TbMathNode"
     }, {
       "additionalInfo" : {
@@ -385,8 +408,10 @@
         "sharedAttributeNames" : [ ],
         "serverAttributeNames" : [ ],
         "latestTsKeyNames" : [ "irrigationTask" ],
-        "getLatestValueWithTs" : true
+        "getLatestValueWithTs" : true,
+        "fetchTo" : "METADATA"
       },
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -395,7 +420,9 @@
         "id" : "e3163e30-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Fetch Task",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
     }, {
       "additionalInfo" : {
@@ -408,6 +435,7 @@
         "jsScript" : "var irrigationTask = JSON.parse(metadata.irrigationTask);\nif(irrigationTask.value.durationThreshold > 0){\n    return (irrigationTask.value.startTs + irrigationTask.value.durationThreshold) < Date.now();\n} else {\n    return msg.currentIrrigationWaterConsumption >= irrigationTask.value.consumptionThreshold;\n}",
         "tbelScript" : "var irrigationTask = JSON.parse(metadata.irrigationTask);\nif (irrigationTask == null || irrigationTask.value == null) {\n    return true;\n}\nif(irrigationTask.value.durationThreshold > 0){\n    return (irrigationTask.value.startTs + irrigationTask.value.durationThreshold) < Date.now();\n} else {\n    return msg.currentIrrigationWaterConsumption >= irrigationTask.value.consumptionThreshold;\n}"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -416,7 +444,9 @@
         "id" : "e3166540-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Should Turn Off?",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
     }, {
       "additionalInfo" : {
@@ -427,6 +457,7 @@
       "configuration" : {
         "timeoutInSeconds" : 60
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -435,7 +466,9 @@
         "id" : "e316b360-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Stop Irrigation",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.rpc.TbSendRPCRequestNode"
     }, {
       "additionalInfo" : {
@@ -453,8 +486,10 @@
             "relationType" : "FieldToSmartValve",
             "entityTypes" : [ "DEVICE" ]
           } ]
-        }
+        },
+        "preserveOriginatorIfCustomer" : true
       },
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -463,7 +498,9 @@
         "id" : "e3170180-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "To Smart Valve",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
     }, {
       "additionalInfo" : {
@@ -476,6 +513,7 @@
         "jsScript" : "var msg = { method: \"TURN_OFF\", params: {} };\nvar metadata = { \n    expirationTime: new Date().getTime() + 300000,\n    oneway: true,\n    persistent: true\n};\nvar msgType = \"RPC_CALL_FROM_SERVER_TO_DEVICE\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var msg = { method: \"TURN_OFF\", params: {} };\nvar metadata = { \n    expirationTime: Date.now() + 300000,\n    oneway: true,\n    persistent: true\n};\nvar msgType = \"RPC_CALL_FROM_SERVER_TO_DEVICE\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -484,7 +522,9 @@
         "id" : "e3174fa0-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "To Turn Off RPC call",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
@@ -497,6 +537,7 @@
         "jsScript" : "var irrigationTaskJson = JSON.parse(metadata.irrigationTask);\nvar irrigationTask = irrigationTaskJson.value;\nirrigationTask.consumption = msg.currentIrrigationWaterConsumption;\nirrigationTask.duration = Date.now() - irrigationTask.startTs;\n\nvar newMsg = {\n    irrigationTask: irrigationTask,\n    irrigationState: \"DONE\"\n};\n\nreturn {msg: newMsg, metadata: {ts:  irrigationTaskJson.ts}, msgType: \"POST_TELEMETRY_REQUEST\"};",
         "tbelScript" : "var irrigationTaskJson = JSON.parse(metadata.irrigationTask);\nvar irrigationTask = irrigationTaskJson.value;\nirrigationTask.consumption = msg.currentIrrigationWaterConsumption;\nirrigationTask.duration = Date.now() - irrigationTask.startTs;\n\nvar newMsg = {\n    irrigationTask: irrigationTask,\n    irrigationState: \"DONE\"\n};\n\nreturn {msg: newMsg, metadata: {ts:  irrigationTaskJson.ts}, msgType: \"POST_TELEMETRY_REQUEST\"};"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -505,7 +546,9 @@
         "id" : "e317c4d0-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "To stopped state",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
@@ -518,6 +561,7 @@
         "jsScript" : "var irrigationTaskJson = JSON.parse(metadata.irrigationTask);\nvar irrigationTask = irrigationTaskJson.value;\nirrigationTask.consumption = msg.currentIrrigationWaterConsumption;\nirrigationTask.duration = Date.now() - irrigationTask.startTs;\n\nreturn {msg: {irrigationTask: irrigationTask}, metadata: {ts:  irrigationTaskJson.ts}, msgType: \"POST_TELEMETRY_REQUEST\"};",
         "tbelScript" : "var irrigationTaskJson = JSON.parse(metadata.irrigationTask);\nvar irrigationTask = irrigationTaskJson.value;\nirrigationTask.consumption = msg.currentIrrigationWaterConsumption;\nirrigationTask.duration = Date.now() - irrigationTask.startTs;\n\nreturn {msg: {irrigationTask: irrigationTask}, metadata: {ts:  irrigationTaskJson.ts}, msgType: \"POST_TELEMETRY_REQUEST\"};"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -526,7 +570,9 @@
         "id" : "e3183a00-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Update state",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
@@ -539,6 +585,7 @@
         "skipLatestPersistence" : false,
         "useServerTs" : false
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -547,7 +594,9 @@
         "id" : "e3186110-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Save Timeseries",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
     }, {
       "additionalInfo" : {
@@ -561,8 +610,10 @@
         "sharedAttributeNames" : [ ],
         "serverAttributeNames" : [ ],
         "latestTsKeyNames" : [ "irrigationState" ],
-        "getLatestValueWithTs" : false
+        "getLatestValueWithTs" : false,
+        "fetchTo" : "METADATA"
       },
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -571,7 +622,9 @@
         "id" : "e318af30-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Fetch Irrigation State",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
     }, {
       "additionalInfo" : {
@@ -584,6 +637,7 @@
         "jsScript" : "return metadata.irrigationState === 'ON';",
         "tbelScript" : "return metadata.irrigationState === 'ON';"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -592,7 +646,9 @@
         "id" : "e318fd50-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Is Irrigation On?",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
     }, {
       "additionalInfo" : {
@@ -611,6 +667,7 @@
           } ]
         }
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -619,7 +676,9 @@
         "id" : "e3194b70-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "To Moisture Sensor",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbDuplicateMsgToRelatedNode"
     }, {
       "additionalInfo" : {
@@ -629,8 +688,11 @@
       },
       "configuration" : {
         "scope" : "SERVER_SCOPE",
-        "notifyDevice" : false
+        "notifyDevice" : false,
+        "sendAttributesUpdatedNotification" : false,
+        "updateAttributesOnlyOnValueChange" : false
       },
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -639,7 +701,9 @@
         "id" : "e3197280-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Save Thresholds",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
     }, {
       "additionalInfo" : {
@@ -652,6 +716,7 @@
         "metadataNames" : [ ],
         "checkAllKeys" : false
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -660,7 +725,9 @@
         "id" : "e319c0a0-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Has Thresholds?",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbCheckMessageNode"
     }, {
       "additionalInfo" : {
@@ -673,6 +740,7 @@
         "jsScript" : "var newMsg = {};\nif(msg.maxMoistureThreshold !== undefined) {\n  newMsg.maxMoistureThreshold = msg.maxMoistureThreshold;\n}\nif(msg.minMoistureThreshold !== undefined) {\n  newMsg.minMoistureThreshold = msg.minMoistureThreshold;\n}\nreturn {\n    msg: newMsg, \n    metadata: metadata, \n    msgType: \"POST_ATTRIBUTES_REQUEST\"\n};",
         "tbelScript" : "var newMsg = {};\nif(msg.maxMoistureThreshold != null) {\n  newMsg.maxMoistureThreshold = msg.maxMoistureThreshold;\n}\nif(msg.minMoistureThreshold != null) {\n  newMsg.minMoistureThreshold = msg.minMoistureThreshold;\n}\nreturn {\n    msg: newMsg, \n    metadata: metadata, \n    msgType: \"POST_ATTRIBUTES_REQUEST\"\n};"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -681,7 +749,9 @@
         "id" : "e31a0ec0-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "To Attributes Update",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
@@ -692,6 +762,7 @@
       "configuration" : {
         "version" : 0
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -700,58 +771,10 @@
         "id" : "e31a35d0-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Ignore",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbAckNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 247,
-        "layoutY" : 51
-      },
-      "configuration" : {
-        "msgCount" : 0,
-        "periodInSeconds" : 60,
-        "scriptLang" : "TBEL",
-        "jsScript" : "var msg = {waterConsumption: 60};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var msg = {waterConsumption: 60};\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "originatorId" : "e25733f0-8078-11ed-a0f1-b51a14fb887c",
-        "originatorType" : "ASSET"
-      },
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "e31a83f0-8078-11ed-a0f1-b51a14fb887c"
-      },
-      "name" : "Field 1 Water Consumption Simulator",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 249,
-        "layoutY" : 120
-      },
-      "configuration" : {
-        "msgCount" : 0,
-        "periodInSeconds" : 60,
-        "scriptLang" : "TBEL",
-        "jsScript" : "var msg = { waterConsumption: 60 };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var msg = { waterConsumption: 60 };\nvar metadata = {};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "originatorId" : "e2611f00-8078-11ed-a0f1-b51a14fb887c",
-        "originatorType" : "ASSET"
-      },
-      "createdTime" : 0,
-      "debugMode" : false,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "e31ad210-8078-11ed-a0f1-b51a14fb887c"
-      },
-      "name" : "Field 1 Water Consumption Simulator",
-      "ruleChainId" : null,
-      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
         "description" : "",
@@ -764,8 +787,10 @@
         "sharedAttributeNames" : [ ],
         "serverAttributeNames" : [ ],
         "latestTsKeyNames" : [ "irrigationState" ],
-        "getLatestValueWithTs" : false
+        "getLatestValueWithTs" : false,
+        "fetchTo" : "METADATA"
       },
+      "configurationVersion" : 1,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -774,7 +799,9 @@
         "id" : "e31af920-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Fetch Irrigation State",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
     }, {
       "additionalInfo" : {
@@ -787,6 +814,7 @@
         "jsScript" : "return metadata.irrigationState === 'ON';",
         "tbelScript" : "return metadata.irrigationState === 'ON';"
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -795,7 +823,9 @@
         "id" : "e31b4740-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Is Irrigation On?",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
     }, {
       "additionalInfo" : {
@@ -808,6 +838,7 @@
         "skipLatestPersistence" : false,
         "useServerTs" : false
       },
+      "configurationVersion" : 0,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -816,7 +847,9 @@
         "id" : "e31b9560-8078-11ed-a0f1-b51a14fb887c"
       },
       "name" : "Save telemetry",
+      "queueName" : null,
       "ruleChainId" : null,
+      "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
     } ],
     "ruleChainConnections" : null

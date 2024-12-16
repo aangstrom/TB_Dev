@@ -3394,104 +3394,24 @@
               "filterId" : null,
               "dataKeys" : [ {
                 "name" : "name",
-                "type" : "entityField",
+                "type" : "attribute",
                 "label" : "Nome",
-                "color" : "#ffc107",
-                "settings" : {
-                  "dataKeyHidden" : false,
-                  "dataKeyType" : "server",
-                  "dataKeyValueType" : "string",
-                  "required" : false,
-                  "isEditable" : "readonly",
-                  "appearance" : "outline",
-                  "subscriptSizing" : "fixed",
-                  "useCustomIcon" : false,
-                  "useGetValueFunction" : false,
-                  "useSetValueFunction" : false
-                },
-                "_hash" : 0.06574133384226966,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "stato",
-                "type" : "attribute",
-                "label" : "Stato",
-                "color" : "#ffc107",
-                "settings" : {
-                  "dataKeyHidden" : false,
-                  "dataKeyType" : "server",
-                  "dataKeyValueType" : "select",
-                  "required" : false,
-                  "isEditable" : "editable",
-                  "appearance" : "outline",
-                  "subscriptSizing" : "fixed",
-                  "selectOptions" : [ {
-                    "value" : "normale",
-                    "label" : "Normale"
-                  }, {
-                    "value" : "manutenzione",
-                    "label" : "Manutenzione"
-                  }, {
-                    "value" : "inagibile",
-                    "label" : "Inagibile"
-                  } ],
-                  "useCustomIcon" : false,
-                  "useGetValueFunction" : false,
-                  "useSetValueFunction" : false
-                },
-                "_hash" : 0.8515408417618529,
-                "aggregationType" : null,
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
-              }, {
-                "name" : "stato_assegnazione",
-                "type" : "attribute",
-                "label" : "Stato di assegnazione",
                 "color" : "#607d8b",
-                "settings" : {
-                  "dataKeyHidden" : false,
-                  "dataKeyType" : "server",
-                  "dataKeyValueType" : "select",
-                  "required" : false,
-                  "isEditable" : "editable",
-                  "disabledOnDataKey" : "",
-                  "appearance" : "outline",
-                  "subscriptSizing" : "fixed",
-                  "slideToggleLabelPosition" : "after",
-                  "selectOptions" : [ {
-                    "value" : "assegnato",
-                    "label" : "Assegnato"
-                  }, {
-                    "value" : "non_assegnato",
-                    "label" : "Non Assegnato"
-                  } ],
-                  "step" : 1,
-                  "minValue" : null,
-                  "maxValue" : null,
-                  "requiredErrorMessage" : "",
-                  "minValueErrorMessage" : "",
-                  "maxValueErrorMessage" : "",
-                  "invalidDateErrorMessage" : "",
-                  "invalidJsonErrorMessage" : "",
-                  "dialogTitle" : "",
-                  "saveButtonLabel" : "",
-                  "cancelButtonLabel" : "",
-                  "useCustomIcon" : false,
-                  "icon" : "",
-                  "customIcon" : "",
-                  "useGetValueFunction" : false,
-                  "getValueFunctionBody" : "",
-                  "useSetValueFunction" : false,
-                  "setValueFunctionBody" : ""
-                },
-                "_hash" : 0.8635281342996526,
+                "settings" : { },
+                "_hash" : 0.8508683043594087,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "address",
+                "type" : "attribute",
+                "label" : "Indirizzo",
+                "color" : "#ffc107",
+                "settings" : { },
+                "_hash" : 0.2977626748321036,
                 "aggregationType" : null,
                 "units" : null,
                 "decimals" : null,
@@ -4821,7 +4741,7 @@
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
                 "type" : "openDashboardState",
-                "targetDashboardStateId" : "settings_reparto",
+                "targetDashboardStateId" : "settings_edificio",
                 "setEntityId" : true,
                 "stateEntityParamName" : "selectedDevice",
                 "openRightLayout" : false,
@@ -5352,7 +5272,6 @@
           "sizeY" : 6.5,
           "config" : {
             "timewindow" : {
-              "hideInterval" : false,
               "hideAggregation" : false,
               "hideAggInterval" : false,
               "hideTimezone" : false,
@@ -15812,40 +15731,6 @@
             }
           }
         },
-        "settings_reparto" : {
-          "name" : "Impostazioni Reparto",
-          "root" : false,
-          "layouts" : {
-            "main" : {
-              "widgets" : {
-                "c8179e09-b426-a989-5813-7ac39ce3cdea" : {
-                  "sizeX" : 24,
-                  "sizeY" : 12,
-                  "row" : 0,
-                  "col" : 0
-                },
-                "78b1ab8f-9569-26f1-89d4-64692445b8d7" : {
-                  "sizeX" : 24,
-                  "sizeY" : 10,
-                  "row" : 12,
-                  "col" : 0
-                }
-              },
-              "gridSettings" : {
-                "backgroundColor" : "#ffffff",
-                "columns" : 24,
-                "margin" : 0,
-                "backgroundSizeMode" : "100%",
-                "autoFillHeight" : false,
-                "backgroundImageUrl" : null,
-                "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70,
-                "outerMargin" : true,
-                "layoutType" : "default"
-              }
-            }
-          }
-        },
         "page_reparto" : {
           "name" : "page_reparto",
           "root" : false,
@@ -16181,6 +16066,40 @@
                 "margin" : 10,
                 "outerMargin" : true,
                 "backgroundSizeMode" : "100%",
+                "layoutType" : "default"
+              }
+            }
+          }
+        },
+        "settings_edificio" : {
+          "name" : "Impostazioni Edificio",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "c8179e09-b426-a989-5813-7ac39ce3cdea" : {
+                  "sizeX" : 24,
+                  "sizeY" : 12,
+                  "row" : 0,
+                  "col" : 0
+                },
+                "78b1ab8f-9569-26f1-89d4-64692445b8d7" : {
+                  "sizeX" : 24,
+                  "sizeY" : 10,
+                  "row" : 12,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#ffffff",
+                "columns" : 24,
+                "margin" : 0,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : false,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70,
+                "outerMargin" : true,
                 "layoutType" : "default"
               }
             }

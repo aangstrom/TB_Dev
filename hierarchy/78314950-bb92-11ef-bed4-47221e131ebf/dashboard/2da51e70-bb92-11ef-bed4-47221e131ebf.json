@@ -1552,7 +1552,7 @@
               "entityAliasId" : "b755362a-b545-8ee6-a67b-df2c9e39d6e5",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "demo_name",
+                "name" : "name",
                 "type" : "attribute",
                 "label" : "Nome Sensore",
                 "color" : "#ffeb3b",
@@ -5258,7 +5258,7 @@
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
                 "type" : "openDashboardState",
-                "targetDashboardStateId" : "energy_settings",
+                "targetDashboardStateId" : "settings_sensore",
                 "setEntityId" : true,
                 "stateEntityParamName" : "selectedDevice",
                 "openRightLayout" : false,
@@ -6288,7 +6288,7 @@
                 "app_code" : "p6NPiITB3Vv0GMUFnkLOOg",
                 "apiKey" : "kVXykxAfZ6LS4EbCTO02soFVfjA7HoBzNVVH9u7nzoE"
               },
-              "mapImageUrl" : null,
+              "mapImageUrl" : "tb-image:OTA0NDk1MF9ub19pbWFnZV9pY29uLnN2Zw==:OTA0NDk1MF9ub19pbWFnZV9pY29uLnN2Zw==:SU1BR0U=;data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSIzMiIgaWQ9Imljb24iIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDpub25lO308L3N0eWxlPjwvZGVmcz48dGl0bGUvPjxwYXRoIGQ9Ik0zMCwzLjQxNDEsMjguNTg1OSwyLDIsMjguNTg1OSwzLjQxNDEsMzBsMi0ySDI2YTIuMDAyNywyLjAwMjcsMCwwLDAsMi0yVjUuNDE0MVpNMjYsMjZINy40MTQxbDcuNzkyOS03Ljc5MywyLjM3ODgsMi4zNzg3YTIsMiwwLDAsMCwyLjgyODQsMEwyMiwxOWw0LDMuOTk3M1ptMC01LjgzMTgtMi41ODU4LTIuNTg1OWEyLDIsMCwwLDAtMi44Mjg0LDBMMTksMTkuMTY4MmwtMi4zNzctMi4zNzcxTDI2LDcuNDE0MVoiLz48cGF0aCBkPSJNNiwyMlYxOWw1LTQuOTk2NiwxLjM3MzMsMS4zNzMzLDEuNDE1OS0xLjQxNi0xLjM3NS0xLjM3NWEyLDIsMCwwLDAtMi44Mjg0LDBMNiwxNi4xNzE2VjZIMjJWNEg2QTIuMDAyLDIuMDAyLDAsMCwwLDQsNlYyMloiLz48cmVjdCBjbGFzcz0iY2xzLTEiIGRhdGEtbmFtZT0iJmx0O1RyYW5zcGFyZW50IFJlY3RhbmdsZSZndDsiIGhlaWdodD0iMzIiIGlkPSJfVHJhbnNwYXJlbnRfUmVjdGFuZ2xlXyIgd2lkdGg9IjMyIi8+PC9zdmc+",
               "imageEntityAlias" : "Bungalow del Device",
               "imageUrlAttribute" : "floorplan",
               "tmApiKey" : "84d6d83e0e51e481e50454ccbe8986b",
@@ -6312,12 +6312,23 @@
               "showLabel" : true,
               "useLabelFunction" : false,
               "label" : "${entityName}",
+              "labelFunction" : null,
               "showTooltip" : false,
+              "showTooltipAction" : "click",
+              "autocloseTooltip" : true,
+              "useTooltipFunction" : false,
+              "tooltipPattern" : "<b>${entityName}</b><br/><br/><b>Latitude:</b> ${latitude:7}<br/><b>Longitude:</b> ${longitude:7}",
+              "tooltipFunction" : null,
+              "tooltipOffsetX" : 0,
+              "tooltipOffsetY" : -1,
               "color" : "#F44336",
               "useColorFunction" : false,
+              "colorFunction" : null,
               "useMarkerImageFunction" : false,
               "markerImage" : null,
               "markerImageSize" : 34,
+              "markerImageFunction" : null,
+              "markerImages" : [ ],
               "showPolygon" : false,
               "polygonKeyName" : "coordinates",
               "editablePolygon" : true,
@@ -15173,40 +15184,6 @@
             }
           }
         },
-        "energy_settings" : {
-          "name" : "energy_settings",
-          "root" : false,
-          "layouts" : {
-            "main" : {
-              "widgets" : {
-                "e7636d5f-4bd0-b0b3-637c-86977b6bedac" : {
-                  "sizeX" : 24,
-                  "sizeY" : 10,
-                  "row" : 0,
-                  "col" : 0
-                },
-                "c85aa08f-b3d9-fa7a-3ad5-0b41c9198cbe" : {
-                  "sizeX" : 24,
-                  "sizeY" : 11,
-                  "row" : 10,
-                  "col" : 0
-                }
-              },
-              "gridSettings" : {
-                "backgroundColor" : "#ffffff",
-                "columns" : 24,
-                "margin" : 0,
-                "backgroundSizeMode" : "100%",
-                "autoFillHeight" : true,
-                "backgroundImageUrl" : null,
-                "mobileAutoFillHeight" : false,
-                "mobileRowHeight" : 70,
-                "outerMargin" : true,
-                "layoutType" : "default"
-              }
-            }
-          }
-        },
         "guasti_manutenzioni" : {
           "name" : "Guasti/manutenzioni",
           "root" : false,
@@ -16112,6 +16089,40 @@
                 "margin" : 0,
                 "backgroundSizeMode" : "100%",
                 "autoFillHeight" : false,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70,
+                "outerMargin" : true,
+                "layoutType" : "default"
+              }
+            }
+          }
+        },
+        "settings_sensore" : {
+          "name" : "Impostazioni sensore",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "e7636d5f-4bd0-b0b3-637c-86977b6bedac" : {
+                  "sizeX" : 24,
+                  "sizeY" : 3,
+                  "row" : 0,
+                  "col" : 0
+                },
+                "c85aa08f-b3d9-fa7a-3ad5-0b41c9198cbe" : {
+                  "sizeX" : 24,
+                  "sizeY" : 11,
+                  "row" : 3,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#ffffff",
+                "columns" : 24,
+                "margin" : 0,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : true,
                 "backgroundImageUrl" : null,
                 "mobileAutoFillHeight" : false,
                 "mobileRowHeight" : 70,

@@ -1275,8 +1275,8 @@
     }, {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 1564,
-        "layoutY" : 774
+        "layoutX" : 1376,
+        "layoutY" : 776
       },
       "configuration" : {
         "version" : 0
@@ -1357,7 +1357,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(msg.power!=null) {\n    return ['energy'];\n}else if(msg.liter!=null) {\n    if(msg.string!=null){\n        return ['water', 'Federico'];\n    }else{\n        return ['water'];\n    }\n}else if(msg.occupancy!=null) {\n    return ['occupancy'];\n}else if(msg.string!=null){\n    return ['Federico'];\n}else{\n    return ['false'];\n}"
+        "tbelScript" : "if(msg.power!=null) {\n    return ['energy'];\n}else{\n    return ['false'];\n}"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,

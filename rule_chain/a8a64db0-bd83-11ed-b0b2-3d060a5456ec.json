@@ -447,7 +447,7 @@
         "layoutY" : 513
       },
       "configuration" : {
-        "topicPattern" : "m5stack/${interval}",
+        "topicPattern" : "m5stack/interval",
         "host" : "aa8.aangstrom.it",
         "port" : 1885,
         "connectTimeoutSec" : 10,
@@ -488,7 +488,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var newmsg={};\nnewmsg.interval=msg.interval;\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var newmsg={};\nnewmsg=msg.interval;\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,

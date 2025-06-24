@@ -1355,7 +1355,7 @@
                 }
               },
               "initialState" : {
-                "action" : "EXECUTE_RPC",
+                "action" : "GET_ATTRIBUTE",
                 "defaultValue" : 0,
                 "executeRpc" : {
                   "method" : "getState",
@@ -1364,8 +1364,8 @@
                   "persistentPollingInterval" : 1000
                 },
                 "getAttribute" : {
-                  "key" : "state",
-                  "scope" : null
+                  "scope" : "SERVER_SCOPE",
+                  "key" : "interval"
                 },
                 "getTimeSeries" : {
                   "key" : "state"
@@ -1376,12 +1376,11 @@
                 },
                 "dataToValue" : {
                   "type" : "NONE",
-                  "compareToValue" : true,
                   "dataToValueFunction" : "/* Should return integer value */\nreturn data;"
                 }
               },
               "valueChange" : {
-                "action" : "EXECUTE_RPC",
+                "action" : "SET_ATTRIBUTE",
                 "executeRpc" : {
                   "method" : "setState",
                   "requestTimeout" : 5000,
@@ -1389,8 +1388,8 @@
                   "persistentPollingInterval" : 1000
                 },
                 "setAttribute" : {
-                  "key" : "state",
-                  "scope" : "SERVER_SCOPE"
+                  "scope" : "SERVER_SCOPE",
+                  "key" : "interval"
                 },
                 "putTimeSeries" : {
                   "key" : "state"

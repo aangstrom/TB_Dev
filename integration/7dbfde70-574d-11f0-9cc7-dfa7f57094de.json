@@ -1,10 +1,11 @@
 {
   "entityType" : "INTEGRATION",
   "entity" : {
-    "additionalInfo" : null,
+    "additionalInfo" : {
+      "description" : ""
+    },
     "allowCreateDevicesOrAssets" : true,
     "configuration" : {
-      "metadata" : { },
       "clientConfiguration" : {
         "host" : "aa8.aangstrom.it",
         "port" : 1885,
@@ -22,9 +23,10 @@
       },
       "topicFilters" : [ {
         "filter" : "m5stack/#",
-        "qos" : 0
+        "qos" : 2
       } ],
-      "downlinkTopicPattern" : "${topic}"
+      "downlinkTopicPattern" : "${topic}",
+      "metadata" : { }
     },
     "debugMode" : false,
     "debugSettings" : {
@@ -52,6 +54,14 @@
   },
   "relations" : [ ],
   "attributes" : {
-    "SERVER_SCOPE" : [ ]
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"success\":true}",
+      "key" : "integration_status_aa8-v3-5-0-12",
+      "lastUpdateTs" : 1751465078252,
+      "longValue" : null,
+      "strValue" : null
+    } ]
   }
 }

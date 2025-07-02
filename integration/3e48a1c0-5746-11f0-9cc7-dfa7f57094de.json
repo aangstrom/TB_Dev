@@ -1,10 +1,11 @@
 {
   "entityType" : "INTEGRATION",
   "entity" : {
-    "additionalInfo" : null,
+    "additionalInfo" : {
+      "description" : ""
+    },
     "allowCreateDevicesOrAssets" : true,
     "configuration" : {
-      "metadata" : { },
       "clientConfiguration" : {
         "host" : "aa8.aangstrom.it",
         "port" : 1885,
@@ -17,14 +18,15 @@
         "credentials" : {
           "type" : "basic",
           "username" : "aangstrom",
-          "password" : "Sexten!"
+          "password" : "Sexten69!"
         }
       },
       "topicFilters" : [ {
         "filter" : "#",
         "qos" : 0
       } ],
-      "downlinkTopicPattern" : "${topic}"
+      "downlinkTopicPattern" : "${topic}",
+      "metadata" : { }
     },
     "debugMode" : false,
     "debugSettings" : {
@@ -52,6 +54,14 @@
   },
   "relations" : [ ],
   "attributes" : {
-    "SERVER_SCOPE" : [ ]
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"success\":false,\"serviceId\":\"aa8-v3-5-0-12\",\"error\":\"java.lang.RuntimeException: Failed to connect to MQTT broker at aa8.aangstrom.it:1885. Result code is: CONNECTION_REFUSED_NOT_AUTHORIZED\\n\\tat org.thingsboard.integration.mqtt.AbstractMqttIntegration.initClient(AbstractMqttIntegration.java:267)\\n\\tat org.thingsboard.integration.mqtt.basic.BasicMqttIntegration.init(BasicMqttIntegration.java:93)\\n\\tat org.thingsboard.integration.mqtt.AbstractMqttIntegration.update(AbstractMqttIntegration.java:118)\\n\\tat org.thingsboard.server.service.integration.DefaultIntegrationManagerService.processUpdateEvent(DefaultIntegrationManagerService.java:623)\\n\\tat org.thingsboard.server.service.integration.DefaultIntegrationManagerService.lambda$reInitIntegrations$12(DefaultIntegrationManagerService.java:719)\\n\\tat java.base/java.util.concurrent.ConcurrentHashMap$ValuesView.forEach(ConcurrentHashMap.java:4780)\\n\\tat org.thingsboard.server.service.integration.DefaultIntegrationManagerService.reInitIntegrations(DefaultIntegrationManagerService.java:715)\\n\\tat org.thingsboard.common.util.ThingsBoardScheduledThreadPoolExecutor$PeriodicRunnable.run(ThingsBoardScheduledThreadPoolExecutor.java:67)\\n\\tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)\\n\\tat java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)\\n\\tat java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)\\n\\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)\\n\\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)\\n\\tat java.base/java.lang.Thread.run(Thread.java:840)\\n\"}",
+      "key" : "integration_status_aa8-v3-5-0-12",
+      "lastUpdateTs" : 1751461966451,
+      "longValue" : null,
+      "strValue" : null
+    } ]
   }
 }

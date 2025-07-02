@@ -1949,17 +1949,17 @@
           "sizeY" : 3,
           "config" : {
             "datasources" : [ {
-              "type" : "device",
+              "type" : "entity",
               "name" : "",
               "deviceId" : "168d7750-50e8-11f0-9cc7-dfa7f57094de",
-              "entityAliasId" : "73eb2397-b29d-95cc-ac00-9d761f90236c",
+              "entityAliasId" : "3c85bc40-db02-f68b-49dd-bed5a471e124",
               "dataKeys" : [ {
                 "name" : "temperature",
                 "type" : "timeseries",
                 "label" : "temperature",
                 "color" : "#2196f3",
                 "settings" : { },
-                "_hash" : 0.8663179079266788
+                "_hash" : 0.31038313194770617
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -2453,14 +2453,12 @@
           "id" : "73eb2397-b29d-95cc-ac00-9d761f90236c",
           "alias" : "m5stack",
           "filter" : {
-            "type" : "entityGroup",
-            "resolveMultiple" : true,
-            "groupStateEntity" : true,
-            "stateEntityParamName" : "m5stack",
-            "defaultStateGroupType" : "DEVICE",
-            "defaultStateEntityGroup" : "09cc7960-00b5-11ee-9a4b-a56c330ec2ff",
-            "groupType" : null,
-            "entityGroup" : null
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "168d7750-50e8-11f0-9cc7-dfa7f57094de"
+            }
           }
         }
       },

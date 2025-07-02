@@ -93,8 +93,20 @@
       "toIndex" : 16,
       "type" : "true"
     }, {
+      "fromIndex" : 14,
+      "toIndex" : 17,
+      "type" : "false"
+    }, {
       "fromIndex" : 16,
       "toIndex" : 15,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 17,
+      "toIndex" : 18,
+      "type" : "true"
+    }, {
+      "fromIndex" : 18,
+      "toIndex" : 19,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
@@ -443,8 +455,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 453,
-        "layoutY" : 617
+        "layoutX" : 397,
+        "layoutY" : 660
       },
       "configuration" : {
         "topicPattern" : "m5stack/Interval",
@@ -507,8 +519,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 407,
-        "layoutY" : 426
+        "layoutX" : 404,
+        "layoutY" : 418
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -528,6 +540,66 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 552,
+        "layoutY" : 501
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var newmsg={};\nnewmsg=msg.ventola;\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a2925d40-571b-11f0-9cc7-dfa7f57094de"
+      },
+      "name" : "ventola",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 604,
+        "layoutY" : 607
+      },
+      "configuration" : {
+        "topicPattern" : "m5stack/ventola",
+        "host" : "aa8.aangstrom.it",
+        "port" : 1885,
+        "connectTimeoutSec" : 1,
+        "clientId" : "564920165892",
+        "appendClientIdSuffix" : false,
+        "parseToPlainText" : true,
+        "cleanSession" : true,
+        "retainedMessage" : false,
+        "ssl" : false,
+        "credentials" : {
+          "type" : "basic",
+          "username" : "aangstrom",
+          "password" : "Sexten69!"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a2925d41-571b-11f0-9cc7-dfa7f57094de"
+      },
+      "name" : "ventola MQTT",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : true,
+      "type" : "org.thingsboard.rule.engine.mqtt.TbMqttNode"
     } ],
     "ruleChainConnections" : null
   },

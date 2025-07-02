@@ -2151,9 +2151,10 @@
           "sizeY" : 3.5,
           "config" : {
             "datasources" : [ {
-              "type" : "device",
+              "type" : "entity",
               "name" : "",
-              "deviceId" : "168d7750-50e8-11f0-9cc7-dfa7f57094de",
+              "deviceId" : null,
+              "entityAliasId" : "3c85bc40-db02-f68b-49dd-bed5a471e124",
               "dataKeys" : [ {
                 "name" : "humidity",
                 "type" : "timeseries",
@@ -2208,7 +2209,7 @@
               "showValue" : true,
               "showMinMax" : true,
               "gaugeWidthScale" : 0.75,
-              "levelColors" : [ ],
+              "levelColors" : [ "rgba(0, 255, 0, 1)", "rgba(255, 0, 0, 1)" ],
               "refreshAnimationType" : "linear",
               "refreshAnimationTime" : 700,
               "startAnimationType" : "linear",
@@ -2306,6 +2307,55 @@
           "row" : 0,
           "col" : 0,
           "id" : "2cdea84d-d9d9-1c3a-0467-84be043e18ca"
+        },
+        "3e153373-dea4-1c9b-bfd5-09f353cfbfe2" : {
+          "typeFullFqn" : "system.control_widgets.led_indicator",
+          "type" : "rpc",
+          "sizeX" : 2.5,
+          "sizeY" : 2.5,
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : false,
+            "backgroundColor" : "rgba(0,0,0,0)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0",
+            "settings" : {
+              "title" : "Led indicator",
+              "ledColor" : "#4caf50",
+              "initialValue" : true,
+              "performCheckStatus" : false,
+              "retrieveValueMethod" : "timeseries",
+              "checkStatusMethod" : "checkStatus",
+              "valueAttribute" : "ventola",
+              "parseValueFunction" : "return (data == 1) ? true : false;",
+              "requestTimeout" : 500,
+              "requestPersistent" : false,
+              "persistentPollingInterval" : 5000
+            },
+            "title" : "Led indicator",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 2,
+            "datasources" : [ ],
+            "targetDevice" : {
+              "type" : "device",
+              "deviceId" : "73b658b0-5747-11f0-9cc7-dfa7f57094de"
+            },
+            "resizable" : true,
+            "preserveAspectRatio" : false,
+            "margin" : "0"
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "3e153373-dea4-1c9b-bfd5-09f353cfbfe2"
         }
       },
       "states" : {
@@ -2354,7 +2404,7 @@
                   "preserveAspectRatio" : false,
                   "resizable" : true,
                   "row" : 7,
-                  "col" : 13
+                  "col" : 17
                 },
                 "0ec73bfa-c1a0-6e95-5f7f-64273f1a7a57" : {
                   "sizeX" : 2,
@@ -2370,7 +2420,7 @@
                   "preserveAspectRatio" : false,
                   "resizable" : true,
                   "row" : 7,
-                  "col" : 11
+                  "col" : 13
                 },
                 "683f699c-f0e9-5587-45c6-676bb3d37f3b" : {
                   "sizeX" : 7,
@@ -2387,6 +2437,14 @@
                   "resizable" : true,
                   "row" : 4,
                   "col" : 21
+                },
+                "3e153373-dea4-1c9b-bfd5-09f353cfbfe2" : {
+                  "sizeX" : 2,
+                  "sizeY" : 2,
+                  "preserveAspectRatio" : false,
+                  "resizable" : true,
+                  "row" : 7,
+                  "col" : 11
                 }
               },
               "gridSettings" : {

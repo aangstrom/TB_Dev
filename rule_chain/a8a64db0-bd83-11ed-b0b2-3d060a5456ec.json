@@ -443,8 +443,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 544,
-        "layoutY" : 513
+        "layoutX" : 453,
+        "layoutY" : 617
       },
       "configuration" : {
         "topicPattern" : "m5stack/Interval",
@@ -483,8 +483,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 192,
-        "layoutY" : 457
+        "layoutX" : 226,
+        "layoutY" : 513
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -504,6 +504,30 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 407,
+        "layoutY" : 426
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "if(msg.interval!=null) {\n    return ['true'];\n}else{\n    return ['false']\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if(msg.ventola!=null) {\n    return ['true'];\n}else{\n    return ['false']\n}\nreturn nextRelation(metadata, msg);"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9bae6830-571a-11f0-9cc7-dfa7f57094de"
+      },
+      "name" : "ventola",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     } ],
     "ruleChainConnections" : null
   },

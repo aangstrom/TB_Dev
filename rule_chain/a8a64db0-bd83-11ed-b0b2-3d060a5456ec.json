@@ -105,8 +105,20 @@
       "toIndex" : 18,
       "type" : "true"
     }, {
+      "fromIndex" : 17,
+      "toIndex" : 20,
+      "type" : "false"
+    }, {
       "fromIndex" : 18,
       "toIndex" : 19,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 20,
+      "toIndex" : 21,
+      "type" : "true"
+    }, {
+      "fromIndex" : 21,
+      "toIndex" : 22,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
@@ -455,8 +467,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 397,
-        "layoutY" : 660
+        "layoutX" : 184,
+        "layoutY" : 699
       },
       "configuration" : {
         "topicPattern" : "m5stack/Interval",
@@ -495,8 +507,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 226,
-        "layoutY" : 513
+        "layoutX" : 61,
+        "layoutY" : 534
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -519,8 +531,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 404,
-        "layoutY" : 418
+        "layoutX" : 321,
+        "layoutY" : 448
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -543,8 +555,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 552,
-        "layoutY" : 501
+        "layoutX" : 328,
+        "layoutY" : 561
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -567,8 +579,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 604,
-        "layoutY" : 607
+        "layoutX" : 413,
+        "layoutY" : 685
       },
       "configuration" : {
         "topicPattern" : "m5stack/ventola",
@@ -596,6 +608,102 @@
         "id" : "a2925d41-571b-11f0-9cc7-dfa7f57094de"
       },
       "name" : "ventola MQTT",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.mqtt.TbMqttNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 610,
+        "layoutY" : 450
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "if(msg.interval!=null) {\n    return ['true'];\n}else{\n    return ['false']\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if(msg.riscaldante!=null) {\n    return ['true'];\n}else{\n    return ['false']\n}\nreturn nextRelation(metadata, msg);"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a9107ce0-5722-11f0-9cc7-dfa7f57094de"
+      },
+      "name" : "riscaldante",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 602,
+        "layoutY" : 545
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var newmsg={};\nnewmsg=msg.ventola;\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a9107ce1-5722-11f0-9cc7-dfa7f57094de"
+      },
+      "name" : "riscaldante",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 621,
+        "layoutY" : 662
+      },
+      "configuration" : {
+        "topicPattern" : "m5stack/riscaldante",
+        "host" : "aa8.aangstrom.it",
+        "port" : 1885,
+        "connectTimeoutSec" : 1,
+        "clientId" : "564920165892",
+        "appendClientIdSuffix" : false,
+        "parseToPlainText" : true,
+        "cleanSession" : true,
+        "retainedMessage" : false,
+        "ssl" : false,
+        "credentials" : {
+          "type" : "basic",
+          "username" : "aangstrom",
+          "password" : "Sexten69!"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a910a3f0-5722-11f0-9cc7-dfa7f57094de"
+      },
+      "name" : "riscaldante MQTT",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,

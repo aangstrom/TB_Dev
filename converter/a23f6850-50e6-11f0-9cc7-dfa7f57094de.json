@@ -7,7 +7,7 @@
     "configuration" : {
       "scriptLang" : "TBEL",
       "decoder" : null,
-      "tbelDecoder" : "// Decode an uplink message from a buffer\r\n// payload - array of bytes\r\n// metadata - key/value object\r\n\r\n/** Decoder **/\r\n\r\nvar deviceName = 'M5';\r\nvar deviceType = 'test';\r\n\r\n// Result object with device/asset attributes/telemetry data\r\nvar result = {\r\n   deviceName: deviceName,\r\n   deviceType: deviceType,\r\n   attributes: {\r\n   },\r\n   telemetry: {\r\n      temperature: metadata.temperature,\r\n      humidity: metadata.humidity,\r\n      voc: metadata.voc,\r\n      Interval: metadata.Interval,\r\n      ventola: metadata.ventola,\r\n      riscaldante: metadata.riscaldante,\r\n      R: metadata.R,\r\n      G: metadata.G,\r\n      B: metadata.B\r\n   }\r\n};\r\n\r\nreturn result;",
+      "tbelDecoder" : "// Decode an uplink message from a buffer\r\n// payload - array of bytes\r\n// metadata - key/value object\r\n\r\n/** Decoder **/\r\n\r\nvar deviceName = 'M5';\r\nvar deviceType = 'test';\r\n\r\n// Result object with device/asset attributes/telemetry data\r\nvar result = {\r\n   deviceName: deviceName,\r\n   deviceType: deviceType,\r\n   attributes: {\r\n   },\r\n   telemetry: {\r\n      temperature: metadata.temperature,\r\n      humidity: metadata.humidity,\r\n      voc: metadata.voc,\r\n      Interval: metadata.Interval,\r\n      ventola: metadata.ventola,\r\n      riscaldante: metadata.riscaldante,\r\n      R: metadata.colors.R,\r\n      G: metadata.colors.G,\r\n      B: metadata.colors.B\r\n   }\r\n};\r\n\r\nreturn result;",
       "encoder" : null,
       "tbelEncoder" : null,
       "updateOnlyKeys" : null

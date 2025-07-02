@@ -1602,202 +1602,6 @@
           "col" : 0,
           "id" : "9e546148-86ff-daec-2495-91340478a79d"
         },
-        "479fe0bc-802f-afc6-5a4c-34845ded3a62" : {
-          "typeFullFqn" : "system.single_switch",
-          "type" : "rpc",
-          "sizeX" : 3.5,
-          "sizeY" : 1,
-          "config" : {
-            "showTitle" : false,
-            "backgroundColor" : "rgba(0,0,0,0)",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0",
-            "settings" : {
-              "padding" : "0",
-              "background" : {
-                "type" : "color",
-                "color" : "rgba(0,0,0,0)",
-                "overlay" : {
-                  "enabled" : false,
-                  "color" : "rgba(255,255,255,0.72)",
-                  "blur" : 3
-                }
-              },
-              "initialState" : {
-                "action" : "EXECUTE_RPC",
-                "defaultValue" : false,
-                "executeRpc" : {
-                  "method" : "getState",
-                  "requestTimeout" : 5000,
-                  "requestPersistent" : false,
-                  "persistentPollingInterval" : 1000
-                },
-                "getAttribute" : {
-                  "key" : "state",
-                  "scope" : null
-                },
-                "getTimeSeries" : {
-                  "key" : "state"
-                },
-                "getAlarmStatus" : {
-                  "severityList" : null,
-                  "typeList" : null
-                },
-                "dataToValue" : {
-                  "type" : "NONE",
-                  "compareToValue" : true,
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
-                }
-              },
-              "onUpdateState" : {
-                "action" : "EXECUTE_RPC",
-                "executeRpc" : {
-                  "method" : "setState",
-                  "requestTimeout" : 5000,
-                  "requestPersistent" : false,
-                  "persistentPollingInterval" : 1000
-                },
-                "setAttribute" : {
-                  "key" : "state",
-                  "scope" : "SERVER_SCOPE"
-                },
-                "putTimeSeries" : {
-                  "key" : "state"
-                },
-                "valueToData" : {
-                  "type" : "CONSTANT",
-                  "constantValue" : true,
-                  "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */\nreturn value;"
-                }
-              },
-              "offUpdateState" : {
-                "action" : "EXECUTE_RPC",
-                "executeRpc" : {
-                  "method" : "setState",
-                  "requestTimeout" : 5000,
-                  "requestPersistent" : false,
-                  "persistentPollingInterval" : 1000
-                },
-                "setAttribute" : {
-                  "key" : "state",
-                  "scope" : "SERVER_SCOPE"
-                },
-                "putTimeSeries" : {
-                  "key" : "state"
-                },
-                "valueToData" : {
-                  "type" : "CONSTANT",
-                  "constantValue" : false,
-                  "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */ \n return value;"
-                }
-              },
-              "disabledState" : {
-                "action" : "DO_NOTHING",
-                "defaultValue" : false,
-                "getAttribute" : {
-                  "key" : "state",
-                  "scope" : null
-                },
-                "getTimeSeries" : {
-                  "key" : "state"
-                },
-                "getAlarmStatus" : {
-                  "severityList" : null,
-                  "typeList" : null
-                },
-                "dataToValue" : {
-                  "type" : "NONE",
-                  "compareToValue" : true,
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
-                }
-              },
-              "layout" : "right",
-              "autoScale" : true,
-              "showLabel" : true,
-              "label" : "Switch",
-              "labelFont" : {
-                "family" : "Roboto",
-                "size" : 16,
-                "sizeUnit" : "px",
-                "style" : "normal",
-                "weight" : "500",
-                "lineHeight" : "24px"
-              },
-              "labelColor" : "rgba(0, 0, 0, 0.76)",
-              "showIcon" : false,
-              "iconSize" : 24,
-              "iconSizeUnit" : "px",
-              "icon" : "mdi:lightbulb-outline",
-              "iconColor" : "rgba(0, 0, 0, 0.76)",
-              "switchColorOn" : "var(--tb-primary-500)",
-              "switchColorOff" : "var(--tb-primary-100)",
-              "switchColorDisabled" : "#D5D7E5",
-              "tumblerColorOn" : "#fff",
-              "tumblerColorOff" : "#fff",
-              "tumblerColorDisabled" : "#fff",
-              "showOnLabel" : false,
-              "onLabel" : "On",
-              "onLabelFont" : {
-                "family" : "Roboto",
-                "size" : 16,
-                "sizeUnit" : "px",
-                "style" : "normal",
-                "weight" : "400",
-                "lineHeight" : "24px"
-              },
-              "onLabelColor" : "rgba(0, 0, 0, 0.38)",
-              "showOffLabel" : false,
-              "offLabel" : "Off",
-              "offLabelFont" : {
-                "family" : "Roboto",
-                "size" : 16,
-                "sizeUnit" : "px",
-                "style" : "normal",
-                "weight" : "400",
-                "lineHeight" : "24px"
-              },
-              "offLabelColor" : "rgba(0, 0, 0, 0.38)"
-            },
-            "title" : "Single Switch",
-            "dropShadow" : false,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "actions" : { },
-            "widgetCss" : "",
-            "noDataDisplayMessage" : "",
-            "titleFont" : {
-              "size" : 12,
-              "sizeUnit" : "px",
-              "family" : null,
-              "weight" : null,
-              "style" : null,
-              "lineHeight" : "1.6"
-            },
-            "showTitleIcon" : false,
-            "titleTooltip" : "",
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "pageSize" : 1024,
-            "titleIcon" : "",
-            "iconColor" : "rgba(0, 0, 0, 0.87)",
-            "iconSize" : "14px",
-            "configMode" : "basic",
-            "datasources" : [ ],
-            "targetDevice" : {
-              "type" : "entity",
-              "entityAliasId" : "3c85bc40-db02-f68b-49dd-bed5a471e124"
-            },
-            "resizable" : true,
-            "preserveAspectRatio" : false,
-            "margin" : "0",
-            "borderRadius" : null
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "479fe0bc-802f-afc6-5a4c-34845ded3a62"
-        },
         "0ec73bfa-c1a0-6e95-5f7f-64273f1a7a57" : {
           "typeFullFqn" : "system.power_button",
           "type" : "rpc",
@@ -1967,6 +1771,55 @@
           "row" : 0,
           "col" : 0,
           "id" : "0ec73bfa-c1a0-6e95-5f7f-64273f1a7a57"
+        },
+        "d827f220-bd49-007d-7b6a-5776020338f9" : {
+          "typeFullFqn" : "system.control_widgets.led_indicator",
+          "type" : "rpc",
+          "sizeX" : 2.5,
+          "sizeY" : 2.5,
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : false,
+            "backgroundColor" : "rgba(0,0,0,0)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0",
+            "settings" : {
+              "title" : "Led indicator",
+              "ledColor" : "#4caf50",
+              "initialValue" : true,
+              "performCheckStatus" : false,
+              "retrieveValueMethod" : "attribute",
+              "checkStatusMethod" : "checkStatus",
+              "valueAttribute" : "ventola",
+              "parseValueFunction" : "return (data == 1) ? true : false;",
+              "requestTimeout" : 500,
+              "requestPersistent" : false,
+              "persistentPollingInterval" : 5000
+            },
+            "title" : "Led indicator",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 2,
+            "datasources" : [ ],
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "3c85bc40-db02-f68b-49dd-bed5a471e124"
+            },
+            "resizable" : true,
+            "preserveAspectRatio" : false,
+            "margin" : "0"
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "d827f220-bd49-007d-7b6a-5776020338f9"
         }
       },
       "states" : {
@@ -2017,14 +1870,6 @@
                   "row" : 7,
                   "col" : 17
                 },
-                "479fe0bc-802f-afc6-5a4c-34845ded3a62" : {
-                  "sizeX" : 3,
-                  "sizeY" : 1,
-                  "preserveAspectRatio" : false,
-                  "resizable" : true,
-                  "row" : 9,
-                  "col" : 17
-                },
                 "0ec73bfa-c1a0-6e95-5f7f-64273f1a7a57" : {
                   "sizeX" : 3,
                   "sizeY" : 3,
@@ -2032,6 +1877,14 @@
                   "resizable" : true,
                   "row" : 10,
                   "col" : 9
+                },
+                "d827f220-bd49-007d-7b6a-5776020338f9" : {
+                  "sizeX" : 2,
+                  "sizeY" : 2,
+                  "preserveAspectRatio" : false,
+                  "resizable" : true,
+                  "row" : 10,
+                  "col" : 12
                 }
               },
               "gridSettings" : {

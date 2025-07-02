@@ -2320,7 +2320,7 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0",
             "settings" : {
-              "title" : "Led indicator",
+              "title" : "Ventola",
               "ledColor" : "#4caf50",
               "initialValue" : true,
               "performCheckStatus" : false,
@@ -2356,6 +2356,55 @@
           "row" : 0,
           "col" : 0,
           "id" : "3e153373-dea4-1c9b-bfd5-09f353cfbfe2"
+        },
+        "af8f3312-6bf2-cafe-2b44-f17a8c12d14f" : {
+          "typeFullFqn" : "system.control_widgets.led_indicator",
+          "type" : "rpc",
+          "sizeX" : 2.5,
+          "sizeY" : 2.5,
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : false,
+            "backgroundColor" : "rgba(0,0,0,0)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0",
+            "settings" : {
+              "title" : "Riscaldante",
+              "ledColor" : "#F44336",
+              "initialValue" : true,
+              "performCheckStatus" : false,
+              "retrieveValueMethod" : "timeseries",
+              "checkStatusMethod" : "checkStatus",
+              "valueAttribute" : "riscaldante",
+              "parseValueFunction" : "return (data == 1) ? true : false;",
+              "requestTimeout" : 500,
+              "requestPersistent" : false,
+              "persistentPollingInterval" : 5000
+            },
+            "title" : "Led indicator",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 2,
+            "datasources" : [ ],
+            "targetDevice" : {
+              "type" : "device",
+              "deviceId" : "73b658b0-5747-11f0-9cc7-dfa7f57094de"
+            },
+            "resizable" : true,
+            "preserveAspectRatio" : false,
+            "margin" : "0"
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "af8f3312-6bf2-cafe-2b44-f17a8c12d14f"
         }
       },
       "states" : {
@@ -2445,6 +2494,14 @@
                   "resizable" : true,
                   "row" : 7,
                   "col" : 11
+                },
+                "af8f3312-6bf2-cafe-2b44-f17a8c12d14f" : {
+                  "sizeX" : 2,
+                  "sizeY" : 2,
+                  "preserveAspectRatio" : false,
+                  "resizable" : true,
+                  "row" : 7,
+                  "col" : 15
                 }
               },
               "gridSettings" : {

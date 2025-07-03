@@ -2452,10 +2452,27 @@
                   "color" : {
                     "type" : "range",
                     "color" : "rgba(0, 0, 0, 0.87)",
+                    "gradient" : {
+                      "advancedMode" : false,
+                      "gradient" : [ "rgba(0, 255, 0, 1)", "rgba(255, 0, 0, 1)" ],
+                      "gradientAdvanced" : [ {
+                        "source" : {
+                          "type" : "constant"
+                        },
+                        "color" : "rgba(0, 255, 0, 1)"
+                      }, {
+                        "source" : {
+                          "type" : "constant"
+                        },
+                        "color" : "rgba(255, 0, 0, 1)"
+                      } ],
+                      "minValue" : 0,
+                      "maxValue" : 100
+                    },
                     "rangeList" : {
                       "advancedMode" : false,
                       "range" : [ {
-                        "from" : 0,
+                        "from" : -100,
                         "to" : 10,
                         "color" : "#305AD7"
                       }, {
@@ -2470,7 +2487,8 @@
                         "from" : 50,
                         "to" : null,
                         "color" : "#D81838"
-                      } ]
+                      } ],
+                      "rangeAdvanced" : [ ]
                     },
                     "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
                   },
@@ -2687,25 +2705,43 @@
                   "color" : {
                     "type" : "range",
                     "color" : "rgba(0, 0, 0, 0.87)",
+                    "gradient" : {
+                      "advancedMode" : false,
+                      "gradient" : [ "rgba(0, 255, 0, 1)", "rgba(255, 0, 0, 1)" ],
+                      "gradientAdvanced" : [ {
+                        "source" : {
+                          "type" : "constant"
+                        },
+                        "color" : "rgba(0, 255, 0, 1)"
+                      }, {
+                        "source" : {
+                          "type" : "constant"
+                        },
+                        "color" : "rgba(255, 0, 0, 1)"
+                      } ],
+                      "minValue" : 0,
+                      "maxValue" : 100
+                    },
                     "rangeList" : {
                       "advancedMode" : false,
                       "range" : [ {
                         "from" : 0,
-                        "to" : 10,
-                        "color" : "#305AD7"
+                        "to" : 20,
+                        "color" : "#D81838"
                       }, {
-                        "from" : 10,
-                        "to" : 30,
-                        "color" : "#3FA71A"
-                      }, {
-                        "from" : 30,
-                        "to" : 50,
+                        "from" : 20,
+                        "to" : 40,
                         "color" : "#F36900"
                       }, {
-                        "from" : 50,
-                        "to" : null,
-                        "color" : "#D81838"
-                      } ]
+                        "from" : 40,
+                        "to" : 80,
+                        "color" : "#3FA71A"
+                      }, {
+                        "from" : 80,
+                        "to" : 100,
+                        "color" : "#305AD7"
+                      } ],
+                      "rangeAdvanced" : [ ]
                     },
                     "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
                   },

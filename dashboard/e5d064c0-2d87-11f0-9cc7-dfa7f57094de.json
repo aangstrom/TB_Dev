@@ -2898,7 +2898,7 @@
                 "color" : "rgba(0, 0, 0, 0.87)",
                 "settings" : { },
                 "_hash" : 0.860925850783524,
-                "units" : "ppm",
+                "units" : "kohm",
                 "decimals" : 4
               } ],
               "alarmFilterConfig" : {
@@ -2912,7 +2912,7 @@
                 "settings" : {
                   "position" : "center",
                   "font" : {
-                    "size" : 52,
+                    "size" : 46,
                     "sizeUnit" : "px",
                     "family" : "Roboto",
                     "weight" : "500",
@@ -2922,32 +2922,50 @@
                   "color" : {
                     "type" : "range",
                     "color" : "rgba(0, 0, 0, 0.87)",
+                    "gradient" : {
+                      "advancedMode" : false,
+                      "gradient" : [ "rgba(0, 255, 0, 1)", "rgba(255, 0, 0, 1)" ],
+                      "gradientAdvanced" : [ {
+                        "source" : {
+                          "type" : "constant"
+                        },
+                        "color" : "rgba(0, 255, 0, 1)"
+                      }, {
+                        "source" : {
+                          "type" : "constant"
+                        },
+                        "color" : "rgba(255, 0, 0, 1)"
+                      } ],
+                      "minValue" : 0,
+                      "maxValue" : 100
+                    },
                     "rangeList" : {
                       "advancedMode" : false,
                       "range" : [ {
                         "from" : 0,
-                        "to" : 10,
-                        "color" : "#305AD7"
-                      }, {
-                        "from" : 10,
-                        "to" : 30,
-                        "color" : "#3FA71A"
-                      }, {
-                        "from" : 30,
-                        "to" : 50,
-                        "color" : "#F36900"
-                      }, {
-                        "from" : 50,
-                        "to" : null,
+                        "to" : 15,
                         "color" : "#D81838"
-                      } ]
+                      }, {
+                        "from" : 15,
+                        "to" : 100,
+                        "color" : "rgb(232, 150, 35)"
+                      }, {
+                        "from" : 100,
+                        "to" : 10000,
+                        "color" : "rgb(139, 195, 74)"
+                      }, {
+                        "from" : 10000,
+                        "to" : 45000,
+                        "color" : "#3FA71A"
+                      } ],
+                      "rangeAdvanced" : [ ]
                     },
                     "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
                   },
                   "showArrow" : false
                 },
                 "_hash" : 0.9450560520010937,
-                "units" : "ppm",
+                "units" : "kΩ",
                 "decimals" : 2,
                 "aggregationType" : "NONE"
               } ]
@@ -3059,7 +3077,7 @@
               "autoScale" : true,
               "padding" : "0"
             },
-            "title" : "Air polution",
+            "title" : "Gas resistance",
             "dropShadow" : false,
             "enableFullscreen" : false,
             "titleStyle" : {

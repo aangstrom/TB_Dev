@@ -513,7 +513,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var newmsg = {};\r\nnewmsg = parseInt(msg.interval * 1000, 10);\r\n// or using Math.floor: newmsg = Math.floor(msg.interval * 1000);\r\n\r\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};\r\n"
+        "tbelScript" : "var newmsg = {};\r\n//newmsg = parseInt(msg.interval * 1000, 10);\r\nnewmsg = Math.floor(msg.interval * 1000);\r\n\r\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};\r\n"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,

@@ -2483,39 +2483,6 @@
               }, {
                 "name" : "temperature",
                 "type" : "timeseries",
-                "label" : "Delta percent",
-                "color" : "#f44336",
-                "settings" : {
-                  "position" : "rightTop",
-                  "font" : {
-                    "size" : 14,
-                    "sizeUnit" : "px",
-                    "family" : "Roboto",
-                    "weight" : "500",
-                    "style" : "normal",
-                    "lineHeight" : "20px"
-                  },
-                  "color" : {
-                    "type" : "range",
-                    "color" : "rgba(0, 0, 0, 0.87)",
-                    "rangeList" : {
-                      "advancedMode" : false,
-                      "range" : [ ]
-                    },
-                    "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
-                  },
-                  "showArrow" : true
-                },
-                "_hash" : 0.35768326737050293,
-                "units" : "%",
-                "decimals" : 0,
-                "aggregationType" : "AVG",
-                "comparisonEnabled" : true,
-                "timeForComparison" : "previousInterval",
-                "comparisonResultType" : "DELTA_PERCENT"
-              }, {
-                "name" : "temperature",
-                "type" : "timeseries",
                 "label" : "Delta absolute",
                 "color" : "#ffc107",
                 "settings" : {
@@ -2541,7 +2508,7 @@
                 },
                 "_hash" : 0.9190115040293225,
                 "units" : "°C",
-                "decimals" : 1,
+                "decimals" : 4,
                 "aggregationType" : "AVG",
                 "comparisonEnabled" : true,
                 "timeForComparison" : "previousInterval",

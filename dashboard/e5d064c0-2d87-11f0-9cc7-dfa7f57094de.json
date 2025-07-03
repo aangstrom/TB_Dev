@@ -2664,7 +2664,7 @@
                 "settings" : { },
                 "_hash" : 0.5859343217333585,
                 "units" : "%",
-                "decimals" : 1
+                "decimals" : 4
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -2715,72 +2715,6 @@
                 "units" : "°C",
                 "decimals" : 2,
                 "aggregationType" : "NONE"
-              }, {
-                "name" : "humidity",
-                "type" : "timeseries",
-                "label" : "Delta percent",
-                "color" : "#f44336",
-                "settings" : {
-                  "position" : "rightTop",
-                  "font" : {
-                    "size" : 14,
-                    "sizeUnit" : "px",
-                    "family" : "Roboto",
-                    "weight" : "500",
-                    "style" : "normal",
-                    "lineHeight" : "20px"
-                  },
-                  "color" : {
-                    "type" : "range",
-                    "color" : "rgba(0, 0, 0, 0.87)",
-                    "rangeList" : {
-                      "advancedMode" : false,
-                      "range" : [ ]
-                    },
-                    "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
-                  },
-                  "showArrow" : true
-                },
-                "_hash" : 0.35768326737050293,
-                "units" : "%",
-                "decimals" : 0,
-                "aggregationType" : "AVG",
-                "comparisonEnabled" : true,
-                "timeForComparison" : "previousInterval",
-                "comparisonResultType" : "DELTA_PERCENT"
-              }, {
-                "name" : "humidity",
-                "type" : "timeseries",
-                "label" : "Delta absolute",
-                "color" : "#ffc107",
-                "settings" : {
-                  "position" : "rightBottom",
-                  "font" : {
-                    "size" : 11,
-                    "sizeUnit" : "px",
-                    "family" : "Roboto",
-                    "weight" : "400",
-                    "style" : "normal",
-                    "lineHeight" : "16px"
-                  },
-                  "color" : {
-                    "type" : "constant",
-                    "color" : "rgba(0, 0, 0, 0.38)",
-                    "rangeList" : {
-                      "advancedMode" : false,
-                      "range" : [ ]
-                    },
-                    "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
-                  },
-                  "showArrow" : false
-                },
-                "_hash" : 0.9190115040293225,
-                "units" : "°C",
-                "decimals" : 1,
-                "aggregationType" : "AVG",
-                "comparisonEnabled" : true,
-                "timeForComparison" : "previousInterval",
-                "comparisonResultType" : "DELTA_ABSOLUTE"
               } ]
             } ],
             "timewindow" : {
@@ -2958,20 +2892,20 @@
               "name" : "",
               "entityAliasId" : "3c85bc40-db02-f68b-49dd-bed5a471e124",
               "dataKeys" : [ {
-                "name" : "temperature",
+                "name" : "voc",
                 "type" : "timeseries",
-                "label" : "temperature",
+                "label" : "voc",
                 "color" : "rgba(0, 0, 0, 0.87)",
                 "settings" : { },
-                "_hash" : 0.25506295121182,
-                "units" : "°C",
-                "decimals" : 2
+                "_hash" : 0.860925850783524,
+                "units" : "ppm",
+                "decimals" : 4
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
               },
               "latestDataKeys" : [ {
-                "name" : "temperature",
+                "name" : "voc",
                 "type" : "timeseries",
                 "label" : "Latest",
                 "color" : "#4caf50",
@@ -3013,75 +2947,9 @@
                   "showArrow" : false
                 },
                 "_hash" : 0.9450560520010937,
-                "units" : "°C",
+                "units" : "ppm",
                 "decimals" : 2,
                 "aggregationType" : "NONE"
-              }, {
-                "name" : "temperature",
-                "type" : "timeseries",
-                "label" : "Delta percent",
-                "color" : "#f44336",
-                "settings" : {
-                  "position" : "rightTop",
-                  "font" : {
-                    "size" : 14,
-                    "sizeUnit" : "px",
-                    "family" : "Roboto",
-                    "weight" : "500",
-                    "style" : "normal",
-                    "lineHeight" : "20px"
-                  },
-                  "color" : {
-                    "type" : "range",
-                    "color" : "rgba(0, 0, 0, 0.87)",
-                    "rangeList" : {
-                      "advancedMode" : false,
-                      "range" : [ ]
-                    },
-                    "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
-                  },
-                  "showArrow" : true
-                },
-                "_hash" : 0.35768326737050293,
-                "units" : "%",
-                "decimals" : 0,
-                "aggregationType" : "AVG",
-                "comparisonEnabled" : true,
-                "timeForComparison" : "previousInterval",
-                "comparisonResultType" : "DELTA_PERCENT"
-              }, {
-                "name" : "temperature",
-                "type" : "timeseries",
-                "label" : "Delta absolute",
-                "color" : "#ffc107",
-                "settings" : {
-                  "position" : "rightBottom",
-                  "font" : {
-                    "size" : 11,
-                    "sizeUnit" : "px",
-                    "family" : "Roboto",
-                    "weight" : "400",
-                    "style" : "normal",
-                    "lineHeight" : "16px"
-                  },
-                  "color" : {
-                    "type" : "constant",
-                    "color" : "rgba(0, 0, 0, 0.38)",
-                    "rangeList" : {
-                      "advancedMode" : false,
-                      "range" : [ ]
-                    },
-                    "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
-                  },
-                  "showArrow" : false
-                },
-                "_hash" : 0.9190115040293225,
-                "units" : "°C",
-                "decimals" : 1,
-                "aggregationType" : "AVG",
-                "comparisonEnabled" : true,
-                "timeForComparison" : "previousInterval",
-                "comparisonResultType" : "DELTA_ABSOLUTE"
               } ]
             } ],
             "timewindow" : {
@@ -3191,7 +3059,7 @@
               "autoScale" : true,
               "padding" : "0"
             },
-            "title" : "Temperature",
+            "title" : "Air polution",
             "dropShadow" : false,
             "enableFullscreen" : false,
             "titleStyle" : {
@@ -3202,7 +3070,7 @@
             "configMode" : "basic",
             "actions" : { },
             "showTitleIcon" : true,
-            "titleIcon" : "mdi:hydro-power",
+            "titleIcon" : "mdi:molecule-co2",
             "iconColor" : "rgba(0, 0, 0, 0.87)",
             "titleFont" : {
               "size" : 16,

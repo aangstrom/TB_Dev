@@ -511,8 +511,8 @@
         "layoutY" : 538
       },
       "configuration" : {
-        "scriptLang" : "TBEL",
-        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "scriptLang" : "JS",
+        "jsScript" : "msg.intervalMs = parseInt(msg.interval * 1000, 10);\r\nreturn {msg: msg, metadata: metadata, msgType: msgType};\r\n",
         "tbelScript" : "var newmsg = {};\r\n//newmsg = parseInt(msg.interval * 1000, 10);\r\nnewmsg = Math.floor(msg.interval * 1000);\r\n\r\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};\r\n"
       },
       "configurationVersion" : 0,

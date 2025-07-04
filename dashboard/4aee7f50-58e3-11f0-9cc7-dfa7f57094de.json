@@ -24,7 +24,7 @@
               "ledColor" : "#4caf50",
               "initialValue" : true,
               "performCheckStatus" : false,
-              "retrieveValueMethod" : "attribute",
+              "retrieveValueMethod" : "timeseries",
               "checkStatusMethod" : "checkStatus",
               "valueAttribute" : "relay1",
               "parseValueFunction" : "return (data == 1) ? true : false;",
@@ -53,6 +53,98 @@
           "row" : 0,
           "col" : 0,
           "id" : "8b81b046-ec74-f7cd-4753-6aa7398e36d0"
+        },
+        "34aeaf67-598b-da71-e6a3-83f39f0b9ad3" : {
+          "typeFullFqn" : "system.control_widgets.led_indicator",
+          "type" : "rpc",
+          "sizeX" : 2.5,
+          "sizeY" : 2.5,
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : false,
+            "backgroundColor" : "#e6e7e8",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "title" : "Armadi aperti",
+              "ledColor" : "#F44336",
+              "initialValue" : true,
+              "performCheckStatus" : false,
+              "retrieveValueMethod" : "timeseries",
+              "checkStatusMethod" : "checkStatus",
+              "valueAttribute" : "relay2",
+              "parseValueFunction" : "return (data == 1) ? true : false;",
+              "requestTimeout" : 500,
+              "requestPersistent" : false,
+              "persistentPollingInterval" : 5000
+            },
+            "title" : "Led indicator",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 2,
+            "datasources" : [ ],
+            "targetDevice" : {
+              "type" : "device",
+              "deviceId" : "73b658b0-5747-11f0-9cc7-dfa7f57094de"
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "34aeaf67-598b-da71-e6a3-83f39f0b9ad3"
+        },
+        "d0c0bdb7-a54e-581e-8d1e-b4f24bc006c1" : {
+          "typeFullFqn" : "system.control_widgets.led_indicator",
+          "type" : "rpc",
+          "sizeX" : 2.5,
+          "sizeY" : 2.5,
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : false,
+            "backgroundColor" : "#e6e7e8",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "title" : "Siren",
+              "ledColor" : "#E91E63",
+              "initialValue" : true,
+              "performCheckStatus" : false,
+              "retrieveValueMethod" : "timeseries",
+              "checkStatusMethod" : "checkStatus",
+              "valueAttribute" : "relay3",
+              "parseValueFunction" : "return (data == 1) ? true : false;",
+              "requestTimeout" : 500,
+              "requestPersistent" : false,
+              "persistentPollingInterval" : 5000
+            },
+            "title" : "Led indicator",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 2,
+            "datasources" : [ ],
+            "targetDevice" : {
+              "type" : "device",
+              "deviceId" : "73b658b0-5747-11f0-9cc7-dfa7f57094de"
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "d0c0bdb7-a54e-581e-8d1e-b4f24bc006c1"
         }
       },
       "states" : {
@@ -67,6 +159,18 @@
                   "sizeY" : 2,
                   "row" : 0,
                   "col" : 0
+                },
+                "34aeaf67-598b-da71-e6a3-83f39f0b9ad3" : {
+                  "sizeX" : 2,
+                  "sizeY" : 2,
+                  "row" : 0,
+                  "col" : 2
+                },
+                "d0c0bdb7-a54e-581e-8d1e-b4f24bc006c1" : {
+                  "sizeX" : 2,
+                  "sizeY" : 2,
+                  "row" : 0,
+                  "col" : 4
                 }
               },
               "gridSettings" : {

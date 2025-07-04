@@ -267,15 +267,15 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "requestTimeout" : 500,
               "initialValue" : false,
-              "getValueMethod" : "getValue",
+              "retrieveValueMethod" : "attribute",
+              "valueKey" : "key",
+              "parseValueFunction" : "return (data == 1) ? true : false;",
               "setValueMethod" : "setValue",
-              "title" : "Round switch",
-              "retrieveValueMethod" : "rpc",
-              "valueKey" : "value",
-              "parseValueFunction" : "return data ? true : false;",
-              "convertValueFunction" : "return value;"
+              "convertValueFunction" : "return value;",
+              "requestTimeout" : 500,
+              "requestPersistent" : false,
+              "title" : "Key"
             },
             "title" : "Round switch",
             "dropShadow" : true,
@@ -326,8 +326,8 @@
                   "col" : 4
                 },
                 "91ea0309-cbac-fb69-b131-f7e1c85ea887" : {
-                  "sizeX" : 3,
-                  "sizeY" : 1,
+                  "sizeX" : 4,
+                  "sizeY" : 2,
                   "row" : 2,
                   "col" : 0
                 },
@@ -335,7 +335,7 @@
                   "sizeX" : 2,
                   "sizeY" : 2,
                   "row" : 2,
-                  "col" : 3
+                  "col" : 4
                 }
               },
               "gridSettings" : {

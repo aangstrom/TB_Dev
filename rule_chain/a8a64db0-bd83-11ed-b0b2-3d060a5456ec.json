@@ -117,8 +117,32 @@
       "toIndex" : 21,
       "type" : "true"
     }, {
+      "fromIndex" : 20,
+      "toIndex" : 23,
+      "type" : "false"
+    }, {
       "fromIndex" : 21,
       "toIndex" : 22,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 23,
+      "toIndex" : 24,
+      "type" : "false"
+    }, {
+      "fromIndex" : 23,
+      "toIndex" : 28,
+      "type" : "true"
+    }, {
+      "fromIndex" : 24,
+      "toIndex" : 25,
+      "type" : "true"
+    }, {
+      "fromIndex" : 25,
+      "toIndex" : 27,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 26,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
@@ -467,8 +491,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 184,
-        "layoutY" : 699
+        "layoutX" : 10,
+        "layoutY" : 689
       },
       "configuration" : {
         "topicPattern" : "m5stack/Interval",
@@ -507,8 +531,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 61,
-        "layoutY" : 538
+        "layoutX" : 0,
+        "layoutY" : 533
       },
       "configuration" : {
         "scriptLang" : "JS",
@@ -555,7 +579,7 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 328,
+        "layoutX" : 211,
         "layoutY" : 561
       },
       "configuration" : {
@@ -579,8 +603,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 413,
-        "layoutY" : 685
+        "layoutX" : 211,
+        "layoutY" : 699
       },
       "configuration" : {
         "topicPattern" : "m5stack/ventola",
@@ -615,8 +639,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 610,
-        "layoutY" : 450
+        "layoutX" : 585,
+        "layoutY" : 444
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -643,8 +667,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 602,
-        "layoutY" : 545
+        "layoutX" : 455,
+        "layoutY" : 571
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -671,8 +695,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 621,
-        "layoutY" : 662
+        "layoutX" : 427,
+        "layoutY" : 690
       },
       "configuration" : {
         "topicPattern" : "m5stack/riscaldante",
@@ -708,6 +732,198 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.mqtt.TbMqttNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 663,
+        "layoutY" : 573
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "if(msg.interval!=null) {\n    return ['true'];\n}else{\n    return ['false']\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if(msg.reset!=null) {\n    return ['true'];\n}else{\n    return ['false']\n}\nreturn nextRelation(metadata, msg);"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "073b93c0-58e7-11f0-9cc7-dfa7f57094de"
+      },
+      "name" : "reset",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 843,
+        "layoutY" : 816
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "if(msg.interval!=null) {\n    return ['true'];\n}else{\n    return ['false']\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if(msg.key!=null) {\n    return ['true'];\n}else{\n    return ['false']\n}\nreturn nextRelation(metadata, msg);"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "073b93c1-58e7-11f0-9cc7-dfa7f57094de"
+      },
+      "name" : "key",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 916,
+        "layoutY" : 905
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var newmsg={};\nnewmsg=msg.key;\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "073bbad0-58e7-11f0-9cc7-dfa7f57094de"
+      },
+      "name" : "key",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 516,
+        "layoutY" : 787
+      },
+      "configuration" : {
+        "topicPattern" : "m5stack/riscaldante",
+        "host" : "aa8.aangstrom.it",
+        "port" : 1885,
+        "connectTimeoutSec" : 1,
+        "clientId" : "564920165892",
+        "appendClientIdSuffix" : false,
+        "parseToPlainText" : true,
+        "cleanSession" : true,
+        "retainedMessage" : false,
+        "ssl" : false,
+        "credentials" : {
+          "type" : "basic",
+          "username" : "aangstrom",
+          "password" : "Sexten69!"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "073be1e0-58e7-11f0-9cc7-dfa7f57094de"
+      },
+      "name" : "reset MQTT",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.mqtt.TbMqttNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1174,
+        "layoutY" : 863
+      },
+      "configuration" : {
+        "topicPattern" : "m5stack/riscaldante",
+        "host" : "aa8.aangstrom.it",
+        "port" : 1885,
+        "connectTimeoutSec" : 1,
+        "clientId" : "564920165892",
+        "appendClientIdSuffix" : false,
+        "parseToPlainText" : true,
+        "cleanSession" : true,
+        "retainedMessage" : false,
+        "ssl" : false,
+        "credentials" : {
+          "type" : "basic",
+          "username" : "aangstrom",
+          "password" : "Sexten69!"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "073be1e1-58e7-11f0-9cc7-dfa7f57094de"
+      },
+      "name" : "key MQTT",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.mqtt.TbMqttNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 627,
+        "layoutY" : 681
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var newmsg={};\nnewmsg=msg.reset;\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "073c08f0-58e7-11f0-9cc7-dfa7f57094de"
+      },
+      "name" : "reset",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },

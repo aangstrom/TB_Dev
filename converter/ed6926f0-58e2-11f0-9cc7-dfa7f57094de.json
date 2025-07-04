@@ -1,0 +1,43 @@
+{
+  "entityType" : "CONVERTER",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : {
+      "scriptLang" : "TBEL",
+      "decoder" : null,
+      "tbelDecoder" : "// Decode an uplink message from a buffer\r\n// payload - array of bytes\r\n// metadata - key/value object\r\n\r\n/** Decoder **/\r\n\r\n// decode payload to JSON\r\nvar data = decodeToJson(payload);\r\n\r\n// Use the plcData object inside the JSON\r\nvar plc = data.plcData;\r\n\r\nvar deviceName = 'M5';\r\nvar deviceType = 'test';\r\n\r\nvar result = {\r\n   deviceName: deviceName,\r\n   deviceType: deviceType,\r\n   attributes: {},\r\n   telemetry: {\r\n      relay1: plc.relay1,\r\n      relay2: plc.relay2,\r\n      relay3: plc.relay3,\r\n      inp1: plc.inp1\r\n   }\r\n};\r\n\r\nreturn result;",
+      "encoder" : null,
+      "tbelEncoder" : null,
+      "updateOnlyKeys" : [ "manufacturer" ],
+      "type" : "DEVICE",
+      "profile" : "",
+      "label" : "",
+      "customer" : "",
+      "group" : "",
+      "telemetry" : null,
+      "attributes" : null
+    },
+    "converterVersion" : 1,
+    "debugMode" : false,
+    "debugSettings" : {
+      "allEnabled" : false,
+      "allEnabledUntil" : 1751640111743,
+      "failuresEnabled" : true
+    },
+    "edgeTemplate" : false,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CONVERTER",
+      "id" : "ed6926f0-58e2-11f0-9cc7-dfa7f57094de"
+    },
+    "integrationType" : "MQTT",
+    "name" : "stam PLC armadi",
+    "type" : "UPLINK"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

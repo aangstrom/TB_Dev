@@ -267,14 +267,16 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "0px",
             "settings" : {
-              "initialValue" : false,
+              "initialValue" : true,
               "retrieveValueMethod" : "attribute",
               "valueKey" : "key",
+              "getValueMethod" : "getValue",
               "parseValueFunction" : "return (data == 1) ? true : false;",
               "setValueMethod" : "setValue",
-              "convertValueFunction" : "return value;",
+              "convertValueFunction" : "return (value == true) ? 1 : 0;",
               "requestTimeout" : 500,
               "requestPersistent" : false,
+              "persistentPollingInterval" : 5000,
               "title" : "Key"
             },
             "title" : "Round switch",

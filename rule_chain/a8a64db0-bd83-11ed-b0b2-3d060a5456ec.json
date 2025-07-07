@@ -98,15 +98,15 @@
       "type" : "ventola"
     }, {
       "fromIndex" : 14,
-      "toIndex" : 19,
+      "toIndex" : 18,
       "type" : "riscaldante"
     }, {
       "fromIndex" : 14,
-      "toIndex" : 21,
+      "toIndex" : 19,
       "type" : "key"
     }, {
       "fromIndex" : 14,
-      "toIndex" : 24,
+      "toIndex" : 20,
       "type" : "reset"
     }, {
       "fromIndex" : 16,
@@ -114,19 +114,19 @@
       "type" : "Success"
     }, {
       "fromIndex" : 17,
-      "toIndex" : 18,
+      "toIndex" : 15,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 18,
+      "toIndex" : 15,
       "type" : "Success"
     }, {
       "fromIndex" : 19,
-      "toIndex" : 20,
+      "toIndex" : 15,
       "type" : "Success"
     }, {
-      "fromIndex" : 21,
-      "toIndex" : 23,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 24,
-      "toIndex" : 22,
+      "fromIndex" : 20,
+      "toIndex" : 15,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
@@ -429,8 +429,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 883,
-        "layoutY" : 743
+        "layoutX" : 1205,
+        "layoutY" : 830
       },
       "configuration" : {
         "integrationId" : "d14aaaa0-563d-11ef-b2e2-65b916afcec8"
@@ -479,11 +479,11 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 50,
-        "layoutY" : 601
+        "layoutX" : 853,
+        "layoutY" : 647
       },
       "configuration" : {
-        "topicPattern" : "m5stack/Interval",
+        "topicPattern" : "m5stack/${mqtt}",
         "host" : "aa8.aangstrom.it",
         "port" : 1885,
         "connectTimeoutSec" : 10,
@@ -511,7 +511,7 @@
         "entityType" : "RULE_NODE",
         "id" : "b60a4870-510c-11f0-9cc7-dfa7f57094de"
       },
-      "name" : "Interval MQTT",
+      "name" : "MQTT",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : true,
@@ -519,12 +519,12 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 50,
-        "layoutY" : 502
+        "layoutX" : 404,
+        "layoutY" : 554
       },
       "configuration" : {
         "scriptLang" : "JS",
-        "jsScript" : "var newmsg = parseInt(msg.interval * 1000, 10);\r\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};\r\n",
+        "jsScript" : "var newmsg = parseInt(msg.interval * 1000, 10);\r\nmetadata.mqtt=\"interval\";\r\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};\r\n",
         "tbelScript" : "var newmsg = {};\r\n//newmsg = parseInt(msg.interval * 1000, 10);\r\nnewmsg = Math.floor(msg.interval * 1000);\r\n\r\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};\r\n"
       },
       "configurationVersion" : 0,
@@ -535,7 +535,7 @@
         "entityType" : "RULE_NODE",
         "id" : "b60a6f80-510c-11f0-9cc7-dfa7f57094de"
       },
-      "name" : "Set only interval",
+      "name" : "interval",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
@@ -543,13 +543,13 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 104,
-        "layoutY" : 756
+        "layoutX" : 402,
+        "layoutY" : 703
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var newmsg={};\nnewmsg=msg.ventola;\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var newmsg={};\nnewmsg=msg.ventola;\nmetadata.mqtt=\"ventola\";\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -567,49 +567,13 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 103,
-        "layoutY" : 827
-      },
-      "configuration" : {
-        "topicPattern" : "m5stack/ventola",
-        "host" : "aa8.aangstrom.it",
-        "port" : 1885,
-        "connectTimeoutSec" : 1,
-        "clientId" : "564920165892",
-        "appendClientIdSuffix" : false,
-        "parseToPlainText" : true,
-        "cleanSession" : true,
-        "retainedMessage" : false,
-        "ssl" : false,
-        "credentials" : {
-          "type" : "basic",
-          "username" : "aangstrom",
-          "password" : "Sexten69!"
-        }
-      },
-      "configurationVersion" : 1,
-      "createdTime" : 0,
-      "debugSettings" : null,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "a2925d41-571b-11f0-9cc7-dfa7f57094de"
-      },
-      "name" : "ventola MQTT",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.mqtt.TbMqttNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 252,
-        "layoutY" : 604
+        "layoutX" : 399,
+        "layoutY" : 476
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var newmsg={};\nnewmsg=msg.riscaldante;\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var newmsg={};\nnewmsg=msg.riscaldante;\nmetadata.mqtt=\"riscaldante\";\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -631,53 +595,13 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 248,
-        "layoutY" : 674
-      },
-      "configuration" : {
-        "topicPattern" : "m5stack/riscaldante",
-        "host" : "aa8.aangstrom.it",
-        "port" : 1885,
-        "connectTimeoutSec" : 1,
-        "clientId" : "564920165892",
-        "appendClientIdSuffix" : false,
-        "parseToPlainText" : true,
-        "cleanSession" : true,
-        "retainedMessage" : false,
-        "ssl" : false,
-        "credentials" : {
-          "type" : "basic",
-          "username" : "aangstrom",
-          "password" : "Sexten69!"
-        }
-      },
-      "configurationVersion" : 1,
-      "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 0,
-        "failuresEnabled" : false
-      },
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "a910a3f0-5722-11f0-9cc7-dfa7f57094de"
-      },
-      "name" : "riscaldante MQTT",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.mqtt.TbMqttNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 349,
-        "layoutY" : 751
+        "layoutX" : 402,
+        "layoutY" : 627
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var newmsg={};\nnewmsg=msg.key;\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var newmsg={};\nnewmsg=msg.key;\nmetadata.mqtt=\"key\";\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -699,93 +623,13 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 699,
-        "layoutY" : 401
-      },
-      "configuration" : {
-        "topicPattern" : "plcAlarm/reset",
-        "host" : "aa8.aangstrom.it",
-        "port" : 1885,
-        "connectTimeoutSec" : 1,
-        "clientId" : "564920165892",
-        "appendClientIdSuffix" : false,
-        "parseToPlainText" : true,
-        "cleanSession" : true,
-        "retainedMessage" : false,
-        "ssl" : false,
-        "credentials" : {
-          "type" : "basic",
-          "username" : "aangstrom",
-          "password" : "Sexten69!"
-        }
-      },
-      "configurationVersion" : 1,
-      "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 0,
-        "failuresEnabled" : false
-      },
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "073be1e0-58e7-11f0-9cc7-dfa7f57094de"
-      },
-      "name" : "reset MQTT",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.mqtt.TbMqttNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 353,
-        "layoutY" : 827
-      },
-      "configuration" : {
-        "topicPattern" : "plcAlarm/key",
-        "host" : "aa8.aangstrom.it",
-        "port" : 1885,
-        "connectTimeoutSec" : 1,
-        "clientId" : "564920165892",
-        "appendClientIdSuffix" : false,
-        "parseToPlainText" : true,
-        "cleanSession" : true,
-        "retainedMessage" : false,
-        "ssl" : false,
-        "credentials" : {
-          "type" : "basic",
-          "username" : "aangstrom",
-          "password" : "Sexten69!"
-        }
-      },
-      "configurationVersion" : 1,
-      "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 0,
-        "failuresEnabled" : false
-      },
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "073be1e1-58e7-11f0-9cc7-dfa7f57094de"
-      },
-      "name" : "key MQTT",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.mqtt.TbMqttNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 428,
+        "layoutX" : 400,
         "layoutY" : 402
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var newmsg={};\nnewmsg=msg.reset;\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var newmsg={};\nnewmsg=msg.reset;\nmetadata.mqtt=\"reset\";\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,

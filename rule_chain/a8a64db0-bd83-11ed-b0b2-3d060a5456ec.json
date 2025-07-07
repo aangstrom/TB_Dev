@@ -91,11 +91,23 @@
     }, {
       "fromIndex" : 14,
       "toIndex" : 16,
-      "type" : "true"
+      "type" : "interval"
     }, {
       "fromIndex" : 14,
       "toIndex" : 17,
-      "type" : "false"
+      "type" : "ventola"
+    }, {
+      "fromIndex" : 14,
+      "toIndex" : 19,
+      "type" : "riscaldante"
+    }, {
+      "fromIndex" : 14,
+      "toIndex" : 21,
+      "type" : "key"
+    }, {
+      "fromIndex" : 14,
+      "toIndex" : 24,
+      "type" : "reset"
     }, {
       "fromIndex" : 16,
       "toIndex" : 15,
@@ -103,46 +115,18 @@
     }, {
       "fromIndex" : 17,
       "toIndex" : 18,
-      "type" : "true"
-    }, {
-      "fromIndex" : 17,
-      "toIndex" : 20,
-      "type" : "false"
-    }, {
-      "fromIndex" : 18,
-      "toIndex" : 19,
       "type" : "Success"
     }, {
-      "fromIndex" : 20,
-      "toIndex" : 21,
-      "type" : "true"
-    }, {
-      "fromIndex" : 20,
-      "toIndex" : 23,
-      "type" : "false"
+      "fromIndex" : 19,
+      "toIndex" : 20,
+      "type" : "Success"
     }, {
       "fromIndex" : 21,
-      "toIndex" : 22,
+      "toIndex" : 23,
       "type" : "Success"
-    }, {
-      "fromIndex" : 23,
-      "toIndex" : 24,
-      "type" : "false"
-    }, {
-      "fromIndex" : 23,
-      "toIndex" : 28,
-      "type" : "true"
     }, {
       "fromIndex" : 24,
-      "toIndex" : 25,
-      "type" : "true"
-    }, {
-      "fromIndex" : 25,
-      "toIndex" : 27,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 28,
-      "toIndex" : 26,
+      "toIndex" : 22,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
@@ -473,7 +457,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(msg.interval!=null) {\n    return ['true'];\n}else{\n    return ['false']\n}\nreturn nextRelation(metadata, msg);"
+        "tbelScript" : "if(msg.interval!=null) {\n    return ['interval', 'true'];\n}if(msg.ventola!=null) {\n    return ['ventola', 'true'];\n}if(msg.riscaldante!=null) {\n    return ['riscaldante', 'true'];\n}if(msg.reset!=null) {\n    return ['reset', 'true'];\n}if(msg.key!=null) {\n    return ['key', 'true'];\n}else{\n    return ['false']\n}\nreturn nextRelation(metadata, msg);"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -495,8 +479,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 10,
-        "layoutY" : 689
+        "layoutX" : 2,
+        "layoutY" : 604
       },
       "configuration" : {
         "topicPattern" : "m5stack/Interval",
@@ -559,32 +543,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 321,
-        "layoutY" : 448
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "jsScript" : "if(msg.interval!=null) {\n    return ['true'];\n}else{\n    return ['false']\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(msg.ventola!=null) {\n    return ['true'];\n}else{\n    return ['false']\n}\nreturn nextRelation(metadata, msg);"
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugSettings" : null,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "9bae6830-571a-11f0-9cc7-dfa7f57094de"
-      },
-      "name" : "ventola",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 211,
-        "layoutY" : 561
+        "layoutX" : 104,
+        "layoutY" : 756
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -607,8 +567,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 211,
-        "layoutY" : 699
+        "layoutX" : 103,
+        "layoutY" : 827
       },
       "configuration" : {
         "topicPattern" : "m5stack/ventola",
@@ -643,36 +603,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 585,
-        "layoutY" : 444
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "jsScript" : "if(msg.interval!=null) {\n    return ['true'];\n}else{\n    return ['false']\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(msg.riscaldante!=null) {\n    return ['true'];\n}else{\n    return ['false']\n}\nreturn nextRelation(metadata, msg);"
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 0,
-        "failuresEnabled" : false
-      },
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "a9107ce0-5722-11f0-9cc7-dfa7f57094de"
-      },
-      "name" : "riscaldante",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 455,
-        "layoutY" : 571
+        "layoutX" : 252,
+        "layoutY" : 604
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -699,8 +631,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 427,
-        "layoutY" : 690
+        "layoutX" : 248,
+        "layoutY" : 674
       },
       "configuration" : {
         "topicPattern" : "m5stack/riscaldante",
@@ -739,64 +671,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 663,
-        "layoutY" : 573
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "jsScript" : "if(msg.interval!=null) {\n    return ['true'];\n}else{\n    return ['false']\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(msg.reset!=null) {\n    return ['true'];\n}else{\n    return ['false']\n}\nreturn nextRelation(metadata, msg);"
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 0,
-        "failuresEnabled" : false
-      },
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "073b93c0-58e7-11f0-9cc7-dfa7f57094de"
-      },
-      "name" : "reset",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 843,
-        "layoutY" : 816
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "jsScript" : "if(msg.interval!=null) {\n    return ['true'];\n}else{\n    return ['false']\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(msg.key!=null) {\n    return ['true'];\n}else{\n    return ['false']\n}\nreturn nextRelation(metadata, msg);"
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 0,
-        "failuresEnabled" : false
-      },
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "073b93c1-58e7-11f0-9cc7-dfa7f57094de"
-      },
-      "name" : "key",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 916,
-        "layoutY" : 905
+        "layoutX" : 349,
+        "layoutY" : 751
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -823,8 +699,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 516,
-        "layoutY" : 787
+        "layoutX" : 699,
+        "layoutY" : 401
       },
       "configuration" : {
         "topicPattern" : "plcAlarm/reset",
@@ -863,8 +739,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1174,
-        "layoutY" : 863
+        "layoutX" : 353,
+        "layoutY" : 827
       },
       "configuration" : {
         "topicPattern" : "plcAlarm/key",
@@ -903,8 +779,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 627,
-        "layoutY" : 681
+        "layoutX" : 428,
+        "layoutY" : 402
       },
       "configuration" : {
         "scriptLang" : "TBEL",

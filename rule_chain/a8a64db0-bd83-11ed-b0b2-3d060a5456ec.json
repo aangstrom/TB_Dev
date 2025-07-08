@@ -122,11 +122,11 @@
       "type" : "Success"
     }, {
       "fromIndex" : 19,
-      "toIndex" : 15,
+      "toIndex" : 21,
       "type" : "Success"
     }, {
       "fromIndex" : 20,
-      "toIndex" : 15,
+      "toIndex" : 21,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
@@ -479,8 +479,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 775,
-        "layoutY" : 626
+        "layoutX" : 745,
+        "layoutY" : 690
       },
       "configuration" : {
         "topicPattern" : "m5stack/${mqtt}",
@@ -519,8 +519,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 400,
-        "layoutY" : 551
+        "layoutX" : 408,
+        "layoutY" : 632
       },
       "configuration" : {
         "scriptLang" : "JS",
@@ -567,8 +567,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 400,
-        "layoutY" : 476
+        "layoutX" : 393,
+        "layoutY" : 566
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -595,8 +595,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 400,
-        "layoutY" : 626
+        "layoutX" : 397,
+        "layoutY" : 481
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -648,6 +648,46 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 746,
+        "layoutY" : 617
+      },
+      "configuration" : {
+        "topicPattern" : "plcAlarm/${mqtt}",
+        "host" : "aa8.aangstrom.it",
+        "port" : 1885,
+        "connectTimeoutSec" : 10,
+        "clientId" : "564920165892",
+        "appendClientIdSuffix" : null,
+        "parseToPlainText" : true,
+        "cleanSession" : true,
+        "retainedMessage" : false,
+        "ssl" : false,
+        "credentials" : {
+          "type" : "basic",
+          "username" : "aangstrom",
+          "password" : "Sexten69!"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "6e4527c0-5bcb-11f0-9cc7-dfa7f57094de"
+      },
+      "name" : "MQTT",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : true,
+      "type" : "org.thingsboard.rule.engine.mqtt.TbMqttNode"
     } ],
     "ruleChainConnections" : null
   },

@@ -471,7 +471,7 @@
         "entityType" : "RULE_NODE",
         "id" : "b609d340-510c-11f0-9cc7-dfa7f57094de"
       },
-      "name" : "Interval",
+      "name" : "Tag name switch",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
@@ -497,9 +497,10 @@
           "type" : "basic",
           "username" : "aangstrom",
           "password" : "Sexten69!"
-        }
+        },
+        "protocolVersion" : "MQTT_3_1"
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugSettings" : {
         "allEnabled" : false,
@@ -669,9 +670,10 @@
           "type" : "basic",
           "username" : "aangstrom",
           "password" : "Sexten69!"
-        }
+        },
+        "protocolVersion" : "MQTT_3_1"
       },
-      "configurationVersion" : 1,
+      "configurationVersion" : 2,
       "createdTime" : 0,
       "debugSettings" : {
         "allEnabled" : false,
@@ -691,7 +693,59 @@
     } ],
     "ruleChainConnections" : null
   },
-  "relations" : [ ],
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "a8a64db0-bd83-11ed-b0b2-3d060a5456ec"
+    },
+    "to" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "fa3689a0-3f5d-11ed-accb-016e0c746b7f"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON",
+    "version" : 8838
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "a8a64db0-bd83-11ed-b0b2-3d060a5456ec"
+    },
+    "to" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "7c655170-01d5-11ed-8014-35af6f7ed6b6"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON",
+    "version" : 8836
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "e114f100-11cc-11ed-91ed-0903699d62f6"
+    },
+    "to" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "a8a64db0-bd83-11ed-b0b2-3d060a5456ec"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON",
+    "version" : 8759
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "42596ed0-1f65-11ef-b44e-91c31f727eb7"
+    },
+    "to" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "a8a64db0-bd83-11ed-b0b2-3d060a5456ec"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON",
+    "version" : 8722
+  } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
   }

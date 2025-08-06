@@ -7,7 +7,7 @@
     "configuration" : {
       "scriptLang" : "TBEL",
       "decoder" : null,
-      "tbelDecoder" : "var data = decodeToJson(payload);\r\nvar plc = data.plcData || {};\r\n\r\nvar deviceName = 'M5';    // <--- THIS MUST MATCH your TB device\r\nvar deviceType = 'plc-eth-mqtt';\r\n\r\nfunction asNum(val) {\r\n    if (typeof val === \"boolean\") return val ? 1 : 0;\r\n    if (typeof val === \"number\") return val;\r\n    if (typeof val === \"string\") return val === \"true\" ? 1 : 0;\r\n    return 0;\r\n}\r\n\r\nvar result = {\r\n   deviceName: deviceName,\r\n   deviceType: deviceType,\r\n   attributes: {},\r\n   telemetry: {\r\n      inp1:    asNum(plc.inp1),\r\n      relay1:  asNum(plc.relay1),\r\n      relay2:  asNum(plc.relay2),\r\n      relay3:  asNum(plc.relay3),\r\n      key:     asNum(plc.key),\r\n      reset:   asNum(plc.reset)\r\n   }\r\n};\r\n\r\nreturn result;",
+      "tbelDecoder" : "var data = decodeToJson(payload);\r\nvar plc = data.plcData || {};\r\n\r\nvar deviceName = 'M5';    // <--- THIS MUST MATCH your TB device\r\nvar deviceType = 'test';\r\n\r\nfunction asNum(val) {\r\n    if (typeof val === \"boolean\") return val ? 1 : 0;\r\n    if (typeof val === \"number\") return val;\r\n    if (typeof val === \"string\") return val === \"true\" ? 1 : 0;\r\n    return 0;\r\n}\r\n\r\nvar result = {\r\n   deviceName: deviceName,\r\n   deviceType: deviceType,\r\n   attributes: {},\r\n   telemetry: {\r\n      inp1:    asNum(plc.inp1),\r\n      relay1:  asNum(plc.relay1),\r\n      relay2:  asNum(plc.relay2),\r\n      relay3:  asNum(plc.relay3),\r\n      key:     asNum(plc.key),\r\n      reset:   asNum(plc.reset)\r\n   }\r\n};\r\n\r\nreturn result;",
       "encoder" : null,
       "tbelEncoder" : null,
       "updateOnlyKeys" : [ "manufacturer" ]

@@ -469,8 +469,8 @@
                   "persistentPollingInterval" : 1000
                 },
                 "getAttribute" : {
-                  "scope" : null,
-                  "key" : null
+                  "key" : null,
+                  "scope" : null
                 },
                 "getTimeSeries" : {
                   "key" : "relay1"
@@ -481,8 +481,8 @@
                 },
                 "dataToValue" : {
                   "type" : "NONE",
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
-                  "compareToValue" : 0
+                  "compareToValue" : 0,
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
                 }
               },
               "disabledState" : {
@@ -534,12 +534,13 @@
                 "secondaryColor" : "rgba(255, 255, 255, 0.80)",
                 "background" : {
                   "type" : "color",
-                  "color" : "var(--tb-primary-500)",
+                  "color" : "var(--tb-primary-400)",
                   "overlay" : {
                     "enabled" : false,
-                    "color" : "rgba(255,255,255,0.72)",
-                    "blur" : 3
-                  }
+                    "color" : "rgba(0, 255, 44, 0.72)",
+                    "blur" : 0
+                  },
+                  "imageUrl" : null
                 },
                 "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
                 "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
@@ -581,7 +582,8 @@
                 "secondaryColor" : "rgba(0, 0, 0, 0.54)",
                 "background" : {
                   "type" : "color",
-                  "color" : "#FFF",
+                  "imageUrl" : null,
+                  "color" : "var(--tb-accent-400)",
                   "overlay" : {
                     "enabled" : false,
                     "color" : "rgba(255,255,255,0.72)",
@@ -627,7 +629,7 @@
             "titleIcon" : "mdi:lightbulb-outline",
             "iconColor" : "rgba(0, 0, 0, 0.87)",
             "iconSize" : "24px",
-            "configMode" : "basic",
+            "configMode" : "advanced",
             "targetDevice" : {
               "type" : "device",
               "deviceId" : "73b658b0-5747-11f0-9cc7-dfa7f57094de"

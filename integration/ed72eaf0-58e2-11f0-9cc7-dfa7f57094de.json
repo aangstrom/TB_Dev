@@ -1,10 +1,11 @@
 {
   "entityType" : "INTEGRATION",
   "entity" : {
-    "additionalInfo" : null,
+    "additionalInfo" : {
+      "description" : ""
+    },
     "allowCreateDevicesOrAssets" : true,
     "configuration" : {
-      "metadata" : { },
       "clientConfiguration" : {
         "host" : "aa8.aangstrom.it",
         "port" : 1885,
@@ -14,17 +15,19 @@
         "connectTimeoutSec" : 10,
         "clientId" : "",
         "maxBytesInMessage" : 32368,
+        "protocolVersion" : "MQTT_3_1",
         "credentials" : {
           "type" : "basic",
-          "username" : "aangstrom",
-          "password" : "Sexten69!"
+          "password" : "Sexten69!",
+          "username" : "aangstrom"
         }
       },
       "topicFilters" : [ {
-        "filter" : "plcAlarm/plcData/#",
+        "filter" : "plcAlarm/#",
         "qos" : 0
       } ],
-      "downlinkTopicPattern" : "${topic}"
+      "downlinkTopicPattern" : "${topic}",
+      "metadata" : { }
     },
     "debugMode" : false,
     "debugSettings" : {
@@ -52,6 +55,14 @@
   },
   "relations" : [ ],
   "attributes" : {
-    "SERVER_SCOPE" : [ ]
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"success\":true}",
+      "key" : "integration_status_aa8-v3-5-0-12",
+      "lastUpdateTs" : 1752044230325,
+      "longValue" : null,
+      "strValue" : null
+    } ]
   }
 }

@@ -10,7 +10,7 @@
       "tbelDecoder" : "// Decode an uplink message from a buffer\r\n// payload - array of bytes\r\n// metadata - key/value object\r\n\r\n/** Decoder **/\r\n\r\n// decode payload to JSON\r\nvar data = decodeToJson(payload);\r\n\r\n// Use the plcData object inside the JSON\r\nvar plc = data.plcData || {};\r\n\r\nvar deviceName = 'M5';\r\nvar deviceType = 'test';\r\n\r\n// Coerce booleans/undefined to number\r\nfunction asNum(val) {\r\n    if (typeof val === \"boolean\") return val ? 1 : 0;\r\n    if (typeof val === \"number\") return val;\r\n    if (typeof val === \"string\") return val === \"true\" ? 1 : 0;\r\n    return 0;\r\n}\r\n\r\nvar result = {\r\n   deviceName: deviceName,\r\n   deviceType: deviceType,\r\n   attributes: {},\r\n   telemetry: {\r\n      inp1:    asNum(plc.inp1),\r\n      relay1:  asNum(plc.relay1),\r\n      relay2:  asNum(plc.relay2),\r\n      relay3:  asNum(plc.relay3),\r\n      key:     asNum(plc.key),\r\n      reset:   asNum(plc.reset)\r\n   }\r\n};\r\n\r\nreturn result;",
       "encoder" : null,
       "tbelEncoder" : null,
-      "updateOnlyKeys" : [ "manufacturer" ]
+      "updateOnlyKeys" : null
     },
     "converterVersion" : 1,
     "debugMode" : false,

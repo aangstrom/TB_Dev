@@ -7,7 +7,7 @@
     "configuration" : {
       "scriptLang" : "TBEL",
       "decoder" : null,
-      "tbelDecoder" : "var json = decodeToJson(payload);\r\nvar plc = json.plcData;\r\nif (plc == null) {\r\n    plc = {};\r\n}\r\n\r\nvar telemetry = {};\r\ntelemetry[\"inp1\"]    = plc.inp1 != null ? plc.inp1 : 0;\r\ntelemetry[\"relay1\"]  = plc.relay1 != null ? plc.relay1 : 0;\r\ntelemetry[\"relay2\"]  = plc.relay2 != null ? plc.relay2 : 0;\r\ntelemetry[\"relay3\"]  = plc.relay3 != null ? plc.relay3 : 0;\r\ntelemetry[\"key\"]     = plc.key != null ? plc.key : 0;\r\ntelemetry[\"reset\"]   = plc.reset != null ? plc.reset : 0;\r\n\r\nvar attributes = {};\r\n\r\nreturn {\r\n    \"deviceName\": \"M5\",\r\n    \"deviceType\": \"test\",\r\n    \"attributes\": attributes,\r\n    \"telemetry\": telemetry\r\n}",
+      "tbelDecoder" : "var json = decodeToJson(payload);\r\nvar plc = json.plcData;\r\nif (plc == null) {\r\n    plc = {};\r\n}\r\n\r\nvar telemetry = {};\r\ntelemetry[\"inp1\"]    = plc.inp1 != null ? plc.inp1 : 0;\r\ntelemetry[\"relay1\"]  = plc.relay1 != null ? plc.relay1 : 0;\r\ntelemetry[\"relay2\"]  = plc.relay2 != null ? plc.relay2 : 0;\r\ntelemetry[\"relay3\"]  = plc.relay3 != null ? plc.relay3 : 0;\r\ntelemetry[\"key\"]     = plc.key != null ? plc.key : 0;\r\ntelemetry[\"reset\"]   = plc.resetStatus != null ? plc.resetStatus : 0;\r\n\r\nvar attributes = {};\r\n\r\nreturn {\r\n    \"deviceName\": \"M5\",\r\n    \"deviceType\": \"test\",\r\n    \"attributes\": attributes,\r\n    \"telemetry\": telemetry\r\n}",
       "encoder" : null,
       "tbelEncoder" : null,
       "updateOnlyKeys" : null

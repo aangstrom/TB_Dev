@@ -267,7 +267,7 @@
             "padding" : "0px",
             "settings" : {
               "initialState" : {
-                "action" : "GET_ATTRIBUTE",
+                "action" : "GET_TIME_SERIES",
                 "defaultValue" : false,
                 "executeRpc" : {
                   "method" : "getState",
@@ -277,10 +277,10 @@
                 },
                 "getAttribute" : {
                   "scope" : "SERVER_SCOPE",
-                  "key" : "key"
+                  "key" : null
                 },
                 "getTimeSeries" : {
-                  "key" : "state"
+                  "key" : "key"
                 },
                 "getAlarmStatus" : {
                   "severityList" : null,
@@ -1301,6 +1301,7 @@
               }
             } ],
             "timewindow" : {
+              "displayValue" : "",
               "hideAggregation" : false,
               "hideAggInterval" : false,
               "hideTimezone" : false,
@@ -1318,7 +1319,10 @@
                 "historyType" : 0,
                 "interval" : 1000,
                 "timewindowMs" : 60000,
-                "fixedTimewindow" : null,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1754401019787,
+                  "endTimeMs" : 1754487419787
+                },
                 "quickInterval" : "CURRENT_DAY",
                 "hideInterval" : false,
                 "hideLastInterval" : false,

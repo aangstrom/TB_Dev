@@ -1301,13 +1301,15 @@
               }
             } ],
             "timewindow" : {
-              "displayValue" : "",
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
               "selectedTab" : 0,
               "realtime" : {
                 "realtimeType" : 1,
                 "interval" : 1000,
                 "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY",
+                "quickInterval" : "CURRENT_HOUR",
                 "hideInterval" : false,
                 "hideLastInterval" : false,
                 "hideQuickInterval" : false
@@ -1316,10 +1318,7 @@
                 "historyType" : 0,
                 "interval" : 1000,
                 "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1754399386645,
-                  "endTimeMs" : 1754485786645
-                },
+                "fixedTimewindow" : null,
                 "quickInterval" : "CURRENT_DAY",
                 "hideInterval" : false,
                 "hideLastInterval" : false,
@@ -1329,7 +1328,8 @@
               "aggregation" : {
                 "type" : "AVG",
                 "limit" : 25000
-              }
+              },
+              "timezone" : null
             },
             "showTitle" : false,
             "backgroundColor" : "rgba(0, 0, 0, 0)",
@@ -1394,7 +1394,7 @@
             },
             "units" : "°C",
             "decimals" : 0,
-            "useDashboardTimewindow" : true,
+            "useDashboardTimewindow" : false,
             "widgetStyle" : { },
             "actions" : { },
             "configMode" : "basic",

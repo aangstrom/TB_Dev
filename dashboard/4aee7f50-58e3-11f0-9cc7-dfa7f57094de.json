@@ -1394,7 +1394,7 @@
             },
             "units" : "°C",
             "decimals" : 0,
-            "useDashboardTimewindow" : true,
+            "useDashboardTimewindow" : false,
             "widgetStyle" : { },
             "actions" : { },
             "configMode" : "basic",
@@ -1530,15 +1530,14 @@
       },
       "filters" : { },
       "timewindow" : {
-        "displayValue" : "",
         "hideAggregation" : false,
         "hideAggInterval" : false,
         "hideTimezone" : false,
         "selectedTab" : 0,
         "realtime" : {
           "realtimeType" : 0,
-          "interval" : 1000,
-          "timewindowMs" : 60000,
+          "interval" : 5000,
+          "timewindowMs" : 1800000,
           "quickInterval" : "CURRENT_DAY",
           "hideInterval" : false,
           "hideLastInterval" : false,
@@ -1548,10 +1547,7 @@
           "historyType" : 0,
           "interval" : 1000,
           "timewindowMs" : 60000,
-          "fixedTimewindow" : {
-            "startTimeMs" : 1751552968824,
-            "endTimeMs" : 1751639368824
-          },
+          "fixedTimewindow" : null,
           "quickInterval" : "CURRENT_DAY",
           "hideInterval" : false,
           "hideLastInterval" : false,
@@ -1561,7 +1557,8 @@
         "aggregation" : {
           "type" : "AVG",
           "limit" : 25000
-        }
+        },
+        "timezone" : null
       },
       "settings" : {
         "stateControllerId" : "entity",

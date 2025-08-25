@@ -654,6 +654,38 @@
       "ruleChainId" : null,
       "singletonMode" : true,
       "type" : "org.thingsboard.rule.engine.mqtt.TbMqttNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "Input Node → riceve la telemetria grezza.\n\nValidate & Normalize Node (Script) → controlla valori validi e uniforma chiavi.\n\nScript Node – Dew Point → calcola dew_point.\n\nScript Node – Δ step → calcola ΔUR_step, ΔT_step usando last_T, last_UR (attributi server).\n\nAttributes Node → recupera UR_avg30d, UR_band_min, UR_band_max.\n\nScript Node – OOB check → genera OOB_flag.\n\nSave Telemetry Node → salva valori calcolati.\n\nTimer/Batch Node → ogni giorno calcola UR_avg30d, bande, OOB_daily_pct, ΔT_24h, IRM.\n\nSave Attributes Node → aggiorna UR_avg30d, bande.\n\nCreate/Close Alarm Nodes → aprono/chiudono gli allarmi su OOB, ΔT, IRM.\n\nOutput Node → instrada telemetria e allarmi.",
+        "layoutX" : 174,
+        "layoutY" : 816
+      },
+      "configuration" : {
+        "modelId" : {
+          "entityType" : "AI_MODEL",
+          "id" : "4c45f1b0-81a3-11f0-bb0f-799059dff0f8"
+        },
+        "systemPrompt" : "You are a helpful AI assistant. Your primary function is to process the user's request and respond with a valid JSON object. Do not include any text, explanations, or markdown formatting before or after the JSON output.",
+        "userPrompt" : "You are a helpful AI assistant. Your primary function is to process the user's request and respond with a valid JSON object. Do not include any text, explanations, or markdown formatting before or after the JSON output.\n\nGenerate a ThingsBoard Rule Chain JSON that implements the UNI EN 15757 bioindicator monitoring. The Rule Chain must include:\n\n- Telemetry input: temperature (°C), humidity (%RH).\n- Streaming calculations:\n  - dew_point (Magnus formula),\n  - ΔUR_step and ΔT_step (absolute difference with previous sample),\n  - OOB_flag = 1 if humidity < UR_band_min or > UR_band_max.\n- Batch calculations:\n  - UR_avg30d (30-day moving average of humidity),\n  - UR_band_min / UR_band_max = UR_avg30d ± 10,\n  - OOB_daily_pct = % samples per day outside bands,\n  - ΔT_24h = max - min temperature in last 24h,\n  - IRM = 0.7 * OOB_daily_pct + 30 * ΔT_flag (clamped 0–100).\n- Attributes: UR_avg30d, UR_band_min, UR_band_max, last_T, last_UR.\n- Telemetry outputs: dew_point, ΔUR_step, ΔT_step, OOB_flag, OOB_daily_pct, ΔT_24h, IRM.\n- Alarms:\n  - ALARM_OOB_INSTANT if OOB_flag=1 for >30min,\n  - ALARM_DELTA_T_24H if ΔT_24h > 2,\n  - ALARM_IRM_HIGH if IRM ≥ 60 for ≥3 days.\n\nReturn only the Rule Chain JSON object with nodes and connections.",
+        "responseFormat" : {
+          "type" : "JSON"
+        },
+        "timeoutSeconds" : 60,
+        "forceAck" : true
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "66f35c90-81a4-11f0-bb0f-799059dff0f8"
+      },
+      "name" : "ai test",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.ai.TbAiNode"
     } ],
     "ruleChainConnections" : null
   },
@@ -669,7 +701,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 9147
+    "version" : 9244
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -682,7 +714,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 9145
+    "version" : 9242
   }, {
     "additionalInfo" : null,
     "from" : {

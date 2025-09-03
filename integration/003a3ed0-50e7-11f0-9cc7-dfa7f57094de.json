@@ -6,28 +6,31 @@
     },
     "allowCreateDevicesOrAssets" : true,
     "configuration" : {
-      "metadata" : { },
-      "topicFilters" : [ {
-        "qos" : 0,
-        "filter" : "#"
-      } ],
       "clientConfiguration" : {
-        "ssl" : false,
         "host" : "aa8.aangstrom.it",
         "port" : 1885,
+        "cleanSession" : true,
+        "retainedMessage" : false,
+        "ssl" : false,
+        "connectTimeoutSec" : 10,
         "clientId" : "",
+        "maxBytesInMessage" : 32368,
+        "protocolVersion" : "MQTT_3_1",
         "credentials" : {
           "type" : "basic",
           "password" : "Sexten69!",
           "username" : "aangstrom"
-        },
-        "cleanSession" : true,
-        "protocolVersion" : "MQTT_3_1",
-        "retainedMessage" : false,
-        "connectTimeoutSec" : 10,
-        "maxBytesInMessage" : 32368
+        }
       },
-      "downlinkTopicPattern" : "${topic}"
+      "topicFilters" : [ {
+        "filter" : "m5stack/plcData/atom1/#",
+        "qos" : 0
+      }, {
+        "filter" : "m5stack/plcData/atom2/#",
+        "qos" : 0
+      } ],
+      "downlinkTopicPattern" : "${topic}",
+      "metadata" : { }
     },
     "debugMode" : false,
     "debugSettings" : {
@@ -73,7 +76,7 @@
       "doubleValue" : null,
       "jsonValue" : "{\"success\":true}",
       "key" : "integration_status_aa8-v3-5-0-12",
-      "lastUpdateTs" : 1756913641723,
+      "lastUpdateTs" : 1756914716054,
       "longValue" : null,
       "strValue" : null
     } ]

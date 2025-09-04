@@ -10,15 +10,7 @@
       "tbelDecoder" : "// Parse JSON safely\nvar json = decodeToJson(payload);\nif (json == null) {\n  json = {};\n}\n\n// Telemetry object\nvar telemetry = {};\n\n// ---- ENV: temperature & humidity ----\nif (json.env != null) {\n  var env = json.env;\n  if (env.temperature != null) telemetry.temperature = env.temperature;\n  if (env.humidity    != null) telemetry.humidity    = env.humidity;\n}\n\n// ---- RELAYS: flattened relay1..relay16 ----\nif (json.relays != null) {\n  var r = json.relays;\n  var i = 1;\n  var MAX_RELAYS = 16;\n  while (i <= MAX_RELAYS) {\n    var key = \"\" + i;\n    if (r[key] != null) {\n      telemetry[\"relay\" + i] = r[key] * 1; // force number\n    }\n    i = i + 1;\n  }\n}\n\n// ---- COLOR: R/G/B (default to 0 only when color is present & field missing) ----\nif (json.colors != null) {\n  var c = json.colors;\n  telemetry.R = (c.R != null) ? c.R : 0;\n  telemetry.G = (c.G != null) ? c.G : 0;\n  telemetry.B = (c.B != null) ? c.B : 0;\n}\n\n// ---- TVOC ----\nif (json.voc != null) {\n  telemetry.voc = json.voc; // keep the same 'voc' key in telemetry as before\n}\n\n// ---- INTERVAL: ms -> seconds ----\nif (json.interval != null) {\n  telemetry.Interval = (json.interval * 1.0) / 1000.0;\n}\n\n// Attributes (empty for now)\nvar attributes = {};\n\nreturn {\n  deviceName: \"lab1 station2\",\n  deviceType: \"test\",\n  attributes: attributes,\n  telemetry: telemetry\n};",
       "encoder" : null,
       "tbelEncoder" : null,
-      "updateOnlyKeys" : null,
-      "type" : "DEVICE",
-      "name" : "",
-      "profile" : "",
-      "label" : "",
-      "customer" : "",
-      "group" : "",
-      "telemetry" : null,
-      "attributes" : null
+      "updateOnlyKeys" : null
     },
     "converterVersion" : 1,
     "debugMode" : false,
@@ -34,7 +26,7 @@
       "id" : "ca453ef0-899a-11f0-bb0f-799059dff0f8"
     },
     "integrationType" : "MQTT",
-    "name" : "Uplink data converter for MQTT integration",
+    "name" : "lab1 station2 M5 MQTT integration",
     "type" : "UPLINK"
   },
   "relations" : [ ],

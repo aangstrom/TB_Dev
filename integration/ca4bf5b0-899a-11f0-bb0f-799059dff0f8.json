@@ -6,7 +6,6 @@
     },
     "allowCreateDevicesOrAssets" : true,
     "configuration" : {
-      "metadata" : { },
       "clientConfiguration" : {
         "host" : "aa8.aangstrom.it",
         "port" : 1885,
@@ -24,8 +23,12 @@
       "topicFilters" : [ {
         "filter" : "Makros/lab1/station2/env3/#",
         "qos" : 0
+      }, {
+        "filter" : "Makros/lab1/station2/datacontrol/#",
+        "qos" : 0
       } ],
-      "downlinkTopicPattern" : "${topic}"
+      "downlinkTopicPattern" : "${topic}",
+      "metadata" : { }
     },
     "debugMode" : false,
     "debugSettings" : {
@@ -58,7 +61,7 @@
       "doubleValue" : null,
       "jsonValue" : "{\"success\":true}",
       "key" : "integration_status_aa8-v3-5-0-12",
-      "lastUpdateTs" : 1756995855886,
+      "lastUpdateTs" : 1756995866184,
       "longValue" : null,
       "strValue" : null
     } ]

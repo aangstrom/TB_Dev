@@ -7,18 +7,10 @@
     "configuration" : {
       "scriptLang" : "TBEL",
       "decoder" : null,
-      "tbelDecoder" : "// Decode an uplink message from a buffer\n// payload - array of bytes\n// metadata - key/value object\n\n/** Decoder **/\n\n// decode payload to string\nvar payloadStr = decodeToString(payload);\n\n// decode payload to JSON\n// var data = decodeToJson(payload);\n\nvar deviceName = 'Device A';\nvar deviceType = 'thermostat';\nvar customerName = 'Customer C';\nvar groupName = 'thermostat devices';\nvar manufacturer = 'Example corporation';\n// use assetName and assetType instead of deviceName and deviceType\n// to automatically create assets instead of devices.\n// var assetName = 'Asset A';\n// var assetType = 'building';\n\n// Result object with device/asset attributes/telemetry data\nvar result = {\n// Use deviceName and deviceType or assetName and assetType, but not both.\n   deviceName: deviceName,\n   deviceType: deviceType,\n// assetName: assetName,\n// assetType: assetType,\n// customerName: customerName,\n   groupName: groupName,\n   attributes: {\n       model: 'Model A',\n       serialNumber: 'SN111',\n       integrationName: metadata['integrationName'],\n       manufacturer: manufacturer\n   },\n   telemetry: {\n       temperature: 42,\n       humidity: 80,\n       rawData: payloadStr\n   }\n};\n\n/** Helper functions 'decodeToString' and 'decodeToJson' are already built-in **/\n\nreturn result;",
+      "tbelDecoder" : "// Parse JSON safely\r\nvar json = decodeToJson(payload);\r\nif (json == null) {\r\n  json = {};\r\n}\r\n\r\n// Telemetry object\r\nvar telemetry = {};\r\nvar attributes = {}; // none for now, but kept for symmetry\r\n\r\n// ---- PLC DATA: flatten fixed fields ----\r\n// Expected payload example:\r\n// {\"plcData\":{\"inp1\":0,\"relay1\":1,\"relay2\":0,\"relay3\":0,\"key\":0,\"resetStatus\":0}}\r\nif (json.plcData != null) {\r\n  var p = json.plcData;\r\n\r\n  // Only copy if present, force numeric\r\n  if (p.inp1         != null) telemetry.inp1         = p.inp1 * 1;\r\n  if (p.relay1       != null) telemetry.relay1       = p.relay1 * 1;\r\n  if (p.relay2       != null) telemetry.relay2       = p.relay2 * 1;\r\n  if (p.relay3       != null) telemetry.relay3       = p.relay3 * 1;\r\n  if (p.key          != null) telemetry.key          = p.key * 1;\r\n  if (p.resetStatus  != null) telemetry.resetStatus  = p.resetStatus * 1;\r\n}\r\n\r\n// Return in ThingsBoard format\r\nreturn {\r\n  deviceName: \"lab1 station2\",\r\n  deviceType: \"test\",\r\n  attributes: attributes,\r\n  telemetry: telemetry\r\n};",
       "encoder" : null,
       "tbelEncoder" : null,
-      "updateOnlyKeys" : [ "manufacturer" ],
-      "type" : "DEVICE",
-      "name" : "",
-      "profile" : "",
-      "label" : "",
-      "customer" : "",
-      "group" : "",
-      "telemetry" : null,
-      "attributes" : null
+      "updateOnlyKeys" : [ "manufacturer" ]
     },
     "converterVersion" : 1,
     "debugMode" : false,

@@ -2408,15 +2408,15 @@
               "name" : "",
               "entityAliasId" : "9785b2a7-adbc-db39-e210-e40cc3d59f23",
               "dataKeys" : [ {
-                "name" : "resetStatus",
+                "name" : "armadioAperto",
                 "type" : "timeseries",
-                "label" : "Reset premuto",
-                "color" : "#E89623",
+                "label" : "Armadio aperto",
+                "color" : "#F44336",
                 "settings" : {
                   "yAxisId" : "default",
                   "showInLegend" : true,
                   "dataHiddenByDefault" : false,
-                  "type" : "bar",
+                  "type" : "line",
                   "lineSettings" : {
                     "showLine" : true,
                     "step" : false,
@@ -2481,12 +2481,17 @@
                     "color" : ""
                   }
                 },
-                "_hash" : 0.4098484062370956,
-                "units" : "volte",
-                "decimals" : 0,
+                "_hash" : 0.9138870241266243,
+                "units" : {
+                  "from" : "s",
+                  "METRIC" : "min",
+                  "IMPERIAL" : "min",
+                  "HYBRID" : "min"
+                },
+                "decimals" : 2,
                 "aggregationType" : null,
                 "funcBody" : null,
-                "usePostProcessing" : null,
+                "usePostProcessing" : false,
                 "postFuncBody" : null
               } ],
               "alarmFilterConfig" : {
@@ -2785,7 +2790,7 @@
               "tooltipLabelColor" : "rgba(0, 0, 0, 0.76)",
               "tooltipHideZeroValues" : null
             },
-            "title" : "Contatore dei reset",
+            "title" : "Durata di apertura del apmadio",
             "dropShadow" : true,
             "enableFullscreen" : true,
             "titleStyle" : null,

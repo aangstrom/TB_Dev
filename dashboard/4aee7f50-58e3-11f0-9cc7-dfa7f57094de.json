@@ -10317,7 +10317,7 @@
               "name" : "",
               "entityAliasId" : "9785b2a7-adbc-db39-e210-e40cc3d59f23",
               "dataKeys" : [ {
-                "name" : "resetStatus",
+                "name" : "statoAlarm1",
                 "type" : "timeseries",
                 "label" : "Sum reset",
                 "color" : "#2196f3",
@@ -10377,7 +10377,7 @@
             "settings" : {
               "autoScale" : true,
               "showLabel" : true,
-              "label" : "Reset premuto",
+              "label" : "Alarm 1 attivato",
               "labelFont" : {
                 "family" : "Roboto",
                 "size" : 20,
@@ -10397,7 +10397,29 @@
               "icon" : "mdi:alarm-light",
               "iconColor" : {
                 "type" : "constant",
-                "color" : "var(--tb-primary-500)",
+                "color" : "#F9A19B",
+                "gradient" : {
+                  "advancedMode" : false,
+                  "gradient" : [ "rgba(0, 255, 0, 1)", "rgba(255, 0, 0, 1)" ],
+                  "gradientAdvanced" : [ {
+                    "source" : {
+                      "type" : "constant"
+                    },
+                    "color" : "rgba(0, 255, 0, 1)"
+                  }, {
+                    "source" : {
+                      "type" : "constant"
+                    },
+                    "color" : "rgba(255, 0, 0, 1)"
+                  } ],
+                  "minValue" : 0,
+                  "maxValue" : 100
+                },
+                "rangeList" : {
+                  "advancedMode" : false,
+                  "range" : [ ],
+                  "rangeAdvanced" : [ ]
+                },
                 "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
               },
               "valueFont" : {

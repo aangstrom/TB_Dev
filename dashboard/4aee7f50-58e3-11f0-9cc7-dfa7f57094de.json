@@ -1655,7 +1655,7 @@
               "name" : "",
               "entityAliasId" : "9785b2a7-adbc-db39-e210-e40cc3d59f23",
               "dataKeys" : [ {
-                "name" : "statoArmadio",
+                "name" : "relay1",
                 "type" : "timeseries",
                 "label" : "Sum reset",
                 "color" : "#2196f3",
@@ -1665,8 +1665,8 @@
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "value == 0 ? 1 : 0;\nreturn value;",
                 "comparisonEnabled" : null
               } ],
               "alarmFilterConfig" : {

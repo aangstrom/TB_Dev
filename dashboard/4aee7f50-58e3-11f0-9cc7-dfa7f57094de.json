@@ -3343,11 +3343,17 @@
             "padding" : "0px",
             "settings" : {
               "activatedState" : {
-                "action" : "DO_NOTHING",
+                "action" : "GET_DASHBOARD_STATE",
                 "defaultValue" : false,
+                "executeRpc" : {
+                  "method" : null,
+                  "requestTimeout" : null,
+                  "requestPersistent" : null,
+                  "persistentPollingInterval" : null
+                },
                 "getAttribute" : {
-                  "key" : "state",
-                  "scope" : null
+                  "scope" : null,
+                  "key" : "state"
                 },
                 "getTimeSeries" : {
                   "key" : "state"
@@ -3358,8 +3364,8 @@
                 },
                 "dataToValue" : {
                   "type" : "NONE",
-                  "compareToValue" : true,
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
+                  "compareToValue" : "default"
                 }
               },
               "disabledState" : {
@@ -3486,7 +3492,7 @@
             "padding" : "0px",
             "settings" : {
               "activatedState" : {
-                "action" : "DO_NOTHING",
+                "action" : "GET_DASHBOARD_STATE",
                 "defaultValue" : false,
                 "executeRpc" : {
                   "method" : null,
@@ -3508,7 +3514,7 @@
                 "dataToValue" : {
                   "type" : "NONE",
                   "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
-                  "compareToValue" : 1
+                  "compareToValue" : "armadio1"
                 }
               },
               "disabledState" : {
@@ -3635,7 +3641,7 @@
             "padding" : "0px",
             "settings" : {
               "activatedState" : {
-                "action" : "DO_NOTHING",
+                "action" : "GET_DASHBOARD_STATE",
                 "defaultValue" : false,
                 "executeRpc" : {
                   "method" : null,
@@ -3657,7 +3663,7 @@
                 "dataToValue" : {
                   "type" : "NONE",
                   "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
-                  "compareToValue" : 1
+                  "compareToValue" : "armadio2"
                 }
               },
               "disabledState" : {
@@ -3784,7 +3790,7 @@
             "padding" : "0px",
             "settings" : {
               "activatedState" : {
-                "action" : "DO_NOTHING",
+                "action" : "GET_DASHBOARD_STATE",
                 "defaultValue" : false,
                 "executeRpc" : {
                   "method" : null,
@@ -3806,7 +3812,7 @@
                 "dataToValue" : {
                   "type" : "NONE",
                   "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
-                  "compareToValue" : 1
+                  "compareToValue" : "armadio3"
                 }
               },
               "disabledState" : {
@@ -3933,7 +3939,7 @@
             "padding" : "0px",
             "settings" : {
               "activatedState" : {
-                "action" : "DO_NOTHING",
+                "action" : "GET_DASHBOARD_STATE",
                 "defaultValue" : false,
                 "executeRpc" : {
                   "method" : null,
@@ -3955,7 +3961,7 @@
                 "dataToValue" : {
                   "type" : "NONE",
                   "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
-                  "compareToValue" : 1
+                  "compareToValue" : "armadio4"
                 }
               },
               "disabledState" : {

@@ -6077,346 +6077,6 @@
           "col" : 0,
           "id" : "05eb8305-7299-3884-4aad-f8ff48b86391"
         },
-        "f9a25424-019a-af46-4b30-ab46d1bee970" : {
-          "typeFullFqn" : "system.power_button",
-          "type" : "rpc",
-          "sizeX" : 3.5,
-          "sizeY" : 3.5,
-          "config" : {
-            "showTitle" : true,
-            "backgroundColor" : "rgba(0,0,0,0)",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0",
-            "settings" : {
-              "padding" : "0",
-              "background" : {
-                "type" : "color",
-                "color" : "rgba(0,0,0,0)",
-                "overlay" : {
-                  "enabled" : false,
-                  "color" : "rgba(255,255,255,0.72)",
-                  "blur" : 3
-                }
-              },
-              "initialState" : {
-                "action" : "GET_ATTRIBUTE",
-                "defaultValue" : false,
-                "executeRpc" : {
-                  "method" : "getState",
-                  "requestTimeout" : 5000,
-                  "requestPersistent" : false,
-                  "persistentPollingInterval" : 1000
-                },
-                "getAttribute" : {
-                  "scope" : "SERVER_SCOPE",
-                  "key" : "ventola"
-                },
-                "getTimeSeries" : {
-                  "key" : "state"
-                },
-                "getAlarmStatus" : {
-                  "severityList" : null,
-                  "typeList" : null
-                },
-                "dataToValue" : {
-                  "type" : "NONE",
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
-                  "compareToValue" : 1
-                }
-              },
-              "onUpdateState" : {
-                "action" : "SET_ATTRIBUTE",
-                "executeRpc" : {
-                  "method" : "setState",
-                  "requestTimeout" : 5000,
-                  "requestPersistent" : false,
-                  "persistentPollingInterval" : 1000
-                },
-                "setAttribute" : {
-                  "scope" : "SERVER_SCOPE",
-                  "key" : "ventola"
-                },
-                "putTimeSeries" : {
-                  "key" : "state"
-                },
-                "valueToData" : {
-                  "type" : "CONSTANT",
-                  "constantValue" : 1,
-                  "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */\nreturn value;"
-                }
-              },
-              "offUpdateState" : {
-                "action" : "SET_ATTRIBUTE",
-                "executeRpc" : {
-                  "method" : "m5stack/Interval",
-                  "requestTimeout" : 5000,
-                  "requestPersistent" : false,
-                  "persistentPollingInterval" : 1000
-                },
-                "setAttribute" : {
-                  "scope" : "SERVER_SCOPE",
-                  "key" : "ventola"
-                },
-                "putTimeSeries" : {
-                  "key" : "state"
-                },
-                "valueToData" : {
-                  "type" : "CONSTANT",
-                  "constantValue" : 0,
-                  "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */ \n return value;"
-                }
-              },
-              "disabledState" : {
-                "action" : "DO_NOTHING",
-                "defaultValue" : false,
-                "getAttribute" : {
-                  "key" : "state",
-                  "scope" : null
-                },
-                "getTimeSeries" : {
-                  "key" : "state"
-                },
-                "getAlarmStatus" : {
-                  "severityList" : null,
-                  "typeList" : null
-                },
-                "dataToValue" : {
-                  "type" : "NONE",
-                  "compareToValue" : true,
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
-                }
-              },
-              "layout" : "default",
-              "onButtonIcon" : {
-                "showIcon" : false,
-                "iconSize" : 32,
-                "iconSizeUnit" : "px",
-                "icon" : "power_settings_new"
-              },
-              "offButtonIcon" : {
-                "showIcon" : false,
-                "iconSize" : 32,
-                "iconSizeUnit" : "px",
-                "icon" : "power_settings_new"
-              },
-              "mainColorOn" : "var(--tb-primary-500)",
-              "backgroundColorOn" : "#FFFFFF",
-              "mainColorOff" : "#A2A2A2",
-              "backgroundColorOff" : "#FFFFFF",
-              "mainColorDisabled" : "rgba(0,0,0,0.12)",
-              "backgroundColorDisabled" : "#FFFFFF"
-            },
-            "title" : "Ventola",
-            "dropShadow" : false,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "actions" : { },
-            "widgetCss" : "",
-            "noDataDisplayMessage" : "",
-            "titleFont" : {
-              "size" : 16,
-              "sizeUnit" : "px",
-              "family" : "Roboto",
-              "weight" : "500",
-              "style" : null,
-              "lineHeight" : "1.6"
-            },
-            "showTitleIcon" : false,
-            "titleTooltip" : "",
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "pageSize" : 1024,
-            "titleIcon" : "mdi:lightbulb-outline",
-            "iconColor" : "rgba(0, 0, 0, 0.87)",
-            "iconSize" : "24px",
-            "configMode" : "basic",
-            "targetDevice" : {
-              "type" : "entity",
-              "entityAliasId" : "3c85bc40-db02-f68b-49dd-bed5a471e124"
-            },
-            "titleColor" : null,
-            "borderRadius" : null,
-            "datasources" : [ ],
-            "resizable" : true,
-            "preserveAspectRatio" : false,
-            "margin" : "0"
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "f9a25424-019a-af46-4b30-ab46d1bee970"
-        },
-        "27f8a6ee-5128-45d9-0cda-08dae24e035b" : {
-          "typeFullFqn" : "system.power_button",
-          "type" : "rpc",
-          "sizeX" : 3.5,
-          "sizeY" : 3.5,
-          "config" : {
-            "showTitle" : true,
-            "backgroundColor" : "rgba(0,0,0,0)",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0",
-            "settings" : {
-              "padding" : "0",
-              "background" : {
-                "type" : "color",
-                "color" : "rgba(0,0,0,0)",
-                "overlay" : {
-                  "enabled" : false,
-                  "color" : "rgba(255,255,255,0.72)",
-                  "blur" : 3
-                }
-              },
-              "initialState" : {
-                "action" : "GET_ATTRIBUTE",
-                "defaultValue" : false,
-                "executeRpc" : {
-                  "method" : "getState",
-                  "requestTimeout" : 5000,
-                  "requestPersistent" : false,
-                  "persistentPollingInterval" : 1000
-                },
-                "getAttribute" : {
-                  "scope" : "SERVER_SCOPE",
-                  "key" : "riscaldante"
-                },
-                "getTimeSeries" : {
-                  "key" : "state"
-                },
-                "getAlarmStatus" : {
-                  "severityList" : null,
-                  "typeList" : null
-                },
-                "dataToValue" : {
-                  "type" : "NONE",
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
-                  "compareToValue" : 1
-                }
-              },
-              "onUpdateState" : {
-                "action" : "SET_ATTRIBUTE",
-                "executeRpc" : {
-                  "method" : "setState",
-                  "requestTimeout" : 5000,
-                  "requestPersistent" : false,
-                  "persistentPollingInterval" : 1000
-                },
-                "setAttribute" : {
-                  "scope" : "SERVER_SCOPE",
-                  "key" : "riscaldante"
-                },
-                "putTimeSeries" : {
-                  "key" : "state"
-                },
-                "valueToData" : {
-                  "type" : "CONSTANT",
-                  "constantValue" : 1,
-                  "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */\nreturn value;"
-                }
-              },
-              "offUpdateState" : {
-                "action" : "SET_ATTRIBUTE",
-                "executeRpc" : {
-                  "method" : "m5stack/Interval",
-                  "requestTimeout" : 5000,
-                  "requestPersistent" : false,
-                  "persistentPollingInterval" : 1000
-                },
-                "setAttribute" : {
-                  "scope" : "SERVER_SCOPE",
-                  "key" : "riscaldante"
-                },
-                "putTimeSeries" : {
-                  "key" : "state"
-                },
-                "valueToData" : {
-                  "type" : "CONSTANT",
-                  "constantValue" : 0,
-                  "valueToDataFunction" : "/* Convert input boolean value to RPC parameters or attribute/time-series value */ \n return value;"
-                }
-              },
-              "disabledState" : {
-                "action" : "DO_NOTHING",
-                "defaultValue" : false,
-                "getAttribute" : {
-                  "key" : "state",
-                  "scope" : null
-                },
-                "getTimeSeries" : {
-                  "key" : "state"
-                },
-                "getAlarmStatus" : {
-                  "severityList" : null,
-                  "typeList" : null
-                },
-                "dataToValue" : {
-                  "type" : "NONE",
-                  "compareToValue" : true,
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
-                }
-              },
-              "layout" : "default",
-              "onButtonIcon" : {
-                "showIcon" : false,
-                "iconSize" : 32,
-                "iconSizeUnit" : "px",
-                "icon" : "power_settings_new"
-              },
-              "offButtonIcon" : {
-                "showIcon" : false,
-                "iconSize" : 32,
-                "iconSizeUnit" : "px",
-                "icon" : "power_settings_new"
-              },
-              "mainColorOn" : "var(--tb-primary-500)",
-              "backgroundColorOn" : "#FFFFFF",
-              "mainColorOff" : "#A2A2A2",
-              "backgroundColorOff" : "#FFFFFF",
-              "mainColorDisabled" : "rgba(0,0,0,0.12)",
-              "backgroundColorDisabled" : "#FFFFFF"
-            },
-            "title" : "Riscaldante",
-            "dropShadow" : false,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "actions" : { },
-            "widgetCss" : "",
-            "noDataDisplayMessage" : "",
-            "titleFont" : {
-              "size" : 16,
-              "sizeUnit" : "px",
-              "family" : "Roboto",
-              "weight" : "500",
-              "style" : null,
-              "lineHeight" : "1.6"
-            },
-            "showTitleIcon" : false,
-            "titleTooltip" : "",
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "pageSize" : 1024,
-            "titleIcon" : "mdi:lightbulb-outline",
-            "iconColor" : "rgba(0, 0, 0, 0.87)",
-            "iconSize" : "24px",
-            "configMode" : "basic",
-            "targetDevice" : {
-              "type" : "entity",
-              "entityAliasId" : "3c85bc40-db02-f68b-49dd-bed5a471e124"
-            },
-            "titleColor" : null,
-            "borderRadius" : null,
-            "datasources" : [ ],
-            "resizable" : true,
-            "preserveAspectRatio" : false,
-            "margin" : "0"
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "27f8a6ee-5128-45d9-0cda-08dae24e035b"
-        },
         "d7783411-a1ba-2b8d-b8db-8083851a5286" : {
           "typeFullFqn" : "system.analogue_gauges.temperature_gauge_canvas_gauges",
           "type" : "latest",
@@ -8014,414 +7674,6 @@
           "col" : 0,
           "id" : "3fbd3b9e-6b0c-a00d-f8b8-b2288e034671"
         },
-        "ccde00b6-6ceb-28ca-9f49-d5bd777ac697" : {
-          "typeFullFqn" : "system.status_widget",
-          "type" : "rpc",
-          "sizeX" : 2,
-          "sizeY" : 2,
-          "config" : {
-            "showTitle" : false,
-            "backgroundColor" : "rgba(0,0,0,0)",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0",
-            "settings" : {
-              "padding" : "5",
-              "background" : {
-                "type" : "color",
-                "color" : "rgba(0,0,0,0)",
-                "overlay" : {
-                  "enabled" : false,
-                  "color" : "rgba(255,255,255,0.72)",
-                  "blur" : 3
-                }
-              },
-              "initialState" : {
-                "action" : "GET_TIME_SERIES",
-                "defaultValue" : false,
-                "executeRpc" : {
-                  "method" : "",
-                  "requestTimeout" : 5000,
-                  "requestPersistent" : false,
-                  "persistentPollingInterval" : 1000
-                },
-                "getAttribute" : {
-                  "scope" : "SERVER_SCOPE",
-                  "key" : null
-                },
-                "getTimeSeries" : {
-                  "key" : "relay1"
-                },
-                "getAlarmStatus" : {
-                  "severityList" : null,
-                  "typeList" : null
-                },
-                "dataToValue" : {
-                  "type" : "NONE",
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
-                  "compareToValue" : 1
-                }
-              },
-              "disabledState" : {
-                "action" : "DO_NOTHING",
-                "defaultValue" : false,
-                "getAttribute" : {
-                  "key" : "state",
-                  "scope" : null
-                },
-                "getTimeSeries" : {
-                  "key" : "state"
-                },
-                "getAlarmStatus" : {
-                  "severityList" : null,
-                  "typeList" : null
-                },
-                "dataToValue" : {
-                  "type" : "NONE",
-                  "compareToValue" : true,
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
-                }
-              },
-              "layout" : "default",
-              "onState" : {
-                "showLabel" : true,
-                "label" : "Ventola acesa",
-                "labelFont" : {
-                  "size" : 18,
-                  "sizeUnit" : "px",
-                  "family" : "Roboto",
-                  "weight" : "500",
-                  "style" : "normal",
-                  "lineHeight" : "16px"
-                },
-                "showStatus" : false,
-                "status" : "Acesa",
-                "statusFont" : {
-                  "size" : 18,
-                  "sizeUnit" : "px",
-                  "family" : "Roboto",
-                  "weight" : "500",
-                  "style" : "normal",
-                  "lineHeight" : "20px"
-                },
-                "icon" : "mdi:fan",
-                "iconSize" : 64,
-                "iconSizeUnit" : "px",
-                "primaryColor" : "#fff",
-                "secondaryColor" : "rgba(255, 255, 255, 0.80)",
-                "background" : {
-                  "type" : "color",
-                  "color" : "var(--tb-primary-500)",
-                  "overlay" : {
-                    "enabled" : false,
-                    "color" : "rgba(255,255,255,0.72)",
-                    "blur" : 3
-                  }
-                },
-                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
-                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
-                "backgroundDisabled" : {
-                  "type" : "color",
-                  "color" : "#CACACA",
-                  "overlay" : {
-                    "enabled" : false,
-                    "color" : "rgba(255,255,255,0.72)",
-                    "blur" : 3
-                  }
-                }
-              },
-              "offState" : {
-                "showLabel" : true,
-                "label" : "Ventola spenta",
-                "labelFont" : {
-                  "size" : 18,
-                  "sizeUnit" : "px",
-                  "family" : "Roboto",
-                  "weight" : "500",
-                  "style" : "normal",
-                  "lineHeight" : "16px"
-                },
-                "showStatus" : false,
-                "status" : "Spenta",
-                "statusFont" : {
-                  "size" : 15,
-                  "sizeUnit" : "px",
-                  "family" : "Roboto",
-                  "weight" : "500",
-                  "style" : "normal",
-                  "lineHeight" : "20px"
-                },
-                "icon" : "mdi:fan-off",
-                "iconSize" : 64,
-                "iconSizeUnit" : "px",
-                "primaryColor" : "rgba(0, 0, 0, 0.87)",
-                "secondaryColor" : "rgba(0, 0, 0, 0.54)",
-                "background" : {
-                  "type" : "color",
-                  "color" : "#FFF",
-                  "overlay" : {
-                    "enabled" : false,
-                    "color" : "rgba(255,255,255,0.72)",
-                    "blur" : 3
-                  }
-                },
-                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
-                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
-                "backgroundDisabled" : {
-                  "type" : "color",
-                  "color" : "#CACACA",
-                  "overlay" : {
-                    "enabled" : false,
-                    "color" : "rgba(255,255,255,0.72)",
-                    "blur" : 3
-                  }
-                }
-              }
-            },
-            "title" : "Status widget",
-            "dropShadow" : false,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "actions" : { },
-            "widgetCss" : "",
-            "noDataDisplayMessage" : "",
-            "titleFont" : {
-              "size" : 16,
-              "sizeUnit" : "px",
-              "family" : "Roboto",
-              "weight" : "500",
-              "style" : null,
-              "lineHeight" : "1.6"
-            },
-            "showTitleIcon" : false,
-            "titleTooltip" : "",
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "pageSize" : 1024,
-            "titleIcon" : "mdi:lightbulb-outline",
-            "iconColor" : "rgba(0, 0, 0, 0.87)",
-            "iconSize" : "24px",
-            "configMode" : "basic",
-            "targetDevice" : {
-              "type" : "entity",
-              "entityAliasId" : "3c85bc40-db02-f68b-49dd-bed5a471e124"
-            },
-            "titleColor" : null,
-            "borderRadius" : null,
-            "datasources" : [ ],
-            "resizable" : true,
-            "preserveAspectRatio" : false,
-            "margin" : "0"
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "ccde00b6-6ceb-28ca-9f49-d5bd777ac697"
-        },
-        "9381a2fc-c0ca-5020-415c-34f0b830dcb3" : {
-          "typeFullFqn" : "system.status_widget",
-          "type" : "rpc",
-          "sizeX" : 2,
-          "sizeY" : 2,
-          "config" : {
-            "showTitle" : false,
-            "backgroundColor" : "rgba(0,0,0,0)",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0",
-            "settings" : {
-              "padding" : "5",
-              "background" : {
-                "type" : "color",
-                "color" : "rgba(0,0,0,0)",
-                "overlay" : {
-                  "enabled" : false,
-                  "color" : "rgba(255,255,255,0.72)",
-                  "blur" : 3
-                }
-              },
-              "initialState" : {
-                "action" : "GET_TIME_SERIES",
-                "defaultValue" : false,
-                "executeRpc" : {
-                  "method" : "getState",
-                  "requestTimeout" : 5000,
-                  "requestPersistent" : false,
-                  "persistentPollingInterval" : 1000
-                },
-                "getAttribute" : {
-                  "scope" : "SERVER_SCOPE",
-                  "key" : "riscaldante"
-                },
-                "getTimeSeries" : {
-                  "key" : "relay2"
-                },
-                "getAlarmStatus" : {
-                  "severityList" : null,
-                  "typeList" : null
-                },
-                "dataToValue" : {
-                  "type" : "NONE",
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
-                  "compareToValue" : 1
-                }
-              },
-              "disabledState" : {
-                "action" : "DO_NOTHING",
-                "defaultValue" : false,
-                "getAttribute" : {
-                  "key" : "state",
-                  "scope" : null
-                },
-                "getTimeSeries" : {
-                  "key" : "state"
-                },
-                "getAlarmStatus" : {
-                  "severityList" : null,
-                  "typeList" : null
-                },
-                "dataToValue" : {
-                  "type" : "NONE",
-                  "compareToValue" : true,
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
-                }
-              },
-              "layout" : "default",
-              "onState" : {
-                "showLabel" : true,
-                "label" : "Riscaldante aceso",
-                "labelFont" : {
-                  "size" : 18,
-                  "sizeUnit" : "px",
-                  "family" : "Roboto",
-                  "weight" : "500",
-                  "style" : "normal",
-                  "lineHeight" : "16px"
-                },
-                "showStatus" : false,
-                "status" : "Aceso",
-                "statusFont" : {
-                  "family" : "Roboto",
-                  "size" : 10,
-                  "sizeUnit" : "px",
-                  "style" : "normal",
-                  "weight" : "500",
-                  "lineHeight" : "20px"
-                },
-                "icon" : "mdi:radiator",
-                "iconSize" : 64,
-                "iconSizeUnit" : "px",
-                "primaryColor" : "#fff",
-                "secondaryColor" : "rgba(255, 255, 255, 0.80)",
-                "background" : {
-                  "type" : "color",
-                  "color" : "var(--tb-primary-500)",
-                  "overlay" : {
-                    "enabled" : false,
-                    "color" : "rgba(255,255,255,0.72)",
-                    "blur" : 3
-                  }
-                },
-                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
-                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
-                "backgroundDisabled" : {
-                  "type" : "color",
-                  "color" : "#CACACA",
-                  "overlay" : {
-                    "enabled" : false,
-                    "color" : "rgba(255,255,255,0.72)",
-                    "blur" : 3
-                  }
-                }
-              },
-              "offState" : {
-                "showLabel" : true,
-                "label" : "Riscaldante spento",
-                "labelFont" : {
-                  "size" : 18,
-                  "sizeUnit" : "px",
-                  "family" : "Roboto",
-                  "weight" : "500",
-                  "style" : "normal",
-                  "lineHeight" : "16px"
-                },
-                "showStatus" : false,
-                "status" : "Spento",
-                "statusFont" : {
-                  "family" : "Roboto",
-                  "size" : 10,
-                  "sizeUnit" : "px",
-                  "style" : "normal",
-                  "weight" : "500",
-                  "lineHeight" : "20px"
-                },
-                "icon" : "mdi:radiator-disabled",
-                "iconSize" : 64,
-                "iconSizeUnit" : "px",
-                "primaryColor" : "rgba(0, 0, 0, 0.87)",
-                "secondaryColor" : "rgba(0, 0, 0, 0.54)",
-                "background" : {
-                  "type" : "color",
-                  "color" : "#FFF",
-                  "overlay" : {
-                    "enabled" : false,
-                    "color" : "rgba(255,255,255,0.72)",
-                    "blur" : 3
-                  }
-                },
-                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
-                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
-                "backgroundDisabled" : {
-                  "type" : "color",
-                  "color" : "#CACACA",
-                  "overlay" : {
-                    "enabled" : false,
-                    "color" : "rgba(255,255,255,0.72)",
-                    "blur" : 3
-                  }
-                }
-              }
-            },
-            "title" : "Status widget",
-            "dropShadow" : false,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "actions" : { },
-            "widgetCss" : "",
-            "noDataDisplayMessage" : "",
-            "titleFont" : {
-              "size" : 16,
-              "sizeUnit" : "px",
-              "family" : "Roboto",
-              "weight" : "500",
-              "style" : null,
-              "lineHeight" : "1.6"
-            },
-            "showTitleIcon" : false,
-            "titleTooltip" : "",
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "pageSize" : 1024,
-            "titleIcon" : "mdi:lightbulb-outline",
-            "iconColor" : "rgba(0, 0, 0, 0.87)",
-            "iconSize" : "24px",
-            "configMode" : "basic",
-            "targetDevice" : {
-              "type" : "entity",
-              "entityAliasId" : "3c85bc40-db02-f68b-49dd-bed5a471e124"
-            },
-            "titleColor" : null,
-            "borderRadius" : null,
-            "datasources" : [ ],
-            "resizable" : true,
-            "preserveAspectRatio" : false,
-            "margin" : "0"
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "9381a2fc-c0ca-5020-415c-34f0b830dcb3"
-        },
         "664c2b4f-0d9c-fa7f-1ffa-4a7a46d93aeb" : {
           "typeFullFqn" : "system.action_button",
           "type" : "latest",
@@ -9246,10 +8498,10 @@
                 },
                 "788e00c2-22ab-2188-687b-f7646bd4fe9c" : {
                   "sizeX" : 6,
-                  "sizeY" : 8,
+                  "sizeY" : 9,
                   "preserveAspectRatio" : false,
                   "resizable" : true,
-                  "row" : 7,
+                  "row" : 6,
                   "col" : 32
                 },
                 "1f7405d9-bc2e-e22b-d3a7-9e6e219ea50a" : {
@@ -9257,7 +8509,7 @@
                   "sizeY" : 2,
                   "preserveAspectRatio" : false,
                   "resizable" : true,
-                  "row" : 4,
+                  "row" : 3,
                   "col" : 32
                 },
                 "05eb8305-7299-3884-4aad-f8ff48b86391" : {
@@ -9268,40 +8520,24 @@
                   "row" : 15,
                   "col" : 32
                 },
-                "f9a25424-019a-af46-4b30-ab46d1bee970" : {
-                  "sizeX" : 2,
-                  "sizeY" : 2,
-                  "preserveAspectRatio" : false,
-                  "resizable" : true,
-                  "row" : 2,
-                  "col" : 34
-                },
-                "27f8a6ee-5128-45d9-0cda-08dae24e035b" : {
-                  "sizeX" : 2,
-                  "sizeY" : 2,
-                  "preserveAspectRatio" : false,
-                  "resizable" : true,
-                  "row" : 2,
-                  "col" : 36
-                },
                 "d7783411-a1ba-2b8d-b8db-8083851a5286" : {
-                  "sizeX" : 9,
+                  "sizeX" : 6,
                   "sizeY" : 3,
-                  "preserveAspectRatio" : false,
-                  "resizable" : true,
-                  "row" : 7,
-                  "col" : 5
-                },
-                "49befbe2-2461-7d02-2a0e-0daf9d149133" : {
-                  "sizeX" : 2,
-                  "sizeY" : 4,
                   "preserveAspectRatio" : false,
                   "resizable" : true,
                   "row" : 0,
                   "col" : 32
                 },
+                "49befbe2-2461-7d02-2a0e-0daf9d149133" : {
+                  "sizeX" : 3,
+                  "sizeY" : 7,
+                  "preserveAspectRatio" : false,
+                  "resizable" : true,
+                  "row" : 0,
+                  "col" : 29
+                },
                 "921675f4-a3ff-48a2-ec3d-6617d6ce6c01" : {
-                  "sizeX" : 9,
+                  "sizeX" : 8,
                   "sizeY" : 7,
                   "mobileHeight" : null,
                   "preserveAspectRatio" : false,
@@ -9310,29 +8546,29 @@
                   "col" : 5
                 },
                 "e1ca2c55-5a47-53f2-4b44-498306e54323" : {
-                  "sizeX" : 9,
+                  "sizeX" : 8,
                   "sizeY" : 7,
                   "mobileHeight" : null,
                   "preserveAspectRatio" : false,
                   "resizable" : true,
                   "row" : 0,
-                  "col" : 14
+                  "col" : 13
                 },
                 "166c8f50-7c3f-b9c9-deb2-d009aad66947" : {
-                  "sizeX" : 9,
+                  "sizeX" : 8,
                   "sizeY" : 7,
                   "mobileHeight" : null,
                   "preserveAspectRatio" : false,
                   "resizable" : true,
                   "row" : 0,
-                  "col" : 23
+                  "col" : 21
                 },
                 "28d2f6f6-88be-7a25-8d2c-5c889b618450" : {
                   "sizeX" : 3,
                   "sizeY" : 1,
                   "preserveAspectRatio" : false,
                   "resizable" : true,
-                  "row" : 6,
+                  "row" : 5,
                   "col" : 35
                 },
                 "3fbd3b9e-6b0c-a00d-f8b8-b2288e034671" : {
@@ -9340,24 +8576,8 @@
                   "sizeY" : 1,
                   "preserveAspectRatio" : false,
                   "resizable" : true,
-                  "row" : 6,
+                  "row" : 5,
                   "col" : 32
-                },
-                "ccde00b6-6ceb-28ca-9f49-d5bd777ac697" : {
-                  "sizeX" : 2,
-                  "sizeY" : 2,
-                  "preserveAspectRatio" : false,
-                  "resizable" : true,
-                  "row" : 0,
-                  "col" : 34
-                },
-                "9381a2fc-c0ca-5020-415c-34f0b830dcb3" : {
-                  "sizeX" : 2,
-                  "sizeY" : 2,
-                  "preserveAspectRatio" : false,
-                  "resizable" : true,
-                  "row" : 0,
-                  "col" : 36
                 },
                 "664c2b4f-0d9c-fa7f-1ffa-4a7a46d93aeb" : {
                   "sizeX" : 5,

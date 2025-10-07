@@ -11589,45 +11589,6 @@
           "row" : 0,
           "col" : 0,
           "id" : "8fb11636-3b39-c420-8a3b-6111d2d12d60"
-        },
-        "ecb8a26f-b237-dc02-b2e3-087c093aeb02" : {
-          "typeFullFqn" : "system.cards.html_card",
-          "type" : "static",
-          "sizeX" : 7.5,
-          "sizeY" : 3,
-          "config" : {
-            "datasources" : [ {
-              "type" : "static",
-              "name" : "function",
-              "dataKeys" : [ {
-                "name" : "f(x)",
-                "type" : "function",
-                "label" : "Random",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.15479322438769105,
-                "funcBody" : "var value = prevValue + Math.random() * 100 - 50;\nvar multiplier = Math.pow(10, 2 || 0);\nvar value = Math.round(value * multiplier) / multiplier;\nif (value < -1000) {\n\tvalue = -1000;\n} else if (value > 1000) {\n\tvalue = 1000;\n}\nreturn value;"
-              } ]
-            } ],
-            "timewindow" : {
-              "realtime" : {
-                "timewindowMs" : 60000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "rgb(255, 255, 255)",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "8px",
-            "settings" : {
-              "cardHtml" : "<div id=\"state-hierarchy\" style=\"font-family: sans-serif; padding: 10px;\">\r\n  <div style=\"display: flex; align-items: center; gap: 8px;\">\r\n    <button id=\"collapse-btn\" style=\"display:none; background:#e74c3c; color:white; border:none; border-radius:3px; padding:4px 8px; cursor:pointer;\">−</button>\r\n    <button id=\"root-btn\" style=\"background:#3498db; color:white; border:none; border-radius:3px; padding:6px 12px; cursor:pointer;\">stam PLC armadi</button>\r\n  </div>\r\n\r\n  <div id=\"child-states\" style=\"margin-top:10px; margin-left:20px; display:none;\">\r\n    <button class=\"child-btn\" data-state=\"armadio1\">armadio1</button>\r\n    <button class=\"child-btn\" data-state=\"armadio2\">armadio2</button>\r\n    <button class=\"child-btn\" data-state=\"armadio3\">armadio3</button>\r\n    <button class=\"child-btn\" data-state=\"armadio4\">armadio4</button>\r\n  </div>\r\n</div>\r\n\r\n<script>\r\n(function() {\r\n  const rootBtn = document.getElementById(\"root-btn\");\r\n  const collapseBtn = document.getElementById(\"collapse-btn\");\r\n  const childContainer = document.getElementById(\"child-states\");\r\n\r\n  // Colors and styles for children\r\n  document.querySelectorAll(\".child-btn\").forEach(btn => {\r\n    btn.style.background = \"#95a5a6\";\r\n    btn.style.color = \"white\";\r\n    btn.style.border = \"none\";\r\n    btn.style.borderRadius = \"3px\";\r\n    btn.style.marginRight = \"6px\";\r\n    btn.style.padding = \"5px 10px\";\r\n    btn.style.cursor = \"pointer\";\r\n\r\n    // On click: navigate to dashboard state\r\n    btn.addEventListener(\"click\", () => {\r\n      if (typeof widgetContext !== \"undefined\" && widgetContext.stateController) {\r\n        widgetContext.stateController.openState(btn.dataset.state, {}, false);\r\n      } else {\r\n        alert(\"State navigation only works inside ThingsBoard dashboard.\");\r\n      }\r\n    });\r\n  });\r\n\r\n  // Expand logic\r\n  rootBtn.addEventListener(\"click\", () => {\r\n    childContainer.style.display = \"block\";\r\n    collapseBtn.style.display = \"inline-block\";\r\n  });\r\n\r\n  // Collapse logic\r\n  collapseBtn.addEventListener(\"click\", () => {\r\n    childContainer.style.display = \"none\";\r\n    collapseBtn.style.display = \"none\";\r\n  });\r\n})();\r\n</script>\r\n",
-              "cardCss" : ".card {\n    font-weight: bold;\n    font-size: 32px;\n    color: #999;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}"
-            },
-            "title" : "HTML Card",
-            "dropShadow" : true
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "ecb8a26f-b237-dc02-b2e3-087c093aeb02"
         }
       },
       "states" : {
@@ -11735,12 +11696,6 @@
                   "sizeY" : 2,
                   "row" : 2,
                   "col" : 11
-                },
-                "ecb8a26f-b237-dc02-b2e3-087c093aeb02" : {
-                  "sizeX" : 7,
-                  "sizeY" : 3,
-                  "row" : 12,
-                  "col" : 0
                 }
               },
               "gridSettings" : {

@@ -11589,51 +11589,6 @@
           "row" : 0,
           "col" : 0,
           "id" : "8fb11636-3b39-c420-8a3b-6111d2d12d60"
-        },
-        "b00505cc-7786-5913-414f-2b362d2832d0" : {
-          "typeFullFqn" : "system.cards.html_card",
-          "type" : "static",
-          "sizeX" : 7.5,
-          "sizeY" : 3,
-          "config" : {
-            "datasources" : [ {
-              "type" : "static",
-              "name" : "function",
-              "dataKeys" : [ {
-                "name" : "f(x)",
-                "type" : "function",
-                "label" : "Random",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.15479322438769105,
-                "funcBody" : "var value = prevValue + Math.random() * 100 - 50;\nvar multiplier = Math.pow(10, 2 || 0);\nvar value = Math.round(value * multiplier) / multiplier;\nif (value < -1000) {\n\tvalue = -1000;\n} else if (value > 1000) {\n\tvalue = 1000;\n}\nreturn value;"
-              } ]
-            } ],
-            "timewindow" : {
-              "realtime" : {
-                "timewindowMs" : 60000
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "#090340",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "8px",
-            "settings" : {
-              "cardHtml" : "<div class=\"sidebar\">\r\n  <button id=\"centrallina-btn\" class=\"main-btn\">\r\n    <span class=\"arrow\" id=\"arrow\">▶</span> Centrallina\r\n  </button>\r\n  <div id=\"corsie\" class=\"sub-buttons\">\r\n    <button class=\"sub-btn\">Corsia 1</button>\r\n    <button class=\"sub-btn\">Corsia 2</button>\r\n    <button class=\"sub-btn\">Corsia 3</button>\r\n    <button class=\"sub-btn\">Corsia 4</button>\r\n  </div>\r\n</div>\r\n\r\n\r\n\r\n<script type=\"text/javascript\" charset=\"utf-8\">\r\n    const centrallinaBtn = document.getElementById(\"centrallina-btn\");\r\n    const corsie = document.getElementById(\"corsie\");\r\n    const arrow = document.getElementById(\"arrow\");\r\n    \r\n    centrallinaBtn.addEventListener(\"click\", () => {\r\n      const isVisible = corsie.style.display === \"flex\";\r\n      corsie.style.display = isVisible ? \"none\" : \"flex\";\r\n      arrow.classList.toggle(\"rotate\", !isVisible);\r\n    });\r\n\r\n\r\n</script>\r\n",
-              "cardCss" : ".sidebar {\r\n  width: 220px;\r\n  background-color: transparent; /* fully transparent */\r\n  color: white;\r\n  height: 100%;\r\n  display: flex;\r\n  flex-direction: column;\r\n  padding: 10px;\r\n  font-family: 'Inter', sans-serif;\r\n  transition: all 0.3s ease;\r\n}\r\n\r\n.main-btn {\r\n  background-color: rgba(42, 42, 64, 0.6); /* semi-transparent */\r\n  color: white;\r\n  border: none;\r\n  padding: 12px 16px;\r\n  text-align: left;\r\n  font-size: 16px;\r\n  border-radius: 8px;\r\n  cursor: pointer;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: flex-start;\r\n  gap: 8px;\r\n  transition: background 0.2s ease;\r\n  backdrop-filter: blur(4px);\r\n}\r\n\r\n.main-btn:hover {\r\n  background-color: rgba(58, 58, 85, 0.8);\r\n}\r\n\r\n.sub-buttons {\r\n  display: none;\r\n  flex-direction: column;\r\n  margin-top: 8px;\r\n  margin-left: 10px;\r\n  gap: 6px;\r\n  animation: fadeIn 0.3s ease forwards;\r\n}\r\n\r\n.sub-btn {\r\n  background-color: rgba(51, 51, 77, 0.5);\r\n  border: none;\r\n  color: #ddd;\r\n  padding: 10px 14px;\r\n  border-radius: 6px;\r\n  text-align: left;\r\n  cursor: pointer;\r\n  font-size: 14px;\r\n  transition: background 0.2s ease, color 0.2s ease;\r\n  backdrop-filter: blur(4px);\r\n}\r\n\r\n.sub-btn:hover {\r\n  background-color: rgba(76, 76, 109, 0.7);\r\n  color: white;\r\n}\r\n\r\n.arrow {\r\n  transition: transform 0.3s ease;\r\n}\r\n\r\n.rotate {\r\n  transform: rotate(90deg);\r\n}\r\n\r\n@keyframes fadeIn {\r\n  from { opacity: 0; transform: translateY(-5px); }\r\n  to { opacity: 1; transform: translateY(0); }\r\n}\r\n"
-            },
-            "title" : "HTML Card",
-            "dropShadow" : true,
-            "enableFullscreen" : true,
-            "enableDataExport" : true,
-            "widgetStyle" : { },
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : ""
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "b00505cc-7786-5913-414f-2b362d2832d0"
         }
       },
       "states" : {
@@ -11741,12 +11696,6 @@
                   "sizeY" : 2,
                   "row" : 2,
                   "col" : 11
-                },
-                "b00505cc-7786-5913-414f-2b362d2832d0" : {
-                  "sizeX" : 5,
-                  "sizeY" : 5,
-                  "row" : 10,
-                  "col" : 0
                 }
               },
               "gridSettings" : {

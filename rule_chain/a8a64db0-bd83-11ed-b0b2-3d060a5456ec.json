@@ -91,7 +91,7 @@
     }, {
       "fromIndex" : 14,
       "toIndex" : 16,
-      "type" : "interval"
+      "type" : "interval1"
     }, {
       "fromIndex" : 14,
       "toIndex" : 17,
@@ -475,7 +475,7 @@
         "layoutY" : 690
       },
       "configuration" : {
-        "topicPattern" : "Makros/lab1/${mqtt}",
+        "topicPattern" : "Makros/lab1/station1/${mqtt}",
         "host" : "aa8.aangstrom.it",
         "port" : 1885,
         "connectTimeoutSec" : 10,
@@ -517,7 +517,7 @@
       },
       "configuration" : {
         "scriptLang" : "JS",
-        "jsScript" : "var newmsg = parseInt(msg.interval * 1000, 10);\r\nmetadata.mqtt=\"interval\";\r\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};\r\n",
+        "jsScript" : "var newmsg = parseInt(msg.interval1 * 1000, 10);\r\nmetadata.mqtt=\"interval\";\r\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};\r\n",
         "tbelScript" : "var newmsg = {};\r\n//newmsg = parseInt(msg.interval * 1000, 10);\r\nnewmsg = Math.floor(msg.interval * 1000);\r\n\r\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};\r\n"
       },
       "configurationVersion" : 0,
@@ -669,7 +669,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 9545
+    "version" : 9641
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -682,7 +682,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 9543
+    "version" : 9639
   }, {
     "additionalInfo" : null,
     "from" : {

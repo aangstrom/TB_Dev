@@ -449,7 +449,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(msg.interval!=null) {\n    return ['interval', 'true'];\n}if(msg.ventola!=null) {\n    return ['ventola', 'true'];\n}if(msg.riscaldante!=null) {\n    return ['riscaldante', 'true'];\n}if(msg.reset!=null) {\n    return ['reset', 'true'];\n}if(msg.key!=null) {\n    return ['key', 'true'];\n}else{\n    return ['false']\n}\nreturn nextRelation(metadata, msg);"
+        "tbelScript" : "if(msg.interval1!=null) {\n    return ['interval', 'true'];\n}if(msg.ventola!=null) {\n    return ['ventola', 'true'];\n}if(msg.riscaldante!=null) {\n    return ['riscaldante', 'true'];\n}if(msg.reset!=null) {\n    return ['reset', 'true'];\n}else{\n    return ['false']\n}\nreturn nextRelation(metadata, msg);"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -542,7 +542,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var newmsg={};\nnewmsg=msg.ventola;\nmetadata.mqtt=\"ventola1\";\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var newmsg={};\nnewmsg=msg.ventola;\nmetadata.mqtt=\"ventola\";\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -669,7 +669,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 9737
+    "version" : 9833
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -682,7 +682,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 9735
+    "version" : 9831
   }, {
     "additionalInfo" : null,
     "from" : {

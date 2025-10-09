@@ -11585,6 +11585,588 @@
           "row" : 0,
           "col" : 0,
           "id" : "4a20daec-b90b-bfb8-0161-d688b353bb49"
+        },
+        "786d59a4-9519-989c-c96d-499e8c57522f" : {
+          "typeFullFqn" : "system.status_widget",
+          "type" : "rpc",
+          "sizeX" : 2,
+          "sizeY" : 2,
+          "config" : {
+            "showTitle" : false,
+            "backgroundColor" : "rgba(0, 0, 0, 0)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "initialState" : {
+                "action" : "GET_TIME_SERIES",
+                "defaultValue" : false,
+                "executeRpc" : {
+                  "method" : "getState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "getAttribute" : {
+                  "key" : null,
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "statoArmadio1"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : 1,
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
+                }
+              },
+              "disabledState" : {
+                "action" : "DO_NOTHING",
+                "defaultValue" : false,
+                "getAttribute" : {
+                  "key" : "state",
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : true,
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
+                }
+              },
+              "layout" : "default",
+              "onState" : {
+                "showLabel" : true,
+                "label" : "Armadio 1",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : true,
+                "status" : "Aperto",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 16,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "800",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "mdi:door-sliding-open",
+                "iconSize" : 54,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "#FFFFFF",
+                "secondaryColor" : "rgb(255, 0, 4)",
+                "background" : {
+                  "type" : "color",
+                  "color" : "var(--tb-primary-500)",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(0, 255, 44, 0.72)",
+                    "blur" : 0
+                  },
+                  "imageUrl" : null
+                },
+                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              },
+              "offState" : {
+                "showLabel" : true,
+                "label" : "Armadio 1",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : true,
+                "status" : "Chiuso",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 16,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "800",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "mdi:door-sliding",
+                "iconSize" : 54,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "rgba(0, 0, 0, 0.87)",
+                "secondaryColor" : "rgb(0, 255, 0)",
+                "background" : {
+                  "type" : "color",
+                  "color" : "#FFFFFF",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  },
+                  "imageUrl" : null
+                },
+                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              },
+              "padding" : ""
+            },
+            "title" : "Status widget",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "titleFont" : {
+              "size" : 16,
+              "sizeUnit" : "px",
+              "family" : "Roboto",
+              "weight" : "500",
+              "style" : null,
+              "lineHeight" : "1.6"
+            },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "pageSize" : 1024,
+            "titleIcon" : "mdi:lightbulb-outline",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "configMode" : "advanced",
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "9785b2a7-adbc-db39-e210-e40cc3d59f23"
+            },
+            "titleColor" : null,
+            "borderRadius" : null,
+            "datasources" : [ ]
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "786d59a4-9519-989c-c96d-499e8c57522f"
+        },
+        "f32780e7-0372-c690-fa63-b1d3c4bc496a" : {
+          "typeFullFqn" : "system.status_widget",
+          "type" : "rpc",
+          "sizeX" : 2,
+          "sizeY" : 2,
+          "config" : {
+            "showTitle" : false,
+            "backgroundColor" : "rgba(0, 0, 0, 0)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "initialState" : {
+                "action" : "GET_TIME_SERIES",
+                "defaultValue" : false,
+                "executeRpc" : {
+                  "method" : "getState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "getAttribute" : {
+                  "key" : null,
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "statoArmadio1"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : 1,
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
+                }
+              },
+              "disabledState" : {
+                "action" : "DO_NOTHING",
+                "defaultValue" : false,
+                "getAttribute" : {
+                  "key" : "state",
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : true,
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
+                }
+              },
+              "layout" : "default",
+              "onState" : {
+                "showLabel" : true,
+                "label" : "Armadio 1",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : true,
+                "status" : "Aperto",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 16,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "800",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "mdi:door-sliding-open",
+                "iconSize" : 54,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "#FFFFFF",
+                "secondaryColor" : "rgb(255, 0, 4)",
+                "background" : {
+                  "type" : "color",
+                  "color" : "var(--tb-primary-500)",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(0, 255, 44, 0.72)",
+                    "blur" : 0
+                  },
+                  "imageUrl" : null
+                },
+                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              },
+              "offState" : {
+                "showLabel" : true,
+                "label" : "Armadio 1",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : true,
+                "status" : "Chiuso",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 16,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "800",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "mdi:door-sliding",
+                "iconSize" : 54,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "rgba(0, 0, 0, 0.87)",
+                "secondaryColor" : "rgb(0, 255, 0)",
+                "background" : {
+                  "type" : "color",
+                  "color" : "#FFFFFF",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  },
+                  "imageUrl" : null
+                },
+                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              },
+              "padding" : ""
+            },
+            "title" : "Status widget",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "titleFont" : {
+              "size" : 16,
+              "sizeUnit" : "px",
+              "family" : "Roboto",
+              "weight" : "500",
+              "style" : null,
+              "lineHeight" : "1.6"
+            },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "pageSize" : 1024,
+            "titleIcon" : "mdi:lightbulb-outline",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "configMode" : "advanced",
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "9785b2a7-adbc-db39-e210-e40cc3d59f23"
+            },
+            "titleColor" : null,
+            "borderRadius" : null,
+            "datasources" : [ ]
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "f32780e7-0372-c690-fa63-b1d3c4bc496a"
+        },
+        "9eb453f7-2ff9-a97a-c802-62805577fc4e" : {
+          "typeFullFqn" : "system.status_widget",
+          "type" : "rpc",
+          "sizeX" : 2,
+          "sizeY" : 2,
+          "config" : {
+            "showTitle" : false,
+            "backgroundColor" : "rgba(0, 0, 0, 0)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "initialState" : {
+                "action" : "GET_TIME_SERIES",
+                "defaultValue" : false,
+                "executeRpc" : {
+                  "method" : "getState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "getAttribute" : {
+                  "key" : null,
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "statoArmadio1"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : 1,
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
+                }
+              },
+              "disabledState" : {
+                "action" : "DO_NOTHING",
+                "defaultValue" : false,
+                "getAttribute" : {
+                  "key" : "state",
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : true,
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
+                }
+              },
+              "layout" : "default",
+              "onState" : {
+                "showLabel" : true,
+                "label" : "Armadio 1",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : true,
+                "status" : "Aperto",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 16,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "800",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "mdi:door-sliding-open",
+                "iconSize" : 54,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "#FFFFFF",
+                "secondaryColor" : "rgb(255, 0, 4)",
+                "background" : {
+                  "type" : "color",
+                  "color" : "var(--tb-primary-500)",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(0, 255, 44, 0.72)",
+                    "blur" : 0
+                  },
+                  "imageUrl" : null
+                },
+                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              },
+              "offState" : {
+                "showLabel" : true,
+                "label" : "Armadio 1",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : true,
+                "status" : "Chiuso",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 16,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "800",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "mdi:door-sliding",
+                "iconSize" : 54,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "rgba(0, 0, 0, 0.87)",
+                "secondaryColor" : "rgb(0, 255, 0)",
+                "background" : {
+                  "type" : "color",
+                  "color" : "#FFFFFF",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  },
+                  "imageUrl" : null
+                },
+                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              },
+              "padding" : ""
+            },
+            "title" : "Status widget",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "titleFont" : {
+              "size" : 16,
+              "sizeUnit" : "px",
+              "family" : "Roboto",
+              "weight" : "500",
+              "style" : null,
+              "lineHeight" : "1.6"
+            },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "pageSize" : 1024,
+            "titleIcon" : "mdi:lightbulb-outline",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "configMode" : "advanced",
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "9785b2a7-adbc-db39-e210-e40cc3d59f23"
+            },
+            "titleColor" : null,
+            "borderRadius" : null,
+            "datasources" : [ ]
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "9eb453f7-2ff9-a97a-c802-62805577fc4e"
         }
       },
       "states" : {
@@ -11649,11 +12231,11 @@
                   "col" : 26
                 },
                 "d2b28814-e33c-3664-7b10-6b221125deaa" : {
-                  "sizeX" : 20,
-                  "sizeY" : 5,
+                  "sizeX" : 18,
+                  "sizeY" : 4,
                   "mobileHeight" : null,
-                  "row" : 10,
-                  "col" : 6
+                  "row" : 11,
+                  "col" : 8
                 },
                 "d939e3fa-4172-5195-031e-9fc175b3b593" : {
                   "sizeX" : 6,
@@ -11662,18 +12244,18 @@
                   "col" : 26
                 },
                 "2ecc6100-5fc7-a339-b712-49782f61ab10" : {
-                  "sizeX" : 10,
+                  "sizeX" : 9,
                   "sizeY" : 5,
                   "mobileHeight" : null,
                   "row" : 5,
-                  "col" : 6
+                  "col" : 8
                 },
                 "b045896c-a4bd-c940-db0a-c0f65a1c35b6" : {
-                  "sizeX" : 10,
+                  "sizeX" : 9,
                   "sizeY" : 5,
                   "mobileHeight" : null,
                   "row" : 5,
-                  "col" : 16
+                  "col" : 17
                 },
                 "8fb11636-3b39-c420-8a3b-6111d2d12d60" : {
                   "sizeX" : 6,
@@ -11688,10 +12270,28 @@
                   "col" : 26
                 },
                 "4a20daec-b90b-bfb8-0161-d688b353bb49" : {
-                  "sizeX" : 3,
+                  "sizeX" : 4,
                   "sizeY" : 3,
                   "row" : 2,
-                  "col" : 6
+                  "col" : 8
+                },
+                "786d59a4-9519-989c-c96d-499e8c57522f" : {
+                  "sizeX" : 4,
+                  "sizeY" : 3,
+                  "row" : 2,
+                  "col" : 16
+                },
+                "f32780e7-0372-c690-fa63-b1d3c4bc496a" : {
+                  "sizeX" : 4,
+                  "sizeY" : 3,
+                  "row" : 2,
+                  "col" : 20
+                },
+                "9eb453f7-2ff9-a97a-c802-62805577fc4e" : {
+                  "sizeX" : 4,
+                  "sizeY" : 3,
+                  "row" : 2,
+                  "col" : 12
                 }
               },
               "gridSettings" : {

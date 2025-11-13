@@ -1,7 +1,10 @@
 {
   "entityType" : "DASHBOARD",
   "entity" : {
-    "assignedCustomers" : null,
+    "title" : "Test",
+    "image" : null,
+    "mobileHide" : false,
+    "mobileOrder" : null,
     "configuration" : {
       "description" : "",
       "widgets" : {
@@ -730,6 +733,124 @@
           "row" : 0,
           "col" : 0,
           "id" : "2914851a-cdde-bbcf-84c3-8d42e8902b5c"
+        },
+        "802fc782-40e5-441b-ec28-dbf6421c7a4c" : {
+          "typeFullFqn" : "system.cards.entities_table",
+          "type" : "latest",
+          "sizeX" : 7.5,
+          "sizeY" : 6.5,
+          "config" : {
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 86400000,
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1762935016281,
+                  "endTimeMs" : 1763021416281
+                },
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideFixedInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgba(0,0,0,0)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0",
+            "settings" : {
+              "enableSearch" : true,
+              "enableSelectColumnDisplay" : true,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "reserveSpaceForHiddenAction" : "true",
+              "displayEntityName" : false,
+              "displayEntityLabel" : false,
+              "displayEntityType" : false,
+              "displayPagination" : true,
+              "defaultPageSize" : 10,
+              "defaultSortOrder" : "name",
+              "useRowStyleFunction" : false,
+              "entitiesTitle" : "Entities",
+              "padding" : "0",
+              "background" : {
+                "type" : "color",
+                "color" : "rgba(0,0,0,0)",
+                "overlay" : {
+                  "enabled" : false,
+                  "color" : "rgba(255,255,255,0.72)",
+                  "blur" : 3
+                }
+              }
+            },
+            "title" : "Entities table",
+            "dropShadow" : false,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "851fc95d-336c-5bc8-6e86-925dac37bb96",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Name",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.21952462443255638
+              }, {
+                "name" : "active",
+                "type" : "attribute",
+                "label" : "active",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.09671438720764669,
+                "decimals" : 0
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "displayTimewindow" : false,
+            "configMode" : "basic",
+            "actions" : { },
+            "showTitleIcon" : false,
+            "titleIcon" : "list",
+            "iconColor" : null,
+            "resizable" : true,
+            "preserveAspectRatio" : false,
+            "margin" : "0",
+            "titleFont" : null,
+            "titleColor" : null,
+            "enableDataExport" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "802fc782-40e5-441b-ec28-dbf6421c7a4c"
         }
       },
       "states" : {
@@ -782,6 +903,14 @@
                   "resizable" : true,
                   "row" : 4,
                   "col" : 14
+                },
+                "802fc782-40e5-441b-ec28-dbf6421c7a4c" : {
+                  "sizeX" : 7,
+                  "sizeY" : 6,
+                  "preserveAspectRatio" : false,
+                  "resizable" : true,
+                  "row" : 10,
+                  "col" : 0
                 }
               },
               "gridSettings" : {
@@ -862,6 +991,15 @@
               "id" : "30ae38e0-563e-11ef-b2e2-65b916afcec8"
             }
           }
+        },
+        "851fc95d-336c-5bc8-6e86-925dac37bb96" : {
+          "id" : "851fc95d-336c-5bc8-6e86-925dac37bb96",
+          "alias" : "All",
+          "filter" : {
+            "type" : "entityType",
+            "resolveMultiple" : true,
+            "entityType" : "DEVICE"
+          }
         }
       },
       "filters" : { },
@@ -902,18 +1040,16 @@
         "toolbarAlwaysOpen" : true
       }
     },
+    "name" : "Test",
+    "resources" : null,
+    "assignedCustomers" : null,
     "customerId" : null,
     "externalId" : null,
     "id" : {
       "entityType" : "DASHBOARD",
       "id" : "177bcba0-56f5-11ef-b2e2-65b916afcec8"
     },
-    "image" : null,
-    "mobileHide" : false,
-    "mobileOrder" : null,
-    "name" : "Test",
-    "ownerId" : null,
-    "title" : "Test"
+    "ownerId" : null
   },
   "relations" : [ ],
   "attributes" : {

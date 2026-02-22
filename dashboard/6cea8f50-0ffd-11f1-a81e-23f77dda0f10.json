@@ -1,0 +1,4159 @@
+{
+  "entityType" : "DASHBOARD",
+  "entity" : {
+    "title" : "Smart Rooms Monitor",
+    "image" : null,
+    "mobileHide" : false,
+    "mobileOrder" : null,
+    "configuration" : {
+      "description" : "Dashboard monitoraggio 4 stanze: temperatura, rumore, controllo luci",
+      "widgets" : {
+        "73b6ad04-b6d7-4d25-8144-7bf3f95d9252" : {
+          "typeFullFqn" : "system.label_value_card",
+          "type" : "latest",
+          "sizeX" : 3,
+          "sizeY" : 2,
+          "row" : 0,
+          "col" : 0,
+          "id" : "73b6ad04-b6d7-4d25-8144-7bf3f95d9252",
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "61f74d16-5bd3-4f5c-8057-f13c7ff5ff79",
+              "dataKeys" : [ {
+                "name" : "temperature",
+                "type" : "timeseries",
+                "label" : "Temperatura",
+                "color" : "#FF6B6B",
+                "settings" : { },
+                "_hash" : 0.7273277387173801,
+                "aggregationType" : "AVG",
+                "units" : "°C",
+                "decimals" : 1,
+                "funcBody" : null,
+                "usePostProcessing" : false,
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 1,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_HOUR",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 3600000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1757939911701,
+                  "endTimeMs" : 1758026311701
+                },
+                "quickInterval" : "CURRENT_HOUR",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideFixedInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              },
+              "timezone" : null
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgba(0,0,0,0)",
+            "color" : "rgba(0,0,0,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "autoScale" : true,
+              "showLabel" : true,
+              "label" : "Stanza 1 - Temperatura",
+              "labelFont" : {
+                "family" : "Roboto",
+                "size" : 16,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "24px"
+              },
+              "labelColor" : {
+                "type" : "constant",
+                "color" : "rgba(0,0,0,0.87)"
+              },
+              "showIcon" : true,
+              "iconSize" : 24,
+              "iconSizeUnit" : "px",
+              "icon" : "mdi:thermometer",
+              "iconColor" : {
+                "type" : "constant",
+                "color" : "#FF6B6B"
+              },
+              "valueFont" : {
+                "family" : "Roboto",
+                "size" : 32,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "600",
+                "lineHeight" : "40px"
+              },
+              "valueColor" : {
+                "type" : "range",
+                "rangeList" : [ {
+                  "from" : null,
+                  "to" : 25,
+                  "color" : "#4CAF50"
+                }, {
+                  "from" : 25,
+                  "to" : 30,
+                  "color" : "#FF9800"
+                }, {
+                  "from" : 30,
+                  "to" : null,
+                  "color" : "#F44336"
+                } ],
+                "color" : "#FF6B6B",
+                "colorFunction" : "return '#000';"
+              },
+              "showUnit" : true,
+              "unitFont" : {
+                "family" : "Roboto",
+                "size" : 20,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "28px"
+              },
+              "unitColor" : {
+                "type" : "constant",
+                "color" : "rgba(0,0,0,0.54)"
+              }
+            },
+            "title" : "Stanza 1 - Temperatura",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "actions" : { }
+          }
+        },
+        "66821057-4f53-4643-9983-05cab7636045" : {
+          "typeFullFqn" : "system.label_value_card",
+          "type" : "latest",
+          "sizeX" : 3,
+          "sizeY" : 2,
+          "row" : 0,
+          "col" : 3,
+          "id" : "66821057-4f53-4643-9983-05cab7636045",
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "ff38f333-3c2c-424c-81c5-5923875098a9",
+              "dataKeys" : [ {
+                "name" : "temperature",
+                "type" : "timeseries",
+                "label" : "Temperatura",
+                "color" : "#4ECDC4",
+                "settings" : { },
+                "_hash" : 0.8285602590812222,
+                "aggregationType" : "AVG",
+                "units" : "°C",
+                "decimals" : 1,
+                "funcBody" : null,
+                "usePostProcessing" : false,
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 1,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_HOUR",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 3600000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1757939911701,
+                  "endTimeMs" : 1758026311701
+                },
+                "quickInterval" : "CURRENT_HOUR",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideFixedInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              },
+              "timezone" : null
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgba(0,0,0,0)",
+            "color" : "rgba(0,0,0,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "autoScale" : true,
+              "showLabel" : true,
+              "label" : "Stanza 2 - Temperatura",
+              "labelFont" : {
+                "family" : "Roboto",
+                "size" : 16,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "24px"
+              },
+              "labelColor" : {
+                "type" : "constant",
+                "color" : "rgba(0,0,0,0.87)"
+              },
+              "showIcon" : true,
+              "iconSize" : 24,
+              "iconSizeUnit" : "px",
+              "icon" : "mdi:thermometer",
+              "iconColor" : {
+                "type" : "constant",
+                "color" : "#4ECDC4"
+              },
+              "valueFont" : {
+                "family" : "Roboto",
+                "size" : 32,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "600",
+                "lineHeight" : "40px"
+              },
+              "valueColor" : {
+                "type" : "range",
+                "rangeList" : [ {
+                  "from" : null,
+                  "to" : 25,
+                  "color" : "#4CAF50"
+                }, {
+                  "from" : 25,
+                  "to" : 30,
+                  "color" : "#FF9800"
+                }, {
+                  "from" : 30,
+                  "to" : null,
+                  "color" : "#F44336"
+                } ],
+                "color" : "#4ECDC4",
+                "colorFunction" : "return '#000';"
+              },
+              "showUnit" : true,
+              "unitFont" : {
+                "family" : "Roboto",
+                "size" : 20,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "28px"
+              },
+              "unitColor" : {
+                "type" : "constant",
+                "color" : "rgba(0,0,0,0.54)"
+              }
+            },
+            "title" : "Stanza 2 - Temperatura",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "actions" : { }
+          }
+        },
+        "6d0e07ae-ba0f-4b2d-b160-ebe8bef05762" : {
+          "typeFullFqn" : "system.label_value_card",
+          "type" : "latest",
+          "sizeX" : 3,
+          "sizeY" : 2,
+          "row" : 0,
+          "col" : 6,
+          "id" : "6d0e07ae-ba0f-4b2d-b160-ebe8bef05762",
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "219ff265-5a18-4471-ab9f-983b620aaa53",
+              "dataKeys" : [ {
+                "name" : "temperature",
+                "type" : "timeseries",
+                "label" : "Temperatura",
+                "color" : "#FFE66D",
+                "settings" : { },
+                "_hash" : 0.7699219892016175,
+                "aggregationType" : "AVG",
+                "units" : "°C",
+                "decimals" : 1,
+                "funcBody" : null,
+                "usePostProcessing" : false,
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 1,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_HOUR",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 3600000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1757939911701,
+                  "endTimeMs" : 1758026311701
+                },
+                "quickInterval" : "CURRENT_HOUR",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideFixedInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              },
+              "timezone" : null
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgba(0,0,0,0)",
+            "color" : "rgba(0,0,0,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "autoScale" : true,
+              "showLabel" : true,
+              "label" : "Stanza 3 - Temperatura",
+              "labelFont" : {
+                "family" : "Roboto",
+                "size" : 16,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "24px"
+              },
+              "labelColor" : {
+                "type" : "constant",
+                "color" : "rgba(0,0,0,0.87)"
+              },
+              "showIcon" : true,
+              "iconSize" : 24,
+              "iconSizeUnit" : "px",
+              "icon" : "mdi:thermometer",
+              "iconColor" : {
+                "type" : "constant",
+                "color" : "#FFE66D"
+              },
+              "valueFont" : {
+                "family" : "Roboto",
+                "size" : 32,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "600",
+                "lineHeight" : "40px"
+              },
+              "valueColor" : {
+                "type" : "range",
+                "rangeList" : [ {
+                  "from" : null,
+                  "to" : 25,
+                  "color" : "#4CAF50"
+                }, {
+                  "from" : 25,
+                  "to" : 30,
+                  "color" : "#FF9800"
+                }, {
+                  "from" : 30,
+                  "to" : null,
+                  "color" : "#F44336"
+                } ],
+                "color" : "#FFE66D",
+                "colorFunction" : "return '#000';"
+              },
+              "showUnit" : true,
+              "unitFont" : {
+                "family" : "Roboto",
+                "size" : 20,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "28px"
+              },
+              "unitColor" : {
+                "type" : "constant",
+                "color" : "rgba(0,0,0,0.54)"
+              }
+            },
+            "title" : "Stanza 3 - Temperatura",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "actions" : { }
+          }
+        },
+        "3a0bc97e-7e9a-4700-9d43-9327dc4e44cb" : {
+          "typeFullFqn" : "system.label_value_card",
+          "type" : "latest",
+          "sizeX" : 3,
+          "sizeY" : 2,
+          "row" : 0,
+          "col" : 9,
+          "id" : "3a0bc97e-7e9a-4700-9d43-9327dc4e44cb",
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "0934499e-4bd8-470b-922d-0a84f3d56ad7",
+              "dataKeys" : [ {
+                "name" : "temperature",
+                "type" : "timeseries",
+                "label" : "Temperatura",
+                "color" : "#A29BFE",
+                "settings" : { },
+                "_hash" : 0.6109778495366514,
+                "aggregationType" : "AVG",
+                "units" : "°C",
+                "decimals" : 1,
+                "funcBody" : null,
+                "usePostProcessing" : false,
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 1,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_HOUR",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 3600000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1757939911701,
+                  "endTimeMs" : 1758026311701
+                },
+                "quickInterval" : "CURRENT_HOUR",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideFixedInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              },
+              "timezone" : null
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgba(0,0,0,0)",
+            "color" : "rgba(0,0,0,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "autoScale" : true,
+              "showLabel" : true,
+              "label" : "Stanza 4 - Temperatura",
+              "labelFont" : {
+                "family" : "Roboto",
+                "size" : 16,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "24px"
+              },
+              "labelColor" : {
+                "type" : "constant",
+                "color" : "rgba(0,0,0,0.87)"
+              },
+              "showIcon" : true,
+              "iconSize" : 24,
+              "iconSizeUnit" : "px",
+              "icon" : "mdi:thermometer",
+              "iconColor" : {
+                "type" : "constant",
+                "color" : "#A29BFE"
+              },
+              "valueFont" : {
+                "family" : "Roboto",
+                "size" : 32,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "600",
+                "lineHeight" : "40px"
+              },
+              "valueColor" : {
+                "type" : "range",
+                "rangeList" : [ {
+                  "from" : null,
+                  "to" : 25,
+                  "color" : "#4CAF50"
+                }, {
+                  "from" : 25,
+                  "to" : 30,
+                  "color" : "#FF9800"
+                }, {
+                  "from" : 30,
+                  "to" : null,
+                  "color" : "#F44336"
+                } ],
+                "color" : "#A29BFE",
+                "colorFunction" : "return '#000';"
+              },
+              "showUnit" : true,
+              "unitFont" : {
+                "family" : "Roboto",
+                "size" : 20,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "28px"
+              },
+              "unitColor" : {
+                "type" : "constant",
+                "color" : "rgba(0,0,0,0.54)"
+              }
+            },
+            "title" : "Stanza 4 - Temperatura",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "actions" : { }
+          }
+        },
+        "2a7784cf-ab52-46a1-a376-2b7ea1a1b23f" : {
+          "typeFullFqn" : "system.label_value_card",
+          "type" : "latest",
+          "sizeX" : 3,
+          "sizeY" : 2,
+          "row" : 2,
+          "col" : 0,
+          "id" : "2a7784cf-ab52-46a1-a376-2b7ea1a1b23f",
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "61f74d16-5bd3-4f5c-8057-f13c7ff5ff79",
+              "dataKeys" : [ {
+                "name" : "noise_level",
+                "type" : "timeseries",
+                "label" : "Rumore",
+                "color" : "#FF6B6B",
+                "settings" : { },
+                "_hash" : 0.5464746600717856,
+                "aggregationType" : "AVG",
+                "units" : "dB",
+                "decimals" : 1,
+                "funcBody" : null,
+                "usePostProcessing" : false,
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 1,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_HOUR",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 3600000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1757939911701,
+                  "endTimeMs" : 1758026311701
+                },
+                "quickInterval" : "CURRENT_HOUR",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideFixedInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              },
+              "timezone" : null
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgba(0,0,0,0)",
+            "color" : "rgba(0,0,0,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "autoScale" : true,
+              "showLabel" : true,
+              "label" : "Stanza 1 - Rumore",
+              "labelFont" : {
+                "family" : "Roboto",
+                "size" : 16,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "24px"
+              },
+              "labelColor" : {
+                "type" : "constant",
+                "color" : "rgba(0,0,0,0.87)"
+              },
+              "showIcon" : true,
+              "iconSize" : 24,
+              "iconSizeUnit" : "px",
+              "icon" : "mdi:volume-high",
+              "iconColor" : {
+                "type" : "constant",
+                "color" : "#FF6B6B"
+              },
+              "valueFont" : {
+                "family" : "Roboto",
+                "size" : 32,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "600",
+                "lineHeight" : "40px"
+              },
+              "valueColor" : {
+                "type" : "range",
+                "rangeList" : [ {
+                  "from" : null,
+                  "to" : 60,
+                  "color" : "#4CAF50"
+                }, {
+                  "from" : 60,
+                  "to" : 75,
+                  "color" : "#FF9800"
+                }, {
+                  "from" : 75,
+                  "to" : null,
+                  "color" : "#F44336"
+                } ],
+                "color" : "#FF6B6B",
+                "colorFunction" : "return '#000';"
+              },
+              "showUnit" : true,
+              "unitFont" : {
+                "family" : "Roboto",
+                "size" : 20,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "28px"
+              },
+              "unitColor" : {
+                "type" : "constant",
+                "color" : "rgba(0,0,0,0.54)"
+              }
+            },
+            "title" : "Stanza 1 - Rumore",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "actions" : { }
+          }
+        },
+        "cae7c571-3598-4d85-bc2f-559a5ae9b319" : {
+          "typeFullFqn" : "system.label_value_card",
+          "type" : "latest",
+          "sizeX" : 3,
+          "sizeY" : 2,
+          "row" : 2,
+          "col" : 3,
+          "id" : "cae7c571-3598-4d85-bc2f-559a5ae9b319",
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "ff38f333-3c2c-424c-81c5-5923875098a9",
+              "dataKeys" : [ {
+                "name" : "noise_level",
+                "type" : "timeseries",
+                "label" : "Rumore",
+                "color" : "#4ECDC4",
+                "settings" : { },
+                "_hash" : 0.5303124976107724,
+                "aggregationType" : "AVG",
+                "units" : "dB",
+                "decimals" : 1,
+                "funcBody" : null,
+                "usePostProcessing" : false,
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 1,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_HOUR",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 3600000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1757939911701,
+                  "endTimeMs" : 1758026311701
+                },
+                "quickInterval" : "CURRENT_HOUR",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideFixedInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              },
+              "timezone" : null
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgba(0,0,0,0)",
+            "color" : "rgba(0,0,0,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "autoScale" : true,
+              "showLabel" : true,
+              "label" : "Stanza 2 - Rumore",
+              "labelFont" : {
+                "family" : "Roboto",
+                "size" : 16,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "24px"
+              },
+              "labelColor" : {
+                "type" : "constant",
+                "color" : "rgba(0,0,0,0.87)"
+              },
+              "showIcon" : true,
+              "iconSize" : 24,
+              "iconSizeUnit" : "px",
+              "icon" : "mdi:volume-high",
+              "iconColor" : {
+                "type" : "constant",
+                "color" : "#4ECDC4"
+              },
+              "valueFont" : {
+                "family" : "Roboto",
+                "size" : 32,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "600",
+                "lineHeight" : "40px"
+              },
+              "valueColor" : {
+                "type" : "range",
+                "rangeList" : [ {
+                  "from" : null,
+                  "to" : 60,
+                  "color" : "#4CAF50"
+                }, {
+                  "from" : 60,
+                  "to" : 75,
+                  "color" : "#FF9800"
+                }, {
+                  "from" : 75,
+                  "to" : null,
+                  "color" : "#F44336"
+                } ],
+                "color" : "#4ECDC4",
+                "colorFunction" : "return '#000';"
+              },
+              "showUnit" : true,
+              "unitFont" : {
+                "family" : "Roboto",
+                "size" : 20,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "28px"
+              },
+              "unitColor" : {
+                "type" : "constant",
+                "color" : "rgba(0,0,0,0.54)"
+              }
+            },
+            "title" : "Stanza 2 - Rumore",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "actions" : { }
+          }
+        },
+        "fb4143cd-61d3-4f76-b23b-706d2b8a8d41" : {
+          "typeFullFqn" : "system.label_value_card",
+          "type" : "latest",
+          "sizeX" : 3,
+          "sizeY" : 2,
+          "row" : 2,
+          "col" : 6,
+          "id" : "fb4143cd-61d3-4f76-b23b-706d2b8a8d41",
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "219ff265-5a18-4471-ab9f-983b620aaa53",
+              "dataKeys" : [ {
+                "name" : "noise_level",
+                "type" : "timeseries",
+                "label" : "Rumore",
+                "color" : "#FFE66D",
+                "settings" : { },
+                "_hash" : 0.009542954567055895,
+                "aggregationType" : "AVG",
+                "units" : "dB",
+                "decimals" : 1,
+                "funcBody" : null,
+                "usePostProcessing" : false,
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 1,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_HOUR",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 3600000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1757939911701,
+                  "endTimeMs" : 1758026311701
+                },
+                "quickInterval" : "CURRENT_HOUR",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideFixedInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              },
+              "timezone" : null
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgba(0,0,0,0)",
+            "color" : "rgba(0,0,0,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "autoScale" : true,
+              "showLabel" : true,
+              "label" : "Stanza 3 - Rumore",
+              "labelFont" : {
+                "family" : "Roboto",
+                "size" : 16,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "24px"
+              },
+              "labelColor" : {
+                "type" : "constant",
+                "color" : "rgba(0,0,0,0.87)"
+              },
+              "showIcon" : true,
+              "iconSize" : 24,
+              "iconSizeUnit" : "px",
+              "icon" : "mdi:volume-high",
+              "iconColor" : {
+                "type" : "constant",
+                "color" : "#FFE66D"
+              },
+              "valueFont" : {
+                "family" : "Roboto",
+                "size" : 32,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "600",
+                "lineHeight" : "40px"
+              },
+              "valueColor" : {
+                "type" : "range",
+                "rangeList" : [ {
+                  "from" : null,
+                  "to" : 60,
+                  "color" : "#4CAF50"
+                }, {
+                  "from" : 60,
+                  "to" : 75,
+                  "color" : "#FF9800"
+                }, {
+                  "from" : 75,
+                  "to" : null,
+                  "color" : "#F44336"
+                } ],
+                "color" : "#FFE66D",
+                "colorFunction" : "return '#000';"
+              },
+              "showUnit" : true,
+              "unitFont" : {
+                "family" : "Roboto",
+                "size" : 20,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "28px"
+              },
+              "unitColor" : {
+                "type" : "constant",
+                "color" : "rgba(0,0,0,0.54)"
+              }
+            },
+            "title" : "Stanza 3 - Rumore",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "actions" : { }
+          }
+        },
+        "fda4b9bc-6454-4d37-ac0e-39caef2c7cd2" : {
+          "typeFullFqn" : "system.label_value_card",
+          "type" : "latest",
+          "sizeX" : 3,
+          "sizeY" : 2,
+          "row" : 2,
+          "col" : 9,
+          "id" : "fda4b9bc-6454-4d37-ac0e-39caef2c7cd2",
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "0934499e-4bd8-470b-922d-0a84f3d56ad7",
+              "dataKeys" : [ {
+                "name" : "noise_level",
+                "type" : "timeseries",
+                "label" : "Rumore",
+                "color" : "#A29BFE",
+                "settings" : { },
+                "_hash" : 0.09094585502306207,
+                "aggregationType" : "AVG",
+                "units" : "dB",
+                "decimals" : 1,
+                "funcBody" : null,
+                "usePostProcessing" : false,
+                "postFuncBody" : null,
+                "comparisonEnabled" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 1,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_HOUR",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 3600000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1757939911701,
+                  "endTimeMs" : 1758026311701
+                },
+                "quickInterval" : "CURRENT_HOUR",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideFixedInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              },
+              "timezone" : null
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgba(0,0,0,0)",
+            "color" : "rgba(0,0,0,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "autoScale" : true,
+              "showLabel" : true,
+              "label" : "Stanza 4 - Rumore",
+              "labelFont" : {
+                "family" : "Roboto",
+                "size" : 16,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "24px"
+              },
+              "labelColor" : {
+                "type" : "constant",
+                "color" : "rgba(0,0,0,0.87)"
+              },
+              "showIcon" : true,
+              "iconSize" : 24,
+              "iconSizeUnit" : "px",
+              "icon" : "mdi:volume-high",
+              "iconColor" : {
+                "type" : "constant",
+                "color" : "#A29BFE"
+              },
+              "valueFont" : {
+                "family" : "Roboto",
+                "size" : 32,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "600",
+                "lineHeight" : "40px"
+              },
+              "valueColor" : {
+                "type" : "range",
+                "rangeList" : [ {
+                  "from" : null,
+                  "to" : 60,
+                  "color" : "#4CAF50"
+                }, {
+                  "from" : 60,
+                  "to" : 75,
+                  "color" : "#FF9800"
+                }, {
+                  "from" : 75,
+                  "to" : null,
+                  "color" : "#F44336"
+                } ],
+                "color" : "#A29BFE",
+                "colorFunction" : "return '#000';"
+              },
+              "showUnit" : true,
+              "unitFont" : {
+                "family" : "Roboto",
+                "size" : 20,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "400",
+                "lineHeight" : "28px"
+              },
+              "unitColor" : {
+                "type" : "constant",
+                "color" : "rgba(0,0,0,0.54)"
+              }
+            },
+            "title" : "Stanza 4 - Rumore",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "actions" : { }
+          }
+        },
+        "6a899a3d-ff82-45ed-b4eb-b0e2a4afead3" : {
+          "typeFullFqn" : "system.time_series_chart",
+          "type" : "timeseries",
+          "sizeX" : 6,
+          "sizeY" : 4,
+          "row" : 4,
+          "col" : 0,
+          "id" : "6a899a3d-ff82-45ed-b4eb-b0e2a4afead3",
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "61f74d16-5bd3-4f5c-8057-f13c7ff5ff79",
+              "dataKeys" : [ {
+                "name" : "temperature",
+                "type" : "timeseries",
+                "label" : "Temperatura Stanza 1",
+                "color" : "#FF6B6B",
+                "settings" : {
+                  "yAxisId" : "default",
+                  "showInLegend" : true,
+                  "dataHiddenByDefault" : false,
+                  "type" : "line",
+                  "lineSettings" : {
+                    "showLine" : true,
+                    "step" : false,
+                    "stepType" : "start",
+                    "smooth" : true,
+                    "lineType" : "solid",
+                    "lineWidth" : 2,
+                    "showPoints" : false,
+                    "showPointLabel" : false,
+                    "pointLabelPosition" : "top",
+                    "pointLabelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "pointLabelColor" : "rgba(0,0,0,0.76)",
+                    "enablePointLabelBackground" : false,
+                    "pointLabelBackground" : "rgba(255,255,255,0.56)",
+                    "pointShape" : "emptyCircle",
+                    "pointSize" : 4,
+                    "fillAreaSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  },
+                  "barSettings" : {
+                    "showBorder" : false,
+                    "borderWidth" : 2,
+                    "borderRadius" : 0,
+                    "showLabel" : false,
+                    "labelPosition" : "top",
+                    "labelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "labelColor" : "rgba(0,0,0,0.76)",
+                    "enableLabelBackground" : false,
+                    "labelBackground" : "rgba(255,255,255,0.56)",
+                    "backgroundSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  },
+                  "comparisonSettings" : {
+                    "showValuesForComparison" : false,
+                    "comparisonValuesLabel" : "",
+                    "color" : ""
+                  }
+                },
+                "_hash" : 0.26459844149028566,
+                "units" : "°C",
+                "decimals" : 1
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 0,
+                "interval" : 60000,
+                "timewindowMs" : 3600000,
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : null,
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideFixedInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              },
+              "timezone" : null
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgba(0,0,0,0)",
+            "color" : "rgba(0,0,0,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "showLegend" : true,
+              "legendConfig" : {
+                "direction" : "column",
+                "position" : "top",
+                "sortDataKeys" : false,
+                "showMin" : true,
+                "showMax" : true,
+                "showAvg" : true,
+                "showTotal" : false,
+                "showLatest" : true
+              },
+              "thresholds" : [ ],
+              "dataZoom" : true,
+              "stack" : false,
+              "yAxis" : {
+                "show" : true,
+                "label" : "°C",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "600",
+                  "lineHeight" : "1"
+                },
+                "labelColor" : "rgba(0,0,0,0.54)",
+                "position" : "left",
+                "showTickLabels" : true,
+                "tickLabelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "400",
+                  "lineHeight" : "1"
+                },
+                "tickLabelColor" : "rgba(0,0,0,0.54)",
+                "showTicks" : true,
+                "ticksColor" : "rgba(0,0,0,0.54)",
+                "showLine" : true,
+                "lineColor" : "rgba(0,0,0,0.54)",
+                "showSplitLines" : true,
+                "splitLinesColor" : "rgba(0,0,0,0.12)"
+              },
+              "xAxis" : {
+                "show" : true,
+                "label" : "",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "600",
+                  "lineHeight" : "1"
+                },
+                "labelColor" : "rgba(0,0,0,0.54)",
+                "position" : "bottom",
+                "showTickLabels" : true,
+                "tickLabelFont" : {
+                  "family" : "Roboto",
+                  "size" : 10,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "400",
+                  "lineHeight" : "1"
+                },
+                "tickLabelColor" : "rgba(0,0,0,0.54)",
+                "showTicks" : true,
+                "ticksColor" : "rgba(0,0,0,0.54)",
+                "showLine" : true,
+                "lineColor" : "rgba(0,0,0,0.54)"
+              }
+            },
+            "title" : "Stanza 1 - Storico Temperatura",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "actions" : { }
+          }
+        },
+        "3969e3cf-c81e-4bfc-bb30-eaa476ead409" : {
+          "typeFullFqn" : "system.time_series_chart",
+          "type" : "timeseries",
+          "sizeX" : 6,
+          "sizeY" : 4,
+          "row" : 4,
+          "col" : 6,
+          "id" : "3969e3cf-c81e-4bfc-bb30-eaa476ead409",
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "ff38f333-3c2c-424c-81c5-5923875098a9",
+              "dataKeys" : [ {
+                "name" : "temperature",
+                "type" : "timeseries",
+                "label" : "Temperatura Stanza 2",
+                "color" : "#4ECDC4",
+                "settings" : {
+                  "yAxisId" : "default",
+                  "showInLegend" : true,
+                  "dataHiddenByDefault" : false,
+                  "type" : "line",
+                  "lineSettings" : {
+                    "showLine" : true,
+                    "step" : false,
+                    "stepType" : "start",
+                    "smooth" : true,
+                    "lineType" : "solid",
+                    "lineWidth" : 2,
+                    "showPoints" : false,
+                    "showPointLabel" : false,
+                    "pointLabelPosition" : "top",
+                    "pointLabelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "pointLabelColor" : "rgba(0,0,0,0.76)",
+                    "enablePointLabelBackground" : false,
+                    "pointLabelBackground" : "rgba(255,255,255,0.56)",
+                    "pointShape" : "emptyCircle",
+                    "pointSize" : 4,
+                    "fillAreaSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  },
+                  "barSettings" : {
+                    "showBorder" : false,
+                    "borderWidth" : 2,
+                    "borderRadius" : 0,
+                    "showLabel" : false,
+                    "labelPosition" : "top",
+                    "labelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "labelColor" : "rgba(0,0,0,0.76)",
+                    "enableLabelBackground" : false,
+                    "labelBackground" : "rgba(255,255,255,0.56)",
+                    "backgroundSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  },
+                  "comparisonSettings" : {
+                    "showValuesForComparison" : false,
+                    "comparisonValuesLabel" : "",
+                    "color" : ""
+                  }
+                },
+                "_hash" : 0.6369071145162343,
+                "units" : "°C",
+                "decimals" : 1
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 0,
+                "interval" : 60000,
+                "timewindowMs" : 3600000,
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : null,
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideFixedInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              },
+              "timezone" : null
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgba(0,0,0,0)",
+            "color" : "rgba(0,0,0,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "showLegend" : true,
+              "legendConfig" : {
+                "direction" : "column",
+                "position" : "top",
+                "sortDataKeys" : false,
+                "showMin" : true,
+                "showMax" : true,
+                "showAvg" : true,
+                "showTotal" : false,
+                "showLatest" : true
+              },
+              "thresholds" : [ ],
+              "dataZoom" : true,
+              "stack" : false,
+              "yAxis" : {
+                "show" : true,
+                "label" : "°C",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "600",
+                  "lineHeight" : "1"
+                },
+                "labelColor" : "rgba(0,0,0,0.54)",
+                "position" : "left",
+                "showTickLabels" : true,
+                "tickLabelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "400",
+                  "lineHeight" : "1"
+                },
+                "tickLabelColor" : "rgba(0,0,0,0.54)",
+                "showTicks" : true,
+                "ticksColor" : "rgba(0,0,0,0.54)",
+                "showLine" : true,
+                "lineColor" : "rgba(0,0,0,0.54)",
+                "showSplitLines" : true,
+                "splitLinesColor" : "rgba(0,0,0,0.12)"
+              },
+              "xAxis" : {
+                "show" : true,
+                "label" : "",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "600",
+                  "lineHeight" : "1"
+                },
+                "labelColor" : "rgba(0,0,0,0.54)",
+                "position" : "bottom",
+                "showTickLabels" : true,
+                "tickLabelFont" : {
+                  "family" : "Roboto",
+                  "size" : 10,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "400",
+                  "lineHeight" : "1"
+                },
+                "tickLabelColor" : "rgba(0,0,0,0.54)",
+                "showTicks" : true,
+                "ticksColor" : "rgba(0,0,0,0.54)",
+                "showLine" : true,
+                "lineColor" : "rgba(0,0,0,0.54)"
+              }
+            },
+            "title" : "Stanza 2 - Storico Temperatura",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "actions" : { }
+          }
+        },
+        "2f826e13-7400-4522-b4ff-fa84c2e3e79b" : {
+          "typeFullFqn" : "system.time_series_chart",
+          "type" : "timeseries",
+          "sizeX" : 6,
+          "sizeY" : 4,
+          "row" : 8,
+          "col" : 0,
+          "id" : "2f826e13-7400-4522-b4ff-fa84c2e3e79b",
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "219ff265-5a18-4471-ab9f-983b620aaa53",
+              "dataKeys" : [ {
+                "name" : "temperature",
+                "type" : "timeseries",
+                "label" : "Temperatura Stanza 3",
+                "color" : "#FFE66D",
+                "settings" : {
+                  "yAxisId" : "default",
+                  "showInLegend" : true,
+                  "dataHiddenByDefault" : false,
+                  "type" : "line",
+                  "lineSettings" : {
+                    "showLine" : true,
+                    "step" : false,
+                    "stepType" : "start",
+                    "smooth" : true,
+                    "lineType" : "solid",
+                    "lineWidth" : 2,
+                    "showPoints" : false,
+                    "showPointLabel" : false,
+                    "pointLabelPosition" : "top",
+                    "pointLabelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "pointLabelColor" : "rgba(0,0,0,0.76)",
+                    "enablePointLabelBackground" : false,
+                    "pointLabelBackground" : "rgba(255,255,255,0.56)",
+                    "pointShape" : "emptyCircle",
+                    "pointSize" : 4,
+                    "fillAreaSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  },
+                  "barSettings" : {
+                    "showBorder" : false,
+                    "borderWidth" : 2,
+                    "borderRadius" : 0,
+                    "showLabel" : false,
+                    "labelPosition" : "top",
+                    "labelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "labelColor" : "rgba(0,0,0,0.76)",
+                    "enableLabelBackground" : false,
+                    "labelBackground" : "rgba(255,255,255,0.56)",
+                    "backgroundSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  },
+                  "comparisonSettings" : {
+                    "showValuesForComparison" : false,
+                    "comparisonValuesLabel" : "",
+                    "color" : ""
+                  }
+                },
+                "_hash" : 0.7700574735208767,
+                "units" : "°C",
+                "decimals" : 1
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 0,
+                "interval" : 60000,
+                "timewindowMs" : 3600000,
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : null,
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideFixedInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              },
+              "timezone" : null
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgba(0,0,0,0)",
+            "color" : "rgba(0,0,0,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "showLegend" : true,
+              "legendConfig" : {
+                "direction" : "column",
+                "position" : "top",
+                "sortDataKeys" : false,
+                "showMin" : true,
+                "showMax" : true,
+                "showAvg" : true,
+                "showTotal" : false,
+                "showLatest" : true
+              },
+              "thresholds" : [ ],
+              "dataZoom" : true,
+              "stack" : false,
+              "yAxis" : {
+                "show" : true,
+                "label" : "°C",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "600",
+                  "lineHeight" : "1"
+                },
+                "labelColor" : "rgba(0,0,0,0.54)",
+                "position" : "left",
+                "showTickLabels" : true,
+                "tickLabelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "400",
+                  "lineHeight" : "1"
+                },
+                "tickLabelColor" : "rgba(0,0,0,0.54)",
+                "showTicks" : true,
+                "ticksColor" : "rgba(0,0,0,0.54)",
+                "showLine" : true,
+                "lineColor" : "rgba(0,0,0,0.54)",
+                "showSplitLines" : true,
+                "splitLinesColor" : "rgba(0,0,0,0.12)"
+              },
+              "xAxis" : {
+                "show" : true,
+                "label" : "",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "600",
+                  "lineHeight" : "1"
+                },
+                "labelColor" : "rgba(0,0,0,0.54)",
+                "position" : "bottom",
+                "showTickLabels" : true,
+                "tickLabelFont" : {
+                  "family" : "Roboto",
+                  "size" : 10,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "400",
+                  "lineHeight" : "1"
+                },
+                "tickLabelColor" : "rgba(0,0,0,0.54)",
+                "showTicks" : true,
+                "ticksColor" : "rgba(0,0,0,0.54)",
+                "showLine" : true,
+                "lineColor" : "rgba(0,0,0,0.54)"
+              }
+            },
+            "title" : "Stanza 3 - Storico Temperatura",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "actions" : { }
+          }
+        },
+        "64dee1d4-d4ac-4d16-b363-bbf2e6d062fb" : {
+          "typeFullFqn" : "system.time_series_chart",
+          "type" : "timeseries",
+          "sizeX" : 6,
+          "sizeY" : 4,
+          "row" : 8,
+          "col" : 6,
+          "id" : "64dee1d4-d4ac-4d16-b363-bbf2e6d062fb",
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "0934499e-4bd8-470b-922d-0a84f3d56ad7",
+              "dataKeys" : [ {
+                "name" : "temperature",
+                "type" : "timeseries",
+                "label" : "Temperatura Stanza 4",
+                "color" : "#A29BFE",
+                "settings" : {
+                  "yAxisId" : "default",
+                  "showInLegend" : true,
+                  "dataHiddenByDefault" : false,
+                  "type" : "line",
+                  "lineSettings" : {
+                    "showLine" : true,
+                    "step" : false,
+                    "stepType" : "start",
+                    "smooth" : true,
+                    "lineType" : "solid",
+                    "lineWidth" : 2,
+                    "showPoints" : false,
+                    "showPointLabel" : false,
+                    "pointLabelPosition" : "top",
+                    "pointLabelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "pointLabelColor" : "rgba(0,0,0,0.76)",
+                    "enablePointLabelBackground" : false,
+                    "pointLabelBackground" : "rgba(255,255,255,0.56)",
+                    "pointShape" : "emptyCircle",
+                    "pointSize" : 4,
+                    "fillAreaSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  },
+                  "barSettings" : {
+                    "showBorder" : false,
+                    "borderWidth" : 2,
+                    "borderRadius" : 0,
+                    "showLabel" : false,
+                    "labelPosition" : "top",
+                    "labelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "labelColor" : "rgba(0,0,0,0.76)",
+                    "enableLabelBackground" : false,
+                    "labelBackground" : "rgba(255,255,255,0.56)",
+                    "backgroundSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  },
+                  "comparisonSettings" : {
+                    "showValuesForComparison" : false,
+                    "comparisonValuesLabel" : "",
+                    "color" : ""
+                  }
+                },
+                "_hash" : 0.13353950905524592,
+                "units" : "°C",
+                "decimals" : 1
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 0,
+                "interval" : 60000,
+                "timewindowMs" : 3600000,
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : null,
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideFixedInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              },
+              "timezone" : null
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgba(0,0,0,0)",
+            "color" : "rgba(0,0,0,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "showLegend" : true,
+              "legendConfig" : {
+                "direction" : "column",
+                "position" : "top",
+                "sortDataKeys" : false,
+                "showMin" : true,
+                "showMax" : true,
+                "showAvg" : true,
+                "showTotal" : false,
+                "showLatest" : true
+              },
+              "thresholds" : [ ],
+              "dataZoom" : true,
+              "stack" : false,
+              "yAxis" : {
+                "show" : true,
+                "label" : "°C",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "600",
+                  "lineHeight" : "1"
+                },
+                "labelColor" : "rgba(0,0,0,0.54)",
+                "position" : "left",
+                "showTickLabels" : true,
+                "tickLabelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "400",
+                  "lineHeight" : "1"
+                },
+                "tickLabelColor" : "rgba(0,0,0,0.54)",
+                "showTicks" : true,
+                "ticksColor" : "rgba(0,0,0,0.54)",
+                "showLine" : true,
+                "lineColor" : "rgba(0,0,0,0.54)",
+                "showSplitLines" : true,
+                "splitLinesColor" : "rgba(0,0,0,0.12)"
+              },
+              "xAxis" : {
+                "show" : true,
+                "label" : "",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "600",
+                  "lineHeight" : "1"
+                },
+                "labelColor" : "rgba(0,0,0,0.54)",
+                "position" : "bottom",
+                "showTickLabels" : true,
+                "tickLabelFont" : {
+                  "family" : "Roboto",
+                  "size" : 10,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "400",
+                  "lineHeight" : "1"
+                },
+                "tickLabelColor" : "rgba(0,0,0,0.54)",
+                "showTicks" : true,
+                "ticksColor" : "rgba(0,0,0,0.54)",
+                "showLine" : true,
+                "lineColor" : "rgba(0,0,0,0.54)"
+              }
+            },
+            "title" : "Stanza 4 - Storico Temperatura",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "actions" : { }
+          }
+        },
+        "7a263e0c-8ca6-41d6-9019-c2cb7d3c5eba" : {
+          "typeFullFqn" : "system.time_series_chart",
+          "type" : "timeseries",
+          "sizeX" : 6,
+          "sizeY" : 4,
+          "row" : 12,
+          "col" : 0,
+          "id" : "7a263e0c-8ca6-41d6-9019-c2cb7d3c5eba",
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "61f74d16-5bd3-4f5c-8057-f13c7ff5ff79",
+              "dataKeys" : [ {
+                "name" : "noise_level",
+                "type" : "timeseries",
+                "label" : "Rumore Stanza 1",
+                "color" : "#FF6B6B",
+                "settings" : {
+                  "yAxisId" : "default",
+                  "showInLegend" : true,
+                  "dataHiddenByDefault" : false,
+                  "type" : "line",
+                  "lineSettings" : {
+                    "showLine" : true,
+                    "step" : false,
+                    "stepType" : "start",
+                    "smooth" : true,
+                    "lineType" : "solid",
+                    "lineWidth" : 2,
+                    "showPoints" : false,
+                    "showPointLabel" : false,
+                    "pointLabelPosition" : "top",
+                    "pointLabelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "pointLabelColor" : "rgba(0,0,0,0.76)",
+                    "enablePointLabelBackground" : false,
+                    "pointLabelBackground" : "rgba(255,255,255,0.56)",
+                    "pointShape" : "emptyCircle",
+                    "pointSize" : 4,
+                    "fillAreaSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  },
+                  "barSettings" : {
+                    "showBorder" : false,
+                    "borderWidth" : 2,
+                    "borderRadius" : 0,
+                    "showLabel" : false,
+                    "labelPosition" : "top",
+                    "labelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "labelColor" : "rgba(0,0,0,0.76)",
+                    "enableLabelBackground" : false,
+                    "labelBackground" : "rgba(255,255,255,0.56)",
+                    "backgroundSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  },
+                  "comparisonSettings" : {
+                    "showValuesForComparison" : false,
+                    "comparisonValuesLabel" : "",
+                    "color" : ""
+                  }
+                },
+                "_hash" : 0.6381425230628438,
+                "units" : "dB",
+                "decimals" : 1
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 0,
+                "interval" : 60000,
+                "timewindowMs" : 3600000,
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : null,
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideFixedInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              },
+              "timezone" : null
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgba(0,0,0,0)",
+            "color" : "rgba(0,0,0,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "showLegend" : true,
+              "legendConfig" : {
+                "direction" : "column",
+                "position" : "top",
+                "sortDataKeys" : false,
+                "showMin" : true,
+                "showMax" : true,
+                "showAvg" : true,
+                "showTotal" : false,
+                "showLatest" : true
+              },
+              "thresholds" : [ ],
+              "dataZoom" : true,
+              "stack" : false,
+              "yAxis" : {
+                "show" : true,
+                "label" : "dB",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "600",
+                  "lineHeight" : "1"
+                },
+                "labelColor" : "rgba(0,0,0,0.54)",
+                "position" : "left",
+                "showTickLabels" : true,
+                "tickLabelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "400",
+                  "lineHeight" : "1"
+                },
+                "tickLabelColor" : "rgba(0,0,0,0.54)",
+                "showTicks" : true,
+                "ticksColor" : "rgba(0,0,0,0.54)",
+                "showLine" : true,
+                "lineColor" : "rgba(0,0,0,0.54)",
+                "showSplitLines" : true,
+                "splitLinesColor" : "rgba(0,0,0,0.12)"
+              },
+              "xAxis" : {
+                "show" : true,
+                "label" : "",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "600",
+                  "lineHeight" : "1"
+                },
+                "labelColor" : "rgba(0,0,0,0.54)",
+                "position" : "bottom",
+                "showTickLabels" : true,
+                "tickLabelFont" : {
+                  "family" : "Roboto",
+                  "size" : 10,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "400",
+                  "lineHeight" : "1"
+                },
+                "tickLabelColor" : "rgba(0,0,0,0.54)",
+                "showTicks" : true,
+                "ticksColor" : "rgba(0,0,0,0.54)",
+                "showLine" : true,
+                "lineColor" : "rgba(0,0,0,0.54)"
+              }
+            },
+            "title" : "Stanza 1 - Storico Rumore",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "actions" : { }
+          }
+        },
+        "69251cf2-2349-4bc7-ba83-756d9ae3cca7" : {
+          "typeFullFqn" : "system.time_series_chart",
+          "type" : "timeseries",
+          "sizeX" : 6,
+          "sizeY" : 4,
+          "row" : 12,
+          "col" : 6,
+          "id" : "69251cf2-2349-4bc7-ba83-756d9ae3cca7",
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "ff38f333-3c2c-424c-81c5-5923875098a9",
+              "dataKeys" : [ {
+                "name" : "noise_level",
+                "type" : "timeseries",
+                "label" : "Rumore Stanza 2",
+                "color" : "#4ECDC4",
+                "settings" : {
+                  "yAxisId" : "default",
+                  "showInLegend" : true,
+                  "dataHiddenByDefault" : false,
+                  "type" : "line",
+                  "lineSettings" : {
+                    "showLine" : true,
+                    "step" : false,
+                    "stepType" : "start",
+                    "smooth" : true,
+                    "lineType" : "solid",
+                    "lineWidth" : 2,
+                    "showPoints" : false,
+                    "showPointLabel" : false,
+                    "pointLabelPosition" : "top",
+                    "pointLabelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "pointLabelColor" : "rgba(0,0,0,0.76)",
+                    "enablePointLabelBackground" : false,
+                    "pointLabelBackground" : "rgba(255,255,255,0.56)",
+                    "pointShape" : "emptyCircle",
+                    "pointSize" : 4,
+                    "fillAreaSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  },
+                  "barSettings" : {
+                    "showBorder" : false,
+                    "borderWidth" : 2,
+                    "borderRadius" : 0,
+                    "showLabel" : false,
+                    "labelPosition" : "top",
+                    "labelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "labelColor" : "rgba(0,0,0,0.76)",
+                    "enableLabelBackground" : false,
+                    "labelBackground" : "rgba(255,255,255,0.56)",
+                    "backgroundSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  },
+                  "comparisonSettings" : {
+                    "showValuesForComparison" : false,
+                    "comparisonValuesLabel" : "",
+                    "color" : ""
+                  }
+                },
+                "_hash" : 0.21468017829713404,
+                "units" : "dB",
+                "decimals" : 1
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 0,
+                "interval" : 60000,
+                "timewindowMs" : 3600000,
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : null,
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideFixedInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              },
+              "timezone" : null
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgba(0,0,0,0)",
+            "color" : "rgba(0,0,0,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "showLegend" : true,
+              "legendConfig" : {
+                "direction" : "column",
+                "position" : "top",
+                "sortDataKeys" : false,
+                "showMin" : true,
+                "showMax" : true,
+                "showAvg" : true,
+                "showTotal" : false,
+                "showLatest" : true
+              },
+              "thresholds" : [ ],
+              "dataZoom" : true,
+              "stack" : false,
+              "yAxis" : {
+                "show" : true,
+                "label" : "dB",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "600",
+                  "lineHeight" : "1"
+                },
+                "labelColor" : "rgba(0,0,0,0.54)",
+                "position" : "left",
+                "showTickLabels" : true,
+                "tickLabelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "400",
+                  "lineHeight" : "1"
+                },
+                "tickLabelColor" : "rgba(0,0,0,0.54)",
+                "showTicks" : true,
+                "ticksColor" : "rgba(0,0,0,0.54)",
+                "showLine" : true,
+                "lineColor" : "rgba(0,0,0,0.54)",
+                "showSplitLines" : true,
+                "splitLinesColor" : "rgba(0,0,0,0.12)"
+              },
+              "xAxis" : {
+                "show" : true,
+                "label" : "",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "600",
+                  "lineHeight" : "1"
+                },
+                "labelColor" : "rgba(0,0,0,0.54)",
+                "position" : "bottom",
+                "showTickLabels" : true,
+                "tickLabelFont" : {
+                  "family" : "Roboto",
+                  "size" : 10,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "400",
+                  "lineHeight" : "1"
+                },
+                "tickLabelColor" : "rgba(0,0,0,0.54)",
+                "showTicks" : true,
+                "ticksColor" : "rgba(0,0,0,0.54)",
+                "showLine" : true,
+                "lineColor" : "rgba(0,0,0,0.54)"
+              }
+            },
+            "title" : "Stanza 2 - Storico Rumore",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "actions" : { }
+          }
+        },
+        "37ad3408-29eb-47dd-af57-7f0b5887c8f7" : {
+          "typeFullFqn" : "system.time_series_chart",
+          "type" : "timeseries",
+          "sizeX" : 6,
+          "sizeY" : 4,
+          "row" : 16,
+          "col" : 0,
+          "id" : "37ad3408-29eb-47dd-af57-7f0b5887c8f7",
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "219ff265-5a18-4471-ab9f-983b620aaa53",
+              "dataKeys" : [ {
+                "name" : "noise_level",
+                "type" : "timeseries",
+                "label" : "Rumore Stanza 3",
+                "color" : "#FFE66D",
+                "settings" : {
+                  "yAxisId" : "default",
+                  "showInLegend" : true,
+                  "dataHiddenByDefault" : false,
+                  "type" : "line",
+                  "lineSettings" : {
+                    "showLine" : true,
+                    "step" : false,
+                    "stepType" : "start",
+                    "smooth" : true,
+                    "lineType" : "solid",
+                    "lineWidth" : 2,
+                    "showPoints" : false,
+                    "showPointLabel" : false,
+                    "pointLabelPosition" : "top",
+                    "pointLabelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "pointLabelColor" : "rgba(0,0,0,0.76)",
+                    "enablePointLabelBackground" : false,
+                    "pointLabelBackground" : "rgba(255,255,255,0.56)",
+                    "pointShape" : "emptyCircle",
+                    "pointSize" : 4,
+                    "fillAreaSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  },
+                  "barSettings" : {
+                    "showBorder" : false,
+                    "borderWidth" : 2,
+                    "borderRadius" : 0,
+                    "showLabel" : false,
+                    "labelPosition" : "top",
+                    "labelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "labelColor" : "rgba(0,0,0,0.76)",
+                    "enableLabelBackground" : false,
+                    "labelBackground" : "rgba(255,255,255,0.56)",
+                    "backgroundSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  },
+                  "comparisonSettings" : {
+                    "showValuesForComparison" : false,
+                    "comparisonValuesLabel" : "",
+                    "color" : ""
+                  }
+                },
+                "_hash" : 0.36737713106062575,
+                "units" : "dB",
+                "decimals" : 1
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 0,
+                "interval" : 60000,
+                "timewindowMs" : 3600000,
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : null,
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideFixedInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              },
+              "timezone" : null
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgba(0,0,0,0)",
+            "color" : "rgba(0,0,0,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "showLegend" : true,
+              "legendConfig" : {
+                "direction" : "column",
+                "position" : "top",
+                "sortDataKeys" : false,
+                "showMin" : true,
+                "showMax" : true,
+                "showAvg" : true,
+                "showTotal" : false,
+                "showLatest" : true
+              },
+              "thresholds" : [ ],
+              "dataZoom" : true,
+              "stack" : false,
+              "yAxis" : {
+                "show" : true,
+                "label" : "dB",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "600",
+                  "lineHeight" : "1"
+                },
+                "labelColor" : "rgba(0,0,0,0.54)",
+                "position" : "left",
+                "showTickLabels" : true,
+                "tickLabelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "400",
+                  "lineHeight" : "1"
+                },
+                "tickLabelColor" : "rgba(0,0,0,0.54)",
+                "showTicks" : true,
+                "ticksColor" : "rgba(0,0,0,0.54)",
+                "showLine" : true,
+                "lineColor" : "rgba(0,0,0,0.54)",
+                "showSplitLines" : true,
+                "splitLinesColor" : "rgba(0,0,0,0.12)"
+              },
+              "xAxis" : {
+                "show" : true,
+                "label" : "",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "600",
+                  "lineHeight" : "1"
+                },
+                "labelColor" : "rgba(0,0,0,0.54)",
+                "position" : "bottom",
+                "showTickLabels" : true,
+                "tickLabelFont" : {
+                  "family" : "Roboto",
+                  "size" : 10,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "400",
+                  "lineHeight" : "1"
+                },
+                "tickLabelColor" : "rgba(0,0,0,0.54)",
+                "showTicks" : true,
+                "ticksColor" : "rgba(0,0,0,0.54)",
+                "showLine" : true,
+                "lineColor" : "rgba(0,0,0,0.54)"
+              }
+            },
+            "title" : "Stanza 3 - Storico Rumore",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "actions" : { }
+          }
+        },
+        "15e62279-5fb9-46be-9fc5-f0a041cdfb2c" : {
+          "typeFullFqn" : "system.time_series_chart",
+          "type" : "timeseries",
+          "sizeX" : 6,
+          "sizeY" : 4,
+          "row" : 16,
+          "col" : 6,
+          "id" : "15e62279-5fb9-46be-9fc5-f0a041cdfb2c",
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "0934499e-4bd8-470b-922d-0a84f3d56ad7",
+              "dataKeys" : [ {
+                "name" : "noise_level",
+                "type" : "timeseries",
+                "label" : "Rumore Stanza 4",
+                "color" : "#A29BFE",
+                "settings" : {
+                  "yAxisId" : "default",
+                  "showInLegend" : true,
+                  "dataHiddenByDefault" : false,
+                  "type" : "line",
+                  "lineSettings" : {
+                    "showLine" : true,
+                    "step" : false,
+                    "stepType" : "start",
+                    "smooth" : true,
+                    "lineType" : "solid",
+                    "lineWidth" : 2,
+                    "showPoints" : false,
+                    "showPointLabel" : false,
+                    "pointLabelPosition" : "top",
+                    "pointLabelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "pointLabelColor" : "rgba(0,0,0,0.76)",
+                    "enablePointLabelBackground" : false,
+                    "pointLabelBackground" : "rgba(255,255,255,0.56)",
+                    "pointShape" : "emptyCircle",
+                    "pointSize" : 4,
+                    "fillAreaSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  },
+                  "barSettings" : {
+                    "showBorder" : false,
+                    "borderWidth" : 2,
+                    "borderRadius" : 0,
+                    "showLabel" : false,
+                    "labelPosition" : "top",
+                    "labelFont" : {
+                      "family" : "Roboto",
+                      "size" : 11,
+                      "sizeUnit" : "px",
+                      "style" : "normal",
+                      "weight" : "400",
+                      "lineHeight" : "1"
+                    },
+                    "labelColor" : "rgba(0,0,0,0.76)",
+                    "enableLabelBackground" : false,
+                    "labelBackground" : "rgba(255,255,255,0.56)",
+                    "backgroundSettings" : {
+                      "type" : "none",
+                      "opacity" : 0.4,
+                      "gradient" : {
+                        "start" : 100,
+                        "end" : 0
+                      }
+                    }
+                  },
+                  "comparisonSettings" : {
+                    "showValuesForComparison" : false,
+                    "comparisonValuesLabel" : "",
+                    "color" : ""
+                  }
+                },
+                "_hash" : 0.22868802326747195,
+                "units" : "dB",
+                "decimals" : 1
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "hideAggregation" : false,
+              "hideAggInterval" : false,
+              "hideTimezone" : false,
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 0,
+                "interval" : 60000,
+                "timewindowMs" : 3600000,
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : null,
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideFixedInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              },
+              "timezone" : null
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgba(0,0,0,0)",
+            "color" : "rgba(0,0,0,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "showLegend" : true,
+              "legendConfig" : {
+                "direction" : "column",
+                "position" : "top",
+                "sortDataKeys" : false,
+                "showMin" : true,
+                "showMax" : true,
+                "showAvg" : true,
+                "showTotal" : false,
+                "showLatest" : true
+              },
+              "thresholds" : [ ],
+              "dataZoom" : true,
+              "stack" : false,
+              "yAxis" : {
+                "show" : true,
+                "label" : "dB",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "600",
+                  "lineHeight" : "1"
+                },
+                "labelColor" : "rgba(0,0,0,0.54)",
+                "position" : "left",
+                "showTickLabels" : true,
+                "tickLabelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "400",
+                  "lineHeight" : "1"
+                },
+                "tickLabelColor" : "rgba(0,0,0,0.54)",
+                "showTicks" : true,
+                "ticksColor" : "rgba(0,0,0,0.54)",
+                "showLine" : true,
+                "lineColor" : "rgba(0,0,0,0.54)",
+                "showSplitLines" : true,
+                "splitLinesColor" : "rgba(0,0,0,0.12)"
+              },
+              "xAxis" : {
+                "show" : true,
+                "label" : "",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "600",
+                  "lineHeight" : "1"
+                },
+                "labelColor" : "rgba(0,0,0,0.54)",
+                "position" : "bottom",
+                "showTickLabels" : true,
+                "tickLabelFont" : {
+                  "family" : "Roboto",
+                  "size" : 10,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "400",
+                  "lineHeight" : "1"
+                },
+                "tickLabelColor" : "rgba(0,0,0,0.54)",
+                "showTicks" : true,
+                "ticksColor" : "rgba(0,0,0,0.54)",
+                "showLine" : true,
+                "lineColor" : "rgba(0,0,0,0.54)"
+              }
+            },
+            "title" : "Stanza 4 - Storico Rumore",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "actions" : { }
+          }
+        },
+        "1d98a551-aa43-4eb3-9d9e-343f135fa306" : {
+          "typeFullFqn" : "system.status_widget",
+          "type" : "rpc",
+          "sizeX" : 3,
+          "sizeY" : 3,
+          "row" : 20,
+          "col" : 0,
+          "id" : "1d98a551-aa43-4eb3-9d9e-343f135fa306",
+          "config" : {
+            "showTitle" : true,
+            "backgroundColor" : "rgba(0,0,0,0)",
+            "color" : "rgba(0,0,0,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "initialState" : {
+                "action" : "GET_TIME_SERIES",
+                "defaultValue" : false,
+                "executeRpc" : {
+                  "method" : "getState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "getAttribute" : {
+                  "scope" : null,
+                  "key" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "noise_level"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "FUNCTION",
+                  "dataToValueFunction" : "return data >= 70;",
+                  "compareToValue" : 70
+                }
+              },
+              "disabledState" : {
+                "action" : "DO_NOTHING",
+                "defaultValue" : false,
+                "getAttribute" : {
+                  "key" : "state",
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : true,
+                  "dataToValueFunction" : "return data;"
+                }
+              },
+              "layout" : "default",
+              "onState" : {
+                "showLabel" : true,
+                "label" : "Stanza 1",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : true,
+                "status" : "⚠ Rumore Alto",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 14,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "800",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "mdi:volume-high",
+                "iconSize" : 48,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "#FFFFFF",
+                "secondaryColor" : "#FF5252",
+                "background" : {
+                  "type" : "color",
+                  "color" : "#FF5252",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(0,0,0,0)",
+                    "blur" : 0
+                  },
+                  "imageUrl" : null
+                },
+                "primaryColorDisabled" : "rgba(0,0,0,0.38)",
+                "secondaryColorDisabled" : "rgba(0,0,0,0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              },
+              "offState" : {
+                "showLabel" : true,
+                "label" : "Stanza 1",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : true,
+                "status" : "OK - Silenzioso",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 14,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "800",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "mdi:volume-low",
+                "iconSize" : 48,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "#FFFFFF",
+                "secondaryColor" : "#B2DFDB",
+                "background" : {
+                  "type" : "color",
+                  "color" : "#4CAF50",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(0,0,0,0)",
+                    "blur" : 0
+                  },
+                  "imageUrl" : null
+                },
+                "primaryColorDisabled" : "rgba(0,0,0,0.38)",
+                "secondaryColorDisabled" : "rgba(0,0,0,0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              }
+            },
+            "title" : "Stanza 1 - Rumore",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "61f74d16-5bd3-4f5c-8057-f13c7ff5ff79",
+              "dataKeys" : [ {
+                "name" : "noise_level",
+                "type" : "timeseries",
+                "label" : "dB",
+                "color" : "#FF6B6B",
+                "settings" : { },
+                "_hash" : 0.6767759088889139
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ ]
+            } ],
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "61f74d16-5bd3-4f5c-8057-f13c7ff5ff79"
+            }
+          }
+        },
+        "52e56275-94b9-48ed-930f-e904424845bf" : {
+          "typeFullFqn" : "system.status_widget",
+          "type" : "rpc",
+          "sizeX" : 3,
+          "sizeY" : 3,
+          "row" : 20,
+          "col" : 3,
+          "id" : "52e56275-94b9-48ed-930f-e904424845bf",
+          "config" : {
+            "showTitle" : true,
+            "backgroundColor" : "rgba(0,0,0,0)",
+            "color" : "rgba(0,0,0,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "initialState" : {
+                "action" : "GET_TIME_SERIES",
+                "defaultValue" : false,
+                "executeRpc" : {
+                  "method" : "getState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "getAttribute" : {
+                  "scope" : null,
+                  "key" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "noise_level"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "FUNCTION",
+                  "dataToValueFunction" : "return data >= 70;",
+                  "compareToValue" : 70
+                }
+              },
+              "disabledState" : {
+                "action" : "DO_NOTHING",
+                "defaultValue" : false,
+                "getAttribute" : {
+                  "key" : "state",
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : true,
+                  "dataToValueFunction" : "return data;"
+                }
+              },
+              "layout" : "default",
+              "onState" : {
+                "showLabel" : true,
+                "label" : "Stanza 2",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : true,
+                "status" : "⚠ Rumore Alto",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 14,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "800",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "mdi:volume-high",
+                "iconSize" : 48,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "#FFFFFF",
+                "secondaryColor" : "#FF5252",
+                "background" : {
+                  "type" : "color",
+                  "color" : "#FF5252",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(0,0,0,0)",
+                    "blur" : 0
+                  },
+                  "imageUrl" : null
+                },
+                "primaryColorDisabled" : "rgba(0,0,0,0.38)",
+                "secondaryColorDisabled" : "rgba(0,0,0,0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              },
+              "offState" : {
+                "showLabel" : true,
+                "label" : "Stanza 2",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : true,
+                "status" : "OK - Silenzioso",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 14,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "800",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "mdi:volume-low",
+                "iconSize" : 48,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "#FFFFFF",
+                "secondaryColor" : "#B2DFDB",
+                "background" : {
+                  "type" : "color",
+                  "color" : "#4CAF50",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(0,0,0,0)",
+                    "blur" : 0
+                  },
+                  "imageUrl" : null
+                },
+                "primaryColorDisabled" : "rgba(0,0,0,0.38)",
+                "secondaryColorDisabled" : "rgba(0,0,0,0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              }
+            },
+            "title" : "Stanza 2 - Rumore",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "ff38f333-3c2c-424c-81c5-5923875098a9",
+              "dataKeys" : [ {
+                "name" : "noise_level",
+                "type" : "timeseries",
+                "label" : "dB",
+                "color" : "#4ECDC4",
+                "settings" : { },
+                "_hash" : 0.97020083829581
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ ]
+            } ],
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "ff38f333-3c2c-424c-81c5-5923875098a9"
+            }
+          }
+        },
+        "0b34b01b-4c53-41bc-acd0-62a2756eb94c" : {
+          "typeFullFqn" : "system.status_widget",
+          "type" : "rpc",
+          "sizeX" : 3,
+          "sizeY" : 3,
+          "row" : 20,
+          "col" : 6,
+          "id" : "0b34b01b-4c53-41bc-acd0-62a2756eb94c",
+          "config" : {
+            "showTitle" : true,
+            "backgroundColor" : "rgba(0,0,0,0)",
+            "color" : "rgba(0,0,0,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "initialState" : {
+                "action" : "GET_TIME_SERIES",
+                "defaultValue" : false,
+                "executeRpc" : {
+                  "method" : "getState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "getAttribute" : {
+                  "scope" : null,
+                  "key" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "noise_level"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "FUNCTION",
+                  "dataToValueFunction" : "return data >= 70;",
+                  "compareToValue" : 70
+                }
+              },
+              "disabledState" : {
+                "action" : "DO_NOTHING",
+                "defaultValue" : false,
+                "getAttribute" : {
+                  "key" : "state",
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : true,
+                  "dataToValueFunction" : "return data;"
+                }
+              },
+              "layout" : "default",
+              "onState" : {
+                "showLabel" : true,
+                "label" : "Stanza 3",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : true,
+                "status" : "⚠ Rumore Alto",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 14,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "800",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "mdi:volume-high",
+                "iconSize" : 48,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "#FFFFFF",
+                "secondaryColor" : "#FF5252",
+                "background" : {
+                  "type" : "color",
+                  "color" : "#FF5252",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(0,0,0,0)",
+                    "blur" : 0
+                  },
+                  "imageUrl" : null
+                },
+                "primaryColorDisabled" : "rgba(0,0,0,0.38)",
+                "secondaryColorDisabled" : "rgba(0,0,0,0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              },
+              "offState" : {
+                "showLabel" : true,
+                "label" : "Stanza 3",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : true,
+                "status" : "OK - Silenzioso",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 14,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "800",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "mdi:volume-low",
+                "iconSize" : 48,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "#FFFFFF",
+                "secondaryColor" : "#B2DFDB",
+                "background" : {
+                  "type" : "color",
+                  "color" : "#4CAF50",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(0,0,0,0)",
+                    "blur" : 0
+                  },
+                  "imageUrl" : null
+                },
+                "primaryColorDisabled" : "rgba(0,0,0,0.38)",
+                "secondaryColorDisabled" : "rgba(0,0,0,0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              }
+            },
+            "title" : "Stanza 3 - Rumore",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "219ff265-5a18-4471-ab9f-983b620aaa53",
+              "dataKeys" : [ {
+                "name" : "noise_level",
+                "type" : "timeseries",
+                "label" : "dB",
+                "color" : "#FFE66D",
+                "settings" : { },
+                "_hash" : 0.9323297329947882
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ ]
+            } ],
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "219ff265-5a18-4471-ab9f-983b620aaa53"
+            }
+          }
+        },
+        "31189486-e8cf-4236-9b7a-bcc2e1acecd2" : {
+          "typeFullFqn" : "system.status_widget",
+          "type" : "rpc",
+          "sizeX" : 3,
+          "sizeY" : 3,
+          "row" : 20,
+          "col" : 9,
+          "id" : "31189486-e8cf-4236-9b7a-bcc2e1acecd2",
+          "config" : {
+            "showTitle" : true,
+            "backgroundColor" : "rgba(0,0,0,0)",
+            "color" : "rgba(0,0,0,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "initialState" : {
+                "action" : "GET_TIME_SERIES",
+                "defaultValue" : false,
+                "executeRpc" : {
+                  "method" : "getState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "getAttribute" : {
+                  "scope" : null,
+                  "key" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "noise_level"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "FUNCTION",
+                  "dataToValueFunction" : "return data >= 70;",
+                  "compareToValue" : 70
+                }
+              },
+              "disabledState" : {
+                "action" : "DO_NOTHING",
+                "defaultValue" : false,
+                "getAttribute" : {
+                  "key" : "state",
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : true,
+                  "dataToValueFunction" : "return data;"
+                }
+              },
+              "layout" : "default",
+              "onState" : {
+                "showLabel" : true,
+                "label" : "Stanza 4",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : true,
+                "status" : "⚠ Rumore Alto",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 14,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "800",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "mdi:volume-high",
+                "iconSize" : 48,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "#FFFFFF",
+                "secondaryColor" : "#FF5252",
+                "background" : {
+                  "type" : "color",
+                  "color" : "#FF5252",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(0,0,0,0)",
+                    "blur" : 0
+                  },
+                  "imageUrl" : null
+                },
+                "primaryColorDisabled" : "rgba(0,0,0,0.38)",
+                "secondaryColorDisabled" : "rgba(0,0,0,0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              },
+              "offState" : {
+                "showLabel" : true,
+                "label" : "Stanza 4",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : true,
+                "status" : "OK - Silenzioso",
+                "statusFont" : {
+                  "family" : "Roboto",
+                  "size" : 14,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "800",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "mdi:volume-low",
+                "iconSize" : 48,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "#FFFFFF",
+                "secondaryColor" : "#B2DFDB",
+                "background" : {
+                  "type" : "color",
+                  "color" : "#4CAF50",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(0,0,0,0)",
+                    "blur" : 0
+                  },
+                  "imageUrl" : null
+                },
+                "primaryColorDisabled" : "rgba(0,0,0,0.38)",
+                "secondaryColorDisabled" : "rgba(0,0,0,0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              }
+            },
+            "title" : "Stanza 4 - Rumore",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "0934499e-4bd8-470b-922d-0a84f3d56ad7",
+              "dataKeys" : [ {
+                "name" : "noise_level",
+                "type" : "timeseries",
+                "label" : "dB",
+                "color" : "#A29BFE",
+                "settings" : { },
+                "_hash" : 0.3339600030264168
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ ]
+            } ],
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "0934499e-4bd8-470b-922d-0a84f3d56ad7"
+            }
+          }
+        },
+        "f885626b-a35b-40e5-a312-d2e54c9acd7a" : {
+          "typeFullFqn" : "system.control_widgets.led_indicator",
+          "type" : "rpc",
+          "sizeX" : 3,
+          "sizeY" : 3,
+          "row" : 23,
+          "col" : 0,
+          "id" : "f885626b-a35b-40e5-a312-d2e54c9acd7a",
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : true,
+            "backgroundColor" : "#e6e7e8",
+            "color" : "rgba(0,0,0,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "title" : "Luci Stanza 1",
+              "ledColor" : "#4caf50",
+              "initialValue" : false,
+              "performCheckStatus" : false,
+              "retrieveValueMethod" : "timeseries",
+              "checkStatusMethod" : "checkStatus",
+              "valueAttribute" : "light_state",
+              "parseValueFunction" : "return (data == 1) ? true : false;",
+              "requestTimeout" : 500,
+              "requestPersistent" : false,
+              "persistentPollingInterval" : 5000
+            },
+            "title" : "Stanza 1 - Luci",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 2,
+            "datasources" : [ ],
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "61f74d16-5bd3-4f5c-8057-f13c7ff5ff79"
+            }
+          }
+        },
+        "c40351dc-87b1-406e-9970-fb95d9e0f5d8" : {
+          "typeFullFqn" : "system.control_widgets.led_indicator",
+          "type" : "rpc",
+          "sizeX" : 3,
+          "sizeY" : 3,
+          "row" : 23,
+          "col" : 3,
+          "id" : "c40351dc-87b1-406e-9970-fb95d9e0f5d8",
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : true,
+            "backgroundColor" : "#e6e7e8",
+            "color" : "rgba(0,0,0,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "title" : "Luci Stanza 2",
+              "ledColor" : "#4caf50",
+              "initialValue" : false,
+              "performCheckStatus" : false,
+              "retrieveValueMethod" : "timeseries",
+              "checkStatusMethod" : "checkStatus",
+              "valueAttribute" : "light_state",
+              "parseValueFunction" : "return (data == 1) ? true : false;",
+              "requestTimeout" : 500,
+              "requestPersistent" : false,
+              "persistentPollingInterval" : 5000
+            },
+            "title" : "Stanza 2 - Luci",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 2,
+            "datasources" : [ ],
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "ff38f333-3c2c-424c-81c5-5923875098a9"
+            }
+          }
+        },
+        "9f42af40-2289-4870-822d-eac355470a2b" : {
+          "typeFullFqn" : "system.control_widgets.led_indicator",
+          "type" : "rpc",
+          "sizeX" : 3,
+          "sizeY" : 3,
+          "row" : 23,
+          "col" : 6,
+          "id" : "9f42af40-2289-4870-822d-eac355470a2b",
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : true,
+            "backgroundColor" : "#e6e7e8",
+            "color" : "rgba(0,0,0,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "title" : "Luci Stanza 3",
+              "ledColor" : "#4caf50",
+              "initialValue" : false,
+              "performCheckStatus" : false,
+              "retrieveValueMethod" : "timeseries",
+              "checkStatusMethod" : "checkStatus",
+              "valueAttribute" : "light_state",
+              "parseValueFunction" : "return (data == 1) ? true : false;",
+              "requestTimeout" : 500,
+              "requestPersistent" : false,
+              "persistentPollingInterval" : 5000
+            },
+            "title" : "Stanza 3 - Luci",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 2,
+            "datasources" : [ ],
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "219ff265-5a18-4471-ab9f-983b620aaa53"
+            }
+          }
+        },
+        "09d1a474-09bc-4475-a307-13af723ac558" : {
+          "typeFullFqn" : "system.control_widgets.led_indicator",
+          "type" : "rpc",
+          "sizeX" : 3,
+          "sizeY" : 3,
+          "row" : 23,
+          "col" : 9,
+          "id" : "09d1a474-09bc-4475-a307-13af723ac558",
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : true,
+            "backgroundColor" : "#e6e7e8",
+            "color" : "rgba(0,0,0,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "title" : "Luci Stanza 4",
+              "ledColor" : "#4caf50",
+              "initialValue" : false,
+              "performCheckStatus" : false,
+              "retrieveValueMethod" : "timeseries",
+              "checkStatusMethod" : "checkStatus",
+              "valueAttribute" : "light_state",
+              "parseValueFunction" : "return (data == 1) ? true : false;",
+              "requestTimeout" : 500,
+              "requestPersistent" : false,
+              "persistentPollingInterval" : 5000
+            },
+            "title" : "Stanza 4 - Luci",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 2,
+            "datasources" : [ ],
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "0934499e-4bd8-470b-922d-0a84f3d56ad7"
+            }
+          }
+        }
+      },
+      "states" : {
+        "default" : {
+          "name" : "Smart Rooms",
+          "root" : true,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "73b6ad04-b6d7-4d25-8144-7bf3f95d9252" : {
+                  "sizeX" : 3,
+                  "sizeY" : 2,
+                  "row" : 0,
+                  "col" : 0
+                },
+                "66821057-4f53-4643-9983-05cab7636045" : {
+                  "sizeX" : 3,
+                  "sizeY" : 2,
+                  "row" : 0,
+                  "col" : 3
+                },
+                "6d0e07ae-ba0f-4b2d-b160-ebe8bef05762" : {
+                  "sizeX" : 3,
+                  "sizeY" : 2,
+                  "row" : 0,
+                  "col" : 6
+                },
+                "3a0bc97e-7e9a-4700-9d43-9327dc4e44cb" : {
+                  "sizeX" : 3,
+                  "sizeY" : 2,
+                  "row" : 0,
+                  "col" : 9
+                },
+                "2a7784cf-ab52-46a1-a376-2b7ea1a1b23f" : {
+                  "sizeX" : 3,
+                  "sizeY" : 2,
+                  "row" : 2,
+                  "col" : 0
+                },
+                "cae7c571-3598-4d85-bc2f-559a5ae9b319" : {
+                  "sizeX" : 3,
+                  "sizeY" : 2,
+                  "row" : 2,
+                  "col" : 3
+                },
+                "fb4143cd-61d3-4f76-b23b-706d2b8a8d41" : {
+                  "sizeX" : 3,
+                  "sizeY" : 2,
+                  "row" : 2,
+                  "col" : 6
+                },
+                "fda4b9bc-6454-4d37-ac0e-39caef2c7cd2" : {
+                  "sizeX" : 3,
+                  "sizeY" : 2,
+                  "row" : 2,
+                  "col" : 9
+                },
+                "6a899a3d-ff82-45ed-b4eb-b0e2a4afead3" : {
+                  "sizeX" : 6,
+                  "sizeY" : 4,
+                  "row" : 4,
+                  "col" : 0
+                },
+                "3969e3cf-c81e-4bfc-bb30-eaa476ead409" : {
+                  "sizeX" : 6,
+                  "sizeY" : 4,
+                  "row" : 4,
+                  "col" : 6
+                },
+                "2f826e13-7400-4522-b4ff-fa84c2e3e79b" : {
+                  "sizeX" : 6,
+                  "sizeY" : 4,
+                  "row" : 8,
+                  "col" : 0
+                },
+                "64dee1d4-d4ac-4d16-b363-bbf2e6d062fb" : {
+                  "sizeX" : 6,
+                  "sizeY" : 4,
+                  "row" : 8,
+                  "col" : 6
+                },
+                "7a263e0c-8ca6-41d6-9019-c2cb7d3c5eba" : {
+                  "sizeX" : 6,
+                  "sizeY" : 4,
+                  "row" : 12,
+                  "col" : 0
+                },
+                "69251cf2-2349-4bc7-ba83-756d9ae3cca7" : {
+                  "sizeX" : 6,
+                  "sizeY" : 4,
+                  "row" : 12,
+                  "col" : 6
+                },
+                "37ad3408-29eb-47dd-af57-7f0b5887c8f7" : {
+                  "sizeX" : 6,
+                  "sizeY" : 4,
+                  "row" : 16,
+                  "col" : 0
+                },
+                "15e62279-5fb9-46be-9fc5-f0a041cdfb2c" : {
+                  "sizeX" : 6,
+                  "sizeY" : 4,
+                  "row" : 16,
+                  "col" : 6
+                },
+                "1d98a551-aa43-4eb3-9d9e-343f135fa306" : {
+                  "sizeX" : 3,
+                  "sizeY" : 3,
+                  "row" : 20,
+                  "col" : 0
+                },
+                "52e56275-94b9-48ed-930f-e904424845bf" : {
+                  "sizeX" : 3,
+                  "sizeY" : 3,
+                  "row" : 20,
+                  "col" : 3
+                },
+                "0b34b01b-4c53-41bc-acd0-62a2756eb94c" : {
+                  "sizeX" : 3,
+                  "sizeY" : 3,
+                  "row" : 20,
+                  "col" : 6
+                },
+                "31189486-e8cf-4236-9b7a-bcc2e1acecd2" : {
+                  "sizeX" : 3,
+                  "sizeY" : 3,
+                  "row" : 20,
+                  "col" : 9
+                },
+                "f885626b-a35b-40e5-a312-d2e54c9acd7a" : {
+                  "sizeX" : 3,
+                  "sizeY" : 3,
+                  "row" : 23,
+                  "col" : 0
+                },
+                "c40351dc-87b1-406e-9970-fb95d9e0f5d8" : {
+                  "sizeX" : 3,
+                  "sizeY" : 3,
+                  "row" : 23,
+                  "col" : 3
+                },
+                "9f42af40-2289-4870-822d-eac355470a2b" : {
+                  "sizeX" : 3,
+                  "sizeY" : 3,
+                  "row" : 23,
+                  "col" : 6
+                },
+                "09d1a474-09bc-4475-a307-13af723ac558" : {
+                  "sizeX" : 3,
+                  "sizeY" : 3,
+                  "row" : 23,
+                  "col" : 9
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 12,
+                "margin" : 10,
+                "outerMargin" : true,
+                "outerMarginValue" : 10,
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : false,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70,
+                "layoutType" : "default"
+              }
+            }
+          }
+        }
+      },
+      "entityAliases" : {
+        "61f74d16-5bd3-4f5c-8057-f13c7ff5ff79" : {
+          "id" : "61f74d16-5bd3-4f5c-8057-f13c7ff5ff79",
+          "alias" : "Stanza 1",
+          "filter" : {
+            "type" : "entityName",
+            "resolveMultiple" : false,
+            "entityType" : "DEVICE",
+            "entityNameFilter" : "room1_sensor"
+          }
+        },
+        "ff38f333-3c2c-424c-81c5-5923875098a9" : {
+          "id" : "ff38f333-3c2c-424c-81c5-5923875098a9",
+          "alias" : "Stanza 2",
+          "filter" : {
+            "type" : "entityName",
+            "resolveMultiple" : false,
+            "entityType" : "DEVICE",
+            "entityNameFilter" : "room2_sensor"
+          }
+        },
+        "219ff265-5a18-4471-ab9f-983b620aaa53" : {
+          "id" : "219ff265-5a18-4471-ab9f-983b620aaa53",
+          "alias" : "Stanza 3",
+          "filter" : {
+            "type" : "entityName",
+            "resolveMultiple" : false,
+            "entityType" : "DEVICE",
+            "entityNameFilter" : "room3_sensor"
+          }
+        },
+        "0934499e-4bd8-470b-922d-0a84f3d56ad7" : {
+          "id" : "0934499e-4bd8-470b-922d-0a84f3d56ad7",
+          "alias" : "Stanza 4",
+          "filter" : {
+            "type" : "entityName",
+            "resolveMultiple" : false,
+            "entityType" : "DEVICE",
+            "entityNameFilter" : "room4_sensor"
+          }
+        }
+      },
+      "filters" : { },
+      "timewindow" : {
+        "hideAggregation" : false,
+        "hideAggInterval" : false,
+        "hideTimezone" : false,
+        "selectedTab" : 0,
+        "realtime" : {
+          "realtimeType" : 0,
+          "interval" : 5000,
+          "timewindowMs" : 60000,
+          "quickInterval" : "CURRENT_DAY",
+          "hideInterval" : false,
+          "hideLastInterval" : false,
+          "hideQuickInterval" : false
+        },
+        "history" : {
+          "historyType" : 0,
+          "interval" : 1000,
+          "timewindowMs" : 60000,
+          "fixedTimewindow" : null,
+          "quickInterval" : "CURRENT_DAY",
+          "hideInterval" : false,
+          "hideLastInterval" : false,
+          "hideFixedInterval" : false,
+          "hideQuickInterval" : false
+        },
+        "aggregation" : {
+          "type" : "AVG",
+          "limit" : 25000
+        },
+        "timezone" : null
+      },
+      "settings" : {
+        "stateControllerId" : "entity",
+        "showTitle" : false,
+        "showDashboardsSelect" : true,
+        "showEntitiesSelect" : true,
+        "showDashboardTimewindow" : true,
+        "showDashboardExport" : true,
+        "toolbarAlwaysOpen" : true
+      }
+    },
+    "name" : "Smart Rooms Monitor",
+    "resources" : null,
+    "assignedCustomers" : null,
+    "customerId" : null,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "DASHBOARD",
+      "id" : "6cea8f50-0ffd-11f1-a81e-23f77dda0f10"
+    },
+    "ownerId" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

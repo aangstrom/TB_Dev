@@ -109,6 +109,10 @@
       "toIndex" : 22,
       "type" : "interval2"
     }, {
+      "fromIndex" : 14,
+      "toIndex" : 24,
+      "type" : "actionID1"
+    }, {
       "fromIndex" : 16,
       "toIndex" : 15,
       "type" : "Success"
@@ -127,6 +131,10 @@
     }, {
       "fromIndex" : 22,
       "toIndex" : 21,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 24,
+      "toIndex" : 23,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 9,
@@ -731,6 +739,75 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 743,
+        "layoutY" : 881
+      },
+      "configuration" : {
+        "topicPattern" : "factory/line1/modbus/id/${mqtt}",
+        "host" : "aa8.aangstrom.it",
+        "port" : 1885,
+        "connectTimeoutSec" : 10,
+        "clientId" : "56492016581515",
+        "appendClientIdSuffix" : null,
+        "parseToPlainText" : true,
+        "cleanSession" : true,
+        "retainedMessage" : false,
+        "ssl" : false,
+        "protocolVersion" : "MQTT_3_1",
+        "credentials" : {
+          "type" : "basic",
+          "username" : "aangstrom",
+          "password" : "Sexten69!"
+        }
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "34777950-1e2e-11f1-a861-459f95d3c7a2"
+      },
+      "name" : "MQTT",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : true,
+      "type" : "org.thingsboard.rule.engine.mqtt.TbMqttNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 393,
+        "layoutY" : 890
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var newmsg = {};\r\nnewmsg.action = msg.actionID1;\r\n\r\nmetadata.mqtt = \"1/cmd\";\r\nreturn { msg: { action: msg.actionID1 }, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var newmsg = {};\r\n//newmsg = parseInt(msg.interval * 1000, 10);\r\nnewmsg = Math.floor(msg.interval * 1000);\r\n\r\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};\r\n"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "3477c770-1e2e-11f1-a861-459f95d3c7a2"
+      },
+      "name" : "interval",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },
@@ -746,7 +823,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 12049
+    "version" : 12159
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -759,7 +836,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 12047
+    "version" : 12157
   }, {
     "additionalInfo" : null,
     "from" : {

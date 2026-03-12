@@ -45,13 +45,58 @@
             "decimals" : 2,
             "datasources" : [ ],
             "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "e4850c83-ac99-517c-4af3-bc52980ba540"
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "9331f1f6-db6b-5ee9-f8d9-1ba9f42a5d65"
+        },
+        "4210f110-c160-3097-c349-6c914990a07d" : {
+          "typeFullFqn" : "system.control_widgets.round_switch",
+          "type" : "rpc",
+          "sizeX" : 2.5,
+          "sizeY" : 2,
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : false,
+            "backgroundColor" : "#e6e7e8",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "initialValue" : false,
+              "retrieveValueMethod" : "timeseries",
+              "valueKey" : "switch_closed",
+              "getValueMethod" : "getValue",
+              "parseValueFunction" : "return data ? true : false;",
+              "setValueMethod" : "setValue",
+              "convertValueFunction" : "return null;",
+              "requestTimeout" : 500,
+              "requestPersistent" : false,
+              "persistentPollingInterval" : 5000,
+              "title" : "Round switch"
+            },
+            "title" : "Round switch",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 2,
+            "datasources" : [ ],
+            "targetDevice" : {
               "type" : "device",
               "deviceId" : "c02bb370-896f-11f0-bb0f-799059dff0f8"
             }
           },
           "row" : 0,
           "col" : 0,
-          "id" : "9331f1f6-db6b-5ee9-f8d9-1ba9f42a5d65"
+          "id" : "4210f110-c160-3097-c349-6c914990a07d"
         }
       },
       "states" : {
@@ -66,6 +111,12 @@
                   "sizeY" : 7,
                   "row" : 0,
                   "col" : 0
+                },
+                "4210f110-c160-3097-c349-6c914990a07d" : {
+                  "sizeX" : 8,
+                  "sizeY" : 7,
+                  "row" : 0,
+                  "col" : 8
                 }
               },
               "gridSettings" : {
@@ -80,7 +131,32 @@
           }
         }
       },
-      "entityAliases" : { },
+      "entityAliases" : {
+        "e4850c83-ac99-517c-4af3-bc52980ba540" : {
+          "id" : "e4850c83-ac99-517c-4af3-bc52980ba540",
+          "alias" : "1",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "c02bb370-896f-11f0-bb0f-799059dff0f8"
+            }
+          }
+        },
+        "ad1718a1-6cfa-1002-177d-557f249c670e" : {
+          "id" : "ad1718a1-6cfa-1002-177d-557f249c670e",
+          "alias" : "2",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "d5221080-896f-11f0-bb0f-799059dff0f8"
+            }
+          }
+        }
+      },
       "filters" : { },
       "timewindow" : {
         "selectedTab" : 0,

@@ -7,7 +7,7 @@
     "configuration" : {
       "scriptLang" : "TBEL",
       "decoder" : null,
-      "tbelDecoder" : "// ---- Safe JSON parsing ----\r\nvar json = decodeToJson(payload);\r\nif (json == null) {\r\n  json = {};\r\n}\r\n\r\n// ---- Initialize containers ----\r\nvar telemetry = {};\r\nvar attributes = {}; // Reserved for future use\r\n\r\n// ---- CASE: switch_closed ----\r\n// Expected example:\r\n// {\"switch_closed\": true}\r\n// or\r\n// {\"switch_closed\": false}\r\nif (json.switch_closed != null) {\r\n  telemetry.switch1_closed = !!json.switch_closed;\r\n}\r\n\r\n// ---- Return in ThingsBoard format ----\r\nreturn {\r\n  deviceName: \"lab1 station1\",\r\n  deviceType: \"test\",\r\n  attributes: attributes,\r\n  telemetry: telemetry\r\n};",
+      "tbelDecoder" : "// ---- Safe JSON parsing ----\r\nvar json = decodeToJson(payload);\r\nif (json == null) {\r\n  json = {};\r\n}\r\n\r\n// ---- Initialize containers ----\r\nvar telemetry = {};\r\nvar attributes = {}; // Reserved for future use\r\n\r\n// ---- CASE: switch_closed ----\r\n// Expected example:\r\n// {\"switch_closed\": true}\r\n// or\r\n// {\"switch_closed\": false}\r\nif (json.switch_closed != null) {\r\n  attributes.switch1_closed = !!json.switch_closed;\r\n}\r\n\r\n// ---- Return in ThingsBoard format ----\r\nreturn {\r\n  deviceName: \"lab1 station1\",\r\n  deviceType: \"test\",\r\n  attributes: attributes,\r\n  telemetry: telemetry\r\n};",
       "encoder" : null,
       "tbelEncoder" : null,
       "updateOnlyKeys" : [ "manufacturer" ]

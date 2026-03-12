@@ -7,18 +7,10 @@
     "configuration" : {
       "scriptLang" : "TBEL",
       "decoder" : null,
-      "tbelDecoder" : "// ---- Safe JSON parsing ----\r\nvar json = decodeToJson(payload);\r\nif (json == null) {\r\n  json = {};\r\n}\r\n\r\n// ---- Initialize containers ----\r\nvar telemetry = {};\r\nvar attributes = {}; // Reserved for future use\r\n\r\n// ---- Copy all expected fields into telemetry ----\r\nif (json.slave_id != null) {\r\n  telemetry.slave_id = Number(json.slave_id);\r\n}\r\n\r\nif (json.switch_closed != null) {\r\n  telemetry.switch_closed = !!json.switch_closed;\r\n}\r\n\r\nif (json.fault_status != null) {\r\n  telemetry.fault_status = Number(json.fault_status);\r\n}\r\n\r\nif (json.alarm_status != null) {\r\n  telemetry.alarm_status = Number(json.alarm_status);\r\n}\r\n\r\nif (json.l1_current_a != null) {\r\n  telemetry.l1_current_a = Number(json.l1_current_a);\r\n}\r\n\r\nif (json.l1_voltage_v != null) {\r\n  telemetry.l1_voltage_v = Number(json.l1_voltage_v);\r\n}\r\n\r\nif (json.power_factor != null) {\r\n  telemetry.power_factor = Number(json.power_factor);\r\n}\r\n\r\n// ---- Return in ThingsBoard format ----\r\nreturn {\r\n  deviceName: \"lab1 station1\",\r\n  deviceType: \"test\",\r\n  attributes: attributes,\r\n  telemetry: telemetry\r\n};",
+      "tbelDecoder" : "// ---- Safe JSON parsing ----\r\nvar json = decodeToJson(payload);\r\nif (json == null) {\r\n  json = {};\r\n}\r\n\r\n// ---- Initialize containers ----\r\nvar telemetry = {};\r\nvar attributes = {}; // Reserved for future use\r\n\r\n// ---- Copy all expected fields into telemetry ----\r\nif (json.slave_id != null) {\r\n  telemetry.slave_id = Number(json.slave_id);\r\n}\r\n\r\nif (json.switch_closed != null) {\r\n  telemetry.switch_closed = !!json.switch_closed;\r\n}\r\n\r\nif (json.fault_status != null) {\r\n  telemetry.fault_status = Number(json.fault_status);\r\n}\r\n\r\nif (json.alarm_status != null) {\r\n  telemetry.alarm_status = Number(json.alarm_status);\r\n}\r\n\r\nif (json.l1_current_a != null) {\r\n  telemetry.l1_current_a = Number(json.l1_current_a);\r\n}\r\n\r\nif (json.l1_voltage_v != null) {\r\n  telemetry.l1_voltage_v = Number(json.l1_voltage_v);\r\n}\r\n\r\nif (json.power_factor != null) {\r\n  telemetry.power_factor = Number(json.power_factor);\r\n}\r\n\r\n// ---- Return in ThingsBoard format ----\r\nreturn {\r\n  deviceName: \"lab1 station2\",\r\n  deviceType: \"test\",\r\n  attributes: attributes,\r\n  telemetry: telemetry\r\n};",
       "encoder" : null,
       "tbelEncoder" : null,
-      "updateOnlyKeys" : [ "manufacturer" ],
-      "type" : "DEVICE",
-      "name" : "",
-      "profile" : "",
-      "label" : "",
-      "customer" : "",
-      "group" : "",
-      "telemetry" : null,
-      "attributes" : null
+      "updateOnlyKeys" : [ "manufacturer" ]
     },
     "converterVersion" : 1,
     "debugMode" : false,
@@ -34,7 +26,7 @@
       "id" : "eae83d50-1e33-11f1-a861-459f95d3c7a2"
     },
     "integrationType" : "MQTT",
-    "name" : "Uplink data converter for MQTT integration",
+    "name" : "Uplink data converter switch 2",
     "type" : "UPLINK"
   },
   "relations" : [ ],

@@ -465,7 +465,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(msg.interval1!=null) {\n    return ['interval1', 'true'];\n}if(msg.interval2!=null) {\n    return ['interval2', 'true'];\n}if(msg.ventola!=null) {\n    return ['ventola', 'true'];\n}if(msg.riscaldante!=null) {\n    return ['riscaldante', 'true'];\n}if(msg.reset!=null) {\n    return ['reset', 'true'];\n}\nif(msg.switch1_closed!=null) {\n    return ['switch1_closed', 'true'];\n}else{\n    return ['false']\n}\nreturn nextRelation(metadata, msg);"
+        "tbelScript" : "if(msg.interval1!=null) {\n    return ['interval1', 'true'];\n}if(msg.interval2!=null) {\n    return ['interval2', 'true'];\n}if(msg.ventola!=null) {\n    return ['ventola', 'true'];\n}if(msg.riscaldante!=null) {\n    return ['riscaldante', 'true'];\n}if(msg.reset!=null) {\n    return ['reset', 'true'];\n}\nif(msg.switch1_closed!=null) {\n    return ['switch1_closed', 'true'];\n}if(msg.switch2_closed!=null) {\n    return ['switch2_closed', 'true'];\n}else{\n    return ['false']\n}\nreturn nextRelation(metadata, msg);"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -823,7 +823,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 13391
+    "version" : 13503
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -836,7 +836,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 13389
+    "version" : 13501
   }, {
     "additionalInfo" : null,
     "from" : {

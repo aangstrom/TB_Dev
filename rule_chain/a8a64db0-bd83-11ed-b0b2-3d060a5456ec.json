@@ -788,7 +788,7 @@
       },
       "configuration" : {
         "scriptLang" : "JS",
-        "jsScript" : "metadata.mqtt = \"cmd\";\r\nreturn { msg: { action: msg.actionID1 }, metadata: metadata, msgType: msgType };",
+        "jsScript" : "metadata.mqtt = \"cmd\";\r\nreturn { msg: { \"action\": msg.actionID1 }, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var newmsg = {};\r\n//newmsg = parseInt(msg.interval * 1000, 10);\r\nnewmsg = Math.floor(msg.interval * 1000);\r\n\r\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};\r\n"
       },
       "configurationVersion" : 0,
@@ -823,7 +823,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 13055
+    "version" : 13167
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -836,7 +836,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 13053
+    "version" : 13165
   }, {
     "additionalInfo" : null,
     "from" : {

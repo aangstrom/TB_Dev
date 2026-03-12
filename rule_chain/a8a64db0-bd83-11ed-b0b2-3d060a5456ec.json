@@ -113,6 +113,10 @@
       "toIndex" : 24,
       "type" : "switch1_closed"
     }, {
+      "fromIndex" : 14,
+      "toIndex" : 25,
+      "type" : "switch2_closed"
+    }, {
       "fromIndex" : 16,
       "toIndex" : 15,
       "type" : "Success"
@@ -134,6 +138,10 @@
       "type" : "Success"
     }, {
       "fromIndex" : 24,
+      "toIndex" : 23,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 25,
       "toIndex" : 23,
       "type" : "Success"
     } ],
@@ -808,6 +816,34 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 391,
+        "layoutY" : 945
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "metadata.mqtt = \"2/cmd\";\r\nreturn { msg: { \"action\": msg.switch2_closed }, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var newmsg = {};\r\n//newmsg = parseInt(msg.interval * 1000, 10);\r\nnewmsg = Math.floor(msg.interval * 1000);\r\n\r\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};\r\n"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9a44bc30-1e32-11f1-a861-459f95d3c7a2"
+      },
+      "name" : "interval",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     } ],
     "ruleChainConnections" : null
   },
@@ -823,7 +859,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 13503
+    "version" : 13616
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -836,7 +872,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 13501
+    "version" : 13614
   }, {
     "additionalInfo" : null,
     "from" : {

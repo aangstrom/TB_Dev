@@ -111,7 +111,7 @@
     }, {
       "fromIndex" : 14,
       "toIndex" : 24,
-      "type" : "actionID1"
+      "type" : "switch1_closed"
     }, {
       "fromIndex" : 16,
       "toIndex" : 15,
@@ -788,7 +788,7 @@
       },
       "configuration" : {
         "scriptLang" : "JS",
-        "jsScript" : "var newmsg = {};\r\nnewmsg.action = msg.actionID1;\r\n\r\nmetadata.mqtt = \"1/cmd\";\r\nreturn { msg: { action: msg.actionID1 }, metadata: metadata, msgType: msgType };",
+        "jsScript" : "var newmsg = {};\r\nnewmsg.action = msg.switch1_closed;\r\n\r\nmetadata.mqtt = \"1/cmd\";\r\nreturn { msg: { action: msg.actionID1 }, metadata: metadata, msgType: msgType };",
         "tbelScript" : "var newmsg = {};\r\n//newmsg = parseInt(msg.interval * 1000, 10);\r\nnewmsg = Math.floor(msg.interval * 1000);\r\n\r\nreturn {msg: newmsg, metadata: metadata, msgType: msgType};\r\n"
       },
       "configurationVersion" : 0,
@@ -823,7 +823,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 12159
+    "version" : 12271
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -836,7 +836,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 12157
+    "version" : 12269
   }, {
     "additionalInfo" : null,
     "from" : {

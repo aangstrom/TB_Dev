@@ -703,6 +703,159 @@
           "row" : 0,
           "col" : 0,
           "id" : "004b68e6-95ec-2f99-108b-547b5bd7e372"
+        },
+        "5ba6740e-ff60-a964-08a2-8e2c627cf12c" : {
+          "typeFullFqn" : "system.simple_power_consumption_chart_card",
+          "type" : "timeseries",
+          "sizeX" : 4.5,
+          "sizeY" : 2,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "e4850c83-ac99-517c-4af3-bc52980ba540",
+              "dataKeys" : [ {
+                "name" : "l1_voltage_v",
+                "type" : "timeseries",
+                "label" : "l1_voltage_v",
+                "color" : "rgba(0, 0, 0, 0.87)",
+                "settings" : { }
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ {
+                "name" : "l1_voltage_v",
+                "type" : "timeseries",
+                "label" : "Latest",
+                "color" : "rgba(0, 0, 0, 0.87)",
+                "settings" : { },
+                "units" : null,
+                "decimals" : null
+              } ]
+            } ],
+            "showTitle" : true,
+            "backgroundColor" : "rgba(0, 0, 0, 0)",
+            "color" : null,
+            "padding" : "0px",
+            "settings" : {
+              "layout" : "left",
+              "autoScale" : true,
+              "showValue" : true,
+              "valueFont" : {
+                "family" : "Roboto",
+                "size" : 28,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "500",
+                "lineHeight" : "32px"
+              },
+              "valueColor" : {
+                "type" : "range",
+                "color" : "rgba(0, 0, 0, 0.87)",
+                "gradient" : {
+                  "advancedMode" : false,
+                  "gradient" : [ "rgba(0, 255, 0, 1)", "rgba(255, 0, 0, 1)" ],
+                  "gradientAdvanced" : [ {
+                    "source" : {
+                      "type" : "constant"
+                    },
+                    "color" : "rgba(0, 255, 0, 1)"
+                  }, {
+                    "source" : {
+                      "type" : "constant"
+                    },
+                    "color" : "rgba(255, 0, 0, 1)"
+                  } ],
+                  "minValue" : 0,
+                  "maxValue" : 100
+                },
+                "rangeList" : {
+                  "advancedMode" : false,
+                  "range" : [ {
+                    "from" : 0,
+                    "to" : 210,
+                    "color" : "rgb(67, 91, 99)"
+                  }, {
+                    "from" : 210,
+                    "to" : 260,
+                    "color" : "#3FA71A"
+                  }, {
+                    "from" : 260,
+                    "to" : 300,
+                    "color" : "#F36900"
+                  }, {
+                    "from" : 300,
+                    "to" : null,
+                    "color" : "#D81838"
+                  } ],
+                  "rangeAdvanced" : [ ]
+                },
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "background" : {
+                "type" : "color",
+                "imageUrl" : null,
+                "color" : "#FFFFFF00",
+                "overlay" : {
+                  "enabled" : false,
+                  "color" : "rgba(255,255,255,0.72)",
+                  "blur" : 3
+                }
+              },
+              "padding" : "12px"
+            },
+            "title" : "Voltaggio1",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "titleStyle" : null,
+            "mobileHeight" : null,
+            "configMode" : "basic",
+            "actions" : { },
+            "showTitleIcon" : true,
+            "titleIcon" : "bolt",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "titleFont" : {
+              "size" : 16,
+              "sizeUnit" : "px",
+              "family" : "Roboto",
+              "weight" : "500",
+              "style" : "normal",
+              "lineHeight" : "24px"
+            },
+            "iconSize" : "18px",
+            "titleTooltip" : "",
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "useDashboardTimewindow" : true,
+            "decimals" : 1,
+            "titleColor" : "rgba(0, 0, 0, 0.87)",
+            "borderRadius" : "25px",
+            "units" : "V",
+            "margin" : "0px",
+            "enableDataExport" : false,
+            "timewindowStyle" : {
+              "showIcon" : false,
+              "iconSize" : "24px",
+              "icon" : "query_builder",
+              "iconPosition" : "left",
+              "font" : {
+                "size" : 12,
+                "sizeUnit" : "px",
+                "family" : "Roboto",
+                "weight" : "400",
+                "style" : "normal",
+                "lineHeight" : "16px"
+              },
+              "color" : "rgba(0, 0, 0, 0.38)",
+              "displayTypePrefix" : true
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "5ba6740e-ff60-a964-08a2-8e2c627cf12c"
         }
       },
       "states" : {
@@ -737,6 +890,13 @@
                   "mobileHeight" : null,
                   "row" : 2,
                   "col" : 4
+                },
+                "5ba6740e-ff60-a964-08a2-8e2c627cf12c" : {
+                  "sizeX" : 4,
+                  "sizeY" : 2,
+                  "mobileHeight" : null,
+                  "row" : 4,
+                  "col" : 0
                 }
               },
               "gridSettings" : {

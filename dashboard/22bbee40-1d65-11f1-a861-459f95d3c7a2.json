@@ -2254,6 +2254,223 @@
           "row" : 0,
           "col" : 0,
           "id" : "356ba937-b52d-2def-2970-20ff3209f5f3"
+        },
+        "6cc8f9d5-0279-3cf0-fe8a-6eefaa22812e" : {
+          "typeFullFqn" : "system.indoor_horizontal_temperature_card",
+          "type" : "latest",
+          "sizeX" : 5,
+          "sizeY" : 1,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "ad1718a1-6cfa-1002-177d-557f249c670e",
+              "dataKeys" : [ {
+                "name" : "last_event",
+                "type" : "timeseries",
+                "label" : "Ultimo evento: ",
+                "color" : "#2196f3",
+                "settings" : { },
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "var eventName = \"Evento sconosciuto\";\r\n\r\nswitch (value) {\r\n    case 0:\r\n        eventName = \"Nessun evento\";\r\n        break;\r\n    case 1:\r\n        eventName = \"Apertura manuale\";\r\n        break;\r\n    case 2:\r\n        eventName = \"Apertura remota\";\r\n        break;\r\n    case 3:\r\n        eventName = \"Apertura per sovratensione\";\r\n        break;\r\n    case 4:\r\n        eventName = \"Apertura per sottotensione\";\r\n        break;\r\n    case 5:\r\n        eventName = \"Apertura per mancanza fase\";\r\n        break;\r\n    case 6:\r\n        eventName = \"Apertura per sovraccarico\";\r\n        break;\r\n    case 7:\r\n        eventName = \"Apertura per cortocircuito\";\r\n        break;\r\n    case 8:\r\n        eventName = \"Apertura per sovrafrequenza\";\r\n        break;\r\n    case 9:\r\n        eventName = \"Apertura per sottofrequenza\";\r\n        break;\r\n    case 10:\r\n        eventName = \"Apertura per sovratemperatura\";\r\n        break;\r\n    case 11:\r\n        eventName = \"Apertura per dispersione\";\r\n        break;\r\n    case 12:\r\n        eventName = \"Scatto di prova da pulsante\";\r\n        break;\r\n    case 13:\r\n        eventName = \"Scatto di prova remoto\";\r\n        break;\r\n    case 100:\r\n        eventName = \"Chiusura manuale\";\r\n        break;\r\n    case 101:\r\n        eventName = \"Chiusura remota\";\r\n        break;\r\n    case 102:\r\n        eventName = \"Richiusura automatica\";\r\n        break;\r\n    default:\r\n        eventName = \"Evento sconosciuto (\" + value + \")\";\r\n}\r\n\r\nreturn eventName;"
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "showTitle" : false,
+            "backgroundColor" : "rgba(0, 0, 0, 0)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "labelPosition" : "top",
+              "layout" : "horizontal",
+              "showLabel" : true,
+              "labelFont" : {
+                "family" : "Roboto",
+                "size" : 16,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "500"
+              },
+              "labelColor" : {
+                "type" : "constant",
+                "color" : "rgba(0, 0, 0, 0.87)",
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "showIcon" : true,
+              "iconSize" : 40,
+              "iconSizeUnit" : "px",
+              "icon" : "history",
+              "iconColor" : {
+                "type" : "constant",
+                "color" : "rgba(0, 0, 0, 0.87)",
+                "gradient" : {
+                  "advancedMode" : false,
+                  "gradient" : [ "rgba(0, 255, 0, 1)", "rgba(255, 0, 0, 1)" ],
+                  "gradientAdvanced" : [ {
+                    "source" : {
+                      "type" : "constant"
+                    },
+                    "color" : "rgba(0, 255, 0, 1)"
+                  }, {
+                    "source" : {
+                      "type" : "constant"
+                    },
+                    "color" : "rgba(255, 0, 0, 1)"
+                  } ],
+                  "minValue" : 0,
+                  "maxValue" : 100
+                },
+                "rangeList" : {
+                  "advancedMode" : false,
+                  "range" : [ {
+                    "from" : null,
+                    "to" : 18,
+                    "color" : "#234CC7"
+                  }, {
+                    "from" : 18,
+                    "to" : 24,
+                    "color" : "#3FA71A"
+                  }, {
+                    "from" : 24,
+                    "to" : null,
+                    "color" : "#D81838"
+                  } ]
+                },
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "valueFont" : {
+                "size" : 36,
+                "sizeUnit" : "px",
+                "family" : "Roboto",
+                "weight" : "500",
+                "style" : "normal"
+              },
+              "valueColor" : {
+                "type" : "constant",
+                "color" : "rgba(0, 0, 0, 0.87)",
+                "gradient" : {
+                  "advancedMode" : false,
+                  "gradient" : [ "rgba(0, 255, 0, 1)", "rgba(255, 0, 0, 1)" ],
+                  "gradientAdvanced" : [ {
+                    "source" : {
+                      "type" : "constant"
+                    },
+                    "color" : "rgba(0, 255, 0, 1)"
+                  }, {
+                    "source" : {
+                      "type" : "constant"
+                    },
+                    "color" : "rgba(255, 0, 0, 1)"
+                  } ],
+                  "minValue" : 0,
+                  "maxValue" : 100
+                },
+                "rangeList" : {
+                  "advancedMode" : false,
+                  "range" : [ {
+                    "from" : null,
+                    "to" : 18,
+                    "color" : "#234CC7"
+                  }, {
+                    "from" : 18,
+                    "to" : 24,
+                    "color" : "#3FA71A"
+                  }, {
+                    "from" : 24,
+                    "to" : null,
+                    "color" : "#D81838"
+                  } ]
+                },
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "showDate" : true,
+              "dateFormat" : {
+                "format" : null,
+                "lastUpdateAgo" : true,
+                "custom" : false
+              },
+              "dateFont" : {
+                "family" : "Roboto",
+                "size" : 12,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "500"
+              },
+              "dateColor" : {
+                "type" : "constant",
+                "color" : "rgba(0, 0, 0, 0.38)",
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "background" : {
+                "type" : "color",
+                "imageUrl" : null,
+                "color" : "#FFFFFF00",
+                "overlay" : {
+                  "enabled" : false,
+                  "color" : "rgba(255,255,255,0.72)",
+                  "blur" : 3
+                }
+              },
+              "autoScale" : true,
+              "padding" : ""
+            },
+            "title" : "Horizontal temperature card",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "units" : null,
+            "decimals" : 0,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "configMode" : "basic",
+            "margin" : "0px",
+            "borderRadius" : "15px",
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleFont" : {
+              "size" : 12,
+              "sizeUnit" : "px",
+              "family" : null,
+              "weight" : null,
+              "style" : null,
+              "lineHeight" : "1.6"
+            },
+            "titleIcon" : "",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "14px",
+            "enableDataExport" : false,
+            "timewindowStyle" : {
+              "showIcon" : true,
+              "iconSize" : "14px",
+              "icon" : "query_builder",
+              "iconPosition" : "left",
+              "font" : {
+                "size" : 12,
+                "sizeUnit" : "px",
+                "family" : null,
+                "weight" : null,
+                "style" : null,
+                "lineHeight" : "1"
+              },
+              "color" : null
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "6cc8f9d5-0279-3cf0-fe8a-6eefaa22812e"
         }
       },
       "states" : {
@@ -2279,42 +2496,42 @@
                   "sizeX" : 6,
                   "sizeY" : 2,
                   "mobileHeight" : null,
-                  "row" : 2,
+                  "row" : 3,
                   "col" : 0
                 },
                 "004b68e6-95ec-2f99-108b-547b5bd7e372" : {
                   "sizeX" : 6,
                   "sizeY" : 2,
                   "mobileHeight" : null,
-                  "row" : 2,
+                  "row" : 3,
                   "col" : 13
                 },
                 "5ba6740e-ff60-a964-08a2-8e2c627cf12c" : {
                   "sizeX" : 6,
                   "sizeY" : 2,
                   "mobileHeight" : null,
-                  "row" : 4,
+                  "row" : 5,
                   "col" : 0
                 },
                 "5a6f7d63-6a65-de4f-ea2b-7a5f593d821c" : {
                   "sizeX" : 6,
                   "sizeY" : 2,
                   "mobileHeight" : null,
-                  "row" : 4,
+                  "row" : 5,
                   "col" : 13
                 },
                 "088362c2-1745-d602-8431-2242b5069886" : {
                   "sizeX" : 6,
                   "sizeY" : 2,
                   "mobileHeight" : null,
-                  "row" : 4,
+                  "row" : 5,
                   "col" : 6
                 },
                 "a0156c0a-92f9-a7bd-e0b9-a31ce846f337" : {
                   "sizeX" : 6,
                   "sizeY" : 2,
                   "mobileHeight" : null,
-                  "row" : 4,
+                  "row" : 5,
                   "col" : 19
                 },
                 "7609b3b2-1569-5899-d8a9-2c422b69154a" : {
@@ -2333,21 +2550,27 @@
                   "sizeX" : 6,
                   "sizeY" : 2,
                   "mobileHeight" : null,
-                  "row" : 2,
+                  "row" : 3,
                   "col" : 6
                 },
                 "9478d569-05b6-5456-2aee-861a52415532" : {
                   "sizeX" : 6,
                   "sizeY" : 2,
                   "mobileHeight" : null,
-                  "row" : 2,
+                  "row" : 3,
                   "col" : 19
                 },
                 "356ba937-b52d-2def-2970-20ff3209f5f3" : {
                   "sizeX" : 7,
                   "sizeY" : 1,
-                  "row" : 8,
-                  "col" : 1
+                  "row" : 2,
+                  "col" : 2
+                },
+                "6cc8f9d5-0279-3cf0-fe8a-6eefaa22812e" : {
+                  "sizeX" : 7,
+                  "sizeY" : 1,
+                  "row" : 2,
+                  "col" : 15
                 }
               },
               "gridSettings" : {

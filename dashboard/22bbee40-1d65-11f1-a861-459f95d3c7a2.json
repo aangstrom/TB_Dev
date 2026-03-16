@@ -2487,7 +2487,13 @@
                 "type" : "timeseries",
                 "label" : "Stato allarme: ",
                 "color" : "#2196f3",
-                "settings" : { }
+                "settings" : { },
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "var faultName = \"Guasto sconosciuto\";\r\n\r\nswitch (value) {\r\n    case 0:\r\n        faultName = 0;\r\n        break;\r\n    case 1:\r\n        faultName = \"Sovratensione\";\r\n        break;\r\n    case 2:\r\n        faultName = \"Sottotensione\";\r\n        break;\r\n    case 4:\r\n        faultName = \"Dispersione\";\r\n        break;\r\n    case 8:\r\n        faultName = \"Sovraccarico\";\r\n        break;\r\n    case 16:\r\n        faultName = \"Riservato\";\r\n        break;\r\n    case 32:\r\n        faultName = \"Temperatura\";\r\n        break;\r\n    case 64:\r\n        faultName = \"Mancanza fase\";\r\n        break;\r\n    case 128:\r\n        faultName = \"Sovrafrequenza\";\r\n        break;\r\n    case 256:\r\n        faultName = \"Sottofrequenza\";\r\n        break;\r\n    case 512:\r\n        faultName = \"Riservato\";\r\n        break;\r\n    default:\r\n        faultName = \"Guasto sconosciuto (\" + value + \")\";\r\n}\r\n\r\nreturn faultName;"
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]

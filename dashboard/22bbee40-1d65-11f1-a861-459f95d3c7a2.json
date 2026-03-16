@@ -2909,7 +2909,13 @@
                 "type" : "timeseries",
                 "label" : "Stato guasto: ",
                 "color" : "#2196f3",
-                "settings" : { }
+                "settings" : { },
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "var faultName = \"Guasto sconosciuto\";\r\n\r\nswitch (value) {\r\n    case 1:\r\n        faultName = \"Sovratensione\";\r\n        break;\r\n    case 2:\r\n        faultName = \"Sottotensione\";\r\n        break;\r\n    case 4:\r\n        faultName = \"Dispersione\";\r\n        break;\r\n    case 8:\r\n        faultName = \"Sovraccarico\";\r\n        break;\r\n    case 16:\r\n        faultName = \"Riservato\";\r\n        break;\r\n    case 32:\r\n        faultName = \"Temperatura\";\r\n        break;\r\n    case 64:\r\n        faultName = \"Mancanza fase\";\r\n        break;\r\n    case 128:\r\n        faultName = \"Sovrafrequenza\";\r\n        break;\r\n    case 256:\r\n        faultName = \"Sottofrequenza\";\r\n        break;\r\n    case 512:\r\n        faultName = \"Riservato\";\r\n        break;\r\n    case 1024:\r\n        faultName = \"Scatto di prova da pulsante\";\r\n        break;\r\n    case 2048:\r\n        faultName = \"Scatto di prova remoto\";\r\n        break;\r\n    default:\r\n        faultName = \"Guasto sconosciuto (\" + value + \")\";\r\n}\r\n\r\nreturn faultName;"
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -3105,7 +3111,7 @@
           "col" : 0,
           "id" : "c0995ecc-5282-41cc-935c-54fb46ddaa0b"
         },
-        "171f1466-2386-ac1d-ec48-63865582ad5c" : {
+        "db40f4ca-c124-6714-41f5-fb2c5fad1e43" : {
           "typeFullFqn" : "system.indoor_horizontal_temperature_card",
           "type" : "latest",
           "sizeX" : 5,
@@ -3114,13 +3120,19 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : "",
-              "entityAliasId" : "e4850c83-ac99-517c-4af3-bc52980ba540",
+              "entityAliasId" : "ad1718a1-6cfa-1002-177d-557f249c670e",
               "dataKeys" : [ {
                 "name" : "fault_status",
                 "type" : "timeseries",
                 "label" : "Stato guasto: ",
                 "color" : "#2196f3",
-                "settings" : { }
+                "settings" : { },
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "var faultName = \"Guasto sconosciuto\";\r\n\r\nswitch (value) {\r\n    case 0:\r\n        faultName = 0;\r\n        break;\r\n    case 1:\r\n        faultName = \"Sovratensione\";\r\n        break;\r\n    case 2:\r\n        faultName = \"Sottotensione\";\r\n        break;\r\n    case 4:\r\n        faultName = \"Dispersione\";\r\n        break;\r\n    case 8:\r\n        faultName = \"Sovraccarico\";\r\n        break;\r\n    case 16:\r\n        faultName = \"Riservato\";\r\n        break;\r\n    case 32:\r\n        faultName = \"Temperatura\";\r\n        break;\r\n    case 64:\r\n        faultName = \"Mancanza fase\";\r\n        break;\r\n    case 128:\r\n        faultName = \"Sovrafrequenza\";\r\n        break;\r\n    case 256:\r\n        faultName = \"Sottofrequenza\";\r\n        break;\r\n    case 512:\r\n        faultName = \"Riservato\";\r\n        break;\r\n    case 1024:\r\n        faultName = \"Scatto di prova da pulsante\";\r\n        break;\r\n    case 2048:\r\n        faultName = \"Scatto di prova remoto\";\r\n        break;\r\n    default:\r\n        faultName = \"Guasto sconosciuto (\" + value + \")\";\r\n}\r\n\r\nreturn faultName;"
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -3314,7 +3326,7 @@
           },
           "row" : 0,
           "col" : 0,
-          "id" : "171f1466-2386-ac1d-ec48-63865582ad5c"
+          "id" : "db40f4ca-c124-6714-41f5-fb2c5fad1e43"
         }
       },
       "states" : {
@@ -3417,28 +3429,28 @@
                   "col" : 15
                 },
                 "047e6234-fb6f-876b-b8c3-0addc877c68e" : {
-                  "sizeX" : 6,
+                  "sizeX" : 7,
                   "sizeY" : 1,
                   "row" : 7,
-                  "col" : 0
+                  "col" : 2
                 },
                 "f1e5fcda-1267-ef27-dfa0-212e737ca3b8" : {
-                  "sizeX" : 6,
+                  "sizeX" : 7,
                   "sizeY" : 1,
                   "row" : 7,
-                  "col" : 13
+                  "col" : 15
                 },
                 "c0995ecc-5282-41cc-935c-54fb46ddaa0b" : {
-                  "sizeX" : 6,
+                  "sizeX" : 7,
                   "sizeY" : 1,
-                  "row" : 7,
-                  "col" : 6
+                  "row" : 8,
+                  "col" : 2
                 },
-                "171f1466-2386-ac1d-ec48-63865582ad5c" : {
-                  "sizeX" : 6,
+                "db40f4ca-c124-6714-41f5-fb2c5fad1e43" : {
+                  "sizeX" : 7,
                   "sizeY" : 1,
-                  "row" : 7,
-                  "col" : 19
+                  "row" : 8,
+                  "col" : 15
                 }
               },
               "gridSettings" : {

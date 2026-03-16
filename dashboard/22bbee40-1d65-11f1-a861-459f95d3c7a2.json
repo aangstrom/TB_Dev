@@ -2689,217 +2689,6 @@
           "col" : 0,
           "id" : "047e6234-fb6f-876b-b8c3-0addc877c68e"
         },
-        "f1e5fcda-1267-ef27-dfa0-212e737ca3b8" : {
-          "typeFullFqn" : "system.indoor_horizontal_temperature_card",
-          "type" : "latest",
-          "sizeX" : 5,
-          "sizeY" : 1,
-          "config" : {
-            "datasources" : [ {
-              "type" : "entity",
-              "name" : "",
-              "entityAliasId" : "ad1718a1-6cfa-1002-177d-557f249c670e",
-              "dataKeys" : [ {
-                "name" : "alarm_status",
-                "type" : "timeseries",
-                "label" : "Stato allarme: ",
-                "color" : "#2196f3",
-                "settings" : { }
-              } ],
-              "alarmFilterConfig" : {
-                "statusList" : [ "ACTIVE" ]
-              }
-            } ],
-            "showTitle" : false,
-            "backgroundColor" : "rgba(0, 0, 0, 0)",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "labelPosition" : "top",
-              "layout" : "horizontal",
-              "showLabel" : true,
-              "labelFont" : {
-                "family" : "Roboto",
-                "size" : 16,
-                "sizeUnit" : "px",
-                "style" : "normal",
-                "weight" : "500"
-              },
-              "labelColor" : {
-                "type" : "constant",
-                "color" : "rgba(0, 0, 0, 0.87)",
-                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
-              },
-              "showIcon" : true,
-              "iconSize" : 40,
-              "iconSizeUnit" : "px",
-              "icon" : "mdi:alarm-light",
-              "iconColor" : {
-                "type" : "constant",
-                "color" : "rgba(0, 0, 0, 0.87)",
-                "gradient" : {
-                  "advancedMode" : false,
-                  "gradient" : [ "rgba(0, 255, 0, 1)", "rgba(255, 0, 0, 1)" ],
-                  "gradientAdvanced" : [ {
-                    "source" : {
-                      "type" : "constant"
-                    },
-                    "color" : "rgba(0, 255, 0, 1)"
-                  }, {
-                    "source" : {
-                      "type" : "constant"
-                    },
-                    "color" : "rgba(255, 0, 0, 1)"
-                  } ],
-                  "minValue" : 0,
-                  "maxValue" : 100
-                },
-                "rangeList" : {
-                  "advancedMode" : false,
-                  "range" : [ {
-                    "from" : null,
-                    "to" : 18,
-                    "color" : "#234CC7"
-                  }, {
-                    "from" : 18,
-                    "to" : 24,
-                    "color" : "#3FA71A"
-                  }, {
-                    "from" : 24,
-                    "to" : null,
-                    "color" : "#D81838"
-                  } ]
-                },
-                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
-              },
-              "valueFont" : {
-                "size" : 36,
-                "sizeUnit" : "px",
-                "family" : "Roboto",
-                "weight" : "500",
-                "style" : "normal"
-              },
-              "valueColor" : {
-                "type" : "constant",
-                "color" : "rgba(0, 0, 0, 0.87)",
-                "gradient" : {
-                  "advancedMode" : false,
-                  "gradient" : [ "rgba(0, 255, 0, 1)", "rgba(255, 0, 0, 1)" ],
-                  "gradientAdvanced" : [ {
-                    "source" : {
-                      "type" : "constant"
-                    },
-                    "color" : "rgba(0, 255, 0, 1)"
-                  }, {
-                    "source" : {
-                      "type" : "constant"
-                    },
-                    "color" : "rgba(255, 0, 0, 1)"
-                  } ],
-                  "minValue" : 0,
-                  "maxValue" : 100
-                },
-                "rangeList" : {
-                  "advancedMode" : false,
-                  "range" : [ {
-                    "from" : null,
-                    "to" : 18,
-                    "color" : "#234CC7"
-                  }, {
-                    "from" : 18,
-                    "to" : 24,
-                    "color" : "#3FA71A"
-                  }, {
-                    "from" : 24,
-                    "to" : null,
-                    "color" : "#D81838"
-                  } ]
-                },
-                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
-              },
-              "showDate" : true,
-              "dateFormat" : {
-                "format" : null,
-                "lastUpdateAgo" : true,
-                "custom" : false
-              },
-              "dateFont" : {
-                "family" : "Roboto",
-                "size" : 12,
-                "sizeUnit" : "px",
-                "style" : "normal",
-                "weight" : "500"
-              },
-              "dateColor" : {
-                "type" : "constant",
-                "color" : "rgba(0, 0, 0, 0.38)",
-                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
-              },
-              "background" : {
-                "type" : "color",
-                "imageUrl" : null,
-                "color" : "#FFFFFF00",
-                "overlay" : {
-                  "enabled" : false,
-                  "color" : "rgba(255,255,255,0.72)",
-                  "blur" : 3
-                }
-              },
-              "autoScale" : true,
-              "padding" : ""
-            },
-            "title" : "Horizontal temperature card",
-            "dropShadow" : true,
-            "enableFullscreen" : false,
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "units" : null,
-            "decimals" : 0,
-            "showLegend" : false,
-            "widgetStyle" : { },
-            "actions" : { },
-            "configMode" : "basic",
-            "margin" : "0px",
-            "borderRadius" : "15px",
-            "widgetCss" : "",
-            "pageSize" : 1024,
-            "noDataDisplayMessage" : "",
-            "showTitleIcon" : false,
-            "titleTooltip" : "",
-            "titleFont" : {
-              "size" : 12,
-              "sizeUnit" : "px",
-              "family" : null,
-              "weight" : null,
-              "style" : null,
-              "lineHeight" : "1.6"
-            },
-            "titleIcon" : "",
-            "iconColor" : "rgba(0, 0, 0, 0.87)",
-            "iconSize" : "14px",
-            "enableDataExport" : false,
-            "timewindowStyle" : {
-              "showIcon" : true,
-              "iconSize" : "14px",
-              "icon" : "query_builder",
-              "iconPosition" : "left",
-              "font" : {
-                "size" : 12,
-                "sizeUnit" : "px",
-                "family" : null,
-                "weight" : null,
-                "style" : null,
-                "lineHeight" : "1"
-              },
-              "color" : null
-            }
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "f1e5fcda-1267-ef27-dfa0-212e737ca3b8"
-        },
         "c0995ecc-5282-41cc-935c-54fb46ddaa0b" : {
           "typeFullFqn" : "system.indoor_horizontal_temperature_card",
           "type" : "latest",
@@ -2921,7 +2710,7 @@
                 "decimals" : null,
                 "funcBody" : null,
                 "usePostProcessing" : true,
-                "postFuncBody" : "var faultName = \"Guasto sconosciuto\";\r\n\r\nswitch (value) {\r\n    case 1:\r\n        faultName = \"Sovratensione\";\r\n        break;\r\n    case 2:\r\n        faultName = \"Sottotensione\";\r\n        break;\r\n    case 4:\r\n        faultName = \"Dispersione\";\r\n        break;\r\n    case 8:\r\n        faultName = \"Sovraccarico\";\r\n        break;\r\n    case 16:\r\n        faultName = \"Riservato\";\r\n        break;\r\n    case 32:\r\n        faultName = \"Temperatura\";\r\n        break;\r\n    case 64:\r\n        faultName = \"Mancanza fase\";\r\n        break;\r\n    case 128:\r\n        faultName = \"Sovrafrequenza\";\r\n        break;\r\n    case 256:\r\n        faultName = \"Sottofrequenza\";\r\n        break;\r\n    case 512:\r\n        faultName = \"Riservato\";\r\n        break;\r\n    case 1024:\r\n        faultName = \"Scatto di prova da pulsante\";\r\n        break;\r\n    case 2048:\r\n        faultName = \"Scatto di prova remoto\";\r\n        break;\r\n    default:\r\n        faultName = \"Guasto sconosciuto (\" + value + \")\";\r\n}\r\n\r\nreturn faultName;"
+                "postFuncBody" : "var faultName = \"Guasto sconosciuto\";\r\n\r\nswitch (value) {\r\n    case 0:\r\n        faultName = 0;\r\n        break;\r\n    case 1:\r\n        faultName = \"Sovratensione\";\r\n        break;\r\n    case 2:\r\n        faultName = \"Sottotensione\";\r\n        break;\r\n    case 4:\r\n        faultName = \"Dispersione\";\r\n        break;\r\n    case 8:\r\n        faultName = \"Sovraccarico\";\r\n        break;\r\n    case 16:\r\n        faultName = \"Riservato\";\r\n        break;\r\n    case 32:\r\n        faultName = \"Temperatura\";\r\n        break;\r\n    case 64:\r\n        faultName = \"Mancanza fase\";\r\n        break;\r\n    case 128:\r\n        faultName = \"Sovrafrequenza\";\r\n        break;\r\n    case 256:\r\n        faultName = \"Sottofrequenza\";\r\n        break;\r\n    case 512:\r\n        faultName = \"Riservato\";\r\n        break;\r\n    case 1024:\r\n        faultName = \"Scatto di prova da pulsante\";\r\n        break;\r\n    case 2048:\r\n        faultName = \"Scatto di prova remoto\";\r\n        break;\r\n    default:\r\n        faultName = \"Guasto sconosciuto (\" + value + \")\";\r\n}\r\n\r\nreturn faultName;"
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -3117,7 +2906,224 @@
           "col" : 0,
           "id" : "c0995ecc-5282-41cc-935c-54fb46ddaa0b"
         },
-        "db40f4ca-c124-6714-41f5-fb2c5fad1e43" : {
+        "1efb98f4-c9e8-1212-a216-c8b1274e6724" : {
+          "typeFullFqn" : "system.indoor_horizontal_temperature_card",
+          "type" : "latest",
+          "sizeX" : 5,
+          "sizeY" : 1,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "ad1718a1-6cfa-1002-177d-557f249c670e",
+              "dataKeys" : [ {
+                "name" : "alarm_status",
+                "type" : "timeseries",
+                "label" : "Stato allarme: ",
+                "color" : "#2196f3",
+                "settings" : { },
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "var faultName = \"Guasto sconosciuto\";\r\n\r\nswitch (value) {\r\n    case 0:\r\n        faultName = 0;\r\n        break;\r\n    case 1:\r\n        faultName = \"Sovratensione\";\r\n        break;\r\n    case 2:\r\n        faultName = \"Sottotensione\";\r\n        break;\r\n    case 4:\r\n        faultName = \"Dispersione\";\r\n        break;\r\n    case 8:\r\n        faultName = \"Sovraccarico\";\r\n        break;\r\n    case 16:\r\n        faultName = \"Riservato\";\r\n        break;\r\n    case 32:\r\n        faultName = \"Temperatura\";\r\n        break;\r\n    case 64:\r\n        faultName = \"Mancanza fase\";\r\n        break;\r\n    case 128:\r\n        faultName = \"Sovrafrequenza\";\r\n        break;\r\n    case 256:\r\n        faultName = \"Sottofrequenza\";\r\n        break;\r\n    case 512:\r\n        faultName = \"Riservato\";\r\n        break;\r\n    default:\r\n        faultName = \"Guasto sconosciuto (\" + value + \")\";\r\n}\r\n\r\nreturn faultName;"
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "showTitle" : false,
+            "backgroundColor" : "rgba(0, 0, 0, 0)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "labelPosition" : "top",
+              "layout" : "horizontal",
+              "showLabel" : true,
+              "labelFont" : {
+                "family" : "Roboto",
+                "size" : 16,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "500"
+              },
+              "labelColor" : {
+                "type" : "constant",
+                "color" : "rgba(0, 0, 0, 0.87)",
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "showIcon" : true,
+              "iconSize" : 40,
+              "iconSizeUnit" : "px",
+              "icon" : "mdi:alarm-light",
+              "iconColor" : {
+                "type" : "constant",
+                "color" : "rgba(0, 0, 0, 0.87)",
+                "gradient" : {
+                  "advancedMode" : false,
+                  "gradient" : [ "rgba(0, 255, 0, 1)", "rgba(255, 0, 0, 1)" ],
+                  "gradientAdvanced" : [ {
+                    "source" : {
+                      "type" : "constant"
+                    },
+                    "color" : "rgba(0, 255, 0, 1)"
+                  }, {
+                    "source" : {
+                      "type" : "constant"
+                    },
+                    "color" : "rgba(255, 0, 0, 1)"
+                  } ],
+                  "minValue" : 0,
+                  "maxValue" : 100
+                },
+                "rangeList" : {
+                  "advancedMode" : false,
+                  "range" : [ {
+                    "from" : null,
+                    "to" : 18,
+                    "color" : "#234CC7"
+                  }, {
+                    "from" : 18,
+                    "to" : 24,
+                    "color" : "#3FA71A"
+                  }, {
+                    "from" : 24,
+                    "to" : null,
+                    "color" : "#D81838"
+                  } ]
+                },
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "valueFont" : {
+                "size" : 36,
+                "sizeUnit" : "px",
+                "family" : "Roboto",
+                "weight" : "500",
+                "style" : "normal"
+              },
+              "valueColor" : {
+                "type" : "constant",
+                "color" : "rgba(0, 0, 0, 0.87)",
+                "gradient" : {
+                  "advancedMode" : false,
+                  "gradient" : [ "rgba(0, 255, 0, 1)", "rgba(255, 0, 0, 1)" ],
+                  "gradientAdvanced" : [ {
+                    "source" : {
+                      "type" : "constant"
+                    },
+                    "color" : "rgba(0, 255, 0, 1)"
+                  }, {
+                    "source" : {
+                      "type" : "constant"
+                    },
+                    "color" : "rgba(255, 0, 0, 1)"
+                  } ],
+                  "minValue" : 0,
+                  "maxValue" : 100
+                },
+                "rangeList" : {
+                  "advancedMode" : false,
+                  "range" : [ {
+                    "from" : null,
+                    "to" : 18,
+                    "color" : "#234CC7"
+                  }, {
+                    "from" : 18,
+                    "to" : 24,
+                    "color" : "#3FA71A"
+                  }, {
+                    "from" : 24,
+                    "to" : null,
+                    "color" : "#D81838"
+                  } ]
+                },
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "showDate" : true,
+              "dateFormat" : {
+                "format" : null,
+                "lastUpdateAgo" : true,
+                "custom" : false
+              },
+              "dateFont" : {
+                "family" : "Roboto",
+                "size" : 12,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "500"
+              },
+              "dateColor" : {
+                "type" : "constant",
+                "color" : "rgba(0, 0, 0, 0.38)",
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "background" : {
+                "type" : "color",
+                "imageUrl" : null,
+                "color" : "#FFFFFF00",
+                "overlay" : {
+                  "enabled" : false,
+                  "color" : "rgba(255,255,255,0.72)",
+                  "blur" : 3
+                }
+              },
+              "autoScale" : true,
+              "padding" : ""
+            },
+            "title" : "Horizontal temperature card",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "units" : null,
+            "decimals" : 0,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "configMode" : "basic",
+            "margin" : "0px",
+            "borderRadius" : "15px",
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleFont" : {
+              "size" : 12,
+              "sizeUnit" : "px",
+              "family" : null,
+              "weight" : null,
+              "style" : null,
+              "lineHeight" : "1.6"
+            },
+            "titleIcon" : "",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "14px",
+            "enableDataExport" : false,
+            "timewindowStyle" : {
+              "showIcon" : true,
+              "iconSize" : "14px",
+              "icon" : "query_builder",
+              "iconPosition" : "left",
+              "font" : {
+                "size" : 12,
+                "sizeUnit" : "px",
+                "family" : null,
+                "weight" : null,
+                "style" : null,
+                "lineHeight" : "1"
+              },
+              "color" : null
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "1efb98f4-c9e8-1212-a216-c8b1274e6724"
+        },
+        "ee10c0e3-0813-8c5b-3c9e-ee9386c20828" : {
           "typeFullFqn" : "system.indoor_horizontal_temperature_card",
           "type" : "latest",
           "sizeX" : 5,
@@ -3332,7 +3338,7 @@
           },
           "row" : 0,
           "col" : 0,
-          "id" : "db40f4ca-c124-6714-41f5-fb2c5fad1e43"
+          "id" : "ee10c0e3-0813-8c5b-3c9e-ee9386c20828"
         }
       },
       "states" : {
@@ -3440,19 +3446,19 @@
                   "row" : 7,
                   "col" : 2
                 },
-                "f1e5fcda-1267-ef27-dfa0-212e737ca3b8" : {
-                  "sizeX" : 7,
-                  "sizeY" : 1,
-                  "row" : 7,
-                  "col" : 15
-                },
                 "c0995ecc-5282-41cc-935c-54fb46ddaa0b" : {
                   "sizeX" : 7,
                   "sizeY" : 1,
                   "row" : 8,
                   "col" : 2
                 },
-                "db40f4ca-c124-6714-41f5-fb2c5fad1e43" : {
+                "1efb98f4-c9e8-1212-a216-c8b1274e6724" : {
+                  "sizeX" : 7,
+                  "sizeY" : 1,
+                  "row" : 7,
+                  "col" : 15
+                },
+                "ee10c0e3-0813-8c5b-3c9e-ee9386c20828" : {
                   "sizeX" : 7,
                   "sizeY" : 1,
                   "row" : 8,

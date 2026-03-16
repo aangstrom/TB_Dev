@@ -2038,11 +2038,11 @@
           "col" : 0,
           "id" : "9478d569-05b6-5456-2aee-861a52415532"
         },
-        "f2d0cf03-dc35-80d7-c97b-080e9ca73123" : {
-          "typeFullFqn" : "system.noise_level_card",
+        "356ba937-b52d-2def-2970-20ff3209f5f3" : {
+          "typeFullFqn" : "system.indoor_horizontal_temperature_card",
           "type" : "latest",
-          "sizeX" : 3,
-          "sizeY" : 3,
+          "sizeX" : 5,
+          "sizeY" : 1,
           "config" : {
             "datasources" : [ {
               "type" : "entity",
@@ -2051,7 +2051,7 @@
               "dataKeys" : [ {
                 "name" : "last_event",
                 "type" : "timeseries",
-                "label" : "Ultimo evento:",
+                "label" : "Ultimo evento: ",
                 "color" : "#2196f3",
                 "settings" : { },
                 "aggregationType" : "NONE",
@@ -2071,7 +2071,7 @@
             "padding" : "0px",
             "settings" : {
               "labelPosition" : "top",
-              "layout" : "square",
+              "layout" : "horizontal",
               "showLabel" : true,
               "labelFont" : {
                 "family" : "Roboto",
@@ -2090,24 +2090,37 @@
               "iconSizeUnit" : "px",
               "icon" : "history",
               "iconColor" : {
-                "type" : "range",
+                "type" : "constant",
                 "color" : "rgba(0, 0, 0, 0.87)",
+                "gradient" : {
+                  "advancedMode" : false,
+                  "gradient" : [ "rgba(0, 255, 0, 1)", "rgba(255, 0, 0, 1)" ],
+                  "gradientAdvanced" : [ {
+                    "source" : {
+                      "type" : "constant"
+                    },
+                    "color" : "rgba(0, 255, 0, 1)"
+                  }, {
+                    "source" : {
+                      "type" : "constant"
+                    },
+                    "color" : "rgba(255, 0, 0, 1)"
+                  } ],
+                  "minValue" : 0,
+                  "maxValue" : 100
+                },
                 "rangeList" : {
                   "advancedMode" : false,
                   "range" : [ {
                     "from" : null,
-                    "to" : 50,
-                    "color" : "#80C32C"
+                    "to" : 18,
+                    "color" : "#234CC7"
                   }, {
-                    "from" : 50,
-                    "to" : 70,
-                    "color" : "#FFA600"
+                    "from" : 18,
+                    "to" : 24,
+                    "color" : "#3FA71A"
                   }, {
-                    "from" : 70,
-                    "to" : 90,
-                    "color" : "#F36900"
-                  }, {
-                    "from" : 90,
+                    "from" : 24,
                     "to" : null,
                     "color" : "#D81838"
                   } ]
@@ -2115,36 +2128,49 @@
                 "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
               },
               "valueFont" : {
-                "family" : "Roboto",
-                "size" : 52,
+                "size" : 36,
                 "sizeUnit" : "px",
-                "style" : "normal",
-                "weight" : "500"
+                "family" : "Roboto",
+                "weight" : "500",
+                "style" : "normal"
               },
               "valueColor" : {
-                "type" : "range",
+                "type" : "constant",
                 "color" : "rgba(0, 0, 0, 0.87)",
-                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';",
+                "gradient" : {
+                  "advancedMode" : false,
+                  "gradient" : [ "rgba(0, 255, 0, 1)", "rgba(255, 0, 0, 1)" ],
+                  "gradientAdvanced" : [ {
+                    "source" : {
+                      "type" : "constant"
+                    },
+                    "color" : "rgba(0, 255, 0, 1)"
+                  }, {
+                    "source" : {
+                      "type" : "constant"
+                    },
+                    "color" : "rgba(255, 0, 0, 1)"
+                  } ],
+                  "minValue" : 0,
+                  "maxValue" : 100
+                },
                 "rangeList" : {
                   "advancedMode" : false,
                   "range" : [ {
                     "from" : null,
-                    "to" : 50,
-                    "color" : "#80C32C"
+                    "to" : 18,
+                    "color" : "#234CC7"
                   }, {
-                    "from" : 50,
-                    "to" : 70,
-                    "color" : "#FFA600"
+                    "from" : 18,
+                    "to" : 24,
+                    "color" : "#3FA71A"
                   }, {
-                    "from" : 70,
-                    "to" : 90,
-                    "color" : "#F36900"
-                  }, {
-                    "from" : 90,
+                    "from" : 24,
                     "to" : null,
                     "color" : "#D81838"
                   } ]
-                }
+                },
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
               },
               "showDate" : true,
               "dateFormat" : {
@@ -2166,7 +2192,8 @@
               },
               "background" : {
                 "type" : "color",
-                "color" : "#fff",
+                "imageUrl" : null,
+                "color" : "#FFFFFF00",
                 "overlay" : {
                   "enabled" : false,
                   "color" : "rgba(255,255,255,0.72)",
@@ -2176,7 +2203,7 @@
               "autoScale" : true,
               "padding" : ""
             },
-            "title" : "Noise level card",
+            "title" : "Horizontal temperature card",
             "dropShadow" : true,
             "enableFullscreen" : false,
             "titleStyle" : {
@@ -2190,7 +2217,7 @@
             "actions" : { },
             "configMode" : "basic",
             "margin" : "0px",
-            "borderRadius" : "0px",
+            "borderRadius" : "15px",
             "widgetCss" : "",
             "pageSize" : 1024,
             "noDataDisplayMessage" : "",
@@ -2226,7 +2253,7 @@
           },
           "row" : 0,
           "col" : 0,
-          "id" : "f2d0cf03-dc35-80d7-c97b-080e9ca73123"
+          "id" : "356ba937-b52d-2def-2970-20ff3209f5f3"
         }
       },
       "states" : {
@@ -2316,11 +2343,11 @@
                   "row" : 2,
                   "col" : 19
                 },
-                "f2d0cf03-dc35-80d7-c97b-080e9ca73123" : {
-                  "sizeX" : 6,
-                  "sizeY" : 2,
-                  "row" : 6,
-                  "col" : 2
+                "356ba937-b52d-2def-2970-20ff3209f5f3" : {
+                  "sizeX" : 7,
+                  "sizeY" : 1,
+                  "row" : 8,
+                  "col" : 1
                 }
               },
               "gridSettings" : {

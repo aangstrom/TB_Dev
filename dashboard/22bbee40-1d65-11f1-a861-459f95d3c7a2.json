@@ -1316,200 +1316,6 @@
           "col" : 0,
           "id" : "a0156c0a-92f9-a7bd-e0b9-a31ce846f337"
         },
-        "7609b3b2-1569-5899-d8a9-2c422b69154a" : {
-          "typeFullFqn" : "system.status_widget",
-          "type" : "rpc",
-          "sizeX" : 2,
-          "sizeY" : 2,
-          "config" : {
-            "showTitle" : false,
-            "backgroundColor" : "rgba(0, 0, 0, 0)",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "initialState" : {
-                "action" : "GET_TIME_SERIES",
-                "defaultValue" : false,
-                "executeRpc" : {
-                  "method" : "getState",
-                  "requestTimeout" : 5000,
-                  "requestPersistent" : false,
-                  "persistentPollingInterval" : 1000
-                },
-                "getAttribute" : {
-                  "scope" : null,
-                  "key" : "state"
-                },
-                "getTimeSeries" : {
-                  "key" : "active"
-                },
-                "getAlarmStatus" : {
-                  "severityList" : null,
-                  "typeList" : null
-                },
-                "dataToValue" : {
-                  "type" : "NONE",
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
-                  "compareToValue" : true
-                }
-              },
-              "disabledState" : {
-                "action" : "DO_NOTHING",
-                "defaultValue" : false,
-                "getAttribute" : {
-                  "key" : "state",
-                  "scope" : null
-                },
-                "getTimeSeries" : {
-                  "key" : "state"
-                },
-                "getAlarmStatus" : {
-                  "severityList" : null,
-                  "typeList" : null
-                },
-                "dataToValue" : {
-                  "type" : "NONE",
-                  "compareToValue" : true,
-                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
-                }
-              },
-              "layout" : "default",
-              "onState" : {
-                "showLabel" : true,
-                "label" : "Interuttore 1",
-                "labelFont" : {
-                  "size" : 12,
-                  "sizeUnit" : "px",
-                  "family" : "Roboto",
-                  "weight" : "500",
-                  "style" : "normal",
-                  "lineHeight" : "16px"
-                },
-                "showStatus" : true,
-                "status" : "Attivo",
-                "statusFont" : {
-                  "size" : 14,
-                  "sizeUnit" : "px",
-                  "family" : "Roboto",
-                  "weight" : "800",
-                  "style" : "normal",
-                  "lineHeight" : "20px"
-                },
-                "icon" : "flash_on",
-                "iconSize" : 52,
-                "iconSizeUnit" : "px",
-                "primaryColor" : "#435B63",
-                "secondaryColor" : "rgb(67, 91, 99)",
-                "background" : {
-                  "type" : "color",
-                  "imageUrl" : null,
-                  "color" : "#C9FD8C",
-                  "overlay" : {
-                    "enabled" : false,
-                    "color" : "rgba(255,255,255,0.72)",
-                    "blur" : 3
-                  }
-                },
-                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
-                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
-                "backgroundDisabled" : {
-                  "type" : "color",
-                  "color" : "#CACACA",
-                  "overlay" : {
-                    "enabled" : false,
-                    "color" : "rgba(255,255,255,0.72)",
-                    "blur" : 3
-                  }
-                }
-              },
-              "offState" : {
-                "showLabel" : true,
-                "label" : "Interuttore 2",
-                "labelFont" : {
-                  "family" : "Roboto",
-                  "size" : 12,
-                  "sizeUnit" : "px",
-                  "style" : "normal",
-                  "weight" : "500",
-                  "lineHeight" : "16px"
-                },
-                "showStatus" : true,
-                "status" : "Inattivo",
-                "statusFont" : {
-                  "family" : "Roboto",
-                  "size" : 10,
-                  "sizeUnit" : "px",
-                  "style" : "normal",
-                  "weight" : "500",
-                  "lineHeight" : "20px"
-                },
-                "icon" : "flash_off",
-                "iconSize" : 32,
-                "iconSizeUnit" : "px",
-                "primaryColor" : "rgba(0, 0, 0, 0.87)",
-                "secondaryColor" : "rgba(0, 0, 0, 0.54)",
-                "background" : {
-                  "type" : "color",
-                  "imageUrl" : null,
-                  "color" : "#FFFFFF00",
-                  "overlay" : {
-                    "enabled" : false,
-                    "color" : "rgba(255,255,255,0.72)",
-                    "blur" : 3
-                  }
-                },
-                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
-                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
-                "backgroundDisabled" : {
-                  "type" : "color",
-                  "color" : "#CACACA",
-                  "overlay" : {
-                    "enabled" : false,
-                    "color" : "rgba(255,255,255,0.72)",
-                    "blur" : 3
-                  }
-                }
-              },
-              "padding" : ""
-            },
-            "title" : "Status widget",
-            "dropShadow" : true,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "actions" : { },
-            "widgetCss" : "",
-            "noDataDisplayMessage" : "",
-            "titleFont" : {
-              "size" : 16,
-              "sizeUnit" : "px",
-              "family" : "Roboto",
-              "weight" : "500",
-              "style" : null,
-              "lineHeight" : "1.6"
-            },
-            "showTitleIcon" : false,
-            "titleTooltip" : "",
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "pageSize" : 1024,
-            "titleIcon" : "mdi:lightbulb-outline",
-            "iconColor" : "rgba(0, 0, 0, 0.87)",
-            "iconSize" : "24px",
-            "configMode" : "basic",
-            "targetDevice" : {
-              "type" : "entity",
-              "entityAliasId" : "e4850c83-ac99-517c-4af3-bc52980ba540"
-            },
-            "titleColor" : null,
-            "borderRadius" : "15px",
-            "datasources" : [ ]
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "7609b3b2-1569-5899-d8a9-2c422b69154a"
-        },
         "cdddf964-2825-46b5-bb56-cb73b151e302" : {
           "typeFullFqn" : "system.status_widget",
           "type" : "rpc",
@@ -1570,7 +1376,7 @@
               "layout" : "default",
               "onState" : {
                 "showLabel" : true,
-                "label" : "Interuttore 1",
+                "label" : "Interuttore 2",
                 "labelFont" : {
                   "size" : 12,
                   "sizeUnit" : "px",
@@ -3339,6 +3145,200 @@
           "row" : 0,
           "col" : 0,
           "id" : "8259258e-0ebc-b732-f461-7a8f1a106403"
+        },
+        "26092faf-42c9-fe41-6773-535946c9663e" : {
+          "typeFullFqn" : "system.status_widget",
+          "type" : "rpc",
+          "sizeX" : 2,
+          "sizeY" : 2,
+          "config" : {
+            "showTitle" : false,
+            "backgroundColor" : "rgba(0, 0, 0, 0)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "initialState" : {
+                "action" : "GET_TIME_SERIES",
+                "defaultValue" : false,
+                "executeRpc" : {
+                  "method" : "getState",
+                  "requestTimeout" : 5000,
+                  "requestPersistent" : false,
+                  "persistentPollingInterval" : 1000
+                },
+                "getAttribute" : {
+                  "scope" : null,
+                  "key" : "state"
+                },
+                "getTimeSeries" : {
+                  "key" : "active"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;",
+                  "compareToValue" : true
+                }
+              },
+              "disabledState" : {
+                "action" : "DO_NOTHING",
+                "defaultValue" : false,
+                "getAttribute" : {
+                  "key" : "state",
+                  "scope" : null
+                },
+                "getTimeSeries" : {
+                  "key" : "state"
+                },
+                "getAlarmStatus" : {
+                  "severityList" : null,
+                  "typeList" : null
+                },
+                "dataToValue" : {
+                  "type" : "NONE",
+                  "compareToValue" : true,
+                  "dataToValueFunction" : "/* Should return boolean value */\nreturn data;"
+                }
+              },
+              "layout" : "default",
+              "onState" : {
+                "showLabel" : true,
+                "label" : "Interuttore 1",
+                "labelFont" : {
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "family" : "Roboto",
+                  "weight" : "500",
+                  "style" : "normal",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : true,
+                "status" : "Attivo",
+                "statusFont" : {
+                  "size" : 14,
+                  "sizeUnit" : "px",
+                  "family" : "Roboto",
+                  "weight" : "800",
+                  "style" : "normal",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "flash_on",
+                "iconSize" : 52,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "#435B63",
+                "secondaryColor" : "rgb(67, 91, 99)",
+                "background" : {
+                  "type" : "color",
+                  "imageUrl" : null,
+                  "color" : "#C9FD8C",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                },
+                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              },
+              "offState" : {
+                "showLabel" : true,
+                "label" : "Interuttore 1",
+                "labelFont" : {
+                  "family" : "Roboto",
+                  "size" : 12,
+                  "sizeUnit" : "px",
+                  "style" : "normal",
+                  "weight" : "500",
+                  "lineHeight" : "16px"
+                },
+                "showStatus" : true,
+                "status" : "Inattivo",
+                "statusFont" : {
+                  "size" : 14,
+                  "sizeUnit" : "px",
+                  "family" : "Roboto",
+                  "weight" : "800",
+                  "style" : "normal",
+                  "lineHeight" : "20px"
+                },
+                "icon" : "flash_off",
+                "iconSize" : 52,
+                "iconSizeUnit" : "px",
+                "primaryColor" : "rgba(0, 0, 0, 0.87)",
+                "secondaryColor" : "rgba(0, 0, 0, 0.54)",
+                "background" : {
+                  "type" : "color",
+                  "imageUrl" : null,
+                  "color" : "#FFFFFF00",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                },
+                "primaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "secondaryColorDisabled" : "rgba(0, 0, 0, 0.38)",
+                "backgroundDisabled" : {
+                  "type" : "color",
+                  "color" : "#CACACA",
+                  "overlay" : {
+                    "enabled" : false,
+                    "color" : "rgba(255,255,255,0.72)",
+                    "blur" : 3
+                  }
+                }
+              },
+              "padding" : ""
+            },
+            "title" : "Status widget",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "titleFont" : {
+              "size" : 16,
+              "sizeUnit" : "px",
+              "family" : "Roboto",
+              "weight" : "500",
+              "style" : null,
+              "lineHeight" : "1.6"
+            },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "pageSize" : 1024,
+            "titleIcon" : "mdi:lightbulb-outline",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "configMode" : "basic",
+            "targetDevice" : {
+              "type" : "entity",
+              "entityAliasId" : "e4850c83-ac99-517c-4af3-bc52980ba540"
+            },
+            "titleColor" : null,
+            "borderRadius" : "15px",
+            "datasources" : [ ]
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "26092faf-42c9-fe41-6773-535946c9663e"
         }
       },
       "states" : {
@@ -3402,12 +3402,6 @@
                   "row" : 5,
                   "col" : 19
                 },
-                "7609b3b2-1569-5899-d8a9-2c422b69154a" : {
-                  "sizeX" : 2,
-                  "sizeY" : 2,
-                  "row" : 0,
-                  "col" : 2
-                },
                 "cdddf964-2825-46b5-bb56-cb73b151e302" : {
                   "sizeX" : 2,
                   "sizeY" : 2,
@@ -3463,6 +3457,12 @@
                   "sizeY" : 1,
                   "row" : 2,
                   "col" : 15
+                },
+                "26092faf-42c9-fe41-6773-535946c9663e" : {
+                  "sizeX" : 2,
+                  "sizeY" : 2,
+                  "row" : 0,
+                  "col" : 2
                 }
               },
               "gridSettings" : {

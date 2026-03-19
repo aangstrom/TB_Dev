@@ -3445,11 +3445,11 @@
                 "format" : "yyyy-MM-dd HH:mm:ss"
               },
               "timestampExportOption" : "onlyVisible",
-              "displayPagination" : false,
+              "displayPagination" : true,
               "useEntityLabel" : false,
-              "defaultPageSize" : 10,
-              "pageStepCount" : 3,
-              "pageStepIncrement" : 10,
+              "defaultPageSize" : null,
+              "pageStepCount" : 6,
+              "pageStepIncrement" : 5,
               "hideEmptyLines" : false,
               "disableStickyHeader" : false,
               "useRowStyleFunction" : false,
@@ -3500,6 +3500,167 @@
           "row" : 0,
           "col" : 0,
           "id" : "be2b1c91-7dff-70ad-4577-517d15b20ec2"
+        },
+        "121fd92d-084a-eacf-1db0-e6fb9d192979" : {
+          "typeFullFqn" : "system.cards.timeseries_table",
+          "type" : "timeseries",
+          "sizeX" : 8,
+          "sizeY" : 6.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "e4850c83-ac99-517c-4af3-bc52980ba540",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "switch_closed",
+                "type" : "timeseries",
+                "label" : "closed",
+                "color" : "#4caf50",
+                "settings" : { },
+                "decimals" : 0,
+                "aggregationType" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "last_event",
+                "type" : "timeseries",
+                "label" : "last_event",
+                "color" : "#f44336",
+                "settings" : { },
+                "decimals" : 0
+              }, {
+                "name" : "l1_power_w",
+                "type" : "timeseries",
+                "label" : "power",
+                "color" : "#ffc107",
+                "settings" : { },
+                "units" : "W",
+                "decimals" : 1
+              }, {
+                "name" : "l1_voltage_v",
+                "type" : "timeseries",
+                "label" : "voltage",
+                "color" : "#607d8b",
+                "settings" : { },
+                "units" : "V",
+                "decimals" : 2
+              }, {
+                "name" : "l1_current_a",
+                "type" : "timeseries",
+                "label" : "current",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "units" : "A",
+                "decimals" : 3,
+                "aggregationType" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "power_factor",
+                "type" : "timeseries",
+                "label" : "power_factor",
+                "color" : "#8bc34a",
+                "settings" : { },
+                "units" : "%",
+                "decimals" : 0
+              }, {
+                "name" : "alarm_status",
+                "type" : "timeseries",
+                "label" : "alarm",
+                "color" : "#3f51b5",
+                "settings" : { },
+                "decimals" : 0,
+                "aggregationType" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "fault_status",
+                "type" : "timeseries",
+                "label" : "fault_status",
+                "color" : "#e91e63",
+                "settings" : { },
+                "decimals" : 0
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ ]
+            } ],
+            "showTitle" : true,
+            "backgroundColor" : "rgba(255, 255, 255, 0)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "enableSearch" : true,
+              "enableSelectColumnDisplay" : true,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "showCellActionsMenu" : true,
+              "reserveSpaceForHiddenAction" : "true",
+              "showTimestamp" : true,
+              "dateFormat" : {
+                "format" : "yyyy-MM-dd HH:mm:ss"
+              },
+              "timestampExportOption" : "onlyVisible",
+              "displayPagination" : true,
+              "useEntityLabel" : false,
+              "defaultPageSize" : null,
+              "pageStepCount" : 6,
+              "pageStepIncrement" : 5,
+              "hideEmptyLines" : false,
+              "disableStickyHeader" : false,
+              "useRowStyleFunction" : false,
+              "rowStyleFunction" : "",
+              "sortOrder" : {
+                "property" : "createdTime",
+                "direction" : "DESC"
+              }
+            },
+            "title" : "Dati interuttore 1",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "configMode" : "advanced",
+            "titleFont" : null,
+            "titleColor" : null,
+            "titleIcon" : null,
+            "enableDataExport" : true,
+            "titleTooltip" : "",
+            "borderRadius" : "20px",
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "displayTimewindow" : true,
+            "timewindow" : {
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 0,
+                "interval" : 15000,
+                "timewindowMs" : 300000
+              },
+              "aggregation" : {
+                "type" : "AVG"
+              }
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "121fd92d-084a-eacf-1db0-e6fb9d192979"
         }
       },
       "states" : {
@@ -3627,9 +3788,15 @@
                 },
                 "be2b1c91-7dff-70ad-4577-517d15b20ec2" : {
                   "sizeX" : 12,
-                  "sizeY" : 9,
+                  "sizeY" : 6,
                   "row" : 9,
                   "col" : 0
+                },
+                "121fd92d-084a-eacf-1db0-e6fb9d192979" : {
+                  "sizeX" : 12,
+                  "sizeY" : 6,
+                  "row" : 9,
+                  "col" : 13
                 }
               },
               "gridSettings" : {

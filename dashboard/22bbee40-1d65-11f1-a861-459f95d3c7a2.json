@@ -3838,6 +3838,171 @@
           "row" : 0,
           "col" : 0,
           "id" : "b1ca1701-c712-66bd-232a-90dbe67f3ace"
+        },
+        "aad76f8a-ec73-9bb9-29a1-08b048b4e55d" : {
+          "typeFullFqn" : "system.simple_power_consumption_chart_card",
+          "type" : "timeseries",
+          "sizeX" : 4.5,
+          "sizeY" : 2,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "ad1718a1-6cfa-1002-177d-557f249c670e",
+              "dataKeys" : [ {
+                "name" : "temperature_c",
+                "type" : "timeseries",
+                "label" : "temperature_c",
+                "color" : "rgba(0, 0, 0, 0.87)",
+                "settings" : { }
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ {
+                "name" : "temperature_c",
+                "type" : "timeseries",
+                "label" : "Latest",
+                "color" : "rgba(0, 0, 0, 0.87)",
+                "settings" : { },
+                "units" : null,
+                "decimals" : null
+              } ]
+            } ],
+            "showTitle" : true,
+            "backgroundColor" : "rgba(0, 0, 0, 0)",
+            "color" : null,
+            "padding" : "0px",
+            "settings" : {
+              "layout" : "left",
+              "autoScale" : true,
+              "showValue" : true,
+              "valueFont" : {
+                "family" : "Roboto",
+                "size" : 28,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "500",
+                "lineHeight" : "32px"
+              },
+              "valueColor" : {
+                "type" : "range",
+                "color" : "rgba(0, 0, 0, 0.87)",
+                "gradient" : {
+                  "advancedMode" : false,
+                  "gradient" : [ "rgba(0, 255, 0, 1)", "rgba(255, 0, 0, 1)" ],
+                  "gradientAdvanced" : [ {
+                    "source" : {
+                      "type" : "constant"
+                    },
+                    "color" : "rgba(0, 255, 0, 1)"
+                  }, {
+                    "source" : {
+                      "type" : "constant"
+                    },
+                    "color" : "rgba(255, 0, 0, 1)"
+                  } ],
+                  "minValue" : 0,
+                  "maxValue" : 100
+                },
+                "rangeList" : {
+                  "advancedMode" : false,
+                  "range" : [ {
+                    "from" : null,
+                    "to" : -50,
+                    "color" : "rgb(4, 138, 211)"
+                  }, {
+                    "from" : -50,
+                    "to" : 10,
+                    "color" : "rgb(0, 150, 136)"
+                  }, {
+                    "from" : 10,
+                    "to" : 30,
+                    "color" : "#3FA71A"
+                  }, {
+                    "from" : 30,
+                    "to" : 40,
+                    "color" : "rgb(139, 195, 74)"
+                  }, {
+                    "from" : 40,
+                    "to" : 60,
+                    "color" : "rgb(245, 221, 0)"
+                  }, {
+                    "from" : 60,
+                    "to" : 90,
+                    "color" : "#F36900"
+                  }, {
+                    "from" : 90,
+                    "to" : null,
+                    "color" : "#F44336"
+                  } ],
+                  "rangeAdvanced" : [ ]
+                },
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "background" : {
+                "type" : "color",
+                "imageUrl" : null,
+                "color" : "#FFFFFF00",
+                "overlay" : {
+                  "enabled" : false,
+                  "color" : "rgba(255,255,255,0.72)",
+                  "blur" : 3
+                }
+              },
+              "padding" : "12px"
+            },
+            "title" : "Temperatura interna 2",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "titleStyle" : null,
+            "mobileHeight" : null,
+            "configMode" : "basic",
+            "actions" : { },
+            "showTitleIcon" : true,
+            "titleIcon" : "thermostat",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "titleFont" : {
+              "size" : 16,
+              "sizeUnit" : "px",
+              "family" : "Roboto",
+              "weight" : "500",
+              "style" : "normal",
+              "lineHeight" : "24px"
+            },
+            "iconSize" : "18px",
+            "titleTooltip" : "",
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "useDashboardTimewindow" : true,
+            "decimals" : 0,
+            "titleColor" : "rgba(0, 0, 0, 0.87)",
+            "borderRadius" : "25px",
+            "units" : "°C",
+            "margin" : "0px",
+            "enableDataExport" : false,
+            "timewindowStyle" : {
+              "showIcon" : false,
+              "iconSize" : "24px",
+              "icon" : "query_builder",
+              "iconPosition" : "left",
+              "font" : {
+                "size" : 12,
+                "sizeUnit" : "px",
+                "family" : "Roboto",
+                "weight" : "400",
+                "style" : "normal",
+                "lineHeight" : "16px"
+              },
+              "color" : "rgba(0, 0, 0, 0.38)",
+              "displayTypePrefix" : true
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "aad76f8a-ec73-9bb9-29a1-08b048b4e55d"
         }
       },
       "states" : {
@@ -3981,6 +4146,13 @@
                   "mobileHeight" : null,
                   "row" : 7,
                   "col" : 2
+                },
+                "aad76f8a-ec73-9bb9-29a1-08b048b4e55d" : {
+                  "sizeX" : 8,
+                  "sizeY" : 2,
+                  "mobileHeight" : null,
+                  "row" : 7,
+                  "col" : 16
                 }
               },
               "gridSettings" : {

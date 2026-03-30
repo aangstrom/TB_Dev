@@ -3431,6 +3431,18 @@
                 "color" : "#e91e63",
                 "settings" : { },
                 "decimals" : 0
+              }, {
+                "name" : "temperature_c",
+                "type" : "timeseries",
+                "label" : "temperature_c",
+                "color" : "#e91e63",
+                "settings" : { }
+              }, {
+                "name" : "temperature",
+                "type" : "timeseries",
+                "label" : "temperature",
+                "color" : "#ffeb3b",
+                "settings" : { }
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -3811,7 +3823,7 @@
             "widgetCss" : "",
             "pageSize" : 1024,
             "noDataDisplayMessage" : "",
-            "useDashboardTimewindow" : true,
+            "useDashboardTimewindow" : false,
             "decimals" : 0,
             "titleColor" : "rgba(0, 0, 0, 0.87)",
             "borderRadius" : "25px",
@@ -3833,7 +3845,19 @@
               },
               "color" : "rgba(0, 0, 0, 0.38)",
               "displayTypePrefix" : true
-            }
+            },
+            "timewindow" : {
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 0,
+                "interval" : 60000,
+                "timewindowMs" : 3600000
+              },
+              "aggregation" : {
+                "type" : "AVG"
+              }
+            },
+            "displayTimewindow" : false
           },
           "row" : 0,
           "col" : 0,
@@ -3976,7 +4000,7 @@
             "widgetCss" : "",
             "pageSize" : 1024,
             "noDataDisplayMessage" : "",
-            "useDashboardTimewindow" : true,
+            "useDashboardTimewindow" : false,
             "decimals" : 0,
             "titleColor" : "rgba(0, 0, 0, 0.87)",
             "borderRadius" : "25px",
@@ -3998,7 +4022,19 @@
               },
               "color" : "rgba(0, 0, 0, 0.38)",
               "displayTypePrefix" : true
-            }
+            },
+            "timewindow" : {
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 0,
+                "interval" : 60000,
+                "timewindowMs" : 3600000
+              },
+              "aggregation" : {
+                "type" : "AVG"
+              }
+            },
+            "displayTimewindow" : false
           },
           "row" : 0,
           "col" : 0,

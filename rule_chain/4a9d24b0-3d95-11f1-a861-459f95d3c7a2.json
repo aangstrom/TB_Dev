@@ -99,7 +99,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "msg.\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var message={};\nmessage.method=\"ask\";\nif(msg.requestId>=0){\n    message.requestId=msg.requestId+1;\n}else{\n    message.requestId=0;\n}\nvar domanda={};\ndomanda.domanda=msg.request;\n\nmessage.params=domanda;\nreturn {msg: message, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,

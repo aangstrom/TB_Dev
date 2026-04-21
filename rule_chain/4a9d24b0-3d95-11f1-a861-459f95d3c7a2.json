@@ -7,7 +7,10 @@
     "configuration" : null,
     "debugMode" : false,
     "externalId" : null,
-    "firstRuleNodeId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "c1d61410-3d95-11f1-a861-459f95d3c7a2"
+    },
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "4a9d24b0-3d95-11f1-a861-459f95d3c7a2"
@@ -17,9 +20,101 @@
     "type" : "CORE"
   },
   "metaData" : {
-    "connections" : null,
-    "firstNodeIndex" : null,
-    "nodes" : [ ],
+    "connections" : [ {
+      "fromIndex" : 1,
+      "toIndex" : 2,
+      "type" : "true"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 0,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 1,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 627,
+        "layoutY" : 383
+      },
+      "configuration" : {
+        "topicPattern" : "verity_chat/response/1",
+        "host" : "aa8.aangstrom.it",
+        "port" : 1885,
+        "connectTimeoutSec" : 10,
+        "clientId" : null,
+        "parseToPlainText" : false,
+        "cleanSession" : true,
+        "retainedMessage" : false,
+        "ssl" : false,
+        "protocolVersion" : "MQTT_3_1_1",
+        "credentials" : {
+          "type" : "basic",
+          "username" : "aangstrom",
+          "password" : "Sexten69!"
+        }
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c1d5ed00-3d95-11f1-a861-459f95d3c7a2"
+      },
+      "name" : "Verity Chat",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : true,
+      "type" : "org.thingsboard.rule.engine.mqtt.TbMqttNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 178,
+        "layoutY" : 341
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "if(msg.request){\n    return [\"true\"];\n}else{\n    return [\"false\"];\n}"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c1d61410-3d95-11f1-a861-459f95d3c7a2"
+      },
+      "name" : "true/false",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 481,
+        "layoutY" : 557
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "msg.\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c1d63b20-3d95-11f1-a861-459f95d3c7a2"
+      },
+      "name" : "Script request",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    } ],
     "ruleChainConnections" : null
   },
   "relations" : [ ],

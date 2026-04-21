@@ -33,8 +33,16 @@
       "toIndex" : 0,
       "type" : "Success"
     }, {
+      "fromIndex" : 2,
+      "toIndex" : 5,
+      "type" : "Success"
+    }, {
       "fromIndex" : 3,
       "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 6,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 1,
@@ -189,6 +197,58 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 757,
+        "layoutY" : 614
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var message={};\nmessage.requestId=msg.requestId;\nreturn {msg: message, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "440f73b0-3d99-11f1-a861-459f95d3c7a2"
+      },
+      "name" : "save attribute",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1027,
+        "layoutY" : 562
+      },
+      "configuration" : {
+        "processingSettings" : {
+          "type" : "ON_EVERY_MESSAGE"
+        },
+        "scope" : "SERVER_SCOPE",
+        "notifyDevice" : false,
+        "sendAttributesUpdatedNotification" : false,
+        "updateAttributesOnlyOnValueChange" : true
+      },
+      "configurationVersion" : 3,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "440fc1d0-3d99-11f1-a861-459f95d3c7a2"
+      },
+      "name" : "save server attribute",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
     } ],
     "ruleChainConnections" : null
   },
@@ -204,7 +264,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 13792
+    "version" : 13814
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]

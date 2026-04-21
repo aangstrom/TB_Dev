@@ -7,14 +7,162 @@
     "mobileOrder" : null,
     "configuration" : {
       "description" : "",
-      "widgets" : { },
+      "widgets" : {
+        "1d5c0a80-fb41-badf-b189-23d7ba4a1aff" : {
+          "typeFullFqn" : "system.input_widgets.update_multiple_attributes",
+          "type" : "latest",
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "73bb5bc1-0b8a-0976-ccbb-273499c75e3c",
+              "dataKeys" : [ {
+                "name" : "request",
+                "type" : "timeseries",
+                "label" : "Request",
+                "color" : "#2196f3",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "timeseries",
+                  "dataKeyValueType" : "string",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "disabledOnDataKey" : "",
+                  "appearance" : "outline",
+                  "subscriptSizing" : "fixed",
+                  "slideToggleLabelPosition" : "after",
+                  "selectOptions" : [ ],
+                  "radioColor" : null,
+                  "radioColumns" : 1,
+                  "radioLabelPosition" : "after",
+                  "step" : 1,
+                  "minValue" : null,
+                  "maxValue" : null,
+                  "requiredErrorMessage" : "",
+                  "minValueErrorMessage" : "",
+                  "maxValueErrorMessage" : "",
+                  "invalidDateErrorMessage" : "",
+                  "invalidJsonErrorMessage" : "",
+                  "dialogTitle" : "",
+                  "saveButtonLabel" : "",
+                  "cancelButtonLabel" : "",
+                  "useCustomIcon" : false,
+                  "icon" : "",
+                  "customIcon" : "",
+                  "useGetValueFunction" : false,
+                  "getValueFunctionBody" : "",
+                  "useSetValueFunction" : false,
+                  "setValueFunctionBody" : ""
+                },
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "response",
+                "type" : "timeseries",
+                "label" : "Response",
+                "color" : "#4caf50",
+                "settings" : {
+                  "dataKeyHidden" : false,
+                  "dataKeyType" : "timeseries",
+                  "dataKeyValueType" : "string",
+                  "required" : false,
+                  "isEditable" : "readonly",
+                  "disabledOnDataKey" : "",
+                  "appearance" : "outline",
+                  "subscriptSizing" : "fixed",
+                  "slideToggleLabelPosition" : "after",
+                  "selectOptions" : [ ],
+                  "radioColor" : null,
+                  "radioColumns" : 1,
+                  "radioLabelPosition" : "after",
+                  "step" : 1,
+                  "minValue" : null,
+                  "maxValue" : null,
+                  "requiredErrorMessage" : "",
+                  "minValueErrorMessage" : "",
+                  "maxValueErrorMessage" : "",
+                  "invalidDateErrorMessage" : "",
+                  "invalidJsonErrorMessage" : "",
+                  "dialogTitle" : "",
+                  "saveButtonLabel" : "",
+                  "cancelButtonLabel" : "",
+                  "useCustomIcon" : false,
+                  "icon" : "",
+                  "customIcon" : "",
+                  "useGetValueFunction" : false,
+                  "getValueFunctionBody" : "",
+                  "useSetValueFunction" : false,
+                  "setValueFunctionBody" : ""
+                },
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "widgetTitle" : "",
+              "showResultMessage" : true,
+              "showActionButtons" : false,
+              "updateAllValues" : false,
+              "saveButtonLabel" : "",
+              "resetButtonLabel" : "",
+              "showGroupTitle" : false,
+              "groupTitle" : "${entityName}",
+              "fieldsAlignment" : "column",
+              "fieldsInRow" : 2,
+              "rowGap" : 5,
+              "columnGap" : 10
+            },
+            "title" : "Update Multiple Attributes",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "enableDataExport" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "showLegend" : false,
+            "actions" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "1d5c0a80-fb41-badf-b189-23d7ba4a1aff"
+        }
+      },
       "states" : {
         "default" : {
           "name" : "MQTT Dashboard",
           "root" : true,
           "layouts" : {
             "main" : {
-              "widgets" : { },
+              "widgets" : {
+                "1d5c0a80-fb41-badf-b189-23d7ba4a1aff" : {
+                  "sizeX" : 24,
+                  "sizeY" : 6,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
               "gridSettings" : {
                 "backgroundColor" : "#fafafa",
                 "columns" : 24,
@@ -50,6 +198,18 @@
               "id" : ""
             },
             "resolveMultiple" : false
+          }
+        },
+        "73bb5bc1-0b8a-0976-ccbb-273499c75e3c" : {
+          "id" : "73bb5bc1-0b8a-0976-ccbb-273499c75e3c",
+          "alias" : "Armando AI",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "5f6a4450-3d94-11f1-a861-459f95d3c7a2"
+            }
           }
         }
       },

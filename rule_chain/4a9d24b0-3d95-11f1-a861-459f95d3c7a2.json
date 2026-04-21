@@ -25,6 +25,10 @@
       "toIndex" : 3,
       "type" : "true"
     }, {
+      "fromIndex" : 1,
+      "toIndex" : 4,
+      "type" : "false"
+    }, {
       "fromIndex" : 2,
       "toIndex" : 0,
       "type" : "Success"
@@ -154,10 +158,46 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 587,
+        "layoutY" : 156
+      },
+      "configuration" : {
+        "forwardMsgToDefaultRuleChain" : false,
+        "ruleChainId" : "7c8360c0-01d5-11ed-8014-35af6f7ed6b6"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "08777ac0-3d97-11f1-a861-459f95d3c7a2"
+      },
+      "name" : "root rule chain",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
     } ],
     "ruleChainConnections" : null
   },
-  "relations" : [ ],
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "4a9d24b0-3d95-11f1-a861-459f95d3c7a2"
+    },
+    "to" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "7c8360c0-01d5-11ed-8014-35af6f7ed6b6"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON",
+    "version" : 13712
+  } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
   }

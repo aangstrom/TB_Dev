@@ -1,0 +1,228 @@
+{
+  "entityType" : "DASHBOARD",
+  "entity" : {
+    "title" : "MQTT Publisher & Subscriber",
+    "image" : null,
+    "mobileHide" : false,
+    "mobileOrder" : null,
+    "configuration" : {
+      "description" : "Dashboard MQTT: sezione invio testo via MQTT e tabella ricezione messaggi",
+      "widgets" : {
+        "a1b2c3d4-0001-0001-0001-000000000001" : {
+          "type" : "latest",
+          "sizeX" : 6,
+          "sizeY" : 4,
+          "config" : {
+            "datasources" : [ {
+              "type" : "device",
+              "name" : "Publisher",
+              "entityAliasId" : "9cdc17ec-fbe0-e7b7-9699-b8b3f3bc9467",
+              "dataKeys" : [ {
+                "name" : "outgoing_topic",
+                "type" : "attribute",
+                "label" : "Topic di destinazione",
+                "settings" : {
+                  "dataKeyType" : "attribute",
+                  "widgetConfig" : {
+                    "type" : "text"
+                  }
+                }
+              }, {
+                "name" : "outgoing_message",
+                "type" : "attribute",
+                "label" : "Testo del messaggio",
+                "settings" : {
+                  "dataKeyType" : "attribute",
+                  "widgetConfig" : {
+                    "type" : "textarea",
+                    "rows" : 4
+                  }
+                }
+              } ]
+            } ],
+            "settings" : {
+              "saveButtonLabel" : "Invia Messaggio",
+              "showResultMessage" : true,
+              "resultMessageStyle" : {
+                "color" : "#1b5e20",
+                "fontWeight" : "bold"
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#e3f2fd",
+            "color" : "#0d47a1",
+            "padding" : "16px",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : "bold"
+            }
+          },
+          "typeFullFqn" : "system.input_widgets.update_multiple_attributes"
+        },
+        "a1b2c3d4-0002-0002-0002-000000000002" : {
+          "type" : "timeseries",
+          "sizeX" : 6,
+          "sizeY" : 6,
+          "config" : {
+            "datasources" : [ {
+              "type" : "device",
+              "name" : "Subscriber",
+              "entityAliasId" : "9591ccfc-7030-b0a0-f318-15361a4dffa6",
+              "dataKeys" : [ {
+                "name" : "msg_topic",
+                "type" : "timeseries",
+                "label" : "Topic",
+                "settings" : {
+                  "columnWidth" : "25%"
+                }
+              }, {
+                "name" : "msg_payload",
+                "type" : "timeseries",
+                "label" : "Contenuto",
+                "settings" : {
+                  "columnWidth" : "50%"
+                }
+              }, {
+                "name" : "msg_sender",
+                "type" : "timeseries",
+                "label" : "Mittente",
+                "settings" : {
+                  "columnWidth" : "25%"
+                }
+              } ]
+            } ],
+            "settings" : {
+              "showTimestamp" : true,
+              "displayPagination" : true,
+              "defaultPageSize" : 10,
+              "useEntityLabel" : false,
+              "hideEmptyLines" : true,
+              "columns" : [ {
+                "type" : "entityName",
+                "title" : "Dispositivo",
+                "columnWidth" : "0%",
+                "useCellStyleFunction" : false
+              } ]
+            },
+            "timewindow" : {
+              "realtime" : {
+                "interval" : 0,
+                "timewindowMs" : 86400000
+              },
+              "displayValue" : "Ultime 24 ore",
+              "selectedTab" : 0
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#e8f5e9",
+            "color" : "#1b5e20",
+            "padding" : "16px",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : "bold"
+            }
+          },
+          "typeFullFqn" : "system.charts.timeseries-table"
+        }
+      },
+      "states" : {
+        "default" : {
+          "name" : "MQTT Dashboard",
+          "root" : true,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "a1b2c3d4-0001-0001-0001-000000000001" : {
+                  "sizeX" : 12,
+                  "sizeY" : 7,
+                  "mobileHeight" : 8,
+                  "row" : 0,
+                  "col" : 0
+                },
+                "a1b2c3d4-0002-0002-0002-000000000002" : {
+                  "sizeX" : 12,
+                  "sizeY" : 10,
+                  "mobileHeight" : 14,
+                  "row" : 7,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#fafafa",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%",
+                "layoutType" : "default"
+              }
+            }
+          }
+        }
+      },
+      "entityAliases" : {
+        "9cdc17ec-fbe0-e7b7-9699-b8b3f3bc9467" : {
+          "id" : "9cdc17ec-fbe0-e7b7-9699-b8b3f3bc9467",
+          "alias" : "MQTT Publisher",
+          "filter" : {
+            "type" : "singleEntity",
+            "singleEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "INSERISCI-QUI-UUID-DISPOSITIVO-PUBLISHER"
+            },
+            "resolveMultiple" : false
+          }
+        },
+        "9591ccfc-7030-b0a0-f318-15361a4dffa6" : {
+          "id" : "9591ccfc-7030-b0a0-f318-15361a4dffa6",
+          "alias" : "MQTT Subscriber",
+          "filter" : {
+            "type" : "singleEntity",
+            "singleEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "INSERISCI-QUI-UUID-DISPOSITIVO-SUBSCRIBER"
+            },
+            "resolveMultiple" : false
+          }
+        }
+      },
+      "filters" : { },
+      "timewindow" : {
+        "selectedTab" : 0,
+        "realtime" : {
+          "realtimeType" : 0,
+          "timewindowMs" : 86400000
+        },
+        "aggregation" : {
+          "type" : "NONE",
+          "limit" : 50000
+        }
+      },
+      "settings" : {
+        "stateControllerId" : "entity",
+        "showTitle" : true,
+        "showDashboardsSelect" : true,
+        "showEntitiesSelect" : true,
+        "showDashboardTimewindow" : true,
+        "showDashboardExport" : true,
+        "toolbarAlwaysOpen" : false
+      }
+    },
+    "name" : "MQTT Publisher & Subscriber",
+    "resources" : null,
+    "assignedCustomers" : null,
+    "customerId" : null,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "DASHBOARD",
+      "id" : "fcce09d0-3d52-11f1-a861-459f95d3c7a2"
+    },
+    "ownerId" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

@@ -87,7 +87,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(msg.request){\n    return [\"true\"];\n}else{\n    return [\"false\"];\n}"
+        "tbelScript" : "if(msg.timeseries[0].values!=null){\n    return [\"true\"];\n}else{\n    return [\"false\"];\n}"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -204,7 +204,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 13752
+    "version" : 13772
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]

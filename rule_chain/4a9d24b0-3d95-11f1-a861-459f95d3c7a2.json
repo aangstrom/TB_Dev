@@ -123,7 +123,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var message={};\nmessage.method=\"ask\";\nif(msg.requestId>=0){\n    message.requestId=msg.requestId+1;\n}else{\n    message.requestId=0;\n}\nvar values=msg.timeseries[0].values[1];\n\nmessage.params=values;\nreturn {msg: message, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var message={};\nmessage.method=\"ask\";\nif(msg.ss_requestId>=0){\n    message.requestId=msg.ss_requestId+1;\n}else{\n    message.requestId=0;\n}\nvar values=msg.timeseries[0].values[1];\n\nmessage.params=values;\nreturn {msg: message, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -268,7 +268,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 14010
+    "version" : 14038
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]

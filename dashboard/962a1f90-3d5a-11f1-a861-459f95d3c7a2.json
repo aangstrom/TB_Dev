@@ -62,50 +62,6 @@
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
-              }, {
-                "name" : "response",
-                "type" : "timeseries",
-                "label" : "Response",
-                "color" : "#4caf50",
-                "settings" : {
-                  "dataKeyHidden" : false,
-                  "dataKeyType" : "timeseries",
-                  "dataKeyValueType" : "string",
-                  "required" : false,
-                  "isEditable" : "readonly",
-                  "disabledOnDataKey" : "",
-                  "appearance" : "outline",
-                  "subscriptSizing" : "fixed",
-                  "slideToggleLabelPosition" : "after",
-                  "selectOptions" : [ ],
-                  "radioColor" : null,
-                  "radioColumns" : 1,
-                  "radioLabelPosition" : "after",
-                  "step" : 1,
-                  "minValue" : null,
-                  "maxValue" : null,
-                  "requiredErrorMessage" : "",
-                  "minValueErrorMessage" : "",
-                  "maxValueErrorMessage" : "",
-                  "invalidDateErrorMessage" : "",
-                  "invalidJsonErrorMessage" : "",
-                  "dialogTitle" : "",
-                  "saveButtonLabel" : "",
-                  "cancelButtonLabel" : "",
-                  "useCustomIcon" : false,
-                  "icon" : "",
-                  "customIcon" : "",
-                  "useGetValueFunction" : false,
-                  "getValueFunctionBody" : "",
-                  "useSetValueFunction" : false,
-                  "setValueFunctionBody" : ""
-                },
-                "aggregationType" : "NONE",
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -246,6 +202,56 @@
             }
           },
           "id" : "eb16edde-d252-898f-6fda-cb4fc3450e83"
+        },
+        "321fe774-3b82-e4a7-d147-60ce637d65dd" : {
+          "typeFullFqn" : "system.cards.markdown_card",
+          "type" : "latest",
+          "sizeX" : 5,
+          "sizeY" : 3.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "73bb5bc1-0b8a-0976-ccbb-273499c75e3c",
+              "dataKeys" : [ {
+                "name" : "response",
+                "type" : "timeseries",
+                "label" : "response",
+                "color" : "#2196f3",
+                "settings" : { }
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "useMarkdownTextFunction" : false,
+              "markdownTextPattern" : "${response}.",
+              "markdownTextFunction" : "return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
+              "applyDefaultMarkdownStyle" : true,
+              "markdownCss" : ""
+            },
+            "title" : "Markdown/HTML Card",
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "showLegend" : false
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "321fe774-3b82-e4a7-d147-60ce637d65dd"
         }
       },
       "states" : {
@@ -257,7 +263,7 @@
               "widgets" : {
                 "1d5c0a80-fb41-badf-b189-23d7ba4a1aff" : {
                   "sizeX" : 9,
-                  "sizeY" : 6,
+                  "sizeY" : 3,
                   "row" : 0,
                   "col" : 0
                 },
@@ -266,6 +272,12 @@
                   "sizeY" : 12,
                   "row" : 0,
                   "col" : 9
+                },
+                "321fe774-3b82-e4a7-d147-60ce637d65dd" : {
+                  "sizeX" : 9,
+                  "sizeY" : 9,
+                  "row" : 3,
+                  "col" : 0
                 }
               },
               "gridSettings" : {

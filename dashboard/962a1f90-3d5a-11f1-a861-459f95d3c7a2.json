@@ -62,50 +62,6 @@
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
-              }, {
-                "name" : "response",
-                "type" : "timeseries",
-                "label" : "Response",
-                "color" : "#4caf50",
-                "settings" : {
-                  "dataKeyHidden" : false,
-                  "dataKeyType" : "timeseries",
-                  "dataKeyValueType" : "string",
-                  "required" : false,
-                  "isEditable" : "readonly",
-                  "disabledOnDataKey" : "",
-                  "appearance" : "outline",
-                  "subscriptSizing" : "fixed",
-                  "slideToggleLabelPosition" : "after",
-                  "selectOptions" : [ ],
-                  "radioColor" : null,
-                  "radioColumns" : 1,
-                  "radioLabelPosition" : "after",
-                  "step" : 1,
-                  "minValue" : null,
-                  "maxValue" : null,
-                  "requiredErrorMessage" : "",
-                  "minValueErrorMessage" : "",
-                  "maxValueErrorMessage" : "",
-                  "invalidDateErrorMessage" : "",
-                  "invalidJsonErrorMessage" : "",
-                  "dialogTitle" : "",
-                  "saveButtonLabel" : "",
-                  "cancelButtonLabel" : "",
-                  "useCustomIcon" : false,
-                  "icon" : "",
-                  "customIcon" : "",
-                  "useGetValueFunction" : false,
-                  "getValueFunctionBody" : "",
-                  "useSetValueFunction" : false,
-                  "setValueFunctionBody" : ""
-                },
-                "aggregationType" : "NONE",
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -263,6 +219,12 @@
                 "label" : "response",
                 "color" : "#2196f3",
                 "settings" : { }
+              }, {
+                "name" : "request",
+                "type" : "timeseries",
+                "label" : "request",
+                "color" : "#4caf50",
+                "settings" : { }
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -274,7 +236,7 @@
             "padding" : "0px",
             "settings" : {
               "useMarkdownTextFunction" : false,
-              "markdownTextPattern" : "### Markdown/HTML card\n - **Current entity**: ${entityName}.\n - **Current value**: ${Temperature}.",
+              "markdownTextPattern" : "### Markdown/HTML card\n - **Current Request**: ${Request}.\n - **Current Response**: ${response}.",
               "markdownTextFunction" : "return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
               "applyDefaultMarkdownStyle" : true,
               "markdownCss" : ""
@@ -306,21 +268,21 @@
             "main" : {
               "widgets" : {
                 "1d5c0a80-fb41-badf-b189-23d7ba4a1aff" : {
-                  "sizeX" : 9,
-                  "sizeY" : 5,
+                  "sizeX" : 10,
+                  "sizeY" : 3,
                   "row" : 0,
                   "col" : 0
                 },
                 "eb16edde-d252-898f-6fda-cb4fc3450e83" : {
-                  "sizeX" : 15,
+                  "sizeX" : 14,
                   "sizeY" : 12,
                   "row" : 0,
-                  "col" : 9
+                  "col" : 10
                 },
                 "984019b8-7aed-7f18-e3e4-cdbefe691e6e" : {
-                  "sizeX" : 9,
-                  "sizeY" : 7,
-                  "row" : 5,
+                  "sizeX" : 10,
+                  "sizeY" : 9,
+                  "row" : 3,
                   "col" : 0
                 }
               },

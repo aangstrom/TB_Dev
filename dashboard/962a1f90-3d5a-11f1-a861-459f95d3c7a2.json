@@ -300,12 +300,194 @@
           "row" : 0,
           "col" : 0,
           "id" : "31355fde-f14a-ffac-0fb2-061898830562"
+        },
+        "ce7514ac-32c1-d5a2-ff09-31f2b9ebc9cd" : {
+          "typeFullFqn" : "system.cards.markdown_card",
+          "type" : "latest",
+          "sizeX" : 5,
+          "sizeY" : 3.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "8fac79c1-aef2-3fc8-300a-3f32972ba7f6",
+              "dataKeys" : [ {
+                "name" : "visualizzazione",
+                "type" : "attribute",
+                "label" : "visualizzazione",
+                "color" : "#2196f3",
+                "settings" : { }
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0",
+            "settings" : {
+              "useMarkdownTextFunction" : true,
+              "markdownTextPattern" : "var scaffale,corsia,armadio,impianto,antincendio,antintrusione,climatizzazione,vibrazione,tred,realtime,system,CNR;\nif (data && data.length && data[0].entityId) {\n    if(data[0].Type==\"Scaffale\"){\n        scaffale=true;\n    }\n    if(data[0].Type==\"Corsia\"){\n        corsia=true;\n    }\n    if(data[0].Type=='Armadio'){\n        armadio=true;\n    }\n    if(data[0].Type=='Impianto'){\n        impianto=true;\n    }\n    if(data[0].Type=='Antincendio'){\n        antincendio=true;\n    }\n    if(data[0].Type=='AntiIntrusione'){\n        antintrusione=true;\n    }\n    if(data[0].Type=='Climatizzazione'){\n        climatizzazione=true;\n    }\n    if(data[0].Type=='Vibrazione'){\n        vibrazione=true;\n    }\n    if(data[0].Type=='Realtime'){\n        realtime=true;\n    }\n    if(data[0].Type=='System'){\n        system=true;\n    }\n    if(data[0].Type=='3D'){\n        tred=true;\n    }\n    if(data[0].Type=='CNR'){\n        CNR=true;\n    }\n} else {\n    scaffale = false;\n    corsia = false;\n    armadio = false;\n    impianto = false;\n    antincendio = false;\n    antintrusione = false;\n    climatizzazione = false;\n    vibrazione = false;\n    tred = false;\n    realtime = false;\n    system = false;\n}\nreturn '<div class=\"main-layout\" style=\"width: 100%; height:100%;\" fxLayout=\"column\">' +\n    (\n        scaffale==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_scaffale\"></tb-dashboard-state></div>') :\n        corsia==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_corsia\"></tb-dashboard-state></div>') :\n        armadio==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_armadio\"></tb-dashboard-state></div>') :\n        impianto==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_mappa\"></tb-dashboard-state></div>') :\n        \n        antincendio==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_antincendio\"></tb-dashboard-state></div>') :\n        antintrusione==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_antintrusione\"></tb-dashboard-state></div>') :\n        climatizzazione==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_hvac\"></tb-dashboard-state></div>') :\n        vibrazione==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_vibrazione\"></tb-dashboard-state></div>') :\n        tred==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_3D\"></tb-dashboard-state></div>') :\n        \n        realtime==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_realtime\"></tb-dashboard-state></div>') :\n        system==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_impianto\"></tb-dashboard-state></div>') :\n        CNR==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_cnr\"></tb-dashboard-state></div>') :\n        ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"page_mappa\"></tb-dashboard-state></div>')\n    );",
+              "markdownTextFunction" : "var chat,devices;\nif (data && data.length && data[0].entityId) {\n    if(data[0].visualizzazione==\"Chat\"){\n        chat=true;\n    }\n    if(data[0].visualizzazione==\"Devices\"){\n        devices=true;\n    }\n} else {\n    chat = false;\n    devices = false;\n}\nreturn '<div class=\"main-layout\" style=\"width: 100%; height:100%;\" fxLayout=\"column\">' +\n    (\n        chat==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"chat\"></tb-dashboard-state></div>') :\n        devices==true ? ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"devices\"></tb-dashboard-state></div>') :\n        ('<tb-dashboard-state fxFlex [ctx]=\"ctx\" stateId=\"chat\"></tb-dashboard-state></div>')\n    );",
+              "applyDefaultMarkdownStyle" : false,
+              "markdownCss" : ""
+            },
+            "title" : "Markdown/HTML Card",
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "showLegend" : false,
+            "enableDataExport" : false,
+            "margin" : "0",
+            "borderRadius" : "0",
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "ce7514ac-32c1-d5a2-ff09-31f2b9ebc9cd"
+        },
+        "ba8e98e7-7ecb-0e90-2ae4-a3c3aa1294b2" : {
+          "typeFullFqn" : "system.cards.markdown_card",
+          "type" : "latest",
+          "sizeX" : 5,
+          "sizeY" : 3.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "8fac79c1-aef2-3fc8-300a-3f32972ba7f6",
+              "dataKeys" : [ {
+                "name" : "visualizzazione",
+                "type" : "attribute",
+                "label" : "visualizzazione",
+                "color" : "#2196f3",
+                "settings" : { }
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0",
+            "settings" : {
+              "useMarkdownTextFunction" : true,
+              "markdownTextPattern" : "return `\r\n<div class=\"menu transparent-bg\">\r\n  <div class=\"content\">\r\n    ${\r\n      (data[0].visualizzazione_corsia_fiera == \"immagine\")\r\n        ? \"<button id='immagine' class='menu-btn active'>Image</button>\"\r\n        : \"<button id='immagine' class='menu-btn'>Image</button>\"\r\n    }\r\n    ${\r\n      (data[0].visualizzazione_corsia_fiera == \"lista\")\r\n        ? \"<button id='lista' class='menu-btn active'>Shelf list</button>\"\r\n        : \"<button id='lista' class='menu-btn'>Shelf list</button>\"\r\n    }\r\n    ${\r\n      (data[0].visualizzazione_corsia_fiera == \"dati\")\r\n        ? \"<button id='dati' class='menu-btn active'>Environmental Data</button>\"\r\n        : \"<button id='dati' class='menu-btn'>Environmental Data</button>\"\r\n    }\r\n    ${\r\n      (data[0].visualizzazione_corsia_fiera == \"utilizzo\")\r\n        ? \"<button id='utilizzo' class='menu-btn active'>Aisle Usage</button>\"\r\n        : \"<button id='utilizzo' class='menu-btn'>Aisle Usage</button>\"\r\n    }\r\n    ${\r\n      (data[0].visualizzazione_corsia_fiera == \"allarmi\")\r\n        ? \"<button id='allarmi' class='menu-btn active'>Alarms</button>\"\r\n        : \"<button id='allarmi' class='menu-btn'>Alarms</button>\"\r\n    }\r\n  </div>\r\n</div>\r\n`;\r\n",
+              "markdownTextFunction" : "return `\r\n<div class=\"menu transparent-bg\">\r\n  <div class=\"content\">\r\n    ${\r\n      (data[0].visualizzazione == \"chat\")\r\n        ? \"<button id='immagine' class='menu-btn active'>Chat</button>\"\r\n        : \"<button id='immagine' class='menu-btn'>Chat</button>\"\r\n    }\r\n    ${\r\n      (data[0].visualizzazione == \"devices\")\r\n        ? \"<button id='lista' class='menu-btn active'>Devices</button>\"\r\n        : \"<button id='lista' class='menu-btn'>Devices</button>\"\r\n    }\r\n  </div>\r\n</div>\r\n`;\r\n",
+              "applyDefaultMarkdownStyle" : true,
+              "markdownCss" : ".transparent-bg {\r\n  background: transparent !important;\r\n}\r\n\r\n/* Layout */\r\n.menu {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  width: 100%;\r\n  height: 100%;\r\n}\r\n\r\n.content {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  gap: 0.8vw; /* slightly tighter */\r\n  flex-wrap: nowrap;\r\n}\r\n\r\n/* --- Modern Button Style (Light Theme, Compact + Responsive) --- */\r\n.menu-btn {\r\n  width: 11.5vw;               /* narrower base */\r\n  min-width: 110px;\r\n  max-width: 190px;\r\n\r\n  height: 3.6vw;\r\n  min-height: 40px;\r\n  max-height: 60px;\r\n\r\n  font-family: \"Inter\", \"Segoe UI\", Roboto, sans-serif;\r\n  font-size: 0.9vw;\r\n  min-font-size: 0.85rem;\r\n  max-font-size: 1rem;\r\n\r\n  font-weight: 500;\r\n  letter-spacing: 0.15px;\r\n\r\n  color: #1e293b;\r\n  background: #f8fafc;\r\n  border: 1px solid rgba(0, 0, 0, 0.08);\r\n  border-radius: 14px;\r\n\r\n  cursor: pointer;\r\n  user-select: none;\r\n  transition: all 0.25s ease;\r\n  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);\r\n}\r\n\r\n/* Hover effect */\r\n.menu-btn:hover {\r\n  background: #f1f5f9;\r\n  transform: translateY(-2px);\r\n  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n/* Active (selected) */\r\n.menu-btn.active {\r\n  background: linear-gradient(145deg, #e0f2fe, #bfdbfe);\r\n  border-color: #3b82f6;\r\n  color: #1e3a8a;\r\n  font-weight: 600;\r\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25),\r\n              0 6px 16px rgba(59, 130, 246, 0.15);\r\n}\r\n\r\n/* Press feedback */\r\n.menu-btn:active {\r\n  transform: translateY(0);\r\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);\r\n}\r\n\r\n/* Focus ring */\r\n.menu-btn:focus-visible {\r\n  outline: none;\r\n  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.35),\r\n              0 0 0 6px rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n/* --- Compression when ThingsBoard panel gets thinner --- */\r\n@media (max-width: 1100px) {\r\n  .menu-btn {\r\n    width: 9.5vw;\r\n    height: 3.2vw;\r\n    font-size: 0.85vw;\r\n  }\r\n  .content {\r\n    gap: 0.6vw;\r\n  }\r\n}\r\n\r\n@media (max-width: 800px) {\r\n  .menu-btn {\r\n    width: 8.2vw;\r\n    height: 3vw;\r\n    font-size: 0.8vw;\r\n  }\r\n  .content {\r\n    gap: 0.5vw;\r\n  }\r\n}\r\n\r\n@media (max-width: 600px) {\r\n  .menu-btn {\r\n    width: 7vw;\r\n    height: 2.8vw;\r\n    font-size: 0.75vw;\r\n  }\r\n  .content {\r\n    gap: 0.4vw;\r\n  }\r\n}\r\n\r\n"
+            },
+            "title" : "Markdown/HTML Card",
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "showLegend" : false,
+            "enableDataExport" : false,
+            "margin" : "0",
+            "borderRadius" : "0",
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "chat",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "let user={\"entityType\":\"USER\",\"id\":widgetContext.currentUser.userId};\r\nwidgetContext.attributeService.saveEntityAttributes(user,\"SERVER_SCOPE\",[{\"key\": \"visualizzazione\",\"value\": \"chat\"}]).subscribe();\r\nwidgetContext.stateController.updateState(widgetContext.stateController.currentState,false);",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "d6dc63fc-e09b-6c5c-c856-40bb5e14223e"
+              }, {
+                "name" : "devices",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "let user={\"entityType\":\"USER\",\"id\":widgetContext.currentUser.userId};\r\nwidgetContext.attributeService.saveEntityAttributes(user,\"SERVER_SCOPE\",[{\"key\": \"visualizzazione\",\"value\": \"devices\"}]).subscribe();\r\nwidgetContext.stateController.updateState(widgetContext.stateController.currentState,false);",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "b3cc1b28-4450-0618-1cfa-69b7e421a5c0"
+              } ]
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "ba8e98e7-7ecb-0e90-2ae4-a3c3aa1294b2"
         }
       },
       "states" : {
-        "default" : {
-          "name" : "MQTT Dashboard",
+        "home" : {
+          "name" : "Home",
           "root" : true,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "ce7514ac-32c1-d5a2-ff09-31f2b9ebc9cd" : {
+                  "sizeX" : 24,
+                  "sizeY" : 10,
+                  "row" : 2,
+                  "col" : 0
+                },
+                "ba8e98e7-7ecb-0e90-2ae4-a3c3aa1294b2" : {
+                  "sizeX" : 24,
+                  "sizeY" : 2,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "layoutType" : "default",
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        },
+        "device" : {
+          "name" : "Device",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : { },
+              "gridSettings" : {
+                "layoutType" : "default",
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        },
+        "chat" : {
+          "name" : "Chat",
+          "root" : false,
           "layouts" : {
             "main" : {
               "widgets" : {
@@ -382,6 +564,28 @@
               "id" : "5f6a4450-3d94-11f1-a861-459f95d3c7a2"
             }
           }
+        },
+        "bce05ce9-7551-6c77-0d7e-ab33f8e99cde" : {
+          "id" : "bce05ce9-7551-6c77-0d7e-ab33f8e99cde",
+          "alias" : "visualizzazione",
+          "filter" : {
+            "type" : "stateEntity",
+            "resolveMultiple" : false,
+            "stateEntityParamName" : null,
+            "defaultStateEntity" : null
+          }
+        },
+        "8fac79c1-aef2-3fc8-300a-3f32972ba7f6" : {
+          "id" : "8fac79c1-aef2-3fc8-300a-3f32972ba7f6",
+          "alias" : "Utente corrente",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "CURRENT_USER",
+              "id" : "13814000-1dd2-11b2-8080-808080808080"
+            }
+          }
         }
       },
       "filters" : { },
@@ -398,12 +602,17 @@
       },
       "settings" : {
         "stateControllerId" : "entity",
-        "showTitle" : true,
+        "showTitle" : false,
         "showDashboardsSelect" : true,
         "showEntitiesSelect" : true,
         "showDashboardTimewindow" : true,
         "showDashboardExport" : true,
-        "toolbarAlwaysOpen" : false
+        "toolbarAlwaysOpen" : false,
+        "titleColor" : "rgba(0,0,0,0.870588)",
+        "showDashboardLogo" : false,
+        "hideToolbar" : false,
+        "showFilters" : true,
+        "showUpdateDashboardImage" : true
       }
     },
     "name" : "MQTT Publisher & Subscriber",

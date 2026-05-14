@@ -179,17 +179,11 @@
               "name" : "",
               "entityAliasId" : "73bb5bc1-0b8a-0976-ccbb-273499c75e3c",
               "dataKeys" : [ {
-                "name" : "chat",
-                "type" : "timeseries",
-                "label" : "chat",
-                "color" : "#2196f3",
-                "settings" : { },
-                "aggregationType" : "NONE",
-                "units" : null,
-                "decimals" : null,
-                "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
+                "name" : "risposta",
+                "type" : "attribute",
+                "label" : "risposta",
+                "color" : "#4caf50",
+                "settings" : { }
               }, {
                 "name" : "request",
                 "type" : "attribute",
@@ -207,7 +201,7 @@
             "padding" : "0px",
             "settings" : {
               "useMarkdownTextFunction" : false,
-              "markdownTextPattern" : "### Verity Response\n - **Current Request**: ${request}.\n - **Current Response**: ${chat}.",
+              "markdownTextPattern" : "### Verity Response\n - **Current Request**: ${request}.\n - **Current Response**: ${risposta}.",
               "markdownTextFunction" : "return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
               "applyDefaultMarkdownStyle" : true,
               "markdownCss" : ""

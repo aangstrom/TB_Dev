@@ -33,6 +33,10 @@
       "toIndex" : 6,
       "type" : "true"
     }, {
+      "fromIndex" : 1,
+      "toIndex" : 7,
+      "type" : "true"
+    }, {
       "fromIndex" : 2,
       "toIndex" : 0,
       "type" : "Success"
@@ -47,6 +51,10 @@
     }, {
       "fromIndex" : 5,
       "toIndex" : 6,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 8,
       "type" : "Success"
     } ],
     "firstNodeIndex" : 1,
@@ -181,8 +189,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 550,
-        "layoutY" : 150
+        "layoutX" : 549,
+        "layoutY" : 44
       },
       "configuration" : {
         "forwardMsgToDefaultRuleChain" : false,
@@ -257,6 +265,60 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 560,
+        "layoutY" : 153
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var message={};\nmessage.chat=msg.request;\nreturn {msg: message, metadata: metadata, msgType: \"POST_TELEMETRY_REQUEST\"};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d00e48f0-4f6e-11f1-a861-459f95d3c7a2"
+      },
+      "name" : "save chat telemetry",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 867,
+        "layoutY" : 160
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "useServerTs" : false,
+        "processingSettings" : {
+          "type" : "ON_EVERY_MESSAGE"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d00e9710-4f6e-11f1-a861-459f95d3c7a2"
+      },
+      "name" : "save time series",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
     } ],
     "ruleChainConnections" : null
   },
@@ -272,7 +334,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 14228
+    "version" : 14260
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]

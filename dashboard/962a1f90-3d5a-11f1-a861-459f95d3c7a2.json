@@ -89,7 +89,22 @@
                 "funcBody" : null,
                 "usePostProcessing" : null,
                 "postFuncBody" : null
+              }, {
+                "name" : "response",
+                "type" : "timeseries",
+                "label" : "response",
+                "color" : "#4caf50",
+                "settings" : { }
+              }, {
+                "name" : "request",
+                "type" : "timeseries",
+                "label" : "request",
+                "color" : "#f44336",
+                "settings" : { }
               } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
               "latestDataKeys" : [ ]
             } ],
             "showTitle" : false,
@@ -193,6 +208,12 @@
                 "label" : "request",
                 "color" : "#4caf50",
                 "settings" : { }
+              }, {
+                "name" : "response",
+                "type" : "timeseries",
+                "label" : "response",
+                "color" : "#f44336",
+                "settings" : { }
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -204,7 +225,7 @@
             "padding" : "0",
             "settings" : {
               "useMarkdownTextFunction" : false,
-              "markdownTextPattern" : "#### Verity Response\n - **Current Request**: ${request}.\n - **Current Response**: ${risposta}.",
+              "markdownTextPattern" : "#### Verity Response\n - **Current Request**: ${request}.\n - **Current Response**: ${response}.",
               "markdownTextFunction" : "return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
               "applyDefaultMarkdownStyle" : true,
               "markdownCss" : ""

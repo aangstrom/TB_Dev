@@ -7,7 +7,7 @@
     "configuration" : {
       "scriptLang" : "TBEL",
       "decoder" : null,
-      "tbelDecoder" : "/** Decoder **/\nvar data = decodeToJson(payload);\n\nvar deviceName = 'Armando_AI';\nvar deviceType = 'Armando AI';\nvar risposta = data.response;\nvar grafo=data.grafo;\n\nvar result = {\n   deviceName: deviceName,\n   deviceType: deviceType,\n   attributes: {\n       grafo : grafo,\n       risposta: risposta\n   },\n   telemetry: {\n       response: risposta\n   }\n};\n\nreturn result;",
+      "tbelDecoder" : "/** Decoder **/\nvar data = decodeToJson(payload);\n\nvar deviceName = 'Armando_AI';\nvar deviceType = 'Armando AI';\nvar risposta = data.response;\nvar grafo=data.grafo;\n\nvar result = {\n   deviceName: deviceName,\n   deviceType: deviceType,\n   attributes: {\n       grafo : grafo,\n       //risposta: risposta\n   },\n   telemetry: {\n       response: risposta\n   }\n};\n\nreturn result;",
       "encoder" : null,
       "tbelEncoder" : null,
       "updateOnlyKeys" : [ "manufacturer" ]

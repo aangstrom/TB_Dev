@@ -107,7 +107,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "if(msg.request!=null){\n    return [\"true\"];\n}else if(msg.response!=null){\n    return [\"response\"];\n}else{\n    return [\"false\"];\n}\n//if(msg.timeseries[0].values!=null){"
+        "tbelScript" : "if(msg.request!=null){\n    return [\"true\"];\n}else if(msg.chat!=null){\n    return [\"chat\"];\n}else{\n    return [\"false\"];\n}\n//if(msg.timeseries[0].values!=null){"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -334,7 +334,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 14792
+    "version" : 14830
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]

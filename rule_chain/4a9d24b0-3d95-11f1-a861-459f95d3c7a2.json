@@ -61,6 +61,10 @@
       "toIndex" : 8,
       "type" : "Success"
     }, {
+      "fromIndex" : 9,
+      "toIndex" : 8,
+      "type" : "Success"
+    }, {
       "fromIndex" : 10,
       "toIndex" : 9,
       "type" : "Success"
@@ -304,7 +308,7 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 926,
+        "layoutX" : 1050,
         "layoutY" : 250
       },
       "configuration" : {
@@ -330,13 +334,13 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 743,
-        "layoutY" : 51
+        "layoutX" : 675,
+        "layoutY" : 50
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "msg.request=metadata.ss_request;\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -358,8 +362,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 379,
-        "layoutY" : 62
+        "layoutX" : 425,
+        "layoutY" : 50
       },
       "configuration" : {
         "tellFailureIfAbsent" : true,
@@ -402,7 +406,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 15218
+    "version" : 15264
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]

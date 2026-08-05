@@ -7,7 +7,7 @@
     "configuration" : {
       "scriptLang" : "TBEL",
       "decoder" : null,
-      "tbelDecoder" : "var raw = decodeToJson(payload);\r\nvar data = raw.payload ? raw.payload : raw;\r\nvar hw = data.hw || {};\r\nvar analysis = data.analysis || {};\r\n\r\nreturn {\r\n   deviceName: \"sensore_001\",\r\n   deviceType: \"Optical Biosensor\",\r\n   telemetry: {\r\n       spore_count: analysis.spore_count || 0,\r\n       cpu_temp_c: hw.cpu_temp_c || 0,\r\n       status_online: 1\r\n   }\r\n};",
+      "tbelDecoder" : "// Parse difensivo iniziale\r\nvar raw = decodeToJson(payload);\r\nif (!raw) return null;\r\n\r\nvar data = raw.payload ? raw.payload : raw;\r\nvar hw = data.hw || {};\r\nvar analysis = data.analysis || {};\r\n\r\n// Costruzione forzata di sole chiavi 'flat' (tipi primitivi)\r\nvar cleanTelemetry = {\r\n    spore_count: Number(analysis.spore_count || 0),\r\n    detected: analysis.detected ? 1 : 0,\r\n    frame_id: Number(data.frame_id || 0),\r\n    sample_id: String(data.sample_id || \"\"),\r\n    \r\n    // Diagnostic HW\r\n    cpu_temp_c: Number(hw.cpu_temp_c || 0),\r\n    processing_time_s: Number(hw.processing_time_s || 0),\r\n    ram_used_percent: hw.ram ? Number(hw.ram.used_percent) : 0,\r\n    disk_used_percent: hw.disk ? Number(hw.disk.used_percent) : 0\r\n};\r\n\r\nreturn {\r\n   deviceName: String(data.device_id || \"sensore_001\"),\r\n   deviceType: \"Optical Biosensor\",\r\n   telemetry: cleanTelemetry\r\n};",
       "encoder" : null,
       "tbelEncoder" : null,
       "updateOnlyKeys" : [ "manufacturer" ]

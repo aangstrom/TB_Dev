@@ -1,0 +1,44 @@
+{
+  "entityType" : "CONVERTER",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : {
+      "scriptLang" : "TBEL",
+      "decoder" : null,
+      "tbelDecoder" : "var data = decodeToJson(payload);\r\n\r\nvar deviceName = \"sensore_001\";\r\nif (metadata.topic) {\r\n    var parts = metadata.topic.split('/');\r\n    if (parts.length > 1) {\r\n        deviceName = parts[1];\r\n    }\r\n}\r\n\r\nreturn {\r\n   deviceName: deviceName,\r\n   deviceType: 'Optical Biosensor',\r\n   telemetry: data\r\n};",
+      "encoder" : null,
+      "tbelEncoder" : null,
+      "updateOnlyKeys" : [ "manufacturer" ],
+      "type" : "DEVICE",
+      "name" : "",
+      "profile" : "",
+      "label" : "",
+      "customer" : "",
+      "group" : "",
+      "telemetry" : null,
+      "attributes" : null
+    },
+    "converterVersion" : 1,
+    "debugMode" : false,
+    "debugSettings" : {
+      "allEnabled" : false,
+      "allEnabledUntil" : 1785940070306,
+      "failuresEnabled" : true
+    },
+    "edgeTemplate" : false,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CONVERTER",
+      "id" : "bddf9170-90d7-11f1-83c3-0d329d3e0d47"
+    },
+    "integrationType" : "MQTT",
+    "name" : "Uplink data converter for Biosensore",
+    "type" : "UPLINK"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

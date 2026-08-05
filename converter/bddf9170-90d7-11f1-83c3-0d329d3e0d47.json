@@ -7,18 +7,10 @@
     "configuration" : {
       "scriptLang" : "TBEL",
       "decoder" : null,
-      "tbelDecoder" : "var data = decodeToJson(payload);\r\n\r\nvar deviceName = \"sensore_001\";\r\nif (metadata.topic) {\r\n    var parts = metadata.topic.split('/');\r\n    if (parts.length > 1) {\r\n        deviceName = parts[1];\r\n    }\r\n}\r\n\r\nreturn {\r\n   deviceName: deviceName,\r\n   deviceType: 'Optical Biosensor',\r\n   telemetry: data\r\n};",
+      "tbelDecoder" : "// 1. Parsing del payload\r\nvar data = decodeToJson(payload);\r\n\r\n// 2. Determinazione del Device Name (usa il device_id del payload o lo estrae dal topic)\r\nvar deviceName = data.payload && data.payload.device_id ? data.payload.device_id : \"sensore_001\";\r\nif (metadata.topic) {\r\n    var parts = metadata.topic.split('/');\r\n    if (parts.length > 1) {\r\n        deviceName = parts[1]; // Estrae 'sensore_001' da 'spore/sensore_001/data'\r\n    }\r\n}\r\n\r\n// 3. Flattening e parsing delle metriche\r\nvar payloadData = data.payload || data;\r\nvar hw = payloadData.hw || {};\r\nvar analysis = payloadData.analysis || {};\r\nvar spores = analysis.spores || [];\r\n\r\n// Conteggio per status\r\nvar germinatedCount = 0;\r\nvar swellingCount = 0;\r\nvar toVerifyCount = 0;\r\n\r\nfor (var i = 0; i < spores.length; i++) {\r\n    if (spores[i].is_germinated || spores[i].status === \"Germinata\") {\r\n        germinatedCount++;\r\n    } else if (spores[i].status === \"Spora / swelling\") {\r\n        swellingCount++;\r\n    } else {\r\n        toVerifyCount++;\r\n    }\r\n}\r\n\r\n// 4. Mappatura delle chiavi di telemetria per Sentinel\r\nvar telemetry = {\r\n    // Parametri di analisi biosensore\r\n    spore_count: analysis.spore_count || 0,\r\n    detected: analysis.detected ? 1 : 0,\r\n    germinated_count: germinatedCount,\r\n    swelling_count: swellingCount,\r\n    to_verify_count: toVerifyCount,\r\n    frame_id: payloadData.frame_id,\r\n    sample_id: payloadData.sample_id,\r\n    \r\n    // Diagnostica Hardware\r\n    cpu_temp_c: hw.cpu_temp_c,\r\n    processing_time_s: hw.processing_time_s,\r\n    ram_used_percent: hw.ram ? hw.ram.used_percent : null,\r\n    ram_used_mb: hw.ram ? hw.ram.used_mb : null,\r\n    disk_used_percent: hw.disk ? hw.disk.used_percent : null\r\n};\r\n\r\nreturn {\r\n   deviceName: deviceName,\r\n   deviceType: 'Optical Biosensor',\r\n   telemetry: telemetry\r\n};",
       "encoder" : null,
       "tbelEncoder" : null,
-      "updateOnlyKeys" : [ "manufacturer" ],
-      "type" : "DEVICE",
-      "name" : "",
-      "profile" : "",
-      "label" : "",
-      "customer" : "",
-      "group" : "",
-      "telemetry" : null,
-      "attributes" : null
+      "updateOnlyKeys" : [ "manufacturer" ]
     },
     "converterVersion" : 1,
     "debugMode" : false,

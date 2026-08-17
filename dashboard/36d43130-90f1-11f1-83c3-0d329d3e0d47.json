@@ -1429,15 +1429,15 @@
               "dataKeys" : [ {
                 "name" : "growth_stage",
                 "type" : "timeseries",
-                "label" : "Stato",
+                "label" : "Stato Germinazione",
                 "color" : "#2196f3",
                 "settings" : { },
                 "aggregationType" : "NONE",
                 "units" : null,
                 "decimals" : null,
                 "funcBody" : null,
-                "usePostProcessing" : null,
-                "postFuncBody" : null
+                "usePostProcessing" : true,
+                "postFuncBody" : "if(value==='no_growth'){\n    return 'Assente'\n} else if(value==='early_germination'){\n    return 'Inizio'\n} else if(value==='spore_or_swelling'){\n    return 'Rigonfiamento'\n} else return value;"
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
